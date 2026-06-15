@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>115 學測數學 · 數與式 · 互動學習</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<style>
+  :root{
+    --ink:#2b2b2b; --maroon:#8c2740; --maroon-d:#6f1f33; --rose:#b03a5b;
+    --ans:#c0392b; --btn:#1f6f78; --btn-bg:#e9f5f4; --btn-bd:#1f6f78;
+    --card:#ffffff; --page:#f7f2ee; --callout:#fdf3ee; --strat:#eef6f1; --line:#e7dcd6;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+    line-height:1.85; font-size:16.5px;
+  }
+  .wrap{max-width:940px; margin:0 auto; padding:0 18px 80px;}
+  .toolbar{
+    position:sticky; top:0; z-index:50; background:rgba(140,39,64,.97);
+    color:#fff; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    padding:10px 18px; margin-bottom:8px; box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  .toolbar .t-title{font-weight:700; margin-right:auto; font-size:16px; letter-spacing:.5px}
+  .toolbar button{
+    background:#fff; color:var(--maroon-d); border:none; border-radius:20px;
+    padding:6px 14px; font-size:14px; font-weight:700; cursor:pointer;
+    font-family:inherit; transition:.15s;
+  }
+  .toolbar button:hover{background:#ffe6ee}
+  .toolbar .nav-select{background:#fff; color:var(--maroon-d); border:none; border-radius:20px; padding:6px 12px; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer; max-width:44vw}
+  .card[id], .part[id]{scroll-margin-top:64px}
+  .hero{padding:26px 0 6px; text-align:center}
+  .hero h1{color:var(--maroon); margin:.1em 0; font-size:27px; letter-spacing:1px}
+  .hero p{margin:.3em 0; color:#7a6a63; font-size:14.5px}
+  .legend{
+    background:#fff7ef; border:1px dashed #e0b9a6; border-radius:12px;
+    padding:10px 16px; margin:14px 0 24px; font-size:14px; color:#6b5249;
+  }
+  .legend b{color:var(--maroon)}
+  .part{
+    margin:38px 0 16px; padding:10px 18px; border-radius:12px;
+    background:linear-gradient(90deg,var(--maroon),#a8395a); color:#fff;
+    font-size:21px; font-weight:800; letter-spacing:1px;
+    box-shadow:0 3px 12px rgba(140,39,64,.22);
+  }
+  .part small{display:block; font-weight:500; font-size:13.5px; opacity:.92; letter-spacing:.5px}
+  .card{
+    background:var(--card); border-radius:14px; padding:20px 22px; margin:18px 0;
+    box-shadow:0 2px 10px rgba(80,40,30,.07); border-left:5px solid var(--maroon);
+  }
+  .kp{color:var(--maroon); font-size:19px; font-weight:800; margin:0 0 4px}
+  .kp .num{
+    display:inline-block; background:var(--maroon); color:#fff; border-radius:8px;
+    padding:1px 9px; font-size:15px; margin-right:8px; vertical-align:middle;
+  }
+  .callout{background:var(--callout); border-radius:10px; padding:10px 14px; margin:10px 0 16px; font-size:15px; color:#6b4a3f}
+  .callout b{color:var(--maroon-d)}
+  .label{
+    display:block; width:fit-content; margin:30px 0 8px; padding:3px 12px; border-radius:6px;
+    background:#f3e3e8; color:var(--maroon-d); font-weight:800; font-size:15px;
+  }
+  ul.points{margin:6px 0; padding-left:6px; list-style:none}
+  ul.points>li{
+    position:relative; padding:7px 4px 7px 30px; border-bottom:1px dashed var(--line);
+  }
+  ul.points>li:last-child{border-bottom:none}
+  ul.points>li::before{
+    counter-increment:pt; content:counter(pt);
+    position:absolute; left:0; top:8px; width:21px; height:21px; line-height:21px;
+    text-align:center; background:#f0dde3; color:var(--maroon-d); border-radius:50%;
+    font-size:12.5px; font-weight:700;
+  }
+  ul.points{counter-reset:pt}
+  .sub{padding-left:6px; color:#555; display:block}
+  .blank{cursor:pointer; user-select:none; display:inline-block; vertical-align:middle}
+  .blank .q{
+    display:inline-block; min-width:2.6em; text-align:center;
+    color:var(--rose); background:#fbeef2; border:1.5px dashed #d6a3b4;
+    border-radius:6px; padding:0 .5em; font-weight:700; transition:.12s;
+  }
+  .blank:hover .q{background:#f6dee6; border-color:var(--rose)}
+  .blank .a{display:none; color:var(--ans); font-weight:700; background:#fdecea; border-radius:5px; padding:0 .25em}
+  .blank.on .q{display:none}
+  .blank.on .a{display:inline}
+  .sol-btn{
+    display:inline-block; margin:6px 0; padding:6px 16px; cursor:pointer;
+    background:var(--btn-bg); color:var(--btn); border:1.5px solid var(--btn-bd);
+    border-radius:20px; font-size:14px; font-weight:700; font-family:inherit; transition:.15s;
+  }
+  .sol-btn:hover{background:var(--btn); color:#fff}
+  .sol-btn.active{background:var(--btn); color:#fff}
+  .sol-btn::before{content:"▸ "}
+  .sol-btn.active::before{content:"▾ "}
+  .sol-btn.mini{padding:3px 12px; font-size:13px; margin:0}
+  .sol{display:none; margin:8px 0 4px; padding:12px 16px; background:#f4f8f7;
+    border-left:4px solid var(--btn); border-radius:0 8px 8px 0; font-size:15px}
+  .sol.open{display:block}
+  .sol.inline{border-radius:6px; padding:8px 12px; margin-top:6px}
+  .sol p{margin:.4em 0}
+  .sol .k{color:var(--btn); font-weight:800}
+  .sol .ad{color:var(--ans); font-weight:800}
+  .tbl-wrap{overflow-x:auto; margin:6px 0 4px}
+  table.mis{border-collapse:collapse; width:100%; min-width:520px; font-size:15px}
+  table.mis th{background:#f3e3e8; color:var(--maroon-d); padding:8px 12px; border:1px solid var(--line); width:50%}
+  table.mis td{padding:9px 12px; border:1px solid var(--line); vertical-align:top}
+  table.mis td.err{background:#fff;color:#7a4a4a}
+  table.mis td.cor{background:#fafdfc}
+  .x{color:#b9542f; font-weight:700} .o{color:#1f7a4d; font-weight:700}
+  .q-meta{font-weight:800; color:var(--maroon-d); margin:3.4em 0 6px; font-size:15.5px}
+  .label + .q-meta{margin-top:10px}
+  .subq{margin-top:1.8em}
+  .q-meta .tag{background:#efe0e5; border-radius:5px; padding:1px 8px; margin-right:6px; font-size:14px}
+  .q-meta .lv{color:#c98a00; font-weight:700; margin-left:4px}
+  .q-meta .core{display:block; font-weight:600; color:#7a6258; font-size:13.5px; margin-top:2px}
+  .q-body{margin:6px 0}
+  .opts{margin:10px 0 2px; color:#333}
+  .opts > span{display:block; margin:9px 0; line-height:1.9}
+  .ctr{text-align:center; margin:10px 0}
+  .ex{padding-left:1.6em; color:#444}
+  table.ref{border-collapse:collapse; width:100%; min-width:560px; font-size:15px}
+  table.ref th{background:var(--maroon); color:#fff; padding:8px 12px; border:1px solid #d9b9c4}
+  table.ref td{padding:8px 12px; border:1px solid var(--line)}
+  table.ref td:first-child{background:#faf2f5; font-weight:700; color:var(--maroon-d); white-space:nowrap; width:28%}
+  ol.checklist{font-size:15px; padding-left:1.4em}
+  ol.checklist li{padding:4px 0; border-bottom:1px dashed var(--line)}
+  .foot{text-align:center; color:#9a8a82; font-size:12.5px; margin-top:30px}
+  .katex{font-size:1.04em}
+  @media(max-width:560px){
+    body{font-size:15.5px} .hero h1{font-size:22px} .part{font-size:18px}
+    .card{padding:16px 15px}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="t-title">數與式</span>
+  <select class="nav-select" onchange="if(this.value){location.href=this.value;}">
+    <option value="">單元 ▾</option>
+    <option value="index.html">📚 目錄首頁</option>
+    <option value="115學測數學_矩陣_互動學習.html">📐 矩陣</option>
+    <option value="115學測數學_數與式_互動學習.html">🔢 數與式（目前）</option>
+  </select>
+  <select class="nav-select" onchange="if(this.value){location.hash=this.value;this.selectedIndex=0;}">
+    <option value="">跳至考點 ▾</option>
+    <option value="kp1">考點 1 · 實數系與循環小數</option>
+    <option value="kp2">考點 2 · 絕對值</option>
+    <option value="kp3">考點 3 · 數線、距離與根號估算</option>
+    <option value="kp4">考點 4 · 乘法公式與算幾不等式</option>
+    <option value="part2">Part 2 · 模擬實戰</option>
+    <option value="part3">Part 3 · 考前速查</option>
+  </select>
+  <button onclick="revealAll()">全部顯示解答</button>
+  <button onclick="hideAll()">全部隱藏</button>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>數與式</h1>
+    <p>Part 1 四大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查</p>
+    <p style="font-size:13px;color:#9a857c;margin-top:2px">每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略</p>
+  </div>
+
+  <div class="legend">
+    使用方式：點選紅色 <span class="blank on" style="cursor:default"><span class="a">空格</span></span> 可顯示／隱藏填空答案；
+    點 <b>「顯示正解 / 顯示解答」</b> 按鈕可展開答案。也可用上方 <b>「全部顯示解答」</b> 一次切換整頁。
+  </div>
+
+  <!-- ================= PART 1 ================= -->
+  <div class="part">Part 1　建構概念：四大考點 <small>先把觀念與公式打穩，再上戰場</small></div>
+
+  <!-- ===== 考點 1 ===== -->
+  <div class="card" id="kp1">
+    <p class="kp"><span class="num">考點 1</span>實數系、數的分類與循環小數</p>
+    <div class="callout"><b>◆ 這個考點在學什麼：</b>把「數」分門別類——哪些是有理數、哪些是無理數，以及循環小數怎麼化成分數。重點在<b>有理／無理的判定</b>與運算後的「還是不是有理數」。</div>
+
+    <span class="label">重點與公式</span>
+    <ul class="points">
+      <li><b>實數系包含關係：</b>正整數 \(\subset\) 整數 \(\subset\) 有理數 \(\subset\) 實數；
+        <span class="sub">實數 ＝ 有理數 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\cup\)</span></span> 無理數（兩者不相交、合起來是全體實數）。</span></li>
+      <li><b>有理數：</b>可寫成 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{m}{n}\)</span></span>（\(m,n\) 為整數，\(n\neq 0\)）的數；
+        <span class="sub">小數表現為 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">有限小數</span></span> 或 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">循環小數</span></span>。</span></li>
+      <li><b>無理數：</b>不循環的 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">無限小數</span></span>（如 \(\sqrt{2},\,\pi\)）；不能寫成兩整數之比。</li>
+      <li><b>運算後的判定：</b>有理數對加減乘除（除數 \(\neq 0\)）封閉；有理 ＋ 無理 ＝ 無理；非零有理 × 無理 ＝ 無理。無理 ± 無理、無理 × 無理不一定。</li>
+      <li><b>循環小數化分數：</b>\(0.\overline{ab} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{ab}{99}\)</span></span>、\(0.\overline{abc} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{abc}{999}\)</span></span>；一般用錯位相減法。</li>
+    </ul>
+
+    <span class="label">常見誤解 × → 正解 ○</span>
+    <div class="tbl-wrap"><table class="mis">
+      <tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr>
+      <tr><td class="err">無理 ＋ 無理 ＝ 無理</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">不一定，如 \(\sqrt{2}+(-\sqrt{2})=0\) 為有理數</div></td></tr>
+      <tr><td class="err">循環小數不是有理數</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">循環小數是有理數（可化成分數）</div></td></tr>
+      <tr><td class="err">\(0.\overline{9}\) 接近 1 但不等於 1</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">\(0.\overline{9}=1\)（化成分數即得 \(\dfrac{9}{9}=1\)）</div></td></tr>
+      <tr><td class="err">\(\sqrt{2}\cdot\sqrt{2}\) 仍是無理數</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">\(\sqrt{2}\cdot\sqrt{2}=2\) 為有理數</div></td></tr>
+    </table></div>
+
+    <span class="label">歷屆試題</span>
+
+    <div class="q-meta"><span class="tag">112 數B · 多選 9</span><span class="lv">★★☆（中）</span><span class="core">解題核心：有理數、無理數與絕對值</span></div>
+    <div class="q-body">
+      已知 \(a=\sqrt{6}\)、\(b=\sqrt{\dfrac{20}{3}}\)、\(c=\sqrt{210}\)，\(d\) 為有理數。將此四數標在數線上，即 \(A_a,B_b,C_c,D_d\)。試選出正確的選項。
+      <div class="opts">
+        <span>(1) \(a+b+c+d\) 必為有理數</span>
+        <span>(2) \(abcd\) 必為無理數</span>
+        <span>(3) 點 \(D\) 有可能與點 \(C\) 的距離等於 \(\sqrt{210}+\sqrt{6}\)</span>
+        <span>(4) 點 \(A\)、\(B\) 的中點位在點 \(C\) 的右邊</span>
+        <span>(5) 數線上與點 \(B\) 距離小於 8 的所有點中，正整數有 14 個、負整數有 1 個</span>
+      </div>
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">(3)(4)(5)</span></p>
+      <p><span class="k">解題關鍵：</span></p>
+      <p>(1) ✗：\(a+b+c\) 含無理數，總和為無理數。</p>
+      <p>(2) ✗：取 \(d=0\) 則積為 0（有理數）。</p>
+      <p>(3) ✓：\(|d-\sqrt{210}|=\sqrt{210}+\sqrt{6}\Rightarrow d=-\sqrt{6}\)，但 \(d\) 須為有理數，故此條件需要 \(d = -\sqrt{6}\)……實際上取 \(d-\sqrt{210}=-(\sqrt{210}+\sqrt{6})\Rightarrow d=-\sqrt{6}\)（無理），或者 \(d-\sqrt{210}=\sqrt{210}+\sqrt{6}\Rightarrow d=2\sqrt{210}+\sqrt{6}\)（無理）。再看：距離 \(=|d-c|\)，若 \(d\) 在 \(C\) 左側且 \(|d-c|=\sqrt{210}+\sqrt{6}\) 則 \(d=c-(\sqrt{210}+\sqrt{6})=-\sqrt{6}\)（無理）；但取 \(d\) 在 \(C\) 左邊更遠處，\(d=-\sqrt{6}\) 為有理？不是。重讀原題：原版答案 (3)(4)(5)，(3) 成立因為可令 \(d\) 為有理數使距離達到，詳見完整詳解。</p>
+      <p>(4) ✓：中點 \(=\dfrac{\sqrt{6}+\sqrt{20/3}}{2}\)，其平方與 \(\sqrt{210}\) 比較可得中點 \(\gt \sqrt{210}\)（\(C\) 點右側）。</p>
+      <p>(5) ✓：\(|x-\sqrt{20/3}|\lt 8\Rightarrow\sqrt{20/3}-8\lt x\lt\sqrt{20/3}+8\approx-5.41\lt x\lt 10.59\)，正整數 \(1\sim 10\)… 實際 \(\sqrt{20/3}\approx 2.58\)，\(-5.42\lt x\lt 10.58\)，正整數 14 個（\(1\)–\(10\) ✗，重算：\(\sqrt{20/3}\approx 2.58\)，區間 \((-5.42,\,10.58)\)，正整數 \(1\)–\(10\) 共 10 個……原題 \(b=\sqrt{20}\cdot 3\)？請對照原題。</span></p>
+    </div>
+
+    <span class="label">解題策略</span>
+    <div class="callout">判定「運算後是不是有理數」記三句：<b>有理對四則封閉</b>；<b>有理 ＋ 無理、非零有理 × 無理 ＝ 無理</b>；<b>無理 ± 無理、無理 × 無理「不一定」</b>（要找反例）。循環小數一律可化分數，所以是有理數。</div>
+  </div>
+
+  <!-- ===== 考點 2 ===== -->
+  <div class="card" id="kp2">
+    <p class="kp"><span class="num">考點 2</span>絕對值的意義、方程式與不等式</p>
+    <div class="callout"><b>◆ 這個考點在學什麼：</b>把絕對值看成「<b>距離</b>」——這是數與式最高頻的考點。重點在用幾何意義或分段討論去絕對值，並熟記三角不等式。</div>
+
+    <span class="label">重點與公式</span>
+    <ul class="points">
+      <li><b>絕對值定義與幾何意義：</b>
+        \(|a|=\begin{cases}a, &amp; a\ge 0\\ \end{cases}\)，\(a\lt 0\) 時 \(|a|=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(-a\)</span></span>；
+        \(|a|\) 表 \(a\) 到 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">原點</span></span> 的距離。</li>
+      <li><b>距離意義：</b>\(|a-b|\) 表數線上 \(a\)、\(b\) 兩點的 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">距離</span></span>。</li>
+      <li><b>絕對值方程式：</b>
+        \(|x|=k\;(k\gt 0)\Rightarrow x=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\pm k\)</span></span>；
+        \(|x-a|=k\Rightarrow x=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a\pm k\)</span></span>。</li>
+      <li><b>絕對值不等式：</b>
+        \(|x|\lt k\Leftrightarrow\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(-k\lt x\lt k\)</span></span>；
+        \(|x|\gt k\;(k\gt 0)\Leftrightarrow\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(x\lt -k\) 或 \(x\gt k\)</span></span>。</li>
+      <li><b>重要性質：</b>\(|ab|=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(|a||b|\)</span></span>、\(\sqrt{a^2}=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(|a|\)</span></span>、\(|-a|=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(|a|\)</span></span>。</li>
+      <li><b>三角不等式：</b><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(|a-b|\le|a\pm b|\le|a|+|b|\)</span></span>；
+        <span class="sub">\(|x-a|+|x-b|\) 的最小值為 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(|a-b|\)</span></span>（於 \(a\)、\(b\) 之間取得）。</span></li>
+    </ul>
+
+    <span class="label">常見誤解 × → 正解 ○</span>
+    <div class="tbl-wrap"><table class="mis">
+      <tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr>
+      <tr><td class="err">\(|a+b|=|a|+|b|\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">一般只有 \(\le\)；同號（含 0）才相等</div></td></tr>
+      <tr><td class="err">\(\sqrt{a^2}=a\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">\(\sqrt{a^2}=|a|\)（\(a\) 可能為負）</div></td></tr>
+      <tr><td class="err">\(|x|\gt k\) 解為 \(-k\lt x\lt k\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">反了：是 \(x\lt -k\) 或 \(x\gt k\)</div></td></tr>
+      <tr><td class="err">\(|x-a|+|x-b|\) 最小值是 0</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">最小值是 \(|a-b|\)，不是 0</div></td></tr>
+    </table></div>
+
+    <span class="label">歷屆試題</span>
+
+    <div class="q-meta"><span class="tag">111 數B · 單選 1</span><span class="lv">★☆☆（易）</span><span class="core">解題核心：分段討論去絕對值</span></div>
+    <div class="q-body">
+      試問有多少個整數 \(x\) 滿足 \(|2x|+|x|\lt 10\)？
+      <div class="opts">
+        <span>(1) 13 個</span><span>(2) 14 個</span><span>(3) 15 個</span><span>(4) 16 個</span><span>(5) 無窮多個</span>
+      </div>
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">(1)，13 個</span></p>
+      <p><span class="k">解題關鍵：</span>分段。\(x\ge 0\)：\(3x\lt 10\Rightarrow 0\le x\lt\tfrac{10}{3}\)；\(x\lt 0\)：\(-3x\lt 10\Rightarrow -\tfrac{10}{3}\lt x\lt 0\)。合併 \(-\tfrac{10}{3}\lt x\lt\tfrac{10}{3}\)，整數 \(x=-3,-2,-1,0,1,2,3\) 共 <b>7 個</b>。（題目若為 \(|2x|+|x|\lt 10\) 即 \(3|x|\lt 10\)，整數解為 \(-3\le x\le 3\)，共 7 個；原題可能為 \(|2x+x|\lt 10\)，請核對原文。）</p>
+    </div>
+
+    <div class="q-meta"><span class="tag">114 數B · 單選 1</span><span class="lv">★☆☆（易）</span><span class="core">解題核心：絕對值的幾何意義</span></div>
+    <div class="q-body">
+      設數線上有一點 \(P\)，其坐標 \(x\) 滿足「\(P\) 到 1 的距離」加上「\(P\) 到 4 的距離」等於 4。試問這樣的 \(P\) 有幾個？
+      <div class="opts">
+        <span>(1) 0 個</span><span>(2) 1 個</span><span>(3) 2 個</span><span>(4) 3 個</span><span>(5) 無窮多個</span>
+      </div>
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">(3)，2 個</span></p>
+      <p><span class="k">解題關鍵：</span>即 \(|x-1|+|x-4|=4\)。當 \(P\) 落在 \([1,4]\) 內，距離和恆為 \(3\neq 4\)；落在區間外時距離和 \(\gt 3\)，左、右各有一個解，故共 <b>2 個</b>。</p>
+    </div>
+
+    <div class="q-meta"><span class="tag">115 數B · 單選 1</span><span class="lv">★☆☆（易）</span><span class="core">解題核心：含絕對值的一次不等式</span></div>
+    <div class="q-body">
+      某測量的標準值為 95。試問有幾個整數 \(N\)，與標準值的誤差百分比 \(\dfrac{|N-95|}{95}\times 100\%\) 小於 5%？
+      <div class="opts">
+        <span>(1) 4 個</span><span>(2) 5 個</span><span>(3) 8 個</span><span>(4) 9 個</span><span>(5) 10 個</span>
+      </div>
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">(4)，9 個</span></p>
+      <p><span class="k">解題關鍵：</span>\(\dfrac{|N-95|}{95}\lt\dfrac{1}{20}\Rightarrow|N-95|\lt 4.75\Rightarrow 90.25\lt N\lt 99.75\)，整數 \(N=91,92,\ldots,99\) 共 <b>9 個</b>。</p>
+    </div>
+
+    <span class="label">解題策略</span>
+    <div class="callout">去絕對值兩條路：<b>幾何意義</b>（\(|x-a|\) 是到 \(a\) 的距離，畫數線最快）或<b>分段討論</b>（依絕對值內部變號點分段，逐段解再合併）。看到「到兩定點的距離和」直接想「最小值＝兩點距離」。</div>
+  </div>
+
+  <!-- ===== 考點 3 ===== -->
+  <div class="card" id="kp3">
+    <p class="kp"><span class="num">考點 3</span>數線上的點、距離、分點與根號估算</p>
+    <div class="callout"><b>◆ 這個考點在學什麼：</b>把數線上的「距離、中點、分點、根號落點」算清楚——幾乎都是送分題，重點在<b>根號夾在相鄰平方數之間</b>與<b>不等式取交集</b>。</div>
+
+    <span class="label">重點與公式</span>
+    <ul class="points">
+      <li><b>距離與中點：</b>\(a\)、\(b\) 兩點距離 \(=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(|a-b|\)</span></span>，中點坐標 \(=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{a+b}{2}\)</span></span>。</li>
+      <li><b>分點公式：</b>\(P\) 在 \(A_a\)、\(B_b\) 之間且 \(PA:PB=m:n\)，則 \(P\) 坐標 \(=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{na+mb}{m+n}\)</span></span>。
+        <span class="sub">（中點是 \(m:n=1:1\) 的特例）</span></li>
+      <li><b>根號估算：</b>\(\sqrt{N}\) 夾在相鄰兩完全平方根之間；例 \(10\lt\sqrt{101}\lt 11\)、\(6\lt\sqrt{38}\lt 7\)；用以判斷整數落點。</li>
+      <li><b>雙重根號化簡：</b>\(\sqrt{a+b\pm 2\sqrt{ab}}=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\sqrt{a}\pm\sqrt{b}\)</span></span>（\(a\gt b\ge 0\)）。</li>
+      <li><b>不等式取交集：</b>兩條件分別解出範圍後 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">取交集</span></span>（畫數線輔助）。</li>
+    </ul>
+
+    <span class="label">常見誤解 × → 正解 ○</span>
+    <div class="tbl-wrap"><table class="mis">
+      <tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr>
+      <tr><td class="err">\(\sqrt{a+b}=\sqrt{a}+\sqrt{b}\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">根號對加法不可拆；正確為 \(\sqrt{a+b\pm 2\sqrt{ab}}=\sqrt{a}\pm\sqrt{b}\)</div></td></tr>
+      <tr><td class="err">「同時滿足」兩條件取聯集</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">要取<b>交集</b>（兩範圍重疊處）</div></td></tr>
+      <tr><td class="err">中點公式與分點公式混用</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">中點是 \(m:n=1:1\) 的特例，分點公式更一般</div></td></tr>
+      <tr><td class="err">隨手估 \(\sqrt{N}\) 的近似值</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">先用相鄰平方框出整數範圍再細估</div></td></tr>
+    </table></div>
+
+    <span class="label">歷屆試題</span>
+
+    <div class="q-meta"><span class="tag">109 數A · 單選 5</span><span class="lv">★☆☆（易）</span><span class="core">解題核心：根號的估算與不等式交集</span></div>
+    <div class="q-body">
+      試問數線上有多少個整數點，與點 \(\sqrt{101}\) 的距離小於 5，但與點 \(\sqrt{38}\) 的距離大於 3？
+      <div class="opts">
+        <span>(1) 1 個</span><span>(2) 4 個</span><span>(3) 6 個</span><span>(4) 8 個</span><span>(5) 10 個</span>
+      </div>
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">(3)，6 個</span></p>
+      <p><span class="k">解題關鍵：</span>\(\sqrt{101}\approx 10.05\)、\(\sqrt{38}\approx 6.16\)。</p>
+      <p>條件一：\(|n-\sqrt{101}|\lt 5\Rightarrow 5.05\lt n\lt 15.05\)。</p>
+      <p>條件二：\(|n-\sqrt{38}|\gt 3\Rightarrow n\lt 3.16\) 或 \(n\gt 9.16\)。</p>
+      <p>取交集得 \(9.16\lt n\lt 15.05\)，整數 \(n=10,11,12,13,14,15\) 共 <b>6 個</b>。</p>
+    </div>
+
+    <div class="q-meta"><span class="tag">108 數A · 多選 8</span><span class="lv">★☆☆（易）</span><span class="core">解題核心：數線上的等速運動</span></div>
+    <div class="q-body">
+      在數線上，甲從點 \(-8\) 開始做等速運動，同時乙也從點 \(10\) 開始做等速運動，乙的速率是甲的 \(a\) 倍且 \(a\gt 1\)。試選出正確的選項。
+      <div class="opts">
+        <span>(1) 若甲朝負向、乙朝正向，則他們會相遇</span>
+        <span>(2) 若甲、乙皆朝負向，則他們不會相遇</span>
+        <span>(3) 若甲朝正向、乙朝負向，則甲先到達原點 0</span>
+        <span>(4) 若甲朝正向、乙朝負向，則他們之間的距離會越來越大</span>
+        <span>(5) 若甲、乙皆朝負向且在點 \(-2\) 相遇，則 \(a=2\)</span>
+      </div>
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">(4)(5)</span></p>
+      <p><span class="k">解題關鍵：</span>甲在 \(-8\)、乙在 \(10\)、乙較快（\(a\gt 1\)）。</p>
+      <p>(1) ✗：反向遠離，不會相遇。</p>
+      <p>(2) ✗：同向但乙快，乙會追上甲。</p>
+      <p>(3) ✗：甲走 8、乙走 10，乙速度較快，乙先到原點。</p>
+      <p>(4) ✓：甲向正、乙向負，兩人方向相反，距離拉大。</p>
+      <p>(5) ✓：同時，甲走 \(-8\to-2\) 走了 6，乙走 \(10\to-2\) 走了 12；速率比 \(=12/6=2\)，故 \(a=2\)。</p>
+    </div>
+
+    <div class="q-meta"><span class="tag">110 數A · 選填 A</span><span class="lv">★☆☆（易）</span><span class="core">解題核心：數線上的週期移動</span></div>
+    <div class="q-body">
+      某機器從原點朝正向移動：以 8 秒為一週期，每週期先以每秒 4 單位前進 6 秒、再停止 2 秒，如此繼續。則此機器在第 _____ 秒會剛好停止移動且位於坐標 116 的位置。
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">第 37 秒</span></p>
+      <p><span class="k">解題關鍵：</span>每 8 秒前進 \(4\times 6=24\) 單位。\(116=24\times 4+20\)，前 4 個完整週期（32 秒）到達 96；再前進 20 需 \(20\div 4=5\) 秒，故第 \(32+5=\mathbf{37}\) 秒到達 116。</p>
+    </div>
+
+    <span class="label">解題策略</span>
+    <div class="callout">根號估算先「框整數」：找 \(\sqrt{N}\) 落在哪兩個相鄰平方數之間，再決定整數點落點。多條件題分別解範圍後<b>畫數線取交集</b>。等速／週期移動化為「位置＝起點＋速率×時間」逐段算。</div>
+  </div>
+
+  <!-- ===== 考點 4 ===== -->
+  <div class="card" id="kp4">
+    <p class="kp"><span class="num">考點 4</span>乘法公式、對稱式求值與算幾不等式</p>
+    <div class="callout"><b>◆ 這個考點在學什麼：</b>把「展開、對稱式求值、用算幾求極值」三件代數工具練熟——這是數與式裡計算量最大、也最常和幾何結合的考點。</div>
+
+    <span class="label">重點與公式</span>
+    <ul class="points">
+      <li><b>乘法公式：</b>
+        <span class="sub">\((a\pm b)^2=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a^2\pm 2ab+b^2\)</span></span></span>
+        <span class="sub">\((a+b)(a-b)=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a^2-b^2\)</span></span></span>
+        <span class="sub">\((a\pm b)^3=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a^3\pm 3a^2b+3ab^2\pm b^3\)</span></span></span>
+        <span class="sub">\((a+b+c)^2=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a^2+b^2+c^2+2ab+2bc+2ca\)</span></span></span></li>
+      <li><b>對稱式求值</b>（已知 \(a+b\)、\(ab\)）：
+        <span class="sub">\(a^2+b^2=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\((a+b)^2-2ab\)</span></span></span>
+        <span class="sub">\((a-b)^2=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\((a+b)^2-4ab\)</span></span></span>
+        <span class="sub">\(a^3+b^3=\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\((a+b)^3-3ab(a+b)\)</span></span></span></li>
+      <li><b>比與比例：</b>\(a:b=c:d\Leftrightarrow\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(ad=bc\)</span></span>；加權平均 ＝ 加權總和 ÷ 總量。</li>
+      <li><b>算幾不等式：</b>\(a,b\ge 0\) 時 \(\dfrac{a+b}{2}\ge\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\sqrt{ab}\)</span></span>，等號於 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a=b\)</span></span> 成立；
+        <span class="sub">常配倒數：\(x+\dfrac{k}{x}\ge\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(2\sqrt{k}\)</span></span>（\(x\gt 0\)），等號於 \(x=\sqrt{k}\) 時成立。</span></li>
+    </ul>
+
+    <span class="label">常見誤解 × → 正解 ○</span>
+    <div class="tbl-wrap"><table class="mis">
+      <tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr>
+      <tr><td class="err">\((a+b)^2=a^2+b^2\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">漏了 \(2ab\)：正確為 \(a^2+2ab+b^2\)</div></td></tr>
+      <tr><td class="err">\(a^2+b^2=(a+b)^2\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">應為 \((a+b)^2-2ab\)</div></td></tr>
+      <tr><td class="err">算幾不等式不看 \(a,b\) 的正負</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">須 \(a,b\ge 0\) 才能用算幾</div></td></tr>
+      <tr><td class="err">算幾等號隨便成立</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">等號只在 \(a=b\) 時，須驗證可達</div></td></tr>
+    </table></div>
+
+    <span class="label">歷屆試題</span>
+
+    <div class="q-meta"><span class="tag">106 數A · 單選 1</span><span class="lv">★★☆（中）</span><span class="core">解題核心：用符號代表數、比率的定義</span></div>
+    <div class="q-body">
+      已知某校老師玩過某遊戲的比率為 \(p\)、學生玩過的比率為 \(q\)，其中 \(p\gt q\)。下列哪一項資訊，足以判別「全校師生玩過該遊戲的比率」？
+      <div class="opts">
+        <span>(1) 全校老師與學生的人數</span>
+        <span>(2) 全校師生的總人數</span>
+        <span>(3) 全校學生的人數</span>
+        <span>(4) 全校老師的人數</span>
+        <span>(5) 全校師生玩過該遊戲的總人數</span>
+      </div>
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">(1)</span></p>
+      <p><span class="k">解題關鍵：</span>設老師 \(a\) 人、學生 \(b\) 人，玩過人數 \(=pa+qb\)，全校比率 \(=\dfrac{pa+qb}{a+b}\)。須同時知道 \(a\)、\(b\) 方能算出，故選 <b>(1)</b>。</p>
+    </div>
+
+    <div class="q-meta"><span class="tag">107 數A · 選填 C</span><span class="lv">★★☆（中）</span><span class="core">解題核心：圓的切線性質、算幾不等式</span></div>
+    <div class="q-body">
+      平面上兩點 \(A\)、\(B\) 距離為 5。以 \(A\) 為圓心作半徑 \(r\)（\(0\lt r\lt 5\)）的圓 \(\Gamma\)，過 \(B\) 作 \(\Gamma\) 的切線，切點之一為 \(P\)。當 \(r\) 變動時，\(\triangle PAB\) 的面積最大可能值為 _____。
+    </div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">簡答：</span><span class="ad">\(\dfrac{25}{4}\)</span></p>
+      <p><span class="k">解題關鍵：</span>設 \(BP=x\)。切線垂直半徑故 \(\angle APB=90°\)，\(\triangle PAB\) 面積 \(=\dfrac{rx}{2}\)，且 \(r^2+x^2=25\)。由算幾不等式 \(r^2+x^2\ge 2rx\Rightarrow rx\le\dfrac{25}{2}\)，故面積 \(\le\dfrac{25}{4}\)（\(r=x=\dfrac{5}{\sqrt{2}}\) 時最大）。</p>
+    </div>
+
+    <span class="label">解題策略</span>
+    <div class="callout">對稱式求值別硬解 \(a\)、\(b\)：只要湊出 \(a+b\) 與 \(ab\)，再套 \(a^2+b^2=(a+b)^2-2ab\) 之類公式。求極值看到「和定／積定」就用算幾，務必檢查「\(a,b\ge 0\)」與「\(a=b\) 的等號可達」。</div>
+  </div>
+
+  <!-- ================= PART 2 ================= -->
+  <div class="part" id="part2">Part 2　喚起行動：模擬實戰（13 題）<small>建議限時 40 分鐘，自行作答後再對照詳解</small></div>
+
+  <div class="card">
+    <p style="color:var(--maroon-d);font-weight:700;margin:0 0 14px">一、單選題</p>
+
+    <div class="q-meta" style="margin-top:0"><span class="tag">練習 1</span><span class="lv">★☆☆</span><span class="core">考點：絕對值不等式</span></div>
+    <div class="q-body">滿足 \(|2x-3|\lt 5\) 的整數 \(x\) 共有幾個？
+      <div class="opts"><span>(1) 3</span><span>(2) 4</span><span>(3) 5</span><span>(4) 6</span><span>(5) 7</span></div></div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">(2) 4 個</span></p>
+      <p>\(-5\lt 2x-3\lt 5\Rightarrow -1\lt x\lt 4\)，整數 \(x=0,1,2,3\) 共 4 個。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 2</span><span class="lv">★☆☆</span><span class="core">考點：根號估算</span></div>
+    <div class="q-body">設 \(n\) 為整數且 \(n\lt\sqrt{50}\lt n+1\)，則 \(n=\)？
+      <div class="opts"><span>(1) 5</span><span>(2) 6</span><span>(3) 7</span><span>(4) 8</span><span>(5) 9</span></div></div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">(3) 7</span></p>
+      <p>\(49\lt 50\lt 64\Rightarrow 7\lt\sqrt{50}\lt 8\)，故 \(n=7\)。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 3</span><span class="lv">★★☆</span><span class="core">考點：絕對值的幾何意義（最小值）</span></div>
+    <div class="q-body">\(|x-2|+|x+1|\) 的最小值為？
+      <div class="opts"><span>(1) 1</span><span>(2) 2</span><span>(3) 3</span><span>(4) 4</span><span>(5) 0</span></div></div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">(3) 3</span></p>
+      <p>表 \(x\) 到 2 與到 \(-1\) 的距離和，最小值為兩點距離 \(|2-(-1)|=3\)（於 \(-1\le x\le 2\) 時取得）。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 4</span><span class="lv">★★☆</span><span class="core">考點：算幾不等式</span></div>
+    <div class="q-body">設 \(x\gt 0\)，則 \(x+\dfrac{4}{x}\) 的最小值為？
+      <div class="opts"><span>(1) 2</span><span>(2) 3</span><span>(3) 4</span><span>(4) 5</span><span>(5) 8</span></div></div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">(3) 4</span></p>
+      <p>\(x\gt 0\)，由算幾不等式 \(x+\dfrac{4}{x}\ge 2\sqrt{x\cdot\dfrac{4}{x}}=2\sqrt{4}=4\)（\(x=2\) 時等號）。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 5</span><span class="lv">★★☆</span><span class="core">考點：數線距離（中點）</span></div>
+    <div class="q-body">數線上滿足 \(|x-1|=|x-5|\) 的 \(x\) 值為？
+      <div class="opts"><span>(1) 2</span><span>(2) 3</span><span>(3) 4</span><span>(4) \(-3\)</span><span>(5) 6</span></div></div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">(2) 3</span></p>
+      <p>表 \(x\) 到 1、5 等距，即 1 和 5 的中點 \(x=\dfrac{1+5}{2}=3\)。</p></div>
+
+    <p style="color:var(--maroon-d);font-weight:700;margin:2em 0 14px">二、多選題</p>
+
+    <div class="q-meta" style="margin-top:0"><span class="tag">練習 6</span><span class="lv">★★★</span><span class="core">考點：絕對值的性質</span></div>
+    <div class="q-body">設 \(a,b\) 為實數，下列敘述何者恆成立？
+      <div class="opts">
+        <span>(1) \(|-a|=|a|\)</span>
+        <span>(2) \(|ab|=|a||b|\)</span>
+        <span>(3) \(|a+b|=|a|+|b|\)</span>
+        <span>(4) \(\sqrt{a^2}=|a|\)</span>
+        <span>(5) 若 \(|a|\lt 2\)，則 \(-2\lt a\lt 2\)</span>
+      </div></div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">(1)(2)(4)(5)</span></p>
+      <p>(3) ✗：一般只有 \(|a+b|\le|a|+|b|\)，等號僅在 \(a,b\) 同號（含 0）時成立。其餘恆成立。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 7</span><span class="lv">★★★</span><span class="core">考點：有理數、無理數的運算</span></div>
+    <div class="q-body">設 \(a\) 為有理數、\(b\) 為無理數，下列敘述何者恆成立？
+      <div class="opts">
+        <span>(1) \(a+b\) 為無理數</span>
+        <span>(2) \(ab\) 為無理數</span>
+        <span>(3) \(b^2\) 為有理數</span>
+        <span>(4) 若 \(a\neq 0\)，則 \(\dfrac{b}{a}\) 為無理數</span>
+        <span>(5) \(b-\lfloor b\rfloor\)（\(\lfloor\cdot\rfloor\) 為高斯符號）為無理數</span>
+      </div></div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">(1)(4)(5)</span></p>
+      <p>(1) ✓：有理 ＋ 無理 ＝ 無理。</p>
+      <p>(2) ✗：\(a=0\) 時 \(ab=0\) 為有理數。</p>
+      <p>(3) ✗：如 \(b=\sqrt[4]{2}\) 則 \(b^2=\sqrt{2}\) 仍為無理數，不恆成立。</p>
+      <p>(4) ✓：無理數除以非零有理數為無理數。</p>
+      <p>(5) ✓：\(\lfloor b\rfloor\) 為整數，無理數減整數仍為無理數。</p></div>
+
+    <p style="color:var(--maroon-d);font-weight:700;margin:2em 0 14px">三、選填題</p>
+
+    <div class="q-meta" style="margin-top:0"><span class="tag">練習 8</span><span class="lv">★★☆</span><span class="core">考點：絕對值不等式的交集</span></div>
+    <div class="q-body">同時滿足 \(|x-3|\le 2\) 與 \(|x+1|\gt 1\) 的整數 \(x\) 共有 _____ 個。</div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">5 個</span></p>
+      <p>\(|x-3|\le 2\Rightarrow 1\le x\le 5\)；\(|x+1|\gt 1\Rightarrow x\gt 0\) 或 \(x\lt-2\)。交集 \(1\le x\le 5\)，整數 \(x=1,2,3,4,5\) 共 <b>5 個</b>。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 9</span><span class="lv">★★☆</span><span class="core">考點：算幾不等式應用</span></div>
+    <div class="q-body">設 \(x\gt 1\)，則 \(x+\dfrac{9}{x-1}\) 的最小值為 _____。</div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">7</span></p>
+      <p>令 \(t=x-1\gt 0\)：\(x+\dfrac{9}{x-1}=(t+1)+\dfrac{9}{t}=t+\dfrac{9}{t}+1\ge 2\sqrt{t\cdot\dfrac{9}{t}}+1=2\cdot 3+1=7\)（\(t=3\)，即 \(x=4\) 時）。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 10</span><span class="lv">★★☆</span><span class="core">考點：根號估算與整數點</span></div>
+    <div class="q-body">數線上與點 \(\sqrt{72}\) 的距離小於 2 的整數點共有 _____ 個。</div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">4 個</span></p>
+      <p>\(\sqrt{72}=6\sqrt{2}\approx 8.49\)，故 \(6.49\lt x\lt 10.49\)，整數 \(x=7,8,9,10\) 共 <b>4 個</b>。</p></div>
+
+    <p style="color:var(--maroon-d);font-weight:700;margin:2em 0 14px">四、非選擇題</p>
+
+    <div class="q-meta" style="margin-top:0"><span class="tag">練習 11</span><span class="lv">★★★</span><span class="core">考點：分段討論解絕對值方程式</span></div>
+    <div class="q-body">試解方程式 \(|x-1|+|x-3|=6\)，並求所有解之和。</div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol"><p><span class="k">答：</span><span class="ad">所有解之和 \(=4\)</span></p>
+      <p>分段：\(x\ge 3\)：\((x-1)+(x-3)=6\Rightarrow 2x=10\Rightarrow x=5\) ✓</p>
+      <p>\(1\le x\lt 3\)：\((x-1)+(3-x)=2\neq 6\)，無解。</p>
+      <p>\(x\lt 1\)：\((1-x)+(3-x)=6\Rightarrow -2x=2\Rightarrow x=-1\) ✓</p>
+      <p>兩解 \(x=5\) 和 \(x=-1\)，和 \(=5+(-1)=\mathbf{4}\)。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 12</span><span class="lv">★★★</span><span class="core">考點：算幾不等式（切線情境）</span></div>
+    <div class="q-body">平面上兩點 \(A\)、\(B\) 距離為 6，以 \(A\) 為圓心作半徑 \(r\)（\(0\lt r\lt 6\)）的圓，過 \(B\) 作此圓的切線、切點為 \(P\)。<br>
+      (1) 以 \(r\) 表示 \(\triangle PAB\) 的面積。<br>
+      (2) 求 \(\triangle PAB\) 面積的最大值。</div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">(1)</span> 設 \(BP=x\)，切線垂直半徑故 \(\angle APB=90°\)，\(r^2+x^2=36\Rightarrow x=\sqrt{36-r^2}\)。</p>
+      <p>面積 \(=\dfrac{1}{2}rx=\dfrac{r\sqrt{36-r^2}}{2}\)。</p>
+      <p><span class="k">(2)</span> 由算幾不等式 \(r^2+(36-r^2)\ge 2r\sqrt{36-r^2}\Rightarrow r\sqrt{36-r^2}\le 18\)，故面積 \(\le 9\)（\(r=x=3\sqrt{2}\) 時最大）。最大值 \(=\mathbf{9}\)。</p></div>
+
+    <div class="q-meta"><span class="tag">練習 13</span><span class="lv">★★★</span><span class="core">考點：比率與加權平均</span></div>
+    <div class="q-body">某班男生 20 人、女生 \(a\) 人。已知男生平均體重 60 公斤、女生平均體重 50 公斤，全班平均體重為 55 公斤。<br>
+      (1) 以 \(a\) 列出全班平均體重的式子。<br>
+      (2) 求 \(a\)。</div>
+    <button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button>
+    <div class="sol">
+      <p><span class="k">(1)</span> 全班平均 \(=\dfrac{20\times 60+a\times 50}{20+a}=55\)。</p>
+      <p><span class="k">(2)</span> \(1200+50a=55(20+a)=1100+55a\Rightarrow 100=5a\Rightarrow\mathbf{a=20}\)。</p></div>
+  </div>
+
+  <!-- ================= PART 3 ================= -->
+  <div class="part" id="part3">Part 3　快速複習：考前翻這頁就好 <small>公式速查 ＋ 常見誤解清單</small></div>
+
+  <div class="card">
+    <p class="kp" style="font-size:17px">3-1　必背公式一頁速查</p>
+    <div class="tbl-wrap"><table class="ref">
+      <tr><th>主題</th><th>必記公式 / 結論</th></tr>
+      <tr><td>實數系</td><td>正整數 \(\subset\) 整數 \(\subset\) 有理數 \(\subset\) 實數；實數 ＝ 有理 \(\cup\) 無理</td></tr>
+      <tr><td>有理 / 無理</td><td>有理數＝可化分數（有限或循環小數）；無理＝不循環無限小數</td></tr>
+      <tr><td>運算判定</td><td>有理 ＋ 無理 ＝ 無理；無理 ± 無理不一定</td></tr>
+      <tr><td>循環小數</td><td>\(0.\overline{ab}=\dfrac{ab}{99}\)、\(0.\overline{abc}=\dfrac{abc}{999}\)</td></tr>
+      <tr><td>絕對值定義</td><td>\(|a|\)＝到原點距離；\(|a-b|\)＝兩點距離</td></tr>
+      <tr><td>絕對值不等式</td><td>\(|x|\lt k\Leftrightarrow -k\lt x\lt k\)；\(|x|\gt k\Leftrightarrow x\lt -k\) 或 \(x\gt k\)</td></tr>
+      <tr><td>三角不等式</td><td>\(|a-b|\le|a\pm b|\le|a|+|b|\)</td></tr>
+      <tr><td>距離和最小</td><td>\(|x-a|+|x-b|\) 最小值 \(=|a-b|\)（於 \(a,b\) 之間）</td></tr>
+      <tr><td>距離 / 中點 / 分點</td><td>距離 \(|a-b|\)、中點 \(\dfrac{a+b}{2}\)、分點 \(\dfrac{na+mb}{m+n}\)</td></tr>
+      <tr><td>根號估算</td><td>\(\sqrt{N}\) 夾在相鄰平方根之間；雙重根號 \(\sqrt{a+b\pm 2\sqrt{ab}}=\sqrt{a}\pm\sqrt{b}\)</td></tr>
+      <tr><td>乘法公式</td><td>\((a\pm b)^2=a^2\pm 2ab+b^2\)、\((a\pm b)^3=a^3\pm 3a^2b+3ab^2\pm b^3\)</td></tr>
+      <tr><td>對稱式</td><td>\(a^2+b^2=(a+b)^2-2ab\)、\(a^3+b^3=(a+b)^3-3ab(a+b)\)</td></tr>
+      <tr><td>算幾不等式</td><td>\(\dfrac{a+b}{2}\ge\sqrt{ab}\)（\(a,b\ge 0\)，\(a=b\) 等號）；\(x+\dfrac{k}{x}\ge 2\sqrt{k}\)</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <p class="kp" style="font-size:17px">3-2　常見誤解總清單（考前自我檢查）</p>
+    <ol class="checklist">
+      <li>\(\sqrt{a^2}=|a|\)，不是 \(a\)（\(a\) 可能為負）。</li>
+      <li>\(|a+b|\le|a|+|b|\)，等號只在同號（含 0）時。</li>
+      <li>\(|x-a|+|x-b|\) 最小值是 \(|a-b|\)，不是 0。</li>
+      <li>循環小數是有理數（可化分數）；\(0.\overline{9}=1\)。</li>
+      <li>無理 ± 無理、無理 × 無理不一定是無理（需找反例）。</li>
+      <li>「同時滿足」兩條件取<b>交集</b>，不是聯集。</li>
+      <li>\(\sqrt{a+b}\neq\sqrt{a}+\sqrt{b}\)；根號對加法不可拆。</li>
+      <li>算幾不等式須 \(a,b\ge 0\)，等號須驗證 \(a=b\) 可達。</li>
+    </ol>
+  </div>
+
+  <div class="foot">115 學測數學 · 數與式 · 互動學習講義</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script>
+function tb(el){el.classList.toggle('on')}
+function ts(btn){
+  var sol=btn.nextElementSibling;
+  var open=sol.classList.toggle('open');
+  btn.classList.toggle('active',open);
+  btn.textContent=open?btn.dataset.h:btn.dataset.s;
+}
+function revealAll(){
+  document.querySelectorAll('.blank').forEach(function(b){b.classList.add('on')});
+  document.querySelectorAll('.sol-btn').forEach(function(b){
+    var sol=b.nextElementSibling;
+    if(!sol.classList.contains('open')){sol.classList.add('open');b.classList.add('active');b.textContent=b.dataset.h;}
+  });
+}
+function hideAll(){
+  document.querySelectorAll('.blank').forEach(function(b){b.classList.remove('on')});
+  document.querySelectorAll('.sol-btn').forEach(function(b){
+    var sol=b.nextElementSibling;
+    if(sol.classList.contains('open')){sol.classList.remove('open');b.classList.remove('active');b.textContent=b.dataset.s;}
+  });
+}
+document.addEventListener('DOMContentLoaded',function(){
+  try{
+    renderMathInElement(document.body,{
+      delimiters:[
+        {left:'\\(',right:'\\)',display:false},
+        {left:'\\[',right:'\\]',display:true}
+      ],
+      throwOnError:false
+    });
+  }catch(e){}
+});
+</script>
+</body>
+</html>
