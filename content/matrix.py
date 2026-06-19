@@ -76,11 +76,11 @@ UNIT = {
                 {"wrong": r"\(AB=AC\Rightarrow B=C\)", "right": r"須 \(A\) 可逆才能左消去"},
             ],
             "questions": [
-                {"tag": "108 數A · 選填 A", "level": "★☆☆（易）", "core": "矩陣的相等、矩陣的乘法",
+                {"tag": "108 舊制 · 選填 A", "level": "★☆☆（易）", "core": "矩陣的相等、矩陣的乘法",
                  "body": r"設 \(x,y\) 為實數，且滿足 \(\begin{bmatrix}3&-1&3\\2&4&-1\end{bmatrix}\begin{bmatrix}x\\y\\1\end{bmatrix}=\begin{bmatrix}6\\-6\end{bmatrix}\)，則 \(x+3y=\) ？",
                  "solution": {"brief": r"\(x+3y=-4\)",
                               "steps": [r"依乘法定義得 \(\begin{cases}3x-y+3=6\\2x+4y-1=-6\end{cases}\Rightarrow\begin{cases}3x-y=3\\2x+4y=-5\end{cases}\)，解得 \(x=\tfrac12,\;y=-\tfrac32\)，故 \(x+3y=\tfrac12-\tfrac92=-4\)。"]}},
-                {"tag": "107 數A · 選填 F", "level": "★★☆（中）", "core": "矩陣的乘法定義",
+                {"tag": "107 舊制 · 選填 F", "level": "★★☆（中）", "core": "矩陣的乘法定義",
                  "body": r"設 \(a,b,c,d,e,x,y,z\) 皆為實數，考慮矩陣相乘 \(\begin{bmatrix}a&b\\c&d\\1&2\end{bmatrix}\begin{bmatrix}-3&5&7\\-4&6&e\end{bmatrix}=\begin{bmatrix}3&x&7\\0&y&7\\-11&z&23\end{bmatrix}\)，則 \(y=\) ？（化成最簡分數）",
                  "solution": {"brief": r"\(y=\dfrac72\)",
                               "steps": [r"由第三列定 \(e\)：\(1\cdot7+2e=23\Rightarrow e=8\)。由第二列：\(-3c-4d=0\) 且 \(7c+de=7\Rightarrow 7c+8d=7\)，解得 \(c=7,\;d=-\tfrac{21}{4}\)，故 \(y=5c+6d=35-\tfrac{126}{4}=\tfrac72\)。"]}},
@@ -125,7 +125,7 @@ UNIT = {
                 {"wrong": r"高次方只能硬乘", "right": r"先找 \(A^2=kI\) 或 \(A^2=pA+qI\) 降冪最快"},
             ],
             "questions": [
-                {"tag": "110 數A · 單選 1", "level": "★☆☆（易）", "core": "矩陣乘積（高次方）的定義",
+                {"tag": "110 舊制 · 單選 1", "level": "★☆☆（易）", "core": "矩陣乘積（高次方）的定義",
                  "body": r"設 \(A=\begin{bmatrix}1&2\\0&3\end{bmatrix}\)，若 \(A^4=\begin{bmatrix}a&b\\c&d\end{bmatrix}\)，則 \(a+b+c+d\) 之值為下列哪一個選項？",
                  "options": ["158", "162", "166", "170", "174"],
                  "solution": {"brief": r"(2)，\(a+b+c+d=162\)",
@@ -179,7 +179,7 @@ UNIT = {
                 {"wrong": r"\(AX=B\Rightarrow X=BA^{-1}\)", "right": r"\(X=A^{-1}B\)（\(A\) 在左就從左乘）"},
             ],
             "questions": [
-                {"tag": "109 數A · 單選 4", "level": "★★☆（中）", "core": "單位矩陣、反方陣、矩陣的乘法與加法",
+                {"tag": "109 舊制 · 單選 4", "level": "★★☆（中）", "core": "單位矩陣、反方陣、矩陣的乘法與加法",
                  "body": r"令 \(I=\begin{bmatrix}1&0\\0&1\end{bmatrix}\)、\(A=\begin{bmatrix}1&1\\3&4\end{bmatrix}\)、\(B=I+A+A^{-1}\)，試選出代表 \(BA\) 的選項。",
                  "options": [r"\(\begin{bmatrix}1&0\\0&1\end{bmatrix}\)", r"\(\begin{bmatrix}6&6\\0&0\end{bmatrix}\)", r"\(\begin{bmatrix}4&-1\\-3&1\end{bmatrix}\)", r"\(\begin{bmatrix}1&1\\3&4\end{bmatrix}\)", r"\(\begin{bmatrix}6&6\\18&24\end{bmatrix}\)"],
                  "solution": {"brief": r"(5)",
@@ -244,7 +244,7 @@ UNIT = {
                 {"wrong": r"化簡前就急著判斷", "right": r"必須化到列梯形、**看最末一列** 才能判別"},
             ],
             "questions": [
-                {"tag": "106 數A · 選填 D", "level": "★★☆（中）", "core": "方程組「有解」（含無限多解）的條件",
+                {"tag": "106 舊制 · 選填 D", "level": "★★☆（中）", "core": "方程組「有解」（含無限多解）的條件",
                  "body": r"設 \(a_1,a_2,\dots,a_9\) 為等差數列且 \(k\) 為實數。若方程組 \(\begin{cases}a_1x-a_2y+2a_3z=k+1\\a_4x-a_5y+2a_6z=-k-5\\a_7x-a_8y+2a_9z=k+9\end{cases}\) 有解，則 \(k=\) ？",
                  "solution": {"brief": r"\(k=-5\)",
                               "steps": [r"因 \(\{a_n\}\) 等差，三式的係數列也成等差，故〔第1列〕\(-2\times\)〔第2列〕\(+\)〔第3列〕的係數全為 \(0\)。",
@@ -320,7 +320,7 @@ UNIT = {
                 {"wrong": r"旋轉可能不可逆", "right": r"旋轉 \(\det R=1\) 恆可逆；鏡射 \(\det=-1\) 也可逆"},
             ],
             "questions": [
-                {"tag": "110 數A · 多選 8", "level": "★★★（難 · 跨單元：矩陣 × 向量 × 圓 × 三角）", "core": "圓上弦長與旋轉（旋轉矩陣 \\(R(60^\\circ)\\)）",
+                {"tag": "110 舊制 · 多選 8", "level": "★★★（難 · 跨單元：矩陣 × 向量 × 圓 × 三角）", "core": "圓上弦長與旋轉（旋轉矩陣 \\(R(60^\\circ)\\)）",
                  "body": r"如圖，\(L\) 為坐標平面上通過原點 \(O\) 的直線，\(\Gamma\) 為以 \(O\) 為圓心的圓，且 \(L\) 與 \(\Gamma\) 交於一點 \(A(3,4)\)。已知 \(B,C\) 為 \(\Gamma\) 上相異兩點且滿足 \(\overrightarrow{BC}=\overrightarrow{OA}\)。試選出正確的選項。",
                  "options": [r"\(L\) 與 \(\Gamma\) 的另一個交點為 \((-4,-3)\)", r"直線 \(BC\) 的斜率為 \(\dfrac34\)", r"\(\angle AOC=60^\circ\)", r"\(\triangle ABC\) 的面積為 \(\dfrac{25\sqrt3}{2}\)", r"\(B\) 與 \(C\) 在同一象限內"],
                  "solution": {"brief": r"(3)(5)",

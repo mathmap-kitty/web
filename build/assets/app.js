@@ -18,12 +18,25 @@
     document.querySelectorAll('.sol').forEach(function(s){ s.classList.remove('open'); });
     document.querySelectorAll('.sol-btn').forEach(function(b){ b.classList.remove('active'); b.textContent=b.dataset.s||'顯示解答'; });
   }
-  // 附註浮動說明：點按開關，一次只開一個，點別處關閉
+  // 附註浮動說明：點按開關，一次只開一個，點別處關閉；並自動避免超出畫面被切到
   function tn(ev, el){
     ev.stopPropagation();
     var open = el.classList.contains('on');
-    document.querySelectorAll('.note.on').forEach(function(n){ n.classList.remove('on'); });
-    if(!open){ el.classList.add('on'); }
+    document.querySelectorAll('.note.on').forEach(function(n){
+      n.classList.remove('on');
+      var p = n.querySelector('.np'); if(p){ p.style.left=''; }
+    });
+    if(!open){
+      el.classList.add('on');
+      var np = el.querySelector('.np');
+      if(np){
+        np.style.left = '0px';
+        var m = 8, r = np.getBoundingClientRect();
+        if(r.right > window.innerWidth - m){ np.style.left = (-(r.right - (window.innerWidth - m))) + 'px'; }
+        r = np.getBoundingClientRect();
+        if(r.left < m){ np.style.left = ((parseFloat(np.style.left)||0) + (m - r.left)) + 'px'; }
+      }
+    }
   }
   // 點在附註以外的地方才關閉（避免和開啟的點擊互相打架）
   document.addEventListener('click', function(e){

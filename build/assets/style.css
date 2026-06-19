@@ -160,7 +160,7 @@
   .note>.np::before{content:""; position:absolute; left:14px; top:-6px;
     border:6px solid transparent; border-bottom-color:#243b3e; border-top:none}
   .note.on>.np{display:block}
-  .note .katex{color:#fff}
+  .note>.np .katex{color:#fff}
   @media(max-width:560px){ .note>.np{max-width:74vw} }
   .katex{font-size:1.04em}
   @media(max-width:560px){
