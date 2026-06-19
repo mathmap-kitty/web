@@ -1,0 +1,14 @@
+# 參考教材（超大 PDF，勿上 GitHub）
+參考文件/
+
+# 建置產物（可由 build/ 重新生成）
+dist/
+
+# Python 快取
+__pycache__/
+*.pyc
+
+# 暫存
+_*.txt
+_*.png
+_tmp*
