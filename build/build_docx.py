@@ -71,6 +71,22 @@ def _label(doc, text):
     return _para(doc, text, size=11, bold=True, color=MAROON, before=10, after=3)
 
 
+def _add_svg_figure(doc, svg, caption=None):
+    """把 SVG 圖以 fitz 轉 PNG 後置中嵌入。"""
+    import fitz, io
+    from docx.shared import Inches, Pt, RGBColor
+    d = fitz.open(stream=svg.encode("utf-8"), filetype="svg")
+    pix = d[0].get_pixmap(matrix=fitz.Matrix(3, 3), alpha=False)
+    png = io.BytesIO(pix.tobytes("png"))
+    p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.add_run().add_picture(png, width=Inches(1.25))
+    if caption:
+        cp = doc.add_paragraph(); cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        docx_rich(cp, caption, mode="teacher")
+        for r in cp.runs:
+            r.font.size = Pt(9.5); r.font.color.rgb = RGBColor.from_string("5A4A52"); _set_cjk(r)
+
+
 def _heading(doc, text, level):
     sizes = {0: 18, 1: 15, 2: 13}
     p = _para(doc, text, size=sizes.get(level, 12), bold=True,
@@ -137,7 +153,9 @@ def _kp(doc, kp, mode):
     _rich(doc, "這個考點在學什麼：" + kp["intro"], mode, size=11, after=4)
     _label(doc, "【必背重點與公式】")
     for p in kp["points"]:
-        if isinstance(p, dict):
+        if isinstance(p, dict) and "svg" in p:
+            _add_svg_figure(doc, p["svg"], p.get("caption"))
+        elif isinstance(p, dict):
             _rich(doc, "• **" + p["label"] + "：** " + p["lines"][0], mode,
                   size=11, indent=0.4, before=3, after=0)
             for l in p["lines"][1:]:
@@ -207,7 +225,7 @@ def build_docx(unit, mode, out_path):
     # Part 0
     p0 = unit.get("part0")
     if p0:
-        _heading(doc, "Part 0　引起動機：穩拿分的入門單元", level=1)
+        _heading(doc, "Part 0　引起動機：" + p0.get("heading", "出題趨勢與落點"), level=1)
         _label(doc, "近十年出題趨勢（106–115）")
         yrs = p0["trend_table"]["years"]
         cnts = p0["trend_table"]["counts"]

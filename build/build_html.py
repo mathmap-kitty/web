@@ -76,6 +76,9 @@ def _subq_html(sq):
 
 
 def _point_html(p):
+    if isinstance(p, dict) and "svg" in p:
+        cap = f'<figcaption>{html_rich(p["caption"])}</figcaption>' if p.get("caption") else ""
+        return f'<li class="figli"><figure class="tfig">{p["svg"]}{cap}</figure></li>'
     if isinstance(p, dict):
         lab = html_rich(p["label"]) + "："
         lines = "".join(f'<span class="ln">{html_rich(l)}</span>' for l in p["lines"])
@@ -161,8 +164,10 @@ def _part0_html(p0):
     notes = "".join(f"<li>{html_rich(n)}</li>" for n in p0.get("notes", []))
     mp = (f'<span class="label">考點地圖</span><div class="callout">{html_rich(p0["map"])}</div>'
           if p0.get("map") else "")
-    return ('<div class="part" id="part0">Part 0　引起動機：為什麼矩陣是穩拿分的單元'
-            '<small>先抓近十年趨勢與落點，再進入觀念</small></div>'
+    heading = p0.get("heading", "出題趨勢與落點")
+    sub = p0.get("sub", "先抓近十年趨勢與落點，再進入觀念")
+    return (f'<div class="part" id="part0">Part 0　引起動機：{heading}'
+            f'<small>{sub}</small></div>'
             '<div class="card">'
             '<span class="label">近十年出題趨勢（106–115）</span>'
             f"{table}"
@@ -204,6 +209,8 @@ def _toolbar(unit, units):
     unit_opts = ['<option value="">單元 ▾</option>',
                  '<option value="index.html">📚 目錄首頁</option>']
     for u in units:
+        if u.get("draft") and u["slug"] != unit["slug"]:
+            continue
         cur = "（目前）" if u["slug"] == unit["slug"] else ""
         unit_opts.append(f'<option value="{u["file"]}">{u["emoji"]} {u["title"]}{cur}</option>')
     kp_opts = ['<option value="">跳至考點 ▾</option>']

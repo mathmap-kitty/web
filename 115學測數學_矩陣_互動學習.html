@@ -82,6 +82,14 @@
   }
   ul.points{counter-reset:pt}
   .sub{padding-left:6px; color:#555; display:block}
+  /* 圖示 */
+  ul.points>li.figli{counter-increment:none; padding:4px 0 4px; border-bottom:none}
+  ul.points>li.figli::before{content:none}
+  figure.tfig{margin:10px auto; text-align:center; max-width:155px; background:#fbfafc;
+    border:1px solid var(--line); border-radius:12px; padding:9px 10px 6px}
+  figure.tfig svg{display:block; width:100%; height:auto; margin:0 auto}
+  figure.tfig figcaption{font-size:13px; color:#5a4a52; margin-top:6px; font-weight:600}
+  figure.tfig figcaption b{color:var(--maroon)}
   /* 標籤＋分行內文：一個小概念一行，續行對齊在「：」後 */
   ul.points>li.pt2{display:flex; align-items:baseline; gap:.1em}
   ul.points>li.pt2>.lab{font-weight:800; white-space:nowrap; flex:0 0 auto; color:#3a2b2e}
