@@ -91,7 +91,7 @@ def _question(doc, q, mode):
     sol = q.get("solution")
     if sol:
         if sol.get("brief"):
-            _rich(doc, f'【{sol.get("brief_label","簡答")}】' + sol["brief"], mode,
+            _rich(doc, f'**{sol.get("brief_label","簡答")}：** ' + sol["brief"], mode,
                   size=11, indent=0.4, before=3, after=1, fill="F4F8F7")
         for st in sol.get("steps", []):
             _rich(doc, st, mode, size=11, indent=0.4, before=1, after=1, fill="F4F8F7")
@@ -177,7 +177,7 @@ def _kp(doc, kp, mode):
                 s = sq.get("solution")
                 if s:
                     if s.get("brief"):
-                        _rich(doc, "【簡答】" + s["brief"], mode, indent=0.4, fill="F4F8F7")
+                        _rich(doc, "**簡答：** " + s["brief"], mode, indent=0.4, fill="F4F8F7")
                     for st in s.get("steps", []):
                         _rich(doc, st, mode, indent=0.4, fill="F4F8F7")
         else:

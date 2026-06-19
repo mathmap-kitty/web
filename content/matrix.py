@@ -13,7 +13,7 @@ UNIT = {
     "slug": "matrix",
     "file": "115學測數學_矩陣_互動學習.html",
     "page_title": "115 學測數學 · 矩陣 · 互動學習",
-    "emoji": "📐",
+    "emoji": "🧮",
     "title": "矩陣",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 五大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",

@@ -2,6 +2,6 @@
 """所有單元的註冊表（工具列「單元 ▾」跨頁導覽用）。"""
 
 UNITS = [
-    {"slug": "matrix", "file": "115學測數學_矩陣_互動學習.html", "emoji": "📐", "title": "矩陣"},
+    {"slug": "matrix", "file": "115學測數學_矩陣_互動學習.html", "emoji": "🧮", "title": "矩陣"},
     {"slug": "numexpr", "file": "115學測數學_數與式_互動學習.html", "emoji": "🔢", "title": "數與式"},
 ]
