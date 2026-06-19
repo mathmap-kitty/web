@@ -77,9 +77,9 @@ UNIT = {
                 {"label": r"直角三角形定義", "lines": [
                     r"\(\sin\theta=\) 【\(\dfrac{對邊}{斜邊}\)】、\(\cos\theta=\) 【\(\dfrac{鄰邊}{斜邊}\)】、\(\tan\theta=\) 【\(\dfrac{對邊}{鄰邊}\)】。"]},
                 {"label": r"三大關係", "lines": [
-                    r"**平方關係**：\(\sin^2\theta+\cos^2\theta=\) 【\(1\)】、\(1+\tan^2\theta=\) 【\(\sec^2\theta\)】、\(1+\cot^2\theta=\) 【\(\csc^2\theta\)】；",
+                    r"**平方關係**：\(\sin^2\theta+\cos^2\theta=\) 【\(1\)】；",
                     r"**商數關係**：\(\tan\theta=\) 【\(\dfrac{\sin\theta}{\cos\theta}\)】；",
-                    r"**倒數關係**：\(\csc\theta=\dfrac{1}{\sin\theta}\)、\(\sec\theta=\dfrac{1}{\cos\theta}\)、\(\cot\theta=\) 【\(\dfrac{1}{\tan\theta}\)】。"]},
+                    r"**倒數關係**：\(\csc\theta=\) 【\(\dfrac{1}{\sin\theta}\)】（\(\csc\theta\) 為 \(\sin\theta\) 的倒數）。"]},
                 {"label": r"特殊角與餘角", "lines": [
                     r"\(\sin30°=\) 【\(\dfrac12\)】、\(\sin45°=\) 【\(\dfrac{\sqrt2}{2}\)】、\(\sin60°=\) 【\(\dfrac{\sqrt3}{2}\)】；",
                     r"餘角關係：\(\cos\theta=\) 【\(\sin(90°-\theta)\)】（\(\cos\) 是「餘」弦）。"]},
