@@ -76,10 +76,9 @@ UNIT = {
                 {"svg": SVG_RIGHT_TRI, "caption": r"直角三角形：\(\theta\) 的對邊、鄰邊與斜邊"},
                 {"label": r"直角三角形定義", "lines": [
                     r"\(\sin\theta=\) 【\(\dfrac{對邊}{斜邊}\)】、\(\cos\theta=\) 【\(\dfrac{鄰邊}{斜邊}\)】、\(\tan\theta=\) 【\(\dfrac{對邊}{鄰邊}\)】。"]},
-                {"label": r"三大關係", "lines": [
+                {"label": r"平方與商數關係", "lines": [
                     r"**平方關係**：\(\sin^2\theta+\cos^2\theta=\) 【\(1\)】；",
-                    r"**商數關係**：\(\tan\theta=\) 【\(\dfrac{\sin\theta}{\cos\theta}\)】；",
-                    r"**倒數關係**：\(\csc\theta=\) 【\(\dfrac{1}{\sin\theta}\)】（\(\csc\theta\) 為 \(\sin\theta\) 的倒數）。"]},
+                    r"**商數關係**：\(\tan\theta=\) 【\(\dfrac{\sin\theta}{\cos\theta}\)】。"]},
                 {"label": r"特殊角與餘角", "lines": [
                     r"\(\sin30°=\) 【\(\dfrac12\)】、\(\sin45°=\) 【\(\dfrac{\sqrt2}{2}\)】、\(\sin60°=\) 【\(\dfrac{\sqrt3}{2}\)】；",
                     r"餘角關係：\(\cos\theta=\) 【\(\sin(90°-\theta)\)】（\(\cos\) 是「餘」弦）。"]},
@@ -356,7 +355,14 @@ UNIT = {
                 {"wrong": r"任意三角形斜邊 ＝ 外接圓直徑", "right": r"只有 **直角三角形** 才成立"},
             ],
             "questions": [
-                {"tag": "觀念範例（圓周角＋正弦定理）", "level": "★★☆（中）", "core": "外接圓直徑 ＝ a/sinA",
+                {"tag": "110 舊制 · 單選 3", "level": "★★★（難）", "core": "圓周角定理＋切線（cosA=sin(θ/2)）",
+                 "body": r"如圖，\(\triangle ABC\) 為銳角三角形，\(P\) 為 \(\triangle ABC\) 外接圓 \(\Gamma\) 外的一點，且 \(PB\)、\(PC\) 都與 \(\Gamma\) 相切。設 \(\angle BPC=\theta\)，則 \(\cos A\) 之值為何？",
+                 "options": [r"\(\sin\dfrac\theta2\)", r"\(\sin\theta\)", r"\(\cos\dfrac\theta2\)", r"\(\dfrac{\cos\theta}{2}\)", r"\(\cos\theta\)"],
+                 "solution": {"brief": r"(1) \(\sin\dfrac\theta2\)",
+                              "steps": [r"切線垂直半徑：設圓心 \(O\)，四邊形 \(PBOC\) 中 \(\angle PBO=\angle PCO=90°\)、\(\angle BPC=\theta\)，故圓心角 \(\angle BOC=360°-90°-90°-\theta=180°-\theta\)。",
+                                        r"圓周角 \(\angle A=\dfrac12\angle BOC=90°-\dfrac\theta2\)。",
+                                        r"故 \(\cos A=\cos\left(90°-\dfrac\theta2\right)=\sin\dfrac\theta2\)，選 (1)。"]}},
+                {"tag": "觀念範例（外接圓＋正弦定理）", "level": "★★☆（中）", "core": "外接圓直徑 ＝ a/sinA",
                  "body": r"\(\triangle ABC\) 內接於半徑 \(R=5\) 的圓，且 \(\angle A=30°\)。求邊 \(BC\)（即 \(a\)）。",
                  "solution": {"brief": r"\(BC=5\)",
                               "steps": [r"正弦定理 \(\dfrac{a}{\sin A}=2R\Rightarrow a=2R\sin A=2\times5\times\sin30°=10\times\dfrac12=5\)。"]}},
