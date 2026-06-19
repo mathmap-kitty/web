@@ -214,10 +214,10 @@ UNIT = {
             "points": [
                 {"label": r"基本圖形與週期", "lines": [
                     r"\(y=\sin x\)、\(y=\cos x\) 週期 \(=\) 【\(2\pi\)】、振幅 \(1\)；\(y=\tan x\) 週期 \(=\) 【\(\pi\)】；",
-                    r"\(y=a\sin(bx+c)+d\)：振幅 \(=\) 【\(|a|\)】、週期 \(=\) 【\(\dfrac{2\pi}{|b|}\)】、上下平移 \(d\)。"]},
+                    r"\(y=a\sin(bx+c)+d\)：振幅 \(=\) 【\(|a|\)】、週期 \(=\) 【\(\dfrac{2\pi}{|b|}\)】、左右平移 \(=\) 【\(-\dfrac cb\)】、上下平移 \(=\) 【\(d\)】。"]},
                 {"label": r"對稱", "lines": [
-                    r"\(y=\sin x\)：對稱中心 \((k\pi,0)\)、對稱軸 \(x=\) 【\(\dfrac\pi2+k\pi\)】（過最高／最低點）；",
-                    r"\(y=\cos x\)：對稱軸 \(x=k\pi\)、對稱中心 \(\left(\dfrac\pi2+k\pi,\,0\right)\)。"]},
+                    r"\(y=\sin x\)：對稱中心 【\((k\pi,\,0)\)】、對稱軸 【\(x=\dfrac\pi2+k\pi\)】（過最高／最低點）；",
+                    r"\(y=\cos x\)：對稱中心 【\(\left(\dfrac\pi2+k\pi,\,0\right)\)】、對稱軸 【\(x=k\pi\)】。"]},
                 {"label": r"疊合（最重要）", "lines": [
                     r"\(a\sin x+b\cos x=\) 【\(\sqrt{a^2+b^2}\,\sin(x+\varphi)\)】，其中 \(\tan\varphi=\dfrac ba\)；",
                     r"用途：\(a\sin x+b\cos x\) 的 **最大值 ＝ \(\sqrt{a^2+b^2}\)、最小值 ＝ \(-\sqrt{a^2+b^2}\)**；",
@@ -263,13 +263,13 @@ UNIT = {
                 {"label": r"和差角公式", "lines": [
                     r"\(\sin(A\pm B)=\) 【\(\sin A\cos B\pm\cos A\sin B\)】；",
                     r"\(\cos(A\pm B)=\) 【\(\cos A\cos B\mp\sin A\sin B\)】（[[cos 變號相反||\(\cos(A+B)\) 取「\(-\)」、\(\cos(A-B)\) 取「\(+\)」，和外面的 \(\pm\) **相反**，最容易記錯。]]）；",
-                    r"\(\tan(A\pm B)=\dfrac{\tan A\pm\tan B}{1\mp\tan A\tan B}\)。"]},
+                    r"\(\tan(A\pm B)=\) 【\(\dfrac{\tan A\pm\tan B}{1\mp\tan A\tan B}\)】。"]},
                 {"label": r"二倍角公式", "lines": [
                     r"\(\sin2\theta=\) 【\(2\sin\theta\cos\theta\)】；",
-                    r"\(\cos2\theta=\) 【\(\cos^2\theta-\sin^2\theta\)】 \(=1-2\sin^2\theta=2\cos^2\theta-1\)；",
-                    r"\(\tan2\theta=\dfrac{2\tan\theta}{1-\tan^2\theta}\)。"]},
+                    r"\(\cos2\theta=\) 【\(\cos^2\theta-\sin^2\theta\)】 \(=\) 【\(1-2\sin^2\theta\)】 \(=\) 【\(2\cos^2\theta-1\)】；",
+                    r"\(\tan2\theta=\) 【\(\dfrac{2\tan\theta}{1-\tan^2\theta}\)】。"]},
                 {"label": r"半角與降冪", "lines": [
-                    r"降冪：\(\sin^2\theta=\) 【\(\dfrac{1-\cos2\theta}{2}\)】、\(\cos^2\theta=\dfrac{1+\cos2\theta}{2}\)（積分、求面積常用）。"]},
+                    r"降冪：\(\sin^2\theta=\) 【\(\dfrac{1-\cos2\theta}{2}\)】、\(\cos^2\theta=\) 【\(\dfrac{1+\cos2\theta}{2}\)】（積分、求面積常用）。"]},
             ],
             "misconceptions": [
                 {"wrong": r"\(\cos(A+B)=\cos A\cos B+\sin A\sin B\)", "right": r"\(=\cos A\cos B-\sin A\sin B\)（cos 的符號與外面相反）"},
