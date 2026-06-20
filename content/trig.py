@@ -93,6 +93,15 @@ UNIT = {
                 {"label": r"弧長與扇形面積", "lines": [
                     r"半徑 \(r\)、圓心角 \(\theta\)（**弧度**）：弧長 \(=\) 【\(r\theta\)】、扇形面積 \(=\) 【\(\dfrac12 r^2\theta\)】。"]},
             ],
+            "tables": [
+                {"title": r"特殊角三角函數值（必背 ★）",
+                 "head": [r"\(\theta\)", r"\(0^\circ\)", r"\(30^\circ\)", r"\(45^\circ\)", r"\(60^\circ\)", r"\(90^\circ\)"],
+                 "rows": [
+                     [r"\(\sin\theta\)", r"\(0\)", r"\(\dfrac12\)", r"\(\dfrac{\sqrt2}{2}\)", r"\(\dfrac{\sqrt3}{2}\)", r"\(1\)"],
+                     [r"\(\cos\theta\)", r"\(1\)", r"\(\dfrac{\sqrt3}{2}\)", r"\(\dfrac{\sqrt2}{2}\)", r"\(\dfrac12\)", r"\(0\)"],
+                     [r"\(\tan\theta\)", r"\(0\)", r"\(\dfrac{\sqrt3}{3}\)", r"\(1\)", r"\(\sqrt3\)", r"不存在"],
+                 ]},
+            ],
             "misconceptions": [
                 {"wrong": r"\(\cos x°\) 和 \(\cos x\)（弧度）一樣", "right": r"\(x°\) 要先乘 \(\pi/180\) 化弧度，兩者不同"},
                 {"wrong": r"\(\sin(180°-\theta)=-\sin\theta\)", "right": r"\(=\sin\theta\)（補角的 sin 不變號）"},

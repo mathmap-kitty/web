@@ -160,6 +160,16 @@ UNIT = {
                     r"兩集合：\(|A\cup B|=\) 【\(|A|+|B|-|A\cap B|\)】；",
                     r"三集合：\(|A\cup B\cup C|=\) 【\(|A|+|B|+|C|-|A\cap B|-|B\cap C|-|C\cap A|+|A\cap B\cap C|\)】。"]},
             ],
+            "tables": [
+                {"title": r"排列 vs 組合 對照（先問：在意順序嗎？）",
+                 "head": [r"", r"排列 \(P\)（有順序）", r"組合 \(C\)（無順序）"],
+                 "rows": [
+                     [r"順序", r"在意（\(AB\neq BA\)）", r"不在意（\(AB=BA\)）"],
+                     [r"公式", r"\(P^n_r=\dfrac{n!}{(n-r)!}\)", r"\(C^n_r=\dfrac{n!}{r!\,(n-r)!}\)"],
+                     [r"兩者關係", r"\(P^n_r=r!\cdot C^n_r\)", r"\(C^n_r=\dfrac{P^n_r}{r!}\)"],
+                     [r"關鍵字", r"排成一列、名次、座位", r"挑出一組、代表、握手"],
+                 ]},
+            ],
             "misconceptions": [
                 {"wrong": r"取 \(r\) 個排列就是組合", "right": r"排列要再除以 \(r!\) 才是組合：\(C^n_r=\dfrac{P^n_r}{r!}\)"},
                 {"wrong": r"「可同口味任選兩球」只算 \(C^n_2\)", "right": r"要再加「兩球同口味」\(n\) 種：總共 \(C^n_2+n\)（\(111\) 單1 的陷阱）"},

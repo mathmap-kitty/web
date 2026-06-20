@@ -127,6 +127,17 @@ UNIT = {
                 {"label": r"常用對數", "lines": [
                     r"\(\log\) 不寫底 ＝ 以 \(10\) 為底；\(\log10^k=\) 【\(k\)】。"]},
             ],
+            "tables": [
+                {"title": r"指數律 ↔ 對數律 對照（互為反運算，一一對應）",
+                 "head": [r"指數律", r"對應的對數律"],
+                 "rows": [
+                     [r"\(a^m\cdot a^n=a^{m+n}\)（乘 → 指數相加）", r"\(\log_a(MN)=\log_a M+\log_a N\)（乘 → 對數相加）"],
+                     [r"\(\dfrac{a^m}{a^n}=a^{m-n}\)（除 → 指數相減）", r"\(\log_a\dfrac{M}{N}=\log_a M-\log_a N\)（除 → 對數相減）"],
+                     [r"\((a^m)^n=a^{mn}\)（次方 → 指數相乘）", r"\(\log_a M^k=k\log_a M\)（次方 → 提到前面乘）"],
+                     [r"\(a^0=1\)", r"\(\log_a 1=0\)"],
+                     [r"\(a^1=a\)", r"\(\log_a a=1\)"],
+                 ]},
+            ],
             "misconceptions": [
                 {"wrong": r"\(\log(M+N)=\log M+\log N\)", "right": r"是 \(\log(MN)=\log M+\log N\)；**和不可拆**"},
                 {"wrong": r"\(\dfrac{\log M}{\log N}=\log\dfrac{M}{N}\)", "right": r"商化減是 \(\log\dfrac{M}{N}=\log M-\log N\)；左式是 **換底**"},
