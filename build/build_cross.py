@@ -308,6 +308,50 @@ DETAIL = {
                 r"由條件 \(\dfrac23<4p<\dfrac56\Rightarrow\dfrac16<p<\dfrac{5}{24}\)。"],
         "links": [(r"數據分析 ▸ 考點4 列聯表·判讀", DATA, "kp4"), (r"排列機率 ▸ 考點4 條件機率", PROB, "kp4")],
     },
+    "111|數B|14": {
+        "body": r"坐標平面上有一圓，圓心為 \(O\)、半徑為 \(7\)。\(A,B\) 為圓上相異兩點且 \(\overline{AB}=8\)。試求 \(\overrightarrow{OA}\cdot\overrightarrow{OB}\)。",
+        "fig": r'''<svg viewBox="0 0 162 150" width="162" height="150" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <circle cx="80" cy="86" r="54" fill="#eef6f4" stroke="#1f6f78" stroke-width="1.6"/>
+  <line x1="48" y1="42" x2="112" y2="42" stroke="#c0392b" stroke-width="2"/>
+  <line x1="80" y1="86" x2="48" y2="42" stroke="#2c7a7b" stroke-width="1.5"/>
+  <line x1="80" y1="86" x2="112" y2="42" stroke="#2c7a7b" stroke-width="1.5"/>
+  <g fill="#2c3e50"><circle cx="80" cy="86" r="2.6"/><circle cx="48" cy="42" r="2.6"/><circle cx="112" cy="42" r="2.6"/></g>
+  <g font-size="12" font-weight="bold" font-style="italic" fill="#22404a"><text x="75" y="100">O</text><text x="38" y="40">A</text><text x="116" y="40">B</text></g>
+  <g font-size="10" fill="#777"><text x="56" y="68">7</text><text x="98" y="68">7</text><text x="76" y="36">8</text></g>
+</svg>''',
+        "ans": r"**\(17\)**",
+        "key": [r"\(\overline{AB}^2=|\overrightarrow{OB}-\overrightarrow{OA}|^2=|\overrightarrow{OA}|^2+|\overrightarrow{OB}|^2-2\,\overrightarrow{OA}\cdot\overrightarrow{OB}\)；",
+                r"\(8^2=7^2+7^2-2\,\overrightarrow{OA}\cdot\overrightarrow{OB}\Rightarrow64=98-2\,\overrightarrow{OA}\cdot\overrightarrow{OB}\)；",
+                r"\(\overrightarrow{OA}\cdot\overrightarrow{OB}=\dfrac{98-64}{2}=17\)。"],
+        "links": [(r"平面向量 ▸ 考點3 內積", PVEC, "kp3"), (r"三角 ▸ 考點2 餘弦定理", TRIG, "kp2")],
+    },
+    "111|數B|6": {
+        "body": r"假設地球為半徑 \(R\) 的球體、經線皆為通過兩極的大圓。某地 \(P\) 在 **北緯 \(75^\circ\)**，沿其所在經線往南移動弧長 \(\dfrac{7\pi}{12}R\) 到達 \(Q\)。試問 \(Q\) 的緯度為何？",
+        "fig": r'''<svg viewBox="0 0 150 170" width="150" height="170" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <circle cx="75" cy="90" r="54" fill="#eef6f4" stroke="#1f6f78" stroke-width="1.5"/>
+  <ellipse cx="75" cy="90" rx="54" ry="16" fill="none" stroke="#9aa6b2" stroke-width="1.1"/>
+  <path d="M75,36 A21,54 0 0 0 75,144" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+  <g fill="#c0392b"><circle cx="62" cy="48" r="3"/><circle cx="65" cy="120" r="3"/></g>
+  <g font-size="10" font-weight="bold"><text x="71" y="30" fill="#555">N</text><text x="71" y="160" fill="#555">S</text></g>
+  <g font-size="11" font-weight="bold" font-style="italic" fill="#c0392b"><text x="46" y="50">P</text><text x="48" y="124">Q</text></g>
+  <text x="104" y="94" font-size="8.5" fill="#9aa6b2">赤道</text>
+</svg>''',
+        "opts": [r"北緯 \(75^\circ\)", r"北緯 \(30^\circ\)", r"南緯 \(30^\circ\)", r"南緯 \(45^\circ\)", r"南緯 \(75^\circ\)"],
+        "ans": r"**(3)** 南緯 \(30^\circ\)",
+        "key": [r"弧長 \(=R\theta\Rightarrow\theta=\dfrac{7\pi}{12}=105^\circ\)（大圓圓心角）；",
+                r"從 \(P\)（北緯 \(75^\circ\)）沿經線往南：先 \(75^\circ\) 到赤道，再 \(105^\circ-75^\circ=30^\circ\) 進入南半球；",
+                r"故 \(Q\) 在 **南緯 \(30^\circ\)**，選 (3)。"],
+        "links": [(r"三角 ▸ 考點1 弧度·弧長", TRIG, "kp1"), (r"空間向量 ▸ 考點1 空間坐標·球面", SPACE, "kp1")],
+    },
+    "111|數B|4": {
+        "body": r"已知點 \(P=\left(\log\tfrac12,\ 2^{-1}\right)\)，向量 \(\overrightarrow{PQ}=\left(\log\tfrac12,\ 10^{-7}\right)\)。試問點 \(Q\) 落在第幾象限？",
+        "opts": [r"第一象限", r"第二象限", r"第三象限", r"第四象限", r"坐標軸上"],
+        "ans": r"**(2)** 第二象限",
+        "key": [r"\(Q=P+\overrightarrow{PQ}=\left(2\log\tfrac12,\ 2^{-1}+10^{-7}\right)\)；",
+                r"\(x=2\log\tfrac12=\log\tfrac14<0\)（真數 \(\tfrac14<1\Rightarrow\) 對數為負）；\(y=\tfrac12+10^{-7}>0\)；",
+                r"\(x<0,\ y>0\Rightarrow Q\) 在 **第二象限**，選 (2)。"],
+        "links": [(r"平面向量 ▸ 考點1 向量坐標運算", PVEC, "kp1"), (r"指數對數 ▸ 考點2 對數運算", EXPLOG, "kp2")],
+    },
 }
 
 
