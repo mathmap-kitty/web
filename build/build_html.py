@@ -78,7 +78,8 @@ def _subq_html(sq):
 def _point_html(p):
     if isinstance(p, dict) and "svg" in p:
         cap = f'<figcaption>{html_rich(p["caption"])}</figcaption>' if p.get("caption") else ""
-        return f'<li class="figli"><figure class="tfig">{p["svg"]}{cap}</figure></li>'
+        style = ' style="max-width:362px"' if p.get("wide") else ""
+        return f'<li class="figli"><figure class="tfig"{style}>{p["svg"]}{cap}</figure></li>'
     if isinstance(p, dict):
         lab = html_rich(p["label"]) + "："
         lines = "".join(f'<span class="ln">{html_rich(l)}</span>' for l in p["lines"])

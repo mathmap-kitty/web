@@ -71,7 +71,7 @@ def _label(doc, text):
     return _para(doc, text, size=11, bold=True, color=MAROON, before=10, after=3)
 
 
-def _add_svg_figure(doc, svg, caption=None):
+def _add_svg_figure(doc, svg, caption=None, width_in=1.25):
     """把 SVG 圖以 fitz 轉 PNG 後置中嵌入。"""
     import fitz, io
     from docx.shared import Inches, Pt, RGBColor
@@ -79,7 +79,7 @@ def _add_svg_figure(doc, svg, caption=None):
     pix = d[0].get_pixmap(matrix=fitz.Matrix(3, 3), alpha=False)
     png = io.BytesIO(pix.tobytes("png"))
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p.add_run().add_picture(png, width=Inches(1.25))
+    p.add_run().add_picture(png, width=Inches(width_in))
     if caption:
         cp = doc.add_paragraph(); cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
         docx_rich(cp, caption, mode="teacher")
@@ -154,7 +154,7 @@ def _kp(doc, kp, mode):
     _label(doc, "【必背重點與公式】")
     for p in kp["points"]:
         if isinstance(p, dict) and "svg" in p:
-            _add_svg_figure(doc, p["svg"], p.get("caption"))
+            _add_svg_figure(doc, p["svg"], p.get("caption"), 2.9 if p.get("wide") else 1.25)
         elif isinstance(p, dict):
             _rich(doc, "• **" + p["label"] + "：** " + p["lines"][0], mode,
                   size=11, indent=0.4, before=3, after=0)

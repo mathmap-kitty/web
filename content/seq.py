@@ -7,24 +7,24 @@ r"""數列與級數單元 · 單一來源內容（單元4：數列與級數）�
 考點對應核心概念分析（單元4）：① 等差 ② 等比 ③ 遞迴 ④ 級數與規律週期。
 """
 
-# 等差 vs 等比 節奏對比：等差點距固定(+d)、等比點距倍增(×r)
-SVG_SEQ = r'''<svg viewBox="0 0 240 128" width="240" height="128" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
-  <text x="6" y="14" font-size="10" fill="#1f6f78" font-weight="bold">① 等差：每次 ＋d（點距固定）</text>
-  <line x1="22" y1="46" x2="212" y2="46" stroke="#cfd6dd" stroke-width="1.2"/>
-  <g fill="none" stroke="#1f6f78" stroke-width="1.4">
-    <path d="M34,42 Q55,30 76,42"/><path d="M76,42 Q97,30 118,42"/>
-    <path d="M118,42 Q139,30 160,42"/><path d="M160,42 Q181,30 202,42"/>
+# 等差 vs 等比 節奏對比（橫向加長版）：等差點距固定(+d)、等比點距倍增(×r)
+SVG_SEQ = r'''<svg viewBox="0 0 360 124" width="360" height="124" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <text x="6" y="14" font-size="10.5" fill="#1f6f78" font-weight="bold">① 等差：每次 ＋d（點距固定）</text>
+  <line x1="24" y1="44" x2="346" y2="44" stroke="#cfd6dd" stroke-width="1.2"/>
+  <g fill="none" stroke="#1f6f78" stroke-width="1.5">
+    <path d="M38,40 Q76,28 114,40"/><path d="M114,40 Q152,28 190,40"/>
+    <path d="M190,40 Q228,28 266,40"/><path d="M266,40 Q304,28 342,40"/>
   </g>
-  <g fill="#1f6f78"><circle cx="34" cy="46" r="3"/><circle cx="76" cy="46" r="3"/><circle cx="118" cy="46" r="3"/><circle cx="160" cy="46" r="3"/><circle cx="202" cy="46" r="3"/></g>
-  <g font-size="9" fill="#1f6f78"><text x="49" y="32">+d</text><text x="91" y="32">+d</text><text x="133" y="32">+d</text><text x="175" y="32">+d</text></g>
-  <text x="6" y="78" font-size="10" fill="#c0392b" font-weight="bold">② 等比：每次 ×r（點距倍增、越跑越開）</text>
-  <line x1="22" y1="110" x2="212" y2="110" stroke="#cfd6dd" stroke-width="1.2"/>
-  <g fill="none" stroke="#c0392b" stroke-width="1.4">
-    <path d="M30,106 Q38,98 46,106"/><path d="M46,106 Q62,94 78,106"/>
-    <path d="M78,106 Q110,88 142,106"/><path d="M142,106 Q170,86 202,106"/>
+  <g fill="#1f6f78"><circle cx="38" cy="44" r="3.2"/><circle cx="114" cy="44" r="3.2"/><circle cx="190" cy="44" r="3.2"/><circle cx="266" cy="44" r="3.2"/><circle cx="342" cy="44" r="3.2"/></g>
+  <g font-size="9.5" fill="#1f6f78"><text x="69" y="30">+d</text><text x="145" y="30">+d</text><text x="221" y="30">+d</text><text x="297" y="30">+d</text></g>
+  <text x="6" y="76" font-size="10.5" fill="#c0392b" font-weight="bold">② 等比：每次 ×r（點距倍增、越跑越開）</text>
+  <line x1="24" y1="108" x2="346" y2="108" stroke="#cfd6dd" stroke-width="1.2"/>
+  <g fill="none" stroke="#c0392b" stroke-width="1.5">
+    <path d="M30,104 Q40,97 50,104"/><path d="M50,104 Q71,91 92,104"/>
+    <path d="M92,104 Q133,84 174,104"/><path d="M174,104 Q256,74 338,104"/>
   </g>
-  <g fill="#c0392b"><circle cx="30" cy="110" r="3"/><circle cx="46" cy="110" r="3"/><circle cx="78" cy="110" r="3"/><circle cx="142" cy="110" r="3"/><circle cx="202" cy="110" r="3"/></g>
-  <g font-size="9" fill="#c0392b"><text x="32" y="96">×r</text><text x="58" y="92">×r</text><text x="104" y="86">×r</text><text x="166" y="84">×r</text></g>
+  <g fill="#c0392b"><circle cx="30" cy="108" r="3.2"/><circle cx="50" cy="108" r="3.2"/><circle cx="92" cy="108" r="3.2"/><circle cx="174" cy="108" r="3.2"/><circle cx="338" cy="108" r="3.2"/></g>
+  <g font-size="9.5" fill="#c0392b"><text x="34" y="98">×r</text><text x="64" y="88">×r</text><text x="126" y="81">×r</text><text x="248" y="71">×r</text></g>
 </svg>'''
 
 UNIT = {
@@ -115,7 +115,7 @@ UNIT = {
                     r"\(a,b,c\) 成等比 \(\Leftrightarrow b^2=\) 【\(ac\)】（中項平方 ＝ 前後乘積）。"]},
                 {"label": r"無窮等比級數", "lines": [
                     r"\(|r|<1\) 時收斂，無窮和 \(S=\) 【\(\dfrac{a_1}{1-r}\)】。"]},
-                {"svg": SVG_SEQ,
+                {"svg": SVG_SEQ, "wide": True,
                  "caption": r"**兩種數列的節奏**：① 等差每次 **加** 同一個 \(d\)（點距固定）；② 等比每次 **乘** 同一個 \(r\)（點距倍增、越跑越開）——這就是「線性成長」與「指數成長」的差別。"},
             ],
             "tables": [
