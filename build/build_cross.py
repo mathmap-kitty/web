@@ -344,12 +344,12 @@ DETAIL = {
         "links": [(r"三角 ▸ 考點1 弧度·弧長", TRIG, "kp1"), (r"空間向量 ▸ 考點1 空間坐標·球面", SPACE, "kp1")],
     },
     "111|數B|4": {
-        "body": r"已知點 \(P=\left(\log\tfrac12,\ 2^{-1}\right)\)，向量 \(\overrightarrow{PQ}=\left(\log\tfrac12,\ 10^{-7}\right)\)。試問點 \(Q\) 落在第幾象限？",
+        "body": r"在坐標平面上，已知向量 \(\overrightarrow{PQ}=\left(\log\tfrac15,\ -10^{-5}\right)\)，其中點 \(P\) 的坐標為 \(\left(\log\tfrac12,\ 2^{-5}\right)\)。試問點 \(Q\) 在第幾象限？",
         "opts": [r"第一象限", r"第二象限", r"第三象限", r"第四象限", r"坐標軸上"],
         "ans": r"**(2)** 第二象限",
-        "key": [r"\(Q=P+\overrightarrow{PQ}=\left(2\log\tfrac12,\ 2^{-1}+10^{-7}\right)\)；",
-                r"\(x=2\log\tfrac12=\log\tfrac14<0\)（真數 \(\tfrac14<1\Rightarrow\) 對數為負）；\(y=\tfrac12+10^{-7}>0\)；",
-                r"\(x<0,\ y>0\Rightarrow Q\) 在 **第二象限**，選 (2)。"],
+        "key": [r"設 \(Q=(x,y)\)，由 \(\overrightarrow{PQ}=Q-P\)：\(x-\log\tfrac12=\log\tfrac15\)、\(y-2^{-5}=-10^{-5}\)；",
+                r"\(x=\log\tfrac12+\log\tfrac15=\log\tfrac1{10}=-1<0\)（對數律相加）；",
+                r"\(y=2^{-5}-10^{-5}=\dfrac1{32}-\dfrac1{100000}>0\)；故 \(x<0,\ y>0\Rightarrow\) **第二象限**，選 (2)。"],
         "links": [(r"平面向量 ▸ 考點1 向量坐標運算", PVEC, "kp1"), (r"指數對數 ▸ 考點2 對數運算", EXPLOG, "kp2")],
     },
     "114|數B|13": {
