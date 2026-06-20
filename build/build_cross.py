@@ -90,6 +90,17 @@ DETAIL = {
     },
     "108|數A|G": {
         "body": r"如圖，\(A,B,C,D\) 為平面上四點。已知 \(\overrightarrow{BC}=\overrightarrow{AB}+\overrightarrow{AD}\)，且 \(\overrightarrow{AC}\)、\(\overrightarrow{BD}\) 兩向量 **等長且互相垂直**，求 \(\tan\angle BAD\)。",
+        "fig": r'''<svg viewBox="0 0 232 188" width="232" height="188" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <polygon points="34,98 122,30 202,90 110,162" fill="#eef6f4" stroke="#1f6f78" stroke-width="1.6"/>
+  <line x1="34" y1="98" x2="202" y2="90" stroke="#c0392b" stroke-width="1.7"/>
+  <line x1="122" y1="30" x2="110" y2="162" stroke="#1f3a93" stroke-width="1.7"/>
+  <g fill="#2c3e50"><circle cx="34" cy="98" r="2.6"/><circle cx="122" cy="30" r="2.6"/><circle cx="202" cy="90" r="2.6"/><circle cx="110" cy="162" r="2.6"/></g>
+  <g font-size="14" font-weight="bold" font-style="italic" fill="#22404a">
+    <text x="16" y="103">A</text><text x="118" y="22">D</text><text x="208" y="93">C</text><text x="100" y="180">B</text>
+  </g>
+  <text x="150" y="70" font-size="10.5" fill="#c0392b" font-style="italic">AC</text>
+  <text x="124" y="104" font-size="10.5" fill="#1f3a93" font-style="italic">BD</text>
+</svg>''',
         "ans": r"**\(\tan\angle BAD=-3\)**",
         "key": [r"令 \(\overrightarrow{AB}=\vec u,\ \overrightarrow{AD}=\vec v\)：\(\overrightarrow{AC}=2\vec u+\vec v\)、\(\overrightarrow{BD}=\vec v-\vec u\)；",
                 r"垂直 \((2\vec u+\vec v)\cdot(\vec v-\vec u)=0\)、等長 \(|2\vec u+\vec v|=|\vec v-\vec u|\)；",
@@ -154,6 +165,7 @@ def _rich_card(row, dt):
         opts = ('<div class="opts">'
                 + "".join(f"<span>({i}) {html_rich(o)}</span>" for i, o in enumerate(dt["opts"], 1))
                 + "</div>")
+    fig = f'<div class="xq-fig">{dt["fig"]}</div>' if dt.get("fig") else ""
     keyhtml = "".join(f"<p>{html_rich(k)}</p>" for k in dt["key"])
     links = '<span class="x">×</span>'.join(
         f'<a class="utag" href="{f}#{a}">{lab}</a>' for lab, f, a in dt["links"])
@@ -167,7 +179,7 @@ def _rich_card(row, dt):
         f'<span class="caret">＋</span>'
         f'</div>'
         f'<div class="xq-detail">'
-        f'<div class="xq-q">{html_rich(dt["body"])}{opts}</div>'
+        f'<div class="xq-q">{html_rich(dt["body"])}{fig}{opts}</div>'
         f'<button class="sol-btn mini" data-s="簡答" data-h="收合簡答" onclick="ts(this)">簡答</button>'
         f'<div class="sol">{html_rich(dt["ans"])}</div>'
         f'<button class="sol-btn mini" data-s="解題關鍵" data-h="收合解題關鍵" onclick="ts(this)">解題關鍵</button>'
@@ -182,6 +194,8 @@ def build():
     used = set()
     sections = []
     for title, ctx, keys in THEMES:
+        # 排序：數A 在前、數B 在後；同卷別內依年分倒序（115 最前）
+        keys = sorted(keys, key=lambda k: (0 if rows[k]["juan"] == "數A" else 1, -int(rows[k]["yr"])))
         cards = []
         for k in keys:
             if k not in rows:
@@ -235,8 +249,10 @@ def build():
   .xq-detail{display:none;margin-top:11px;border-top:1px dashed var(--line);padding-top:11px}
   .xq-detail.open{display:block}
   .xq-q{font-size:15.5px;color:#2b2b2b;line-height:1.9;background:#fbf8f5;border-radius:8px;padding:11px 14px}
-  .xq-q .opts{margin-top:6px}
-  .xq-q .opts span{display:block;font-size:14.5px;color:#444;padding:1px 0}
+  .xq-q .opts{margin-top:8px}
+  .xq-q .opts>span{display:block;font-size:14.5px;color:#444;padding:2px 0}
+  .xq-fig{text-align:center;margin:10px 0 2px}
+  .xq-fig svg{max-width:240px}
   .xq .sol-btn{margin:8px 8px 2px 0}
   .xq .sol{font-size:14.5px}
   .xq .sol p{margin:.35em 0}
