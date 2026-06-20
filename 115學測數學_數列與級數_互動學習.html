@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>115 學測數學 · 數列與級數 · 互動學習</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<style>
+:root{
+    --ink:#2b2b2b; --maroon:#8c2740; --maroon-d:#6f1f33; --rose:#b03a5b;
+    --ans:#c0392b; --btn:#1f6f78; --btn-bg:#e9f5f4; --btn-bd:#1f6f78;
+    --card:#ffffff; --page:#f7f2ee; --callout:#fdf3ee; --strat:#eef6f1; --line:#e7dcd6;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+    line-height:1.85; font-size:16.5px;
+  }
+  .wrap{max-width:940px; margin:0 auto; padding:0 18px 80px;}
+  /* toolbar */
+  .toolbar{
+    position:sticky; top:0; z-index:50; background:rgba(140,39,64,.97);
+    color:#fff; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    padding:10px 18px; margin-bottom:8px; box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  .toolbar .t-title{font-weight:700; margin-right:auto; font-size:16px; letter-spacing:.5px}
+  .toolbar button{
+    background:#fff; color:var(--maroon-d); border:none; border-radius:20px;
+    padding:6px 14px; font-size:14px; font-weight:700; cursor:pointer;
+    font-family:inherit; transition:.15s;
+  }
+  .toolbar button:hover{background:#ffe6ee}
+  .toolbar .nav-select{background:#fff; color:var(--maroon-d); border:none; border-radius:20px; padding:6px 12px; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer; max-width:44vw}
+  .card[id], .part[id]{scroll-margin-top:64px}
+  .hero{padding:26px 0 6px; text-align:center}
+  .hero h1{color:var(--maroon); margin:.1em 0; font-size:27px; letter-spacing:1px}
+  .hero p{margin:.3em 0; color:#7a6a63; font-size:14.5px}
+  .legend{
+    background:#fff7ef; border:1px dashed #e0b9a6; border-radius:12px;
+    padding:10px 16px; margin:14px 0 24px; font-size:14px; color:#6b5249;
+  }
+  .legend b{color:var(--maroon)}
+  /* part heading */
+  .part{
+    margin:38px 0 16px; padding:10px 18px; border-radius:12px;
+    background:linear-gradient(90deg,var(--maroon),#a8395a); color:#fff;
+    font-size:21px; font-weight:800; letter-spacing:1px;
+    box-shadow:0 3px 12px rgba(140,39,64,.22);
+  }
+  .part small{display:block; font-weight:500; font-size:13.5px; opacity:.92; letter-spacing:.5px}
+  /* card */
+  .card{
+    background:var(--card); border-radius:14px; padding:20px 22px; margin:18px 0;
+    box-shadow:0 2px 10px rgba(80,40,30,.07); border-left:5px solid var(--maroon);
+  }
+  .kp{color:var(--maroon); font-size:19px; font-weight:800; margin:0 0 4px}
+  .kp .num{
+    display:inline-block; background:var(--maroon); color:#fff; border-radius:8px;
+    padding:1px 9px; font-size:15px; margin-right:8px; vertical-align:middle;
+  }
+  .callout{background:var(--callout); border-radius:10px; padding:10px 14px; margin:10px 0 16px; font-size:15px; color:#6b4a3f}
+  .callout b{color:var(--maroon-d)}
+  /* 解題策略：一點一行，▸ 標記，續行懸掛對齊 */
+  .callout .sln{display:block; padding-left:1.25em; text-indent:-1.25em}
+  .callout .sln+.sln{margin-top:5px}
+  .callout .sln::before{content:"▸ "; color:var(--btn); font-weight:800}
+  .label{
+    display:block; width:fit-content; margin:30px 0 8px; padding:3px 12px; border-radius:6px;
+    background:#f3e3e8; color:var(--maroon-d); font-weight:800; font-size:15px;
+  }
+  ul.points{margin:6px 0; padding-left:6px; list-style:none}
+  ul.points>li{
+    position:relative; padding:7px 4px 7px 30px; border-bottom:1px dashed var(--line);
+  }
+  ul.points>li:last-child{border-bottom:none}
+  ul.points>li::before{
+    counter-increment:pt; content:counter(pt);
+    position:absolute; left:0; top:8px; width:21px; height:21px; line-height:21px;
+    text-align:center; background:#f0dde3; color:var(--maroon-d); border-radius:50%;
+    font-size:12.5px; font-weight:700;
+  }
+  ul.points{counter-reset:pt}
+  .sub{padding-left:6px; color:#555; display:block}
+  /* 圖示 */
+  ul.points>li.figli{counter-increment:none; padding:4px 0 4px; border-bottom:none}
+  ul.points>li.figli::before{content:none}
+  figure.tfig{margin:10px auto; text-align:center; max-width:155px; background:#fbfafc;
+    border:1px solid var(--line); border-radius:12px; padding:9px 10px 6px}
+  figure.tfig svg{display:block; width:100%; height:auto; margin:0 auto}
+  figure.tfig figcaption{font-size:13px; color:#5a4a52; margin-top:6px; font-weight:600}
+  figure.tfig figcaption b{color:var(--maroon)}
+  /* 標籤＋分行內文：一個小概念一行，續行對齊在「：」後 */
+  ul.points>li.pt2{display:flex; align-items:baseline; gap:.1em}
+  ul.points>li.pt2>.lab{font-weight:800; white-space:nowrap; flex:0 0 auto; color:#3a2b2e}
+  ul.points>li.pt2>.body{flex:1 1 auto; min-width:0}
+  ul.points>li.pt2>.body>.ln{display:block}
+  ul.points>li.pt2>.body>.ln + .ln{margin-top:3px}
+  @media(max-width:560px){
+    ul.points>li.pt2{flex-direction:column; gap:1px}
+    ul.points>li.pt2>.body{padding-left:.7em}
+  }
+  /* blank (fill-in) */
+  .blank{cursor:pointer; user-select:none; display:inline-block; vertical-align:middle}
+  .blank .q{
+    display:inline-block; min-width:2.6em; text-align:center;
+    color:var(--rose); background:#fbeef2; border:1.5px dashed #d6a3b4;
+    border-radius:6px; padding:0 .5em; font-weight:700; transition:.12s;
+  }
+  .blank:hover .q{background:#f6dee6; border-color:var(--rose)}
+  .blank .a{display:none; color:var(--ans); font-weight:700; background:#fdecea; border-radius:5px; padding:0 .25em}
+  .blank.on .q{display:none}
+  .blank.on .a{display:inline}
+  /* solution button + block */
+  .sol-btn{
+    display:inline-block; margin:6px 0; padding:6px 16px; cursor:pointer;
+    background:var(--btn-bg); color:var(--btn); border:1.5px solid var(--btn-bd);
+    border-radius:20px; font-size:14px; font-weight:700; font-family:inherit; transition:.15s;
+  }
+  .sol-btn:hover{background:var(--btn); color:#fff}
+  .sol-btn.active{background:var(--btn); color:#fff}
+  .sol-btn::before{content:"▸ "}
+  .sol-btn.active::before{content:"▾ "}
+  .sol-btn.mini{padding:3px 12px; font-size:13px; margin:0}
+  .sol{display:none; margin:8px 0 4px; padding:12px 16px; background:#f4f8f7;
+    border-left:4px solid var(--btn); border-radius:0 8px 8px 0; font-size:15px}
+  .sol.open{display:block}
+  .sol.inline{border-radius:6px; padding:8px 12px; margin-top:6px}
+  .sol p{margin:.4em 0}
+  .sol .k{color:var(--btn); font-weight:800}
+  .sol .ad{color:var(--ans); font-weight:800}
+  /* misconception table */
+  .tbl-wrap{overflow-x:auto; margin:6px 0 4px}
+  table.mis{border-collapse:collapse; width:100%; min-width:520px; font-size:15px}
+  table.mis th{background:#f3e3e8; color:var(--maroon-d); padding:8px 12px; border:1px solid var(--line); width:50%}
+  table.mis td{padding:9px 12px; border:1px solid var(--line); vertical-align:top}
+  table.mis td.err{background:#fff;color:#7a4a4a}
+  table.mis td.cor{background:#fafdfc}
+  .x{color:#b9542f; font-weight:700} .o{color:#1f7a4d; font-weight:700}
+  /* question */
+  .q-meta{font-weight:800; color:var(--maroon-d); margin:3.4em 0 6px; font-size:15.5px}
+  .label + .q-meta{margin-top:10px}
+  .subq{margin-top:1.8em}
+  .q-meta .tag{background:#efe0e5; border-radius:5px; padding:1px 8px; margin-right:6px; font-size:14px}
+  .q-meta .lv{color:#c98a00; font-weight:700; margin-left:4px}
+  .q-meta .core{display:block; font-weight:600; color:#7a6258; font-size:13.5px; margin-top:2px}
+  .q-body{margin:6px 0}
+  .opts{margin:10px 0 2px; color:#333}
+  .opts > span{display:block; margin:9px 0; line-height:1.9}
+  .ctr{text-align:center; margin:10px 0}
+  .ex{padding-left:1.6em; color:#444}
+  /* diagram */
+  .planes{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin:14px 0}
+  .planes figure{margin:0; flex:1 1 200px; max-width:260px; background:#fbfafc; border:1px solid var(--line); border-radius:12px; padding:10px; text-align:center}
+  .planes svg{width:100%; height:120px}
+  .planes figcaption{font-size:13.5px; color:#5a4a52; margin-top:6px; font-weight:600}
+  .planes figcaption b{color:var(--maroon)}
+  /* quick ref */
+  table.ref{border-collapse:collapse; width:100%; min-width:560px; font-size:15px}
+  table.ref th{background:var(--maroon); color:#fff; padding:8px 12px; border:1px solid #d9b9c4}
+  table.ref td{padding:8px 12px; border:1px solid var(--line)}
+  table.ref td:first-child{background:#faf2f5; font-weight:700; color:var(--maroon-d); white-space:nowrap; width:30%}
+  ol.checklist{font-size:15px; padding-left:1.4em}
+  ol.checklist li{padding:4px 0; border-bottom:1px dashed var(--line)}
+  .foot{text-align:center; color:#9a8a82; font-size:12.5px; margin-top:30px}
+  /* 附註（點按浮動說明） */
+  .note{position:relative; cursor:help; border-bottom:1.6px dotted var(--btn); color:#175a62}
+  .note::after{content:"ⓘ"; font-size:.72em; vertical-align:super; color:var(--btn); margin-left:1px}
+  .note>.np{
+    display:none; position:absolute; left:0; top:138%; z-index:60;
+    width:max-content; max-width:300px; text-align:left; white-space:normal;
+    background:#243b3e; color:#fff; padding:9px 13px; border-radius:9px;
+    font-size:13.5px; line-height:1.7; font-weight:400; letter-spacing:.2px;
+    box-shadow:0 6px 22px rgba(0,0,0,.28); cursor:auto;
+  }
+  .note>.np::before{content:""; position:absolute; left:14px; top:-6px;
+    border:6px solid transparent; border-bottom-color:#243b3e; border-top:none}
+  .note.on>.np{display:block}
+  .note>.np .katex{color:#fff}
+  @media(max-width:560px){ .note>.np{max-width:74vw} }
+  .katex{font-size:1.04em}
+  @media(max-width:560px){
+    body{font-size:15.5px} .hero h1{font-size:22px} .part{font-size:18px}
+    .card{padding:16px 15px}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><span class="t-title">數列與級數</span><select class="nav-select" onchange="if(this.value){location.href=this.value;}"><option value="">單元 ▾</option><option value="index.html">📚 目錄首頁</option><option value="115學測數學_三角_互動學習.html">📐 三角</option><option value="115學測數學_排列組合與機率_互動學習.html">🎲 排列組合與機率</option><option value="115學測數學_空間向量_互動學習.html">🧊 空間向量</option><option value="115學測數學_多項式函數_互動學習.html">📈 多項式函數</option><option value="115學測數學_直線與圓_互動學習.html">⭕ 直線與圓</option><option value="115學測數學_指數與對數_互動學習.html">📉 指數與對數</option><option value="115學測數學_平面向量_互動學習.html">➡️ 平面向量</option><option value="115學測數學_數據分析_互動學習.html">📊 數據分析</option><option value="115學測數學_數列與級數_互動學習.html">🪜 數列與級數（目前）</option><option value="115學測數學_矩陣_互動學習.html">🧮 矩陣</option><option value="115學測數學_數與式_互動學習.html">🔢 數與式</option></select><select class="nav-select" onchange="if(this.value){location.hash=this.value;this.selectedIndex=0;}"><option value="">跳至考點 ▾</option><option value="part0">Part 0 · 出題趨勢</option><option value="kp1">考點 1 · 等差數列</option><option value="kp2">考點 2 · 等比數列</option><option value="kp3">考點 3 · 遞迴數列</option><option value="kp4">考點 4 · 級數求和與規律週期</option><option value="part2">Part 2 · 模擬實戰</option><option value="part3">Part 3 · 考前速查</option></select><button onclick="revealAll()">全部顯示解答</button><button onclick="hideAll()">全部隱藏</button></div>
+<div class="wrap">
+<div class="hero"><h1>數列與級數</h1><p>Part 1 四大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查</p><p style="font-size:13px;color:#9a857c;margin-top:2px">每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略</p></div><div class="legend">使用方式：點選紅色 <span class="blank on" style="cursor:default"><span class="a">空格</span></span> 可顯示／隱藏填空答案；點 <b>「顯示正解 / 顯示解答」</b> 按鈕可展開答案。也可用上方 <b>「全部顯示解答」</b> 一次切換整頁。</div><div class="part" id="part0">Part 0　引起動機：為什麼數列與級數是規律題的基本功<small>先抓近十年趨勢與落點，再進入觀念</small></div><div class="card"><span class="label">近十年出題趨勢（106–115）</span><div class="tbl-wrap"><table class="ref" style="min-width:640px"><tr><th style="width:14%">年度</th><th>106</th><th>107</th><th>108</th><th>109</th><th>110</th><th>111</th><th>112</th><th>113</th><th>114</th><th>115</th><th>合計</th></tr><tr><td>題數(加權)</td><td>1.0</td><td>0</td><td>1.0</td><td>1.0</td><td>1.5</td><td>0.5</td><td>1.5</td><td>1.0</td><td>1.0</td><td>1.3</td><td><b>9.8</b></td></tr></table></div><span class="label">趨勢解讀</span><ul class="points"><li><b>題數穩定（近十年約 \(9.8\) 題）</b>：數 A 幾乎年年 \(1\) 題，是規律題的基本功。</li><li><b>一大 ★★★ 核心</b>：等差數列（通項、求和、等差中項）。</li><li><b>與其他單元的橋梁</b>：等比取 \(\log\) 變等差（指對數）、遞迴常配矩陣冪、三根成等差配多項式。</li><li><b>重點在「看出規律、寫出通項」</b>，再套求和公式。</li></ul><span class="label">考點地圖</span><div class="callout">命題主軸四條：① 等差數列 ② 等比數列 ③ 遞迴數列（構造等比、數學歸納）④ 級數求和與規律週期。</div></div><div class="part">Part 1　建構概念：四大考點 <small>先把觀念與公式打穩，再上戰場</small></div><div class="card" id="kp1"><p class="kp"><span class="num">考點 1</span>等差數列：通項、求和與等差中項</p><div class="callout"><b>◆ 這個考點在學什麼：</b>每一項與前一項差固定（公差 \(d\)）。三組公式必背：<b>通項</b>、<b>前 \(n\) 項和</b>、<b>等差中項</b>。</div><span class="label">重點與公式</span><ul class="points"><li class="pt2"><span class="lab">通項：</span><span class="body"><span class="ln">首項 \(a_1\)、公差 \(d\)：第 \(n\) 項 \(a_n=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a_1+(n-1)d\)</span></span>（共 \(n-1\) 個 \(d\)）。</span></span></li><li class="pt2"><span class="lab">前 n 項和：</span><span class="body"><span class="ln">\(S_n=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{n(a_1+a_n)}{2}\)</span></span>\(=\dfrac{n[\,2a_1+(n-1)d\,]}{2}\)（首尾相加 \(\times\) 項數 \(\div2\)）；</span><span class="ln">亦即 \(S_n=\)（<b>中間項</b>）\(\times\)（項數）＝ 平均 \(\times\,n\)（首末平均 ＝ 中間項）。</span></span></li><li class="pt2"><span class="lab">等差中項：</span><span class="body"><span class="ln">\(a,b,c\) 成等差 \(\Leftrightarrow b=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{a+c}{2}\)</span></span>（中項 ＝ 前後兩項平均）\(\Leftrightarrow 2b=a+c\)。</span></span></li><li class="pt2"><span class="lab">判斷等差：</span><span class="body"><span class="ln">連續兩項差為定值（\(a_{n+1}-a_n=d\) 為常數）\(\Leftrightarrow\) 等差數列。</span></span></li></ul><span class="label">常見誤解 × → 正解 ○</span><div class="tbl-wrap"><table class="mis"><tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr><tr><td class="err">\(a_n=a_1+nd\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">\(a_n=a_1+(n-1)d\)（是 \(n-1\) 個 \(d\)）</div></td></tr><tr><td class="err">等差中項 \(b=\sqrt{ac}\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">等差中項 \(b=\dfrac{a+c}{2}\)（等比中項才是 \(\sqrt{ac}\)）</div></td></tr><tr><td class="err">\(S_n=n\cdot a_n\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">\(S_n=\dfrac{n(a_1+a_n)}{2}\)（首尾平均 \(\times\) 項數）</div></td></tr></table></div><span class="label">歷屆試題</span><div class="q-meta"><span class="tag">等差數列範例</span><span class="lv">★☆☆（基礎）</span><span class="core">解題核心：通項 · 求和 · 等差中項</span></div><div class="q-body">等差數列首項 \(a_1=3\)、公差 \(d=4\)。</div><div class="q-body subq"><b>(1)</b>求第 \(10\) 項 \(a_{10}\)。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(39\)</span></p><p><span class="k">解題關鍵：</span>\(a_{10}=a_1+9d=3+9(4)=39\)。</p></div><div class="q-body subq"><b>(2)</b>求前 \(10\) 項和 \(S_{10}\)。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(210\)</span></p><p><span class="k">解題關鍵：</span>\(S_{10}=\dfrac{10(a_1+a_{10})}{2}=\dfrac{10(3+39)}{2}=210\)。</p></div><div class="q-body subq"><b>(3)</b>求 \(5\) 與 \(13\) 的等差中項。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(9\)</span></p><p><span class="k">解題關鍵：</span>等差中項 \(=\dfrac{5+13}{2}=9\)。</p></div><span class="label">解題策略</span><div class="callout"><div class="sln">三公式：通項 \(a_1+(n-1)d\)、和 \(\dfrac{n(a_1+a_n)}{2}\)、中項 \(\dfrac{a+c}{2}\)。</div><div class="sln">「成等差」就用「中項 ＝ 前後平均」或 \(2b=a+c\) 列式。</div><div class="sln">求和先確定 <b>首項、末項、項數</b> 三者。</div><div class="sln">含未知數的等差題，把「公差固定」翻成方程式。</div></div></div><div class="card" id="kp2"><p class="kp"><span class="num">考點 2</span>等比數列：通項、求和與等比中項</p><div class="callout"><b>◆ 這個考點在學什麼：</b>每一項與前一項比固定（公比 \(r\)）。注意與等差的對應：<b>乘代替加、次方代替倍數</b>。</div><span class="label">重點與公式</span><ul class="points"><li class="pt2"><span class="lab">通項：</span><span class="body"><span class="ln">首項 \(a_1\)、公比 \(r\)：第 \(n\) 項 \(a_n=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a_1r^{\,n-1}\)</span></span>。</span></span></li><li class="pt2"><span class="lab">前 n 項和：</span><span class="body"><span class="ln">（\(r\neq1\)）\(S_n=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{a_1(r^n-1)}{r-1}\)</span></span>，也可寫成 \(\dfrac{a_1-a_n\,r}{1-r}\)（首項 \(-\) 末項 \(\times\) 公比，再除以 \(1-\) 公比）；</span><span class="ln">\(r=1\) 時 \(S_n=na_1\)。</span></span></li><li class="pt2"><span class="lab">等比中項：</span><span class="body"><span class="ln">\(a,b,c\) 成等比 \(\Leftrightarrow b^2=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(ac\)</span></span>（中項平方 ＝ 前後乘積）。</span></span></li><li class="pt2"><span class="lab">無窮等比級數：</span><span class="body"><span class="ln">\(|r|&lt;1\) 時收斂，無窮和 \(S=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{a_1}{1-r}\)</span></span>。</span></span></li></ul><span class="label">常見誤解 × → 正解 ○</span><div class="tbl-wrap"><table class="mis"><tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr><tr><td class="err">\(a_n=a_1r^n\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">\(a_n=a_1r^{\,n-1}\)</div></td></tr><tr><td class="err">等比中項 \(b=\dfrac{a+c}{2}\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">等比中項 \(b^2=ac\)（注意正負兩解）</div></td></tr><tr><td class="err">無窮等比一定收斂</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">須 \(|r|&lt;1\) 才收斂</div></td></tr></table></div><span class="label">歷屆試題</span><div class="q-meta"><span class="tag">109 · 選填 A</span><span class="lv">★★☆（中）</span><span class="core">解題核心：等比衰減（利潤逐次減半）</span></div><div class="q-body">網路賣家以 \(200\) 元成本取得某模型，以成本的 \(5\) 倍作為售價（差價即利潤）。之後以「逐次減少一半利潤」的方式調降售價。試問調降三次後該模型的售價為多少元？</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(300\) 元</span></p><p><span class="k">解題關鍵：</span>售價 ＝ 成本 \(\times5=1000\)，利潤 ＝ \(1000-200=800\)。</p><p>「逐次減少一半利潤」→ 利潤成等比、公比 \(\dfrac12\)：\(800,400,200,100,\dots\)。</p><p>調降三次後利潤 \(=800\times\left(\dfrac12\right)^3=100\)；售價 ＝ 成本 ＋ 利潤 \(=200+100=\mathbf{300}\) 元。</p></div><div class="q-meta"><span class="tag">等比數列範例</span><span class="lv">★☆☆（基礎）</span><span class="core">解題核心：通項 · 求和</span></div><div class="q-body">等比數列首項 \(2\)、公比 \(3\)。</div><div class="q-body subq"><b>(1)</b>求第 \(5\) 項 \(a_5\)。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(162\)</span></p><p><span class="k">解題關鍵：</span>\(a_5=2\cdot3^{4}=2\times81=162\)。</p></div><div class="q-body subq"><b>(2)</b>求前 \(5\) 項和 \(S_5\)。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(242\)</span></p><p><span class="k">解題關鍵：</span>\(S_5=\dfrac{2(3^5-1)}{3-1}=\dfrac{2(243-1)}{2}=242\)。</p></div><span class="label">解題策略</span><div class="callout"><div class="sln">等比通項 \(a_1r^{\,n-1}\)、和 \(\dfrac{a_1(r^n-1)}{r-1}\)。</div><div class="sln">等比中項 \(b^2=ac\)（記得正負兩解）。</div><div class="sln">無窮等比級數收斂須 \(|r|&lt;1\)，和 \(\dfrac{a_1}{1-r}\)。</div><div class="sln">等比 <b>取 \(\log\) 變等差</b>——是與指對數的橋梁。</div></div></div><div class="card" id="kp3"><p class="kp"><span class="num">考點 3</span>遞迴數列：構造等比與數學歸納法</p><div class="callout"><b>◆ 這個考點在學什麼：</b>由「前後項的關係式」定義的數列。常見招式：<b>構造一個等比數列</b>（找不動點）、用 <b>數學歸納法</b> 證性質。</div><span class="label">重點與公式</span><ul class="points"><li class="pt2"><span class="lab">遞迴的意義：</span><span class="body"><span class="ln">用前項表示後項，如 \(a_{n+1}=pa_n+q\)；配合初值 \(a_1\) 可逐項算出。</span></span></li><li class="pt2"><span class="lab">構造等比（不動點）：</span><span class="body"><span class="ln">\(a_{n+1}=pa_n+q\)（\(p\neq1\)）：求不動點 \(k\)（解 \(k=pk+q\)），則 \(\{a_n-k\}\) 成 <b>等比</b>，公比 ＝ <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(p\)</span></span>。</span></span></li><li class="pt2"><span class="lab">數學歸納法：</span><span class="body"><span class="ln">證對所有正整數 \(n\) 成立：① 驗 \(n=1\) ② 假設 \(n=k\) 成立 → 推得 \(n=k+1\) 成立。</span></span></li></ul><span class="label">常見誤解 × → 正解 ○</span><div class="tbl-wrap"><table class="mis"><tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr><tr><td class="err">遞迴只能逐項硬算</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">線性遞迴可 <b>構造等比</b> 一次解出通項</div></td></tr><tr><td class="err">歸納法不必驗 \(n=1\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">起始步驟 \(n=1\) <b>必須驗</b></div></td></tr><tr><td class="err">\(a_{n+1}=pa_n+q\) 的 \(\{a_n\}\) 自己是等比</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">是 \(\{a_n-k\}\)（減去不動點）才等比</div></td></tr></table></div><span class="label">歷屆試題</span><div class="q-meta"><span class="tag">114 數A · 多選 7</span><span class="lv">★★★（難）</span><span class="core">解題核心：遞迴構造等比 ＋ 數學歸納法</span></div><div class="q-body">數列 \(\langle a_n\rangle\) 滿足 \(3a_{n+1}=a_n+n\)（對任意正整數 \(n\)）且 \(a_1=2\)。令 \(b_n=a_n-\dfrac n2+\dfrac34\)。試選出正確的選項。<div class="opts"><span>(1) \(a_2=2\)</span><span>(2) \(b_2=\dfrac34\)</span><span>(3) \(\langle b_n\rangle\) 是公比為 \(\dfrac23\) 的等比數列</span><span>(4) 對任意正整數 \(n\)，\(3^n a_n\) 皆為正整數</span><span>(5) \(b_{10}&lt;10^{-4}\)</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">(2)(4)</span></p><p><span class="k">解題關鍵：</span>\(a_{n+1}=\dfrac{a_n+n}{3}\)：\(a_2=\dfrac{2+1}{3}=1\)、\(a_3=\dfrac{1+2}{3}=1\)。</p><p>\(b_1=2-\dfrac12+\dfrac34=\dfrac94\)、\(b_2=1-1+\dfrac34=\dfrac34\)、\(b_3=1-\dfrac32+\dfrac34=\dfrac14\)；公比 \(\dfrac{b_2}{b_1}=\dfrac13\)。</p><p>(1)✗ \(a_2=1\)。(2)○ \(b_2=\dfrac34\)。(3)✗ 公比是 \(\dfrac13\) 不是 \(\dfrac23\)。</p><p>(4)○ \(3^{n+1}a_{n+1}=3^na_n+3^n n\)，由 \(3^1a_1=6\) 為整數，歸納得 \(3^na_n\) 恆為正整數。</p><p>(5)✗ \(b_{10}=\dfrac94\left(\dfrac13\right)^9=\dfrac{1}{8748}\approx1.14\times10^{-4}&gt;10^{-4}\)。故選 (2)(4)。</p></div><span class="label">解題策略</span><div class="callout"><div class="sln">線性遞迴 \(a_{n+1}=pa_n+q\)：找不動點 \(k\)，\(\{a_n-k\}\) 成等比（公比 \(p\)）。</div><div class="sln">題目給好 \(b_n\) 時，直接算前幾項看是否等比（比值固定）。</div><div class="sln">「對所有 \(n\) 成立」用 <b>數學歸納法</b>（驗 \(n=1\)、假設 \(n=k\) 推 \(n=k+1\)）。</div><div class="sln">要證「\(3^na_n\) 為整數」這類，常把遞迴 <b>同乘 \(3^{n+1}\)</b> 化成整數遞迴。</div></div></div><div class="card" id="kp4"><p class="kp"><span class="num">考點 4</span>級數求和與規律、週期</p><div class="callout"><b>◆ 這個考點在學什麼：</b>級數就是「數列的和」。掌握 <b>基本求和公式</b>（自然數和、平方和），以及「<b>週期／循環</b>」型規律題的定位法。</div><span class="label">重點與公式</span><ul class="points"><li class="pt2"><span class="lab">基本求和公式：</span><span class="body"><span class="ln">\(1+2+\cdots+n=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{n(n+1)}{2}\)</span></span>；</span><span class="ln">\(1^2+2^2+\cdots+n^2=\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\dfrac{n(n+1)(2n+1)}{6}\)</span></span>。</span></span></li><li class="pt2"><span class="lab">Σ 的性質：</span><span class="body"><span class="ln">\(\sum(ax_i+b)=a\sum x_i+nb\)（線性）；複雜級數常用 <b>分段求和、錯位相減</b>。</span></span></li><li class="pt2"><span class="lab">規律與週期：</span><span class="body"><span class="ln">找出「每隔幾項／幾秒循環一次」的 <b>週期</b>，用 <b>除法取商與餘</b> 定位：\(N=\) 週期 \(\times\) 商 ＋ 餘。</span></span></li></ul><span class="label">常見誤解 × → 正解 ○</span><div class="tbl-wrap"><table class="mis"><tr><th>常見誤解 <span class="x">×</span></th><th>正確理解 <span class="o">○</span></th></tr><tr><td class="err">\(1+2+\cdots+n=\dfrac{n^2}{2}\)</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">是 \(\dfrac{n(n+1)}{2}\)</div></td></tr><tr><td class="err">週期題一個一個數</td><td class="cor"><button class="sol-btn mini" data-s="顯示正解" data-h="隱藏正解" onclick="ts(this)">顯示正解</button><div class="sol inline">用 <b>除法定位</b>（週期 \(\times\) 商 ＋ 餘）</div></td></tr></table></div><span class="label">歷屆試題</span><div class="q-meta"><span class="tag">110 · 選填 A</span><span class="lv">★★☆（中）</span><span class="core">解題核心：週期規律：除法定位</span></div><div class="q-body">某機器貓從原點朝數線正向移動：以 \(8\) 秒為一週期，每週期先以每秒 \(4\) 單位等速移動 \(6\) 秒、再休息 \(2\) 秒。試問開始移動後第幾秒會抵達坐標 \(116\) 的位置？</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(37\) 秒</span></p><p><span class="k">解題關鍵：</span>每 \(8\) 秒一週期：前 \(6\) 秒移動 \(4\times6=24\) 單位、後 \(2\) 秒休息 → 每週期前進 \(24\) 單位。</p><p>\(116=24\times4+20\)：\(4\) 個完整週期（\(32\) 秒）走到 \(96\)；第 \(5\) 週期再走 \(20\) 單位、需 \(20\div4=5\) 秒。</p><p>共 \(32+5=\mathbf{37}\) 秒抵達 \(116\)（仍在該週期前 \(6\) 秒移動中）。</p></div><div class="q-meta"><span class="tag">級數求和範例</span><span class="lv">★☆☆（基礎）</span><span class="core">解題核心：自然數和公式</span></div><div class="q-body">求 \(1+2+3+\cdots+50\)。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">簡答：</span><span class="ad">\(1275\)</span></p><p><span class="k">解題關鍵：</span>\(\dfrac{50\times51}{2}=1275\)。</p></div><span class="label">解題策略</span><div class="callout"><div class="sln">自然數和 \(\dfrac{n(n+1)}{2}\)、平方和 \(\dfrac{n(n+1)(2n+1)}{6}\) 背熟。</div><div class="sln">週期題：先算出 <b>週期長度</b>，再用除法（週期 \(\times\) 商 ＋ 餘）定位。</div><div class="sln">\(\sum\) 可拆（線性）；遇等差 \(\times\) 等比型用 <b>錯位相減</b>。</div></div></div><div class="part" id="part2">Part 2　喚起行動：模擬實戰（10題）<small>難度貼近學測，涵蓋四大考點 · 建議自行限時 35 分鐘作答後再對照詳解</small></div><div class="card"><span class="label">一、單選題</span><div class="q-meta" style="margin-top:0"><span class="tag">練習 1</span><span class="lv">★☆☆</span><span class="core">解題核心：等差通項</span></div><div class="q-body">等差數列 \(2,5,8,11,\dots\) 的第 \(20\) 項為何？<div class="opts"><span>(1) 56</span><span>(2) 59</span><span>(3) 62</span><span>(4) 60</span><span>(5) 57</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">(2) 59</span></p><p><span class="k">解題關鍵：</span>\(a_1=2,d=3\)：\(a_{20}=2+19(3)=59\)。</p></div><div class="q-meta"><span class="tag">練習 2</span><span class="lv">★★☆</span><span class="core">解題核心：等差求和</span></div><div class="q-body">等差數列 \(3,7,11,\dots\) 的前 \(10\) 項和為何？<div class="opts"><span>(1) 210</span><span>(2) 200</span><span>(3) 220</span><span>(4) 195</span><span>(5) 230</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">(1) 210</span></p><p><span class="k">解題關鍵：</span>\(a_1=3,d=4\)，\(a_{10}=3+9(4)=39\)，\(S_{10}=\dfrac{10(3+39)}{2}=210\)。</p></div><div class="q-meta"><span class="tag">練習 3</span><span class="lv">★☆☆</span><span class="core">解題核心：等比通項</span></div><div class="q-body">等比數列 \(3,6,12,24,\dots\) 的第 \(6\) 項為何？<div class="opts"><span>(1) 96</span><span>(2) 192</span><span>(3) 48</span><span>(4) 108</span><span>(5) 144</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">(1) 96</span></p><p><span class="k">解題關鍵：</span>\(a_1=3,r=2\)：\(a_6=3\cdot2^5=3\times32=96\)。</p></div><div class="q-meta"><span class="tag">練習 4</span><span class="lv">★★☆</span><span class="core">解題核心：無窮等比級數</span></div><div class="q-body">無窮等比級數 \(8+4+2+1+\cdots\) 的和為何？<div class="opts"><span>(1) 14</span><span>(2) 15</span><span>(3) 16</span><span>(4) 12</span><span>(5) 不收斂</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">(3) 16</span></p><p><span class="k">解題關鍵：</span>\(a_1=8,r=\dfrac12\)（\(|r|&lt;1\) 收斂）：\(S=\dfrac{8}{1-\frac12}=16\)。</p></div><div class="q-meta"><span class="tag">練習 5</span><span class="lv">★★☆</span><span class="core">解題核心：等差中項</span></div><div class="q-body">若 \(x,\,10,\,22\) 成等差數列，求 \(x\)。<div class="opts"><span>(1) \(-2\)</span><span>(2) 2</span><span>(3) 4</span><span>(4) 6</span><span>(5) 16</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">(1) \(-2\)</span></p><p><span class="k">解題關鍵：</span>中項 \(10=\dfrac{x+22}{2}\Rightarrow x+22=20\Rightarrow x=-2\)。</p></div><span class="label">二、多選題</span><div class="q-meta" style="margin-top:0"><span class="tag">練習 6</span><span class="lv">★★★</span><span class="core">解題核心：等差數列性質</span></div><div class="q-body">設等差數列首項 \(a_1=1\)、公差 \(d=2\)（即 \(1,3,5,7,\dots\)），下列何者正確？<div class="opts"><span>(1) \(a_n=2n-1\)</span><span>(2) 前 \(n\) 項和 \(S_n=n^2\)</span><span>(3) 第 \(50\) 項為 \(99\)</span><span>(4) \(\langle a_n\rangle\) 為遞增數列</span><span>(5) \(a_{10}=20\)</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">(1)(2)(3)(4)</span></p><p><span class="k">解題關鍵：</span>(1)○ \(1+(n-1)2=2n-1\)。(2)○ \(S_n=\dfrac{n(1+2n-1)}{2}=n^2\)。(3)○ \(2(50)-1=99\)。</p><p>(4)○ \(d&gt;0\) 遞增。(5)✗ \(a_{10}=2(10)-1=19\neq20\)。</p></div><div class="q-meta"><span class="tag">練習 7</span><span class="lv">★★★</span><span class="core">解題核心：等比數列性質</span></div><div class="q-body">設等比數列首項 \(a_1=2\)、公比 \(r=\dfrac12\)（即 \(2,1,\dfrac12,\dots\)），下列何者正確？<div class="opts"><span>(1) \(a_n=2\cdot\left(\dfrac12\right)^{n-1}\)</span><span>(2) \(a_4=\dfrac14\)</span><span>(3) 無窮級數和為 \(4\)</span><span>(4) \(\langle a_n\rangle\) 為遞減正數列</span><span>(5) 前 \(3\) 項和為 \(\dfrac72\)</span></div></div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">(1)(2)(3)(4)(5)</span></p><p><span class="k">解題關鍵：</span>(1)○ 通項。(2)○ \(2(\frac12)^3=\frac14\)。(3)○ \(\dfrac{2}{1-\frac12}=4\)。(4)○ 公比 \(0&lt;r&lt;1\)、各項為正且遞減。</p><p>(5)○ \(2+1+\dfrac12=\dfrac72\)。五者皆正確。</p></div><span class="label">三、選填題</span><div class="q-meta" style="margin-top:0"><span class="tag">練習 8</span><span class="lv">★★☆</span><span class="core">解題核心：等差求和應用</span></div><div class="q-body">求 \(1\) 到 \(100\) 之間所有 \(3\) 的倍數之和。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">1683</span></p><p><span class="k">解題關鍵：</span>\(3,6,\dots,99\) 共 \(33\) 項，\(S=\dfrac{33(3+99)}{2}=\dfrac{33\times102}{2}=1683\)。</p></div><div class="q-meta"><span class="tag">練習 9</span><span class="lv">★★☆</span><span class="core">解題核心：等比中項</span></div><div class="q-body">若 \(4,\,x,\,9\) 成等比數列（\(x&gt;0\)），求 \(x\)。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">6</span></p><p><span class="k">解題關鍵：</span>\(x^2=4\times9=36\Rightarrow x=6\)（取正）。</p></div><div class="q-meta"><span class="tag">練習 10</span><span class="lv">★★☆</span><span class="core">解題核心：週期規律</span></div><div class="q-body">數列 \(1,2,3,1,2,3,1,2,3,\dots\) 以 \(3\) 為週期循環。求第 \(50\) 項。</div><button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" onclick="ts(this)">顯示解答</button><div class="sol"><p><span class="k">答</span><span class="ad">2</span></p><p><span class="k">解題關鍵：</span>\(50=3\times16+2\)，餘 \(2\)，故第 \(50\) 項與第 \(2\) 項相同 \(=2\)。</p></div></div><div class="part" id="part3">Part 3　快速複習：考前翻這頁就好</div><div class="card"><span class="label">3-1　公式一頁速查</span><div class="tbl-wrap"><table class="ref"><tr><th style="width:30%">主題</th><th>必記公式 / 結論</th></tr><tr><td>等差通項 / 和</td><td>\(a_n=a_1+(n-1)d\)；\(S_n=\dfrac{n(a_1+a_n)}{2}\)</td></tr><tr><td>等差中項</td><td>\(a,b,c\) 等差 \(\Leftrightarrow b=\dfrac{a+c}{2}\)（\(2b=a+c\)）</td></tr><tr><td>等比通項 / 和</td><td>\(a_n=a_1r^{\,n-1}\)；\(S_n=\dfrac{a_1(r^n-1)}{r-1}\)（\(r\neq1\)）</td></tr><tr><td>等比中項</td><td>\(a,b,c\) 等比 \(\Leftrightarrow b^2=ac\)</td></tr><tr><td>無窮等比級數</td><td>\(|r|&lt;1\)：\(S=\dfrac{a_1}{1-r}\)</td></tr><tr><td>遞迴（構造等比）</td><td>\(a_{n+1}=pa_n+q\)：不動點 \(k\)，\(\{a_n-k\}\) 等比（公比 \(p\)）</td></tr><tr><td>數學歸納法</td><td>驗 \(n=1\) → 假設 \(n=k\) → 推 \(n=k+1\)</td></tr><tr><td>基本級數和</td><td>\(\sum_{1}^{n}i=\dfrac{n(n+1)}{2}\)；\(\sum_{1}^{n}i^2=\dfrac{n(n+1)(2n+1)}{6}\)</td></tr><tr><td>週期定位</td><td>\(N=\) 週期 \(\times\) 商 ＋ 餘；看「餘數」對應位置</td></tr></table></div><span class="label">3-2　常見誤解總清單（考前自我檢查）</span><ol class="checklist"><li>等差通項 \(a_1+(n-1)d\)（是 \(n-1\) 個 \(d\)）。</li><li>等差中項 \(\dfrac{a+c}{2}\)；等比中項 \(b^2=ac\)，別搞混。</li><li>等比通項 \(a_1r^{\,n-1}\)（不是 \(r^n\)）。</li><li>無窮等比級數須 \(|r|&lt;1\) 才收斂，和 \(\dfrac{a_1}{1-r}\)。</li><li>線性遞迴 \(a_{n+1}=pa_n+q\)：\(\{a_n-不動點\}\) 才是等比。</li><li>數學歸納法 <b>務必驗 \(n=1\)</b>。</li><li>\(1+2+\cdots+n=\dfrac{n(n+1)}{2}\)（不是 \(\dfrac{n^2}{2}\)）。</li><li>週期題用除法定位（週期 \(\times\) 商 ＋ 餘），別逐個數。</li><li>等比取 \(\log\) 變等差——與指對數互通。</li></ol></div><div class="foot">115 學測數學 · 數列與級數 · 互動學習講義</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script>
+// 填空切換
+  function tb(el){ el.classList.toggle('on'); }
+  // 解答區塊切換
+  function ts(btn){
+    var sol = btn.nextElementSibling;
+    var open = sol.classList.toggle('open');
+    btn.classList.toggle('active', open);
+    btn.textContent = open ? (btn.dataset.h || '隱藏') : (btn.dataset.s || '顯示解答');
+  }
+  // 全部顯示 / 隱藏
+  function revealAll(){
+    document.querySelectorAll('.blank').forEach(function(b){ b.classList.add('on'); });
+    document.querySelectorAll('.sol').forEach(function(s){ s.classList.add('open'); });
+    document.querySelectorAll('.sol-btn').forEach(function(b){ b.classList.add('active'); b.textContent=b.dataset.h||'隱藏'; });
+  }
+  function hideAll(){
+    document.querySelectorAll('.blank').forEach(function(b){ b.classList.remove('on'); });
+    document.querySelectorAll('.sol').forEach(function(s){ s.classList.remove('open'); });
+    document.querySelectorAll('.sol-btn').forEach(function(b){ b.classList.remove('active'); b.textContent=b.dataset.s||'顯示解答'; });
+  }
+  // 附註浮動說明：點按開關，一次只開一個，點別處關閉；並自動避免超出畫面被切到
+  function tn(ev, el){
+    ev.stopPropagation();
+    var open = el.classList.contains('on');
+    document.querySelectorAll('.note.on').forEach(function(n){
+      n.classList.remove('on');
+      var p = n.querySelector('.np'); if(p){ p.style.left=''; }
+    });
+    if(!open){
+      el.classList.add('on');
+      var np = el.querySelector('.np');
+      if(np){
+        np.style.left = '0px';
+        var m = 8, r = np.getBoundingClientRect();
+        if(r.right > window.innerWidth - m){ np.style.left = (-(r.right - (window.innerWidth - m))) + 'px'; }
+        r = np.getBoundingClientRect();
+        if(r.left < m){ np.style.left = ((parseFloat(np.style.left)||0) + (m - r.left)) + 'px'; }
+      }
+    }
+  }
+  // 點在附註以外的地方才關閉（避免和開啟的點擊互相打架）
+  document.addEventListener('click', function(e){
+    if (e.target.closest && e.target.closest('.note')) return;
+    document.querySelectorAll('.note.on').forEach(function(n){ n.classList.remove('on'); });
+  });
+  // KaTeX 渲染（含隱藏內容；失敗也不影響頁面）
+  function renderMath(){
+    try{
+      if (window.renderMathInElement){
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left:'\\(', right:'\\)', display:false},
+            {left:'\\[', right:'\\]', display:true}
+          ],
+          throwOnError:false
+        });
+      }
+    }catch(e){}
+  }
+  if (document.readyState !== 'loading') renderMath();
+  else document.addEventListener('DOMContentLoaded', renderMath);
+</script>
+</body>
+</html>

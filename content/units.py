@@ -8,6 +8,9 @@ UNITS = [
     {"slug": "poly", "file": "115學測數學_多項式函數_互動學習.html", "emoji": "📈", "title": "多項式函數"},
     {"slug": "linecir", "file": "115學測數學_直線與圓_互動學習.html", "emoji": "⭕", "title": "直線與圓"},
     {"slug": "explog", "file": "115學測數學_指數與對數_互動學習.html", "emoji": "📉", "title": "指數與對數"},
+    {"slug": "pvec", "file": "115學測數學_平面向量_互動學習.html", "emoji": "➡️", "title": "平面向量"},
+    {"slug": "data", "file": "115學測數學_數據分析_互動學習.html", "emoji": "📊", "title": "數據分析"},
+    {"slug": "seq", "file": "115學測數學_數列與級數_互動學習.html", "emoji": "🪜", "title": "數列與級數"},
     {"slug": "matrix", "file": "115學測數學_矩陣_互動學習.html", "emoji": "🧮", "title": "矩陣"},
     {"slug": "numexpr", "file": "115學測數學_數與式_互動學習.html", "emoji": "🔢", "title": "數與式"},
 ]
