@@ -79,6 +79,9 @@ UNIT = {
                  "solution": {"brief": r"\(k=-4\)",
                               "steps": [r"\(\vec u\,/\!/\,\vec v\Leftrightarrow ad-bc=0\)：\(2\times6-(-3)\times k=12+3k=0\Rightarrow k=-4\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"向量 \((-3,4)\) 的長度為何？",
+                "a": r"**\(5\)**：\(\sqrt{9+16}\)。"},
             "strategy": [
                 r"向量坐標 ＝ **終點減起點**；運算就是「對應坐標加減、乘係數」。",
                 r"長度 \(\sqrt{a^2+b^2}\)；單位向量 ＝ 向量 ÷ 長度。",
@@ -137,6 +140,9 @@ UNIT = {
                                    "steps": [r"重心 \(\overrightarrow{AG}=\dfrac23\overrightarrow{AM}=\dfrac23\cdot\dfrac{\overrightarrow{AB}+\overrightarrow{AC}}{2}=\dfrac{\overrightarrow{AB}+\overrightarrow{AC}}{3}\)。"]}},
                  ]},
             ],
+            "selfcheck": {
+                "q": r"\(\overrightarrow{AP}=\dfrac14\overrightarrow{AB}+\dfrac12\overrightarrow{AC}\)，則 \(\triangle ABP\) 佔 \(\triangle ABC\) 幾分之幾？",
+                "a": r"**\(\dfrac12\)**：佔比 ＝ \(\overrightarrow{AC}\) 的係數 \(\beta\)。"},
             "strategy": [
                 r"線性組合先選 **兩個不平行向量** 當基底，所有向量都用它們表示。",
                 r"分點記「**對角交叉**」：\(\overrightarrow{AP}:\overrightarrow{PB}=m:n\Rightarrow\overrightarrow{OP}=\dfrac{n\overrightarrow{OA}+m\overrightarrow{OB}}{m+n}\)。",
@@ -189,6 +195,9 @@ UNIT = {
                                   r"\(L=1\) 使第二個正射影長 \(<0\)（與銳角矛盾），取 \(L=5\)；故 \(\vec v=\dfrac{4(2,-3)+3(3,2)}{\sqrt{13}}=\dfrac{(17,-6)}{\sqrt{13}}\)。",
                                   r"在 \((4,7)\)（長 \(\sqrt{65}\)）的正射影長 \(=\dfrac{\vec v\cdot(4,7)}{\sqrt{65}}=\dfrac{26/\sqrt{13}}{\sqrt{65}}=\dfrac{26}{13\sqrt5}=\dfrac{2\sqrt5}{5}\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"若 \((2,k)\perp(3,-6)\)，求 \(k\)。",
+                "a": r"**\(1\)**：內積 \(6-6k=0\)。"},
             "strategy": [
                 r"內積三用途：長度（\(|\vec u|^2=\vec u\cdot\vec u\)）、夾角（\(\cos\theta\)）、垂直（\(=0\)）。",
                 r"看到「垂直」立刻寫「內積 \(=0\)」；只問銳／鈍／直角看內積正負。",
@@ -229,6 +238,9 @@ UNIT = {
                  "solution": {"brief": r"平行四邊形 \(11\)、三角形 \(\dfrac{11}{2}\)",
                               "steps": [r"\(\det(\vec u,\vec v)=3\cdot4-1\cdot1=11\)。平行四邊形面積 \(=|11|=11\)，三角形面積 \(=\dfrac{11}{2}\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"\(\vec u=(3,1),\vec v=(1,4)\) 張成的平行四邊形面積為何？",
+                "a": r"**\(11\)**：\(|3\cdot4-1\cdot1|\)。"},
             "strategy": [
                 r"平行四邊形面積 ＝ \(|\)行列式\(|\)；三角形 ＝ 一半。",
                 r"面積題若給「基底向量的組合」，用行列式 **線性展開**、不必算坐標（\(110\) 單4）。",
@@ -276,6 +288,9 @@ UNIT = {
                                   r"\(C=B+\overrightarrow{BC}=(4,2)+(-1,3)=(3,5)\)；\(\overrightarrow{AD}=\overrightarrow{BC}=(-1,3)\)，\(D=A+\overrightarrow{AD}=(0,4)\)。",
                                   r"驗證 \(\overrightarrow{AB}\cdot\overrightarrow{BC}=(3,1)\cdot(-1,3)=0\)（垂直）、\(|\overrightarrow{AB}|=|\overrightarrow{BC}|=\sqrt{10}\)（等長），確為正方形。"]}},
             ],
+            "selfcheck": {
+                "q": r"向量 \((2,5)\) 繞原點逆時針旋轉 \(90^\circ\) 後為何？",
+                "a": r"**\((-5,2)\)**：\((x,y)\to(-y,x)\)。"},
             "strategy": [
                 r"旋轉 \(90^\circ\) 記「逆時針 \((x,y)\to(-y,x)\)」——求正方形頂點、垂直方向最常用。",
                 r"一般角用旋轉公式 \((x\cos\theta-y\sin\theta,\;x\sin\theta+y\cos\theta)\)。",

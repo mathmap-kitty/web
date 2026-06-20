@@ -95,6 +95,9 @@ UNIT = {
                  "solution": {"brief": r"\(c-3d=-1\)",
                               "steps": [r"由第一式 \(\begin{cases}a-b=1\\3a-2b=0\end{cases}\Rightarrow a=-2,\;b=-3\)，故 \(2a+1=-3,\;2b+1=-5\)；代入得 \(\begin{bmatrix}c\\d\end{bmatrix}=\begin{bmatrix}1&-1\\3&-2\end{bmatrix}\begin{bmatrix}-3\\-5\end{bmatrix}=\begin{bmatrix}2\\1\end{bmatrix}\)，故 \(c-3d=2-3=-1\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"\(\begin{pmatrix}1&2\\3&4\end{pmatrix}\begin{pmatrix}1\\1\end{pmatrix}\) 之值為何？",
+                "a": r"**\(\begin{pmatrix}3\\7\end{pmatrix}\)**：左列乘右行。"},
             "strategy": [
                 r"「矩陣相等」常與「矩陣乘法」綁在一起：**先把乘積算出來，再對應位置列出聯立方程式** 求未知數。",
                 r"善用「乘特殊矩陣的效果」：左乘 \(\begin{bmatrix}0&1\\1&0\end{bmatrix}\) ＝對調兩列、右乘對角矩陣 ＝ 對各行縮放，可省去硬乘。",
@@ -144,6 +147,9 @@ UNIT = {
                  "solution": {"brief": r"(2)(5)",
                               "steps": [r"\(A^2=\begin{bmatrix}5&2\\2&1\end{bmatrix}\)。(1)✗：\(b_2=c_2=2\)。(2)○：\(2A+I=\begin{bmatrix}5&2\\2&1\end{bmatrix}=A^2\)。(3)✗：由 \(A^2=2A+I\) 得 \(A^{n+2}=2A^{n+1}+A^{n}\)，故 \(c_{n+2}=2c_{n+1}+c_n\)。(4)✗：左式 \(=\begin{bmatrix}b_n\\d_n\end{bmatrix}\neq\begin{bmatrix}b_{n+1}\\d_{n+1}\end{bmatrix}\)。(5)○：由 \(A^{2n}=A^{n}A^{n}\) 比較對應元素可得。"]}},
             ],
+            "selfcheck": {
+                "q": r"\(2\times2\) 單位方陣 \(I\) 的 \(100\) 次方為何？",
+                "a": r"**\(I\)**：\(I^n=I\)。"},
             "strategy": [
                 r"看到高次方先別硬乘：**先算 \(A^2\)**，檢查是不是 \(kI\) 或能寫成 \(pA+qI\)（二階一定可以，用凱萊–漢米頓）。",
                 r"是旋轉矩陣就直接用 \([R(\theta)]^{n}=R(n\theta)\)。",
@@ -199,6 +205,9 @@ UNIT = {
                               "steps": [r"反方陣即把「輸入↔輸出」反過來：由條件得 \(A^{-1}\begin{bmatrix}0\\1\end{bmatrix}=\begin{bmatrix}1\\1\end{bmatrix}\)、\(A^{-1}\begin{bmatrix}1\\0\end{bmatrix}=\begin{bmatrix}1\\-1\end{bmatrix}\)。",
                                         r"\(A^{-1}\) 的兩行就是兩基底 \(\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}0\\1\end{bmatrix}\) 的像，故 \(A^{-1}=\begin{bmatrix}1&1\\-1&1\end{bmatrix}\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"\(\begin{pmatrix}2&0\\0&2\end{pmatrix}\) 的反方陣為何？",
+                "a": r"**\(\begin{pmatrix}\frac12&0\\0&\frac12\end{pmatrix}\)**：對角各取倒數。"},
             "strategy": [
                 r"題目給「\(A\) 作用在某些向量的結果」時，把這些向量並排成方陣 \(M\)，得 \(AM=N\)，再用 \(A=NM^{-1}\) 還原 \(A\)；若湊出 \(AM=I\)，則 \(M\) 直接就是 \(A^{-1}\)。",
                 r"能用 \(A+A^2+I\) 這類化簡時，**盡量避開實際去求反方陣**，又快又不易錯。",
@@ -290,6 +299,9 @@ UNIT = {
                                         r"再用 \(E_3:x+2y+2z=-2\)（法向量 \((1,2,2)\) 長度 \(3\)）：\(\dfrac{|a+2b+2c+2|}{3}=6\Rightarrow|a-16|=18\)，因 \(a\lt0\) 取 \(a=-2\)。",
                                         r"故 \(a+b+c=-2-1-8=-11\)。**關鍵**：先挑「不含 \(x\) 的兩式」解出 \(b,c\)，再回代第三式——這正是高斯消去「由簡到繁」的精神。"]}},
             ],
+            "selfcheck": {
+                "q": r"解聯立 \(x+y=5,\ x-y=1\)。",
+                "a": r"**\(x=3,y=2\)**：相加得 \(2x=6\)。"},
             "strategy": [
                 r"係數成等差／等比的方程組，常可用 **列相減** 一次消去（\(106\) 選D、\(112\) 選13 都是這招）。",
                 r"判別解的個數：先把增廣矩陣化到 **列梯形** 再看最末一列；二元可直接用係數比 \(\tfrac{a_1}{a_2}=\tfrac{b_1}{b_2}\) 快速判斷。",
@@ -355,6 +367,9 @@ UNIT = {
                                    "steps": [r"\(OQ\) 沿 \(x\) 軸方向，故 \(L:\,y=1\)；直線 \(OR:\,y=\sqrt3\,x\)，兩式聯立解得交點 \(S\)，並由斜率求 \(\angle OSP\)。"]}},
                  ]},
             ],
+            "selfcheck": {
+                "q": r"逆時針旋轉 \(90^\circ\) 的變換矩陣為何？",
+                "a": r"**\(\begin{pmatrix}0&-1\\1&0\end{pmatrix}\)**。"},
             "strategy": [
                 r"判性質的多選題：先把每個變換 **寫成具體矩陣**，再逐一檢驗等式——比抽象推論可靠（\(112\) 多11）。",
                 r"面積題只要算 \(|\det M|\) 乘原面積，**不必畫圖**（\(113\) 多12）。",

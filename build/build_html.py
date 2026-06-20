@@ -133,6 +133,17 @@ def _kp_html(kp):
         else:
             inner = html_rich(s)
         strategy = f'<span class="label">解題策略</span><div class="callout">{inner}</div>'
+    selfcheck = ""
+    sc = kp.get("selfcheck")
+    if sc:
+        ans = "".join(f'<p>{html_rich(x)}</p>' for x in sc["a"]) if isinstance(sc["a"], (list, tuple)) \
+            else f'<p>{html_rich(sc["a"])}</p>'
+        selfcheck = ('<div class="selfcheck">'
+                     '<div class="sc-head">⏱ 1 分鐘自我檢查</div>'
+                     f'<div class="sc-q">{html_rich(sc["q"])}</div>'
+                     '<button class="sol-btn" data-s="看答案" data-h="收起答案" '
+                     'onclick="ts(this)">看答案</button>'
+                     f'<div class="sol">{ans}</div></div>')
     return (f'<div class="card" id="{kp["id"]}">'
             f'<p class="kp"><span class="num">{kp["num"]}</span>{html_rich(kp["title"])}</p>'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
@@ -140,7 +151,7 @@ def _kp_html(kp):
             f'{tables}'
             f'{mis}'
             f'<span class="label">歷屆試題</span>{qs}'
-            f"{strategy}</div>")
+            f"{strategy}{selfcheck}</div>")
 
 
 def _question_intro_html(q):

@@ -208,6 +208,13 @@ def _kp(doc, kp, mode):
                 _rich(doc, "▸ " + x, mode, indent=0.4, fill="FDF3EE", before=1, after=1)
         else:
             _rich(doc, s, mode, indent=0.4, fill="FDF3EE")
+    sc = kp.get("selfcheck")
+    if sc:
+        _label(doc, "【⏱ 1 分鐘自我檢查】")
+        _rich(doc, sc["q"], mode, indent=0.4, fill="FFFAEF", before=2, after=1)
+        ans = sc["a"] if isinstance(sc["a"], (list, tuple)) else [sc["a"]]
+        for i, a in enumerate(ans):
+            _rich(doc, ("**答：** " if i == 0 else "") + a, mode, indent=0.4, fill="FFF6E0", before=1, after=1)
 
 
 def build_docx(unit, mode, out_path):

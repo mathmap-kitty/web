@@ -106,6 +106,9 @@ UNIT = {
                               "steps": [r"\(\sin\alpha=\dfrac35=0.6\)、\(\sin\beta=\dfrac{5}{13}\approx0.385\)、\(\sin30°=0.5\)。",
                                         r"故 \(\sin\alpha\,(0.6)\gt\sin30°\,(0.5)\gt\sin\beta\,(0.385)\)，選 (2)。"]}},
             ],
+            "selfcheck": {
+                "q": r"\(\sin30^\circ+\cos60^\circ+\tan45^\circ\) 之值為何？",
+                "a": r"**\(2\)**：\(\dfrac12+\dfrac12+1=2\)。"},
             "strategy": [
                 r"特殊角 \(30°/45°/60°\) 的值要背熟；比大小時化成小數最直覺。",
                 r"遇到 \(x°\) 與 \(x\) 弧度，**先統一單位** 再比較或計算。",
@@ -156,6 +159,9 @@ UNIT = {
                  "solution": {"brief": r"\(BC=7\)",
                               "steps": [r"由餘弦定理 \(BC^2=AB^2+AC^2-2\cdot AB\cdot AC\cos A=25+64-2\cdot5\cdot8\cdot\dfrac12=89-40=49\)，故 \(BC=7\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"三角形中 \(a=7,\,b=5\)，夾角 \(C=60^\circ\)，求 \(c\)。",
+                "a": r"**\(\sqrt{39}\)**：餘弦定理 \(c^2=49+25-2\cdot7\cdot5\cdot\frac12=39\)。"},
             "strategy": [
                 r"先看 **給了什麼**：兩角一邊 → 正弦定理；兩邊夾角或三邊 → 餘弦定理。",
                 r"SSA（兩邊一對角）務必判 **對邊 vs 鄰邊** 大小，小心兩解。",
@@ -200,6 +206,9 @@ UNIT = {
                               "steps": [r"設塔高 \(h\)、塔底到 \(B\) 的水平距離 \(d\)。由 \(B\)：\(\tan45°=\dfrac hd\Rightarrow d=h\)；由 \(A\)：\(\tan30°=\dfrac{h}{d+100}\)。",
                                         r"代入 \(\dfrac1{\sqrt3}=\dfrac{h}{h+100}\Rightarrow h+100=\sqrt3\,h\Rightarrow h=\dfrac{100}{\sqrt3-1}=50(\sqrt3+1)\approx136.6\) 公尺。"]}},
             ],
+            "selfcheck": {
+                "q": r"從地面看塔頂仰角 \(30^\circ\)、水平距離 \(100\) 公尺，求塔高。",
+                "a": r"**\(\dfrac{100\sqrt3}{3}\) 公尺**：\(100\tan30^\circ=\dfrac{100}{\sqrt3}\)。"},
             "strategy": [
                 r"測量題先 **畫示意圖**、標出仰角／俯角／方位角，再選正弦或餘弦定理。",
                 r"比較邊長用「**大角對大邊**」；比較 \(\sin/\cos\) 注意單調性（\(\sin\) 在 \(0°\)–\(90°\) 增、\(\cos\) 減）。",
@@ -248,6 +257,9 @@ UNIT = {
                               "steps": [r"疊合：\(g(x)=\sqrt{3^2+4^2}\,\sin(x+\varphi)=5\sin(x+\varphi)\)。",
                                         r"故最大值 \(=5\)、最小值 \(=-5\)；週期與 \(\sin x\) 同，為 \(2\pi\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"\(y=2\sin x+1\) 的最大值、最小值與週期各為何？",
+                "a": r"最大 **\(3\)**、最小 **\(-1\)**、週期 **\(2\pi\)**。"},
             "strategy": [
                 r"看到 \(a\sin x+b\cos x\) 先 **疊合** 成 \(\sqrt{a^2+b^2}\sin(x+\varphi)\)：振幅、極值、對稱軸全靠它。",
                 r"對稱軸過最高／最低點、對稱中心過零點，先疊合再判斷。",
@@ -291,6 +303,9 @@ UNIT = {
                                         r"\(\cos2\theta\gt\cos\theta\Rightarrow2\cos^2\theta-\cos\theta-1\gt0\Rightarrow\cos\theta\lt-\frac12\Rightarrow\theta\in\left(\frac{2\pi}3,\frac{4\pi}3\right)\)。",
                                         r"取交集得 \(\theta\in\left(\pi,\frac{4\pi}3\right)\)，即 \(a=1,\,b=\frac43\)，故 \(b-a=\frac13\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"已知 \(\sin\theta=\dfrac35\)（\(\theta\) 為銳角），求 \(\sin2\theta\)。",
+                "a": r"**\(\dfrac{24}{25}\)**：\(\cos\theta=\dfrac45\)，\(\sin2\theta=2\cdot\dfrac35\cdot\dfrac45\)。"},
             "strategy": [
                 r"和角公式的 \(\cos\) 記「**符號相反**」：\(\cos(A+B)=\cos A\cos B-\sin A\sin B\)。",
                 r"解三角方程式：用和差／倍角化成 **同一個角**，或提公因式因式分解（如提出 \(\sin\frac x2\)）。",
@@ -324,6 +339,9 @@ UNIT = {
                               "steps": [r"角平分線定理 \(\dfrac{BD}{DC}=\dfrac{AB}{AC}=\dfrac64=\dfrac32\)，且 \(BD+DC=BC=5\)，",
                                         r"故 \(BD=5\times\dfrac{3}{3+2}=3\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"\(\triangle ABC\) 中 \(\overline{AD}\) 為 \(\angle A\) 的平分線，\(AB=6,AC=4\)，求 \(BD:DC\)。",
+                "a": r"**\(3:2\)**：角平分線分對邊成兩鄰邊之比 \(AB:AC=6:4\)。"},
             "strategy": [
                 r"看到角平分線就用 \(BD:DC=AB:AC\)。",
                 r"比面積優先用 \(\dfrac12 ab\sin C\)（夾角已知）或「等高比底」。",
@@ -367,6 +385,9 @@ UNIT = {
                  "solution": {"brief": r"\(BC=5\)",
                               "steps": [r"正弦定理 \(\dfrac{a}{\sin A}=2R\Rightarrow a=2R\sin A=2\times5\times\sin30°=10\times\dfrac12=5\)。"]}},
             ],
+            "selfcheck": {
+                "q": r"圓中一弧所對的圓心角為 \(100^\circ\)，則此弧所對的圓周角為何？",
+                "a": r"**\(50^\circ\)**：圓周角 ＝ 圓心角的一半。"},
             "strategy": [
                 r"圓周角配正弦定理（\(\dfrac{a}{\sin A}=2R\)）連結邊長與外接圓。",
                 r"圓內接四邊形 **對角互補**；直徑所對圓周角為直角。",
