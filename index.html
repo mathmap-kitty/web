@@ -12,8 +12,12 @@
   .wrap{max-width:880px;margin:0 auto;padding:0 18px 70px}
   .hero{text-align:center;padding:30px 0 6px}
   .hero h1{color:var(--maroon);font-size:28px;margin:.2em 0;letter-spacing:1px}
-  .hero p{color:#7a6a63;font-size:15px;margin:.3em auto;max-width:620px}
-  .units{display:flex;flex-direction:column;gap:16px;margin-top:20px}
+  .hero p{color:#7a6a63;font-size:15px;margin:.3em auto;max-width:640px}
+  .section{margin-top:30px}
+  .section-title{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--maroon-d);margin:0 0 14px;padding:9px 16px;background:linear-gradient(90deg,#f0dde3,rgba(240,221,227,0));border-left:5px solid var(--maroon);border-radius:0 10px 10px 0}
+  .section-title .num{flex-shrink:0;width:26px;height:26px;background:var(--maroon);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+  .section-title small{font-weight:600;color:#9a8a82;font-size:13px;margin-left:auto;text-align:right}
+  .section-units{display:flex;flex-direction:column;gap:16px}
   .unit{background:var(--card);border-radius:14px;box-shadow:0 2px 10px rgba(80,40,30,.07);border-left:5px solid var(--maroon);overflow:hidden}
   .unit-head{display:flex;align-items:center;gap:10px;padding:15px 20px;font-size:20px;font-weight:800;color:var(--maroon);text-decoration:none}
   .unit-head:hover{background:#faf2f5}
@@ -23,9 +27,8 @@
   .sub a{display:block;padding:9px 14px;background:#faf6f2;border:1px solid var(--line);border-radius:10px;color:#4a3a34;text-decoration:none;font-size:14.5px;transition:.12s}
   .sub a:hover{background:#f3e3e8;color:var(--maroon-d);border-color:#d9c2c9}
   .sub a b{color:var(--maroon)}
-  .placeholder{border:2px dashed #d9c2c9;color:#a8928a;text-align:center;padding:20px;border-radius:14px;font-size:15px}
-  .foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:30px}
-  @media(max-width:560px){.hero h1{font-size:23px}.unit-head{font-size:18px}}
+  .foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:34px}
+  @media(max-width:560px){.hero h1{font-size:23px}.unit-head{font-size:18px}.section-title{font-size:16px}.section-title small{display:none}}
 </style>
 </head>
 <body>
@@ -34,24 +37,73 @@
 
   <div class="hero">
     <h1>互動學習講義</h1>
-    <p>點選單元進入學習。每個單元依其考點編排（每個考點含 重點與公式 · 常見誤解 · 歷屆試題 · 解題策略），並附模擬實戰與考前速查。</p>
+    <p>108 課綱數 A 全 11 單元，依四大主題分區。每個單元依其考點編排（重點與公式 · 常見誤解 · 歷屆試題 · 解題策略），並附模擬實戰與考前速查。</p>
   </div>
 
-  <div class="units">
+  <div class="section">
+    <h2 class="section-title"><span class="num">1</span>代數與函數 <small>數與式 · 多項式 · 指對數</small></h2>
+    <div class="section-units">
 
     <div class="unit">
-      <a class="unit-head" href="115學測數學_三角_互動學習.html">📐 三角 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <a class="unit-head" href="115學測數學_數與式_互動學習.html">🔢 數與式 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
       <div class="sub">
-        <a href="115學測數學_三角_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
-        <a href="115學測數學_三角_互動學習.html#kp1"><b>考點 1</b>　三角比、弧度與廣義角</a>
-        <a href="115學測數學_三角_互動學習.html#kp2"><b>考點 2</b>　正弦定理、餘弦定理</a>
-        <a href="115學測數學_三角_互動學習.html#kp3"><b>考點 3</b>　三角測量與幾何應用</a>
-        <a href="115學測數學_三角_互動學習.html#kp4"><b>考點 4</b>　三角函數圖形（疊合、對稱）</a>
-        <a href="115學測數學_三角_互動學習.html#kp5"><b>考點 5</b>　和差角、倍角</a>
-        <a href="115學測數學_三角_互動學習.html#kp6"><b>考點 6</b>　角平分線、面積比與相似</a>
-        <a href="115學測數學_三角_互動學習.html#kp7"><b>考點 7</b>　圓周角與二面角中的三角</a>
-        <a href="115學測數學_三角_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
-        <a href="115學測數學_三角_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
+        <a href="115學測數學_數與式_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_數與式_互動學習.html#kp1"><b>考點 1</b>　實數系與有理／無理</a>
+        <a href="115學測數學_數與式_互動學習.html#kp2"><b>考點 2</b>　絕對值</a>
+        <a href="115學測數學_數與式_互動學習.html#kp3"><b>考點 3</b>　數線、距離與根號估算</a>
+        <a href="115學測數學_數與式_互動學習.html#kp4"><b>考點 4</b>　乘法公式與算幾不等式</a>
+        <a href="115學測數學_數與式_互動學習.html#kp5"><b>考點 5</b>　比例、百分率與加權平均</a>
+        <a href="115學測數學_數與式_互動學習.html#kp6"><b>考點 6</b>　高斯（最大整數）函數</a>
+        <a href="115學測數學_數與式_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_數與式_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_多項式函數_互動學習.html">📈 多項式函數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_多項式函數_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_多項式函數_互動學習.html#kp1"><b>考點 1</b>　除法、餘式與因式定理</a>
+        <a href="115學測數學_多項式函數_互動學習.html#kp2"><b>考點 2</b>　二次函數：判別式與配方</a>
+        <a href="115學測數學_多項式函數_互動學習.html#kp3"><b>考點 3</b>　多項式方程式與不等式</a>
+        <a href="115學測數學_多項式函數_互動學習.html#kp4"><b>考點 4</b>　高次方程式（有理根、勘根）</a>
+        <a href="115學測數學_多項式函數_互動學習.html#kp5"><b>考點 5</b>　三次函數圖形與對稱中心</a>
+        <a href="115學測數學_多項式函數_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_多項式函數_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_指數與對數_互動學習.html">📉 指數與對數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_指數與對數_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_指數與對數_互動學習.html#kp1"><b>考點 1</b>　指數律與指數方程</a>
+        <a href="115學測數學_指數與對數_互動學習.html#kp2"><b>考點 2</b>　對數的定義與運算</a>
+        <a href="115學測數學_指數與對數_互動學習.html#kp3"><b>考點 3</b>　常用對數（科學記號、位數）</a>
+        <a href="115學測數學_指數與對數_互動學習.html#kp4"><b>考點 4</b>　指數對數函數圖形</a>
+        <a href="115學測數學_指數與對數_互動學習.html#kp5"><b>考點 5</b>　應用模型與數列結合</a>
+        <a href="115學測數學_指數與對數_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_指數與對數_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">2</span>數列・機率・統計 <small>數列 · 排列機率 · 數據分析</small></h2>
+    <div class="section-units">
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_數列與級數_互動學習.html">🪜 數列與級數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_數列與級數_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_數列與級數_互動學習.html#kp1"><b>考點 1</b>　等差數列</a>
+        <a href="115學測數學_數列與級數_互動學習.html#kp2"><b>考點 2</b>　等比數列</a>
+        <a href="115學測數學_數列與級數_互動學習.html#kp3"><b>考點 3</b>　遞迴數列</a>
+        <a href="115學測數學_數列與級數_互動學習.html#kp4"><b>考點 4</b>　級數求和與規律週期</a>
+        <a href="115學測數學_數列與級數_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_數列與級數_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
       </div>
     </div>
 
@@ -71,31 +123,38 @@
     </div>
 
     <div class="unit">
-      <a class="unit-head" href="115學測數學_空間向量_互動學習.html">🧊 空間向量 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <a class="unit-head" href="115學測數學_數據分析_互動學習.html">📊 數據分析 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
       <div class="sub">
-        <a href="115學測數學_空間向量_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
-        <a href="115學測數學_空間向量_互動學習.html#kp1"><b>考點 1</b>　空間坐標與距離</a>
-        <a href="115學測數學_空間向量_互動學習.html#kp2"><b>考點 2</b>　內積與垂直</a>
-        <a href="115學測數學_空間向量_互動學習.html#kp3"><b>考點 3</b>　外積與體積</a>
-        <a href="115學測數學_空間向量_互動學習.html#kp4"><b>考點 4</b>　平面方程式與距離</a>
-        <a href="115學測數學_空間向量_互動學習.html#kp5"><b>考點 5</b>　空間直線與歪斜線</a>
-        <a href="115學測數學_空間向量_互動學習.html#kp6"><b>考點 6</b>　二面角與立體</a>
-        <a href="115學測數學_空間向量_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
-        <a href="115學測數學_空間向量_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
+        <a href="115學測數學_數據分析_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_數據分析_互動學習.html#kp1"><b>考點 1</b>　一維數據與標準差</a>
+        <a href="115學測數學_數據分析_互動學習.html#kp2"><b>考點 2</b>　相關係數</a>
+        <a href="115學測數學_數據分析_互動學習.html#kp3"><b>考點 3</b>　迴歸直線（最適直線）</a>
+        <a href="115學測數學_數據分析_互動學習.html#kp4"><b>考點 4</b>　加權平均與資料判讀</a>
+        <a href="115學測數學_數據分析_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_數據分析_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
       </div>
     </div>
 
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">3</span>平面幾何 <small>三角 · 直線與圓 · 平面向量</small></h2>
+    <div class="section-units">
+
     <div class="unit">
-      <a class="unit-head" href="115學測數學_多項式函數_互動學習.html">📈 多項式函數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <a class="unit-head" href="115學測數學_三角_互動學習.html">📐 三角 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
       <div class="sub">
-        <a href="115學測數學_多項式函數_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
-        <a href="115學測數學_多項式函數_互動學習.html#kp1"><b>考點 1</b>　除法、餘式與因式定理</a>
-        <a href="115學測數學_多項式函數_互動學習.html#kp2"><b>考點 2</b>　二次函數：判別式與配方</a>
-        <a href="115學測數學_多項式函數_互動學習.html#kp3"><b>考點 3</b>　多項式方程式與不等式</a>
-        <a href="115學測數學_多項式函數_互動學習.html#kp4"><b>考點 4</b>　高次方程式（有理根、勘根）</a>
-        <a href="115學測數學_多項式函數_互動學習.html#kp5"><b>考點 5</b>　三次函數圖形與對稱中心</a>
-        <a href="115學測數學_多項式函數_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
-        <a href="115學測數學_多項式函數_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
+        <a href="115學測數學_三角_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_三角_互動學習.html#kp1"><b>考點 1</b>　三角比、弧度與廣義角</a>
+        <a href="115學測數學_三角_互動學習.html#kp2"><b>考點 2</b>　正弦定理、餘弦定理</a>
+        <a href="115學測數學_三角_互動學習.html#kp3"><b>考點 3</b>　三角測量與幾何應用</a>
+        <a href="115學測數學_三角_互動學習.html#kp4"><b>考點 4</b>　三角函數圖形（疊合、對稱）</a>
+        <a href="115學測數學_三角_互動學習.html#kp5"><b>考點 5</b>　和差角、倍角</a>
+        <a href="115學測數學_三角_互動學習.html#kp6"><b>考點 6</b>　角平分線、面積比與相似</a>
+        <a href="115學測數學_三角_互動學習.html#kp7"><b>考點 7</b>　圓周角與二面角中的三角</a>
+        <a href="115學測數學_三角_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_三角_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
       </div>
     </div>
 
@@ -114,20 +173,6 @@
     </div>
 
     <div class="unit">
-      <a class="unit-head" href="115學測數學_指數與對數_互動學習.html">📉 指數與對數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
-      <div class="sub">
-        <a href="115學測數學_指數與對數_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
-        <a href="115學測數學_指數與對數_互動學習.html#kp1"><b>考點 1</b>　指數律與指數方程</a>
-        <a href="115學測數學_指數與對數_互動學習.html#kp2"><b>考點 2</b>　對數的定義與運算</a>
-        <a href="115學測數學_指數與對數_互動學習.html#kp3"><b>考點 3</b>　常用對數（科學記號、位數）</a>
-        <a href="115學測數學_指數與對數_互動學習.html#kp4"><b>考點 4</b>　指數對數函數圖形</a>
-        <a href="115學測數學_指數與對數_互動學習.html#kp5"><b>考點 5</b>　應用模型與數列結合</a>
-        <a href="115學測數學_指數與對數_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
-        <a href="115學測數學_指數與對數_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
-      </div>
-    </div>
-
-    <div class="unit">
       <a class="unit-head" href="115學測數學_平面向量_互動學習.html">➡️ 平面向量 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
       <div class="sub">
         <a href="115學測數學_平面向量_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
@@ -141,29 +186,25 @@
       </div>
     </div>
 
-    <div class="unit">
-      <a class="unit-head" href="115學測數學_數據分析_互動學習.html">📊 數據分析 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
-      <div class="sub">
-        <a href="115學測數學_數據分析_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
-        <a href="115學測數學_數據分析_互動學習.html#kp1"><b>考點 1</b>　一維數據與標準差</a>
-        <a href="115學測數學_數據分析_互動學習.html#kp2"><b>考點 2</b>　相關係數</a>
-        <a href="115學測數學_數據分析_互動學習.html#kp3"><b>考點 3</b>　迴歸直線（最適直線）</a>
-        <a href="115學測數學_數據分析_互動學習.html#kp4"><b>考點 4</b>　加權平均與資料判讀</a>
-        <a href="115學測數學_數據分析_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
-        <a href="115學測數學_數據分析_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
-      </div>
     </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">4</span>空間與矩陣 <small>空間向量 · 矩陣</small></h2>
+    <div class="section-units">
 
     <div class="unit">
-      <a class="unit-head" href="115學測數學_數列與級數_互動學習.html">🪜 數列與級數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <a class="unit-head" href="115學測數學_空間向量_互動學習.html">🧊 空間向量 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
       <div class="sub">
-        <a href="115學測數學_數列與級數_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
-        <a href="115學測數學_數列與級數_互動學習.html#kp1"><b>考點 1</b>　等差數列</a>
-        <a href="115學測數學_數列與級數_互動學習.html#kp2"><b>考點 2</b>　等比數列</a>
-        <a href="115學測數學_數列與級數_互動學習.html#kp3"><b>考點 3</b>　遞迴數列</a>
-        <a href="115學測數學_數列與級數_互動學習.html#kp4"><b>考點 4</b>　級數求和與規律週期</a>
-        <a href="115學測數學_數列與級數_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
-        <a href="115學測數學_數列與級數_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
+        <a href="115學測數學_空間向量_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_空間向量_互動學習.html#kp1"><b>考點 1</b>　空間坐標與距離</a>
+        <a href="115學測數學_空間向量_互動學習.html#kp2"><b>考點 2</b>　內積與垂直</a>
+        <a href="115學測數學_空間向量_互動學習.html#kp3"><b>考點 3</b>　外積與體積</a>
+        <a href="115學測數學_空間向量_互動學習.html#kp4"><b>考點 4</b>　平面方程式與距離</a>
+        <a href="115學測數學_空間向量_互動學習.html#kp5"><b>考點 5</b>　空間直線與歪斜線</a>
+        <a href="115學測數學_空間向量_互動學習.html#kp6"><b>考點 6</b>　二面角與立體</a>
+        <a href="115學測數學_空間向量_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_空間向量_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
       </div>
     </div>
 
@@ -181,26 +222,10 @@
       </div>
     </div>
 
-    <div class="unit">
-      <a class="unit-head" href="115學測數學_數與式_互動學習.html">🔢 數與式 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
-      <div class="sub">
-        <a href="115學測數學_數與式_互動學習.html#part0"><b>Part 0</b>　出題趨勢</a>
-        <a href="115學測數學_數與式_互動學習.html#kp1"><b>考點 1</b>　實數系與有理／無理</a>
-        <a href="115學測數學_數與式_互動學習.html#kp2"><b>考點 2</b>　絕對值</a>
-        <a href="115學測數學_數與式_互動學習.html#kp3"><b>考點 3</b>　數線、距離與根號估算</a>
-        <a href="115學測數學_數與式_互動學習.html#kp4"><b>考點 4</b>　乘法公式與算幾不等式</a>
-        <a href="115學測數學_數與式_互動學習.html#kp5"><b>考點 5</b>　比例、百分率與加權平均</a>
-        <a href="115學測數學_數與式_互動學習.html#kp6"><b>考點 6</b>　高斯（最大整數）函數</a>
-        <a href="115學測數學_數與式_互動學習.html#part2"><b>Part 2</b>　模擬實戰</a>
-        <a href="115學測數學_數與式_互動學習.html#part3"><b>Part 3</b>　考前速查</a>
-      </div>
     </div>
-
-    <div class="placeholder">更多單元陸續加入…（之後新增的單元會列在這裡）</div>
-
   </div>
 
-  <div class="foot">數學 互動學習講義 · 目錄首頁</div>
+  <div class="foot">數學 互動學習講義 · 目錄首頁 · 108 課綱數 A 全 11 單元</div>
 
 </div>
 </body>
