@@ -5,6 +5,9 @@ UNITS = [
     {"slug": "trig", "file": "115學測數學_三角_互動學習.html", "emoji": "📐", "title": "三角"},
     {"slug": "prob", "file": "115學測數學_排列組合與機率_互動學習.html", "emoji": "🎲", "title": "排列組合與機率"},
     {"slug": "space", "file": "115學測數學_空間向量_互動學習.html", "emoji": "🧊", "title": "空間向量"},
+    {"slug": "poly", "file": "115學測數學_多項式函數_互動學習.html", "emoji": "📈", "title": "多項式函數"},
+    {"slug": "linecir", "file": "115學測數學_直線與圓_互動學習.html", "emoji": "⭕", "title": "直線與圓"},
+    {"slug": "explog", "file": "115學測數學_指數與對數_互動學習.html", "emoji": "📉", "title": "指數與對數"},
     {"slug": "matrix", "file": "115學測數學_矩陣_互動學習.html", "emoji": "🧮", "title": "矩陣"},
     {"slug": "numexpr", "file": "115學測數學_數與式_互動學習.html", "emoji": "🔢", "title": "數與式"},
 ]

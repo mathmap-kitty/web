@@ -63,7 +63,7 @@ UNIT = {
         {
             "num": "考點 1", "id": "kp1", "nav": "空間坐標與距離",
             "title": r"空間坐標、距離與正立方體",
-            "intro": r"把空間中的點、線、面通通「**坐標化**」——這是整個單元的總策略。先掌握 **兩點距離**、**球面方程式**，以及正立方體三種長度。",
+            "intro": r"把空間中的點、線、面通通「**坐標化**」——這是整個單元的總策略。先掌握 **兩點距離**、**中點**，以及正立方體三種長度。",
             "points": [
                 {"label": r"空間坐標", "lines": [
                     r"空間中一點以 \(P(x,y,z)\) 表示；三坐標平面為 \(xy\)（\(z=0\)）、\(yz\)（\(x=0\)）、\(zx\)（\(y=0\)）。",
@@ -73,17 +73,15 @@ UNIT = {
                     r"\(\overline{AB}=\) 【\(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\)】。"]},
                 {"label": r"中點", "lines": [
                     r"\(\overline{AB}\) 中點 \(M=\) 【\(\left(\dfrac{x_1+x_2}{2},\,\dfrac{y_1+y_2}{2},\,\dfrac{z_1+z_2}{2}\right)\)】。"]},
-                {"label": r"球面方程式", "lines": [
-                    r"球心 \((a,b,c)\)、半徑 \(r\)：\((x-a)^2+(y-b)^2+(z-c)^2=\) 【\(r^2\)】。"]},
                 {"label": r"正立方體三長度", "lines": [
-                    r"邊長 \(a\) 的正立方體：邊 ＝ \(a\)、面對角線 ＝ 【\(\sqrt2\,a\)】、體對角線 ＝ 【\(\sqrt3\,a\)】（[[怎麼來||面對角線 ＝ 邊長 \(a\) 正方形的對角線 \(\sqrt{a^2+a^2}=\sqrt2a\)；體對角線連接相對兩頂點 \(\sqrt{a^2+a^2+a^2}=\sqrt3a\)。空間題把頂點放上 \(0/a\) 型坐標最快。]]）。"]},
+                    r"邊長 \(a\) 的正立方體：邊 ＝ \(a\)、面對角線 ＝ 【\(\sqrt2\,a\)】、體對角線 ＝ 【\(\sqrt3\,a\)】（[[怎麼來||面對角線 ＝ 邊長 \(a\) 正方形的對角線 \(\sqrt{a^2+a^2}=\sqrt2a\)；體對角線連接相對兩頂點 \(\sqrt{a^2+a^2+a^2}=\sqrt3a\)。空間題把每個頂點的坐標都取 \(0\) 或 \(a\) 最快。]]）。"]},
                 {"svg": SVG_CUBE, "caption": r"空間題萬用第一步：把正立方體頂點坐標化"},
             ],
             "misconceptions": [
                 {"wrong": r"兩點距離只算 \(x,y\) 兩項", "right": r"空間距離有三項：\(\sqrt{\Delta x^2+\Delta y^2+\Delta z^2}\)"},
                 {"wrong": r"體對角線 \(=\sqrt2\,a\)", "right": r"面對角線才 \(\sqrt2a\)；體對角線 \(=\sqrt3a\)"},
                 {"wrong": r"點到坐標平面要套點到平面公式", "right": r"到 \(xy\) 平面就是 \(|z|\)，直接讀坐標"},
-                {"wrong": r"球面方程式右邊寫 \(r\)", "right": r"右邊是 \(r^2\)（半徑平方）"},
+                {"wrong": r"中點公式用兩端點相減", "right": r"中點是兩端點坐標 **相加除以 \(2\)**"},
             ],
             "questions": [
                 {"tag": "108 · 選填 F", "level": "★★☆（中）", "core": "空間距離：用體對角線鉛直擺放求最小邊長",
@@ -94,23 +92,21 @@ UNIT = {
                                   r"要讓一頂點落在 \(z=0\)、另一頂點落在 \(z=6\)，兩頂點的 **鉛直高度差需達 \(6\)**。而長度 \(L\) 的線段，鉛直高度差最大為 \(L\)（線段鉛直時）。",
                                   r"想邊長最小 → 用最長的對角線去「頂」這個高度：把 **體對角線 \(\sqrt3a\) 鉛直** 擺放，\(\sqrt3a=6\)。",
                                   r"\(a=\dfrac{6}{\sqrt3}=\dfrac{6\sqrt3}{3}=2\sqrt3\)。故最小邊長 \(=\mathbf{2\sqrt3}\)。"]}},
-                {"tag": "空間距離範例", "level": "★☆☆（基礎）", "core": "兩點距離 · 中點 · 球面方程式",
+                {"tag": "空間距離範例", "level": "★☆☆（基礎）", "core": "兩點距離 · 中點",
                  "body": r"坐標空間中有兩點 \(A(1,2,2)\)、\(B(3,-2,4)\)。",
                  "subqs": [
                      {"label": "(1)", "body": r"求 \(\overline{AB}\)。",
                       "solution": {"brief": r"\(2\sqrt6\)",
                                    "steps": [r"\(\overline{AB}=\sqrt{(3-1)^2+(-2-2)^2+(4-2)^2}=\sqrt{4+16+4}=\sqrt{24}=2\sqrt6\)。"]}},
-                     {"label": "(2)", "body": r"求以 \(\overline{AB}\) 為直徑的球面方程式。",
-                      "solution": {"brief": r"\((x-2)^2+y^2+(z-3)^2=6\)",
+                     {"label": "(2)", "body": r"求 \(\overline{AB}\) 的中點 \(M\)。",
+                      "solution": {"brief": r"\(M=(2,0,3)\)",
                                    "steps": [
-                                       r"球心 ＝ \(\overline{AB}\) 中點 \(M=\left(\dfrac{1+3}{2},\dfrac{2-2}{2},\dfrac{2+4}{2}\right)=(2,0,3)\)。",
-                                       r"半徑 ＝ \(\dfrac{\overline{AB}}{2}=\sqrt6\)。球面：\((x-2)^2+y^2+(z-3)^2=6\)。"]}},
+                                       r"\(M=\left(\dfrac{1+3}{2},\dfrac{2+(-2)}{2},\dfrac{2+4}{2}\right)=(2,0,3)\)。"]}},
                  ]},
             ],
             "strategy": [
-                r"空間題第一步幾乎都是 **建坐標**：把立方體、長方體頂點放上 \(0/a\) 型坐標，距離、向量全用算的。",
+                r"空間題第一步幾乎都是 **建坐標**：把立方體、長方體頂點的坐標都取 \(0\) 或 \(a\)（例如 \((0,0,0),(a,a,0),(a,a,a)\)），距離、向量全用算的。",
                 r"立方體三長度要分清：邊 \(a\)、面對角線 \(\sqrt2a\)、體對角線 \(\sqrt3a\)。",
-                r"「以某線段為直徑的球」→ 球心 ＝ 線段 **中點**、半徑 ＝ 線段長 **一半**。",
                 r"求「最小邊長／最短距離」常是：固定一個幾何限制，再用最長對角線或鉛直擺放去逼近。",
             ],
         },
@@ -129,8 +125,8 @@ UNIT = {
                     r"\(\cos\theta=\) 【\(\dfrac{\vec u\cdot\vec v}{|\vec u|\,|\vec v|}\)】；內積 **正 → 銳角、負 → 鈍角、零 → 直角**。"]},
                 {"label": r"垂直判別", "lines": [
                     r"兩非零向量 \(\vec u\perp\vec v\Leftrightarrow\vec u\cdot\vec v=\) 【\(0\)】。"]},
-                {"label": r"投影長", "lines": [
-                    r"\(\vec u\) 在 \(\vec v\) 方向的投影長 ＝ 【\(\dfrac{\vec u\cdot\vec v}{|\vec v|}\)】（[[投影向量||投影「向量」＝（投影長）×（\(\vec v\) 單位向量）＝\(\dfrac{\vec u\cdot\vec v}{|\vec v|^2}\vec v\)。「內積 ÷ 長度 ＝ 投影長」是點到直線、點到平面距離的基礎。]]）。"]},
+                {"label": r"正射影（投影向量）", "lines": [
+                    r"\(\vec u\) 在 \(\vec v\) 上的正射影（投影向量）＝ 【\(\dfrac{\vec u\cdot\vec v}{|\vec v|^2}\,\vec v\)】（[[幾何意義||把 \(\vec u\) 投影到 \(\vec v\) 方向所得的 **向量**：方向沿 \(\vec v\)、長度為 \(\dfrac{|\vec u\cdot\vec v|}{|\vec v|}\)。這是點到直線、點到平面距離的基礎。]]）。"]},
             ],
             "misconceptions": [
                 {"wrong": r"內積的結果是向量", "right": r"內積是 **純量**（一個數）；外積才是向量"},
@@ -166,7 +162,7 @@ UNIT = {
                 r"看到「**垂直**」立刻寫「內積 ＝ \(0\)」列方程式求參數。",
                 r"求夾角 ＝ 內積 ÷（兩長度）；只問銳／鈍／直角時，**看內積正負** 即可，不必算到底。",
                 r"立方體、長方體的內積題，先把頂點坐標化，內積就是「對應坐標相乘再相加」。",
-                r"「對所有頂點求和再平均」型期望值，善用 \(\sum_{i<j}\vec{u_i}\cdot\vec{u_j}=\frac12\big(|\sum\vec{u_i}|^2-\sum|\vec{u_i}|^2\big)\)。",
+                r"「對一堆頂點兩兩取內積再平均」型期望值（如本考點 \(112\) 單6），善用 \(\sum_{i<j}\vec{u_i}\cdot\vec{u_j}=\frac12\big(|\sum\vec{u_i}|^2-\sum|\vec{u_i}|^2\big)\)。",
             ],
         },
         {
@@ -183,7 +179,7 @@ UNIT = {
                 {"label": r"三角形面積", "lines": [
                     r"\(\triangle ABC\) 面積 ＝ 【\(\dfrac12\left|\overrightarrow{AB}\times\overrightarrow{AC}\right|\)】。"]},
                 {"label": r"純量三重積與體積", "lines": [
-                    r"平行六面體體積 ＝ 【\(\left|\vec u\cdot(\vec v\times\vec w)\right|\)】 ＝ 三向量坐標排成 \(3\times3\) 行列式的絕對值；",
+                    r"平行六面體體積 ＝ 【\(\left|\vec u\cdot(\vec v\times\vec w)\right|\)】（[[亦＝行列式絕對值||把 \(\vec u,\vec v,\vec w\) 的坐標排成 \(3\times3\) 行列式、取絕對值即得：\(\left|\det\begin{pmatrix}u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3\end{pmatrix}\right|\)。]]）；",
                     r"四面體體積 ＝ 【\(\dfrac16\left|\vec u\cdot(\vec v\times\vec w)\right|\)】。"]},
                 {"label": r"兩兩垂直的特例", "lines": [
                     r"若 \(\vec u,\vec v,\vec w\) **兩兩垂直**：平行六面體即長方體，體積 ＝ 【\(|\vec u|\,|\vec v|\,|\vec w|\)】。"]},
@@ -217,7 +213,7 @@ UNIT = {
             ],
             "strategy": [
                 r"外積算坐標記「行列式第一列放 \(\vec i,\vec j,\vec k\)」；方向同時垂直兩向量，是求 **法向量** 的利器。",
-                r"要「平行四邊形／三角形面積」「同時垂直兩向量的方向」→ 一律想外積。",
+                r"**空間中** 要「平行四邊形／三角形面積」「同時垂直兩向量的方向」→ 一律想外積。",
                 r"體積：平行六面體 ＝ 三重積絕對值；四面體再 \(\times\dfrac16\)。",
                 r"向量兩兩垂直時別硬算外積，直接 \(|\vec u||\vec v||\vec w|\)；常配合 \(|\vec u-\vec v|^2=|\vec u|^2+|\vec v|^2\) 求各長度。",
             ],
@@ -236,8 +232,9 @@ UNIT = {
                     r"點 \((x_0,y_0,z_0)\) 到平面 \(ax+by+cz=d\) 的距離 ＝",
                     r"【\(\dfrac{|ax_0+by_0+cz_0-d|}{\sqrt{a^2+b^2+c^2}}\)】。"]},
                 {"label": r"兩平面的關係", "lines": [
-                    r"夾角 ＝ 兩 **法向量** 的夾角（取銳角）；",
-                    r"平行 \(\Leftrightarrow\) 法向量平行；垂直 \(\Leftrightarrow\) 法向量 【內積為 \(0\)】。"]},
+                    r"夾角 ＝ 兩 **法向量** 的夾角（用 \(\cos\) 算、有兩個互補的角）；",
+                    r"平行 \(\Leftrightarrow\) 法向量平行（【成比例】）；",
+                    r"垂直 \(\Leftrightarrow\) 法向量垂直（【內積為 \(0\)】）。"]},
                 {"label": r"投影點與對稱點", "lines": [
                     r"點 \(P\) 到平面 \(E\) 的投影 \(P'\)：沿法向量移動 \(P'=P+t\vec n\)、代入 \(E\) 解 \(t\)；",
                     r"\(P\) 到 \(E\) 的距離 ＝ \(|PP'|=\) 【\(|t|\,|\vec n|\)】。"]},
@@ -245,7 +242,7 @@ UNIT = {
             "misconceptions": [
                 {"wrong": r"平面方程式右邊一定是 \(0\)", "right": r"一般是 \(ax+by+cz=d\)；過原點時 \(d\) 才為 \(0\)"},
                 {"wrong": r"點到平面距離不必取絕對值", "right": r"分子要 **絕對值**、分母是法向量長度 \(\sqrt{a^2+b^2+c^2}\)"},
-                {"wrong": r"兩平面夾角用平面內的向量算", "right": r"用 **法向量** 夾角（再取銳角）"},
+                {"wrong": r"兩平面夾角用平面內的向量算", "right": r"用 **法向量** 夾角（用 \(\cos\) 算、有兩個互補角）"},
                 {"wrong": r"法向量要解聯立才看得出", "right": r"\(ax+by+cz=d\) 的法向量直接讀 \((a,b,c)\)"},
             ],
             "questions": [
@@ -293,7 +290,8 @@ UNIT = {
                     r"方向向量 **不平行** → 相交或 **歪斜**（[[怎麼分||方向不平行時，把兩直線參數式設相等解聯立：**有解 → 相交**（共平面）；**無解 → 歪斜**（不共平面、也不相交）。]]）。"]},
                 {"label": r"直線與平面", "lines": [
                     r"直線方向 \(\vec d\)、平面法向量 \(\vec n\)：",
-                    r"直線 \(\parallel\) 平面 \(\Leftrightarrow\vec d\cdot\vec n=\) 【\(0\)】；直線 \(\perp\) 平面 \(\Leftrightarrow\vec d\parallel\vec n\)。"]},
+                    r"直線 \(/\!/\) 平面 \(\Leftrightarrow\) 【\(\vec d\cdot\vec n=0\)】；",
+                    r"直線 \(\perp\) 平面 \(\Leftrightarrow\) 【\(\vec d\,/\!/\,\vec n\)】。"]},
                 {"label": r"點到直線距離", "lines": [
                     r"點 \(P\) 到「過 \(A\)、方向 \(\vec d\)」的直線：距離 ＝ 【\(\dfrac{|\overrightarrow{AP}\times\vec d|}{|\vec d|}\)】。"]},
                 {"label": r"兩歪斜線距離", "lines": [
@@ -302,7 +300,7 @@ UNIT = {
             ],
             "misconceptions": [
                 {"wrong": r"兩直線不平行就一定相交", "right": r"空間中還可能 **歪斜**（不平行也不相交）"},
-                {"wrong": r"直線平行平面要 \(\vec d\parallel\vec n\)", "right": r"平行是 \(\vec d\cdot\vec n=0\)；\(\vec d\parallel\vec n\) 是 **垂直**"},
+                {"wrong": r"直線平行平面要 \(\vec d\,/\!/\,\vec n\)", "right": r"平行是 \(\vec d\cdot\vec n=0\)；\(\vec d\,/\!/\,\vec n\) 是 **垂直**"},
                 {"wrong": r"點到直線套點到平面公式", "right": r"點到直線用 \(\dfrac{|\overrightarrow{AP}\times\vec d|}{|\vec d|}\)（外積）"},
                 {"wrong": r"歪斜線距離取兩點直接連", "right": r"要沿 **公垂線**（\(\vec{d_1}\times\vec{d_2}\) 方向）量才是最短"},
             ],
@@ -333,7 +331,7 @@ UNIT = {
                 r"兩直線先比 **方向向量**：平行就是平行／重合；不平行再解聯立判 **相交 vs 歪斜**。",
                 r"點到直線用外積 \(\dfrac{|\overrightarrow{AP}\times\vec d|}{|\vec d|}\)；別跟點到平面公式搞混。",
                 r"歪斜線距離 ＝ 三重積絕對值 ÷ \(|\vec{d_1}\times\vec{d_2}|\)（體積 ÷ 底面積 ＝ 高）。",
-                r"「使三角形為正三角形／等腰」的軌跡：拆成「等距 → 平面或球面」再求交集。",
+                r"「使三角形為正三角形／等腰」的 **點軌跡**（對應本考點 \(107\) 單1）：拆成「到兩點等距 → 中垂面」「到一點等距 → 球面」，再求兩者交集。",
             ],
         },
         {
@@ -440,10 +438,11 @@ UNIT = {
                                         r"(4)✗ 垂直需 \((1,1,1)\parallel(1,2,2)\)，不成立。(5)○ \((2,4,4)=2(1,2,2)\)，法向量平行。"]}},
             ]},
             {"title": "三、選填題", "questions": [
-                {"tag": "練習 8", "level": "★★☆", "core": "以線段為直徑的球面",
-                 "body": r"求以 \(A(1,2,3)\)、\(B(3,4,5)\) 為直徑兩端點的球面方程式。",
-                 "solution": {"brief": r"\((x-2)^2+(y-3)^2+(z-4)^2=3\)", "brief_label": "答",
-                              "steps": [r"球心 ＝ 中點 \((2,3,4)\)；\(|AB|^2=2^2+2^2+2^2=12\)，半徑 \(r=\dfrac{\sqrt{12}}{2}=\sqrt3\)，\(r^2=3\)。"]}},
+                {"tag": "練習 8", "level": "★★☆", "core": "外積求空間三角形面積",
+                 "body": r"設 \(\triangle ABC\) 頂點為 \(A(1,0,0)\)、\(B(0,2,0)\)、\(C(0,0,3)\)，求其面積。",
+                 "solution": {"brief": r"\(\dfrac72\)", "brief_label": "答",
+                              "steps": [r"\(\overrightarrow{AB}=(-1,2,0)\)、\(\overrightarrow{AC}=(-1,0,3)\)，\(\overrightarrow{AB}\times\overrightarrow{AC}=(6,3,2)\)。",
+                                        r"面積 \(=\dfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|=\dfrac12\sqrt{36+9+4}=\dfrac12\sqrt{49}=\dfrac72\)。"]}},
                 {"tag": "練習 9", "level": "★★★", "core": "兩歪斜線距離",
                  "body": r"直線 \(L_1\) 過 \((0,0,0)\)、方向 \((1,1,0)\)；\(L_2\) 過 \((0,0,2)\)、方向 \((1,-1,0)\)。求 \(L_1\)、\(L_2\) 之間的距離。",
                  "solution": {"brief": "2", "brief_label": "答",
@@ -460,7 +459,6 @@ UNIT = {
     "part3": {
         "ref_table": [
             {"k": "兩點距離 / 中點", "v": r"\(\sqrt{\Delta x^2+\Delta y^2+\Delta z^2}\)；中點取坐標平均"},
-            {"k": "球面方程式", "v": r"\((x-a)^2+(y-b)^2+(z-c)^2=r^2\)"},
             {"k": "正立方體三長度", "v": r"邊 \(a\)、面對角線 \(\sqrt2a\)、體對角線 \(\sqrt3a\)"},
             {"k": "內積", "v": r"\(\vec u\cdot\vec v=u_1v_1+u_2v_2+u_3v_3=|\vec u||\vec v|\cos\theta\)"},
             {"k": "夾角 / 垂直", "v": r"\(\cos\theta=\dfrac{\vec u\cdot\vec v}{|\vec u||\vec v|}\)；垂直 \(\Leftrightarrow\vec u\cdot\vec v=0\)"},
@@ -470,7 +468,7 @@ UNIT = {
             {"k": "點到平面距離", "v": r"\(\dfrac{|ax_0+by_0+cz_0-d|}{\sqrt{a^2+b^2+c^2}}\)"},
             {"k": "兩平面關係", "v": r"夾角、平行、垂直全看法向量（垂直 \(\Leftrightarrow\vec{n_1}\cdot\vec{n_2}=0\)）"},
             {"k": "直線參數式", "v": r"\((x_0+at,\,y_0+bt,\,z_0+ct)\)，方向向量 \((a,b,c)\)"},
-            {"k": "直線與平面", "v": r"平行 \(\Leftrightarrow\vec d\cdot\vec n=0\)；垂直 \(\Leftrightarrow\vec d\parallel\vec n\)"},
+            {"k": "直線與平面", "v": r"平行 \(\Leftrightarrow\vec d\cdot\vec n=0\)；垂直 \(\Leftrightarrow\vec d\,/\!/\,\vec n\)"},
             {"k": "兩直線關係", "v": r"方向平行 → 平行；不平行解聯立：有解相交、無解歪斜"},
             {"k": "點到直線 / 歪斜線距離", "v": r"\(\dfrac{|\overrightarrow{AP}\times\vec d|}{|\vec d|}\)；歪斜 \(\dfrac{|\overrightarrow{P_1P_2}\cdot(\vec{d_1}\times\vec{d_2})|}{|\vec{d_1}\times\vec{d_2}|}\)"},
             {"k": "二面角 / 摺疊", "v": r"兩半平面內各作垂直稜的線量夾角；摺疊沿稜建坐標、不改內部長度"},
