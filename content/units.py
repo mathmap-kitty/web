@@ -14,3 +14,11 @@ UNITS = [
     {"slug": "matrix", "file": "115學測數學_矩陣_互動學習.html", "emoji": "🧮", "title": "矩陣"},
     {"slug": "numexpr", "file": "115學測數學_數與式_互動學習.html", "emoji": "🔢", "title": "數與式"},
 ]
+
+# 首頁與各頁「單元 ▾」下拉的四大主題分區（與 index.html 一致）。
+SECTIONS = [
+    ("① 代數與函數", ["numexpr", "poly", "explog"]),
+    ("② 數列・機率・統計", ["seq", "prob", "data"]),
+    ("③ 平面幾何", ["trig", "linecir", "pvec"]),
+    ("④ 空間與矩陣", ["space", "matrix"]),
+]

@@ -206,13 +206,30 @@ def _part3_html(p3):
 
 
 def _toolbar(unit, units):
+    try:
+        from units import SECTIONS
+    except Exception:
+        SECTIONS = None
+    by_slug = {u["slug"]: u for u in units}
+
+    def _unit_option(u):
+        cur = "（目前）" if u["slug"] == unit["slug"] else ""
+        return f'<option value="{u["file"]}">{u["emoji"]} {u["title"]}{cur}</option>'
+
     unit_opts = ['<option value="">單元 ▾</option>',
                  '<option value="index.html">📚 目錄首頁</option>']
-    for u in units:
-        if u.get("draft") and u["slug"] != unit["slug"]:
-            continue
-        cur = "（目前）" if u["slug"] == unit["slug"] else ""
-        unit_opts.append(f'<option value="{u["file"]}">{u["emoji"]} {u["title"]}{cur}</option>')
+    if SECTIONS:
+        # 依首頁四大主題分組（optgroup），與 index.html 一致。
+        for label, slugs in SECTIONS:
+            group = [_unit_option(by_slug[s]) for s in slugs
+                     if s in by_slug and not (by_slug[s].get("draft") and s != unit["slug"])]
+            if group:
+                unit_opts.append(f'<optgroup label="{label}">{"".join(group)}</optgroup>')
+    else:
+        for u in units:
+            if u.get("draft") and u["slug"] != unit["slug"]:
+                continue
+            unit_opts.append(_unit_option(u))
     kp_opts = ['<option value="">跳至考點 ▾</option>']
     if unit.get("part0"):
         kp_opts.append('<option value="part0">Part 0 · 出題趨勢</option>')
