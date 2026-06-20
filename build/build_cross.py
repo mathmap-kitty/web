@@ -201,6 +201,43 @@ DETAIL = {
                 r"\(a_5=a_4+f(3)=12+(9+3+1)=25\)。"],
         "links": [(r"數列 ▸ 考點3 遞迴數列", SEQ, "kp3"), (r"多項式 ▸ 考點2 二次函數", POLY, "kp2")],
     },
+    "113|數A|6": {
+        "body": r"在同一平面上，相距 \(7\) 公里的 \(A,B\) 兩砲台，\(A\) 在 \(B\) 的正東方。某次演習 \(A\) 向西偏北 \(\theta\)、\(B\) 向東偏北 \(\theta\)（\(\theta\) 為銳角）發射砲彈，皆命中 \(9\) 公里外同一目標 \(P\)。接著 \(A\) 改向西偏北 \(\tfrac{\theta}{2}\) 發射，彈著點為 \(9\) 公里外的 \(Q\)。試問 \(\overline{BQ}\) 為何？",
+        "fig": r'''<svg viewBox="0 0 172 152" width="172" height="152" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <line x1="35" y1="135" x2="112" y2="135" stroke="#9aa6b2" stroke-width="1.4"/>
+  <line x1="35" y1="135" x2="73" y2="44" stroke="#2c7a7b" stroke-width="1.5"/>
+  <line x1="112" y1="135" x2="73" y2="44" stroke="#2c7a7b" stroke-width="1.5"/>
+  <line x1="112" y1="135" x2="29" y2="80" stroke="#2c7a7b" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="35" y1="135" x2="29" y2="80" stroke="#c0392b" stroke-width="2.5"/>
+  <g fill="#2c3e50"><circle cx="35" cy="135" r="3"/><circle cx="112" cy="135" r="3"/><circle cx="73" cy="44" r="3"/><circle cx="29" cy="80" r="3"/></g>
+  <g font-size="12" font-weight="bold" font-style="italic" fill="#22404a"><text x="23" y="143">B</text><text x="115" y="143">A</text><text x="70" y="38">P</text><text x="12" y="83">Q</text></g>
+  <g font-size="10" fill="#2c7a7b"><text x="46" y="88">9</text><text x="96" y="88">9</text></g>
+  <text x="66" y="148" font-size="10" fill="#777">7</text>
+  <text x="30" y="108" font-size="10" fill="#c0392b" font-weight="bold">BQ?</text>
+</svg>''',
+        "opts": [r"\(4\) 公里", r"\(4.5\) 公里", r"\(5\) 公里", r"\(5.5\) 公里", r"\(6\) 公里"],
+        "ans": r"**(3)** \(5\) 公里",
+        "key": [r"\(P\) 距 \(A,B\) 皆 \(9\)、\(AB=7\) → \(P\) 在 \(AB\) 中垂線上，\(A\) 到中點 \(3.5\)，故 \(\cos\theta=\dfrac{3.5}{9}=\dfrac{7}{18}\)；",
+                r"半角：\(\cos\dfrac\theta2=\sqrt{\dfrac{1+\cos\theta}{2}}=\dfrac56\)、\(\sin\dfrac\theta2=\dfrac{\sqrt{11}}6\)；",
+                r"設 \(B=(0,0),A=(7,0)\)：\(Q=A+9(-\cos\tfrac\theta2,\sin\tfrac\theta2)=(-\tfrac12,\tfrac{3\sqrt{11}}2)\)，\(\overline{BQ}=\sqrt{\tfrac14+\tfrac{99}4}=\sqrt{25}=5\)，選 (3)。"],
+        "links": [(r"三角 ▸ 考點3 三角測量", TRIG, "kp3"), (r"三角 ▸ 考點5 和差·半角", TRIG, "kp5")],
+    },
+    "115|數A|17": {
+        "body": r"直角三角形 \(ABC\) 中 \(\angle CAB=90^\circ\)，\(\overline{AB}\) 上一點 \(D\) 滿足 \(\angle BCD=2\angle ACD\)，且 \(\overline{BC}=2\,\overline{DB}\)。若 \(\overrightarrow{AD}=k\,\overrightarrow{AB}\)，則 \(k=\) ？（最簡分數）",
+        "fig": r'''<svg viewBox="0 0 186 150" width="186" height="150" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <polygon points="28,122 162,122 28,28" fill="#eef6f4" stroke="#1f6f78" stroke-width="1.6"/>
+  <line x1="28" y1="28" x2="64" y2="122" stroke="#c0392b" stroke-width="1.5"/>
+  <path d="M28,112 L38,112 L38,122" fill="none" stroke="#1f6f78" stroke-width="1.2"/>
+  <g fill="#2c3e50"><circle cx="28" cy="122" r="2.6"/><circle cx="162" cy="122" r="2.6"/><circle cx="28" cy="28" r="2.6"/><circle cx="64" cy="122" r="2.6"/></g>
+  <g font-size="13" font-weight="bold" font-style="italic" fill="#22404a"><text x="15" y="134">A</text><text x="166" y="134">B</text><text x="14" y="31">C</text><text x="58" y="137">D</text></g>
+  <text x="40" y="66" font-size="9.5" fill="#c0392b">∠BCD=2∠ACD</text>
+</svg>''',
+        "ans": r"**\(k=\dfrac{3}{11}\)**",
+        "key": [r"令 \(\angle ACD=\varphi\)，則 \(\angle ACB=3\varphi\)。直角 \(\triangle\) 中 \(AD=AC\tan\varphi,\ AB=AC\tan3\varphi,\ BC=\dfrac{AC}{\cos3\varphi}\)；",
+                r"條件 \(BC=2DB=2(AB-AD)\)：\(\dfrac1{\cos3\varphi}=2(\tan3\varphi-\tan\varphi)=\dfrac{2\sin2\varphi}{\cos3\varphi\cos\varphi}\Rightarrow1=4\sin\varphi\Rightarrow\sin\varphi=\dfrac14\)；",
+                r"\(k=\dfrac{AD}{AB}=\dfrac{\tan\varphi}{\tan3\varphi}\)；由 \(\sin\varphi=\tfrac14\) 得 \(\sin3\varphi=\tfrac{11}{16},\cos3\varphi=\tfrac{3\sqrt{15}}{16}\)，算得 \(k=\dfrac{3}{11}\)。"],
+        "links": [(r"三角 ▸ 考點5 倍角·和差", TRIG, "kp5"), (r"三角 ▸ 考點2 正餘弦定理", TRIG, "kp2")],
+    },
 }
 
 
