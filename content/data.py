@@ -330,6 +330,7 @@ UNIT = {
     "part3": {
         "ref_table": [
             {"k": "集中量數", "v": r"平均 \(\bar x=\dfrac{\sum x_i}{n}\)；中位數 ＝ 排序後最中間；眾數 ＝ 最多次"},
+            {"k": "四分位 / 百分位", "v": r"中位數 ＝ 第 \(50\) 百分位；\(IQR=Q_3-Q_1\)（中間 \(50\%\)）；中位數、四分位 **抗極端值**"},
             {"k": "變異數 / 標準差", "v": r"\(\sigma^2=\dfrac{1}{n}\sum(x_i-\bar x)^2\)；\(\sigma=\sqrt{\sigma^2}\)"},
             {"k": "線性變換", "v": r"\(y=ax+b\Rightarrow\bar y=a\bar x+b\)、\(\sigma_y=|a|\sigma_x\)（變異數 \(\times a^2\)）"},
             {"k": "z 分數", "v": r"\(z=\dfrac{x-\bar x}{\sigma}\)（平均 \(0\)、標準差 \(1\)）"},
