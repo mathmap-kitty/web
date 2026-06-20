@@ -10,6 +10,41 @@ r"""排列組合與機率單元 · 單一來源內容。
 ※ 本檔逐考點建置中；先 Part 0＋考點 1。
 """
 
+# 貝氏定理樹狀圖：以篩檢為例（病 0.01 / 沒病 0.99；陽性率 0.9 / 偽陽 0.05）
+SVG_BAYES = r'''<svg viewBox="0 0 252 150" width="252" height="150" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <g stroke="#9aa6b2" stroke-width="1.4" fill="none">
+    <line x1="30" y1="74" x2="100" y2="42"/>
+    <line x1="30" y1="74" x2="100" y2="106"/>
+    <line x1="128" y1="42" x2="198" y2="24"/>
+    <line x1="128" y1="42" x2="198" y2="60"/>
+    <line x1="128" y1="106" x2="198" y2="90"/>
+    <line x1="128" y1="106" x2="198" y2="126"/>
+  </g>
+  <g stroke="#c0392b" stroke-width="2.2" fill="none" opacity="0.9">
+    <line x1="30" y1="74" x2="100" y2="42"/>
+    <line x1="128" y1="42" x2="198" y2="24"/>
+    <line x1="30" y1="74" x2="100" y2="106"/>
+    <line x1="128" y1="106" x2="198" y2="90"/>
+  </g>
+  <circle cx="30" cy="74" r="3.6" fill="#2c3e50"/>
+  <g font-size="10" fill="#2c7a7b" font-style="italic">
+    <text x="54" y="50">0.01</text>
+    <text x="54" y="98">0.99</text>
+    <text x="156" y="28">0.9</text>
+    <text x="156" y="58">0.1</text>
+    <text x="150" y="86">0.05</text>
+    <text x="150" y="124">0.95</text>
+  </g>
+  <g font-size="11.5" font-weight="bold">
+    <text x="104" y="46" fill="#c0392b">病</text>
+    <text x="104" y="111" fill="#2c3e50">沒病</text>
+    <text x="202" y="28" fill="#c0392b">陽</text>
+    <text x="202" y="64" fill="#7f8c8d">陰</text>
+    <text x="202" y="94" fill="#c0392b">陽</text>
+    <text x="202" y="130" fill="#7f8c8d">陰</text>
+  </g>
+</svg>'''
+
 UNIT = {
     "slug": "prob",
     "file": "115學測數學_排列組合與機率_互動學習.html",
@@ -232,6 +267,8 @@ UNIT = {
                     r"白話 ＝「[[目標路徑 ÷ 全部路徑||分子 ＝「此原因」這條路的機率 \(P(B_k)P(A\mid B_k)\)；分母 ＝ 所有能造成結果 \(A\) 的路徑機率總和。畫樹狀圖時，就是「想要的那條樹枝 ÷ 所有通到 \(A\) 的樹枝」。]]」。"]},
                 {"label": r"獨立的判定", "lines": [
                     r"\(A,B\) 獨立 \(\Leftrightarrow P(A\mid B)=P(A)\Leftrightarrow P(A\cap B)=\) 【\(P(A)\,P(B)\)】。"]},
+                {"svg": SVG_BAYES,
+                 "caption": r"**樹狀圖讀貝氏**（篩檢例）：每條樹枝的機率相乘＝該路徑機率。求「驗出陽性、真的有病」＝紅色目標路徑 ÷ 全部到「陽」的路徑：\(P(\text{病}\mid\text{陽})=\dfrac{0.01\times0.9}{0.01\times0.9+0.99\times0.05}\approx0.15\)。"},
             ],
             "misconceptions": [
                 {"wrong": r"\(P(A\mid B)=P(B\mid A)\)", "right": r"一般不相等；貝氏定理正是在換算這兩者"},

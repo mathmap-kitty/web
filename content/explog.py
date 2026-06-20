@@ -10,6 +10,24 @@ r"""指數與對數單元 · 單一來源內容（單元3：指數與對數）�
 ※ 本檔逐考點建置中；先 Part 0＋考點 1。
 """
 
+# 指數 y=2^x 與對數 y=log₂x 圖形：互為反函數，對 y=x 鏡射對稱
+SVG_EXPLOG = r'''<svg viewBox="0 0 170 168" width="170" height="168" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <line x1="4" y1="128" x2="128" y2="128" stroke="#9aa6b2" stroke-width="1.3"/>
+  <line x1="38" y1="164" x2="38" y2="40" stroke="#9aa6b2" stroke-width="1.3"/>
+  <polygon points="133,128 125,124 125,132" fill="#9aa6b2"/>
+  <polygon points="38,35 34,43 42,43" fill="#9aa6b2"/>
+  <polyline points="12,154 124,42" fill="none" stroke="#b0b8c0" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polyline points="4,117 12,115 20,112 28,108 35,104 43,98 51,91 59,83 67,72 74,59 82,44" fill="none" stroke="#1f6f78" stroke-width="2.2"/>
+  <polyline points="51,154 54,147 56,141 60,134 64,128 69,121 74,115 82,108 90,102 103,94 116,87 129,81" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+  <circle cx="38" cy="102" r="2.5" fill="#1f6f78"/><circle cx="64" cy="128" r="2.5" fill="#c0392b"/>
+  <g fill="#555" font-size="8"><text x="58" y="140">1</text><text x="27" y="106">1</text><text x="27" y="140">O</text></g>
+  <g font-size="10.5" font-weight="bold">
+    <text x="50" y="44" fill="#1f6f78">y=2&#739;</text>
+    <text x="92" y="108" fill="#c0392b">y=log&#8322;x</text>
+    <text x="106" y="52" fill="#8a93a0">y=x</text>
+  </g>
+</svg>'''
+
 UNIT = {
     "slug": "explog",
     "file": "115學測數學_指數與對數_互動學習.html",
@@ -206,6 +224,8 @@ UNIT = {
                     r"\(0<a<1\) → 【遞減】。"]},
                 {"label": r"互為反函數", "lines": [
                     r"\(y=a^x\) 與 \(y=\log_a x\) 互為反函數，圖形對稱於 【\(y=x\)】（\(x\leftrightarrow y\) 對調）。"]},
+                {"svg": SVG_EXPLOG,
+                 "caption": r"**互為反函數**：\(y=2^x\)（過 \((0,1)\)）與 \(y=\log_2 x\)（過 \((1,0)\)）的圖形對虛線 \(y=x\) **鏡射對稱**——把其中一條沿 \(y=x\) 翻摺即得另一條。"},
                 {"label": r"定義域陷阱", "lines": [
                     r"\(\log(x^2)\) 定義域 \(x\neq0\)（含 \(x<0\)）、\(\log(x^3)\) 定義域 \(x>0\)——化簡前先看 **定義域**，否則圖形會多／少一截。"]},
             ],

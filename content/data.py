@@ -9,6 +9,28 @@ r"""數據分析單元 · 單一來源內容（單元6：數據分析／統計�
 ※ 本檔逐考點建置中；先 Part 0＋考點 1。
 """
 
+# 散佈圖＋迴歸直線：負相關（點呈右下走勢），藍圈為平均點 M=(x̄,ȳ)
+SVG_REG = r'''<svg viewBox="0 0 210 150" width="210" height="150" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <line x1="34" y1="14" x2="34" y2="126" stroke="#9aa6b2" stroke-width="1.4"/>
+  <line x1="32" y1="124" x2="202" y2="124" stroke="#9aa6b2" stroke-width="1.4"/>
+  <polygon points="34,9 30,18 38,18" fill="#9aa6b2"/>
+  <polygon points="206,124 198,120 198,128" fill="#9aa6b2"/>
+  <line x1="44" y1="40" x2="172" y2="106" stroke="#c0392b" stroke-width="2.2"/>
+  <g fill="#2c7a7b">
+    <circle cx="52" cy="44" r="3"/><circle cx="70" cy="52" r="3"/>
+    <circle cx="88" cy="62" r="3"/><circle cx="106" cy="66" r="3"/>
+    <circle cx="120" cy="80" r="3"/><circle cx="138" cy="86" r="3"/>
+    <circle cx="156" cy="100" r="3"/>
+  </g>
+  <circle cx="104" cy="71" r="4.6" fill="none" stroke="#1f3a93" stroke-width="2"/>
+  <g font-size="11" fill="#333">
+    <text x="190" y="139">x</text>
+    <text x="20" y="20">y</text>
+    <text x="110" y="68" fill="#1f3a93" font-weight="bold" font-size="10.5">M</text>
+    <text x="116" y="120" fill="#c0392b" font-size="10">迴歸直線</text>
+  </g>
+</svg>'''
+
 UNIT = {
     "slug": "data",
     "file": "115學測數學_數據分析_互動學習.html",
@@ -147,6 +169,8 @@ UNIT = {
                     r"斜率與 \(r\) **同號**（正相關 → 正斜率）。"]},
                 {"label": r"用途：預測", "lines": [
                     r"把 \(x\) 代入迴歸直線求 \(\hat y\)（內插／外推）；\(|r|\) 越接近 \(1\) 預測越可靠。"]},
+                {"svg": SVG_REG,
+                 "caption": r"**散佈圖看迴歸**：藍圈 \(M=(\bar x,\bar y)\) 為平均點，迴歸直線 **必過** \(M\)。此圖點呈右下走勢 → 斜率為負、\(r<0\)（負相關）。"},
             ],
             "misconceptions": [
                 {"wrong": r"迴歸直線通過原點", "right": r"必通過 **平均點** \((\bar x,\bar y)\)"},

@@ -10,6 +10,25 @@ r"""平面向量單元 · 單一來源內容（單元8：平面向量）。
 ※ 本檔逐考點建置中；先 Part 0＋考點 1。
 """
 
+# 向量加法：三角形法（首尾相接 u→v）＋平行四邊形法，對角線 = u+v
+SVG_VECADD = r'''<svg viewBox="0 0 206 126" width="206" height="126" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <line x1="30" y1="112" x2="86" y2="56" stroke="#2e8b57" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="86" y1="56" x2="176" y2="40" stroke="#1f3a93" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="30" y1="112" x2="120" y2="96" stroke="#1f3a93" stroke-width="2.2"/>
+  <polygon points="120,96 112,102 110,94" fill="#1f3a93"/>
+  <line x1="120" y1="96" x2="176" y2="40" stroke="#2e8b57" stroke-width="2.2"/>
+  <polygon points="176,40 172,49 167,44" fill="#2e8b57"/>
+  <line x1="30" y1="112" x2="176" y2="40" stroke="#c0392b" stroke-width="2.4"/>
+  <polygon points="176,40 170,48 166,40" fill="#c0392b"/>
+  <circle cx="30" cy="112" r="2.6" fill="#333"/>
+  <g font-size="12" font-weight="bold" font-style="italic">
+    <text x="64" y="118" fill="#1f3a93">u</text>
+    <text x="150" y="74" fill="#2e8b57">v</text>
+    <text x="52" y="100" fill="#c0392b">u+v</text>
+  </g>
+  <text x="20" y="117" font-size="10" fill="#333">A</text>
+</svg>'''
+
 UNIT = {
     "slug": "pvec",
     "file": "115學測數學_平面向量_互動學習.html",
@@ -50,6 +69,8 @@ UNIT = {
                 {"label": r"加減與係數積", "lines": [
                     r"\(\overrightarrow{AB}+\overrightarrow{BC}=\) 【\(\overrightarrow{AC}\)】（首尾相接）；",
                     r"坐標：\((a,b)\pm(c,d)=(a\pm c,\,b\pm d)\)、\(k(a,b)=(ka,kb)\)。"]},
+                {"svg": SVG_VECADD,
+                 "caption": r"**向量加法兩種畫法**：① 三角形法——\(\vec u\) 的終點接 \(\vec v\) 的起點（首尾相接），起點到終點即 \(\vec u+\vec v\)；② 平行四邊形法——\(\vec u,\vec v\) 同起點張成平行四邊形，**對角線** 就是 \(\vec u+\vec v\)（紅）。"},
                 {"label": r"長度（大小）", "lines": [
                     r"\(\vec v=(a,b)\) 的長度 \(|\vec v|=\) 【\(\sqrt{a^2+b^2}\)】；",
                     r"單位向量（長度 \(1\)、同向）＝ 【\(\dfrac{\vec v}{|\vec v|}\)】。"]},

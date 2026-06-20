@@ -7,6 +7,26 @@ r"""數列與級數單元 · 單一來源內容（單元4：數列與級數）�
 考點對應核心概念分析（單元4）：① 等差 ② 等比 ③ 遞迴 ④ 級數與規律週期。
 """
 
+# 等差 vs 等比 節奏對比：等差點距固定(+d)、等比點距倍增(×r)
+SVG_SEQ = r'''<svg viewBox="0 0 240 128" width="240" height="128" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <text x="6" y="14" font-size="10" fill="#1f6f78" font-weight="bold">① 等差：每次 ＋d（點距固定）</text>
+  <line x1="22" y1="46" x2="212" y2="46" stroke="#cfd6dd" stroke-width="1.2"/>
+  <g fill="none" stroke="#1f6f78" stroke-width="1.4">
+    <path d="M34,42 Q55,30 76,42"/><path d="M76,42 Q97,30 118,42"/>
+    <path d="M118,42 Q139,30 160,42"/><path d="M160,42 Q181,30 202,42"/>
+  </g>
+  <g fill="#1f6f78"><circle cx="34" cy="46" r="3"/><circle cx="76" cy="46" r="3"/><circle cx="118" cy="46" r="3"/><circle cx="160" cy="46" r="3"/><circle cx="202" cy="46" r="3"/></g>
+  <g font-size="9" fill="#1f6f78"><text x="49" y="32">+d</text><text x="91" y="32">+d</text><text x="133" y="32">+d</text><text x="175" y="32">+d</text></g>
+  <text x="6" y="78" font-size="10" fill="#c0392b" font-weight="bold">② 等比：每次 ×r（點距倍增、越跑越開）</text>
+  <line x1="22" y1="110" x2="212" y2="110" stroke="#cfd6dd" stroke-width="1.2"/>
+  <g fill="none" stroke="#c0392b" stroke-width="1.4">
+    <path d="M30,106 Q38,98 46,106"/><path d="M46,106 Q62,94 78,106"/>
+    <path d="M78,106 Q110,88 142,106"/><path d="M142,106 Q170,86 202,106"/>
+  </g>
+  <g fill="#c0392b"><circle cx="30" cy="110" r="3"/><circle cx="46" cy="110" r="3"/><circle cx="78" cy="110" r="3"/><circle cx="142" cy="110" r="3"/><circle cx="202" cy="110" r="3"/></g>
+  <g font-size="9" fill="#c0392b"><text x="32" y="96">×r</text><text x="58" y="92">×r</text><text x="104" y="86">×r</text><text x="166" y="84">×r</text></g>
+</svg>'''
+
 UNIT = {
     "slug": "seq",
     "file": "115學測數學_數列與級數_互動學習.html",
@@ -95,6 +115,8 @@ UNIT = {
                     r"\(a,b,c\) 成等比 \(\Leftrightarrow b^2=\) 【\(ac\)】（中項平方 ＝ 前後乘積）。"]},
                 {"label": r"無窮等比級數", "lines": [
                     r"\(|r|<1\) 時收斂，無窮和 \(S=\) 【\(\dfrac{a_1}{1-r}\)】。"]},
+                {"svg": SVG_SEQ,
+                 "caption": r"**兩種數列的節奏**：① 等差每次 **加** 同一個 \(d\)（點距固定）；② 等比每次 **乘** 同一個 \(r\)（點距倍增、越跑越開）——這就是「線性成長」與「指數成長」的差別。"},
             ],
             "misconceptions": [
                 {"wrong": r"\(a_n=a_1r^n\)", "right": r"\(a_n=a_1r^{\,n-1}\)"},

@@ -9,6 +9,23 @@ r"""矩陣單元 · 單一來源內容。
    考點 3–5 與完整 Part 2／3 待補。
 """
 
+# 線性變換：單位正方形（面積1）經 M=[[2,1],[0,1]] 變成平行四邊形（面積|det M|=2）
+SVG_LINTRANS = r'''<svg viewBox="0 0 212 150" width="212" height="150" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <line x1="22" y1="118" x2="204" y2="118" stroke="#dfe4e9" stroke-width="1"/>
+  <line x1="38" y1="142" x2="38" y2="54" stroke="#dfe4e9" stroke-width="1"/>
+  <polygon points="38,118 110,118 146,82 74,82" fill="#f3c9c9" fill-opacity="0.5" stroke="#c0392b" stroke-width="2"/>
+  <polygon points="38,118 74,118 74,82 38,82" fill="#bfe6e6" fill-opacity="0.7" stroke="#1f6f78" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <circle cx="38" cy="118" r="2.6" fill="#444"/>
+  <line x1="56" y1="68" x2="98" y2="68" stroke="#555" stroke-width="1.3"/>
+  <polygon points="103,68 96,64.5 96,71.5" fill="#555"/>
+  <g font-size="10">
+    <text x="44" y="104" fill="#1f6f78" font-weight="bold">面積1</text>
+    <text x="84" y="106" fill="#c0392b" font-weight="bold">面積=|det M|</text>
+    <text x="68" y="64" fill="#555" font-weight="bold">M</text>
+    <text x="27" y="131" fill="#666">O</text>
+  </g>
+</svg>'''
+
 UNIT = {
     "slug": "matrix",
     "file": "115學測數學_矩陣_互動學習.html",
@@ -326,6 +343,8 @@ UNIT = {
                     r"推移 \(\begin{bmatrix}1&k\\0&1\end{bmatrix}\) 或 \(\begin{bmatrix}1&0\\k&1\end{bmatrix}\)，\(\det=1\)，面積 【不變】。"]},
                 {"label": r"面積黃金律", "lines": [
                     r"圖形經 \(M\) 變換後，面積 ＝ 【原面積 \(\times|\det M|\)】（[[務必取絕對值||\(\det M\) 可能為負（例如鏡射 \(\det=-1\)），但面積恆為正，所以要取 \(|\det M|\)。]]）。"]},
+                {"svg": SVG_LINTRANS,
+                 "caption": r"**面積黃金律**：藍色單位正方形（面積 \(1\)）經 \(M=\begin{bmatrix}2&1\\0&1\end{bmatrix}\) 變成紅色平行四邊形，面積 \(=|\det M|=2\)。\(M\) 的兩行恰是 \((1,0),(0,1)\) 變換後的像。"},
             ],
             "misconceptions": [
                 {"wrong": r"面積變化倍率是 \(\det M\)", "right": r"是 \(|\det M|\)（要取絕對值）"},
