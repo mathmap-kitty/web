@@ -15,6 +15,8 @@ XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更�
 OUT = os.path.join(ROOT, "dist", "115學測數學_跨單元整合_脈絡地圖.html")
 
 sys.path.insert(0, os.path.join(ROOT, "content"))
+sys.path.insert(0, HERE)
+from render import html_rich
 
 
 def _asset(name):
@@ -61,6 +63,49 @@ THEMES = [
 
 DIFF_CLASS = {"易": "easy", "中": "mid", "難": "hard"}
 
+PVEC = "115學測數學_平面向量_互動學習.html"
+TRIG = "115學測數學_三角_互動學習.html"
+POLY = "115學測數學_多項式函數_互動學習.html"
+
+# 互動題目（完整題幹＋簡答＋解題關鍵＋直達考點）。題幹取自官方原卷、答案對官方答案頁校正。
+# key = "學年度|卷別|題號"。目前先完成「向量」脈絡的數A題作為範本。
+DETAIL = {
+    "107|數A|10": {
+        "body": r"已知坐標平面上 \(\triangle ABC\)，其中 \(\overrightarrow{AB}=(-4,3)\)，且 \(\overrightarrow{AC}=\left(\dfrac{2}{5},\dfrac{4}{5}\right)\)。試選出正確的選項。",
+        "opts": [r"\(\overline{BC}=5\)", r"\(\triangle ABC\) 是直角三角形",
+                 r"\(\triangle ABC\) 的面積為 \(\dfrac{11}{5}\)", r"\(\sin B>\sin C\)", r"\(\cos A>\cos B\)"],
+        "ans": r"**(2)(3)**",
+        "key": [r"\(\overrightarrow{BC}=\overrightarrow{AC}-\overrightarrow{AB}=\left(\tfrac{22}{5},-\tfrac{11}{5}\right)\)，\(|\overrightarrow{BC}|=\tfrac{11\sqrt5}{5}\neq5\)（(1) 錯）；",
+                r"面積 \(=\tfrac12\left|(-4)\cdot\tfrac45-3\cdot\tfrac25\right|=\dfrac{11}{5}\)（(3) 對）；",
+                r"\(\overrightarrow{CA}\cdot\overrightarrow{CB}=0\Rightarrow\angle C=90^\circ\)（(2) 對）；由直角 \(C\) 推得 (4)(5) 皆錯。"],
+        "links": [(r"平面向量 ▸ 考點1 向量運算", PVEC, "kp1"), (r"三角 ▸ 考點2 正餘弦定理", TRIG, "kp2")],
+    },
+    "107|數A|G": {
+        "body": r"設 \(D\) 為 \(\triangle ABC\) 中 \(\overline{BC}\) 邊上的一點，已知 \(\angle ABC=75^\circ\)、\(\angle ACB=45^\circ\)、\(\angle ADB=60^\circ\)。若 \(\overrightarrow{AD}=s\,\overrightarrow{AB}+t\,\overrightarrow{AC}\)，求 \(s,t\)。",
+        "ans": r"**\(s=\dfrac13,\quad t=\dfrac23\)**",
+        "key": [r"\(D\) 在 \(\overline{BC}\) 上 \(\Rightarrow\overrightarrow{AD}=(1-k)\overrightarrow{AB}+k\overrightarrow{AC}\)，所以 \(s+t=1\)；",
+                r"正弦定理算分點比：\(\dfrac{BD}{DC}=\dfrac{\sin^2 45^\circ}{\sin75^\circ\sin15^\circ}=2\Rightarrow k=\tfrac23\)；",
+                r"故 \(\overrightarrow{AD}=\tfrac13\overrightarrow{AB}+\tfrac23\overrightarrow{AC}\)，即 \(s=\tfrac13,\ t=\tfrac23\)。"],
+        "links": [(r"三角 ▸ 考點2 正弦定理", TRIG, "kp2"), (r"平面向量 ▸ 考點2 線性組合·分點", PVEC, "kp2")],
+    },
+    "108|數A|G": {
+        "body": r"如圖，\(A,B,C,D\) 為平面上四點。已知 \(\overrightarrow{BC}=\overrightarrow{AB}+\overrightarrow{AD}\)，且 \(\overrightarrow{AC}\)、\(\overrightarrow{BD}\) 兩向量 **等長且互相垂直**，求 \(\tan\angle BAD\)。",
+        "ans": r"**\(\tan\angle BAD=-3\)**",
+        "key": [r"令 \(\overrightarrow{AB}=\vec u,\ \overrightarrow{AD}=\vec v\)：\(\overrightarrow{AC}=2\vec u+\vec v\)、\(\overrightarrow{BD}=\vec v-\vec u\)；",
+                r"垂直 \((2\vec u+\vec v)\cdot(\vec v-\vec u)=0\)、等長 \(|2\vec u+\vec v|=|\vec v-\vec u|\)；",
+                r"解得 \(\vec u\cdot\vec v=-\tfrac12|\vec u|^2,\ |\vec v|^2=\tfrac52|\vec u|^2\)，故 \(\cos\angle BAD=-\tfrac{1}{\sqrt{10}},\ \tan\angle BAD=-3\)。"],
+        "links": [(r"平面向量 ▸ 考點3 內積", PVEC, "kp3"), (r"三角 ▸ 考點1 三角比定義", TRIG, "kp1")],
+    },
+    "115|數A|14": {
+        "body": r"坐標平面上，向量 \((a,b)\) 與直線 \(y=bx-1\) 垂直，則 \(a+b\) 的最大可能值為何？（最簡分數）",
+        "ans": r"**\(\dfrac14\)**",
+        "key": [r"直線 \(y=bx-1\) 方向向量 \((1,b)\)，垂直 \(\Rightarrow(a,b)\cdot(1,b)=a+b^2=0\Rightarrow a=-b^2\)；",
+                r"\(a+b=-b^2+b=-\left(b-\tfrac12\right)^2+\tfrac14\)（配方）；",
+                r"當 \(b=\tfrac12\) 取最大值 \(\dfrac14\)。"],
+        "links": [(r"平面向量 ▸ 考點3 內積·垂直", PVEC, "kp3"), (r"多項式 ▸ 考點2 二次配方求極值", POLY, "kp2")],
+    },
+}
+
 
 def _load_rows():
     wb = openpyxl.load_workbook(XLSX, data_only=True)
@@ -101,6 +146,37 @@ def _card(row):
     )
 
 
+def _rich_card(row, dt):
+    d = DIFF_CLASS.get(row["diff"], "mid")
+    juan = row["juan"]
+    opts = ""
+    if dt.get("opts"):
+        opts = ('<div class="opts">'
+                + "".join(f"<span>({i}) {html_rich(o)}</span>" for i, o in enumerate(dt["opts"], 1))
+                + "</div>")
+    keyhtml = "".join(f"<p>{html_rich(k)}</p>" for k in dt["key"])
+    links = '<span class="x">×</span>'.join(
+        f'<a class="utag" href="{f}#{a}">{lab}</a>' for lab, f, a in dt["links"])
+    return (
+        f'<div class="xq rich" data-juan="{juan}">'
+        f'<div class="xq-head" onclick="toggleXq(this)">'
+        f'<span class="yr">{row["yr"]} {juan}</span>'
+        f'<span class="qn">{row["typ"]} {row["num"]}</span>'
+        f'<span class="pair">{row["main"]}×{row["cross"]}</span>'
+        f'<span class="lv {d}">{row["diff"]}</span>'
+        f'<span class="caret">＋</span>'
+        f'</div>'
+        f'<div class="xq-detail">'
+        f'<div class="xq-q">{html_rich(dt["body"])}{opts}</div>'
+        f'<button class="sol-btn mini" data-s="簡答" data-h="收合簡答" onclick="ts(this)">簡答</button>'
+        f'<div class="sol">{html_rich(dt["ans"])}</div>'
+        f'<button class="sol-btn mini" data-s="解題關鍵" data-h="收合解題關鍵" onclick="ts(this)">解題關鍵</button>'
+        f'<div class="sol">{keyhtml}</div>'
+        f'<div class="xq-klink">🔗 直達考點：{links}</div>'
+        f'</div></div>'
+    )
+
+
 def build():
     rows = _load_rows()
     used = set()
@@ -111,9 +187,11 @@ def build():
             if k not in rows:
                 raise SystemExit(f"Excel 找不到題目 key：{k}")
             used.add(k)
-            cards.append(_card(rows[k]))
+            cards.append(_rich_card(rows[k], DETAIL[k]) if k in DETAIL else _card(rows[k]))
+        n_rich = sum(1 for k in keys if k in DETAIL)
+        tag = f'<small>{len(keys)} 題' + (f'·{n_rich} 題可展開' if n_rich else '') + '</small>'
         sections.append(
-            f'<div class="part">{title}<small>{len(keys)} 題</small></div>'
+            f'<div class="part">{title}{tag}</div>'
             f'<div class="callout ctx">{ctx}</div>'
             f'<div class="xq-grid">{"".join(cards)}</div>'
         )
@@ -133,15 +211,15 @@ def build():
   .filterbar button{background:#fff;color:var(--maroon-d);border:1.5px solid var(--maroon);border-radius:20px;padding:5px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
   .filterbar button.on{background:var(--maroon);color:#fff}
   .callout.ctx{font-size:14.5px;line-height:1.8}
-  .xq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:12px;margin:8px 0 6px}
-  .xq{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 8px rgba(80,40,30,.07);border-left:4px solid var(--btn)}
+  .xq-grid{display:flex;flex-direction:column;gap:10px;margin:10px 0 6px}
+  .xq{background:#fff;border-radius:12px;padding:11px 16px;box-shadow:0 2px 8px rgba(80,40,30,.07);border-left:4px solid var(--btn)}
   .xq[data-juan="數B"]{border-left-color:#b0853a;background:#fffdf7}
-  .xq-head{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-  .xq-head .yr{font-weight:800;color:var(--maroon);font-size:14.5px}
+  .xq-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .xq-head .yr{font-weight:800;color:var(--maroon);font-size:15px}
   .xq-head .qn{font-size:12.5px;color:#6b5249;background:#f3e3e8;border-radius:6px;padding:1px 8px}
   .xq-head .lv{margin-left:auto;font-size:12px;font-weight:700;border-radius:6px;padding:1px 9px;color:#fff}
   .lv.easy{background:#3a9d6b}.lv.mid{background:#d39a2a}.lv.hard{background:#c0392b}
-  .xq-units{margin:2px 0 6px;font-size:15px;font-weight:700}
+  .xq-units{margin:5px 0 4px;font-size:15px;font-weight:700}
   .xq-units .x{color:#b08;margin:0 6px;font-weight:800}
   .utag{color:var(--btn);text-decoration:none;border-bottom:1.5px solid #bfe0dd}
   .utag:hover{background:var(--btn-bg)}
@@ -149,12 +227,27 @@ def build():
   .xq-concept{font-size:13.5px;color:#5a4a52;line-height:1.7}
   .xstat{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:#6b5249;margin:6px 0 2px}
   .xstat b{color:var(--maroon);font-size:18px}
+  /* 可展開的互動題卡 */
+  .xq.rich .xq-head{cursor:pointer;user-select:none}
+  .xq.rich:hover{box-shadow:0 3px 12px rgba(31,111,120,.16)}
+  .xq.rich .pair{font-size:12.5px;color:#1f6f78;font-weight:700;background:#e9f5f4;border-radius:6px;padding:1px 9px}
+  .xq.rich .caret{font-weight:800;color:#fff;background:var(--btn);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1}
+  .xq-detail{display:none;margin-top:11px;border-top:1px dashed var(--line);padding-top:11px}
+  .xq-detail.open{display:block}
+  .xq-q{font-size:15.5px;color:#2b2b2b;line-height:1.9;background:#fbf8f5;border-radius:8px;padding:11px 14px}
+  .xq-q .opts{margin-top:6px}
+  .xq-q .opts span{display:block;font-size:14.5px;color:#444;padding:1px 0}
+  .xq .sol-btn{margin:8px 8px 2px 0}
+  .xq .sol{font-size:14.5px}
+  .xq .sol p{margin:.35em 0}
+  .xq-klink{margin-top:11px;font-size:13px;color:#6b5249;line-height:2}
+  .xq-klink .utag{display:inline-block;margin:2px 0;border-bottom-color:#bfe0dd}
 """
     body = f"""<div class="hero"><h1>跨單元整合 · 脈絡地圖</h1>
 <p>學測數學 106–115　共 {len(rows)} 道「跨單元」考題，依<b>結合的概念主軸</b>分成五大脈絡</p></div>
 <div class="x-intro">
 <b>為什麼要看跨單元題？</b>　近年學測越來越愛把兩個單元縫在一起——會單一公式不夠，要看出「這題其實是 A × B」。
-這頁把 106–115 的跨單元題依<b>「誰跟誰結合、為什麼結合」</b>排成五條脈絡；每張卡片可點<b>單元名稱</b>直接跳到該單元複習。
+這頁把 106–115 的跨單元題依<b>「誰跟誰結合、為什麼結合」</b>排成五條脈絡。標有 <span style="color:#fff;background:#1f6f78;border-radius:50%;padding:0 6px;font-weight:800">＋</span> 的數A題卡<b>點一下可展開</b>完整題目，並有<b>簡答、解題關鍵</b>按鈕與<b>直達考點</b>連結。（向量脈絡已完成，其餘陸續補上。）
 <div class="xstat"><span>總題數 <b>{len(rows)}</b></span><span>數A <b>{nA}</b></span><span>數B <b>{nB}</b></span><span>五大脈絡主軸</span></div>
 </div>
 <div class="filterbar"><span class="fb-label">篩選卷別：</span>
@@ -186,7 +279,11 @@ def build():
           "document.querySelectorAll('.part').forEach(p=>{let g=p.nextElementSibling;"
           "while(g&&!g.classList.contains('xq-grid'))g=g.nextElementSibling;"
           "if(g){let vis=[...g.children].some(c=>c.style.display!=='none');"
-          "p.style.display=vis?'':'none';p.nextElementSibling.style.display=vis?'':'none';}});}")
+          "p.style.display=vis?'':'none';p.nextElementSibling.style.display=vis?'':'none';}});}"
+          "function toggleXq(h){var d=h.nextElementSibling;var o=d.classList.toggle('open');"
+          "var c=h.querySelector('.caret');if(c)c.textContent=o?'\\u2212':'\\uFF0B';}"
+          "function ts(b){var s=b.nextElementSibling;var o=s.classList.toggle('open');"
+          "b.classList.toggle('active',o);b.textContent=o?b.dataset.h:b.dataset.s;}")
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-Hant">
