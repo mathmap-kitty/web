@@ -238,6 +238,38 @@ DETAIL = {
                 r"\(k=\dfrac{AD}{AB}=\dfrac{\tan\varphi}{\tan3\varphi}\)；由 \(\sin\varphi=\tfrac14\) 得 \(\sin3\varphi=\tfrac{11}{16},\cos3\varphi=\tfrac{3\sqrt{15}}{16}\)，算得 \(k=\dfrac{3}{11}\)。"],
         "links": [(r"三角 ▸ 考點5 倍角·和差", TRIG, "kp5"), (r"三角 ▸ 考點2 正餘弦定理", TRIG, "kp2")],
     },
+    "109|數A|G": {
+        "body": r"設計師以不銹鋼片製成月形：圓弧 \(QRT\) 是以 \(O\) 為圓心、\(QT\) 為直徑的半圓，\(\overline{QT}=2\sqrt3\)；圓弧 \(QST\) 的圓心為 \(P\)，\(\overline{PQ}=\overline{PT}=2\)。兩弧所圍灰色區域 \(QRTSQ\) 的面積為 \(a\pi+\sqrt{b}\)（\(a\) 為有理數、\(b\) 為整數），求 \(a,b\)。",
+        "fig": r'''<svg viewBox="0 0 150 184" width="150" height="184" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <path d="M60,38 A52,52 0 0 1 60,142 A60,60 0 0 0 60,38 Z" fill="#c4c9cf" fill-opacity="0.55"/>
+  <path d="M60,38 A52,52 0 0 1 60,142" fill="none" stroke="#1f6f78" stroke-width="1.7"/>
+  <path d="M60,38 A60,60 0 0 1 60,142" fill="none" stroke="#c0392b" stroke-width="1.7"/>
+  <line x1="60" y1="38" x2="60" y2="142" stroke="#9aa6b2" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <g fill="#2c3e50"><circle cx="60" cy="38" r="2.4"/><circle cx="60" cy="142" r="2.4"/><circle cx="60" cy="90" r="1.9"/><circle cx="30" cy="90" r="2.4"/><circle cx="90" cy="90" r="2.4"/><circle cx="112" cy="90" r="2.4"/></g>
+  <g font-size="11" font-weight="bold" font-style="italic" fill="#22404a"><text x="55" y="32">Q</text><text x="55" y="156">T</text><text x="48" y="94">O</text><text x="19" y="94">P</text><text x="84" y="103">S</text><text x="115" y="94">R</text></g>
+</svg>''',
+        "ans": r"**\(a=\dfrac16,\ b=3\)**（面積 \(=\dfrac\pi6+\sqrt3\)）",
+        "key": [r"\(\triangle PQT\)：\(PQ=PT=2,\ QT=2\sqrt3\)，餘弦定理 \(\cos\angle QPT=\dfrac{4+4-12}{8}=-\dfrac12\Rightarrow\angle QPT=120^\circ\)；\(OP=\sqrt{2^2-(\sqrt3)^2}=1\)；",
+                r"半圓 \(QRT=\dfrac12\pi(\sqrt3)^2=\dfrac{3\pi}2\)；扇形 \(PQST=\dfrac13\pi\cdot2^2=\dfrac{4\pi}3\)；\(\triangle PQT=\dfrac12\cdot2\sqrt3\cdot1=\sqrt3\)；",
+                r"灰色 \(=\) 半圓 \(+\triangle PQT-\) 扇形 \(=\dfrac{3\pi}2+\sqrt3-\dfrac{4\pi}3=\dfrac\pi6+\sqrt3\)，故 \(a=\tfrac16,\ b=3\)。"],
+        "links": [(r"三角 ▸ 考點1 弧度·扇形面積", TRIG, "kp1"), (r"三角 ▸ 考點2 餘弦定理", TRIG, "kp2")],
+    },
+    "111|數A|17": {
+        "body": r"坐標空間中一平行六面體，某底面的三頂點為 \((-1,2,1),(-4,3,1),(2,0,-3)\)；另一面有一頂點落在 \(xy\) 平面上且與原點距離為 \(1\)。試求此平行六面體的 **最大體積**。",
+        "fig": r'''<svg viewBox="0 0 200 150" width="200" height="150" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
+  <path d="M78,96 L163,96 M78,96 L78,50 M78,96 L45,118" fill="none" stroke="#c9d0d6" stroke-width="1" stroke-dasharray="3 3"/>
+  <polygon points="45,72 130,72 163,50 78,50" fill="#dcefe9" stroke="#1f6f78" stroke-width="1.4"/>
+  <polygon points="130,118 163,96 163,50 130,72" fill="#cfe8e6" stroke="#1f6f78" stroke-width="1.4"/>
+  <polygon points="45,118 130,118 130,72 45,72" fill="#eef6f4" stroke="#1f6f78" stroke-width="1.6"/>
+  <g fill="#c0392b"><circle cx="45" cy="118" r="2.6"/><circle cx="130" cy="118" r="2.6"/><circle cx="45" cy="72" r="2.6"/></g>
+  <text x="150" y="128" font-size="10" fill="#777" font-style="italic">平行六面體</text>
+</svg>''',
+        "ans": r"**\(21\)**",
+        "key": [r"底面平行四邊形面積 \(=|\overrightarrow{AB}\times\overrightarrow{AC}|=\sqrt{181}\)（\(A,B,C\) 為已知三頂點）；",
+                r"落在 \(xy\) 平面的頂點設為 \((\sin\theta,\cos\theta,0)\)（距原點 \(1\)）；體積 \(=\) 底面積 \(\times\) 點到底面距離（點到平面距離公式，\(\sqrt{181}\) 約掉）\(=|\,8\sin\theta-6\cos\theta-11\,|\)；",
+                r"由正餘弦疊合，\(|8\sin\theta-6\cos\theta-11|\) 最大 \(=11+\sqrt{8^2+6^2}=11+10=21\)，故最大體積 \(=21\)。"],
+        "links": [(r"空間向量 ▸ 考點3 外積·體積", SPACE, "kp3"), (r"空間向量 ▸ 考點4 點到平面距離", SPACE, "kp4")],
+    },
 }
 
 
