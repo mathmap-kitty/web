@@ -31,15 +31,15 @@ SVG_VECADD = r'''<svg viewBox="0 0 206 126" width="206" height="126" xmlns="http
 
 UNIT = {
     "slug": "pvec",
-    "file": "115學測數學_平面向量_互動學習.html",
-    "page_title": "115 學測數學 · 平面向量 · 互動學習",
+    "file": "115學測數學_平面向量.html",
+    "page_title": "115 學測數學 · 平面向量",
     "emoji": "➡️",
     "title": "平面向量",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 五大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
     "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
     "part1_label": "五大考點",
-    "foot": "115 學測數學 · 平面向量 · 互動學習講義",
+    "foot": "115 學測數學 · 平面向量 · 學測數學重點整理",
 
     "part0": {
         "heading": "為什麼平面向量是幾何題的萬用語言",

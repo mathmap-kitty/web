@@ -29,15 +29,15 @@ SVG_SEQ = r'''<svg viewBox="0 0 360 124" width="360" height="124" xmlns="http://
 
 UNIT = {
     "slug": "seq",
-    "file": "115學測數學_數列與級數_互動學習.html",
-    "page_title": "115 學測數學 · 數列與級數 · 互動學習",
+    "file": "115學測數學_數列與級數.html",
+    "page_title": "115 學測數學 · 數列與級數",
     "emoji": "🪜",
     "title": "數列與級數",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 四大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
     "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
     "part1_label": "四大考點",
-    "foot": "115 學測數學 · 數列與級數 · 互動學習講義",
+    "foot": "115 學測數學 · 數列與級數 · 學測數學重點整理",
 
     "part0": {
         "heading": "為什麼數列與級數是規律題的基本功",

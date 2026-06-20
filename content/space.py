@@ -33,15 +33,15 @@ SVG_CUBE = r'''<svg viewBox="0 0 200 175" width="200" height="175" xmlns="http:/
 
 UNIT = {
     "slug": "space",
-    "file": "115學測數學_空間向量_互動學習.html",
-    "page_title": "115 學測數學 · 空間向量 · 互動學習",
+    "file": "115學測數學_空間向量.html",
+    "page_title": "115 學測數學 · 空間向量",
     "emoji": "🧊",
     "title": "空間向量",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 六大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
     "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
     "part1_label": "六大考點",
-    "foot": "115 學測數學 · 空間向量 · 互動學習講義",
+    "foot": "115 學測數學 · 空間向量 · 學測數學重點整理",
 
     "part0": {
         "heading": "為什麼空間向量是高 CP 值的拉分單元",

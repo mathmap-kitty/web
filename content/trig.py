@@ -41,15 +41,15 @@ SVG_GEN_ANGLE = """<svg viewBox="0 0 240 200" width="240" height="200" xmlns="ht
 
 UNIT = {
     "slug": "trig",
-    "file": "115學測數學_三角_互動學習.html",
-    "page_title": "115 學測數學 · 三角 · 互動學習",
+    "file": "115學測數學_三角.html",
+    "page_title": "115 學測數學 · 三角",
     "emoji": "📐",
     "title": "三角",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 七大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
     "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
     "part1_label": "七大考點",
-    "foot": "115 學測數學 · 三角 · 互動學習講義",
+    "foot": "115 學測數學 · 三角 · 學測數學重點整理",
 
     "part0": {
         "heading": "為什麼三角是必爭的命題主戰場",

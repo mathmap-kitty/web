@@ -30,15 +30,15 @@ SVG_EXPLOG = r'''<svg viewBox="0 0 170 168" width="170" height="168" xmlns="http
 
 UNIT = {
     "slug": "explog",
-    "file": "115學測數學_指數與對數_互動學習.html",
-    "page_title": "115 學測數學 · 指數與對數 · 互動學習",
+    "file": "115學測數學_指數與對數.html",
+    "page_title": "115 學測數學 · 指數與對數",
     "emoji": "📉",
     "title": "指數與對數",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 五大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
     "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
     "part1_label": "五大考點",
-    "foot": "115 學測數學 · 指數與對數 · 互動學習講義",
+    "foot": "115 學測數學 · 指數與對數 · 學測數學重點整理",
 
     "part0": {
         "heading": "為什麼指數與對數是計算題的得分關鍵",

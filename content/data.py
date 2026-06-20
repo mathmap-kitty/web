@@ -33,15 +33,15 @@ SVG_REG = r'''<svg viewBox="0 0 210 150" width="210" height="150" xmlns="http://
 
 UNIT = {
     "slug": "data",
-    "file": "115學測數學_數據分析_互動學習.html",
-    "page_title": "115 學測數學 · 數據分析 · 互動學習",
+    "file": "115學測數學_數據分析.html",
+    "page_title": "115 學測數學 · 數據分析",
     "emoji": "📊",
     "title": "數據分析",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 四大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
     "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
     "part1_label": "四大考點",
-    "foot": "115 學測數學 · 數據分析 · 互動學習講義",
+    "foot": "115 學測數學 · 數據分析 · 學測數學重點整理",
 
     "part0": {
         "heading": "為什麼數據分析是穩拿基本分的單元",

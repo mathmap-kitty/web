@@ -34,15 +34,15 @@ SVG_SIGNLINE = r'''<svg viewBox="0 0 340 92" width="340" height="92" xmlns="http
 
 UNIT = {
     "slug": "poly",
-    "file": "115學測數學_多項式函數_互動學習.html",
-    "page_title": "115 學測數學 · 多項式函數 · 互動學習",
+    "file": "115學測數學_多項式函數.html",
+    "page_title": "115 學測數學 · 多項式函數",
     "emoji": "📈",
     "title": "多項式函數",
     "exam_tag": "115 學測",
     "hero_sub": "Part 1 五大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
     "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
     "part1_label": "五大考點",
-    "foot": "115 學測數學 · 多項式函數 · 互動學習講義",
+    "foot": "115 學測數學 · 多項式函數 · 學測數學重點整理",
 
     "part0": {
         "heading": "為什麼多項式函數是必拿的基本盤",
