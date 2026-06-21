@@ -47,6 +47,13 @@ EDGES_NET = [("pvec", "trig", 4), ("trig", "seq", 2), ("seq", "explog", 2),
              ("pvec", "numexpr", 1), ("seq", "prob", 1), ("pvec", "poly", 1), ("prob", "data", 1)]
 ORDER_NET = ["numexpr", "poly", "explog", "seq", "prob", "data", "matrix", "space", "linecir", "trig", "pvec"]
 
+# 各單元考點 (id, nav 名稱)，由 content 單一來源取得（供「考點層」下鑽）
+import sys as _sys
+_sys.path.insert(0, os.path.join(ROOT, "content"))
+from units import UNITS as _UNITS
+KP_NAV = {_u["slug"]: [(k["id"], k.get("nav", k.get("title", "")))
+                       for k in __import__(_u["slug"]).UNIT["kps"]] for _u in _UNITS}
+
 
 def heat(w):
     """大考份量 → (底色, 字色)。越紅＝考越重；藍綠＝份量低。"""
@@ -237,6 +244,38 @@ def _svg_heat():
     return "".join(parts)
 
 
+def _svg_kpgrid():
+    """① 考點層下鑽：每單元一列、其考點為小格；讀過的格變綠＋✓，份量用顏色。"""
+    CW = 120
+    body, y = [], 18
+    for tlabel, slugs in THEMES_CM:
+        body.append(f'<text x="6" y="{y+12}" font-size="13.5" font-weight="800" fill="#8c2740">{tlabel}</text>')
+        y += 24
+        for s in slugs:
+            w = UNIT_W[s]
+            fill, _ = heat(w)
+            body.append(f'<a href="{UNIT_FILE[s]}"><text x="8" y="{y+19}" font-size="13" font-weight="800" '
+                        f'fill="{fill}">{UNIT_NAME[s]}</text>'
+                        f'<text x="8" y="{y+33}" font-size="10" fill="#9a857c">{w:g} 題</text></a>')
+            for i, (kid, nav) in enumerate(KP_NAV[s]):
+                cx = 116 + i * CW
+                cw2 = CW - 7
+                kk = f"{s}:{kid}"
+                body.append(f'<g class="kpcell" data-kk="{kk}" onclick="cellClick(event,\'{kk}\',\'{UNIT_FILE[s]}#{kid}\')">')
+                body.append(f'<rect class="cellbg" x="{cx}" y="{y}" width="{cw2}" height="35" rx="6" fill="{fill}"/>')
+                body.append(f'<text x="{cx+cw2/2:.0f}" y="{y+22:.0f}" text-anchor="middle" font-size="12.5" '
+                            f'font-weight="700" fill="#fff">考{i+1}</text>')
+                body.append(f'<g class="ckm"><circle cx="{cx+cw2-12:.0f}" cy="{y+11}" r="7.5" fill="#fff" stroke="#2e9e5b" stroke-width="1.3"/>'
+                            f'<path d="M{cx+cw2-16:.0f},{y+11} L{cx+cw2-13:.0f},{y+14} L{cx+cw2-8:.0f},{y+8}" '
+                            f'fill="none" stroke="#2e9e5b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>')
+                body.append(f'<title>{UNIT_NAME[s]} · 考{i+1}：{nav}</title>')
+                body.append('</g>')
+            y += 43
+        y += 8
+    return (f'<svg viewBox="0 0 1000 {y}" xmlns="http://www.w3.org/2000/svg" '
+            "font-family=\"'Microsoft JhengHei',system-ui,sans-serif\">" + "".join(body) + '</svg>')
+
+
 def _svg_net():
     """③ 跨單元概念網：11 單元排成圓，連線＝大考同題綁定次數，線越粗越常一起考。"""
     import math
@@ -326,6 +365,14 @@ def build():
   .cm-prog .bar{width:180px;height:12px;background:#e6ddd4;border-radius:8px;overflow:hidden}
   .cm-prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2e9e5b,#52c47e);transition:width .3s}
   .cm-prog .resetbtn{background:none;border:none;color:#b3a3ab;font-size:12px;cursor:pointer;text-decoration:underline;font-family:inherit}
+  .cm-subtabs{display:flex;gap:6px;justify-content:center;margin:8px 0 4px}
+  .cm-subtabs button{background:#fff;color:#8a6b75;border:1px solid #d9c2c9;border-radius:16px;padding:4px 13px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+  .cm-subtabs button.on{background:#f0dde3;color:var(--maroon-d);border-color:var(--maroon)}
+  .kpcell{cursor:pointer}
+  .ckm{display:none}
+  .kpcell.kpread .cellbg{fill:#2e9e5b}
+  .kpcell.kpread .ckm{display:block}
+  .cm-board.marking .kpcell:hover .cellbg{filter:brightness(1.1)}
 """
     nav = ('<select class="nav-select" onchange="if(this.value)location.href=this.value" '
            'style="background:#fff;color:var(--maroon-d);border:none;border-radius:20px;padding:6px 12px;font-weight:700;font-size:14px">'
@@ -351,8 +398,12 @@ def build():
 <div class="cm-board">{_svg_dep()}</div>
 </div>
 <div class="cm-view" id="v-heat">
-<div class="cm-legend"><b>每塊面積 ＝ 該單元近十年（106–115）大考份量（加權題數）</b>，依四大主題分欄、單元內由重到輕。{_legend_chips()}<span class="cm-note">面積越大、顏色越紅＝大考考越重、越該優先；數字＝十年加權題數；可點進該單元。</span></div>
-<div class="cm-board">{_svg_heat()}</div>
+<div class="cm-legend"><b>面積／顏色 ＝ 該單元近十年大考份量</b>，依四大主題分欄。{_legend_chips()}<span class="cm-note">「單元層」面積越大＝考越重；「考點層」下鑽到每個考點，讀過的格變綠 ✓（標記模式中可直接點格標記）。</span></div>
+<div class="cm-subtabs">
+<button class="on" onclick="heatSub(this,'tree')">▦ 單元層（面積＝份量）</button>
+<button onclick="heatSub(this,'kp')">▤ 考點層（讀過進度）</button></div>
+<div class="cm-board" id="heat-tree">{_svg_heat()}</div>
+<div class="cm-board" id="heat-kp" style="display:none">{_svg_kpgrid()}</div>
 </div>
 <div class="cm-view" id="v-net">
 <div class="cm-legend"><b>連線 ＝ 大考把兩單元綁在同一題（取自 25 題跨單元清單）</b>，線越粗＝越常一起考；圓的大小/顏色＝該單元大考份量。{_legend_chips()}<span class="cm-note">向量、三角是「跨單元之王」——連到最多其他單元；圓可點進該單元。</span></div>
@@ -369,7 +420,8 @@ def build():
           "function kk(u){var a=[];for(var i=1;i<=KPN[u];i++)a.push(u+':kp'+i);return a;}"
           "function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}"
           "function uf(u,s){return kk(u).every(k=>s.has(k));}"
-          "function aR(){var s=gR();document.querySelectorAll('.mnode').forEach(n=>n.classList.toggle('read',uf(n.dataset.u,s)));uP(s);}"
+          "function aR(){var s=gR();document.querySelectorAll('.mnode').forEach(n=>n.classList.toggle('read',uf(n.dataset.u,s)));"
+          "document.querySelectorAll('.kpcell').forEach(c=>c.classList.toggle('kpread',s.has(c.dataset.kk)));uP(s);}"
           "function uP(s){s=s||gR();var t=0;for(var u in KPN)t+=KPN[u];var d=s.size;"
           "document.getElementById('ptxt').textContent='已讀 '+d+' / '+t+' 考點';"
           "document.getElementById('pbar').style.width=(t?d/t*100:0)+'%';}"
@@ -381,6 +433,11 @@ def build():
           "document.querySelectorAll('.cm-board').forEach(x=>x.classList.toggle('marking',window.markMode));}"
           "function nodeClick(e,u){if(window.markMode){e.preventDefault();e.stopPropagation();toggleRead(u);}}"
           "function resetRead(){if(confirm('清除所有已讀標記？')){localStorage.removeItem(RK);aR();}}"
+          "function toggleKp(k){var s=gR();s.has(k)?s.delete(k):s.add(k);localStorage.setItem(RK,JSON.stringify([...s]));aR();}"
+          "function cellClick(e,k,href){if(window.markMode){e.preventDefault();e.stopPropagation();toggleKp(k);}else{location.href=href;}}"
+          "function heatSub(b,w){document.querySelectorAll('.cm-subtabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');"
+          "document.getElementById('heat-tree').style.display=(w==='tree')?'':'none';"
+          "document.getElementById('heat-kp').style.display=(w==='kp')?'':'none';}"
           "function netHi(u){if(window.markMode)return;var nb=new Set([u]);"
           "document.querySelectorAll('#v-net .netedge').forEach(l=>{var on=(l.dataset.a===u||l.dataset.b===u);"
           "l.style.opacity=on?'1':'0.07';if(on){nb.add(l.dataset.a);nb.add(l.dataset.b);}});"
