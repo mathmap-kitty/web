@@ -120,6 +120,13 @@ def _node_box(n):
     return cx - w / 2, cy - NH / 2, w, NH
 
 
+def _rdmark(x, y, r=8):
+    """已讀 ✓ 戳記（綠圓白勾），預設隱藏、節點 .read 時顯示。"""
+    return (f'<g class="rdmark"><circle cx="{x:.0f}" cy="{y:.0f}" r="{r}" fill="#2e9e5b" stroke="#fff" stroke-width="1.4"/>'
+            f'<path d="M{x-r*0.5:.1f},{y:.1f} L{x-r*0.08:.1f},{y+r*0.42:.1f} L{x+r*0.55:.1f},{y-r*0.45:.1f}" '
+            f'fill="none" stroke="#fff" stroke-width="{r*0.3:.1f}" stroke-linecap="round" stroke-linejoin="round"/></g>')
+
+
 def _svg_dep():
     # positions
     for n in NODES:
@@ -159,11 +166,14 @@ def _svg_dep():
         fill, txt = heat(UNIT_W[unit])
         big = ' stroke="#2b2b2b" stroke-width="2"' if col == 3 else ' stroke="rgba(0,0,0,.12)" stroke-width="1"'
         href = UNIT_FILE[unit]
+        parts.append(f'<g class="mnode" data-u="{unit}" onclick="nodeClick(event,\'{unit}\')">')
         parts.append(f'<a href="{href}">')
-        parts.append(f'<rect x="{x:.0f}" y="{y:.0f}" width="{w:.0f}" height="{h}" rx="9" fill="{fill}"{big}/>')
+        parts.append(f'<rect class="nbg" x="{x:.0f}" y="{y:.0f}" width="{w:.0f}" height="{h}" rx="9" fill="{fill}"{big}/>')
         parts.append(f'<text x="{cx:.0f}" y="{cy+5:.0f}" text-anchor="middle" font-size="13" '
                      f'font-weight="700" fill="{txt}">{label}</text>')
         parts.append('</a>')
+        parts.append(_rdmark(x + w - 8, y + 7, 7))
+        parts.append('</g>')
     parts.append('</svg>')
     return "".join(parts)
 
@@ -188,8 +198,9 @@ def _svg_heat():
             cx, cy = x + cw / 2, y + uh / 2
             namef = min(19, max(12, uh / 3.6))
             numf = min(31, max(15, uh / 3.0))
+            parts.append(f'<g class="mnode" data-u="{s}" onclick="nodeClick(event,\'{s}\')">')
             parts.append(f'<a href="{UNIT_FILE[s]}">')
-            parts.append(f'<rect x="{x+2:.1f}" y="{y+2:.1f}" width="{cw-4:.1f}" height="{uh-4:.1f}" rx="6" fill="{fill}"/>')
+            parts.append(f'<rect class="nbg" x="{x+2:.1f}" y="{y+2:.1f}" width="{cw-4:.1f}" height="{uh-4:.1f}" rx="6" fill="{fill}"/>')
             parts.append(f'<text x="{cx:.0f}" y="{cy-numf*0.32:.0f}" text-anchor="middle" font-size="{namef:.0f}" '
                          f'font-weight="800" fill="{txt}">{UNIT_NAME[s]}</text>')
             parts.append(f'<text x="{cx:.0f}" y="{cy+numf*0.58:.0f}" text-anchor="middle" font-size="{numf:.0f}" '
@@ -198,6 +209,8 @@ def _svg_heat():
                 parts.append(f'<text x="{cx:.0f}" y="{y+uh-10:.0f}" text-anchor="middle" font-size="11" '
                              f'fill="{txt}" opacity="0.85">{KP_COUNT[s]} 考點</text>')
             parts.append('</a>')
+            parts.append(_rdmark(x + cw - 18, y + 18, 9))
+            parts.append('</g>')
             y += uh
         x += cw
     parts.append('</svg>')
@@ -232,11 +245,14 @@ def _svg_net():
         fill, txt = heat(w)
         nm = ABBR[s]
         nf = 12.5 if len(nm) <= 2 else 10.5
+        parts.append(f'<g class="mnode" data-u="{s}" onclick="nodeClick(event,\'{s}\')">')
         parts.append(f'<a href="{UNIT_FILE[s]}">')
-        parts.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{r:.0f}" fill="{fill}" stroke="#fff" stroke-width="2"/>')
+        parts.append(f'<circle class="nbg" cx="{x:.0f}" cy="{y:.0f}" r="{r:.0f}" fill="{fill}" stroke="#fff" stroke-width="2"/>')
         parts.append(f'<text x="{x:.0f}" y="{y-1:.0f}" text-anchor="middle" font-size="{nf}" font-weight="800" fill="{txt}">{nm}</text>')
         parts.append(f'<text x="{x:.0f}" y="{y+12:.0f}" text-anchor="middle" font-size="9.5" fill="{txt}" opacity="0.85">{w:g}</text>')
         parts.append('</a>')
+        parts.append(_rdmark(x + r * 0.66, y - r * 0.66, 8))
+        parts.append('</g>')
     parts.append('</svg>')
     return "".join(parts)
 
@@ -276,6 +292,19 @@ def build():
   .cm-board a{cursor:pointer}.cm-board a:hover rect{filter:brightness(1.08)}
   .cm-stub{padding:40px;text-align:center;color:#9a857c;font-size:15px}
   .cm-foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:26px}
+  .rdmark{display:none}
+  .mnode.read .rdmark{display:block}
+  .mnode.read .nbg{stroke:#2e9e5b;stroke-width:2.6}
+  .cm-board.marking{outline:2px dashed #2e9e5b;outline-offset:-3px;border-radius:14px}
+  .cm-board.marking .mnode{cursor:pointer}
+  .cm-board.marking .mnode:hover .nbg{filter:brightness(1.12)}
+  .cm-prog{display:flex;align-items:center;gap:11px;justify-content:center;flex-wrap:wrap;margin:12px 0 2px}
+  .cm-prog .markbtn{background:#fff;color:#2e7d46;border:1.6px solid #2e9e5b;border-radius:20px;padding:6px 15px;font-weight:800;font-size:13.5px;cursor:pointer;font-family:inherit;transition:.15s}
+  .cm-prog .markbtn.on{background:#2e9e5b;color:#fff}
+  .cm-prog .ptxt{font-weight:800;color:var(--maroon-d);font-size:14px}
+  .cm-prog .bar{width:180px;height:12px;background:#e6ddd4;border-radius:8px;overflow:hidden}
+  .cm-prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2e9e5b,#52c47e);transition:width .3s}
+  .cm-prog .resetbtn{background:none;border:none;color:#b3a3ab;font-size:12px;cursor:pointer;text-decoration:underline;font-family:inherit}
 """
     nav = ('<select class="nav-select" onchange="if(this.value)location.href=this.value" '
            'style="background:#fff;color:var(--maroon-d);border:none;border-radius:20px;padding:6px 12px;font-weight:700;font-size:14px">'
@@ -286,6 +315,11 @@ def build():
 <div class="cm-wrap">
 <div class="cm-hero"><h1>從大考反推的概念地圖</h1>
 <p>不照課本目錄，而是讓 <b>近十年大考數據</b> 決定地圖的重點與結構。三種看法：依賴鏈（學習順序）、熱度地圖（份量輕重）、概念網（跨單元連結）。</p></div>
+<div class="cm-prog">
+<button class="markbtn" id="markbtn" onclick="toggleMark()">✏️ 標記已讀</button>
+<span class="ptxt" id="ptxt">已讀 0 / 11 單元</span>
+<div class="bar"><i id="pbar"></i></div>
+<button class="resetbtn" onclick="resetRead()">清除</button></div>
 <div class="cm-tabs">
 <button class="on" data-v="dep" onclick="cmTab(this,'dep')">② 概念依賴鏈</button>
 <button data-v="heat" onclick="cmTab(this,'heat')">① 大考熱度地圖</button>
@@ -308,7 +342,22 @@ def build():
 </div>"""
     js = ("function cmTab(b,v){document.querySelectorAll('.cm-tabs button').forEach(x=>x.classList.remove('on'));"
           "b.classList.add('on');document.querySelectorAll('.cm-view').forEach(x=>x.classList.remove('on'));"
-          "document.getElementById('v-'+v).classList.add('on');}")
+          "document.getElementById('v-'+v).classList.add('on');}"
+          "var RK='mm-read-units';"
+          "function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}"
+          "function aR(){var s=gR();document.querySelectorAll('.mnode').forEach(n=>n.classList.toggle('read',s.has(n.dataset.u)));uP(s);}"
+          "function uP(s){s=s||gR();var p=new Set([...document.querySelectorAll('.mnode')].map(n=>n.dataset.u));"
+          "var d=[...s].filter(u=>p.has(u)).length,t=p.size||11;"
+          "document.getElementById('ptxt').textContent='已讀 '+d+' / '+t+' 單元';"
+          "document.getElementById('pbar').style.width=(d/t*100)+'%';}"
+          "function toggleRead(u){var s=gR();s.has(u)?s.delete(u):s.add(u);localStorage.setItem(RK,JSON.stringify([...s]));aR();}"
+          "window.markMode=false;"
+          "function toggleMark(){window.markMode=!window.markMode;var b=document.getElementById('markbtn');"
+          "b.classList.toggle('on',window.markMode);b.textContent=window.markMode?'✓ 標記中（點概念）':'✏️ 標記已讀';"
+          "document.querySelectorAll('.cm-board').forEach(x=>x.classList.toggle('marking',window.markMode));}"
+          "function nodeClick(e,u){if(window.markMode){e.preventDefault();e.stopPropagation();toggleRead(u);}}"
+          "function resetRead(){if(confirm('清除所有已讀標記？')){localStorage.removeItem(RK);aR();}}"
+          "aR();")
     html = f"""<!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
