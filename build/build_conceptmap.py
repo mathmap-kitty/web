@@ -28,6 +28,26 @@ UNIT_FILE = {  # 點節點可跳到該單元
 }
 
 
+UNIT_NAME = {"trig": "三角", "prob": "排列組合與機率", "space": "空間向量", "poly": "多項式函數",
+             "linecir": "直線與圓", "explog": "指數與對數", "pvec": "平面向量", "matrix": "矩陣",
+             "data": "數據分析", "seq": "數列與級數", "numexpr": "數與式"}
+KP_COUNT = {"trig": 7, "prob": 6, "space": 6, "poly": 5, "linecir": 5, "explog": 5,
+            "pvec": 5, "matrix": 5, "data": 4, "seq": 4, "numexpr": 6}
+THEMES_CM = [("① 代數與函數", ["numexpr", "poly", "explog"]),
+             ("② 數列·機率·統計", ["seq", "prob", "data"]),
+             ("③ 平面幾何", ["trig", "linecir", "pvec"]),
+             ("④ 空間與矩陣", ["space", "matrix"])]
+
+ABBR = {"trig": "三角", "prob": "機率", "space": "空間", "poly": "多項式", "linecir": "直線圓",
+        "explog": "指對數", "pvec": "向量", "matrix": "矩陣", "data": "數據", "seq": "數列", "numexpr": "數與式"}
+# 跨單元配對與次數（取自 25 題跨單元清單，同單元自配不計）
+EDGES_NET = [("pvec", "trig", 4), ("trig", "seq", 2), ("seq", "explog", 2),
+             ("seq", "poly", 1), ("explog", "prob", 1), ("poly", "trig", 1),
+             ("pvec", "explog", 1), ("space", "trig", 1), ("prob", "matrix", 1),
+             ("pvec", "numexpr", 1), ("seq", "prob", 1), ("pvec", "poly", 1), ("prob", "data", 1)]
+ORDER_NET = ["numexpr", "poly", "explog", "seq", "prob", "data", "matrix", "space", "linecir", "trig", "pvec"]
+
+
 def heat(w):
     """大考份量 → (底色, 字色)。越紅＝考越重；藍綠＝份量低。"""
     if w >= 25: return ("#9e1226", "#fff")
@@ -148,11 +168,87 @@ def _svg_dep():
     return "".join(parts)
 
 
-def _legend():
-    items = [(">=25 ★最重", "#9e1226"), ("20–25", "#c0392b"), ("15–20", "#d2702f"),
+def _svg_heat():
+    """① 大考熱度地圖：treemap，每單元矩形面積 ∝ 近十年大考份量，依四大主題分欄。"""
+    GRAND = sum(UNIT_W.values())
+    W, TOP, H = 1000, 54, 548
+    parts = ['<svg viewBox="0 0 1000 614" xmlns="http://www.w3.org/2000/svg" '
+             'font-family="\'Microsoft JhengHei\',system-ui,sans-serif">']
+    x = 0.0
+    for tlabel, slugs in THEMES_CM:
+        ttot = sum(UNIT_W[s] for s in slugs)
+        cw = ttot / GRAND * W
+        parts.append(f'<text x="{x+cw/2:.0f}" y="34" text-anchor="middle" font-size="14" font-weight="800" '
+                     f'fill="#8c2740">{tlabel} <tspan font-size="11.5" fill="#9a857c">{ttot:.1f}題</tspan></text>')
+        y = float(TOP)
+        for s in sorted(slugs, key=lambda z: -UNIT_W[z]):
+            w = UNIT_W[s]
+            uh = w / ttot * H
+            fill, txt = heat(w)
+            cx, cy = x + cw / 2, y + uh / 2
+            namef = min(19, max(12, uh / 3.6))
+            numf = min(31, max(15, uh / 3.0))
+            parts.append(f'<a href="{UNIT_FILE[s]}">')
+            parts.append(f'<rect x="{x+2:.1f}" y="{y+2:.1f}" width="{cw-4:.1f}" height="{uh-4:.1f}" rx="6" fill="{fill}"/>')
+            parts.append(f'<text x="{cx:.0f}" y="{cy-numf*0.32:.0f}" text-anchor="middle" font-size="{namef:.0f}" '
+                         f'font-weight="800" fill="{txt}">{UNIT_NAME[s]}</text>')
+            parts.append(f'<text x="{cx:.0f}" y="{cy+numf*0.58:.0f}" text-anchor="middle" font-size="{numf:.0f}" '
+                         f'font-weight="800" fill="{txt}">{w:g}</text>')
+            if uh > 82:
+                parts.append(f'<text x="{cx:.0f}" y="{y+uh-10:.0f}" text-anchor="middle" font-size="11" '
+                             f'fill="{txt}" opacity="0.85">{KP_COUNT[s]} 考點</text>')
+            parts.append('</a>')
+            y += uh
+        x += cw
+    parts.append('</svg>')
+    return "".join(parts)
+
+
+def _svg_net():
+    """③ 跨單元概念網：11 單元排成圓，連線＝大考同題綁定次數，線越粗越常一起考。"""
+    import math
+    cx, cy, R = 480, 334, 248
+    pos = {}
+    n = len(ORDER_NET)
+    for i, s in enumerate(ORDER_NET):
+        ang = -math.pi / 2 + i * 2 * math.pi / n
+        pos[s] = (cx + R * math.cos(ang), cy + R * math.sin(ang))
+    parts = ['<svg viewBox="0 0 960 690" xmlns="http://www.w3.org/2000/svg" '
+             'font-family="\'Microsoft JhengHei\',system-ui,sans-serif">']
+    for a, b, c in sorted(EDGES_NET, key=lambda e: e[2]):  # 細線先畫
+        x1, y1 = pos[a]; x2, y2 = pos[b]
+        col = "#c0392b" if c >= 4 else ("#d2843a" if c >= 2 else "#d2c2ca")
+        op = 0.95 if c >= 4 else (0.85 if c >= 2 else 0.6)
+        parts.append(f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" '
+                     f'stroke="{col}" stroke-width="{c*1.6+1.4:.1f}" opacity="{op}" stroke-linecap="round"/>')
+    # 中央註
+    parts.append(f'<ellipse cx="{cx}" cy="{cy}" rx="78" ry="26" fill="#fffaf6" opacity="0.92"/>')
+    parts.append(f'<text x="{cx}" y="{cy-4}" text-anchor="middle" font-size="14" font-weight="800" fill="#8c2740">向量 × 三角</text>')
+    parts.append(f'<text x="{cx}" y="{cy+14}" text-anchor="middle" font-size="11" fill="#9a857c">最常綁在一起（4 題）</text>')
+    for s in ORDER_NET:
+        x, y = pos[s]
+        w = UNIT_W[s]
+        r = 15 + w * 0.55
+        fill, txt = heat(w)
+        nm = ABBR[s]
+        nf = 12.5 if len(nm) <= 2 else 10.5
+        parts.append(f'<a href="{UNIT_FILE[s]}">')
+        parts.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{r:.0f}" fill="{fill}" stroke="#fff" stroke-width="2"/>')
+        parts.append(f'<text x="{x:.0f}" y="{y-1:.0f}" text-anchor="middle" font-size="{nf}" font-weight="800" fill="{txt}">{nm}</text>')
+        parts.append(f'<text x="{x:.0f}" y="{y+12:.0f}" text-anchor="middle" font-size="9.5" fill="{txt}" opacity="0.85">{w:g}</text>')
+        parts.append('</a>')
+    parts.append('</svg>')
+    return "".join(parts)
+
+
+def _legend_chips():
+    items = [("≥25 ★最重", "#9e1226"), ("20–25", "#c0392b"), ("15–20", "#d2702f"),
              ("12–15", "#d99a2a"), ("8–12", "#3f9d8c"), ("<8", "#7aa7bb")]
-    chips = "".join(f'<span class="cm-chip"><i style="background:{c}"></i>{t}</span>' for t, c in items)
-    return f'<div class="cm-legend"><b>顏色＝近十年大考份量（加權題數）：</b>{chips}<span class="cm-note">越紅＝考越重；箭頭＝「先會 → 才好學」；最右欄＝大考高頻、反推起點（粗框，可點進單元）</span></div>'
+    return "".join(f'<span class="cm-chip"><i style="background:{c}"></i>{t}</span>' for t, c in items)
+
+
+def _legend():
+    return f'<div class="cm-legend"><b>顏色＝近十年大考份量（加權題數）：</b>{_legend_chips()}<span class="cm-note">越紅＝考越重；箭頭＝「先會 → 才好學」；最右欄＝大考高頻、反推起點（粗框，可點進單元）</span></div>'
 
 
 def build():
@@ -199,8 +295,14 @@ def build():
 {_legend()}
 <div class="cm-board">{_svg_dep()}</div>
 </div>
-<div class="cm-view" id="v-heat"><div class="cm-stub">① 大考熱度地圖 — 製作中…</div></div>
-<div class="cm-view" id="v-net"><div class="cm-stub">③ 跨單元概念網 — 製作中…</div></div>
+<div class="cm-view" id="v-heat">
+<div class="cm-legend"><b>每塊面積 ＝ 該單元近十年（106–115）大考份量（加權題數）</b>，依四大主題分欄、單元內由重到輕。{_legend_chips()}<span class="cm-note">面積越大、顏色越紅＝大考考越重、越該優先；數字＝十年加權題數；可點進該單元。</span></div>
+<div class="cm-board">{_svg_heat()}</div>
+</div>
+<div class="cm-view" id="v-net">
+<div class="cm-legend"><b>連線 ＝ 大考把兩單元綁在同一題（取自 25 題跨單元清單）</b>，線越粗＝越常一起考；圓的大小/顏色＝該單元大考份量。{_legend_chips()}<span class="cm-note">向量、三角是「跨單元之王」——連到最多其他單元；圓可點進該單元。</span></div>
+<div class="cm-board">{_svg_net()}</div>
+</div>
 
 <div class="cm-foot">概念份量取自各單元近十年（106–115）出題趨勢加權題數；依賴關係為教學編排。</div>
 </div>"""
