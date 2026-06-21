@@ -38,7 +38,7 @@ def heat(w):
     return ("#7aa7bb", "#13303d")
 
 
-COLX = [95, 330, 585, 855]  # 四層 x 中心：地基 / 工具 / 主力 / 大考高頻
+COLX = [180, 415, 660, 925]  # 四層 x 中心（左側留 gutter 放帶標題）
 
 # 節點：(id, 標籤, 層col, y中心, 單元)
 NODES = [
@@ -106,7 +106,7 @@ def _svg_dep():
         x, y, w, h = _node_box(n)
         POS[n[0]] = (x, y, w, h, COLX[n[2]], n[3])
     parts = []
-    parts.append('<svg viewBox="0 0 1070 745" xmlns="http://www.w3.org/2000/svg" '
+    parts.append('<svg viewBox="0 0 1150 745" xmlns="http://www.w3.org/2000/svg" '
                  'font-family="\'Microsoft JhengHei\',system-ui,sans-serif">')
     parts.append('<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" '
                  'markerHeight="7" orient="auto-start-reverse">'
@@ -117,10 +117,13 @@ def _svg_dep():
         parts.append(f'<text x="{COLX[i]}" y="28" text-anchor="middle" font-size="14" '
                      f'font-weight="800" fill="#8c2740">{lab}</text>')
         parts.append(f'<line x1="{COLX[i]}" y1="36" x2="{COLX[i]}" y2="726" stroke="#efe4e8" stroke-width="1"/>')
-    # 帶標題（左側）
-    for lab, yy, col in [("代數與函數", 110, "#b06a2a"), ("平面幾何", 350, "#1f6f78"), ("數列·機率·統計", 600, "#5a3a8c")]:
-        parts.append(f'<text x="8" y="{yy}" font-size="12.5" font-weight="800" fill="{col}" '
-                     f'transform="rotate(-90 8 {yy})" text-anchor="middle" opacity="0.55">{lab}</text>')
+    # 帶標題（左側 gutter，橫向清楚＋色條）
+    for lab, y0, y1, col in [("代數與函數", 48, 172, "#a66526"),
+                             ("平面幾何", 184, 508, "#1f6f78"),
+                             ("數列機率統計", 524, 722, "#5a3a8c")]:
+        cy = (y0 + y1) / 2
+        parts.append(f'<rect x="8" y="{y0}" width="6" height="{y1-y0}" rx="3" fill="{col}" opacity="0.5"/>')
+        parts.append(f'<text x="20" y="{cy+5:.0f}" font-size="15" font-weight="800" fill="{col}">{lab}</text>')
     # edges
     for a, b in EDGES:
         xa, ya, wa, ha, cxa, _ = POS[a]
