@@ -67,24 +67,35 @@ def _trirel_fig():
 SVG_TRIREL = _trirel_fig()
 
 def _sinelaw_fig():
-    INK="#2c3e50"; BLUE="#3a6ea5"; ROSE="#b03a5b"; GRN="#1f8a5b"
+    import math
+    INK="#2c3e50"; BLUE="#3a6ea5"; ROSE="#b03a5b"; MAROON="#8c2740"
     Ox,Oy,R=112,100,72
     A=(136.6,32.3); B=(41.1,112.5); C=(167.2,146.3)
-    L=[f'<svg viewBox="0 0 240 200" width="240" height="200" xmlns="http://www.w3.org/2000/svg" role="img" {_TF}>']
+    D=(2*Ox-B[0], 2*Oy-B[1])   # B 的對徑點（BD 為直徑＝2R）
+    def u(p,q):
+        dx,dy=q[0]-p[0],q[1]-p[1]; ln=math.hypot(dx,dy); return (dx/ln,dy/ln)
+    L=[f'<svg viewBox="0 0 244 200" width="244" height="200" xmlns="http://www.w3.org/2000/svg" role="img" {_TF}>']
     L.append(f'<circle cx="{Ox}" cy="{Oy}" r="{R}" fill="none" stroke="{BLUE}" stroke-width="1.6"/>')
-    L.append(f'<polygon points="{A[0]},{A[1]} {B[0]},{B[1]} {C[0]},{C[1]}" fill="#eef4f8" fill-opacity="0.7" stroke="{INK}" stroke-width="1.8"/>')
-    L.append(f'<line x1="{Ox}" y1="{Oy}" x2="{A[0]}" y2="{A[1]}" stroke="{GRN}" stroke-width="1.2" stroke-dasharray="4 3"/>')
-    L.append(f'<circle cx="{Ox}" cy="{Oy}" r="2.6" fill="{GRN}"/>')
-    L.append(f'<g font-size="12" font-style="italic"><text x="116" y="105" fill="{GRN}">O</text>'
-             f'<text x="124" y="64" fill="{GRN}" font-size="11">R</text></g>')
-    L.append(f'<g font-size="13" font-weight="bold" fill="{INK}" font-style="italic">'
-             f'<text x="132" y="28" text-anchor="middle">A</text>'
-             f'<text x="30" y="116" text-anchor="middle">B</text>'
-             f'<text x="176" y="150" text-anchor="middle">C</text></g>')
-    L.append(f'<g font-size="12.5" font-weight="bold" fill="{ROSE}" font-style="italic">'
-             f'<text x="100" y="140" text-anchor="middle">a</text>'
-             f'<text x="162" y="92" text-anchor="middle">b</text>'
-             f'<text x="74" y="68" text-anchor="middle">c</text></g>')
+    L.append(f'<polygon points="{A[0]},{A[1]} {B[0]},{B[1]} {C[0]},{C[1]}" fill="#eef4f8" fill-opacity="0.6" stroke="{INK}" stroke-width="1.8"/>')
+    L.append(f'<line x1="{B[0]}" y1="{B[1]}" x2="{D[0]:.1f}" y2="{D[1]:.1f}" stroke="{MAROON}" stroke-width="2.2"/>')
+    L.append(f'<line x1="{C[0]}" y1="{C[1]}" x2="{D[0]:.1f}" y2="{D[1]:.1f}" stroke="#9aa6b2" stroke-width="1.4" stroke-dasharray="4 3"/>')
+    cb=u(C,B); cd=u(C,D); p1=(C[0]+9*cb[0],C[1]+9*cb[1]); cor=(C[0]+9*cb[0]+9*cd[0],C[1]+9*cb[1]+9*cd[1]); p2=(C[0]+9*cd[0],C[1]+9*cd[1])
+    L.append(f'<polyline points="{p1[0]:.1f},{p1[1]:.1f} {cor[0]:.1f},{cor[1]:.1f} {p2[0]:.1f},{p2[1]:.1f}" fill="none" stroke="{INK}" stroke-width="1"/>')
+    db=u(D,B); dc=u(D,C); a1=(D[0]+17*db[0],D[1]+17*db[1]); a2=(D[0]+17*dc[0],D[1]+17*dc[1])
+    L.append(f'<path d="M{a1[0]:.1f},{a1[1]:.1f} A17 17 0 0 1 {a2[0]:.1f},{a2[1]:.1f}" fill="none" stroke="{ROSE}" stroke-width="1.6"/>')
+    L.append(f'<circle cx="{Ox}" cy="{Oy}" r="2.4" fill="{INK}"/>')
+    L.append(f'<g font-size="12.5" font-weight="bold" font-style="italic">'
+             f'<text x="132" y="28" fill="{INK}" text-anchor="middle">A</text>'
+             f'<text x="30" y="116" fill="{INK}" text-anchor="middle">B</text>'
+             f'<text x="172" y="158" fill="{INK}" text-anchor="middle">C</text>'
+             f'<text x="{D[0]+6:.0f}" y="{D[1]-3:.0f}" fill="{MAROON}" text-anchor="middle">D</text></g>')
+    L.append(f'<g font-size="12" font-weight="bold" font-style="italic" fill="{ROSE}">'
+             f'<text x="96" y="138" text-anchor="middle">a</text>'
+             f'<text x="158" y="86" text-anchor="middle">b</text>'
+             f'<text x="78" y="70" text-anchor="middle">c</text></g>')
+    L.append(f'<text x="108" y="90" font-size="11.5" font-weight="bold" fill="{MAROON}">2R</text>')
+    L.append(f'<text x="166" y="104" font-size="11" fill="{ROSE}">A</text>')
+    L.append(f'<text x="120" y="194" font-size="10" fill="#5a4a52" text-anchor="middle">∠D ＝ ∠A ⇒ a ＝ 2R·sinA</text>')
     L.append('</svg>')
     return "".join(L)
 
@@ -184,7 +195,7 @@ UNIT = {
                 {"label": r"正弦定理", "lines": [
                     r"\(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}=\) 【\(2R\)】（\(R\) 為外接圓半徑）；",
                     r"適用：已知 **兩角一邊**，或 **兩邊一對角**（SSA，注意可能兩解）。"]},
-                {"svg": SVG_SINELAW, "med": True, "caption": r"\(\triangle ABC\) 與其外接圓：邊 \(\div\) 對角的正弦 ＝ 直徑 \(2R\)；邊 \(a\) 對角 \(A\)、\(b\) 對 \(B\)、\(c\) 對 \(C\)"},
+                {"svg": SVG_SINELAW, "wide": True, "caption": r"**正弦定理的靈魂＝直徑**：從 \(B\) 拉直徑 \(BD=2R\)，則 \(\angle BCD=90^\circ\)（半圓上圓周角）、\(\angle D=\angle A\)（同弧 \(BC\)），故 \(a=2R\sin A\)，即 \(\dfrac{a}{\sin A}=2R\)"},
                 {"label": r"餘弦定理", "lines": [
                     r"\(c^2=\) 【\(a^2+b^2-2ab\cos C\)】（\(C\) 是 \(a,b\) 的夾角）；",
                     r"\(\cos C=\) 【\(\dfrac{a^2+b^2-c^2}{2ab}\)】；",
