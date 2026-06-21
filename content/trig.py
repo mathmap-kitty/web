@@ -39,6 +39,57 @@ SVG_GEN_ANGLE = """<svg viewBox="0 0 240 200" width="240" height="200" xmlns="ht
 <text x="150" y="180" font-size="11.5" fill="#9a857c">Ⅳ cos＋</text>
 </svg>"""
 
+# 三個相似直角三角形：基本 → 底邊÷cosθ → 高÷sinθ（呈現 tan 與倒數關係）
+_TF = "font-family=\"'Microsoft JhengHei',system-ui,sans-serif\""
+
+def _trirel_fig():
+    BLUE = "#34679a"; ROSE = "#b03a5b"; GRN = "#1f6f78"
+    L = [f'<svg viewBox="0 0 366 134" width="366" height="134" xmlns="http://www.w3.org/2000/svg" role="img" {_TF}>']
+    def tri(p, adj_l, opp_l, hyp_l):
+        Ax, Ay = p+14, 100; Bx, By = p+94, 100; Cx, Cy = p+94, 44
+        g = [f'<polygon points="{Ax},{Ay} {Bx},{By} {Cx},{Cy}" fill="#eef4f8" stroke="{BLUE}" stroke-width="2"/>']
+        g.append(f'<path d="M{Bx},{By-16} L{Bx-16},{By-16} L{Bx-16},{By}" fill="none" stroke="{BLUE}" stroke-width="1.2"/>')
+        g.append(f'<path d="M{Ax+22},{Ay} A22 22 0 0 0 {Ax+18},{Ay-11}" fill="none" stroke="{ROSE}" stroke-width="1.6"/>')
+        g.append(f'<text x="{Ax+24}" y="{Ay-3}" font-size="11" fill="{ROSE}">θ</text>')
+        g.append(f'<text x="{(Ax+Bx)/2}" y="{Ay+15}" font-size="11" fill="{GRN}" text-anchor="middle">{adj_l}</text>')
+        g.append(f'<text x="{Bx+4}" y="{(By+Cy)/2+4}" font-size="11" fill="{GRN}">{opp_l}</text>')
+        g.append(f'<text x="{(Ax+Cx)/2-16}" y="{(Ay+Cy)/2-2}" font-size="11" fill="{ROSE}" text-anchor="end" font-weight="bold">{hyp_l}</text>')
+        return "".join(g)
+    L.append(tri(0,   'cos θ', 'sin θ', '1'))
+    L.append(tri(122, '1', 'tan θ', '1/cos θ'))
+    L.append(tri(244, '1/tan θ', '1', '1/sin θ'))
+    L.append('<text x="61" y="128" font-size="9.5" fill="#5a4a52" text-anchor="middle">基本（÷ 1）</text>')
+    L.append('<text x="183" y="128" font-size="9.5" fill="#5a4a52" text-anchor="middle">底邊 ÷ cos θ</text>')
+    L.append('<text x="305" y="128" font-size="9.5" fill="#5a4a52" text-anchor="middle">高 ÷ sin θ</text>')
+    L.append('</svg>')
+    return "".join(L)
+
+SVG_TRIREL = _trirel_fig()
+
+def _sinelaw_fig():
+    INK="#2c3e50"; BLUE="#3a6ea5"; ROSE="#b03a5b"; GRN="#1f8a5b"
+    Ox,Oy,R=112,100,72
+    A=(136.6,32.3); B=(41.1,112.5); C=(167.2,146.3)
+    L=[f'<svg viewBox="0 0 240 200" width="240" height="200" xmlns="http://www.w3.org/2000/svg" role="img" {_TF}>']
+    L.append(f'<circle cx="{Ox}" cy="{Oy}" r="{R}" fill="none" stroke="{BLUE}" stroke-width="1.6"/>')
+    L.append(f'<polygon points="{A[0]},{A[1]} {B[0]},{B[1]} {C[0]},{C[1]}" fill="#eef4f8" fill-opacity="0.7" stroke="{INK}" stroke-width="1.8"/>')
+    L.append(f'<line x1="{Ox}" y1="{Oy}" x2="{A[0]}" y2="{A[1]}" stroke="{GRN}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+    L.append(f'<circle cx="{Ox}" cy="{Oy}" r="2.6" fill="{GRN}"/>')
+    L.append(f'<g font-size="12" font-style="italic"><text x="116" y="105" fill="{GRN}">O</text>'
+             f'<text x="124" y="64" fill="{GRN}" font-size="11">R</text></g>')
+    L.append(f'<g font-size="13" font-weight="bold" fill="{INK}" font-style="italic">'
+             f'<text x="132" y="28" text-anchor="middle">A</text>'
+             f'<text x="30" y="116" text-anchor="middle">B</text>'
+             f'<text x="176" y="150" text-anchor="middle">C</text></g>')
+    L.append(f'<g font-size="12.5" font-weight="bold" fill="{ROSE}" font-style="italic">'
+             f'<text x="100" y="140" text-anchor="middle">a</text>'
+             f'<text x="162" y="92" text-anchor="middle">b</text>'
+             f'<text x="74" y="68" text-anchor="middle">c</text></g>')
+    L.append('</svg>')
+    return "".join(L)
+
+SVG_SINELAW = _sinelaw_fig()
+
 UNIT = {
     "slug": "trig",
     "file": "115學測數學_三角.html",
@@ -79,6 +130,7 @@ UNIT = {
                 {"label": r"平方與商數關係", "lines": [
                     r"**平方關係**：\(\sin^2\theta+\cos^2\theta=\) 【\(1\)】；",
                     r"**商數關係**：\(\tan\theta=\) 【\(\dfrac{\sin\theta}{\cos\theta}\)】。"]},
+                {"svg": SVG_TRIREL, "wide": True, "caption": r"同一個角的相似直角三角形：底邊 \(\div\cos\theta\) 得 \(\tan\theta\)（商數關係）；斜邊隨之變 \(\tfrac1{\cos\theta}\)、\(\tfrac1{\sin\theta}\)"},
                 {"label": r"特殊角與餘角", "lines": [
                     r"\(\sin30°=\) 【\(\dfrac12\)】、\(\sin45°=\) 【\(\dfrac{\sqrt2}{2}\)】、\(\sin60°=\) 【\(\dfrac{\sqrt3}{2}\)】；",
                     r"餘角關係：\(\cos\theta=\) 【\(\sin(90°-\theta)\)】（\(\cos\) 是「餘」弦）。"]},
@@ -132,6 +184,7 @@ UNIT = {
                 {"label": r"正弦定理", "lines": [
                     r"\(\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}=\) 【\(2R\)】（\(R\) 為外接圓半徑）；",
                     r"適用：已知 **兩角一邊**，或 **兩邊一對角**（SSA，注意可能兩解）。"]},
+                {"svg": SVG_SINELAW, "med": True, "caption": r"\(\triangle ABC\) 與其外接圓：邊 \(\div\) 對角的正弦 ＝ 直徑 \(2R\)；邊 \(a\) 對角 \(A\)、\(b\) 對 \(B\)、\(c\) 對 \(C\)"},
                 {"label": r"餘弦定理", "lines": [
                     r"\(c^2=\) 【\(a^2+b^2-2ab\cos C\)】（\(C\) 是 \(a,b\) 的夾角）；",
                     r"\(\cos C=\) 【\(\dfrac{a^2+b^2-c^2}{2ab}\)】；",

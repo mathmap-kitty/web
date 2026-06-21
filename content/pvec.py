@@ -11,23 +11,13 @@ r"""平面向量單元 · 單一來源內容（單元8：平面向量）。
 """
 
 # 向量加法：三角形法（首尾相接 u→v）＋平行四邊形法，對角線 = u+v
-SVG_VECADD = r'''<svg viewBox="0 0 206 126" width="206" height="126" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
-  <line x1="30" y1="112" x2="86" y2="56" stroke="#2e8b57" stroke-width="1.3" stroke-dasharray="4 3"/>
-  <line x1="86" y1="56" x2="176" y2="40" stroke="#1f3a93" stroke-width="1.3" stroke-dasharray="4 3"/>
-  <line x1="30" y1="112" x2="120" y2="96" stroke="#1f3a93" stroke-width="2.2"/>
-  <polygon points="120,96 112,102 110,94" fill="#1f3a93"/>
-  <line x1="120" y1="96" x2="176" y2="40" stroke="#2e8b57" stroke-width="2.2"/>
-  <polygon points="176,40 172,49 167,44" fill="#2e8b57"/>
-  <line x1="30" y1="112" x2="176" y2="40" stroke="#c0392b" stroke-width="2.4"/>
-  <polygon points="176,40 170,48 166,40" fill="#c0392b"/>
-  <circle cx="30" cy="112" r="2.6" fill="#333"/>
-  <g font-size="12" font-weight="bold" font-style="italic">
-    <text x="64" y="118" fill="#1f3a93">u</text>
-    <text x="150" y="74" fill="#2e8b57">v</text>
-    <text x="52" y="100" fill="#c0392b">u+v</text>
-  </g>
-  <text x="20" y="117" font-size="10" fill="#333">A</text>
-</svg>'''
+SVG_VECADD = r'''<svg viewBox="0 0 206 126" width="206" height="126" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif"><line x1="30" y1="112" x2="86" y2="56" stroke="#2e8b57" stroke-width="1.3" stroke-dasharray="4 3"/><line x1="86" y1="56" x2="176" y2="40" stroke="#1f3a93" stroke-width="1.3" stroke-dasharray="4 3"/><line x1="30" y1="112" x2="120" y2="96" stroke="#1f3a93" stroke-width="2.2"/><polygon points="120,96 112,102 110,94" fill="#1f3a93"/><line x1="120" y1="96" x2="176" y2="40" stroke="#2e8b57" stroke-width="2.2"/><polygon points="176,40 172,49 167,44" fill="#2e8b57"/><line x1="30" y1="112" x2="176" y2="40" stroke="#c0392b" stroke-width="2.4"/><polygon points="176,40 170,48 166,40" fill="#c0392b"/><circle cx="30" cy="112" r="2.6" fill="#333"/><text x="20" y="117" font-size="10" fill="#333">A</text><text x="62" y="120" font-size="12" font-weight="bold" font-style="italic" fill="#1f3a93" text-anchor="middle">u</text><line x1="56.5" y1="110.4" x2="65.5" y2="110.4" stroke="#1f3a93" stroke-width="1.05"/><polygon points="68.5,110.4 64.8,108.5 64.8,112.3" fill="#1f3a93"/><text x="152" y="72" font-size="12" font-weight="bold" font-style="italic" fill="#2e8b57" text-anchor="middle">v</text><line x1="146.5" y1="62.4" x2="155.5" y2="62.4" stroke="#2e8b57" stroke-width="1.05"/><polygon points="158.5,62.4 154.8,60.5 154.8,64.3" fill="#2e8b57"/><text x="64" y="88" font-size="12" font-weight="bold" font-style="italic" fill="#c0392b" text-anchor="middle">u</text><line x1="58.5" y1="78.4" x2="67.5" y2="78.4" stroke="#c0392b" stroke-width="1.05"/><polygon points="70.5,78.4 66.8,76.5 66.8,80.3" fill="#c0392b"/><text x="76" y="88" font-size="12" font-weight="bold" fill="#c0392b" text-anchor="middle">+</text><text x="88" y="88" font-size="12" font-weight="bold" font-style="italic" fill="#c0392b" text-anchor="middle">v</text><line x1="82.5" y1="78.4" x2="91.5" y2="78.4" stroke="#c0392b" stroke-width="1.05"/><polygon points="94.5,78.4 90.8,76.5 90.8,80.3" fill="#c0392b"/></svg>'''
+
+# 向量加減的平行四邊形：a+b 與 a−b 為兩條對角線
+SVG_VECPARA = r'''<svg viewBox="0 0 224 150" width="224" height="150" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif"><polygon points="35,122 150,122 195,40 80,40" fill="#f3f1f7" stroke="#b9b3c4" stroke-width="1" stroke-dasharray="4 3"/><line x1="35" y1="122" x2="150" y2="122" stroke="#1f3a93" stroke-width="2.2"/><polygon points="150,122 141.7,125.5 141.7,118.5" fill="#1f3a93"/><line x1="35" y1="122" x2="80" y2="40" stroke="#2e8b57" stroke-width="2.2"/><polygon points="80,40 79.1,49.0 72.9,45.6" fill="#2e8b57"/><line x1="35" y1="122" x2="195" y2="40" stroke="#c0392b" stroke-width="2.4"/><polygon points="195,40 189.2,46.9 186.0,40.7" fill="#c0392b"/><line x1="80" y1="40" x2="150" y2="122" stroke="#6f4a8e" stroke-width="2.0"/><polygon points="150,122 142.0,118.0 147.3,113.4" fill="#6f4a8e"/><circle cx="35" cy="122" r="2.6" fill="#2c3e50"/><text x="94" y="137" font-size="12" font-weight="bold" font-style="italic" fill="#1f3a93" text-anchor="middle">a</text><line x1="88.5" y1="127.4" x2="97.5" y2="127.4" stroke="#1f3a93" stroke-width="1.05"/><polygon points="100.5,127.4 96.8,125.5 96.8,129.3" fill="#1f3a93"/><text x="44" y="82" font-size="12" font-weight="bold" font-style="italic" fill="#2e8b57" text-anchor="middle">b</text><line x1="38.5" y1="72.4" x2="47.5" y2="72.4" stroke="#2e8b57" stroke-width="1.05"/><polygon points="50.5,72.4 46.8,70.5 46.8,74.3" fill="#2e8b57"/><text x="140" y="52" font-size="12" font-weight="bold" font-style="italic" fill="#c0392b" text-anchor="middle">a</text><line x1="134.5" y1="42.4" x2="143.5" y2="42.4" stroke="#c0392b" stroke-width="1.05"/><polygon points="146.5,42.4 142.8,40.5 142.8,44.3" fill="#c0392b"/><text x="152" y="52" font-size="12" font-weight="bold" fill="#c0392b" text-anchor="middle">+</text><text x="164" y="52" font-size="12" font-weight="bold" font-style="italic" fill="#c0392b" text-anchor="middle">b</text><line x1="158.5" y1="42.4" x2="167.5" y2="42.4" stroke="#c0392b" stroke-width="1.05"/><polygon points="170.5,42.4 166.8,40.5 166.8,44.3" fill="#c0392b"/><text x="104" y="118" font-size="12" font-weight="bold" font-style="italic" fill="#6f4a8e" text-anchor="middle">a</text><line x1="98.5" y1="108.4" x2="107.5" y2="108.4" stroke="#6f4a8e" stroke-width="1.05"/><polygon points="110.5,108.4 106.8,106.5 106.8,110.3" fill="#6f4a8e"/><text x="116" y="118" font-size="12" font-weight="bold" fill="#6f4a8e" text-anchor="middle">−</text><text x="128" y="118" font-size="12" font-weight="bold" font-style="italic" fill="#6f4a8e" text-anchor="middle">b</text><line x1="122.5" y1="108.4" x2="131.5" y2="108.4" stroke="#6f4a8e" stroke-width="1.05"/><polygon points="134.5,108.4 130.8,106.5 130.8,110.3" fill="#6f4a8e"/></svg>'''
+
+# 正射影：a 在 b 上的投影長 = |a|cosθ
+SVG_PROJ = r'''<svg viewBox="0 0 210 144" width="210" height="144" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif"><line x1="30" y1="112" x2="105.6" y2="112" stroke="#1f8a5b" stroke-width="5" stroke-opacity="0.35"/><line x1="30.0" y1="112.0" x2="186.0" y2="112.0" stroke="#2c3e50" stroke-width="1.8"/><polygon points="186.0,112.0 177.7,115.5 177.7,108.5" fill="#2c3e50"/><line x1="30.0" y1="112.0" x2="105.6" y2="52.9" stroke="#1f3a93" stroke-width="2.2"/><polygon points="105.6,52.9 101.3,60.8 97.0,55.2" fill="#1f3a93"/><line x1="105.6" y1="52.9" x2="105.6" y2="112" stroke="#888" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M95.6,112 L95.6,102 L105.6,102" fill="none" stroke="#888" stroke-width="1"/><path d="M56,112 A26 26 0 0 0 50.5,96.0" fill="none" stroke="#b03a5b" stroke-width="1.6"/><text x="60" y="106" font-size="11" fill="#b03a5b">θ</text><text x="68" y="132" font-size="10.5" fill="#1f8a5b" text-anchor="middle" font-weight="bold">|a|cos θ</text><text x="54" y="82" font-size="12" font-weight="bold" font-style="italic" fill="#1f3a93" text-anchor="middle">a</text><line x1="48.5" y1="72.4" x2="57.5" y2="72.4" stroke="#1f3a93" stroke-width="1.05"/><polygon points="60.5,72.4 56.8,70.5 56.8,74.3" fill="#1f3a93"/><text x="172" y="126" font-size="12" font-weight="bold" font-style="italic" fill="#2c3e50" text-anchor="middle">b</text><line x1="166.5" y1="116.4" x2="175.5" y2="116.4" stroke="#2c3e50" stroke-width="1.05"/><polygon points="178.5,116.4 174.8,114.5 174.8,118.3" fill="#2c3e50"/></svg>'''
 
 UNIT = {
     "slug": "pvec",
@@ -71,6 +61,7 @@ UNIT = {
                     r"坐標：\((a,b)\pm(c,d)=(a\pm c,\,b\pm d)\)、\(k(a,b)=(ka,kb)\)。"]},
                 {"svg": SVG_VECADD,
                  "caption": r"**向量加法兩種畫法**：① 三角形法——\(\vec u\) 的終點接 \(\vec v\) 的起點（首尾相接），起點到終點即 \(\vec u+\vec v\)；② 平行四邊形法——\(\vec u,\vec v\) 同起點張成平行四邊形，**對角線** 就是 \(\vec u+\vec v\)（紅）。"},
+                {"svg": SVG_VECPARA, "med": True, "caption": r"同一個平行四邊形的兩條對角線：一條是 \(\vec a+\vec b\)（紅），另一條（由 \(\vec b\) 終點指向 \(\vec a\) 終點）是 \(\vec a-\vec b\)（紫）"},
                 {"label": r"長度（大小）", "lines": [
                     r"\(\vec v=(a,b)\) 的長度 \(|\vec v|=\) 【\(\sqrt{a^2+b^2}\)】；",
                     r"單位向量（長度 \(1\)、同向）＝ 【\(\dfrac{\vec v}{|\vec v|}\)】。"]},
@@ -186,6 +177,7 @@ UNIT = {
                 {"label": r"正射影", "lines": [
                     r"\(\vec u\) 在 \(\vec v\) 上的 **正射影向量** ＝ 【\(\dfrac{\vec u\cdot\vec v}{|\vec v|^2}\,\vec v\)】；",
                     r"**正射影長**（在 \(\vec v\) 方向的分量）＝ \(\dfrac{\vec u\cdot\vec v}{|\vec v|}\)（[[帶正負號||正射影長 ＝ \(|\vec u|\cos\theta\)，與 \(\vec v\) 同向為正、反向為負；夾角為銳角時為正。\(113\) 選16 就用這個。]]）。"]},
+                {"svg": SVG_PROJ, "med": True, "caption": r"正射影：把 \(\vec a\) 投影到 \(\vec b\) 上的影子長 ＝ \(|\vec a|\cos\theta\)；於是 \(\vec a\cdot\vec b=|\vec b|\times(|\vec a|\cos\theta)\)"},
             ],
             "misconceptions": [
                 {"wrong": r"內積的結果是向量", "right": r"內積是 **純量**（一個數）"},

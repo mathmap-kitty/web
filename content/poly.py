@@ -32,6 +32,103 @@ SVG_SIGNLINE = r'''<svg viewBox="0 0 340 92" width="340" height="92" xmlns="http
   <text x="168" y="18" fill="#8c2740" font-size="12.5" text-anchor="middle" font-weight="bold">(x+2)(x&#8722;1)(x&#8722;3) &gt; 0</text>
 </svg>'''
 
+# ---- 程式產生的格狀圖（拋物線判別式 / 三次函數特徵 / 限定區間極值）----
+import math as _math
+_FONT = "font-family=\"'Microsoft JhengHei',system-ui,sans-serif\""
+
+def _parab_pts(cx, w, vy, arm, n=24):
+    a = (arm - vy) / (w * w)
+    return " ".join(f"{cx-w+2*w*i/n:.1f},{a*(cx-w+2*w*i/n-cx)**2+vy:.1f}" for i in range(n+1))
+
+def _disc_grid():
+    cx = [108, 247]; axis = [70, 152, 234]
+    eq = [("相異二實根", "y=a(x−α)(x−β)"),
+          ("二相等實根（重根）", "y=a(x−α)<tspan baseline-shift=\"super\" font-size=\"0.72em\">2</tspan>"),
+          ("無實根", "（兩共軛虛根）")]
+    L = [f'<svg viewBox="0 0 474 274" width="474" height="274" xmlns="http://www.w3.org/2000/svg" role="img" {_FONT}>']
+    L.append('<g stroke="#dcd6de" stroke-width="1"><line x1="0" y1="26" x2="474" y2="26"/><line x1="0" y1="108" x2="474" y2="108"/>'
+             '<line x1="0" y1="190" x2="474" y2="190"/><line x1="38" y1="0" x2="38" y2="274"/><line x1="178" y1="0" x2="178" y2="274"/><line x1="316" y1="0" x2="316" y2="274"/></g>')
+    L.append('<g font-size="12.5" font-weight="bold" fill="#2c3e50" text-anchor="middle">'
+             '<text x="108" y="18">a &gt; 0</text><text x="247" y="18">a &lt; 0</text><text x="395" y="18">方程式</text></g>')
+    L.append('<g font-size="11.5" font-weight="bold" fill="#8c2740" text-anchor="middle">')
+    for i, t in enumerate(['D &gt; 0', 'D = 0', 'D &lt; 0']):
+        L.append(f'<text x="19" y="{axis[i]+4}">{t}</text>')
+    L.append('</g>')
+    for ri, case in enumerate(['pos', 'zero', 'neg']):
+        ay = axis[ri]
+        for up in [True, False]:
+            c = cx[0] if up else cx[1]; w = 42
+            L.append(f'<line x1="{c-56}" y1="{ay}" x2="{c+56}" y2="{ay}" stroke="#2c3e50" stroke-width="1.3"/>')
+            if up:
+                vy = {'pos': ay+20, 'zero': ay, 'neg': ay-14}[case]; arm = ay-38
+            else:
+                vy = {'pos': ay-20, 'zero': ay, 'neg': ay+14}[case]; arm = ay+38
+            L.append(f'<polyline points="{_parab_pts(c, w, vy, arm)}" fill="none" stroke="#34679a" stroke-width="2"/>')
+            a = (arm - vy) / (w * w)
+            if case == 'pos':
+                dx = _math.sqrt((ay - vy) / a)
+                for rx in (c-dx, c+dx):
+                    L.append(f'<circle cx="{rx:.1f}" cy="{ay}" r="2.6" fill="#b03a5b"/>')
+            elif case == 'zero':
+                L.append(f'<circle cx="{c}" cy="{ay}" r="2.6" fill="#b03a5b"/>')
+        l1, l2 = eq[ri]
+        L.append(f'<text x="322" y="{ay-6}" font-size="10" font-weight="bold" fill="#8c2740" text-anchor="start">{l1}</text>')
+        L.append(f'<text x="322" y="{ay+11}" font-size="10" fill="#2c3e50" text-anchor="start">{l2}</text>')
+    L.append('</svg>')
+    return "".join(L)
+
+def _cubic_grid():
+    cx = [120, 272]; oy = [60, 150, 240]; xm, hw, hh = 1.5, 40, 31
+    PV = 1.3   # 加深擺動，使 a,p 異號的兩格清楚與 x 軸交三點
+    L = [f'<svg viewBox="0 0 350 300" width="350" height="300" xmlns="http://www.w3.org/2000/svg" role="img" {_FONT}>']
+    L.append('<g stroke="#dcd6de" stroke-width="1"><line x1="0" y1="18" x2="350" y2="18"/><line x1="0" y1="105" x2="350" y2="105"/>'
+             '<line x1="0" y1="195" x2="350" y2="195"/><line x1="40" y1="0" x2="40" y2="300"/><line x1="196" y1="0" x2="196" y2="300"/></g>')
+    L.append('<g font-size="12.5" font-weight="bold" fill="#2c3e50" text-anchor="middle"><text x="120" y="13">a &gt; 0</text><text x="272" y="13">a &lt; 0</text></g>')
+    L.append('<g font-size="11.5" font-weight="bold" fill="#8c2740" text-anchor="middle">')
+    for i, t in enumerate(['p &gt; 0', 'p &lt; 0', 'p = 0']):
+        L.append(f'<text x="20" y="{oy[i]+4}">{t}</text>')
+    L.append('</g>')
+    for ri, P in enumerate([PV, -PV, 0.0]):
+        o = oy[ri]
+        for ci, A in enumerate([1, -1]):
+            c = cx[ci]; ymax = abs(A * xm**3 + P * xm); sY = hh / ymax; sX = hw / xm
+            L.append(f'<line x1="{c-hw-8}" y1="{o}" x2="{c+hw+8}" y2="{o}" stroke="#2c3e50" stroke-width="1.1"/>')
+            L.append(f'<polygon points="{c+hw+14},{o} {c+hw+6},{o-3.5} {c+hw+6},{o+3.5}" fill="#2c3e50"/>')
+            L.append(f'<line x1="{c}" y1="{o+hh+8}" x2="{c}" y2="{o-hh-8}" stroke="#2c3e50" stroke-width="1.1"/>')
+            L.append(f'<polygon points="{c},{o-hh-14} {c-3.5},{o-hh-6} {c+3.5},{o-hh-6}" fill="#2c3e50"/>')
+            if (-P/A) > 0:
+                xr = _math.sqrt(-P/A)
+                for rx in (-xr, 0, xr):
+                    L.append(f'<circle cx="{c+rx*sX:.1f}" cy="{o}" r="2.4" fill="#b03a5b"/>')
+            else:
+                L.append(f'<circle cx="{c}" cy="{o}" r="2.4" fill="#b03a5b"/>')
+            ty1 = o - (P*(-xm))*sY; ty2 = o - (P*(xm))*sY
+            L.append(f'<line x1="{c-xm*sX:.1f}" y1="{ty1:.1f}" x2="{c+xm*sX:.1f}" y2="{ty2:.1f}" stroke="#b03a5b" stroke-width="1.3" stroke-dasharray="4 3"/>')
+            pts = " ".join(f"{c+(-xm+2*xm*i/44)*sX:.1f},{o-(A*(-xm+2*xm*i/44)**3+P*(-xm+2*xm*i/44))*sY:.1f}" for i in range(45))
+            L.append(f'<polyline points="{pts}" fill="none" stroke="#34679a" stroke-width="2"/>')
+    L.append('</svg>')
+    return "".join(L)
+
+def _qext_fig():
+    cx, vy, w, arm = 116, 104, 72, 28
+    a = (arm - vy) / (w * w); f = lambda x: a * (x - cx)**2 + vy; xL, xR = 80, 186
+    L = [f'<svg viewBox="0 0 232 150" width="232" height="150" xmlns="http://www.w3.org/2000/svg" role="img" {_FONT}>']
+    L.append('<line x1="14" y1="128" x2="222" y2="128" stroke="#c8c2ca" stroke-width="1"/>')
+    L.append(f'<polyline points="{" ".join(f"{cx-w+2*w*i/40:.1f},{f(cx-w+2*w*i/40):.1f}" for i in range(41))}" fill="none" stroke="#a9c4dd" stroke-width="1.8"/>')
+    L.append(f'<polyline points="{" ".join(f"{xL+(xR-xL)*i/40:.1f},{f(xL+(xR-xL)*i/40):.1f}" for i in range(41))}" fill="none" stroke="#1f8a5b" stroke-width="2.6"/>')
+    L.append(f'<g stroke="#8a8a8a" stroke-width="1" stroke-dasharray="3 3"><line x1="{xL}" y1="{f(xL):.1f}" x2="{xL}" y2="128"/><line x1="{xR}" y1="{f(xR):.1f}" x2="{xR}" y2="128"/></g>')
+    L.append(f'<g stroke="#5a4a52" stroke-width="1.2"><line x1="{xL}" y1="138" x2="{xR}" y2="138"/><line x1="{xL}" y1="134" x2="{xL}" y2="142"/><line x1="{xR}" y1="134" x2="{xR}" y2="142"/></g>')
+    L.append(f'<text x="{(xL+xR)/2}" y="148" font-size="10" fill="#5a4a52" text-anchor="middle">定義域</text>')
+    L.append(f'<circle cx="{cx}" cy="{vy}" r="3" fill="#b03a5b"/><circle cx="{xR}" cy="{f(xR):.1f}" r="3" fill="#b03a5b"/><circle cx="{xL}" cy="{f(xL):.1f}" r="2.6" fill="#34679a"/>')
+    L.append(f'<text x="{cx+6}" y="{vy+13}" font-size="11" fill="#b03a5b" font-weight="bold">min (h, k)</text>')
+    L.append(f'<text x="{xR-4}" y="{f(xR)-6:.1f}" font-size="11" fill="#b03a5b" font-weight="bold" text-anchor="end">Max</text>')
+    L.append('</svg>')
+    return "".join(L)
+
+SVG_DISC = _disc_grid()
+SVG_CUBIC = _cubic_grid()
+SVG_QEXT = _qext_fig()
+
 UNIT = {
     "slug": "poly",
     "file": "115學測數學_多項式函數.html",
@@ -131,12 +228,14 @@ UNIT = {
                     r"\(D>0\) → 【兩相異實根】；",
                     r"\(D=0\) → 【重根】（兩相等實根）；",
                     r"\(D<0\) → 【無實根】（兩共軛虛根）。"]},
+                {"svg": SVG_DISC, "full": True, "caption": r"判別式 \(D\) ＝ 拋物線與 \(x\) 軸的關係：\(D>0\) 交兩點（相異實根）、\(D=0\) 相切（重根）、\(D<0\) 不相交（無實根）"},
                 {"label": r"配方與頂點", "lines": [
                     r"\(y=ax^2+bx+c=a\left(x+\dfrac{b}{2a}\right)^2+\) 【\(c-\dfrac{b^2}{4a}\)】；",
                     r"對稱軸 \(x=\) 【\(-\dfrac{b}{2a}\)】，頂點 \(=\left(-\dfrac{b}{2a},\,\dfrac{4ac-b^2}{4a}\right)\)。"]},
                 {"label": r"最大與最小", "lines": [
                     r"\(a>0\) 開口向上 → 頂點取 【最小值】；",
                     r"\(a<0\) 開口向下 → 頂點取 【最大值】。"]},
+                {"svg": SVG_QEXT, "med": True, "caption": r"**有定義域範圍時**：最小（或大）值不一定在頂點——頂點給一端，較遠的端點給另一端，務必兩邊都檢查"},
                 {"label": r"根與係數（韋達）", "lines": [
                     r"兩根 \(\alpha,\beta\)：\(\alpha+\beta=\) 【\(-\dfrac{b}{a}\)】、\(\alpha\beta=\) 【\(\dfrac{c}{a}\)】。"]},
                 {"label": r"二次不等式", "lines": [
@@ -312,6 +411,7 @@ UNIT = {
                 {"label": r"三次函數圖形", "lines": [
                     r"\(a>0\)：整體左下往右上（\(\nearrow\)）；\(a<0\)：左上往右下；",
                     r"可能有 **兩個轉折點**（一極大一極小）或無轉折（單調遞增／減），視導數判別式而定。"]},
+                {"svg": SVG_CUBIC, "full": True, "caption": r"以中心式 \(y=ax^3+px\) 看：\(a\) 定整體走向、\(p\) 定有無轉折。**當 \(a,p\) 異號**（左下、右上兩格）會與 \(x\) 軸交 **三點**（紅點）；紅虛線為**過原點的切線** \(y=px\)"},
                 {"label": r"對稱中心（反曲點）", "lines": [
                     r"\(y=ax^3+bx^2+cx+d\) 對稱於一點，其 \(x\) 坐標 ＝ 【\(-\dfrac{b}{3a}\)】；",
                     r"對稱中心 ＝ \(\left(-\dfrac{b}{3a},\,f\!\left(-\dfrac{b}{3a}\right)\right)\)，圖形對此點 **點對稱**（旋轉 \(180^\circ\) 重合）。"]},

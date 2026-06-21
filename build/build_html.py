@@ -93,7 +93,10 @@ def _subq_html(sq):
 def _point_html(p):
     if isinstance(p, dict) and "svg" in p:
         cap = f'<figcaption>{html_rich(p["caption"])}</figcaption>' if p.get("caption") else ""
-        style = ' style="max-width:362px"' if p.get("wide") else ""
+        # 圖寬四段：預設 155px（小圖）／med 250px／wide 362px／full 560px（大型概念圖）
+        style = ' style="max-width:560px"' if p.get("full") else (
+            ' style="max-width:362px"' if p.get("wide") else (
+            ' style="max-width:250px"' if p.get("med") else ""))
         return f'<li class="figli"><figure class="tfig"{style}>{p["svg"]}{cap}</figure></li>'
     if isinstance(p, dict):
         lab = html_rich(p["label"]) + "："
@@ -195,13 +198,14 @@ def _part0_html(p0):
           if p0.get("map") else "")
     heading = p0.get("heading", "出題趨勢與落點")
     sub = p0.get("sub", "先抓近十年趨勢與落點，再進入觀念")
+    fig = f'<ul class="points">{_point_html(p0["fig"])}</ul>' if p0.get("fig") else ""
     return (f'<div class="part" id="part0">Part 0　引起動機：{heading}'
             f'<small>{sub}</small></div>'
             '<div class="card">'
             '<span class="label">近十年出題趨勢（106–115）</span>'
             f"{table}"
             f'<span class="label">趨勢解讀</span><ul class="points">{notes}</ul>'
-            f"{mp}</div>")
+            f"{mp}{fig}</div>")
 
 
 def _part2_html(p2):

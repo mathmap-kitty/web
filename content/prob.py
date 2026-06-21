@@ -45,6 +45,69 @@ SVG_BAYES = r'''<svg viewBox="0 0 252 150" width="252" height="150" xmlns="http:
   </g>
 </svg>'''
 
+# 集合運算四型 Venn（交集／聯集／差集／補集）— 程式產生（fitz 不支援 clip-path，交集用雙弧 lens）
+import math as _math
+_VF = "font-family=\"'Microsoft JhengHei',system-ui,sans-serif\""
+
+def _venn_lens(c, cy, off, r, fill):
+    h = _math.sqrt(r*r - off*off)
+    return (f'<path d="M {c} {cy-h:.2f} A {r} {r} 0 0 1 {c} {cy+h:.2f} '
+            f'A {r} {r} 0 0 1 {c} {cy-h:.2f} Z" fill="{fill}"/>')
+
+def _venn4_fig():
+    INK = "#2c3e50"; PINK = "#eccada"; ROSE = "#b03a5b"
+    cxs = [47, 140, 233, 326]; cy = 54; r = 25; off = 14
+    L = [f'<svg viewBox="0 0 372 134" width="372" height="134" xmlns="http://www.w3.org/2000/svg" role="img" {_VF}>']
+    def outs(c):
+        return (f'<circle cx="{c-off}" cy="{cy}" r="{r}" fill="none" stroke="{INK}" stroke-width="1.5"/>'
+                f'<circle cx="{c+off}" cy="{cy}" r="{r}" fill="none" stroke="{INK}" stroke-width="1.5"/>')
+    c = cxs[0]; L.append(_venn_lens(c, cy, off, r, PINK)); L.append(outs(c))
+    c = cxs[1]; L.append(f'<circle cx="{c-off}" cy="{cy}" r="{r}" fill="{PINK}"/><circle cx="{c+off}" cy="{cy}" r="{r}" fill="{PINK}"/>'); L.append(outs(c))
+    c = cxs[2]; L.append(f'<circle cx="{c-off}" cy="{cy}" r="{r}" fill="{PINK}"/>'); L.append(_venn_lens(c, cy, off, r, "#fff")); L.append(outs(c))
+    c = cxs[3]
+    L.append(f'<rect x="{c-34}" y="{cy-30}" width="68" height="60" fill="{PINK}" stroke="{INK}" stroke-width="1.3"/>')
+    L.append(f'<circle cx="{c}" cy="{cy}" r="22" fill="#fff" stroke="{INK}" stroke-width="1.5"/>')
+    for c in cxs[:3]:
+        L.append(f'<text x="{c-off-4}" y="{cy-r-3}" font-size="10.5" fill="{INK}" text-anchor="middle" font-style="italic">A</text>')
+        L.append(f'<text x="{c+off+4}" y="{cy-r-3}" font-size="10.5" fill="{INK}" text-anchor="middle" font-style="italic">B</text>')
+    L.append(f'<text x="{cxs[3]}" y="{cy+4}" font-size="11" fill="{INK}" text-anchor="middle" font-style="italic">A</text>')
+    names = ['交集', '聯集', '差集', '補集']; caps = ['A∩B', 'A∪B', 'A−B', "A'"]
+    for i, c in enumerate(cxs):
+        L.append(f'<text x="{c}" y="20" font-size="11" fill="{ROSE}" text-anchor="middle" font-weight="bold">{names[i]}</text>')
+        L.append(f'<text x="{c}" y="108" font-size="12" fill="{INK}" text-anchor="middle">{caps[i]}</text>')
+    L.append('</svg>')
+    return "".join(L)
+
+SVG_VENN4 = _venn4_fig()
+
+def _vsub(letter, n):
+    return f'{letter}<tspan baseline-shift="sub" font-size="0.68em">{n}</tspan>'
+
+def _partition_fig():
+    INKc = "#2c3e50"; RED = "#c0392b"; FILL = "#f7e0e8"
+    L = [f'<svg viewBox="0 0 312 188" width="312" height="188" xmlns="http://www.w3.org/2000/svg" role="img" {_VF}>']
+    L.append(f'<rect x="16" y="20" width="280" height="148" fill="none" stroke="{INKc}" stroke-width="1.5"/>')
+    L.append(f'<text x="26" y="34" font-size="11" fill="{INKc}" font-style="italic">S</text>')
+    L.append(f'<ellipse cx="156" cy="104" rx="120" ry="40" fill="{FILL}" stroke="{RED}" stroke-width="1.8"/>')
+    L.append(f'<g stroke="{INKc}" stroke-width="1.1">')
+    for x in [72, 128, 184, 240]:
+        L.append(f'<line x1="{x}" y1="20" x2="{x}" y2="168"/>')
+    L.append('</g>')
+    L.append(f'<g font-size="11" fill="{INKc}" text-anchor="middle" font-style="italic">')
+    for i, cx in enumerate([44, 100, 156, 212, 268], 1):
+        L.append(f'<text x="{cx}" y="38">{_vsub("B", i)}</text>')
+    L.append('</g>')
+    L.append(f'<text x="266" y="76" font-size="12" fill="{RED}" font-weight="bold" font-style="italic">A</text>')
+    L.append(f'<g font-size="8.6" fill="{RED}" text-anchor="middle">')
+    for cx, i in [(100,2),(156,3),(212,4)]:
+        L.append(f'<text x="{cx}" y="108">{_vsub("A∩B", i)}</text>')
+    L.append('</g>')
+    L.append(f'<text x="156" y="182" font-size="10.5" fill="#5a4a52" text-anchor="middle">P(A) ＝ Σ P(Bᵢ)·P(A|Bᵢ)　（全機率）</text>')
+    L.append('</svg>')
+    return "".join(L)
+
+SVG_PARTITION = _partition_fig()
+
 UNIT = {
     "slug": "prob",
     "file": "115學測數學_排列組合與機率.html",
@@ -159,6 +222,7 @@ UNIT = {
                 {"label": r"排容原理", "lines": [
                     r"兩集合：\(|A\cup B|=\) 【\(|A|+|B|-|A\cap B|\)】；",
                     r"三集合：\(|A\cup B\cup C|=\) 【\(|A|+|B|+|C|-|A\cap B|-|B\cap C|-|C\cap A|+|A\cap B\cap C|\)】。"]},
+                {"svg": SVG_VENN4, "wide": True, "caption": r"集合運算四型：排容原理 \(|A\cup B|=|A|+|B|-|A\cap B|\) 就是「聯集 ＝ 兩圓相加再扣回重複的交集」"},
             ],
             "tables": [
                 {"title": r"排列 vs 組合 對照（先問：在意順序嗎？）",
@@ -272,6 +336,7 @@ UNIT = {
                 {"label": r"全機率公式", "lines": [
                     r"若 \(B_1,B_2,\dots\) 互斥且涵蓋全部（分割樣本空間）：",
                     r"\(P(A)=\) 【\(\displaystyle\sum_i P(B_i)\,P(A\mid B_i)\)】（把 \(A\) 依「原因」分類加總）。"]},
+                {"svg": SVG_PARTITION, "wide": True, "caption": r"分割圖：互斥的 \(B_1,\dots,B_n\) 鋪滿樣本空間，事件 \(A\)（紅）橫跨各塊；把 \(A\) 拆成 \(A\cap B_i\) 相加就是全機率"},
                 {"label": r"貝氏定理", "lines": [
                     r"由結果 \(A\) 反推原因 \(B_k\)：\(P(B_k\mid A)=\) 【\(\dfrac{P(B_k)\,P(A\mid B_k)}{\sum_i P(B_i)\,P(A\mid B_i)}\)】；",
                     r"白話 ＝「[[目標路徑 ÷ 全部路徑||分子 ＝「此原因」這條路的機率 \(P(B_k)P(A\mid B_k)\)；分母 ＝ 所有能造成結果 \(A\) 的路徑機率總和。畫樹狀圖時，就是「想要的那條樹枝 ÷ 所有通到 \(A\) 的樹枝」。]]」。"]},

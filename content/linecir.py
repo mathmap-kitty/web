@@ -26,6 +26,87 @@ SVG_CIRCLINE = r'''<svg viewBox="0 0 200 140" width="200" height="140" xmlns="ht
   <text x="100" y="126" fill="#444" font-size="11" text-anchor="middle">d &lt; r：相交，弦長 ＝ 2&#8730;(r&#178;&#8722;d&#178;)</text>
 </svg>'''
 
+# ---- 程式產生的幾何圖（斜率 / 對稱投影 / 半平面 / 點與圓）----
+import math as _math
+_F = "font-family=\"'Microsoft JhengHei',system-ui,sans-serif\""
+_INK = "#2c3e50"; _BLUE = "#34679a"; _ROSE = "#b03a5b"; _GRN = "#1f8a5b"
+
+def _slope_fig():
+    L = [f'<svg viewBox="0 0 330 150" width="330" height="150" xmlns="http://www.w3.org/2000/svg" role="img" {_F}>']
+    def panel(ox, rising):
+        ay, by = (100, 40) if rising else (40, 100)
+        ax, bx = ox+30, ox+118; sl = (by-ay)/(bx-ax)
+        g = [f'<line x1="{ox+18}" y1="120" x2="{ox+140}" y2="120" stroke="{_INK}" stroke-width="1.1"/>',
+             f'<polygon points="{ox+146},120 {ox+138},116.5 {ox+138},123.5" fill="{_INK}"/>',
+             f'<line x1="{ox+24}" y1="128" x2="{ox+24}" y2="22" stroke="{_INK}" stroke-width="1.1"/>',
+             f'<polygon points="{ox+24},16 {ox+20.5},24 {ox+27.5},24" fill="{_INK}"/>',
+             f'<line x1="{ax-18}" y1="{ay-18*sl:.1f}" x2="{bx+18}" y2="{by+18*sl:.1f}" stroke="{_BLUE}" stroke-width="2"/>',
+             f'<line x1="{ax}" y1="{ay}" x2="{bx}" y2="{ay}" stroke="#9aa6b0" stroke-width="1.2" stroke-dasharray="4 3"/>',
+             f'<line x1="{bx}" y1="{ay}" x2="{bx}" y2="{by}" stroke="#9aa6b0" stroke-width="1.2" stroke-dasharray="4 3"/>',
+             f'<circle cx="{ax}" cy="{ay}" r="3" fill="{_ROSE}"/><circle cx="{bx}" cy="{by}" r="3" fill="{_ROSE}"/>',
+             f'<text x="{ax-4}" y="{ay+(16 if rising else -8)}" font-size="11" fill="{_INK}" text-anchor="end">A</text>',
+             f'<text x="{bx+5}" y="{by+(0 if rising else 4)}" font-size="11" fill="{_INK}">B</text>',
+             f'<text x="{(ax+bx)/2}" y="{ay+(16 if rising else -6)}" font-size="10" fill="#5a4a52" text-anchor="middle">Δx</text>',
+             f'<text x="{bx+6}" y="{(ay+by)/2+3}" font-size="10" fill="#5a4a52">Δy</text>',
+             f'<text x="{ox+78}" y="18" font-size="11.5" font-weight="bold" fill="{_GRN if rising else _ROSE}" text-anchor="middle">m {"&gt;" if rising else "&lt;"} 0</text>']
+        return "".join(g)
+    L.append(panel(0, True)); L.append(panel(165, False))
+    L.append('<line x1="163" y1="14" x2="163" y2="138" stroke="#e2dde4" stroke-width="1"/></svg>')
+    return "".join(L)
+
+def _reflect_fig():
+    P0 = (20, 130); d = (180, -90); ln = _math.hypot(*d); u = (d[0]/ln, d[1]/ln)
+    P = (70, 40); t = (P[0]-P0[0])*u[0]+(P[1]-P0[1])*u[1]
+    Q = (P0[0]+t*u[0], P0[1]+t*u[1]); R = (2*Q[0]-P[0], 2*Q[1]-P[1]); nx, ny = -u[1], u[0]
+    L = [f'<svg viewBox="0 0 220 170" width="220" height="170" xmlns="http://www.w3.org/2000/svg" role="img" {_F}>',
+         f'<line x1="{P0[0]}" y1="{P0[1]}" x2="{P0[0]+d[0]}" y2="{P0[1]+d[1]}" stroke="{_INK}" stroke-width="1.8"/>',
+         f'<text x="{P0[0]+d[0]+4}" y="{P0[1]+d[1]+4}" font-size="12" font-style="italic" fill="{_INK}">L</text>',
+         f'<line x1="{P[0]}" y1="{P[1]}" x2="{R[0]:.1f}" y2="{R[1]:.1f}" stroke="{_ROSE}" stroke-width="1.5" stroke-dasharray="5 3"/>',
+         f'<polyline points="{Q[0]-u[0]*8:.1f},{Q[1]-u[1]*8:.1f} {Q[0]-u[0]*8+nx*8:.1f},{Q[1]-u[1]*8+ny*8:.1f} {Q[0]+nx*8:.1f},{Q[1]+ny*8:.1f}" fill="none" stroke="{_INK}" stroke-width="1"/>']
+    for pt, col in [(P, _ROSE), (Q, _INK), (R, _ROSE)]:
+        L.append(f'<circle cx="{pt[0]:.1f}" cy="{pt[1]:.1f}" r="3.2" fill="{col}"/>')
+    L += [f'<text x="{P[0]-6}" y="{P[1]-6}" font-size="12" font-weight="bold" fill="{_ROSE}" text-anchor="end">P</text>',
+          f'<text x="{Q[0]+6}" y="{Q[1]-6}" font-size="12" font-weight="bold" fill="{_INK}">Q</text>',
+          f'<text x="{R[0]+6:.1f}" y="{R[1]+12:.1f}" font-size="12" font-weight="bold" fill="{_ROSE}">R</text>',
+          f'<text x="{Q[0]+10}" y="{Q[1]+14}" font-size="9.5" fill="#5a4a52">垂足(投影)</text>',
+          f'<text x="{R[0]+6:.1f}" y="{R[1]+24:.1f}" font-size="9.5" fill="#5a4a52">對稱點</text>', '</svg>']
+    return "".join(L)
+
+def _halfplane_fig():
+    A, B = (30, 145), (205, 28); mid = ((A[0]+B[0])/2, (A[1]+B[1])/2)
+    dv = (B[0]-A[0], B[1]-A[1]); n = (-dv[1], dv[0]); nl = _math.hypot(*n); n = (n[0]/nl, n[1]/nl)
+    L = [f'<svg viewBox="0 0 232 165" width="232" height="165" xmlns="http://www.w3.org/2000/svg" role="img" {_F}>',
+         f'<path d="M{A[0]} {A[1]} L{B[0]} {B[1]} L222 28 L222 155 Z" fill="#e8eef5"/>',
+         f'<path d="M{A[0]} {A[1]} L{B[0]} {B[1]} L20 28 L10 145 Z" fill="#fbeef2"/>',
+         f'<line x1="{A[0]}" y1="{A[1]}" x2="{B[0]}" y2="{B[1]}" stroke="{_INK}" stroke-width="2"/>',
+         f'<line x1="{mid[0]:.0f}" y1="{mid[1]:.0f}" x2="{mid[0]+n[0]*26:.0f}" y2="{mid[1]+n[1]*26:.0f}" stroke="{_GRN}" stroke-width="1.6"/>',
+         f'<polygon points="{mid[0]+n[0]*32:.0f},{mid[1]+n[1]*32:.0f} {mid[0]+n[0]*24-n[1]*4:.0f},{mid[1]+n[1]*24+n[0]*4:.0f} {mid[0]+n[0]*24+n[1]*4:.0f},{mid[1]+n[1]*24-n[0]*4:.0f}" fill="{_GRN}"/>',
+         f'<text x="150" y="120" font-size="11.5" font-weight="bold" fill="#2c5d8f" text-anchor="middle">ax+by+c &gt; 0</text>',
+         f'<text x="74" y="64" font-size="11.5" font-weight="bold" fill="{_ROSE}" text-anchor="middle">ax+by+c &lt; 0</text>',
+         f'<text x="{B[0]+2}" y="{B[1]-4}" font-size="10.5" font-style="italic" fill="{_INK}">L</text>', '</svg>']
+    return "".join(L)
+
+def _ptcircle_fig():
+    O = (118, 92); r = 54; P = (212, 92); A = (O[0]+r, O[1]); Bn = (O[0]-r, O[1])
+    L = [f'<svg viewBox="0 0 250 178" width="250" height="178" xmlns="http://www.w3.org/2000/svg" role="img" {_F}>',
+         f'<circle cx="{O[0]}" cy="{O[1]}" r="{r}" fill="#eef4f8" stroke="{_INK}" stroke-width="1.6"/>',
+         f'<line x1="{Bn[0]}" y1="{O[1]}" x2="{P[0]}" y2="{O[1]}" stroke="#9aa6b0" stroke-width="1" stroke-dasharray="4 3"/>',
+         f'<line x1="{O[0]}" y1="{O[1]}" x2="{A[0]}" y2="{O[1]}" stroke="{_ROSE}" stroke-width="1.6"/>']
+    for pt, col in [(O, _INK), (P, _ROSE), (A, _GRN), (Bn, _BLUE)]:
+        L.append(f'<circle cx="{pt[0]}" cy="{pt[1]}" r="3" fill="{col}"/>')
+    L += [f'<text x="{O[0]-4}" y="{O[1]-7}" font-size="11.5" font-weight="bold" fill="{_INK}" text-anchor="end">O</text>',
+          f'<text x="{P[0]+4}" y="{O[1]+4}" font-size="11.5" font-weight="bold" fill="{_ROSE}">P</text>',
+          f'<text x="{(O[0]+A[0])/2}" y="{O[1]-5}" font-size="10" fill="{_ROSE}" text-anchor="middle">r</text>',
+          f'<text x="{A[0]+2}" y="{O[1]+18}" font-size="9.5" fill="{_GRN}" text-anchor="middle">最近</text>',
+          f'<text x="{Bn[0]}" y="{O[1]+18}" font-size="9.5" fill="{_BLUE}" text-anchor="middle">最遠</text>',
+          f'<text x="125" y="170" font-size="10.5" fill="#5a4a52" text-anchor="middle">最近距離 = d−r、最遠距離 = d+r（d = PO）</text>', '</svg>']
+    return "".join(L)
+
+SVG_SLOPE = _slope_fig()
+SVG_REFLECT = _reflect_fig()
+SVG_HALFPLANE = _halfplane_fig()
+SVG_PTCIRCLE = _ptcircle_fig()
+
 UNIT = {
     "slug": "linecir",
     "file": "115學測數學_直線與圓.html",
@@ -63,6 +144,7 @@ UNIT = {
                 {"label": r"斜率", "lines": [
                     r"過 \((x_1,y_1)\)、\((x_2,y_2)\) 的斜率 \(m=\) 【\(\dfrac{y_2-y_1}{x_2-x_1}\)】（\(x_1\neq x_2\)）；",
                     r"\(m=\tan\theta\)（\(\theta\) 為傾角）；**鉛直線斜率不存在**。"]},
+                {"svg": SVG_SLOPE, "wide": True, "caption": r"斜率 ＝ 「鉛直變化 \(\Delta y\) ÷ 水平變化 \(\Delta x\)」：右上走（\(m>0\)）、右下走（\(m<0\)）"},
                 {"label": r"跨單元整合（三角 × 直線）", "lines": [
                     r"直線與 \(x\) 軸正向的夾角 \(\theta\)（\(0^\circ\le\theta<180^\circ\)）稱 **傾斜角**，斜率 **\(m=\tan\theta\)**——三角的正切搬到直線上。",
                     r"傾斜角 \(45^\circ\Rightarrow m=\tan45^\circ=1\)；\(60^\circ\Rightarrow m=\sqrt3\)；\(135^\circ\Rightarrow m=-1\)（鈍角 → 負斜率）；",
@@ -77,6 +159,7 @@ UNIT = {
                     r"垂直 \(\Leftrightarrow\) 【\(m_1m_2=-1\)】（或一鉛直、一水平）。"]},
                 {"label": r"點到直線距離", "lines": [
                     r"點 \((x_0,y_0)\) 到直線 \(ax+by+c=0\) 的距離 ＝ 【\(\dfrac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}\)】。"]},
+                {"svg": SVG_REFLECT, "med": True, "caption": r"投影點 \(Q\)（垂足）＝ \(P\) 沿垂直方向落在 \(L\) 上的點；對稱點 \(R\) 使 \(Q\) 為 \(\overline{PR}\) 中點"},
                 {"label": r"角平分線", "lines": [
                     r"兩直線 \(L_1,L_2\) 的角平分線 ＝ 到兩直線 **等距** 的點所成：",
                     r"\(\dfrac{|a_1x+b_1y+c_1|}{\sqrt{a_1^2+b_1^2}}=\dfrac{|a_2x+b_2y+c_2|}{\sqrt{a_2^2+b_2^2}}\)（[[會有兩條||去絕對值時取 \(+\)、\(-\) 各得一條，兩條角平分線 **互相垂直**，分別平分兩組對頂角。要哪條看題目要求的那個角。]]，這兩條互相垂直）。"]},
@@ -193,6 +276,7 @@ UNIT = {
                     r"結果 \(=0\) → 在 【圓上】；",
                     r"結果 \(>0\) → 在 【圓外】；",
                     r"（等價於比較「點到圓心的距離」與半徑 \(r\)）。"]},
+                {"svg": SVG_PTCIRCLE, "med": True, "caption": r"圓外一點 \(P\) 到圓的最近／最遠：沿 \(\overline{PO}\) 連線，最近 \(=d-r\)、最遠 \(=d+r\)"},
                 {"label": r"由條件定圓", "lines": [
                     r"已知圓上幾點或圓心在某直線上 → 代入待定係數求 \(D,E,F\)；",
                     r"「\(P\) 在圓內、\(Q\) 在圓外」\(\Rightarrow|CQ|>r>|CP|\)，即圓心 \(C\) 離 \(P\) 比離 \(Q\) **近**。"]},
@@ -305,6 +389,7 @@ UNIT = {
                 {"label": r"二元一次不等式（半平面）", "lines": [
                     r"\(ax+by+c>0\) 表示直線 \(ax+by+c=0\) 的 **某一側**（半平面）；",
                     r"判斷哪一側：**代一個測試點**（常用原點 \((0,0)\)）看是否滿足。"]},
+                {"svg": SVG_HALFPLANE, "med": True, "caption": r"直線把平面切成兩個半平面：一側 \(>0\)、另一側 \(<0\)；代測試點即可定哪側"},
                 {"label": r"不等式組與可行域", "lines": [
                     r"多個不等式 **同時成立** → 各半平面的 【交集】（可行域），通常為一塊多邊形區域。"]},
                 {"label": r"線性規劃", "lines": [

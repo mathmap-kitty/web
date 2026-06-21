@@ -154,7 +154,8 @@ def _kp(doc, kp, mode):
     _label(doc, "【必背重點與公式】")
     for p in kp["points"]:
         if isinstance(p, dict) and "svg" in p:
-            _add_svg_figure(doc, p["svg"], p.get("caption"), 2.9 if p.get("wide") else 1.25)
+            _w = 5.4 if p.get("full") else (2.9 if p.get("wide") else (2.1 if p.get("med") else 1.25))
+            _add_svg_figure(doc, p["svg"], p.get("caption"), _w)
         elif isinstance(p, dict):
             _rich(doc, "• **" + p["label"] + "：** " + p["lines"][0], mode,
                   size=11, indent=0.4, before=3, after=0)
@@ -250,6 +251,10 @@ def build_docx(unit, mode, out_path):
         if p0.get("map"):
             _label(doc, "考點地圖")
             _rich(doc, p0["map"], mode, indent=0.4, fill="FDF3EE")
+        if p0.get("fig"):
+            f0 = p0["fig"]
+            _w0 = 5.4 if f0.get("full") else (2.9 if f0.get("wide") else (2.1 if f0.get("med") else 1.25))
+            _add_svg_figure(doc, f0["svg"], f0.get("caption"), _w0)
 
     # Part 1
     _heading(doc, f'Part 1　建構概念：{unit.get("part1_label","五大考點")}', level=1)

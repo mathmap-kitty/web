@@ -28,6 +28,62 @@ SVG_EXPLOG = r'''<svg viewBox="0 0 170 168" width="170" height="168" xmlns="http
   </g>
 </svg>'''
 
+# 指數／對數函數圖形四型（a>1 / 0<a<1）— 程式產生
+import math as _math
+_EF = "font-family=\"'Microsoft JhengHei',system-ui,sans-serif\""
+
+def _el_axes(ox, oy, x0, x1, ytop):
+    AX = "#9aa6b2"
+    return (f'<line x1="{x0}" y1="{oy}" x2="{x1}" y2="{oy}" stroke="{AX}" stroke-width="1.1"/>'
+            f'<polygon points="{x1+6},{oy} {x1-2},{oy-3} {x1-2},{oy+3}" fill="{AX}"/>'
+            f'<line x1="{ox}" y1="{oy+8}" x2="{ox}" y2="{ytop}" stroke="{AX}" stroke-width="1.1"/>'
+            f'<polygon points="{ox},{ytop-6} {ox-3},{ytop+2} {ox+3},{ytop+2}" fill="{AX}"/>')
+
+def _explog4_fig():
+    INK = "#2c3e50"; CURVE = "#34679a"; KEY = "#c0392b"; ROSE = "#b03a5b"
+    cxs = [47, 141, 235, 329]
+    L = [f'<svg viewBox="0 0 376 150" width="376" height="150" xmlns="http://www.w3.org/2000/svg" role="img" {_EF}>']
+    L.append('<g stroke="#e6e0e8" stroke-width="1">')
+    for x in [94, 188, 282]:
+        L.append(f'<line x1="{x}" y1="6" x2="{x}" y2="144"/>')
+    L.append('</g>')
+    def cell(cx, kind, agt1):
+        g = []; a = 2.4 if agt1 else 1/2.4
+        if kind == 'exp':
+            Ox, Oy, sX, sY = cx-12, 100, 15, 11
+            g.append(_el_axes(Ox, Oy, cx-42, cx+40, 32))
+            pts = []; x = -2.2
+            while x <= 2.3:
+                y = a**x
+                if 0 <= y <= 6.2: pts.append(f"{Ox+x*sX:.1f},{Oy-y*sY:.1f}")
+                x += 0.12
+            g.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{CURVE}" stroke-width="2.2"/>')
+            g.append(f'<circle cx="{Ox}" cy="{Oy-sY}" r="2.6" fill="{KEY}"/>')
+            g.append(f'<text x="{Ox-4}" y="{Oy-sY+3}" font-size="8" fill="{INK}" text-anchor="end">1</text>')
+        else:
+            Ox, Oy, sX, sY = cx-30, 66, 17, 16
+            g.append(_el_axes(Ox, Oy, cx-40, cx+42, 26))
+            pts = []; x = 0.14
+            while x <= 4.0:
+                y = _math.log(x, a)
+                if -2.4 <= y <= 2.4: pts.append(f"{Ox+x*sX:.1f},{Oy-y*sY:.1f}")
+                x += 0.08
+            g.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{CURVE}" stroke-width="2.2"/>')
+            g.append(f'<circle cx="{Ox+sX}" cy="{Oy}" r="2.6" fill="{KEY}"/>')
+            g.append(f'<text x="{Ox+sX}" y="{Oy+13}" font-size="8" fill="{INK}" text-anchor="middle">1</text>')
+        return "".join(g)
+    specs = [('exp', True, 'y = aˣ', 'a &gt; 1'), ('exp', False, 'y = aˣ', '0 &lt; a &lt; 1'),
+             ('log', True, 'y = logₐx', 'a &gt; 1'), ('log', False, 'y = logₐx', '0 &lt; a &lt; 1')]
+    for cx, (kind, agt1, f1, f2) in zip(cxs, specs):
+        L.append(cell(cx, kind, agt1))
+        L.append(f'<text x="{cx}" y="18" font-size="11" fill="{ROSE}" text-anchor="middle" font-weight="bold">{f1}</text>')
+        L.append(f'<text x="{cx}" y="32" font-size="9.5" fill="{INK}" text-anchor="middle">{f2}</text>')
+        L.append(f'<text x="{cx}" y="140" font-size="9.5" fill="#5a4a52" text-anchor="middle">{"遞增" if agt1 else "遞減"}</text>')
+    L.append('</svg>')
+    return "".join(L)
+
+SVG_EXPLOG4 = _explog4_fig()
+
 UNIT = {
     "slug": "explog",
     "file": "115學測數學_指數與對數.html",
@@ -233,6 +289,7 @@ UNIT = {
                     r"\(y=\log_a x\)：恆過 \((1,0)\)、漸近線 \(x=0\)（\(y\) 軸）、定義域 \(x>0\)；",
                     r"\(a>1\) → 【遞增】；",
                     r"\(0<a<1\) → 【遞減】。"]},
+                {"svg": SVG_EXPLOG4, "wide": True, "caption": r"四型對照：指數恆過 \((0,1)\)（漸近線 \(x\) 軸）、對數恆過 \((1,0)\)（漸近線 \(y\) 軸）；\(a>1\) 遞增、\(0<a<1\) 遞減"},
                 {"label": r"互為反函數", "lines": [
                     r"\(y=a^x\) 與 \(y=\log_a x\) 互為反函數，圖形對稱於 【\(y=x\)】（\(x\leftrightarrow y\) 對調）。"]},
                 {"svg": SVG_EXPLOG,

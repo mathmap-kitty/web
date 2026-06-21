@@ -27,6 +27,113 @@ SVG_NUMLINE = r'''<svg viewBox="0 0 330 86" width="330" height="86" xmlns="http:
   <text x="160" y="18" fill="#8c2740" font-size="13" text-anchor="middle" font-weight="bold">|x&#8722;3| &lt; 2 &#8660; 1 &lt; x &lt; 5</text>
 </svg>'''
 
+# 實數系概念圖（依老師手繪版重製）：填色圓角節點 + 藍色註解
+_RT_DARK = "#5d2640"; _RT_DARK2 = "#6b2840"; _RT_MAUVE = "#a87d8e"
+_RT_LEAF = "#f4e6ec"; _RT_LEDGE = "#d9b8c4"; _RT_LINE = "#b08699"
+_RT_BLUE = "#3a5a9a"; _RT_RED = "#c0392b"; _RT_INKL = "#4a2230"; _RT_SUB = "#a06a7e"
+_RT_SERIF = "font-family=\"'Noto Serif CJK TC','Microsoft JhengHei',serif\""
+_RT_SANS = "font-family=\"'Microsoft JhengHei',system-ui,sans-serif\""
+
+def _rt_box(cx, cy, w, h, fill, text, fs, tcol, rx=11, edge=None):
+    st = f' stroke="{edge}" stroke-width="1.2"' if edge else ''
+    return (f'<rect x="{cx-w/2:.0f}" y="{cy-h/2:.0f}" width="{w}" height="{h}" rx="{rx}" fill="{fill}"{st}/>'
+            f'<text x="{cx}" y="{cy+fs*0.35:.1f}" font-size="{fs}" fill="{tcol}" font-weight="bold" text-anchor="middle">{text}</text>')
+
+def _realsys_fig():
+    N = dict(R=(92,273,128,54,21), Q=(300,216,148,54,20), IR=(300,330,148,50,19),
+             Z=(500,132,150,50,18), F=(500,300,150,48,15.5),
+             nN=(648,80,118,42,15), n0=(648,132,118,42,15), nNEG=(648,184,118,42,15),
+             fFIN=(648,270,118,42,15), fCYC=(648,340,118,42,15))
+    L = [f'<svg viewBox="0 0 734 392" width="734" height="392" xmlns="http://www.w3.org/2000/svg" role="img" {_RT_SANS}>']
+    L.append(f'<g stroke="{_RT_LINE}" stroke-width="2.5" fill="none" stroke-linecap="round">')
+    for x1,y1,x2,y2 in [(156,273,226,216),(156,273,226,330),(374,216,425,132),(374,216,425,300),
+                        (575,132,589,80),(575,132,589,132),(575,132,589,184),(575,300,589,270),(575,300,589,340)]:
+        L.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}"/>')
+    L.append('</g>')
+    L.append(f'<text x="36" y="58" font-size="30" fill="{_RT_DARK}" font-weight="bold" {_RT_SERIF}>實數系</text>')
+    L.append(f'<text x="38" y="80" font-size="13.5" fill="{_RT_SUB}" font-style="italic">Real Number System</text>')
+    L.append(_rt_box(*N['R'][:4], _RT_DARK, '實數 R', N['R'][4], 'white'))
+    L.append(_rt_box(*N['Q'][:4], _RT_DARK2, '有理數 Q', N['Q'][4], 'white'))
+    L.append(_rt_box(*N['IR'][:4], _RT_MAUVE, '無理數', N['IR'][4], 'white'))
+    L.append(_rt_box(*N['Z'][:4], _RT_MAUVE, '整數 Z', N['Z'][4], 'white'))
+    L.append(_rt_box(*N['F'][:4], _RT_MAUVE, '不為整數的分數', N['F'][4], 'white'))
+    for k, t in [('nN','正整數 N'),('n0','0'),('nNEG','負整數'),('fFIN','有限小數'),('fCYC','循環小數')]:
+        b = N[k]; L.append(_rt_box(b[0], b[1], b[2], b[3], _RT_LEAF, t, b[4], _RT_INKL, rx=9, edge=_RT_LEDGE))
+    L.append(f'<text x="92" y="312" font-size="11.5" fill="{_RT_BLUE}" text-anchor="middle">數線上所有的點</text>')
+    L.append(f'<g font-size="11.5" fill="{_RT_BLUE}" text-anchor="start">')
+    L.append(f'<text x="228" y="258">(1) 形式：n/m<tspan fill="{_RT_RED}">（m≠0）</tspan></text>')
+    L.append(f'<text x="228" y="276">(2) 性質：稠密性、封閉性</text>')
+    L.append(f'<text x="228" y="294">(3) 可尺規作圖</text></g>')
+    L.append(f'<text x="300" y="372" font-size="11.5" fill="{_RT_BLUE}" text-anchor="middle">不循環無限小數</text>')
+    L.append(f'<text x="648" y="308" font-size="11" fill="{_RT_BLUE}" text-anchor="middle">Note：分母質因數僅 2、5</text>')
+    L.append(f'<text x="648" y="378" font-size="11" fill="{_RT_BLUE}" text-anchor="middle">Note：0.999… ＝ 1</text>')
+    L.append('</svg>')
+    return "".join(L)
+
+SVG_REALTREE = _realsys_fig()
+
+# 算幾不等式幾何意義：半圓中半弦 √(ab) ≤ 半徑 (a+b)/2
+SVG_AMGM = r'''<svg viewBox="0 0 230 150" width="230" height="150" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif">
+  <path d="M22 116 A93 93 0 0 1 208 116" fill="#eef4f8" stroke="#2c3e50" stroke-width="1.6"/>
+  <line x1="22" y1="116" x2="208" y2="116" stroke="#2c3e50" stroke-width="1.6"/>
+  <line x1="78" y1="116" x2="78" y2="31" stroke="#1f8a5b" stroke-width="2"/>
+  <line x1="115" y1="116" x2="115" y2="23" stroke="#b03a5b" stroke-width="2"/>
+  <rect x="78" y="106" width="10" height="10" fill="none" stroke="#1f8a5b" stroke-width="1"/>
+  <g fill="#2c3e50"><circle cx="22" cy="116" r="2.6"/><circle cx="208" cy="116" r="2.6"/><circle cx="78" cy="116" r="2.6"/><circle cx="115" cy="116" r="2.6"/></g>
+  <g font-size="12" text-anchor="middle">
+    <text x="49" y="133" fill="#2c3e50">a</text>
+    <text x="145" y="133" fill="#2c3e50">b</text>
+    <text x="60" y="80" fill="#1f8a5b" font-weight="bold">√(ab)</text>
+    <text x="150" y="62" fill="#b03a5b" font-weight="bold">(a+b)/2</text>
+  </g>
+</svg>'''
+
+# 分點公式：P 在 A(a)、B(b) 之間且 PA:PB = m:n
+SVG_DIVPT = r'''<svg viewBox="0 0 300 104" width="300" height="104" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif">
+  <line x1="20" y1="54" x2="288" y2="54" stroke="#2c3e50" stroke-width="2"/>
+  <polygon points="296,54 286,49 286,59" fill="#2c3e50"/>
+  <g stroke="#2c3e50" stroke-width="1.6"><line x1="60" y1="48" x2="60" y2="60"/><line x1="170" y1="48" x2="170" y2="60"/><line x1="250" y1="48" x2="250" y2="60"/></g>
+  <g fill="#2c3e50"><circle cx="60" cy="54" r="3"/><circle cx="170" cy="54" r="3.5"/><circle cx="250" cy="54" r="3"/></g>
+  <g font-size="12.5" text-anchor="middle" font-weight="bold">
+    <text x="60" y="36" fill="#2c3e50">A</text><text x="170" y="36" fill="#b03a5b">P</text><text x="250" y="36" fill="#2c3e50">B</text>
+  </g>
+  <g font-size="12" text-anchor="middle" fill="#22433c">
+    <text x="60" y="78">a</text><text x="250" y="78">b</text>
+  </g>
+  <g font-size="11" text-anchor="middle" fill="#8a6d3b">
+    <text x="115" y="48">m</text><text x="210" y="48">n</text>
+  </g>
+</svg>'''
+
+# 絕對值不等式三型：|x|<a / |x|≤a / |x|≥a 在數線上的解
+SVG_ABSCASES = r'''<svg viewBox="0 0 330 198" width="330" height="198" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif">
+  <g stroke="#2c3e50" stroke-width="1.8">
+    <line x1="120" y1="40" x2="300" y2="40"/><line x1="120" y1="105" x2="300" y2="105"/><line x1="120" y1="170" x2="300" y2="170"/>
+  </g>
+  <rect x="160" y="36" width="100" height="8" fill="#f1d6df"/>
+  <rect x="160" y="101" width="100" height="8" fill="#f1d6df"/>
+  <rect x="124" y="166" width="36" height="8" fill="#f1d6df"/><rect x="260" y="166" width="36" height="8" fill="#f1d6df"/>
+  <g stroke="#2c3e50" stroke-width="1.3">
+    <line x1="160" y1="34" x2="160" y2="46"/><line x1="210" y1="34" x2="210" y2="46"/><line x1="260" y1="34" x2="260" y2="46"/>
+    <line x1="160" y1="99" x2="160" y2="111"/><line x1="210" y1="99" x2="210" y2="111"/><line x1="260" y1="99" x2="260" y2="111"/>
+    <line x1="160" y1="164" x2="160" y2="176"/><line x1="210" y1="164" x2="210" y2="176"/><line x1="260" y1="164" x2="260" y2="176"/>
+  </g>
+  <polygon points="296,170 306,165 306,175" fill="#2c3e50"/><polygon points="124,170 114,165 114,175" fill="#2c3e50"/>
+  <g fill="#fff" stroke="#b03a5b" stroke-width="2"><circle cx="160" cy="40" r="5"/><circle cx="260" cy="40" r="5"/></g>
+  <g fill="#b03a5b"><circle cx="160" cy="105" r="5"/><circle cx="260" cy="105" r="5"/><circle cx="160" cy="170" r="5"/><circle cx="260" cy="170" r="5"/></g>
+  <g font-size="11.5" text-anchor="middle" fill="#22433c">
+    <text x="160" y="62">−a</text><text x="210" y="62">0</text><text x="260" y="62">a</text>
+    <text x="160" y="127">−a</text><text x="210" y="127">0</text><text x="260" y="127">a</text>
+    <text x="160" y="192">−a</text><text x="210" y="192">0</text><text x="260" y="192">a</text>
+  </g>
+  <g font-size="12.5" text-anchor="start" font-weight="bold" fill="#8c2740">
+    <text x="14" y="38">|x| &lt; a</text><text x="14" y="103">|x| ≤ a</text><text x="14" y="168">|x| ≥ a</text>
+  </g>
+  <g font-size="10.5" text-anchor="start" fill="#6b5b73">
+    <text x="14" y="52">−a&lt;x&lt;a</text><text x="14" y="117">−a≤x≤a</text><text x="14" y="182">x≤−a或x≥a</text>
+  </g>
+</svg>'''
+
 UNIT = {
     "slug": "numexpr",
     "file": "115學測數學_數與式.html",
@@ -53,6 +160,7 @@ UNIT = {
             r"**生活應用題**：比例、百分率、加權平均（漲跌幅、得票率）是舊制熱門題型，仍可能以情境題形式回鍋。",
         ],
         "map": r"命題重心六主軸：① 有理／無理與循環小數 ② 絕對值的「距離」意義與分段討論 ③ 數線距離、分點與根號估算 ④ 乘法公式、對稱式與算幾不等式 ⑤ 比例、百分率與加權平均 ⑥ 高斯（最大整數）函數。",
+        "fig": {"svg": SVG_REALTREE, "full": True, "caption": r"實數系概念圖：循著分支判定一個數的歸類，藍字為各層的關鍵性質與提醒（進考點前先建立全貌）"},
     },
 
     "kps": [
@@ -123,6 +231,7 @@ UNIT = {
                 {"label": r"絕對值不等式", "lines": [
                     r"\(|x|\lt k\Leftrightarrow\) 【\(-k\lt x\lt k\)】；",
                     r"\(|x|\gt k\;(k\gt0)\Leftrightarrow\) 【\(x\lt-k\) 或 \(x\gt k\)】。"]},
+                {"svg": SVG_ABSCASES, "wide": True, "caption": r"三型對照：\(\lt\) 取「中間」（空心點）、\(\le\) 含端點（實心點）、\(\ge\) 取「兩側」"},
                 {"label": r"重要性質", "lines": [
                     r"\(|ab|=\) 【\(|a||b|\)】、\(\sqrt{a^2}=\) 【\(|a|\)】、\(|-a|=|a|\)；",
                     r"兩邊非負時可 [[平方去絕對值||\(|A|\ge|B|\Leftrightarrow A^2\ge B^2\)，因兩邊都 \(\ge0\)。這招把絕對值不等式變成二次不等式，是 \(111\) 多7 的關鍵。]]：\(|A|\ge|B|\Leftrightarrow\) 【\(A^2\ge B^2\)】。"]},
@@ -163,6 +272,7 @@ UNIT = {
                     r"\(a\)、\(b\) 兩點距離 ＝ 【\(|a-b|\)】，中點坐標 ＝ 【\(\dfrac{a+b}{2}\)】。"]},
                 {"label": r"分點公式", "lines": [
                     r"\(P\) 在 \(A_a\)、\(B_b\) 之間且 \(PA:PB=m:n\)，則 \(P\) 坐標 ＝ 【\(\dfrac{na+mb}{m+n}\)】（中點是 \(m:n=1:1\) 的特例）。"]},
+                {"svg": SVG_DIVPT, "med": True, "caption": r"分點 \(P\) 把 \(\overline{AB}\) 分成 \(m:n\)；係數要「交叉」：靠 \(A\) 的權重給 \(b\)、靠 \(B\) 的給 \(a\)"},
                 {"label": r"根號估算", "lines": [
                     r"\(\sqrt N\) 夾在 [[相鄰兩完全平方根之間||例：\(9\lt10\lt16\Rightarrow 3\lt\sqrt{10}\lt4\)。先框出整數範圍，再決定整數落點。]]；例 \(10\lt\sqrt{101}\lt11\)、\(6\lt\sqrt{38}\lt7\)。"]},
                 {"label": r"雙重根號化簡", "lines": [
@@ -208,6 +318,7 @@ UNIT = {
                 {"label": r"算幾不等式", "lines": [
                     r"\(a,b\ge0\) 時 \(\dfrac{a+b}{2}\ge\) 【\(\sqrt{ab}\)】，等號於 【\(a=b\)】 成立；",
                     r"常配倒數：\(x\gt0\) 時 \(x+\dfrac kx\ge\) 【\(2\sqrt k\)】（[[等號於 \(x=\sqrt k\) 成立||由 \(\dfrac{a+b}{2}\ge\sqrt{ab}\) 取 \(a=x,\,b=\dfrac kx\)，乘積 \(ab=k\) 固定，故和有最小值；等號要 \(a=b\) 即 \(x=\dfrac kx\Rightarrow x=\sqrt k\)。]]）。"]},
+                {"svg": SVG_AMGM, "med": True, "caption": r"算幾的幾何意義：半徑 \(\dfrac{a+b}{2}\) 永遠 \(\ge\) 半弦 \(\sqrt{ab}\)，\(a=b\)（\(F\) 落在圓心）時相等"},
             ],
             "misconceptions": [
                 {"wrong": r"\((a+b)^2=a^2+b^2\)", "right": r"漏了 \(2ab\)：正確為 \(a^2+2ab+b^2\)"},
