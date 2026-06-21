@@ -94,19 +94,36 @@ NODES = [
     ("regr", "迴歸直線", 3, 668, "data"),
 ]
 
-# 依賴邊：(先備, 進階)
+# 依賴邊：(先備, 進階, 為什麼需要)
 EDGES = [
-    ("numexpr", "quad"), ("numexpr", "trigr"), ("numexpr", "vec"), ("numexpr", "circle"),
-    ("quad", "polyhi"),
-    ("explaw", "logop"), ("logop", "logfn"), ("logop", "seq"),
-    ("trigr", "sincos"), ("trigr", "trigfn"), ("trigr", "lineq"),
-    ("sincos", "measure"), ("sincos", "space"), ("trigfn", "measure"),
-    ("vec", "dot"), ("vec", "det"), ("vec", "matrix"),
-    ("dot", "space"), ("det", "space"), ("dot", "matrix"),
-    ("lineq", "lc"), ("circle", "lc"),
-    ("seq", "series"),
-    ("count", "comb"), ("comb", "prob"), ("prob", "cond"),
-    ("data1", "corr"), ("corr", "regr"),
+    ("numexpr", "quad", "配方、判別式要先會乘法公式與根號"),
+    ("numexpr", "trigr", "三角比的值要會根號運算"),
+    ("numexpr", "vec", "向量坐標化要先會坐標與距離"),
+    ("numexpr", "circle", "圓方程式＝到圓心的距離（數與式）"),
+    ("quad", "polyhi", "高次不等式建立在二次函數的根與配方"),
+    ("explaw", "logop", "對數是指數的反運算，先會指數律"),
+    ("logop", "logfn", "科學記號、位數是常用對數的應用"),
+    ("logop", "seq", "等比＝指數成長，求項數要取對數"),
+    ("trigr", "sincos", "正餘弦定理把三角比推廣到任意三角形"),
+    ("trigr", "trigfn", "三角函數圖形、和差倍角以三角比為底"),
+    ("trigr", "lineq", "直線斜率 m=tanθ，要先會三角比"),
+    ("sincos", "measure", "三角測量靠正餘弦定理算邊角"),
+    ("sincos", "space", "空間夾角／距離用餘弦定理升維"),
+    ("trigfn", "measure", "測量化簡常用和差倍角"),
+    ("vec", "dot", "內積定義在向量的坐標運算之上"),
+    ("vec", "det", "行列式（面積）由向量坐標算出"),
+    ("vec", "matrix", "線性變換把向量映成向量"),
+    ("dot", "space", "空間夾角、垂直＝內積升維"),
+    ("det", "space", "空間體積＝外積／行列式"),
+    ("dot", "matrix", "矩陣是否保長度／角度看內積"),
+    ("lineq", "lc", "直線與圓的位置要先有直線方程式"),
+    ("circle", "lc", "弦長、切線要先有圓方程式"),
+    ("seq", "series", "級數＝把數列加起來"),
+    ("count", "comb", "組合是計數原理的進階"),
+    ("comb", "prob", "古典機率＝有利／全部，靠組合計數"),
+    ("prob", "cond", "條件機率、貝氏建立在古典機率"),
+    ("data1", "corr", "相關係數要先會標準差"),
+    ("corr", "regr", "迴歸斜率＝r×σy/σx，先有相關係數"),
 ]
 
 NW, NH = None, 34  # node height; width computed per-label
@@ -151,15 +168,18 @@ def _svg_dep():
         cy = (y0 + y1) / 2
         parts.append(f'<rect x="8" y="{y0}" width="6" height="{y1-y0}" rx="3" fill="{col}" opacity="0.5"/>')
         parts.append(f'<text x="20" y="{cy+5:.0f}" font-size="15" font-weight="800" fill="{col}">{lab}</text>')
-    # edges
-    for a, b in EDGES:
+    # edges（細線＋透明寬線供滑過顯示「為什麼需要」）
+    LABEL = {n[0]: n[1] for n in NODES}
+    for a, b, why in EDGES:
         xa, ya, wa, ha, cxa, _ = POS[a]
         xb, yb, wb, hb, cxb, _ = POS[b]
         x1, y1 = xa + wa, ya + ha / 2
         x2, y2 = xb, yb + hb / 2
         dx = max(40, (x2 - x1) * 0.45)
-        parts.append(f'<path d="M{x1:.0f},{y1:.0f} C{x1+dx:.0f},{y1:.0f} {x2-dx:.0f},{y2:.0f} {x2:.0f},{y2:.0f}" '
-                     f'fill="none" stroke="#cdbcc4" stroke-width="1.4" marker-end="url(#ar)" opacity="0.85"/>')
+        d = f"M{x1:.0f},{y1:.0f} C{x1+dx:.0f},{y1:.0f} {x2-dx:.0f},{y2:.0f} {x2:.0f},{y2:.0f}"
+        parts.append(f'<path d="{d}" fill="none" stroke="#cdbcc4" stroke-width="1.4" marker-end="url(#ar)" opacity="0.85"/>')
+        parts.append(f'<path d="{d}" fill="none" stroke="transparent" stroke-width="14" style="cursor:help">'
+                     f'<title>{LABEL[a]} → {LABEL[b]}：{why}</title></path>')
     # nodes
     for nid, label, col, cy, unit in NODES:
         x, y, w, h, cx, _ = POS[nid]
@@ -265,7 +285,7 @@ def _legend_chips():
 
 
 def _legend():
-    return f'<div class="cm-legend"><b>顏色＝近十年大考份量（加權題數）：</b>{_legend_chips()}<span class="cm-note">越紅＝考越重；箭頭＝「先會 → 才好學」；最右欄＝大考高頻、反推起點（粗框，可點進單元）</span></div>'
+    return f'<div class="cm-legend"><b>顏色＝近十年大考份量（加權題數）：</b>{_legend_chips()}<span class="cm-note">越紅＝考越重；箭頭＝「先會 → 才好學」（<b>滑過箭頭看「為什麼需要」</b>）；最右欄＝大考高頻、反推起點（粗框，可點進單元）</span></div>'
 
 
 def build():
