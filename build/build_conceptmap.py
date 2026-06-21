@@ -318,7 +318,7 @@ def build():
 <p>不照課本目錄，而是讓 <b>近十年大考數據</b> 決定地圖的重點與結構。三種看法：依賴鏈（學習順序）、熱度地圖（份量輕重）、概念網（跨單元連結）。</p></div>
 <div class="cm-prog">
 <button class="markbtn" id="markbtn" onclick="toggleMark()">✏️ 標記已讀</button>
-<span class="ptxt" id="ptxt">已讀 0 / 11 單元</span>
+<span class="ptxt" id="ptxt">已讀 0 / 58 考點</span>
 <div class="bar"><i id="pbar"></i></div>
 <button class="resetbtn" onclick="resetRead()">清除</button></div>
 <div class="cm-tabs">
@@ -344,14 +344,17 @@ def build():
     js = ("function cmTab(b,v){document.querySelectorAll('.cm-tabs button').forEach(x=>x.classList.remove('on'));"
           "b.classList.add('on');document.querySelectorAll('.cm-view').forEach(x=>x.classList.remove('on'));"
           "document.getElementById('v-'+v).classList.add('on');}"
-          "var RK='mm-read-units';"
+          "var RK='mm-read-kps';"
+          "var KPN={trig:7,prob:6,space:6,poly:5,linecir:5,explog:5,pvec:5,matrix:5,data:4,seq:4,numexpr:6};"
+          "function kk(u){var a=[];for(var i=1;i<=KPN[u];i++)a.push(u+':kp'+i);return a;}"
           "function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}"
-          "function aR(){var s=gR();document.querySelectorAll('.mnode').forEach(n=>n.classList.toggle('read',s.has(n.dataset.u)));uP(s);}"
-          "function uP(s){s=s||gR();var p=new Set([...document.querySelectorAll('.mnode')].map(n=>n.dataset.u));"
-          "var d=[...s].filter(u=>p.has(u)).length,t=p.size||11;"
-          "document.getElementById('ptxt').textContent='已讀 '+d+' / '+t+' 單元';"
-          "document.getElementById('pbar').style.width=(d/t*100)+'%';}"
-          "function toggleRead(u){var s=gR();s.has(u)?s.delete(u):s.add(u);localStorage.setItem(RK,JSON.stringify([...s]));aR();}"
+          "function uf(u,s){return kk(u).every(k=>s.has(k));}"
+          "function aR(){var s=gR();document.querySelectorAll('.mnode').forEach(n=>n.classList.toggle('read',uf(n.dataset.u,s)));uP(s);}"
+          "function uP(s){s=s||gR();var t=0;for(var u in KPN)t+=KPN[u];var d=s.size;"
+          "document.getElementById('ptxt').textContent='已讀 '+d+' / '+t+' 考點';"
+          "document.getElementById('pbar').style.width=(t?d/t*100:0)+'%';}"
+          "function toggleRead(u){var s=gR();var ks=kk(u);var f=ks.every(k=>s.has(k));"
+          "ks.forEach(k=>f?s.delete(k):s.add(k));localStorage.setItem(RK,JSON.stringify([...s]));aR();}"
           "window.markMode=false;"
           "function toggleMark(){window.markMode=!window.markMode;var b=document.getElementById('markbtn');"
           "b.classList.toggle('on',window.markMode);b.textContent=window.markMode?'✓ 標記中（點概念）':'✏️ 標記已讀';"

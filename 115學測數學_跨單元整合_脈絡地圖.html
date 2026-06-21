@@ -189,6 +189,21 @@
   .sc-q{color:#3a3a3a; font-size:15px; margin-bottom:2px}
   .selfcheck .sol{background:#fff6e0; border-left-color:#e0b94e}
   .selfcheck .sol-btn{background:#fbefce; color:#946700; border-color:#e0b94e}
+  /* 已讀進度（考點打勾，與概念地圖共用 localStorage） */
+  .kpchk{display:inline-block; vertical-align:middle; width:22px; height:22px; border-radius:50%;
+    border:2px solid #d3c0c7; background:#fff; cursor:pointer; margin-right:9px; padding:0; position:relative; transition:.15s}
+  .kpchk:hover{border-color:#2e9e5b; background:#f0faf3}
+  .kpchk.on{background:#2e9e5b; border-color:#2e9e5b}
+  .kpchk.on::after{content:"✓"; color:#fff; font-size:14px; font-weight:800; position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center; line-height:1}
+  .unit-prog{display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:#f1f8f4;
+    border:1px solid #cfe6d8; border-radius:12px; padding:9px 16px; margin:14px 0 6px; font-size:14px; color:#2e6b46}
+  .unit-prog b{color:#1f7a45; font-size:15px}
+  .unit-prog .upbar{flex:1; min-width:110px; max-width:230px; height:11px; background:#dcecdf; border-radius:7px; overflow:hidden}
+  .unit-prog .upbar i{display:block; height:100%; width:0; background:linear-gradient(90deg,#2e9e5b,#52c47e); transition:width .3s}
+  .unit-prog .up-all{background:#fff; color:#2e7d46; border:1.4px solid #2e9e5b; border-radius:18px;
+    padding:4px 12px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit}
+  .unit-prog .up-hint{font-size:12px; color:#8aa896; width:100%}
 
 
   .x-intro{background:#fff7ef;border:1px dashed #e0b9a6;border-radius:12px;padding:12px 18px;margin:14px 0 8px;font-size:14.5px;color:#6b5249}
@@ -234,7 +249,7 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><span class="t-title">跨單元整合 · 脈絡地圖</span><select class="nav-select" onchange="if(this.value){location.href=this.value;}"><option value="">單元 ▾</option><option value="index.html">📚 目錄首頁</option><optgroup label="① 代數與函數"><option value="115學測數學_數與式.html">🔢 數與式</option><option value="115學測數學_多項式函數.html">📈 多項式函數</option><option value="115學測數學_指數與對數.html">📉 指數與對數</option></optgroup><optgroup label="② 數列・機率・統計"><option value="115學測數學_數列與級數.html">🪜 數列與級數</option><option value="115學測數學_排列組合與機率.html">🎲 排列組合與機率</option><option value="115學測數學_數據分析.html">📊 數據分析</option></optgroup><optgroup label="③ 平面幾何"><option value="115學測數學_三角.html">📐 三角</option><option value="115學測數學_直線與圓.html">⭕ 直線與圓</option><option value="115學測數學_平面向量.html">➡️ 平面向量</option></optgroup><optgroup label="④ 空間與矩陣"><option value="115學測數學_空間向量.html">🧊 空間向量</option><option value="115學測數學_矩陣.html">🧮 矩陣</option></optgroup></select></div>
+<div class="toolbar"><span class="t-title">跨單元整合 · 脈絡地圖</span><select class="nav-select" onchange="if(this.value){location.href=this.value;}"><option value="">單元 ▾</option><option value="index.html">📚 目錄首頁</option><option value="115學測數學_概念地圖.html">🗺️ 概念地圖</option><optgroup label="① 代數與函數"><option value="115學測數學_數與式.html">🔢 數與式</option><option value="115學測數學_多項式函數.html">📈 多項式函數</option><option value="115學測數學_指數與對數.html">📉 指數與對數</option></optgroup><optgroup label="② 數列・機率・統計"><option value="115學測數學_數列與級數.html">🪜 數列與級數</option><option value="115學測數學_排列組合與機率.html">🎲 排列組合與機率</option><option value="115學測數學_數據分析.html">📊 數據分析</option></optgroup><optgroup label="③ 平面幾何"><option value="115學測數學_三角.html">📐 三角</option><option value="115學測數學_直線與圓.html">⭕ 直線與圓</option><option value="115學測數學_平面向量.html">➡️ 平面向量</option></optgroup><optgroup label="④ 空間與矩陣"><option value="115學測數學_空間向量.html">🧊 空間向量</option><option value="115學測數學_矩陣.html">🧮 矩陣</option></optgroup></select></div>
 <div class="wrap">
 <div class="hero"><h1>跨單元整合 · 脈絡地圖</h1>
 <p>學測數學 106–115　共 25 道「跨單元」考題，依<b>結合的概念主軸</b>分成五大脈絡</p></div>

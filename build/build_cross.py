@@ -522,7 +522,8 @@ def build():
     try:
         from units import SECTIONS, UNITS
         by = {u["slug"]: u for u in UNITS}
-        opts = ['<option value="">單元 ▾</option>', '<option value="index.html">📚 目錄首頁</option>']
+        opts = ['<option value="">單元 ▾</option>', '<option value="index.html">📚 目錄首頁</option>',
+                '<option value="115學測數學_概念地圖.html">🗺️ 概念地圖</option>']
         for label, slugs in SECTIONS:
             grp = "".join(f'<option value="{by[s]["file"]}">{by[s]["emoji"]} {by[s]["title"]}</option>'
                           for s in slugs if s in by and not by[s].get("draft"))

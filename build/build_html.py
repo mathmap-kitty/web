@@ -10,6 +10,21 @@ from render import html_rich
 HERE = os.path.dirname(os.path.abspath(__file__))
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 
+# 已讀進度（考點層，localStorage 鍵 mm-read-kps，格式 "slug:kpN"，與概念地圖共用）
+PROGRESS_JS = (
+    "var RK='mm-read-kps';"
+    "function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}"
+    "function kpToggle(b){var k=MMSLUG+':'+b.dataset.kp;var s=gR();var on=!s.has(k);on?s.add(k):s.delete(k);"
+    "localStorage.setItem(RK,JSON.stringify([...s]));upUnit();}"
+    "function upUnit(){var s=gR();var done=MMKPS.filter(k=>s.has(MMSLUG+':'+k)).length,t=MMKPS.length;"
+    "document.querySelectorAll('.kpchk').forEach(b=>b.classList.toggle('on',s.has(MMSLUG+':'+b.dataset.kp)));"
+    "var tx=document.getElementById('up-txt');if(tx)tx.textContent=done+' / '+t;"
+    "var bar=document.getElementById('up-bar');if(bar)bar.style.width=(t?done/t*100:0)+'%';}"
+    "function markAllKp(){var s=gR();var all=MMKPS.every(k=>s.has(MMSLUG+':'+k));"
+    "MMKPS.forEach(k=>{var key=MMSLUG+':'+k;all?s.delete(key):s.add(key);});"
+    "localStorage.setItem(RK,JSON.stringify([...s]));upUnit();}"
+    "upUnit();")
+
 
 def _asset(name):
     return io.open(os.path.join(HERE, "assets", name), encoding="utf-8").read()
@@ -146,7 +161,9 @@ def _kp_html(kp):
                      'onclick="ts(this)">看答案</button>'
                      f'<div class="sol">{ans}</div></div>')
     return (f'<div class="card" id="{kp["id"]}">'
-            f'<p class="kp"><span class="num">{kp["num"]}</span>{html_rich(kp["title"])}</p>'
+            f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
+            f'title="標記此考點已讀" aria-label="標記已讀"></button>'
+            f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}</p>'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
             f'<span class="label">重點與公式</span><ul class="points">{points}</ul>'
             f'{tables}'
@@ -229,7 +246,9 @@ def _toolbar(unit, units):
         return f'<option value="{u["file"]}">{u["emoji"]} {u["title"]}{cur}</option>'
 
     unit_opts = ['<option value="">單元 ▾</option>',
-                 '<option value="index.html">📚 目錄首頁</option>']
+                 '<option value="index.html">📚 目錄首頁</option>',
+                 '<option value="115學測數學_概念地圖.html">🗺️ 概念地圖</option>',
+                 '<option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option>']
     if SECTIONS:
         # 依首頁四大主題分組（optgroup），與 index.html 一致。
         for label, slugs in SECTIONS:
@@ -269,6 +288,10 @@ def build_html(unit, units):
             '<span class="blank on" style="cursor:default"><span class="a">空格</span></span> '
             '可顯示／隱藏填空答案；點 <b>「顯示正解 / 顯示解答」</b> 按鈕可展開答案。'
             '也可用上方 <b>「全部顯示解答」</b> 一次切換整頁。</div>'
+            f'<div class="unit-prog">📖 本單元讀過 <b id="up-txt">0 / {len(unit["kps"])}</b> 考點'
+            '<span class="upbar"><i id="up-bar"></i></span>'
+            '<button class="up-all" onclick="markAllKp()">全部標記／取消</button>'
+            '<span class="up-hint">（點各考點前的 ○ 標記；會同步到概念地圖）</span></div>'
             f'{_part0_html(unit.get("part0"))}'
             '<div class="part">Part 1　建構概念：'
             f'{unit.get("part1_label","五大考點")} <small>先把觀念與公式打穩，再上戰場</small></div>'
@@ -295,6 +318,9 @@ def build_html(unit, units):
 <script src="{KATEX}/contrib/auto-render.min.js"></script>
 <script>
 {js}</script>
+<script>
+window.MMSLUG="{unit["slug"]}";window.MMKPS={[k["id"] for k in unit["kps"]]};
+{PROGRESS_JS}</script>
 </body>
 </html>
 """
