@@ -232,7 +232,7 @@ def _svg_net():
         x1, y1 = pos[a]; x2, y2 = pos[b]
         col = "#c0392b" if c >= 4 else ("#d2843a" if c >= 2 else "#d2c2ca")
         op = 0.95 if c >= 4 else (0.85 if c >= 2 else 0.6)
-        parts.append(f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" '
+        parts.append(f'<line class="netedge" data-a="{a}" data-b="{b}" x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" '
                      f'stroke="{col}" stroke-width="{c*1.6+1.4:.1f}" opacity="{op}" stroke-linecap="round"/>')
     # 中央註
     parts.append(f'<ellipse cx="{cx}" cy="{cy}" rx="78" ry="26" fill="#fffaf6" opacity="0.92"/>')
@@ -245,7 +245,8 @@ def _svg_net():
         fill, txt = heat(w)
         nm = ABBR[s]
         nf = 12.5 if len(nm) <= 2 else 10.5
-        parts.append(f'<g class="mnode" data-u="{s}" onclick="nodeClick(event,\'{s}\')">')
+        parts.append(f'<g class="mnode" data-u="{s}" onclick="nodeClick(event,\'{s}\')" '
+                     f'onmouseenter="netHi(\'{s}\')" onmouseleave="netClr()">')
         parts.append(f'<a href="{UNIT_FILE[s]}">')
         parts.append(f'<circle class="nbg" cx="{x:.0f}" cy="{y:.0f}" r="{r:.0f}" fill="{fill}" stroke="#fff" stroke-width="2"/>')
         parts.append(f'<text x="{x:.0f}" y="{y-1:.0f}" text-anchor="middle" font-size="{nf}" font-weight="800" fill="{txt}">{nm}</text>')
@@ -357,6 +358,12 @@ def build():
           "document.querySelectorAll('.cm-board').forEach(x=>x.classList.toggle('marking',window.markMode));}"
           "function nodeClick(e,u){if(window.markMode){e.preventDefault();e.stopPropagation();toggleRead(u);}}"
           "function resetRead(){if(confirm('清除所有已讀標記？')){localStorage.removeItem(RK);aR();}}"
+          "function netHi(u){if(window.markMode)return;var nb=new Set([u]);"
+          "document.querySelectorAll('#v-net .netedge').forEach(l=>{var on=(l.dataset.a===u||l.dataset.b===u);"
+          "l.style.opacity=on?'1':'0.07';if(on){nb.add(l.dataset.a);nb.add(l.dataset.b);}});"
+          "document.querySelectorAll('#v-net .mnode').forEach(n=>{n.style.opacity=nb.has(n.dataset.u)?'1':'0.16';});}"
+          "function netClr(){document.querySelectorAll('#v-net .netedge').forEach(l=>l.style.opacity='');"
+          "document.querySelectorAll('#v-net .mnode').forEach(n=>n.style.opacity='');}"
           "aR();")
     html = f"""<!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
