@@ -9,6 +9,8 @@ r"""數據分析單元 · 單一來源內容（單元6：數據分析／統計�
 ※ 本檔逐考點建置中；先 Part 0＋考點 1。
 """
 
+import corr_figs  # 相關係數三張教學圖（重製投影片）
+
 # 散佈圖＋迴歸直線：負相關（點呈右下走勢），藍圈為平均點 M=(x̄,ȳ)
 SVG_REG = r'''<svg viewBox="0 0 210 150" width="210" height="150" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,'Segoe UI',sans-serif">
   <line x1="34" y1="14" x2="34" y2="126" stroke="#9aa6b2" stroke-width="1.4"/>
@@ -129,6 +131,9 @@ UNIT = {
                 {"label": r"強弱判斷", "lines": [
                     r"\(|r|\) 越接近 \(1\)：點越貼近一條直線、相關性越 **強**；",
                     r"\(|r|\) 越接近 \(0\)：點越分散、相關性越 **弱**。"]},
+                {"svg": corr_figs.SVG_CORR_SPECTRUM, "full": True, "caption": r"**相關係數光譜**：\(r\) 從 \(-1\)（完全負相關）到 \(+1\)（完全正相關）、\(0\) 為無線性相關；越接近兩端，點越貼近一條直線"},
+                {"svg": corr_figs.SVG_CORR_ZERO, "full": True, "caption": r"**\(r=0\) 的三種樣子**：水平、垂直、零散分布的 \(r\) 都是 \(0\)；「無明顯線性相關」\(\neq\)「沒有任何關係」"},
+                {"svg": corr_figs.SVG_CORR_QUAD, "full": True, "caption": r"**公式背後**：用平均線 \(\bar x,\bar y\) 分四象限——同向（第 1、3 象限）給正貢獻、反向（第 2、4）給負貢獻，總和即 \(S_{xy}\)；再除以波動標準化到 \([-1,1]\)"},
                 {"label": r"對線性變換的影響", "lines": [
                     r"對 \(X,Y\) 各做線性變換 \(X'=aX+b\)、\(Y'=cY+d\)：",
                     r"若 \(ac>0\)：新相關係數 \(r'=\) 【\(r\)】（不變）；",
