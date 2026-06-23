@@ -234,6 +234,10 @@ def build_docx(unit, mode, out_path):
     p0 = unit.get("part0")
     if p0:
         _heading(doc, "Part 0　引起動機：" + p0.get("heading", "出題趨勢與落點"), level=1)
+        if p0.get("opener"):
+            of = p0["opener"]
+            _wo = 5.4 if of.get("full") else (2.9 if of.get("wide") else (2.1 if of.get("med") else 1.25))
+            _add_svg_figure(doc, of["svg"], of.get("caption"), _wo)
         _label(doc, "近十年出題趨勢（106–115）")
         yrs = p0["trend_table"]["years"]
         cnts = p0["trend_table"]["counts"]

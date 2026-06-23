@@ -34,6 +34,8 @@ SVG_CUBE = r'''<svg viewBox="0 0 200 175" width="200" height="175" xmlns="http:/
 # 外積 u×v：同時垂直 u、v；長度 = u,v 張成的平行四邊形面積
 SVG_CROSS = r'''<svg viewBox="0 0 256 200" width="256" height="200" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif"><polygon points="92,150 182,134 248,168 158,184" fill="#eef0f5" stroke="#9aa6b2" stroke-width="1" stroke-dasharray="4 3"/><line x1="92" y1="150" x2="182" y2="134" stroke="#1f3a93" stroke-width="2.2"/><polygon points="182,134 173.7,139.6 172.3,131.6" fill="#1f3a93"/><line x1="92" y1="150" x2="158" y2="184" stroke="#1f3a93" stroke-width="2.2"/><polygon points="158,184 148.0,183.4 151.8,176.2" fill="#1f3a93"/><line x1="92" y1="150" x2="92" y2="52" stroke="#c0392b" stroke-width="2.6"/><polygon points="92,52 96.1,61.1 87.9,61.1" fill="#c0392b"/><path d="M92,137 L103,137 L103,148" fill="none" stroke="#9aa6b2" stroke-width="1"/><circle cx="92" cy="150" r="2.6" fill="#2c3e50"/><text x="196" y="130" font-size="13" font-weight="bold" font-style="italic" fill="#1f3a93" text-anchor="middle">v</text><line x1="190" y1="119.3" x2="200" y2="119.3" stroke="#1f3a93" stroke-width="1.1"/><polygon points="203,119.3 199,117.1 199,121.5" fill="#1f3a93"/><text x="150" y="200" font-size="13" font-weight="bold" font-style="italic" fill="#1f3a93" text-anchor="middle">u</text><line x1="144" y1="189.3" x2="154" y2="189.3" stroke="#1f3a93" stroke-width="1.1"/><polygon points="157,189.3 153,187.1 153,191.5" fill="#1f3a93"/><text x="48" y="40" font-size="13" font-weight="bold" font-style="italic" fill="#c0392b" text-anchor="middle">u</text><line x1="42" y1="29.3" x2="52" y2="29.3" stroke="#c0392b" stroke-width="1.1"/><polygon points="55,29.3 51,27.1 51,31.5" fill="#c0392b"/><text x="62" y="40" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="middle">×</text><text x="76" y="40" font-size="13" font-weight="bold" font-style="italic" fill="#c0392b" text-anchor="middle">v</text><line x1="70" y1="29.3" x2="80" y2="29.3" stroke="#c0392b" stroke-width="1.1"/><polygon points="83,29.3 79,27.1 79,31.5" fill="#c0392b"/><text x="180" y="158" font-size="9.5" fill="#5a4a52" text-anchor="middle">面積 = |u×v|</text></svg>'''
 
+import openers  # Part 0 開場「闖關知識地圖」
+
 UNIT = {
     "slug": "space",
     "file": "115學測數學_空間向量.html",
@@ -47,6 +49,8 @@ UNIT = {
     "foot": "115 學測數學 · 空間向量 · 學測數學重點整理",
 
     "part0": {
+        "opener": {"svg": openers.OPENERS["space"], "full": True,
+                   "caption": r"**必考重點地圖**：①坐標·距離 → ②內積·夾角·垂直（核心）→ ③外積·體積（行列式）→ ④平面與點到平面距離"},
         "heading": "為什麼空間向量是高 CP 值的拉分單元",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],

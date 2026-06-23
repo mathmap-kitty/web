@@ -27,6 +27,8 @@ SVG_SEQ = r'''<svg viewBox="0 0 360 124" width="360" height="124" xmlns="http://
   <g font-size="9.5" fill="#c0392b"><text x="34" y="98">×r</text><text x="64" y="88">×r</text><text x="126" y="81">×r</text><text x="248" y="71">×r</text></g>
 </svg>'''
 
+import openers  # Part 0 開場「闖關知識地圖」
+
 UNIT = {
     "slug": "seq",
     "file": "115學測數學_數列與級數.html",
@@ -40,6 +42,8 @@ UNIT = {
     "foot": "115 學測數學 · 數列與級數 · 學測數學重點整理",
 
     "part0": {
+        "opener": {"svg": openers.OPENERS["seq"], "full": True,
+                   "caption": r"**必考重點地圖**：①等差數列 → ②等比數列（核心）→ ③遞迴·歸納法 → ④級數求和"},
         "heading": "為什麼數列與級數是規律題的基本功",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],

@@ -5,6 +5,8 @@ r"""三角單元 · 單一來源內容。
 ※ 本檔目前含 Part 0＋考點 1（三角比/弧度）；考點 2–7 與 Part 2/3 待補。
 """
 
+import openers  # Part 0 開場視覺概念圖（含老師 Q 版角色）
+
 SVG_RIGHT_TRI = """<svg viewBox="0 0 250 165" width="250" height="165" xmlns="http://www.w3.org/2000/svg" font-family="'Microsoft JhengHei',system-ui,sans-serif">
 <polygon points="35,135 215,135 215,40" fill="#fdeef2" stroke="#8c2740" stroke-width="2.5"/>
 <path d="M215,118 L198,118 L198,135" fill="none" stroke="#8c2740" stroke-width="1.6"/>
@@ -114,6 +116,8 @@ UNIT = {
     "foot": "115 學測數學 · 三角 · 學測數學重點整理",
 
     "part0": {
+        "opener": {"svg": openers.OPENERS["trig"], "full": True,
+                   "caption": r"**必考重點地圖**：基礎＝三角比·單位圓；兩大主幹——**解三角形**（正餘弦定理★★ → 測量·面積）、**三角函數**（圖形疊合★★★、和差·倍角★★★）。星越多＝越常考"},
         "heading": "為什麼三角是必爭的命題主戰場",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],

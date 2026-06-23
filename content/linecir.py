@@ -107,6 +107,8 @@ SVG_REFLECT = _reflect_fig()
 SVG_HALFPLANE = _halfplane_fig()
 SVG_PTCIRCLE = _ptcircle_fig()
 
+import openers  # Part 0 開場「闖關知識地圖」
+
 UNIT = {
     "slug": "linecir",
     "file": "115學測數學_直線與圓.html",
@@ -120,6 +122,8 @@ UNIT = {
     "foot": "115 學測數學 · 直線與圓 · 學測數學重點整理",
 
     "part0": {
+        "opener": {"svg": openers.OPENERS["linecir"], "full": True,
+                   "caption": r"**必考重點地圖**：①直線·斜率 → ②距離·中點 → ③圓方程式 → ④直線與圓·相切弦長（核心）"},
         "heading": "為什麼直線與圓是近年爆發的高頻單元",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],

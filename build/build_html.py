@@ -199,8 +199,10 @@ def _part0_html(p0):
     heading = p0.get("heading", "出題趨勢與落點")
     sub = p0.get("sub", "先抓近十年趨勢與落點，再進入觀念")
     fig = f'<ul class="points">{_point_html(p0["fig"])}</ul>' if p0.get("fig") else ""
+    opener = f'<ul class="points">{_point_html(p0["opener"])}</ul>' if p0.get("opener") else ""
     return (f'<div class="part" id="part0">Part 0　引起動機：{heading}'
             f'<small>{sub}</small></div>'
+            f'{opener}'
             '<div class="card">'
             '<span class="label">近十年出題趨勢（106–115）</span>'
             f"{table}"

@@ -108,6 +108,8 @@ def _partition_fig():
 
 SVG_PARTITION = _partition_fig()
 
+import openers  # Part 0 開場「闖關知識地圖」
+
 UNIT = {
     "slug": "prob",
     "file": "115學測數學_排列組合與機率.html",
@@ -121,6 +123,8 @@ UNIT = {
     "foot": "115 學測數學 · 排列組合與機率 · 學測數學重點整理",
 
     "part0": {
+        "opener": {"svg": openers.OPENERS["prob"], "full": True,
+                   "caption": r"**必考重點地圖**：①計數·排列 → ②組合·分組 → ③古典機率（核心：好的情形÷全部）→ ④條件機率·期望值。星越多＝越常考"},
         "heading": "為什麼排列組合與機率是必爭的高分單元",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],
