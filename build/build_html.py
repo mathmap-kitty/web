@@ -54,6 +54,11 @@ def _analytics():
 
 ANALYTICS = _analytics()
 
+# 頁尾隱私說明（GA／Clarity 流量統計告知），全站一致；要改文案：這裡＋三個靜態檔（index、概念地圖、脈絡地圖）。
+PRIVACY_HTML = ('<div style="text-align:center;font-size:12px;color:#9a857c;'
+                'padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 '
+                'Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>')
+
 
 def _asset(name):
     return io.open(os.path.join(HERE, "assets", name), encoding="utf-8").read()
@@ -348,6 +353,7 @@ def build_html(unit, units):
 {_toolbar(unit, units)}
 <div class="wrap">
 {body}
+{PRIVACY_HTML}
 </div>
 <script src="{KATEX}/katex.min.js"></script>
 <script src="{KATEX}/contrib/auto-render.min.js"></script>

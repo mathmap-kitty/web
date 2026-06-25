@@ -334,5 +334,6 @@
 renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
 function flt(btn,f){document.querySelectorAll('.filterbar button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.xq').forEach(c=>{c.style.display=(f==='all'||c.dataset.juan===f)?'':'none';});document.querySelectorAll('.part').forEach(p=>{let g=p.nextElementSibling;while(g&&!g.classList.contains('xq-grid'))g=g.nextElementSibling;if(g){let vis=[...g.children].some(c=>c.style.display!=='none');p.style.display=vis?'':'none';p.nextElementSibling.style.display=vis?'':'none';}});}function toggleXq(h){var d=h.nextElementSibling;var o=d.classList.toggle('open');var c=h.querySelector('.caret');if(c)c.textContent=o?'\u2212':'\uFF0B';}function ts(b){var s=b.nextElementSibling;var o=s.classList.toggle('open');b.classList.toggle('active',o);b.textContent=o?b.dataset.h:b.dataset.s;}
 </script>
+<div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
 </body>
 </html>
