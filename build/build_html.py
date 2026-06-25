@@ -197,14 +197,34 @@ def _kp_html(kp):
                      '<button class="sol-btn" data-s="看答案" data-h="收起答案" '
                      'onclick="ts(this)">看答案</button>'
                      f'<div class="sol">{ans}</div></div>')
+    prereq = ""
+    pr = kp.get("prereq")
+    if pr:
+        items = "".join(f"<li>{html_rich(x)}</li>" for x in pr) if isinstance(pr, (list, tuple)) \
+            else f"<li>{html_rich(pr)}</li>"
+        prereq = ('<div class="prereq"><span class="pr-tag">🔑 先備</span>'
+                  f'<ul class="pr-list">{items}</ul>'
+                  '<span class="pr-note">這幾項看不懂，先回去補再往下會更省力</span></div>')
+    worked = ""
+    w = kp.get("worked")
+    if w:
+        steps = "".join(
+            f'<li><span class="wk-do">{html_rich(st["do"])}</span>'
+            f'<span class="wk-why">{html_rich(st["why"])}</span></li>' for st in w["steps"])
+        wans = f'<div class="wk-ans">答：{html_rich(w["ans"])}</div>' if w.get("ans") else ""
+        worked = ('<div class="worked"><div class="wk-head">👉 先看示範一題（每步都附「為什麼」）</div>'
+                  f'<div class="wk-q">{html_rich(w["q"])}</div>'
+                  f'<ol class="wk-steps">{steps}</ol>{wans}</div>')
     return (f'<div class="card" id="{kp["id"]}">'
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
             f'title="標記此考點已讀" aria-label="標記已讀"></button>'
             f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}</p>'
+            f'{prereq}'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
             f'<span class="label">重點與公式</span><ul class="points">{points}</ul>'
             f'{tables}'
             f'{mis}'
+            f'{worked}'
             f'<span class="label">歷屆試題</span>{qs}'
             f"{strategy}{selfcheck}</div>")
 
