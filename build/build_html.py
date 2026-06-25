@@ -26,6 +26,35 @@ PROGRESS_JS = (
     "upUnit();")
 
 
+# 流量分析：GA4 + Microsoft Clarity，統一插在每頁 <head>，11 個單元頁全部生效。
+# 之後要換或停用，只改下面兩個 ID 即可（空字串＝該段不輸出）。
+GA4_ID = "G-KQVPGYJ1FK"
+CLARITY_ID = "xcgidr4emy"  # Microsoft Clarity Project ID
+
+
+def _analytics():
+    out = []
+    if GA4_ID:
+        s = ('<!-- Google Analytics (GA4) -->\n'
+             '<script async src="https://www.googletagmanager.com/gtag/js?id=GA4ID"></script>\n'
+             '<script>window.dataLayer=window.dataLayer||[];'
+             'function gtag(){dataLayer.push(arguments);}'
+             "gtag('js',new Date());gtag('config','GA4ID');</script>")
+        out.append(s.replace("GA4ID", GA4_ID))
+    if CLARITY_ID:
+        s = ('<!-- Microsoft Clarity -->\n'
+             '<script type="text/javascript">'
+             '(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};'
+             't=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;'
+             'y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})'
+             '(window,document,"clarity","script","CLARITYID");</script>')
+        out.append(s.replace("CLARITYID", CLARITY_ID))
+    return ("\n".join(out) + "\n") if out else ""
+
+
+ANALYTICS = _analytics()
+
+
 def _asset(name):
     return io.open(os.path.join(HERE, "assets", name), encoding="utf-8").read()
 
@@ -310,7 +339,7 @@ def build_html(unit, units):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{unit.get("page_title", unit["title"])}</title>
+{ANALYTICS}<title>{unit.get("page_title", unit["title"])}</title>
 <link rel="stylesheet" href="{KATEX}/katex.min.css">
 <style>
 {css}</style>

@@ -20,25 +20,24 @@ SVG_RIGHT_TRI = """<svg viewBox="0 0 250 165" width="250" height="165" xmlns="ht
 <text x="110" y="80" font-size="13.5" fill="#1f6f78">斜邊</text>
 </svg>"""
 
-SVG_GEN_ANGLE = """<svg viewBox="0 0 240 200" width="240" height="200" xmlns="http://www.w3.org/2000/svg" font-family="'Microsoft JhengHei',system-ui,sans-serif">
-<line x1="15" y1="108" x2="225" y2="108" stroke="#aaa" stroke-width="1.2"/>
-<line x1="115" y1="14" x2="115" y2="196" stroke="#aaa" stroke-width="1.2"/>
-<text x="228" y="112" font-size="12" fill="#888">x</text>
-<text x="118" y="16" font-size="12" fill="#888">y</text>
-<circle cx="115" cy="108" r="76" fill="none" stroke="#c9b3bb" stroke-width="1.5"/>
-<line x1="115" y1="108" x2="57" y2="59" stroke="#8c2740" stroke-width="2.3"/>
-<line x1="57" y1="59" x2="57" y2="108" stroke="#1f6f78" stroke-width="1.6" stroke-dasharray="4 3"/>
-<line x1="115" y1="108" x2="57" y2="108" stroke="#1f6f78" stroke-width="3"/>
-<path d="M150,108 A35,35 0 0 0 90,86" fill="none" stroke="#b03a5b" stroke-width="2"/>
-<text x="128" y="100" fill="#b03a5b" font-size="14">θ</text>
-<circle cx="57" cy="59" r="3.5" fill="#8c2740"/>
-<text x="14" y="50" font-size="12.5" fill="#8c2740">P(cos θ, sin θ)</text>
-<text x="30" y="88" font-size="12.5" fill="#1f6f78">sin θ</text>
-<text x="70" y="124" font-size="12.5" fill="#1f6f78">cos θ</text>
-<text x="150" y="44" font-size="11.5" fill="#9a857c">Ⅰ 全＋</text>
-<text x="20" y="44" font-size="11.5" fill="#9a857c">Ⅱ sin＋</text>
-<text x="20" y="180" font-size="11.5" fill="#9a857c">Ⅲ tan＋</text>
-<text x="150" y="180" font-size="11.5" fill="#9a857c">Ⅳ cos＋</text>
+SVG_GEN_ANGLE = """<svg viewBox="0 0 264 210" width="264" height="210" xmlns="http://www.w3.org/2000/svg" font-family="'Microsoft JhengHei',system-ui,sans-serif">
+<line x1="12" y1="122" x2="248" y2="122" stroke="#9aa6b2" stroke-width="1.2"/>
+<line x1="100" y1="16" x2="100" y2="202" stroke="#9aa6b2" stroke-width="1.2"/>
+<text x="251" y="126" font-size="12" fill="#888">x</text>
+<text x="104" y="18" font-size="12" fill="#888">y</text>
+<circle cx="100" cy="122" r="80" fill="none" stroke="#c9b3bb" stroke-width="1.6"/>
+<line x1="100" y1="122" x2="149.3" y2="122" stroke="#1f6f78" stroke-width="3"/>
+<line x1="149.3" y1="122" x2="149.3" y2="59.0" stroke="#1f6f78" stroke-width="1.8" stroke-dasharray="4 3"/>
+<polyline points="140.3,122 140.3,113 149.3,113" fill="none" stroke="#1f6f78" stroke-width="1.1"/>
+<line x1="100" y1="122" x2="149.3" y2="59.0" stroke="#8c2740" stroke-width="2.3"/>
+<path d="M128.0,122.0 A28 28 0 0 0 117.2,99.9" fill="none" stroke="#b03a5b" stroke-width="2"/>
+<text x="133" y="113" font-size="14" fill="#b03a5b">θ</text>
+<circle cx="149.3" cy="59.0" r="3.6" fill="#8c2740"/>
+<text x="156.3" y="56.0" font-size="12.5" fill="#8c2740" font-weight="bold">P (cos θ, sin θ)</text>
+<text x="111.6" y="87.5" font-size="12.5" fill="#8c2740" font-style="italic">1</text>
+<text x="124.6" y="138" font-size="12.5" fill="#1f6f78" text-anchor="middle">cos θ</text>
+<text x="154.3" y="94.5" font-size="12.5" fill="#1f6f78">sin θ</text>
+<text x="87" y="137" font-size="11.5" fill="#2b2b2b">O</text>
 </svg>"""
 
 # 三個相似直角三角形：基本 → 底邊÷cosθ → 高÷sinθ（呈現 tan 與倒數關係）
@@ -152,7 +151,7 @@ UNIT = {
                 {"label": r"弧度與角度換算", "lines": [
                     r"\(180°=\) 【\(\pi\)】 弧度；角度 \(\times\dfrac{\pi}{180}=\) 弧度；",
                     r"[[小心 \(x°\) 與 \(x\)||\(\cos x°\) 是「\(x\) 度」（要先乘 \(\pi/180\) 化弧度）；\(\cos x\) 是「\(x\) 弧度」。例如 \(x=2\) 時，\(\cos2°\approx0.999\) 但 \(\cos2\,(弧度)\approx-0.416\)，差很多！]]：\(\cos x°\) 與 \(\cos x\) 是 **兩回事**。"]},
-                {"svg": SVG_GEN_ANGLE, "caption": r"廣義角：**值** 看與 \(x\) 軸的夾角、**正負** 看象限"},
+                {"svg": SVG_GEN_ANGLE, "caption": r"**廣義角的單位圓定義**：任一角 \(\theta\) 的終邊與單位圓（半徑 \(=1\)）交於 \(P\)，\(P\) 的坐標即 \((\cos\theta,\sin\theta)\)——\(\cos\theta\) 是橫坐標、\(\sin\theta\) 是縱坐標；正負看象限（ASTC）"},
                 {"label": r"廣義角", "lines": [
                     r"終邊上取點 \((x,y)\)、到原點距離 \(r\)：\(\sin\theta=\dfrac yr\)、\(\cos\theta=\dfrac xr\)、\(\tan\theta=\dfrac yx\)；",
                     r"**值看與 \(x\) 軸的夾角**（參考角）、**正負看象限**（[[ASTC||第一象限 **A**ll 全正；第二象限只有 **S**in 正；第三象限只有 **T**an 正；第四象限只有 **C**os 正。]]）；",

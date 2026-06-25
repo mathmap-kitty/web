@@ -3,10 +3,12 @@
 節點顏色＝該單元近十年大考份量（取自各單元 Part 0 趨勢表合計），有數據根據。
 視覺重用 build/assets/style.css。本檔先完成「② 依賴鏈」，①③ 之後補。
 """
-import os, io
+import os, io, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, HERE)
+from build_html import ANALYTICS  # noqa: E402  共用 GA4 + Clarity 追蹤碼
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 OUT = os.path.join(ROOT, "dist", "115學測數學_概念地圖.html")
 
@@ -448,7 +450,7 @@ def build():
     html = f"""<!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>學測數A · 概念地圖（從大考反推）</title>
+{ANALYTICS}<title>學測數A · 概念地圖（從大考反推）</title>
 <style>{css}
 {extra}</style></head><body>
 {body}

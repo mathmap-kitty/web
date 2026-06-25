@@ -10,6 +10,8 @@ import openpyxl
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, HERE)
+from build_html import ANALYTICS  # noqa: E402  共用 GA4 + Clarity 追蹤碼
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更正版.xlsx")
 OUT = os.path.join(ROOT, "dist", "115學測數學_跨單元整合_脈絡地圖.html")
@@ -552,7 +554,7 @@ def build():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>學測數學 · 跨單元整合脈絡地圖（106–115）</title>
+{ANALYTICS}<title>學測數學 · 跨單元整合脈絡地圖（106–115）</title>
 <link rel="stylesheet" href="{KATEX}/katex.min.css">
 <style>
 {css}
