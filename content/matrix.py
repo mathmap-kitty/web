@@ -26,7 +26,7 @@ SVG_LINTRANS = r'''<svg viewBox="0 0 212 150" width="212" height="150" xmlns="ht
   </g>
 </svg>'''
 
-import openers  # Part 0 開場「闖關知識地圖」
+import soil_maps  # Part 0 單元知識地圖（SOIL 章節圖）
 
 UNIT = {
     "slug": "matrix",
@@ -41,8 +41,8 @@ UNIT = {
     "foot": "115 學測數學 · 矩陣學測數學重點整理　|　點按鈕逐題核對，先想再看答案效果最好。",
 
     "part0": {
-        "opener": {"svg": openers.OPENERS["matrix"], "full": True,
-                   "caption": r"**必考重點地圖**：①矩陣·乘法 → ②高次方 → ③反方陣·行列式（核心）→ ④平面線性變換"},
+        "opener": {"svg": soil_maps.SLIDES["matrix"], "hero": True,
+                   "caption": r"**單元知識地圖**：先備 → 各考點（★越多＝越常考） → 跨單元最愛綁考 → 帶走一句話"},
         "heading": "為什麼矩陣是穩拿分的單元",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],

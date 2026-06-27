@@ -128,9 +128,10 @@ def _point_html(p):
     if isinstance(p, dict) and "svg" in p:
         cap = f'<figcaption>{html_rich(p["caption"])}</figcaption>' if p.get("caption") else ""
         # 圖寬四段：預設 155px（小圖）／med 250px／wide 362px／full 560px（大型概念圖）
-        style = ' style="max-width:560px"' if p.get("full") else (
+        style = ' style="max-width:960px"' if p.get("hero") else (
+            ' style="max-width:560px"' if p.get("full") else (
             ' style="max-width:362px"' if p.get("wide") else (
-            ' style="max-width:250px"' if p.get("med") else ""))
+            ' style="max-width:250px"' if p.get("med") else "")))
         return f'<li class="figli"><figure class="tfig"{style}>{p["svg"]}{cap}</figure></li>'
     if isinstance(p, dict):
         lab = html_rich(p["label"]) + "："

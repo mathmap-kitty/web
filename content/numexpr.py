@@ -134,7 +134,7 @@ SVG_ABSCASES = r'''<svg viewBox="0 0 330 198" width="330" height="198" xmlns="ht
   </g>
 </svg>'''
 
-import openers  # Part 0 開場「闖關知識地圖」
+import soil_maps  # Part 0 單元知識地圖（SOIL 章節圖）
 
 UNIT = {
     "slug": "numexpr",
@@ -149,8 +149,8 @@ UNIT = {
     "foot": "115 學測數學 · 數與式 · 學測數學重點整理",
 
     "part0": {
-        "opener": {"svg": openers.OPENERS["numexpr"], "full": True,
-                   "caption": r"**必考重點地圖**：①實數系·分類 → ②絕對值（核心）→ ③數線·分點·根號 → ④乘法公式·算幾不等式"},
+        "opener": {"svg": soil_maps.SLIDES["numexpr"], "hero": True,
+                   "caption": r"**單元知識地圖**：先備 → 各考點（★越多＝越常考） → 跨單元最愛綁考 → 帶走一句話"},
         "heading": "為什麼數與式是穩拿分的入門單元",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],

@@ -19,7 +19,7 @@ SVG_VECPARA = r'''<svg viewBox="0 0 224 150" width="224" height="150" xmlns="htt
 # 正射影：a 在 b 上的投影長 = |a|cosθ
 SVG_PROJ = r'''<svg viewBox="0 0 210 144" width="210" height="144" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Microsoft JhengHei',system-ui,sans-serif"><line x1="30" y1="112" x2="105.6" y2="112" stroke="#1f8a5b" stroke-width="5" stroke-opacity="0.35"/><line x1="30.0" y1="112.0" x2="186.0" y2="112.0" stroke="#2c3e50" stroke-width="1.8"/><polygon points="186.0,112.0 177.7,115.5 177.7,108.5" fill="#2c3e50"/><line x1="30.0" y1="112.0" x2="105.6" y2="52.9" stroke="#1f3a93" stroke-width="2.2"/><polygon points="105.6,52.9 101.3,60.8 97.0,55.2" fill="#1f3a93"/><line x1="105.6" y1="52.9" x2="105.6" y2="112" stroke="#888" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M95.6,112 L95.6,102 L105.6,102" fill="none" stroke="#888" stroke-width="1"/><path d="M56,112 A26 26 0 0 0 50.5,96.0" fill="none" stroke="#b03a5b" stroke-width="1.6"/><text x="60" y="106" font-size="11" fill="#b03a5b">θ</text><text x="68" y="132" font-size="10.5" fill="#1f8a5b" text-anchor="middle" font-weight="bold">|a|cos θ</text><text x="54" y="82" font-size="12" font-weight="bold" font-style="italic" fill="#1f3a93" text-anchor="middle">a</text><line x1="48.5" y1="72.4" x2="57.5" y2="72.4" stroke="#1f3a93" stroke-width="1.05"/><polygon points="60.5,72.4 56.8,70.5 56.8,74.3" fill="#1f3a93"/><text x="172" y="126" font-size="12" font-weight="bold" font-style="italic" fill="#2c3e50" text-anchor="middle">b</text><line x1="166.5" y1="116.4" x2="175.5" y2="116.4" stroke="#2c3e50" stroke-width="1.05"/><polygon points="178.5,116.4 174.8,114.5 174.8,118.3" fill="#2c3e50"/></svg>'''
 
-import openers  # Part 0 開場「闖關知識地圖」
+import soil_maps  # Part 0 單元知識地圖（SOIL 章節圖）
 
 UNIT = {
     "slug": "pvec",
@@ -34,8 +34,8 @@ UNIT = {
     "foot": "115 學測數學 · 平面向量 · 學測數學重點整理",
 
     "part0": {
-        "opener": {"svg": openers.OPENERS["pvec"], "full": True,
-                   "caption": r"**必考重點地圖**：①向量·平行 → ②線性組合·分點 → ③內積·正射影（核心）→ ④行列式·面積"},
+        "opener": {"svg": soil_maps.SLIDES["pvec"], "hero": True,
+                   "caption": r"**單元知識地圖**：先備 → 各考點（★越多＝越常考） → 跨單元最愛綁考 → 帶走一句話"},
         "heading": "為什麼平面向量是幾何題的萬用語言",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],

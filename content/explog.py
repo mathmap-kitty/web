@@ -84,7 +84,7 @@ def _explog4_fig():
 
 SVG_EXPLOG4 = _explog4_fig()
 
-import openers  # Part 0 開場「闖關知識地圖」
+import soil_maps  # Part 0 單元知識地圖（SOIL 章節圖）
 
 UNIT = {
     "slug": "explog",
@@ -99,8 +99,8 @@ UNIT = {
     "foot": "115 學測數學 · 指數與對數 · 學測數學重點整理",
 
     "part0": {
-        "opener": {"svg": openers.OPENERS["explog"], "full": True,
-                   "caption": r"**必考重點地圖**：①指數律 → ②對數運算·換底（核心）→ ③常用對數·位數 → ④指對函數圖形對稱"},
+        "opener": {"svg": soil_maps.SLIDES["explog"], "hero": True,
+                   "caption": r"**單元知識地圖**：先備 → 各考點（★越多＝越常考） → 跨單元最愛綁考 → 帶走一句話"},
         "heading": "為什麼指數與對數是計算題的得分關鍵",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],
