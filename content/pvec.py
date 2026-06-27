@@ -56,6 +56,11 @@ UNIT = {
             "num": "考點 1", "id": "kp1", "nav": "向量的表示與運算",
             "title": r"向量的表示、運算與平行",
             "intro": r"向量同時帶 **大小** 與 **方向**。先把向量「**坐標化**」，加減、係數積、長度、平行全部變成坐標的計算。",
+            "prereq": [
+                r"**坐標** \((x,y)\)、平面上的兩點",
+                r"**畢氏定理**（向量長度的根）",
+                r"基本的**比例**（平行判定用）",
+            ],
             "points": [
                 {"label": r"向量的表示", "lines": [
                     r"\(\overrightarrow{AB}=B-A=\) 【\((x_B-x_A,\,y_B-y_A)\)】（坐標 ＝ **終點減起點**）；",
@@ -79,6 +84,15 @@ UNIT = {
                 {"wrong": r"向量平行要長度相等", "right": r"平行只要方向相同／相反（坐標成比例）"},
                 {"wrong": r"\(|\vec v|=a+b\)", "right": r"\(|\vec v|=\sqrt{a^2+b^2}\)"},
             ],
+            "worked": {
+                "q": r"\(\vec u=(3,1)\)、\(\vec v=(1,2)\)，求 \(2\vec u-\vec v\)。",
+                "steps": [
+                    {"do": r"\(2\vec u=2(3,1)=(6,2)\)。",
+                     "why": r"係數積 ＝ 每個坐標都乘上係數。"},
+                    {"do": r"\(2\vec u-\vec v=(6,2)-(1,2)=(5,0)\)。",
+                     "why": r"向量加減 ＝ 對應坐標相加減。"},
+                ],
+            },
             "questions": [
                 {"tag": "向量運算範例", "level": "★☆☆（基礎）", "core": "坐標運算 · 長度 · 單位向量",
                  "body": r"設 \(A(1,2)\)、\(B(4,6)\)。",
@@ -109,6 +123,11 @@ UNIT = {
             "num": "考點 2", "id": "kp2", "nav": "線性組合、分點與面積比",
             "title": r"線性組合、分點與面積比",
             "intro": r"用兩個不平行向量當 **基底**，把平面上每個向量都「組合」出來。重點是 **分點公式**、**重心**，以及把 **面積比** 直接讀成線性組合的係數。",
+            "prereq": [
+                r"**向量加減、係數積**（考點 1）",
+                r"**內分點**的比例概念",
+                r"「**基底**」＝兩個不平行的向量",
+            ],
             "points": [
                 {"label": r"線性組合（基底）", "lines": [
                     r"平面上任一向量都可 **唯一** 寫成 \(\vec w=a\vec u+b\vec v\)（\(\vec u,\vec v\) 不平行，為一組 **基底**）。"]},
@@ -130,6 +149,15 @@ UNIT = {
                 {"wrong": r"\(P\) 在直線 \(AB\) 上係數和任意", "right": r"\(\overrightarrow{OP}=\alpha\overrightarrow{OA}+\beta\overrightarrow{OB}\) 在直線 \(AB\) 上 \(\Leftrightarrow\alpha+\beta=1\)"},
                 {"wrong": r"\(\overrightarrow{AP}=\alpha\overrightarrow{AB}+\beta\overrightarrow{AC}\) 時 \(\triangle ABP\) 佔 \(\alpha\)", "right": r"\(\triangle ABP\) 佔 **\(\beta\)**（另一邊 \(\overrightarrow{AC}\) 的係數）"},
             ],
+            "worked": {
+                "q": r"\(P\) 內分 \(\overline{AB}\) 為 \(\overline{AP}:\overline{PB}=2:1\)，用 \(\overrightarrow{OA}\)、\(\overrightarrow{OB}\) 表示 \(\overrightarrow{OP}\)。",
+                "steps": [
+                    {"do": r"\(\overline{AP}:\overline{PB}=2:1\)，即 \(m=2\)、\(n=1\)。",
+                     "why": r"分點公式 \(\overrightarrow{OP}=\dfrac{n\,\overrightarrow{OA}+m\,\overrightarrow{OB}}{m+n}\)，係數 **對角交叉**（靠 \(B\) 那段的比 \(m\) 配給 \(\overrightarrow{OB}\)）。"},
+                    {"do": r"\(\overrightarrow{OP}=\dfrac{1\cdot\overrightarrow{OA}+2\cdot\overrightarrow{OB}}{2+1}=\dfrac{\overrightarrow{OA}+2\overrightarrow{OB}}{3}\)。",
+                     "why": r"\(P\) 靠近 \(B\)，所以 \(\overrightarrow{OB}\) 的權重（\(2\)）較大，合理。"},
+                ],
+            },
             "questions": [
                 {"tag": "111 數A · 多選 9", "level": "★★★（難）", "core": "線性組合的係數 ↔ 面積比",
                  "body": r"已知 \(P\) 為 \(\triangle ABC\) 內一點，且 \(\overrightarrow{AP}=a\overrightarrow{AB}+b\overrightarrow{AC}\)（\(a,b\) 為相異實數）。設 \(Q,R\) 在同一平面上，且 \(\overrightarrow{AQ}=b\overrightarrow{AB}+a\overrightarrow{AC}\)、\(\overrightarrow{AR}=a\overrightarrow{AB}+(b-0.05)\overrightarrow{AC}\)。試選出正確的選項。",
@@ -170,6 +198,11 @@ UNIT = {
             "num": "考點 3", "id": "kp3", "nav": "內積：夾角、垂直、正射影",
             "title": r"內積：夾角、垂直與正射影",
             "intro": r"內積是平面向量的「**萬用尺**」——一個式子同時量長度、夾角、垂直，還能求 **正射影**。（與空間向量的內積完全同理。）",
+            "prereq": [
+                r"**向量坐標、長度**（考點 1）",
+                r"**三角的 \(\cos\)**（求夾角會用到）",
+                r"「**垂直**」的概念",
+            ],
             "points": [
                 {"label": r"內積（兩種算法）", "lines": [
                     r"坐標式：\(\vec u\cdot\vec v=\) 【\(u_1v_1+u_2v_2\)】；",
@@ -189,6 +222,15 @@ UNIT = {
                 {"wrong": r"要兩向量等長才垂直", "right": r"垂直只看 **內積為 \(0\)**，與長度無關"},
                 {"wrong": r"\(\cos\theta\) 等於內積本身", "right": r"要除兩長度：\(\cos\theta=\dfrac{\vec u\cdot\vec v}{|\vec u||\vec v|}\)"},
             ],
+            "worked": {
+                "q": r"\(\vec u=(3,1)\)、\(\vec v=(1,2)\)，求 \(\vec u\cdot\vec v\)，並判斷夾角是銳角、直角還是鈍角。",
+                "steps": [
+                    {"do": r"內積 \(\vec u\cdot\vec v=3\cdot1+1\cdot2=5\)。",
+                     "why": r"坐標式內積 ＝ 對應坐標相乘再相加。"},
+                    {"do": r"\(5>0\) → 兩向量夾角是 **銳角**。",
+                     "why": r"內積 正→銳角、負→鈍角、零→直角；只問哪一種時看正負即可，不必算到底。"},
+                ],
+            },
             "questions": [
                 {"tag": "109 數A · 單選 2", "level": "★★☆（中）", "core": "內積移項 → 垂直",
                  "body": r"相異四點 \(A,B,C,D\)，已知內積 \(\overrightarrow{AB}\cdot\overrightarrow{AC}=\overrightarrow{AB}\cdot\overrightarrow{AD}\)。試選出正確的選項。",
@@ -226,6 +268,11 @@ UNIT = {
             "num": "考點 4", "id": "kp4", "nav": "行列式與平行四邊形面積",
             "title": r"行列式與平行四邊形面積",
             "intro": r"兩向量「張成」的平行四邊形面積 ＝ **行列式絕對值**。善用行列式「**對每個向量都是線性**」的性質，許多面積比題不必算坐標就能解。",
+            "prereq": [
+                r"**向量坐標**（考點 1）",
+                r"**二階行列式** \(ad-bc\)（也可現學）",
+                r"**平行四邊形、三角形面積**的概念",
+            ],
             "points": [
                 {"label": r"二階行列式", "lines": [
                     r"\(\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=\) 【\(ad-bc\)】。"]},
@@ -241,6 +288,15 @@ UNIT = {
                 {"wrong": r"平行四邊形面積要除 \(2\)", "right": r"平行四邊形 ＝ \(|\det|\)；**三角形** 才除 \(2\)"},
                 {"wrong": r"\(\det(\vec a,\vec b)=\det(\vec b,\vec a)\)", "right": r"反號：\(\det(\vec b,\vec a)=-\det(\vec a,\vec b)\)"},
             ],
+            "worked": {
+                "q": r"求 \(\vec u=(2,1)\)、\(\vec v=(1,3)\) 張成的平行四邊形面積與三角形面積。",
+                "steps": [
+                    {"do": r"行列式 \(\det(\vec u,\vec v)=2\cdot3-1\cdot1=5\)。",
+                     "why": r"二階行列式 \(=ad-bc\)（記得是 **相減**）。"},
+                    {"do": r"平行四邊形面積 \(=|5|=5\)；三角形面積 \(=\dfrac52\)。",
+                     "why": r"平行四邊形面積就是行列式絕對值；三角形再除 \(2\)。"},
+                ],
+            },
             "questions": [
                 {"tag": "110 · 單選 4", "level": "★★☆（中）", "core": "行列式的雙線性 → 面積比",
                  "body": r"設 \(\vec a\) 與 \(\vec b\) 都是平面上不為零的向量。若 \(2\vec a+\vec b\) 與 \(\vec a+2\vec b\) 所張成的 **三角形** 面積為 \(6\)，則 \(3\vec a+\vec b\) 與 \(\vec a+3\vec b\) 所張成的三角形面積為何？",
@@ -268,6 +324,11 @@ UNIT = {
             "num": "考點 5", "id": "kp5", "nav": "向量的旋轉與坐標應用",
             "title": r"向量的旋轉與坐標應用",
             "intro": r"把向量「**旋轉**」一個角度，是平面向量與三角、矩陣的交會點。掌握旋轉公式（尤其 \(90^\circ\)）與「用向量解坐標幾何」的手法。",
+            "prereq": [
+                r"**向量坐標、加減**（考點 1）",
+                r"**特殊角的 \(\sin,\cos\)**（一般角旋轉用）",
+                r"「**垂直、保長**」的概念",
+            ],
             "points": [
                 {"label": r"旋轉公式", "lines": [
                     r"向量 \((x,y)\) 繞原點 **逆時針** 轉 \(\theta\)：新坐標 ＝ 【\((x\cos\theta-y\sin\theta,\;x\sin\theta+y\cos\theta)\)】；",
@@ -286,6 +347,15 @@ UNIT = {
                 {"wrong": r"旋轉會改變向量長度", "right": r"旋轉 **保長**（長度不變）"},
                 {"wrong": r"旋轉公式 \(\sin\cos\) 位置可隨意", "right": r"固定 \((x\cos\theta-y\sin\theta,\;x\sin\theta+y\cos\theta)\)"},
             ],
+            "worked": {
+                "q": r"求向量 \(\vec u=(4,2)\) 逆時針旋轉 \(90^\circ\) 後的向量，並驗證它與 \(\vec u\) 垂直。",
+                "steps": [
+                    {"do": r"逆時針 \(90^\circ\)：\((x,y)\to(-y,x)\)，故 \((4,2)\to(-2,4)\)。",
+                     "why": r"逆時針 \(90°\) 的速記：\(x,y\) 對調、再把新的第一個坐標加負號。"},
+                    {"do": r"驗證：\((4,2)\cdot(-2,4)=-8+8=0\) ✓。",
+                     "why": r"旋轉 \(90°\) 後必垂直於原向量（內積為 \(0\)），也保持長度不變。"},
+                ],
+            },
             "questions": [
                 {"tag": "旋轉範例", "level": "★★☆（中）", "core": "90° 與一般角的旋轉",
                  "body": r"設向量 \(\vec u=(3,1)\)。",
