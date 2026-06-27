@@ -63,6 +63,11 @@ UNIT = {
             "num": "考點 1", "id": "kp1", "nav": "意義、相等與乘法",
             "title": r"矩陣的意義、相等與乘法",
             "intro": r"矩陣就是把一堆數「排成長方陣」一起處理。這個考點是後面所有運算的地基——先弄懂**怎麼描述一個矩陣（階、第幾列第幾行）、兩矩陣何時相等、乘法到底怎麼乘**。學測幾乎不單獨考定義，而是把「相等」與「乘法」綁在一起，要你**對應位置列出聯立方程式**求未知數。",
+            "prereq": [
+                r"**解二元一次聯立**（矩陣相等 → 列出方程式）",
+                r"**數的加、減、乘**",
+                r"分得清「**橫列、直行**」",
+            ],
             "points": [
                 {"label": r"階與元素", "lines": [
                     r"有 \(m\) 列、\(n\) 行的矩陣稱為 【\(m\times n\)】 階；",
@@ -97,6 +102,15 @@ UNIT = {
                 {"wrong": r"\(AB=O\Rightarrow A=O\) 或 \(B=O\)", "right": r"不一定！矩陣可有「零因子」"},
                 {"wrong": r"\(AB=AC\Rightarrow B=C\)", "right": r"須 \(A\) 可逆才能左消去"},
             ],
+            "worked": {
+                "q": r"計算 \(\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}\)。",
+                "steps": [
+                    {"do": r"左上格 ＝（左矩陣第 1 列）·（右矩陣第 1 行）＝ \(1\cdot0+2\cdot1=2\)。",
+                     "why": r"口訣「左列右行內積」：拿左邊一整列、去和右邊一整行對應相乘再相加。"},
+                    {"do": r"其餘三格同理：\(\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}=\begin{bmatrix}2&1\\4&3\end{bmatrix}\)。",
+                     "why": r"每一格都用「左邊那列 · 右邊那行」算；右乘 \(\begin{bmatrix}0&1\\1&0\end{bmatrix}\) 的效果剛好把兩行對調。"},
+                ],
+            },
             "questions": [
                 {"tag": "108 舊制 · 選填 A", "level": "★☆☆（易）", "core": "矩陣的相等、矩陣的乘法",
                  "body": r"設 \(x,y\) 為實數，且滿足 \(\begin{bmatrix}3&-1&3\\2&4&-1\end{bmatrix}\begin{bmatrix}x\\y\\1\end{bmatrix}=\begin{bmatrix}6\\-6\end{bmatrix}\)，則 \(x+3y=\) ？",
@@ -129,6 +143,11 @@ UNIT = {
             "num": "考點 2", "id": "kp2", "nav": "矩陣的高次方",
             "title": r"矩陣的高次方 \(A^n\)",
             "intro": r"高次方不是把每個元素 \(n\) 次方，而是矩陣自乘 \(n\) 次。核心技巧是**降冪**——把高次化成 \(A\) 與 \(I\) 的線性組合，避免硬乘。",
+            "prereq": [
+                r"**矩陣乘法**（考點 1）",
+                r"**單位方陣** \(I\)、\(IA=A\)",
+                r"觀察**數列規律**的能力",
+            ],
             "points": [
                 {"label": r"找規律（最直觀）", "lines": [
                     r"先算 \(A^2,A^3,\dots\)，觀察 【元素的週期或數列規律】 再推 \(A^n\)；",
@@ -149,6 +168,15 @@ UNIT = {
                 {"wrong": r"\((A+B)^2=A^2+2AB+B^2\)", "right": r"一般不成立（因 \(AB\neq BA\)），唯有 \(AB=BA\) 才成立"},
                 {"wrong": r"高次方只能硬乘", "right": r"先找 \(A^2=kI\) 或 \(A^2=pA+qI\) 降冪最快"},
             ],
+            "worked": {
+                "q": r"設 \(A=\begin{bmatrix}1&1\\1&-1\end{bmatrix}\)，求 \(A^4\)。",
+                "steps": [
+                    {"do": r"先算 \(A^2=\begin{bmatrix}1&1\\1&-1\end{bmatrix}\begin{bmatrix}1&1\\1&-1\end{bmatrix}=\begin{bmatrix}2&0\\0&2\end{bmatrix}=2I\)。",
+                     "why": r"高次方先算 \(A^2\)，看能不能湊成 \(kI\)——能的話就可以降冪、不必硬乘。"},
+                    {"do": r"\(A^4=(A^2)^2=(2I)^2=4I=\begin{bmatrix}4&0\\0&4\end{bmatrix}\)。",
+                     "why": r"\(A^2=2I\) 之後，高次方就變成數字的次方，超好算。"},
+                ],
+            },
             "questions": [
                 {"tag": "110 舊制 · 單選 1", "level": "★☆☆（易）", "core": "矩陣乘積（高次方）的定義",
                  "body": r"設 \(A=\begin{bmatrix}1&2\\0&3\end{bmatrix}\)，若 \(A^4=\begin{bmatrix}a&b\\c&d\end{bmatrix}\)，則 \(a+b+c+d\) 之值為下列哪一個選項？",
@@ -181,6 +209,11 @@ UNIT = {
             "num": "考點 3", "id": "kp3", "nav": "反方陣與解矩陣方程式",
             "title": r"反方陣與解矩陣方程式",
             "intro": r"反方陣是矩陣版的「除法」。重點有二：用二階公式快速求 \(A^{-1}\)，以及解矩陣方程時 **左乘、右乘的位置絕不能對調**。只有 \(\det A\neq0\)（可逆）的方陣才有反方陣。",
+            "prereq": [
+                r"**行列式** \(ad-bc\)（判斷可逆）",
+                r"**矩陣乘法**（考點 1）",
+                r"「反運算（除法）」的概念",
+            ],
             "points": [
                 {"label": r"反方陣的定義", "lines": [
                     r"\(A\)、\(B\) 同為 \(n\) 階方陣，若 \(AB=BA=I\)，則 \(B\) 是 \(A\) 的反方陣，記 【\(B=A^{-1}\)】；",
@@ -206,6 +239,15 @@ UNIT = {
                 {"wrong": r"\((AB)^{-1}=A^{-1}B^{-1}\)", "right": r"\(=B^{-1}A^{-1}\)（順序要顛倒）"},
                 {"wrong": r"\(AX=B\Rightarrow X=BA^{-1}\)", "right": r"\(X=A^{-1}B\)（\(A\) 在左就從左乘）"},
             ],
+            "worked": {
+                "q": r"求 \(A=\begin{bmatrix}2&1\\3&2\end{bmatrix}\) 的反方陣。",
+                "steps": [
+                    {"do": r"先算行列式 \(\det A=2\cdot2-1\cdot3=1\neq0\)（可逆）。",
+                     "why": r"\(\det A\neq0\) 才有反方陣；而且它等一下要當分母。"},
+                    {"do": r"套公式（主對角線對調、副對角線變號，再除行列式）：\(A^{-1}=\dfrac11\begin{bmatrix}2&-1\\-3&2\end{bmatrix}=\begin{bmatrix}2&-1\\-3&2\end{bmatrix}\)。",
+                     "why": r"二階反方陣公式 \(\dfrac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\)。"},
+                ],
+            },
             "questions": [
                 {"tag": "109 舊制 · 單選 4", "level": "★★☆（中）", "core": "單位矩陣、反方陣、矩陣的乘法與加法",
                  "body": r"令 \(I=\begin{bmatrix}1&0\\0&1\end{bmatrix}\)、\(A=\begin{bmatrix}1&1\\3&4\end{bmatrix}\)、\(B=I+A+A^{-1}\)，試選出代表 \(BA\) 的選項。",
@@ -239,6 +281,11 @@ UNIT = {
             "num": "考點 4", "id": "kp4", "nav": "一次聯立與高斯消去",
             "title": r"一次聯立方程式與高斯消去法",
             "intro": r"把聯立方程組翻譯成增廣矩陣、用列運算化簡，再 **判斷解的個數**。幾何上就是看三個平面怎麼相交——這是矩陣單元 **★★★ 必考核心**，數 A 幾乎年年出現。",
+            "prereq": [
+                r"**解二元一次聯立**（加減消去）",
+                r"**矩陣的列、係數**的概念（考點 1）",
+                r"**分數運算**與回代",
+            ],
             "points": [
                 {"label": r"增廣矩陣", "lines": [
                     r"把係數與常數項分離記成 ［ 【係數矩陣】 ｜ 【常數項】 ］（缺項補 0），稱 [[增廣矩陣||例 \(\begin{cases}x+2y+3z=10\\3x+y+z=12\\2x-y+z=5\end{cases}\) 記成 \(\left[\begin{array}{ccc|c}1&2&3&10\\3&1&1&12\\2&-1&1&5\end{array}\right]\)。]]。"]},
@@ -274,6 +321,15 @@ UNIT = {
                 {"wrong": r"方程式個數＝未知數個數就有唯一解", "right": r"要看 **係數行列式是否為 \(0\)**"},
                 {"wrong": r"化簡前就急著判斷", "right": r"必須化到列梯形、**看最末一列** 才能判別"},
             ],
+            "worked": {
+                "q": r"解聯立 \(\begin{cases}2x+y=5\\x-y=1\end{cases}\)。",
+                "steps": [
+                    {"do": r"寫成增廣矩陣 \(\left[\begin{array}{cc|c}2&1&5\\1&-1&1\end{array}\right]\)；兩列相加消去 \(y\)：\(3x=6\)。",
+                     "why": r"把係數與常數排成增廣矩陣，用列運算消掉一個未知數（這裡兩列一加剛好消掉 \(y\)）。"},
+                    {"do": r"\(x=2\)，回代 \(x-y=1\)：\(2-y=1\Rightarrow y=1\)。",
+                     "why": r"解出一個，再「回代」求另一個。"},
+                ],
+            },
             "questions": [
                 {"tag": "106 舊制 · 選填 D", "level": "★★☆（中）", "core": "方程組「有解」（含無限多解）的條件",
                  "body": r"設 \(a_1,a_2,\dots,a_9\) 為等差數列且 \(k\) 為實數。若方程組 \(\begin{cases}a_1x-a_2y+2a_3z=k+1\\a_4x-a_5y+2a_6z=-k-5\\a_7x-a_8y+2a_9z=k+9\end{cases}\) 有解，則 \(k=\) ？",
@@ -333,6 +389,11 @@ UNIT = {
             "num": "考點 5", "id": "kp5", "nav": "平面線性變換",
             "title": r"平面線性變換（旋轉、鏡射、伸縮、推移）",
             "intro": r"用矩陣去「搬動」平面上的點。四種變換各有固定矩陣形式，最常考的結論是 **變換後面積 ＝ 原面積 \(\times|\det M|\)**。是矩陣單元 **★★★ 必考核心**，常與向量、三角整合成混合題組。",
+            "prereq": [
+                r"**矩陣乘向量** \(M\begin{bmatrix}x\\y\end{bmatrix}\)（考點 1）",
+                r"**行列式** \(\det M=ad-bc\)（考點 3）",
+                r"**旋轉**與特殊角 \(\sin/\cos\)（與平面向量呼應）",
+            ],
             "points": [
                 {"label": r"線性變換", "lines": [
                     r"點 \(P(x,y)\to P'(x',y')\)：\(\begin{bmatrix}x'\\y'\end{bmatrix}=\) 【\(M\begin{bmatrix}x\\y\end{bmatrix}\)】，\(M\) 為 \(2\times2\) 變換矩陣。"]},
@@ -355,6 +416,15 @@ UNIT = {
                 {"wrong": r"旋轉與鏡射可以交換", "right": r"一般 **不可交換**（\(RS\neq SR\)）"},
                 {"wrong": r"旋轉可能不可逆", "right": r"旋轉 \(\det R=1\) 恆可逆；鏡射 \(\det=-1\) 也可逆"},
             ],
+            "worked": {
+                "q": r"某圖形面積為 \(4\)，經矩陣 \(M=\begin{bmatrix}3&1\\0&2\end{bmatrix}\) 變換後，面積變為多少？",
+                "steps": [
+                    {"do": r"算行列式 \(\det M=3\cdot2-1\cdot0=6\)。",
+                     "why": r"面積的變化倍率就是 \(|\det M|\)。"},
+                    {"do": r"變換後面積 \(=4\times|6|=24\)。",
+                     "why": r"面積黃金律：新面積 ＝ 原面積 \(\times|\det M|\)（取絕對值，因面積恆正）。"},
+                ],
+            },
             "questions": [
                 {"tag": "110 舊制 · 多選 8", "level": "★★★（難 · 跨單元：矩陣 × 向量 × 圓 × 三角）", "core": "圓上弦長與旋轉（旋轉矩陣 \\(R(60^\\circ)\\)）",
                  "body": r"如圖，\(L\) 為坐標平面上通過原點 \(O\) 的直線，\(\Gamma\) 為以 \(O\) 為圓心的圓，且 \(L\) 與 \(\Gamma\) 交於一點 \(A(3,4)\)。已知 \(B,C\) 為 \(\Gamma\) 上相異兩點且滿足 \(\overrightarrow{BC}=\overrightarrow{OA}\)。試選出正確的選項。",
