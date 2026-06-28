@@ -6,6 +6,7 @@
 import os
 import io
 import re
+from urllib.parse import quote
 from render import html_rich
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -182,6 +183,21 @@ QUIZ_JS = (
     "if(k>=0){sel.splice(k,1);b.classList.remove('sel');}else{sel.push(i);b.classList.add('sel');}});});"
     "if(ck)ck.addEventListener('click',function(){if(done||!sel.length)return;ck.style.display='none';grade(sel.slice());});}"
     "else{opts.forEach(function(b){b.addEventListener('click',function(){grade([num(b.dataset.i)]);});});}});})();")
+
+# 錯誤回報 Google 表單（空字串＝不顯示按鈕）。REPORT_UNIT_ENTRY＝表單「單元」題的 entry 號，
+# 設了就把當頁單元名自動預填進表單（學生免選單元）。按鈕逐頁產生（_report_btn）。
+REPORT_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf7rBJ0OnAQTiZjUbq3gn6CKFgvz9wir8FzEUccXzTfl54DDw/viewform"
+REPORT_UNIT_ENTRY = "120093039"
+
+
+def _report_btn(unit):
+    if not REPORT_FORM_URL:
+        return ""
+    url = REPORT_FORM_URL
+    if REPORT_UNIT_ENTRY:
+        url += "?usp=pp_url&entry." + REPORT_UNIT_ENTRY + "=" + quote(unit["title"])
+    return (f'<a class="report-btn" href="{url}" target="_blank" rel="noopener" '
+            f'title="發現內容有誤？點此回報">🚩 回報錯誤</a>')
 
 
 def _point_html(p):
@@ -422,6 +438,7 @@ def build_html(unit, units):
             f'{_part2_html(unit.get("part2"))}'
             f'{_part3_html(unit.get("part3"))}'
             f'<div class="foot">{unit.get("foot","")}</div>')
+    report_btn = _report_btn(unit)
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -440,6 +457,7 @@ def build_html(unit, units):
 </div>
 {LIGHTBOX_HTML}
 {QUIZ_BADGE_HTML}
+{report_btn}
 <script src="{KATEX}/katex.min.js"></script>
 <script src="{KATEX}/contrib/auto-render.min.js"></script>
 <script>
