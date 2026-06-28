@@ -8,7 +8,7 @@ import os, io, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from build_html import ANALYTICS, PRIVACY_HTML  # noqa: E402  共用 GA4 + Clarity 追蹤碼＋頁尾隱私說明
+from build_html import ANALYTICS, PRIVACY_HTML, _report_btn  # noqa: E402  共用 GA4 + Clarity 追蹤碼＋頁尾隱私＋回報鈕
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 OUT = os.path.join(ROOT, "dist", "115學測數學_概念地圖.html")
 
@@ -455,6 +455,7 @@ def build():
 {extra}</style></head><body>
 {body}
 {PRIVACY_HTML}
+{_report_btn({"title": "概念地圖"})}
 <script>{js}</script>
 </body></html>"""
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

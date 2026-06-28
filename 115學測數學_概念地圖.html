@@ -131,7 +131,7 @@
   .sol .k{color:var(--btn); font-weight:800}
   .sol .ad{color:var(--ans); font-weight:800}
   /* misconception table */
-  .tbl-wrap{overflow-x:auto; margin:6px 0 4px}
+  .tbl-wrap{position:relative; overflow-x:auto; margin:6px 0 4px}
   table.mis{border-collapse:collapse; width:100%; min-width:520px; font-size:15px}
   table.mis th{background:#f3e3e8; color:var(--maroon-d); padding:8px 12px; border:1px solid var(--line); width:50%}
   table.mis td{padding:9px 12px; border:1px solid var(--line); vertical-align:top}
@@ -190,6 +190,22 @@
   .sc-q{color:#3a3a3a; font-size:15px; margin-bottom:2px}
   .selfcheck .sol{background:#fff6e0; border-left-color:#e0b94e}
   .selfcheck .sol-btn{background:#fbefce; color:#946700; border-color:#e0b94e}
+  /* 自學優化：先備知識（B2）＋ 示範例（步驟化，每步附「為什麼」） */
+  .prereq{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; margin:2px 0 14px;
+    background:#eef5f4; border-left:4px solid #1f6f78; border-radius:8px; padding:8px 14px; font-size:14px}
+  .prereq .pr-tag{font-weight:800; color:#1c6169; white-space:nowrap}
+  .prereq .pr-list{margin:0; padding-left:1.15em; flex:1 1 240px; color:#3c5a59}
+  .prereq .pr-list li{margin:1px 0}
+  .prereq .pr-note{flex-basis:100%; font-size:12.5px; color:#7a8a89}
+  .worked{margin:16px 0 4px; border:1.5px solid #bfe0db; background:#f1f8f6; border-radius:12px; padding:12px 16px}
+  .wk-head{font-weight:800; color:#1c6169; font-size:15px; margin-bottom:7px}
+  .wk-q{font-weight:700; color:var(--ink); margin-bottom:9px}
+  .wk-steps{margin:0; padding-left:1.45em}
+  .wk-steps li{margin:7px 0}
+  .wk-steps li::marker{color:#1f6f78; font-weight:800}
+  .wk-do{display:block; color:var(--ink); font-weight:600}
+  .wk-why{display:block; color:#6f7f7e; font-size:13px; margin-top:2px}
+  .wk-ans{margin-top:9px; font-weight:800; color:#1c6169}
   /* 已讀進度（考點打勾，與概念地圖共用 localStorage） */
   .kpchk{display:inline-block; vertical-align:middle; width:22px; height:22px; border-radius:50%;
     border:2px solid #d3c0c7; background:#fff; cursor:pointer; margin-right:9px; padding:0; position:relative; transition:.15s}
@@ -205,6 +221,48 @@
   .unit-prog .up-all{background:#fff; color:#2e7d46; border:1.4px solid #2e9e5b; border-radius:18px;
     padding:4px 12px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit}
   .unit-prog .up-hint{font-size:12px; color:#8aa896; width:100%}
+  /* 圖片放大燈箱（手機點圖看細節） */
+  figure.tfig{cursor:zoom-in}
+  .zoomhint{display:none; margin-top:6px; font-size:12px; color:#9a5a72; background:#f7e8ee;
+    border:1px solid #e6c6d4; border-radius:12px; padding:2px 12px; font-weight:700}
+  figure.tfig.hero .zoomhint{display:inline-block}
+  .lightbox{position:fixed; inset:0; z-index:3000; background:rgba(24,10,16,.88); display:none}
+  .lightbox.open{display:block}
+  .lb-scroll{position:absolute; inset:0; overflow:auto; -webkit-overflow-scrolling:touch; padding:18px; text-align:center}
+  .lb-scroll svg{width:960px !important; max-width:none !important; height:auto; background:#fff6f0;
+    border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,.5); vertical-align:top}
+  .lb-close{position:fixed; top:10px; right:14px; z-index:3001; width:42px; height:42px; border-radius:50%;
+    border:none; background:rgba(255,255,255,.94); color:#6f1f33; font-size:25px; font-weight:800;
+    line-height:1; cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.35); font-family:inherit}
+  .lb-tip{position:fixed; bottom:14px; left:50%; transform:translateX(-50%); z-index:3001;
+    background:rgba(255,255,255,.92); color:#6f1f33; font-size:12.5px; border-radius:14px; padding:5px 14px; white-space:nowrap}
+  /* 練習模式：選擇題可點作答、即時批改 */
+  .opts.quiz{margin:10px 0 2px}
+  .opts.quiz .opt-hint{font-size:12.5px; color:#9a857c; margin:2px 0 8px}
+  .opts.quiz .opt{display:block; width:100%; text-align:left; margin:7px 0; padding:9px 13px; line-height:1.7;
+    background:#fff; border:1.5px solid #e2d3d9; border-radius:10px; cursor:pointer; font:inherit; color:#333; transition:.12s}
+  .opts.quiz .opt:hover:not(:disabled){border-color:var(--rose); background:#fdf4f7}
+  .opts.quiz .opt .opt-n{font-weight:800; color:var(--maroon-d); margin-right:6px}
+  .opts.quiz .opt.sel{border-color:var(--rose); background:#fbe9f0}
+  .opts.quiz .opt.correct{border-color:#2e9e5b; background:#eafaf0; color:#1f7a45}
+  .opts.quiz .opt.correct .opt-n{color:#1f7a45}
+  .opts.quiz .opt.correct::after{content:" ✓"; color:#2e9e5b; font-weight:800}
+  .opts.quiz .opt.wrong{border-color:#c0392b; background:#fdecea; color:#a5342a}
+  .opts.quiz .opt.wrong::after{content:" ✗"; color:#c0392b; font-weight:800}
+  .opts.quiz .opt:disabled{cursor:default}
+  .opt-check{margin:4px 0 2px; background:var(--maroon); color:#fff; border:none; border-radius:18px;
+    padding:6px 18px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit}
+  .opt-fb{display:block; margin-top:8px; font-weight:800; font-size:14.5px}
+  .opt-fb.ok{color:#1f7a45}
+  .opt-fb.no{color:#c0392b}
+  .quizscore{position:fixed; left:12px; bottom:12px; z-index:900; background:rgba(140,39,64,.96); color:#fff;
+    font-size:13.5px; font-weight:700; border-radius:20px; padding:7px 15px; box-shadow:0 3px 12px rgba(0,0,0,.25)}
+  .quizscore b{font-size:15px}
+  /* 錯誤回報浮動按鈕 */
+  .report-btn{position:fixed; right:12px; bottom:12px; z-index:900; background:#fff; color:var(--maroon);
+    border:1.5px solid #d6a3b4; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:700;
+    text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.15)}
+  .report-btn:hover{background:#fbeef2; border-color:var(--rose)}
 
 
   .cm-topbar{position:sticky;top:0;z-index:50;background:rgba(140,39,64,.97);color:#fff;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 18px;box-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
@@ -284,7 +342,8 @@
 </div>
 
 <div class="cm-foot">概念份量取自各單元近十年（106–115）出題趨勢加權題數；依賴關係為教學編排。</div>
-<div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
 </div>
+<div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
+<a class="report-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf7rBJ0OnAQTiZjUbq3gn6CKFgvz9wir8FzEUccXzTfl54DDw/viewform?usp=pp_url&entry.120093039=%E6%A6%82%E5%BF%B5%E5%9C%B0%E5%9C%96" target="_blank" rel="noopener" title="發現內容有誤？點此回報">🚩 回報錯誤</a>
 <script>function cmTab(b,v){document.querySelectorAll('.cm-tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.cm-view').forEach(x=>x.classList.remove('on'));document.getElementById('v-'+v).classList.add('on');}var RK='mm-read-kps';var KPN={trig:7,prob:6,space:6,poly:5,linecir:5,explog:5,pvec:5,matrix:5,data:4,seq:4,numexpr:6};function kk(u){var a=[];for(var i=1;i<=KPN[u];i++)a.push(u+':kp'+i);return a;}function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}function uf(u,s){return kk(u).every(k=>s.has(k));}function aR(){var s=gR();document.querySelectorAll('.mnode').forEach(n=>n.classList.toggle('read',uf(n.dataset.u,s)));document.querySelectorAll('.kpcell').forEach(c=>c.classList.toggle('kpread',s.has(c.dataset.kk)));uP(s);}function uP(s){s=s||gR();var t=0;for(var u in KPN)t+=KPN[u];var d=s.size;document.getElementById('ptxt').textContent='已讀 '+d+' / '+t+' 考點';document.getElementById('pbar').style.width=(t?d/t*100:0)+'%';}function toggleRead(u){var s=gR();var ks=kk(u);var f=ks.every(k=>s.has(k));ks.forEach(k=>f?s.delete(k):s.add(k));localStorage.setItem(RK,JSON.stringify([...s]));aR();}window.markMode=false;function toggleMark(){window.markMode=!window.markMode;var b=document.getElementById('markbtn');b.classList.toggle('on',window.markMode);b.textContent=window.markMode?'✓ 標記中（點概念）':'✏️ 標記已讀';document.querySelectorAll('.cm-board').forEach(x=>x.classList.toggle('marking',window.markMode));}function nodeClick(e,u){if(window.markMode){e.preventDefault();e.stopPropagation();toggleRead(u);}}function resetRead(){if(confirm('清除所有已讀標記？')){localStorage.removeItem(RK);aR();}}function toggleKp(k){var s=gR();s.has(k)?s.delete(k):s.add(k);localStorage.setItem(RK,JSON.stringify([...s]));aR();}function cellClick(e,k,href){if(window.markMode){e.preventDefault();e.stopPropagation();toggleKp(k);}else{location.href=href;}}function heatSub(b,w){document.querySelectorAll('.cm-subtabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById('heat-tree').style.display=(w==='tree')?'':'none';document.getElementById('heat-kp').style.display=(w==='kp')?'':'none';}function netHi(u){if(window.markMode)return;var nb=new Set([u]);document.querySelectorAll('#v-net .netedge').forEach(l=>{var on=(l.dataset.a===u||l.dataset.b===u);l.style.opacity=on?'1':'0.07';if(on){nb.add(l.dataset.a);nb.add(l.dataset.b);}});document.querySelectorAll('#v-net .mnode').forEach(n=>{n.style.opacity=nb.has(n.dataset.u)?'1':'0.16';});}function netClr(){document.querySelectorAll('#v-net .netedge').forEach(l=>l.style.opacity='');document.querySelectorAll('#v-net .mnode').forEach(n=>n.style.opacity='');}aR();</script>
 </body></html>

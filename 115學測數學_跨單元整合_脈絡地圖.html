@@ -135,7 +135,7 @@
   .sol .k{color:var(--btn); font-weight:800}
   .sol .ad{color:var(--ans); font-weight:800}
   /* misconception table */
-  .tbl-wrap{overflow-x:auto; margin:6px 0 4px}
+  .tbl-wrap{position:relative; overflow-x:auto; margin:6px 0 4px}
   table.mis{border-collapse:collapse; width:100%; min-width:520px; font-size:15px}
   table.mis th{background:#f3e3e8; color:var(--maroon-d); padding:8px 12px; border:1px solid var(--line); width:50%}
   table.mis td{padding:9px 12px; border:1px solid var(--line); vertical-align:top}
@@ -194,6 +194,22 @@
   .sc-q{color:#3a3a3a; font-size:15px; margin-bottom:2px}
   .selfcheck .sol{background:#fff6e0; border-left-color:#e0b94e}
   .selfcheck .sol-btn{background:#fbefce; color:#946700; border-color:#e0b94e}
+  /* 自學優化：先備知識（B2）＋ 示範例（步驟化，每步附「為什麼」） */
+  .prereq{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; margin:2px 0 14px;
+    background:#eef5f4; border-left:4px solid #1f6f78; border-radius:8px; padding:8px 14px; font-size:14px}
+  .prereq .pr-tag{font-weight:800; color:#1c6169; white-space:nowrap}
+  .prereq .pr-list{margin:0; padding-left:1.15em; flex:1 1 240px; color:#3c5a59}
+  .prereq .pr-list li{margin:1px 0}
+  .prereq .pr-note{flex-basis:100%; font-size:12.5px; color:#7a8a89}
+  .worked{margin:16px 0 4px; border:1.5px solid #bfe0db; background:#f1f8f6; border-radius:12px; padding:12px 16px}
+  .wk-head{font-weight:800; color:#1c6169; font-size:15px; margin-bottom:7px}
+  .wk-q{font-weight:700; color:var(--ink); margin-bottom:9px}
+  .wk-steps{margin:0; padding-left:1.45em}
+  .wk-steps li{margin:7px 0}
+  .wk-steps li::marker{color:#1f6f78; font-weight:800}
+  .wk-do{display:block; color:var(--ink); font-weight:600}
+  .wk-why{display:block; color:#6f7f7e; font-size:13px; margin-top:2px}
+  .wk-ans{margin-top:9px; font-weight:800; color:#1c6169}
   /* 已讀進度（考點打勾，與概念地圖共用 localStorage） */
   .kpchk{display:inline-block; vertical-align:middle; width:22px; height:22px; border-radius:50%;
     border:2px solid #d3c0c7; background:#fff; cursor:pointer; margin-right:9px; padding:0; position:relative; transition:.15s}
@@ -209,6 +225,48 @@
   .unit-prog .up-all{background:#fff; color:#2e7d46; border:1.4px solid #2e9e5b; border-radius:18px;
     padding:4px 12px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit}
   .unit-prog .up-hint{font-size:12px; color:#8aa896; width:100%}
+  /* 圖片放大燈箱（手機點圖看細節） */
+  figure.tfig{cursor:zoom-in}
+  .zoomhint{display:none; margin-top:6px; font-size:12px; color:#9a5a72; background:#f7e8ee;
+    border:1px solid #e6c6d4; border-radius:12px; padding:2px 12px; font-weight:700}
+  figure.tfig.hero .zoomhint{display:inline-block}
+  .lightbox{position:fixed; inset:0; z-index:3000; background:rgba(24,10,16,.88); display:none}
+  .lightbox.open{display:block}
+  .lb-scroll{position:absolute; inset:0; overflow:auto; -webkit-overflow-scrolling:touch; padding:18px; text-align:center}
+  .lb-scroll svg{width:960px !important; max-width:none !important; height:auto; background:#fff6f0;
+    border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,.5); vertical-align:top}
+  .lb-close{position:fixed; top:10px; right:14px; z-index:3001; width:42px; height:42px; border-radius:50%;
+    border:none; background:rgba(255,255,255,.94); color:#6f1f33; font-size:25px; font-weight:800;
+    line-height:1; cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.35); font-family:inherit}
+  .lb-tip{position:fixed; bottom:14px; left:50%; transform:translateX(-50%); z-index:3001;
+    background:rgba(255,255,255,.92); color:#6f1f33; font-size:12.5px; border-radius:14px; padding:5px 14px; white-space:nowrap}
+  /* 練習模式：選擇題可點作答、即時批改 */
+  .opts.quiz{margin:10px 0 2px}
+  .opts.quiz .opt-hint{font-size:12.5px; color:#9a857c; margin:2px 0 8px}
+  .opts.quiz .opt{display:block; width:100%; text-align:left; margin:7px 0; padding:9px 13px; line-height:1.7;
+    background:#fff; border:1.5px solid #e2d3d9; border-radius:10px; cursor:pointer; font:inherit; color:#333; transition:.12s}
+  .opts.quiz .opt:hover:not(:disabled){border-color:var(--rose); background:#fdf4f7}
+  .opts.quiz .opt .opt-n{font-weight:800; color:var(--maroon-d); margin-right:6px}
+  .opts.quiz .opt.sel{border-color:var(--rose); background:#fbe9f0}
+  .opts.quiz .opt.correct{border-color:#2e9e5b; background:#eafaf0; color:#1f7a45}
+  .opts.quiz .opt.correct .opt-n{color:#1f7a45}
+  .opts.quiz .opt.correct::after{content:" ✓"; color:#2e9e5b; font-weight:800}
+  .opts.quiz .opt.wrong{border-color:#c0392b; background:#fdecea; color:#a5342a}
+  .opts.quiz .opt.wrong::after{content:" ✗"; color:#c0392b; font-weight:800}
+  .opts.quiz .opt:disabled{cursor:default}
+  .opt-check{margin:4px 0 2px; background:var(--maroon); color:#fff; border:none; border-radius:18px;
+    padding:6px 18px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit}
+  .opt-fb{display:block; margin-top:8px; font-weight:800; font-size:14.5px}
+  .opt-fb.ok{color:#1f7a45}
+  .opt-fb.no{color:#c0392b}
+  .quizscore{position:fixed; left:12px; bottom:12px; z-index:900; background:rgba(140,39,64,.96); color:#fff;
+    font-size:13.5px; font-weight:700; border-radius:20px; padding:7px 15px; box-shadow:0 3px 12px rgba(0,0,0,.25)}
+  .quizscore b{font-size:15px}
+  /* 錯誤回報浮動按鈕 */
+  .report-btn{position:fixed; right:12px; bottom:12px; z-index:900; background:#fff; color:var(--maroon);
+    border:1.5px solid #d6a3b4; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:700;
+    text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.15)}
+  .report-btn:hover{background:#fbeef2; border-color:var(--rose)}
 
 
   .x-intro{background:#fff7ef;border:1px dashed #e0b9a6;border-radius:12px;padding:12px 18px;margin:14px 0 8px;font-size:14.5px;color:#6b5249}
@@ -327,13 +385,14 @@
   <text x="104" y="94" font-size="8.5" fill="#9aa6b2">赤道</text>
 </svg></div><div class="opts"><span>(1) 北緯 \(75^\circ\)</span><span>(2) 北緯 \(30^\circ\)</span><span>(3) 南緯 \(30^\circ\)</span><span>(4) 南緯 \(45^\circ\)</span><span>(5) 南緯 \(75^\circ\)</span></div></div><button class="sol-btn mini" data-s="簡答" data-h="收合簡答" onclick="ts(this)">簡答</button><div class="sol"><b>(3)</b> 南緯 \(30^\circ\)</div><button class="sol-btn mini" data-s="解題關鍵" data-h="收合解題關鍵" onclick="ts(this)">解題關鍵</button><div class="sol"><p>弧長 \(=R\theta\Rightarrow\theta=\dfrac{7\pi}{12}=105^\circ\)（大圓圓心角）；</p><p>從 \(P\)（北緯 \(75^\circ\)）沿經線往南：先 \(75^\circ\) 到赤道，再 \(105^\circ-75^\circ=30^\circ\) 進入南半球；</p><p>故 \(Q\) 在 <b>南緯 \(30^\circ\)</b>，選 (3)。</p></div><div class="xq-klink">🔗 直達考點：<a class="utag" href="115學測數學_三角.html#kp1">三角 ▸ 考點1 弧度·弧長</a><span class="x">×</span><a class="utag" href="115學測數學_空間向量.html#kp1">空間向量 ▸ 考點1 空間坐標·球面</a></div></div></div></div>
 <div class="foot">資料整理自《學測數學考題分析 106–115》；分組與脈絡敘述為教學編排，題幹與官方答案以原卷為準。</div>
+<div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
 </div>
+<a class="report-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf7rBJ0OnAQTiZjUbq3gn6CKFgvz9wir8FzEUccXzTfl54DDw/viewform?usp=pp_url&entry.120093039=%E8%84%88%E7%B5%A1%E5%9C%B0%E5%9C%96" target="_blank" rel="noopener" title="發現內容有誤？點此回報">🚩 回報錯誤</a>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
 function flt(btn,f){document.querySelectorAll('.filterbar button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.xq').forEach(c=>{c.style.display=(f==='all'||c.dataset.juan===f)?'':'none';});document.querySelectorAll('.part').forEach(p=>{let g=p.nextElementSibling;while(g&&!g.classList.contains('xq-grid'))g=g.nextElementSibling;if(g){let vis=[...g.children].some(c=>c.style.display!=='none');p.style.display=vis?'':'none';p.nextElementSibling.style.display=vis?'':'none';}});}function toggleXq(h){var d=h.nextElementSibling;var o=d.classList.toggle('open');var c=h.querySelector('.caret');if(c)c.textContent=o?'\u2212':'\uFF0B';}function ts(b){var s=b.nextElementSibling;var o=s.classList.toggle('open');b.classList.toggle('active',o);b.textContent=o?b.dataset.h:b.dataset.s;}
 </script>
-<div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
 </body>
 </html>
