@@ -124,6 +124,23 @@ def _subq_html(sq):
     return body + btn + sol
 
 
+# 圖片放大燈箱（手機點圖看細節）：每頁一個 overlay ＋ 點任何 figure.tfig 開啟
+LIGHTBOX_HTML = ('<div id="lightbox" class="lightbox" role="dialog" aria-modal="true">'
+                 '<button class="lb-close" aria-label="關閉">×</button>'
+                 '<div class="lb-scroll" id="lb-scroll"></div>'
+                 '<div class="lb-tip">雙指可再放大 · 點背景或 × 關閉</div></div>')
+LIGHTBOX_JS = (
+    "(function(){var lb=document.getElementById('lightbox');if(!lb)return;"
+    "var sc=document.getElementById('lb-scroll');"
+    "function op(svg){sc.innerHTML='';sc.appendChild(svg.cloneNode(true));lb.classList.add('open');"
+    "document.documentElement.style.overflow='hidden';sc.scrollTop=0;sc.scrollLeft=0;}"
+    "function cl(){lb.classList.remove('open');sc.innerHTML='';document.documentElement.style.overflow='';}"
+    "document.querySelectorAll('figure.tfig').forEach(function(f){var s=f.querySelector('svg');if(!s)return;"
+    "f.addEventListener('click',function(e){e.stopPropagation();op(s);});});"
+    "lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-close')||e.target.classList.contains('lb-scroll'))cl();});"
+    "document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});})();")
+
+
 def _point_html(p):
     if isinstance(p, dict) and "svg" in p:
         cap = f'<figcaption>{html_rich(p["caption"])}</figcaption>' if p.get("caption") else ""
@@ -132,7 +149,9 @@ def _point_html(p):
             ' style="max-width:560px"' if p.get("full") else (
             ' style="max-width:362px"' if p.get("wide") else (
             ' style="max-width:250px"' if p.get("med") else "")))
-        return f'<li class="figli"><figure class="tfig"{style}>{p["svg"]}{cap}</figure></li>'
+        cls = "tfig hero" if p.get("hero") else "tfig"
+        hint = '<div class="zoomhint">🔍 點圖可放大看細節</div>' if p.get("hero") else ""
+        return f'<li class="figli"><figure class="{cls}"{style}>{p["svg"]}{cap}{hint}</figure></li>'
     if isinstance(p, dict):
         lab = html_rich(p["label"]) + "："
         lines = "".join(f'<span class="ln">{html_rich(l)}</span>' for l in p["lines"])
@@ -376,6 +395,7 @@ def build_html(unit, units):
 {body}
 {PRIVACY_HTML}
 </div>
+{LIGHTBOX_HTML}
 <script src="{KATEX}/katex.min.js"></script>
 <script src="{KATEX}/contrib/auto-render.min.js"></script>
 <script>
@@ -383,6 +403,8 @@ def build_html(unit, units):
 <script>
 window.MMSLUG="{unit["slug"]}";window.MMKPS={[k["id"] for k in unit["kps"]]};
 {PROGRESS_JS}</script>
+<script>
+{LIGHTBOX_JS}</script>
 </body>
 </html>
 """
