@@ -5,6 +5,7 @@
 """
 import os
 import io
+import re
 from render import html_rich
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -64,11 +65,32 @@ def _asset(name):
     return io.open(os.path.join(HERE, "assets", name), encoding="utf-8").read()
 
 
-def _opts_html(options):
+def _parse_answer(sol):
+    """從 solution.brief 開頭的「(N)」或「(N)(M)…」解析正解選項（1-based list）；解析不到回 None。"""
+    if not sol or not sol.get("brief"):
+        return None
+    m = re.match(r"\s*((?:[(（]\d+[)）])+)", sol["brief"])
+    if not m:
+        return None
+    return [int(n) for n in re.findall(r"[(（](\d+)[)）]", m.group(1))]
+
+
+def _opts_html(options, answer=None):
     if not options:
         return ""
-    spans = "".join(f"<span>({i}) {html_rich(o)}</span>" for i, o in enumerate(options, 1))
-    return f'<div class="opts">{spans}</div>'
+    if not answer or any(a < 1 or a > len(options) for a in answer):
+        # 無可靠正解 → 維持非互動（純列出），絕不亂標
+        spans = "".join(f"<span>({i}) {html_rich(o)}</span>" for i, o in enumerate(options, 1))
+        return f'<div class="opts">{spans}</div>'
+    multi = len(answer) > 1
+    btns = "".join(
+        f'<button type="button" class="opt" data-i="{i}">'
+        f'<span class="opt-n">({i})</span>{html_rich(o)}</button>'
+        for i, o in enumerate(options, 1))
+    ck = '<button type="button" class="opt-check">對答案</button>' if multi else ""
+    hint = "（多選；選好後按「對答案」）" if multi else "（點選你的答案）"
+    return (f'<div class="opts quiz" data-ans="{",".join(map(str, answer))}" data-multi="{1 if multi else 0}">'
+            f'<div class="opt-hint">{hint}</div>{btns}{ck}<div class="opt-fb"></div></div>')
 
 
 def _table_html(tbl):
@@ -108,7 +130,7 @@ def _question_html(q, first=False):
     meta = (f'<div class="q-meta"{meta_style}>'
             f'<span class="tag">{html_rich(q["tag"])}</span>'
             f'<span class="lv">{q["level"]}</span>{core}</div>')
-    body = f'<div class="q-body">{html_rich(q["body"])}{_table_html(q.get("table"))}{_opts_html(q.get("options"))}</div>'
+    body = f'<div class="q-body">{html_rich(q["body"])}{_table_html(q.get("table"))}{_opts_html(q.get("options"), _parse_answer(q.get("solution")))}</div>'
     btn = ('<button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" '
            'onclick="ts(this)">顯示解答</button>')
     sol = f'<div class="sol">{_solution_html(q.get("solution"))}</div>'
@@ -139,6 +161,27 @@ LIGHTBOX_JS = (
     "f.addEventListener('click',function(e){e.stopPropagation();op(s);});});"
     "lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-close')||e.target.classList.contains('lb-scroll'))cl();});"
     "document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});})();")
+
+# 練習模式：選擇題可點作答、即時批改，右下角顯示分數
+QUIZ_BADGE_HTML = ('<div id="quizscore" class="quizscore" hidden>✏️ 練習　答對 '
+                   '<b id="qs-c">0</b> / 作答 <b id="qs-a">0</b></div>')
+QUIZ_JS = (
+    "(function(){var box=document.getElementById('quizscore'),"
+    "ce=document.getElementById('qs-c'),ae=document.getElementById('qs-a');var C=0,A=0;"
+    "function bump(ok){A++;if(ok)C++;if(box){box.hidden=false;ce.textContent=C;ae.textContent=A;}}"
+    "function num(s){return parseInt(s,10);}"
+    "document.querySelectorAll('.opts.quiz').forEach(function(q){"
+    "var ans=q.dataset.ans.split(',').map(num),multi=q.dataset.multi==='1';"
+    "var opts=[].slice.call(q.querySelectorAll('.opt')),fb=q.querySelector('.opt-fb');var done=false,sel=[];"
+    "function grade(p){if(done)return;done=true;opts.forEach(function(b){var i=num(b.dataset.i),c=ans.indexOf(i)>=0;"
+    "if(c)b.classList.add('correct');if(p.indexOf(i)>=0&&!c)b.classList.add('wrong');b.disabled=true;});"
+    "var ok=p.length===ans.length&&p.every(function(i){return ans.indexOf(i)>=0;});"
+    "fb.textContent=ok?'✓ 答對了！':'✗ 答錯了，正解見綠色選項';fb.className='opt-fb '+(ok?'ok':'no');bump(ok);}"
+    "if(multi){var ck=q.querySelector('.opt-check');"
+    "opts.forEach(function(b){b.addEventListener('click',function(){if(done)return;var i=num(b.dataset.i),k=sel.indexOf(i);"
+    "if(k>=0){sel.splice(k,1);b.classList.remove('sel');}else{sel.push(i);b.classList.add('sel');}});});"
+    "if(ck)ck.addEventListener('click',function(){if(done||!sel.length)return;ck.style.display='none';grade(sel.slice());});}"
+    "else{opts.forEach(function(b){b.addEventListener('click',function(){grade([num(b.dataset.i)]);});});}});})();")
 
 
 def _point_html(p):
@@ -396,6 +439,7 @@ def build_html(unit, units):
 {PRIVACY_HTML}
 </div>
 {LIGHTBOX_HTML}
+{QUIZ_BADGE_HTML}
 <script src="{KATEX}/katex.min.js"></script>
 <script src="{KATEX}/contrib/auto-render.min.js"></script>
 <script>
@@ -405,6 +449,8 @@ window.MMSLUG="{unit["slug"]}";window.MMKPS={[k["id"] for k in unit["kps"]]};
 {PROGRESS_JS}</script>
 <script>
 {LIGHTBOX_JS}</script>
+<script>
+{QUIZ_JS}</script>
 </body>
 </html>
 """
