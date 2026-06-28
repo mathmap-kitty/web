@@ -291,9 +291,11 @@ def _kp_html(kp):
             f'<li><span class="wk-do">{html_rich(st["do"])}</span>'
             f'<span class="wk-why">{html_rich(st["why"])}</span></li>' for st in w["steps"])
         wans = f'<div class="wk-ans">答：{html_rich(w["ans"])}</div>' if w.get("ans") else ""
-        worked = ('<div class="worked"><div class="wk-head">👉 先看示範一題（每步都附「為什麼」）</div>'
+        worked = ('<div class="worked"><div class="wk-head">👉 示範一題 — 先自己想想，再點開解法對照</div>'
                   f'<div class="wk-q">{html_rich(w["q"])}</div>'
-                  f'<ol class="wk-steps">{steps}</ol>{wans}</div>')
+                  '<button class="sol-btn wk-btn" data-s="💡 看詳解（每步都說明為什麼）" '
+                  'data-h="收合詳解" onclick="ts(this)">💡 看詳解（每步都說明為什麼）</button>'
+                  f'<div class="sol wk-reveal"><ol class="wk-steps">{steps}</ol>{wans}</div></div>')
     return (f'<div class="card" id="{kp["id"]}">'
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
             f'title="標記此考點已讀" aria-label="標記已讀"></button>'
