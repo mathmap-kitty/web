@@ -133,7 +133,7 @@ UNIT = {
                     r"平面上任一向量都可 **唯一** 寫成 \(\vec w=a\vec u+b\vec v\)（\(\vec u,\vec v\) 不平行，為一組 **基底**）。"]},
                 {"label": r"分點公式", "lines": [
                     r"\(P\) 內分 \(\overline{AB}\) 為 \(m:n\)（\(\overline{AP}:\overline{PB}=m:n\)）：",
-                    r"\(\overrightarrow{OP}=\) 【\(\dfrac{n\,\overrightarrow{OA}+m\,\overrightarrow{OB}}{m+n}\)】（[[對角交叉||靠近 \(B\)（佔比 \(m\)）的權重給 \(\overrightarrow{OB}\)、靠近 \(A\) 的給 \(\overrightarrow{OA}\)，係數 **對調交叉**。中點即 \(m=n\)：\(\dfrac{\overrightarrow{OA}+\overrightarrow{OB}}{2}\)。]]）。"]},
+                    r"\(\overrightarrow{OP}=\) 【\(\dfrac{n\,\overrightarrow{OA}+m\,\overrightarrow{OB}}{m+n}\)】（[[交叉乘||口訣「**分母比例和、分子交叉乘**」：分母放比例和 \(m+n\)；分子交叉乘——\(\overline{AP}\) 的比 \(m\) 乘到對角的 \(\overrightarrow{OB}\)、\(\overline{PB}\) 的比 \(n\) 乘到 \(\overrightarrow{OA}\)。中點即 \(m=n\)：\(\dfrac{\overrightarrow{OA}+\overrightarrow{OB}}{2}\)。]]）。"]},
                 {"label": r"中點與重心", "lines": [
                     r"中點 \(\overrightarrow{OM}=\dfrac{\overrightarrow{OA}+\overrightarrow{OB}}{2}\)；",
                     r"\(\triangle ABC\) 重心 \(\overrightarrow{OG}=\) 【\(\dfrac{\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}}{3}\)】。"]},
@@ -145,7 +145,7 @@ UNIT = {
                     r"\(\triangle ABP=\) 【\(\beta\)】\(\times\triangle ABC\)；\(\triangle ACP=\alpha\times\triangle ABC\)；\(\triangle BCP=(1-\alpha-\beta)\times\triangle ABC\)。"]},
             ],
             "misconceptions": [
-                {"wrong": r"分點公式係數照位置擺", "right": r"\(\overrightarrow{OP}=\dfrac{n\overrightarrow{OA}+m\overrightarrow{OB}}{m+n}\)：係數 **對角交叉**（靠 \(B\) 的權重 \(m\)）"},
+                {"wrong": r"分點公式係數照位置擺", "right": r"\(\overrightarrow{OP}=\dfrac{n\overrightarrow{OA}+m\overrightarrow{OB}}{m+n}\)：**分母比例和、分子交叉乘**（\(\overline{AP}\) 的 \(m\) 交叉乘到 \(\overrightarrow{OB}\)）"},
                 {"wrong": r"\(P\) 在直線 \(AB\) 上係數和任意", "right": r"\(\overrightarrow{OP}=\alpha\overrightarrow{OA}+\beta\overrightarrow{OB}\) 在直線 \(AB\) 上 \(\Leftrightarrow\alpha+\beta=1\)"},
                 {"wrong": r"\(\overrightarrow{AP}=\alpha\overrightarrow{AB}+\beta\overrightarrow{AC}\) 時 \(\triangle ABP\) 佔 \(\alpha\)", "right": r"\(\triangle ABP\) 佔 **\(\beta\)**（另一邊 \(\overrightarrow{AC}\) 的係數）"},
             ],
@@ -153,7 +153,7 @@ UNIT = {
                 "q": r"\(P\) 內分 \(\overline{AB}\) 為 \(\overline{AP}:\overline{PB}=2:1\)，用 \(\overrightarrow{OA}\)、\(\overrightarrow{OB}\) 表示 \(\overrightarrow{OP}\)。",
                 "steps": [
                     {"do": r"\(\overline{AP}:\overline{PB}=2:1\)，即 \(m=2\)、\(n=1\)。",
-                     "why": r"分點公式 \(\overrightarrow{OP}=\dfrac{n\,\overrightarrow{OA}+m\,\overrightarrow{OB}}{m+n}\)，係數 **對角交叉**（靠 \(B\) 那段的比 \(m\) 配給 \(\overrightarrow{OB}\)）。"},
+                     "why": r"分點公式 \(\overrightarrow{OP}=\dfrac{n\,\overrightarrow{OA}+m\,\overrightarrow{OB}}{m+n}\)：**分母比例和 \(m+n\)、分子交叉乘**——\(\overline{AP}\) 的 \(m\) 乘到對角的 \(\overrightarrow{OB}\)、\(\overline{PB}\) 的 \(n\) 乘到 \(\overrightarrow{OA}\)。"},
                     {"do": r"\(\overrightarrow{OP}=\dfrac{1\cdot\overrightarrow{OA}+2\cdot\overrightarrow{OB}}{2+1}=\dfrac{\overrightarrow{OA}+2\overrightarrow{OB}}{3}\)。",
                      "why": r"\(P\) 靠近 \(B\)，所以 \(\overrightarrow{OB}\) 的權重（\(2\)）較大，合理。"},
                 ],
@@ -189,7 +189,7 @@ UNIT = {
                 "a": r"**\(\dfrac12\)**：佔比 ＝ \(\overrightarrow{AC}\) 的係數 \(\beta\)。"},
             "strategy": [
                 r"線性組合先選 **兩個不平行向量** 當基底，所有向量都用它們表示。",
-                r"分點記「**對角交叉**」：\(\overrightarrow{AP}:\overrightarrow{PB}=m:n\Rightarrow\overrightarrow{OP}=\dfrac{n\overrightarrow{OA}+m\overrightarrow{OB}}{m+n}\)。",
+                r"分點記「**分母比例和、分子交叉乘**」：\(\overline{AP}:\overline{PB}=m:n\Rightarrow\overrightarrow{OP}=\dfrac{n\overrightarrow{OA}+m\overrightarrow{OB}}{m+n}\)（\(m\) 交叉乘 \(\overrightarrow{OB}\)、\(n\) 乘 \(\overrightarrow{OA}\)）。",
                 r"面積比口訣：\(\overrightarrow{AP}=\alpha\overrightarrow{AB}+\beta\overrightarrow{AC}\Rightarrow\triangle ABP\) 佔 \(\beta\)、\(\triangle ACP\) 佔 \(\alpha\)、\(\triangle BCP\) 佔 \(1-\alpha-\beta\)。",
                 r"三點共線 \(\Leftrightarrow\) 係數和為 \(1\)（\(\overrightarrow{OP}=\alpha\overrightarrow{OA}+\beta\overrightarrow{OB}\)、\(\alpha+\beta=1\)）。",
             ],
@@ -474,7 +474,7 @@ UNIT = {
         "checklist": [
             r"\(\overrightarrow{AB}=\) 終點 \(-\) 起點 \(=B-A\)。",
             r"平行（共線）\(\Leftrightarrow ad-bc=0\)。",
-            r"分點對角交叉：\(\overline{AP}:\overline{PB}=m:n\Rightarrow\overrightarrow{OP}=\dfrac{n\overrightarrow{OA}+m\overrightarrow{OB}}{m+n}\)。",
+            r"分點：**分母比例和、分子交叉乘**——\(\overline{AP}:\overline{PB}=m:n\Rightarrow\overrightarrow{OP}=\dfrac{n\overrightarrow{OA}+m\overrightarrow{OB}}{m+n}\)。",
             r"三點共線 \(\Leftrightarrow\) 係數和 \(=1\)。",
             r"\(\overrightarrow{AP}=\alpha\overrightarrow{AB}+\beta\overrightarrow{AC}\Rightarrow\triangle ABP\) 佔 **\(\beta\)**（另一邊係數）。",
             r"內積是 **純量**；垂直 \(\Leftrightarrow\) 內積 \(=0\)。",
