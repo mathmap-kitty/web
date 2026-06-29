@@ -11,7 +11,7 @@ import openpyxl
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from build_html import ANALYTICS, PRIVACY_HTML, _report_btn  # noqa: E402  共用 GA4 + Clarity 追蹤碼＋頁尾隱私＋回報鈕
+from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta  # noqa: E402  共用追蹤碼＋頁尾隱私＋回報鈕＋分享卡
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更正版.xlsx")
 OUT = os.path.join(ROOT, "dist", "115學測數學_跨單元整合_脈絡地圖.html")
@@ -549,12 +549,16 @@ def build():
           "function ts(b){var s=b.nextElementSibling;var o=s.classList.toggle('open');"
           "b.classList.toggle('active',o);b.textContent=o?b.dataset.h:b.dataset.s;}")
 
+    og = og_meta("跨單元整合 · 脈絡地圖（106–115）",
+                 "學測數學 106–115 跨單元考題，依五大脈絡整理：誰跟誰結合、為什麼結合，向量題還可點開完整解析。",
+                 "115學測數學_跨單元整合_脈絡地圖.html")
     html = f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {ANALYTICS}<title>學測數學 · 跨單元整合脈絡地圖（106–115）</title>
+{og}
 <link rel="stylesheet" href="{KATEX}/katex.min.css">
 <style>
 {css}

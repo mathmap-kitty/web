@@ -56,6 +56,38 @@ def _analytics():
 
 ANALYTICS = _analytics()
 
+
+# 社群分享卡（Open Graph + Twitter Card）：貼連結到 LINE／FB／IG 會顯示標題＋說明＋封面。
+# 全站共用一張封面 og-cover.png（1200×630，放站台根目錄）。換網域或封面只動這三個常數。
+SITE_BASE = "https://mathmap-kitty.github.io/web/"
+OG_IMAGE = SITE_BASE + "og-cover.png"
+OG_SITE_NAME = "115 學測數學重點整理"
+
+
+def _esc_attr(s):
+    return (s.replace("&", "&amp;").replace('"', "&quot;")
+            .replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def og_meta(title, desc, page_file=""):
+    """產生 Open Graph／Twitter 分享卡 meta。page_file＝該頁檔名（相對站台根），空字串＝首頁。"""
+    url = SITE_BASE + quote(page_file)
+    t, d = _esc_attr(title), _esc_attr(desc)
+    return (f'<meta name="description" content="{d}">\n'
+            f'<meta property="og:type" content="website">\n'
+            f'<meta property="og:site_name" content="{_esc_attr(OG_SITE_NAME)}">\n'
+            f'<meta property="og:locale" content="zh_TW">\n'
+            f'<meta property="og:title" content="{t}">\n'
+            f'<meta property="og:description" content="{d}">\n'
+            f'<meta property="og:url" content="{url}">\n'
+            f'<meta property="og:image" content="{OG_IMAGE}">\n'
+            f'<meta property="og:image:width" content="1200">\n'
+            f'<meta property="og:image:height" content="630">\n'
+            f'<meta name="twitter:card" content="summary_large_image">\n'
+            f'<meta name="twitter:title" content="{t}">\n'
+            f'<meta name="twitter:description" content="{d}">\n'
+            f'<meta name="twitter:image" content="{OG_IMAGE}">')
+
 # 頁尾隱私說明（GA／Clarity 流量統計告知），全站一致；要改文案：這裡＋三個靜態檔（index、概念地圖、脈絡地圖）。
 PRIVACY_HTML = ('<div style="text-align:center;font-size:12px;color:#9a857c;'
                 'padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 '
@@ -441,12 +473,16 @@ def build_html(unit, units):
             f'{_part3_html(unit.get("part3"))}'
             f'<div class="foot">{unit.get("foot","")}</div>')
     report_btn = _report_btn(unit)
+    og_title = unit.get("page_title", unit["title"])
+    og_desc = f'學測數A「{unit["title"]}」重點整理：考點地圖、先備、示範例與即時練習，中等程度也能自學看得懂。'
+    og = og_meta(og_title, og_desc, unit["file"])
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{ANALYTICS}<title>{unit.get("page_title", unit["title"])}</title>
+{ANALYTICS}<title>{og_title}</title>
+{og}
 <link rel="stylesheet" href="{KATEX}/katex.min.css">
 <style>
 {css}</style>

@@ -8,7 +8,7 @@ import os, io, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from build_html import ANALYTICS, PRIVACY_HTML, _report_btn  # noqa: E402  共用 GA4 + Clarity 追蹤碼＋頁尾隱私＋回報鈕
+from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta  # noqa: E402  共用追蹤碼＋頁尾隱私＋回報鈕＋分享卡
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 OUT = os.path.join(ROOT, "dist", "115學測數學_概念地圖.html")
 
@@ -447,10 +447,14 @@ def build():
           "function netClr(){document.querySelectorAll('#v-net .netedge').forEach(l=>l.style.opacity='');"
           "document.querySelectorAll('#v-net .mnode').forEach(n=>n.style.opacity='');}"
           "aR();")
+    og = og_meta("學測數A · 概念地圖（從大考反推）",
+                 "用近十年大考數據畫出的概念地圖：依賴鏈、熱度地圖、跨單元概念網，看清學測數A的重點結構。",
+                 "115學測數學_概念地圖.html")
     html = f"""<!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {ANALYTICS}<title>學測數A · 概念地圖（從大考反推）</title>
+{og}
 <style>{css}
 {extra}</style></head><body>
 {body}
