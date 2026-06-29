@@ -28,7 +28,7 @@ SVG_NUMLINE = r'''<svg viewBox="0 0 330 86" width="330" height="86" xmlns="http:
 </svg>'''
 
 # 實數系概念圖（依老師手繪版重製）：填色圓角節點 + 藍色註解
-_RT_DARK = "#5d2640"; _RT_DARK2 = "#6b2840"; _RT_MAUVE = "#a87d8e"
+_RT_DARK = "#5d2640"; _RT_MID = "#8a4f66"; _RT_MAUVE = "#a87d8e"  # 階層色：L0深→L1中→L2淺；同層同色
 _RT_LEAF = "#f4e6ec"; _RT_LEDGE = "#d9b8c4"; _RT_LINE = "#b08699"
 _RT_BLUE = "#3a5a9a"; _RT_RED = "#c0392b"; _RT_INKL = "#4a2230"; _RT_SUB = "#a06a7e"
 _RT_SERIF = "font-family=\"'Noto Serif CJK TC','Microsoft JhengHei',serif\""
@@ -53,8 +53,8 @@ def _realsys_fig():
     L.append(f'<text x="36" y="58" font-size="30" fill="{_RT_DARK}" font-weight="bold" {_RT_SERIF}>實數系</text>')
     L.append(f'<text x="38" y="80" font-size="13.5" fill="{_RT_SUB}" font-style="italic">Real Number System</text>')
     L.append(_rt_box(*N['R'][:4], _RT_DARK, '實數 R', N['R'][4], 'white'))
-    L.append(_rt_box(*N['Q'][:4], _RT_DARK2, '有理數 Q', N['Q'][4], 'white'))
-    L.append(_rt_box(*N['IR'][:4], _RT_MAUVE, '無理數', N['IR'][4], 'white'))
+    L.append(_rt_box(*N['Q'][:4], _RT_MID, '有理數 Q', N['Q'][4], 'white'))
+    L.append(_rt_box(*N['IR'][:4], _RT_MID, '無理數', N['IR'][4], 'white'))
     L.append(_rt_box(*N['Z'][:4], _RT_MAUVE, '整數 Z', N['Z'][4], 'white'))
     L.append(_rt_box(*N['F'][:4], _RT_MAUVE, '不為整數的分數', N['F'][4], 'white'))
     for k, t in [('nN','正整數 N'),('n0','0'),('nNEG','負整數'),('fFIN','有限小數'),('fCYC','循環小數')]:
