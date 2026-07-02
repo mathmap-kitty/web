@@ -21,9 +21,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 
 # 已讀進度（考點層，localStorage 鍵 mm-read-kps，格式 "slug:kpN"，與概念地圖共用）
+# 掌握度（理解確認，localStorage 鍵 mm-kp-mastery，值 "ok"／"review"）：每考點的「確認理解」互動。
 PROGRESS_JS = (
-    "var RK='mm-read-kps';"
+    "var RK='mm-read-kps',MK='mm-kp-mastery';"
     "function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}"
+    "function gM(){try{return JSON.parse(localStorage.getItem(MK)||'{}')}catch(e){return {}}}"
     "function kpToggle(b){var k=MMSLUG+':'+b.dataset.kp;var s=gR();var on=!s.has(k);on?s.add(k):s.delete(k);"
     "localStorage.setItem(RK,JSON.stringify([...s]));upUnit();}"
     "function upUnit(){var s=gR();var done=MMKPS.filter(k=>s.has(MMSLUG+':'+k)).length,t=MMKPS.length;"
@@ -33,7 +35,27 @@ PROGRESS_JS = (
     "function markAllKp(){var s=gR();var all=MMKPS.every(k=>s.has(MMSLUG+':'+k));"
     "MMKPS.forEach(k=>{var key=MMSLUG+':'+k;all?s.delete(key):s.add(key);});"
     "localStorage.setItem(RK,JSON.stringify([...s]));upUnit();}"
-    "upUnit();")
+    # 設定某考點掌握度：'ok'＝我懂了（同步標已讀）、'review'＝待複習；再點同一鈕可取消。
+    "function kpMastery(kp,st,force){var o=gM(),key=MMSLUG+':'+kp;"
+    "if(o[key]===st&&!force){delete o[key];}else{o[key]=st;}"
+    "localStorage.setItem(MK,JSON.stringify(o));"
+    "if(o[key]==='ok'){var s=gR();s.add(MMSLUG+':'+kp);localStorage.setItem(RK,JSON.stringify([...s]));}"
+    "upMastery();upUnit();}"
+    "function upMastery(){var o=gM(),ok=0,rv=0;MMKPS.forEach(function(k){var v=o[MMSLUG+':'+k];"
+    "if(v==='ok')ok++;else if(v==='review')rv++;});"
+    "document.querySelectorAll('.kpcheck').forEach(function(b){var v=o[MMSLUG+':'+b.dataset.kp]||'';"
+    "b.classList.toggle('is-ok',v==='ok');b.classList.toggle('is-rv',v==='review');"
+    "var ok0=b.querySelector('.kc-ok'),rv0=b.querySelector('.kc-rv');"
+    "if(ok0)ok0.classList.toggle('on',v==='ok');if(rv0)rv0.classList.toggle('on',v==='review');});"
+    "document.querySelectorAll('.kp-mastery').forEach(function(e){var v=o[MMSLUG+':'+e.dataset.kp]||'';"
+    "e.textContent=v==='ok'?'✓ 已理解':(v==='review'?'⚠ 待複習':'');e.className='kp-mastery '+v;});"
+    "var mt=document.getElementById('mst-txt');if(mt)mt.textContent=ok;"
+    "var rv2=document.getElementById('mst-rv');if(rv2)rv2.textContent=rv;"
+    "var mb=document.getElementById('mst-bar');if(mb)mb.style.width=(MMKPS.length?ok/MMKPS.length*100:0)+'%';"
+    "var jp=document.getElementById('mst-jump');if(jp)jp.style.display=rv?'':'none';}"
+    "function jumpReview(){var o=gM();for(var i=0;i<MMKPS.length;i++){"
+    "if(o[MMSLUG+':'+MMKPS[i]]==='review'){location.hash=MMKPS[i];return;}}}"
+    "upUnit();upMastery();")
 
 
 # 流量分析：GA4 + Microsoft Clarity，統一插在每頁 <head>，11 個單元頁全部生效。
@@ -217,7 +239,9 @@ QUIZ_JS = (
     "function grade(p){if(done)return;done=true;opts.forEach(function(b){var i=num(b.dataset.i),c=ans.indexOf(i)>=0;"
     "if(c)b.classList.add('correct');if(p.indexOf(i)>=0&&!c)b.classList.add('wrong');b.disabled=true;});"
     "var ok=p.length===ans.length&&p.every(function(i){return ans.indexOf(i)>=0;});"
-    "fb.textContent=ok?'✓ 答對了！':'✗ 答錯了，正解見綠色選項';fb.className='opt-fb '+(ok?'ok':'no');bump(ok);}"
+    "fb.textContent=ok?'✓ 答對了！':'✗ 答錯了，正解見綠色選項';fb.className='opt-fb '+(ok?'ok':'no');bump(ok);"
+    # 若此為考點「確認理解」的概念小測：答對自動標『我懂了』、答錯標『待複習』（學生仍可手動改）。
+    "var kc=q.closest('.kpcheck');if(kc&&typeof kpMastery==='function'){kpMastery(kc.dataset.kp,ok?'ok':'review',true);}}"
     "if(multi){var ck=q.querySelector('.opt-check');"
     "opts.forEach(function(b){b.addEventListener('click',function(){if(done)return;var i=num(b.dataset.i),k=sel.indexOf(i);"
     "if(k>=0){sel.splice(k,1);b.classList.remove('sel');}else{sel.push(i);b.classList.add('sel');}});});"
@@ -272,6 +296,35 @@ def _geo_table_html(tb):
             f"<tr>{head}</tr>{rows}</table></div>")
 
 
+def _kpcheck_html(kp):
+    """考點「確認理解」互動區塊：概念小測（check，即時批改）或退回自我檢查（selfcheck，看答案），
+    末尾加『我懂了／待複習』自評（掌握度進度追蹤，PROGRESS_JS 的 kpMastery）。"""
+    sc = kp.get("selfcheck")
+    chk = kp.get("check")
+    if not sc and not chk:
+        return ""
+    body = ""
+    if chk:  # 概念選擇題 → 即時批改（正解須存在才互動；answer 為 1-based list）
+        ans = chk.get("answer")
+        why = f'<div class="kc-why">{html_rich(chk["why"])}</div>' if chk.get("why") else ""
+        why_btn = ('<button class="sol-btn mini" data-s="為什麼" data-h="收合" onclick="ts(this)">為什麼</button>'
+                   f'<div class="sol">{why}</div>') if why else ""
+        body = (f'<div class="kc-q">{html_rich(chk["q"])}</div>'
+                f'{_opts_html(chk["options"], ans)}{why_btn}')
+    elif sc:  # 退回：原 1 分鐘自我檢查（看答案揭曉）
+        ans = "".join(f'<p>{html_rich(x)}</p>' for x in sc["a"]) if isinstance(sc["a"], (list, tuple)) \
+            else f'<p>{html_rich(sc["a"])}</p>'
+        body = (f'<div class="kc-q">{html_rich(sc["q"])}</div>'
+                '<button class="sol-btn" data-s="看答案" data-h="收起答案" onclick="ts(this)">看答案</button>'
+                f'<div class="sol">{ans}</div>')
+    rate = ('<div class="kc-rate"><span class="kc-rate-l">讀完覺得懂了嗎？</span>'
+            f'<button class="kc-ok" onclick="kpMastery(\'{kp["id"]}\',\'ok\')">✓ 我懂了</button>'
+            f'<button class="kc-rv" onclick="kpMastery(\'{kp["id"]}\',\'review\')">✗ 待複習</button></div>')
+    return (f'<div class="kpcheck" data-kp="{kp["id"]}">'
+            '<div class="kc-head">✅ 確認理解 <small>先自己作答／回想，再自評掌握度</small></div>'
+            f'{body}{rate}</div>')
+
+
 def _kp_html(kp, slug=""):
     points = "".join(_point_html(p) for p in kp["points"])
     tables = "".join(_geo_table_html(tb) for tb in kp.get("tables", []))
@@ -305,17 +358,7 @@ def _kp_html(kp, slug=""):
         else:
             inner = html_rich(s)
         strategy = f'<span class="label">解題策略</span><div class="callout">{inner}</div>'
-    selfcheck = ""
-    sc = kp.get("selfcheck")
-    if sc:
-        ans = "".join(f'<p>{html_rich(x)}</p>' for x in sc["a"]) if isinstance(sc["a"], (list, tuple)) \
-            else f'<p>{html_rich(sc["a"])}</p>'
-        selfcheck = ('<div class="selfcheck">'
-                     '<div class="sc-head">⏱ 1 分鐘自我檢查</div>'
-                     f'<div class="sc-q">{html_rich(sc["q"])}</div>'
-                     '<button class="sol-btn" data-s="看答案" data-h="收起答案" '
-                     'onclick="ts(this)">看答案</button>'
-                     f'<div class="sol">{ans}</div></div>')
+    selfcheck = _kpcheck_html(kp)
     prereq = ""
     pr = kp.get("prereq")
     if pr:
@@ -339,7 +382,8 @@ def _kp_html(kp, slug=""):
     return (f'<div class="card" id="{kp["id"]}">'
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
             f'title="標記此考點已讀" aria-label="標記已讀"></button>'
-            f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}</p>'
+            f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}'
+            f'<span class="kp-mastery" data-kp="{kp["id"]}"></span></p>'
             f'{prereq}'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
             f'{_cues_html(slug, kp["id"])}'
@@ -528,6 +572,11 @@ def build_html(unit, units):
             '<span class="upbar"><i id="up-bar"></i></span>'
             '<button class="up-all" onclick="markAllKp()">全部標記／取消</button>'
             '<span class="up-hint">（點各考點前的 ○ 標記；會同步到概念地圖）</span></div>'
+            f'<div class="unit-prog mastery-prog">✅ 已確認理解 <b id="mst-txt">0</b> / {len(unit["kps"])} 考點'
+            '<span class="upbar mst"><i id="mst-bar"></i></span>'
+            '<span class="mst-rvline">⚠ 待複習 <b id="mst-rv">0</b>'
+            '<button class="up-all" id="mst-jump" onclick="jumpReview()" style="display:none">跳到待複習 →</button></span>'
+            '<span class="up-hint">（在各考點末「確認理解」作答或自評）</span></div>'
             f'{_part0_html(unit.get("part0"))}'
             '<div class="part">Part 1　建構概念：'
             f'{unit.get("part1_label","五大考點")} <small>先把觀念與公式打穩，再上戰場</small></div>'
