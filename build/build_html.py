@@ -12,6 +12,10 @@ try:
     from cues import CUES  # 解題線索（單一來源；同餵解題線索地圖頁與各考點標籤）
 except Exception:
     CUES = []
+try:
+    from checks import CHECKS  # 考點「確認理解」概念小測（單一來源）
+except Exception:
+    CHECKS = {}
 _CUES_BY_KP = {}
 for _c in CUES:
     _CUES_BY_KP.setdefault((_c["unit"], _c["kp"]), []).append(_c)
@@ -296,11 +300,12 @@ def _geo_table_html(tb):
             f"<tr>{head}</tr>{rows}</table></div>")
 
 
-def _kpcheck_html(kp):
+def _kpcheck_html(kp, slug=""):
     """考點「確認理解」互動區塊：概念小測（check，即時批改）或退回自我檢查（selfcheck，看答案），
-    末尾加『我懂了／待複習』自評（掌握度進度追蹤，PROGRESS_JS 的 kpMastery）。"""
+    末尾加『我懂了／待複習』自評（掌握度進度追蹤，PROGRESS_JS 的 kpMastery）。
+    concept 小測來源：kp 內嵌 "check" 優先，否則查 checks.py 的 CHECKS[(slug,kpid)]。"""
     sc = kp.get("selfcheck")
-    chk = kp.get("check")
+    chk = kp.get("check") or CHECKS.get((slug, kp.get("id")))
     if not sc and not chk:
         return ""
     body = ""
@@ -358,7 +363,7 @@ def _kp_html(kp, slug=""):
         else:
             inner = html_rich(s)
         strategy = f'<span class="label">解題策略</span><div class="callout">{inner}</div>'
-    selfcheck = _kpcheck_html(kp)
+    selfcheck = _kpcheck_html(kp, slug)
     prereq = ""
     pr = kp.get("prereq")
     if pr:
