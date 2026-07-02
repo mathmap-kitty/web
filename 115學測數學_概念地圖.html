@@ -222,6 +222,37 @@
   .wk-ans{margin-top:9px; font-weight:800; color:#1c6169}
   .wk-btn{margin:2px 0 0}
   .wk-reveal{background:transparent; border-left:none; border-radius:0; padding:0; margin:9px 0 0}
+  /* 考頻徽章 / 學測難題徽章 */
+  .kp-freq{display:inline-block; margin-left:9px; font-size:12.5px; color:#c98a00; font-weight:800; vertical-align:2px; letter-spacing:1px}
+  .hard-badge{display:inline-block; background:#fbe4e4; color:#b5384e; border-radius:6px; padding:0 7px; font-size:12px; font-weight:700; margin-left:2px}
+  /* 解題線索（看到關鍵字 → 想到這個考點）；藍色＝引導/線索 */
+  .cues{background:#eef4fb; border:1px solid #cfe0f2; border-left:4px solid #3a5a9a; border-radius:0 8px 8px 0; padding:8px 14px; margin:9px 0 4px; font-size:14px; color:#3a4a63; line-height:1.95}
+  .cue-lbl{display:inline-block; background:#3a5a9a; color:#fff; border-radius:6px; padding:1px 9px; font-size:12.5px; font-weight:800; margin-right:8px}
+  .cue-kw{color:#22406e; font-weight:700}
+  .cue-more{margin-left:6px; color:#3a5a9a; font-weight:700; white-space:nowrap; text-decoration:none; border-bottom:1.5px solid #b7cef0}
+  .cue-more:hover{background:#dce8f6}
+  /* 混合題實戰（真學測非選題＋官方評分原則） */
+  .mixed{margin:6px 0 4px; border:1.5px solid #e3b487; background:#fff8f0; border-radius:14px; padding:14px 16px}
+  .mx-head{font-weight:800; color:#a8571c; font-size:16.5px; margin-bottom:9px}
+  .mx-principle{background:#fff; border:1px solid #f0d9bf; border-radius:10px; padding:10px 14px; font-size:14px; color:#5a4a42; margin-bottom:12px}
+  .mx-principle>b{color:#a8571c}
+  .mx-principle ul{margin:6px 0 4px; padding-left:1.35em}
+  .mx-principle li{margin:3px 0}
+  .mx-oneline{margin-top:5px; color:#a8571c; font-weight:700}
+  .mx-ctx{background:#fbf6f0; border-left:4px solid #e3b487; border-radius:0 8px 8px 0; padding:9px 14px; color:var(--ink); margin-bottom:6px; line-height:1.9}
+  .mx-src{font-size:12px; color:#9a857c; font-weight:400; margin-left:8px}
+  .mx-item{border-top:1px dashed #ecd6bf; padding-top:12px; margin-top:12px}
+  .mx-q{font-weight:600; color:var(--ink); margin-bottom:2px}
+  .mx-tag{display:inline-block; background:#f3e0cc; color:#8a4a12; border-radius:6px; padding:1px 9px; font-size:13px; font-weight:700; margin-right:8px}
+  .mx-item .sol-btn{margin:8px 0 2px}
+  .mx-ans{font-size:14.5px; margin-bottom:9px; line-height:1.95}
+  .mx-rub{background:#fff; border:1px solid #ead9c7; border-radius:9px; padding:9px 13px}
+  .mx-rub-h{font-weight:800; color:#a8571c; font-size:14px; margin-bottom:6px}
+  .mx-rub-row{display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-size:14px}
+  .mx-rub-row ol{margin:3px 0; padding-left:1.35em}
+  .mx-lvl{flex:none; border-radius:6px; padding:1px 10px; font-size:12.5px; font-weight:800; color:#fff; margin-top:1px}
+  .mx-lvl.mx-full{background:#1f7a4d} .mx-lvl.mx-mid{background:#c98a00} .mx-lvl.mx-zero{background:#b5384e}
+  .mx-group + .mx-group{margin-top:16px; padding-top:14px; border-top:2px solid #ecd6bf}
   /* 已讀進度（考點打勾，與概念地圖共用 localStorage） */
   .kpchk{display:inline-block; vertical-align:middle; width:22px; height:22px; border-radius:50%;
     border:2px solid #d3c0c7; background:#fff; cursor:pointer; margin-right:9px; padding:0; position:relative; transition:.15s}
@@ -326,7 +357,7 @@
   .cm-board.marking .kpcell:hover .cellbg{filter:brightness(1.1)}
 </style></head><body>
 <div class="cm-topbar"><span class="t-title">學測數A · 概念地圖（從大考反推）</span>
-<a class="home" href="index.html">📚 首頁</a><select class="nav-select" onchange="if(this.value)location.href=this.value" style="background:#fff;color:var(--maroon-d);border:none;border-radius:20px;padding:6px 12px;font-weight:700;font-size:14px"><option value="">單元 ▾</option><option value="index.html">📚 目錄首頁</option><option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option></select></div>
+<a class="home" href="index.html">📚 首頁</a><select class="nav-select" onchange="if(this.value)location.href=this.value" style="background:#fff;color:var(--maroon-d);border:none;border-radius:20px;padding:6px 12px;font-weight:700;font-size:14px"><option value="">單元 ▾</option><option value="index.html">📚 目錄首頁</option><option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option><option value="115學測數學_解題線索地圖.html">🧭 解題線索地圖</option></select></div>
 <div class="cm-wrap">
 <div class="cm-hero"><h1>從大考反推的概念地圖</h1>
 <p>寫給「上課聽得懂、自己做卻卡住」的你——中間缺的是一座 <b>從「點狀題型」到「面狀概念」的橋</b>。這張地圖不照課本目錄，而是讓 <b>近十年大考數據</b> 決定重點與結構：依賴鏈（先學什麼）、熱度地圖（份量輕重）、概念網（跨單元連結）。</p></div>

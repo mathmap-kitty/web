@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<title>學測數A · 解題線索地圖</title>
+<meta name="description" content="考試不知如何下手？從『你要求什麼』出發，順著線索找到該用的知識點——跨單元、觸類旁通。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="115 學測數學重點整理">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="解題線索地圖 · 看到關鍵字就想到知識點">
+<meta property="og:description" content="考試不知如何下手？從『你要求什麼』出發，順著線索找到該用的知識點——跨單元、觸類旁通。">
+<meta property="og:url" content="https://mathmap-kitty.github.io/web/115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8_%E8%A7%A3%E9%A1%8C%E7%B7%9A%E7%B4%A2%E5%9C%B0%E5%9C%96.html">
+<meta property="og:image" content="https://mathmap-kitty.github.io/web/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="解題線索地圖 · 看到關鍵字就想到知識點">
+<meta name="twitter:description" content="考試不知如何下手？從『你要求什麼』出發，順著線索找到該用的知識點——跨單元、觸類旁通。">
+<meta name="twitter:image" content="https://mathmap-kitty.github.io/web/og-cover.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<style>
+:root{
+    --ink:#2b2b2b; --maroon:#8c2740; --maroon-d:#6f1f33; --rose:#b03a5b;
+    --ans:#c0392b; --btn:#1f6f78; --btn-bg:#e9f5f4; --btn-bd:#1f6f78;
+    --card:#ffffff; --page:#f7f2ee; --callout:#fdf3ee; --strat:#eef6f1; --line:#e7dcd6;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+    line-height:1.85; font-size:16.5px;
+  }
+  .wrap{max-width:940px; margin:0 auto; padding:0 18px 80px;}
+  /* toolbar */
+  .toolbar{
+    position:sticky; top:0; z-index:50; background:rgba(140,39,64,.97);
+    color:#fff; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    padding:10px 18px; margin-bottom:8px; box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  .toolbar .t-title{font-weight:700; margin-right:auto; font-size:16px; letter-spacing:.5px}
+  .toolbar button{
+    background:#fff; color:var(--maroon-d); border:none; border-radius:20px;
+    padding:6px 14px; font-size:14px; font-weight:700; cursor:pointer;
+    font-family:inherit; transition:.15s;
+  }
+  .toolbar button:hover{background:#ffe6ee}
+  .toolbar .nav-select{background:#fff; color:var(--maroon-d); border:none; border-radius:20px; padding:6px 12px; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer; max-width:44vw}
+  .card[id], .part[id]{scroll-margin-top:64px}
+  .hero{padding:26px 0 6px; text-align:center}
+  .hero h1{color:var(--maroon); margin:.1em 0; font-size:27px; letter-spacing:1px}
+  .hero p{margin:.3em 0; color:#7a6a63; font-size:14.5px}
+  .legend{
+    background:#fff7ef; border:1px dashed #e0b9a6; border-radius:12px;
+    padding:10px 16px; margin:14px 0 24px; font-size:14px; color:#6b5249;
+  }
+  .legend b{color:var(--maroon)}
+  /* part heading */
+  .part{
+    margin:38px 0 16px; padding:10px 18px; border-radius:12px;
+    background:linear-gradient(90deg,var(--maroon),#a8395a); color:#fff;
+    font-size:21px; font-weight:800; letter-spacing:1px;
+    box-shadow:0 3px 12px rgba(140,39,64,.22);
+  }
+  .part small{display:block; font-weight:500; font-size:13.5px; opacity:.92; letter-spacing:.5px}
+  /* card */
+  .card{
+    background:var(--card); border-radius:14px; padding:20px 22px; margin:18px 0;
+    box-shadow:0 2px 10px rgba(80,40,30,.07); border-left:5px solid var(--maroon);
+  }
+  .kp{color:var(--maroon); font-size:19px; font-weight:800; margin:0 0 4px}
+  .kp .num{
+    display:inline-block; background:var(--maroon); color:#fff; border-radius:8px;
+    padding:1px 9px; font-size:15px; margin-right:8px; vertical-align:middle;
+  }
+  .callout{background:var(--callout); border-radius:10px; padding:10px 14px; margin:10px 0 16px; font-size:15px; color:#6b4a3f}
+  .callout b{color:var(--maroon-d)}
+  /* 解題策略：一點一行，▸ 標記，續行懸掛對齊 */
+  .callout .sln{display:block; padding-left:1.25em; text-indent:-1.25em}
+  .callout .sln+.sln{margin-top:5px}
+  .callout .sln::before{content:"▸ "; color:var(--btn); font-weight:800}
+  .label{
+    display:block; width:fit-content; margin:30px 0 8px; padding:3px 12px; border-radius:6px;
+    background:#f3e3e8; color:var(--maroon-d); font-weight:800; font-size:15px;
+  }
+  ul.points{margin:6px 0; padding-left:6px; list-style:none}
+  ul.points>li{
+    position:relative; padding:7px 4px 7px 30px; border-bottom:1px dashed var(--line);
+  }
+  ul.points>li:last-child{border-bottom:none}
+  ul.points>li::before{
+    counter-increment:pt; content:counter(pt);
+    position:absolute; left:0; top:8px; width:21px; height:21px; line-height:21px;
+    text-align:center; background:#f0dde3; color:var(--maroon-d); border-radius:50%;
+    font-size:12.5px; font-weight:700;
+  }
+  ul.points{counter-reset:pt}
+  .sub{padding-left:6px; color:#555; display:block}
+  /* 圖示 */
+  ul.points>li.figli{counter-increment:none; padding:4px 0 4px; border-bottom:none}
+  ul.points>li.figli::before{content:none}
+  figure.tfig{margin:10px auto; text-align:center; max-width:155px; background:#fbfafc;
+    border:1px solid var(--line); border-radius:12px; padding:9px 10px 6px}
+  figure.tfig svg{display:block; width:100%; height:auto; margin:0 auto}
+  figure.tfig figcaption{font-size:13px; color:#5a4a52; margin-top:6px; font-weight:600}
+  figure.tfig figcaption b{color:var(--maroon)}
+  /* 標籤＋分行內文：一個小概念一行，續行對齊在「：」後 */
+  ul.points>li.pt2{display:flex; align-items:baseline; gap:.1em}
+  ul.points>li.pt2>.lab{font-weight:800; white-space:nowrap; flex:0 0 auto; color:#3a2b2e}
+  ul.points>li.pt2>.body{flex:1 1 auto; min-width:0}
+  ul.points>li.pt2>.body>.ln{display:block}
+  ul.points>li.pt2>.body>.ln + .ln{margin-top:3px}
+  @media(max-width:560px){
+    ul.points>li.pt2{flex-direction:column; gap:1px}
+    ul.points>li.pt2>.body{padding-left:.7em}
+  }
+  /* blank (fill-in) */
+  .blank{cursor:pointer; user-select:none; display:inline-block; vertical-align:middle}
+  .blank .q{
+    display:inline-block; min-width:2.6em; text-align:center;
+    color:var(--rose); background:#fbeef2; border:1.5px dashed #d6a3b4;
+    border-radius:6px; padding:0 .5em; font-weight:700; transition:.12s;
+  }
+  .blank:hover .q{background:#f6dee6; border-color:var(--rose)}
+  .blank .a{display:none; color:var(--ans); font-weight:700; background:#fdecea; border-radius:5px; padding:0 .25em}
+  .blank.on .q{display:none}
+  .blank.on .a{display:inline}
+  /* solution button + block */
+  .sol-btn{
+    display:inline-block; margin:6px 0; padding:6px 16px; cursor:pointer;
+    background:var(--btn-bg); color:var(--btn); border:1.5px solid var(--btn-bd);
+    border-radius:20px; font-size:14px; font-weight:700; font-family:inherit; transition:.15s;
+  }
+  .sol-btn:hover{background:var(--btn); color:#fff}
+  .sol-btn.active{background:var(--btn); color:#fff}
+  .sol-btn::before{content:"▸ "}
+  .sol-btn.active::before{content:"▾ "}
+  .sol-btn.mini{padding:3px 12px; font-size:13px; margin:0}
+  .sol{display:none; margin:8px 0 4px; padding:12px 16px; background:#f4f8f7;
+    border-left:4px solid var(--btn); border-radius:0 8px 8px 0; font-size:15px}
+  .sol.open{display:block}
+  .sol.inline{border-radius:6px; padding:8px 12px; margin-top:6px}
+  .sol p{margin:.4em 0}
+  .sol .k{color:var(--btn); font-weight:800}
+  .sol .ad{color:var(--ans); font-weight:800}
+  /* misconception table */
+  .tbl-wrap{position:relative; overflow-x:auto; margin:6px 0 4px}
+  table.mis{border-collapse:collapse; width:100%; min-width:520px; font-size:15px}
+  table.mis th{background:#f3e3e8; color:var(--maroon-d); padding:8px 12px; border:1px solid var(--line); width:50%}
+  table.mis td{padding:9px 12px; border:1px solid var(--line); vertical-align:top}
+  table.mis td.err{background:#fff;color:#7a4a4a}
+  table.mis td.cor{background:#fafdfc}
+  .x{color:#b9542f; font-weight:700} .o{color:#1f7a4d; font-weight:700}
+  /* question */
+  .q-meta{font-weight:800; color:var(--maroon-d); margin:3.4em 0 6px; font-size:15.5px}
+  .label + .q-meta{margin-top:10px}
+  .subq{margin-top:1.8em}
+  .q-meta .tag{background:#efe0e5; border-radius:5px; padding:1px 8px; margin-right:6px; font-size:14px}
+  .q-meta .lv{color:#c98a00; font-weight:700; margin-left:4px}
+  .q-meta .core{display:block; font-weight:600; color:#7a6258; font-size:13.5px; margin-top:2px}
+  .q-body{margin:6px 0}
+  .opts{margin:10px 0 2px; color:#333}
+  .opts > span{display:block; margin:9px 0; line-height:1.9}
+  .ctr{text-align:center; margin:10px 0}
+  .ex{padding-left:1.6em; color:#444}
+  /* diagram */
+  .planes{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin:14px 0}
+  .planes figure{margin:0; flex:1 1 200px; max-width:260px; background:#fbfafc; border:1px solid var(--line); border-radius:12px; padding:10px; text-align:center}
+  .planes svg{width:100%; height:120px}
+  .planes figcaption{font-size:13.5px; color:#5a4a52; margin-top:6px; font-weight:600}
+  .planes figcaption b{color:var(--maroon)}
+  /* quick ref */
+  table.ref{border-collapse:collapse; width:100%; min-width:560px; font-size:15px}
+  table.ref th{background:var(--maroon); color:#fff; padding:8px 12px; border:1px solid #d9b9c4}
+  table.ref td{padding:8px 12px; border:1px solid var(--line)}
+  table.ref td:first-child{background:#faf2f5; font-weight:700; color:var(--maroon-d); white-space:nowrap; width:30%}
+  ol.checklist{font-size:15px; padding-left:1.4em}
+  ol.checklist li{padding:4px 0; border-bottom:1px dashed var(--line)}
+  .foot{text-align:center; color:#9a8a82; font-size:12.5px; margin-top:30px}
+  /* 附註（點按浮動說明） */
+  .note{position:relative; cursor:help; border-bottom:1.6px dotted var(--btn); color:#175a62}
+  .note::after{content:"ⓘ"; font-size:.72em; vertical-align:super; color:var(--btn); margin-left:1px}
+  .note>.np{
+    display:none; position:absolute; left:0; top:138%; z-index:60;
+    width:max-content; max-width:300px; text-align:left; white-space:normal;
+    background:#243b3e; color:#fff; padding:9px 13px; border-radius:9px;
+    font-size:13.5px; line-height:1.7; font-weight:400; letter-spacing:.2px;
+    box-shadow:0 6px 22px rgba(0,0,0,.28); cursor:auto;
+  }
+  .note>.np::before{content:""; position:absolute; left:14px; top:-6px;
+    border:6px solid transparent; border-bottom-color:#243b3e; border-top:none}
+  .note.on>.np{display:block}
+  .note>.np .katex{color:#fff}
+  @media(max-width:560px){ .note>.np{max-width:74vw} }
+  .katex{font-size:1.04em}
+  @media(max-width:560px){
+    body{font-size:15.5px} .hero h1{font-size:22px} .part{font-size:18px}
+    .card{padding:16px 15px}
+  }
+  /* 1 分鐘自我檢查 */
+  .selfcheck{margin:18px 0 4px; border:1.5px solid #e0b94e; background:#fffaef; border-radius:12px; padding:12px 16px}
+  .sc-head{font-weight:800; color:#9a6b00; font-size:15px; margin-bottom:7px}
+  .sc-q{color:#3a3a3a; font-size:15px; margin-bottom:2px}
+  .selfcheck .sol{background:#fff6e0; border-left-color:#e0b94e}
+  .selfcheck .sol-btn{background:#fbefce; color:#946700; border-color:#e0b94e}
+  /* 自學優化：先備知識（B2）＋ 示範例（步驟化，每步附「為什麼」） */
+  .prereq{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; margin:2px 0 14px;
+    background:#eef5f4; border-left:4px solid #1f6f78; border-radius:8px; padding:8px 14px; font-size:14px}
+  .prereq .pr-tag{font-weight:800; color:#1c6169; white-space:nowrap}
+  .prereq .pr-list{margin:0; padding-left:1.15em; flex:1 1 240px; color:#3c5a59}
+  .prereq .pr-list li{margin:1px 0}
+  .prereq .pr-note{flex-basis:100%; font-size:12.5px; color:#7a8a89}
+  .worked{margin:16px 0 4px; border:1.5px solid #bfe0db; background:#f1f8f6; border-radius:12px; padding:12px 16px}
+  .wk-head{font-weight:800; color:#1c6169; font-size:15px; margin-bottom:7px}
+  .wk-q{font-weight:700; color:var(--ink); margin-bottom:9px}
+  .wk-steps{margin:0; padding-left:1.45em}
+  .wk-steps li{margin:7px 0}
+  .wk-steps li::marker{color:#1f6f78; font-weight:800}
+  .wk-do{display:block; color:var(--ink); font-weight:600}
+  .wk-why{display:block; color:#6f7f7e; font-size:13px; margin-top:2px}
+  .wk-ans{margin-top:9px; font-weight:800; color:#1c6169}
+  .wk-btn{margin:2px 0 0}
+  .wk-reveal{background:transparent; border-left:none; border-radius:0; padding:0; margin:9px 0 0}
+  /* 考頻徽章 / 學測難題徽章 */
+  .kp-freq{display:inline-block; margin-left:9px; font-size:12.5px; color:#c98a00; font-weight:800; vertical-align:2px; letter-spacing:1px}
+  .hard-badge{display:inline-block; background:#fbe4e4; color:#b5384e; border-radius:6px; padding:0 7px; font-size:12px; font-weight:700; margin-left:2px}
+  /* 解題線索（看到關鍵字 → 想到這個考點）；藍色＝引導/線索 */
+  .cues{background:#eef4fb; border:1px solid #cfe0f2; border-left:4px solid #3a5a9a; border-radius:0 8px 8px 0; padding:8px 14px; margin:9px 0 4px; font-size:14px; color:#3a4a63; line-height:1.95}
+  .cue-lbl{display:inline-block; background:#3a5a9a; color:#fff; border-radius:6px; padding:1px 9px; font-size:12.5px; font-weight:800; margin-right:8px}
+  .cue-kw{color:#22406e; font-weight:700}
+  .cue-more{margin-left:6px; color:#3a5a9a; font-weight:700; white-space:nowrap; text-decoration:none; border-bottom:1.5px solid #b7cef0}
+  .cue-more:hover{background:#dce8f6}
+  /* 混合題實戰（真學測非選題＋官方評分原則） */
+  .mixed{margin:6px 0 4px; border:1.5px solid #e3b487; background:#fff8f0; border-radius:14px; padding:14px 16px}
+  .mx-head{font-weight:800; color:#a8571c; font-size:16.5px; margin-bottom:9px}
+  .mx-principle{background:#fff; border:1px solid #f0d9bf; border-radius:10px; padding:10px 14px; font-size:14px; color:#5a4a42; margin-bottom:12px}
+  .mx-principle>b{color:#a8571c}
+  .mx-principle ul{margin:6px 0 4px; padding-left:1.35em}
+  .mx-principle li{margin:3px 0}
+  .mx-oneline{margin-top:5px; color:#a8571c; font-weight:700}
+  .mx-ctx{background:#fbf6f0; border-left:4px solid #e3b487; border-radius:0 8px 8px 0; padding:9px 14px; color:var(--ink); margin-bottom:6px; line-height:1.9}
+  .mx-src{font-size:12px; color:#9a857c; font-weight:400; margin-left:8px}
+  .mx-item{border-top:1px dashed #ecd6bf; padding-top:12px; margin-top:12px}
+  .mx-q{font-weight:600; color:var(--ink); margin-bottom:2px}
+  .mx-tag{display:inline-block; background:#f3e0cc; color:#8a4a12; border-radius:6px; padding:1px 9px; font-size:13px; font-weight:700; margin-right:8px}
+  .mx-item .sol-btn{margin:8px 0 2px}
+  .mx-ans{font-size:14.5px; margin-bottom:9px; line-height:1.95}
+  .mx-rub{background:#fff; border:1px solid #ead9c7; border-radius:9px; padding:9px 13px}
+  .mx-rub-h{font-weight:800; color:#a8571c; font-size:14px; margin-bottom:6px}
+  .mx-rub-row{display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-size:14px}
+  .mx-rub-row ol{margin:3px 0; padding-left:1.35em}
+  .mx-lvl{flex:none; border-radius:6px; padding:1px 10px; font-size:12.5px; font-weight:800; color:#fff; margin-top:1px}
+  .mx-lvl.mx-full{background:#1f7a4d} .mx-lvl.mx-mid{background:#c98a00} .mx-lvl.mx-zero{background:#b5384e}
+  .mx-group + .mx-group{margin-top:16px; padding-top:14px; border-top:2px solid #ecd6bf}
+  /* 已讀進度（考點打勾，與概念地圖共用 localStorage） */
+  .kpchk{display:inline-block; vertical-align:middle; width:22px; height:22px; border-radius:50%;
+    border:2px solid #d3c0c7; background:#fff; cursor:pointer; margin-right:9px; padding:0; position:relative; transition:.15s}
+  .kpchk:hover{border-color:#2e9e5b; background:#f0faf3}
+  .kpchk.on{background:#2e9e5b; border-color:#2e9e5b}
+  .kpchk.on::after{content:"✓"; color:#fff; font-size:14px; font-weight:800; position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center; line-height:1}
+  .unit-prog{display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:#f1f8f4;
+    border:1px solid #cfe6d8; border-radius:12px; padding:9px 16px; margin:14px 0 6px; font-size:14px; color:#2e6b46}
+  .unit-prog b{color:#1f7a45; font-size:15px}
+  .unit-prog .upbar{flex:1; min-width:110px; max-width:230px; height:11px; background:#dcecdf; border-radius:7px; overflow:hidden}
+  .unit-prog .upbar i{display:block; height:100%; width:0; background:linear-gradient(90deg,#2e9e5b,#52c47e); transition:width .3s}
+  .unit-prog .up-all{background:#fff; color:#2e7d46; border:1.4px solid #2e9e5b; border-radius:18px;
+    padding:4px 12px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit}
+  .unit-prog .up-hint{font-size:12px; color:#8aa896; width:100%}
+  /* 圖片放大燈箱（手機點圖看細節） */
+  figure.tfig{cursor:zoom-in}
+  .zoomhint{display:none; margin-top:6px; font-size:12px; color:#9a5a72; background:#f7e8ee;
+    border:1px solid #e6c6d4; border-radius:12px; padding:2px 12px; font-weight:700}
+  figure.tfig.hero .zoomhint{display:inline-block}
+  .lightbox{position:fixed; inset:0; z-index:3000; background:rgba(24,10,16,.88); display:none}
+  .lightbox.open{display:block}
+  .lb-scroll{position:absolute; inset:0; overflow:auto; -webkit-overflow-scrolling:touch; padding:18px; text-align:center}
+  .lb-scroll svg{width:960px !important; max-width:none !important; height:auto; background:#fff6f0;
+    border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,.5); vertical-align:top}
+  .lb-close{position:fixed; top:10px; right:14px; z-index:3001; width:42px; height:42px; border-radius:50%;
+    border:none; background:rgba(255,255,255,.94); color:#6f1f33; font-size:25px; font-weight:800;
+    line-height:1; cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.35); font-family:inherit}
+  .lb-tip{position:fixed; bottom:14px; left:50%; transform:translateX(-50%); z-index:3001;
+    background:rgba(255,255,255,.92); color:#6f1f33; font-size:12.5px; border-radius:14px; padding:5px 14px; white-space:nowrap}
+  /* 練習模式：選擇題可點作答、即時批改 */
+  .opts.quiz{margin:10px 0 2px}
+  .opts.quiz .opt-hint{font-size:12.5px; color:#9a857c; margin:2px 0 8px}
+  .opts.quiz .opt{display:block; width:100%; text-align:left; margin:7px 0; padding:9px 13px; line-height:1.7;
+    background:#fff; border:1.5px solid #e2d3d9; border-radius:10px; cursor:pointer; font:inherit; color:#333; transition:.12s}
+  .opts.quiz .opt:hover:not(:disabled){border-color:var(--rose); background:#fdf4f7}
+  .opts.quiz .opt .opt-n{font-weight:800; color:var(--maroon-d); margin-right:6px}
+  .opts.quiz .opt.sel{border-color:var(--rose); background:#fbe9f0}
+  .opts.quiz .opt.correct{border-color:#2e9e5b; background:#eafaf0; color:#1f7a45}
+  .opts.quiz .opt.correct .opt-n{color:#1f7a45}
+  .opts.quiz .opt.correct::after{content:" ✓"; color:#2e9e5b; font-weight:800}
+  .opts.quiz .opt.wrong{border-color:#c0392b; background:#fdecea; color:#a5342a}
+  .opts.quiz .opt.wrong::after{content:" ✗"; color:#c0392b; font-weight:800}
+  .opts.quiz .opt:disabled{cursor:default}
+  .opt-check{margin:4px 0 2px; background:var(--maroon); color:#fff; border:none; border-radius:18px;
+    padding:6px 18px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit}
+  .opt-fb{display:block; margin-top:8px; font-weight:800; font-size:14.5px}
+  .opt-fb.ok{color:#1f7a45}
+  .opt-fb.no{color:#c0392b}
+  .quizscore{position:fixed; left:12px; bottom:12px; z-index:900; background:rgba(140,39,64,.96); color:#fff;
+    font-size:13.5px; font-weight:700; border-radius:20px; padding:7px 15px; box-shadow:0 3px 12px rgba(0,0,0,.25)}
+  .quizscore b{font-size:15px}
+  /* 錯誤回報浮動按鈕 */
+  .report-btn{position:fixed; right:12px; bottom:12px; z-index:900; background:#fff; color:var(--maroon);
+    border:1.5px solid #d6a3b4; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:700;
+    text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.15)}
+  .report-btn:hover{background:#fbeef2; border-color:var(--rose)}
+
+
+  .cl-topbar{position:sticky;top:0;z-index:50;background:rgba(140,39,64,.97);color:#fff;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 18px;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+  .cl-topbar .t-title{font-weight:800;margin-right:auto;font-size:16px;letter-spacing:.5px}
+  .cl-topbar a{background:#fff;color:var(--maroon-d);border-radius:20px;padding:5px 13px;font-weight:700;font-size:13.5px;text-decoration:none}
+  .clue-wrap{max-width:980px;margin:0 auto;padding:0 16px 70px}
+  .clue-hero{text-align:center;padding:24px 0 4px}
+  .clue-hero h1{color:var(--maroon);font-size:25px;margin:.1em 0;letter-spacing:.5px}
+  .clue-hero p{color:#6b5249;font-size:15px;max-width:700px;margin:.4em auto}
+  .clue-note{background:#eef4fb;border:1px dashed #b7cef0;border-radius:12px;padding:10px 16px;font-size:14px;color:#3a4a63;margin:12px 0 16px;line-height:1.85}
+  .clue-note b{color:#22406e}
+  .cm-cols{column-count:2;column-gap:16px}
+  @media(max-width:768px){.cm-cols{column-count:1}}
+  .cm-cat{break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 16px 6px;margin:0 0 16px}
+  .cm-cat-h{font-weight:800;color:var(--maroon-d);font-size:16.5px;border-bottom:2px solid #f0e6ea;padding-bottom:7px;margin-bottom:6px}
+  .cue-row{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee}
+  .cue-row:last-child{border-bottom:none}
+  .cue-main{flex:1 1 60%;min-width:0}
+  .cue-see{color:#9aa5b0;font-size:12.5px}
+  .cue-k{color:#22406e;font-size:15px}
+  .cue-h{color:#5a4a52;font-size:13.5px;margin-top:2px;line-height:1.7}
+  .cue-link{flex:none;align-self:center;font-size:12.5px;color:#3a5a9a;background:#eef4fb;border:1px solid #cfe0f2;border-radius:16px;padding:3px 11px;text-decoration:none;white-space:nowrap}
+  .cue-link:hover{background:#dce8f6}
+  .clue-foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:26px}
+</style>
+</head>
+<body>
+<div class="cl-topbar"><span class="t-title">學測數A · 解題線索地圖</span><a href="index.html">📚 首頁</a><a href="115學測數學_概念地圖.html">🗺️ 概念地圖</a><a href="115學測數學_跨單元整合_脈絡地圖.html">🧩 脈絡地圖</a></div>
+<div class="clue-wrap">
+<div class="clue-hero"><h1>🧭 解題線索地圖</h1>
+<p>考試時不知道怎麼下手？別急著找公式——先想「<b>我要求什麼</b>」「<b>題目給了什麼線索</b>」，順著線索就能想到該用的知識點。</p></div>
+<div class="clue-note"><b>怎麼用：</b>從下面找到你題目的「線索關鍵字」→ 看它指向哪個知識點與怎麼用 → 點右邊連結直達該考點複習。同一個線索常串起<b>好幾個單元</b>的工具，多看幾次就會「觸類旁通」。</div>
+<div class="cm-cols">
+<div class="cm-cat"><div class="cm-cat-h">🎯 求最大／最小值</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">二次式的極值</b><div class="cue-h">→ 配方 → 看頂點</div></div><a class="cue-link" href="115學測數學_多項式函數.html#kp2">📈 多項式函數 · 二次函數：判別式與配方 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">\(a\sin x+b\cos x\) 的最大值</b><div class="cue-h">→ 疊合成 \(R\sin(x+\varphi)\)，最大 ＝ \(R=\sqrt{a^2+b^2}\)</div></div><a class="cue-link" href="115學測數學_三角.html#kp4">📐 三角 · 三角函數圖形（疊合、對稱） ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">和固定／積固定求極值</b><div class="cue-h">→ 算幾不等式 \(\dfrac{a+b}{2}\ge\sqrt{ab}\)</div></div><a class="cue-link" href="115學測數學_數與式.html#kp4">🔢 數與式 · 乘法公式與算幾不等式 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">\(px+qy\) 在可行域</b><div class="cue-h">→ 線性規劃：只需檢查頂點</div></div><a class="cue-link" href="115學測數學_直線與圓.html#kp5">⭕ 直線與圓 · 平面區域與線性規劃 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">📏 距離</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">點到直線距離</b><div class="cue-h">→ \(\dfrac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}\)</div></div><a class="cue-link" href="115學測數學_直線與圓.html#kp1">⭕ 直線與圓 · 直線方程式與斜率 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">點到平面距離</b><div class="cue-h">→ \(\dfrac{|ax_0+by_0+cz_0-d|}{\sqrt{a^2+b^2+c^2}}\)</div></div><a class="cue-link" href="115學測數學_空間向量.html#kp4">🧊 空間向量 · 平面方程式與距離 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">兩點距離／中點</b><div class="cue-h">→ 坐標差平方和開根號</div></div><a class="cue-link" href="115學測數學_直線與圓.html#kp2">⭕ 直線與圓 · 兩點距離與三角形 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">\(|x-a|\) 的意義</b><div class="cue-h">→ \(x\) 到 \(a\) 的距離</div></div><a class="cue-link" href="115學測數學_數與式.html#kp2">🔢 數與式 · 絕對值 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">⟂ 垂直・平行</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">向量垂直</b><div class="cue-h">→ 內積 ＝ 0</div></div><a class="cue-link" href="115學測數學_平面向量.html#kp3">➡️ 平面向量 · 內積：夾角、垂直、正射影 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">兩直線垂直</b><div class="cue-h">→ 斜率相乘 ＝ \(-1\)</div></div><a class="cue-link" href="115學測數學_直線與圓.html#kp1">⭕ 直線與圓 · 直線方程式與斜率 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">向量平行（共線）</b><div class="cue-h">→ \(ad-bc=0\)</div></div><a class="cue-link" href="115學測數學_平面向量.html#kp1">➡️ 平面向量 · 向量的表示與運算 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">直線垂直平面</b><div class="cue-h">→ 方向向量 ∥ 法向量</div></div><a class="cue-link" href="115學測數學_空間向量.html#kp5">🧊 空間向量 · 空間直線與歪斜線 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">📐 角度</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">三角形求角</b><div class="cue-h">→ 餘弦定理 \(\cos C=\dfrac{a^2+b^2-c^2}{2ab}\)</div></div><a class="cue-link" href="115學測數學_三角.html#kp2">📐 三角 · 正弦定理、餘弦定理 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">兩向量夾角</b><div class="cue-h">→ \(\cos\theta=\dfrac{\text{內積}}{\text{兩長度乘積}}\)</div></div><a class="cue-link" href="115學測數學_平面向量.html#kp3">➡️ 平面向量 · 內積：夾角、垂直、正射影 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">直線的傾角</b><div class="cue-h">→ 斜率 ＝ \(\tan\theta\)</div></div><a class="cue-link" href="115學測數學_直線與圓.html#kp1">⭕ 直線與圓 · 直線方程式與斜率 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">求非特殊角的 \(\sin/\cos\)</b><div class="cue-h">→ 拆成兩特殊角，用和差角公式</div></div><a class="cue-link" href="115學測數學_三角.html#kp5">📐 三角 · 和差角、倍角 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">二面角</b><div class="cue-h">→ 兩平面法向量的夾角</div></div><a class="cue-link" href="115學測數學_空間向量.html#kp6">🧊 空間向量 · 二面角與立體 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">🔺 面積・體積</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">平行四邊形／三角形面積</b><div class="cue-h">→ \(|\)行列式 \(ad-bc|\)（三角形再 ÷2）</div></div><a class="cue-link" href="115學測數學_平面向量.html#kp4">➡️ 平面向量 · 行列式與平行四邊形面積 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">三角形面積（有夾角）</b><div class="cue-h">→ \(\dfrac12 ab\sin C\)</div></div><a class="cue-link" href="115學測數學_三角.html#kp2">📐 三角 · 正弦定理、餘弦定理 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">三邊求三角形面積</b><div class="cue-h">→ 海龍公式</div></div><a class="cue-link" href="115學測數學_三角.html#kp2">📐 三角 · 正弦定理、餘弦定理 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">空間面積／體積</b><div class="cue-h">→ 外積長度／純量三重積 \(|\vec u\cdot(\vec v\times\vec w)|\)</div></div><a class="cue-link" href="115學測數學_空間向量.html#kp3">🧊 空間向量 · 外積與體積 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">圖形變換後的面積</b><div class="cue-h">→ 原面積 \(\times|\det M|\)</div></div><a class="cue-link" href="115學測數學_矩陣.html#kp5">🧮 矩陣 · 平面線性變換 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">🔗 數量關係（和・積・比）</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">已知 \(a+b,\ ab\) 求 \(a^2+b^2\)</b><div class="cue-h">→ 對稱式：用和與積表示</div></div><a class="cue-link" href="115學測數學_數與式.html#kp4">🔢 數與式 · 乘法公式與算幾不等式 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">分點／內分比例</b><div class="cue-h">→ 分母比例和、分子交叉乘</div></div><a class="cue-link" href="115學測數學_平面向量.html#kp2">➡️ 平面向量 · 線性組合、分點與面積比 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">三數成等差／等比</b><div class="cue-h">→ 等差中項 \(2b=a+c\)；等比中項 \(b^2=ac\)</div></div><a class="cue-link" href="115學測數學_數列與級數.html#kp1">🪜 數列與級數 · 等差數列 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">面積比讀成係數</b><div class="cue-h">→ \(\overrightarrow{AP}=\alpha\overrightarrow{AB}+\beta\overrightarrow{AC}\Rightarrow\) 比看係數</div></div><a class="cue-link" href="115學測數學_平面向量.html#kp2">➡️ 平面向量 · 線性組合、分點與面積比 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">🔢 位數・估計</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">幾位數／數量級</b><div class="cue-h">→ 取常用對數，位數 ＝ \([\log N]+1\)</div></div><a class="cue-link" href="115學測數學_指數與對數.html#kp3">📉 指數與對數 · 常用對數（科學記號、位數） ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">\(\sqrt N\) 在哪兩整數間</b><div class="cue-h">→ 夾在相鄰完全平方數之間</div></div><a class="cue-link" href="115學測數學_數與式.html#kp3">🔢 數與式 · 數線、距離與根號估算 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">高斯符號 \([x]\)</b><div class="cue-h">→ 不超過 \(x\) 的最大整數</div></div><a class="cue-link" href="115學測數學_數與式.html#kp6">🔢 數與式 · 高斯（最大整數）函數 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">🔁 規律・遞迴・週期</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">遞迴 \(a_{n+1}=pa_n+q\)</b><div class="cue-h">→ 找不動點 → 構造等比</div></div><a class="cue-link" href="115學測數學_數列與級數.html#kp3">🪜 數列與級數 · 遞迴數列 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">矩陣高次方 \(A^n\)</b><div class="cue-h">→ 先算 \(A^2\)，湊 \(kI\) 或凱萊–漢米頓降冪</div></div><a class="cue-link" href="115學測數學_矩陣.html#kp2">🧮 矩陣 · 矩陣的高次方 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">循環／週期的第 \(n\) 項</b><div class="cue-h">→ 除以週期看餘數定位</div></div><a class="cue-link" href="115學測數學_數列與級數.html#kp4">🪜 數列與級數 · 級數求和與規律週期 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">證明對所有 \(n\) 成立</b><div class="cue-h">→ 數學歸納法</div></div><a class="cue-link" href="115學測數學_數列與級數.html#kp3">🪜 數列與級數 · 遞迴數列 ↗</a></div></div><div class="cm-cat"><div class="cm-cat-h">🎲 機率的線索字</div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">「至少一個」</b><div class="cue-h">→ 算餘事件 \(1-P(\text{都不})\)</div></div><a class="cue-link" href="115學測數學_排列組合與機率.html#kp5">🎲 排列組合與機率 · 獨立事件與餘事件 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">「已知…求…的機率」</b><div class="cue-h">→ 條件機率：分母換成已知範圍</div></div><a class="cue-link" href="115學測數學_排列組合與機率.html#kp4">🎲 排列組合與機率 · 條件機率與貝氏 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">「互不影響／獨立」</b><div class="cue-h">→ 機率相乘</div></div><a class="cue-link" href="115學測數學_排列組合與機率.html#kp5">🎲 排列組合與機率 · 獨立事件與餘事件 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">「期望／平均可得」</b><div class="cue-h">→ \(\sum(\text{值}\times\text{機率})\)</div></div><a class="cue-link" href="115學測數學_排列組合與機率.html#kp6">🎲 排列組合與機率 · 期望值 ↗</a></div><div class="cue-row"><div class="cue-main"><span class="cue-see">看到</span> <b class="cue-k">「恰好 \(k\) 個」</b><div class="cue-h">→ 組合 \(C\) 計數</div></div><a class="cue-link" href="115學測數學_排列組合與機率.html#kp2">🎲 排列組合與機率 · 組合與分組分配 ↗</a></div></div>
+</div>
+<div class="clue-foot">解題線索為教學整理，幫助「把題目線索連到知識點」；實際題目仍以大考中心原卷為準。</div>
+</div>
+<div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
+<a class="report-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf7rBJ0OnAQTiZjUbq3gn6CKFgvz9wir8FzEUccXzTfl54DDw/viewform?usp=pp_url&entry.120093039=%E8%A7%A3%E9%A1%8C%E7%B7%9A%E7%B4%A2%E5%9C%B0%E5%9C%96" target="_blank" rel="noopener" title="發現內容有誤？點此回報">🚩 回報錯誤</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
+</script>
+</body>
+</html>

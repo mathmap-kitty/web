@@ -8,6 +8,14 @@ import io
 import re
 from urllib.parse import quote
 from render import html_rich
+try:
+    from cues import CUES  # 解題線索（單一來源；同餵解題線索地圖頁與各考點標籤）
+except Exception:
+    CUES = []
+_CUES_BY_KP = {}
+for _c in CUES:
+    _CUES_BY_KP.setdefault((_c["unit"], _c["kp"]), []).append(_c)
+CLUEMAP_FILE = "115學測數學_解題線索地圖.html"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
@@ -264,7 +272,7 @@ def _geo_table_html(tb):
             f"<tr>{head}</tr>{rows}</table></div>")
 
 
-def _kp_html(kp):
+def _kp_html(kp, slug=""):
     points = "".join(_point_html(p) for p in kp["points"])
     tables = "".join(_geo_table_html(tb) for tb in kp.get("tables", []))
     mis = ""
@@ -334,6 +342,7 @@ def _kp_html(kp):
             f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}</p>'
             f'{prereq}'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
+            f'{_cues_html(slug, kp["id"])}'
             f'<span class="label">重點與公式</span><ul class="points">{points}</ul>'
             f'{tables}'
             f'{mis}'
@@ -350,6 +359,17 @@ def _freq_badge(freq):
 def _hard_badge(level):
     """★★★ 題目標「學測難題」徽章。"""
     return ' <span class="hard-badge">🔥 學測難題</span>' if level and "★★★" in level else ""
+
+
+def _cues_html(slug, kpid):
+    """考點旁「🔑 解題線索」：看到哪些關鍵字就想到這個考點（反查 cues.py）。"""
+    cs = _CUES_BY_KP.get((slug, kpid))
+    if not cs:
+        return ""
+    kws = "、".join(f'<b class="cue-kw">{html_rich(c["kw"])}</b>' for c in cs)
+    return (f'<div class="cues"><span class="cue-lbl">🔑 解題線索</span>'
+            f'看到 {kws} → 想到這個考點。'
+            f'<a class="cue-more" href="{CLUEMAP_FILE}">全部線索地圖 →</a></div>')
 
 
 def _mixed_html(mixed):
@@ -461,7 +481,8 @@ def _toolbar(unit, units):
     unit_opts = ['<option value="">單元 ▾</option>',
                  '<option value="index.html">📚 目錄首頁</option>',
                  '<option value="115學測數學_概念地圖.html">🗺️ 概念地圖</option>',
-                 '<option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option>']
+                 '<option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option>',
+                 '<option value="115學測數學_解題線索地圖.html">🧭 解題線索地圖</option>']
     if SECTIONS:
         # 依首頁四大主題分組（optgroup），與 index.html 一致。
         for label, slugs in SECTIONS:
@@ -495,7 +516,7 @@ def _toolbar(unit, units):
 def build_html(unit, units):
     css = _asset("style.css")
     js = _asset("app.js")
-    kps_html = "".join(_kp_html(kp) for kp in unit["kps"])
+    kps_html = "".join(_kp_html(kp, unit["slug"]) for kp in unit["kps"])
     body = (f'<div class="hero"><h1>{unit["title"]}</h1>'
             f'<p>{unit.get("hero_sub","")}</p>'
             f'<p style="font-size:13px;color:#9a857c;margin-top:2px">{unit.get("hero_sub2","")}</p></div>'

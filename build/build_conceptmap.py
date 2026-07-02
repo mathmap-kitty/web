@@ -379,7 +379,8 @@ def build():
     nav = ('<select class="nav-select" onchange="if(this.value)location.href=this.value" '
            'style="background:#fff;color:var(--maroon-d);border:none;border-radius:20px;padding:6px 12px;font-weight:700;font-size:14px">'
            '<option value="">單元 ▾</option><option value="index.html">📚 目錄首頁</option>'
-           '<option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option></select>')
+           '<option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option>'
+           '<option value="115學測數學_解題線索地圖.html">🧭 解題線索地圖</option></select>')
     body = f"""<div class="cm-topbar"><span class="t-title">學測數A · 概念地圖（從大考反推）</span>
 <a class="home" href="index.html">📚 首頁</a>{nav}</div>
 <div class="cm-wrap">
