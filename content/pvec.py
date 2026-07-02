@@ -209,6 +209,9 @@ UNIT = {
                     r"幾何式：\(\vec u\cdot\vec v=\) 【\(|\vec u|\,|\vec v|\cos\theta\)】；且 \(|\vec u|^2=\vec u\cdot\vec u\)。"]},
                 {"label": r"夾角", "lines": [
                     r"\(\cos\theta=\) 【\(\dfrac{\vec u\cdot\vec v}{|\vec u|\,|\vec v|}\)】；內積 **正 → 銳角、負 → 鈍角、零 → 直角**。"]},
+                {"label": r"柯西不等式（求極值利器）", "lines": [
+                    r"由 \(-1\le\cos\theta\le1\) 立得 \(|\vec u\cdot\vec v|\le|\vec u|\,|\vec v|\)（[[柯西不等式||向量內積的大小不會超過兩長度的乘積；等號在兩向量平行（同向或反向）時成立。這是數A最常用的「求極值」不等式之一。]]），坐標化即 【\((a^2+b^2)(x^2+y^2)\ge(ax+by)^2\)】，等號在 \((a,b)\,/\!/\,(x,y)\) 時成立；",
+                    r"用途：**平方和固定** 時求 **線性式 \(ax+by\) 的極值**。例：\(x^2+y^2=1\) 時 \(3x+4y\) 的最大值 ＝ \(\sqrt{3^2+4^2}=5\)（在 \((x,y)=(\tfrac35,\tfrac45)\)）。"]},
                 {"label": r"垂直", "lines": [
                     r"兩非零向量 \(\vec u\perp\vec v\Leftrightarrow\vec u\cdot\vec v=\) 【\(0\)】。"]},
                 {"label": r"正射影", "lines": [
