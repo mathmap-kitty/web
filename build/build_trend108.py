@@ -8,8 +8,8 @@ import os, io, sys, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更正版.xlsx")
-# 獨立、不連結、不被搜尋的頁面：檔名帶隨機碼，僅知道網址者可看（非密碼保護）。
-SLUG = "exam-trend-108-231a9fec.html"
+# 獨立頁：先不掛進 mathmap（首頁不連它），但同 repo、同風格，隨時加個連結即可併入。
+SLUG = "exam-trend-analysis.html"
 OUT = os.path.join(ROOT, "dist", SLUG)
 
 
@@ -83,6 +83,12 @@ def build():
     ab_units = sorted(set(list(uua) + list(uub)), key=lambda u: -(uua[u] / 5 - uub[u] / 5))
     ab_labels = [u for u in ab_units]
     ab_vals = [round(uua[u] / 5 - uub[u] / 5, 1) for u in ab_units]
+    yb = list(range(111, 116))
+
+    def dB(y):
+        return [r for r in R if r[0] == y and r[1] == "數B"]
+    hardB = [sum(1 for r in dB(y) if r[7] == "難") for y in yb]
+    mixB = [sum(1 for r in dB(y) if "混合" in str(r[3])) for y in yb]
     ab_common = (f'<tr><td>每年題數</td><td>20</td><td>20</td></tr>'
                  f'<tr><td>混合題</td><td>{aty["混合題"][1]}%</td><td>{bty["混合題"][1]}%</td></tr>'
                  f'<tr><td>跨單元題</td><td>{cx_n}%</td><td>{cxb}%</td></tr>')
@@ -99,6 +105,17 @@ def build():
 <p style="margin:16px 0 2px"><b>② 難度：數A較難，但非懸殊</b></p>
 <table><tr><th></th><th>數A</th><th>數B</th></tr>{ab_dif}</table>
 <p>數A難題較多、易題較少，<b>多選題也明顯較多</b>（多選較難拿分）；數B單選與易題較多。差一階，非天差地別。</p>
+<p style="margin:16px 0 2px"><b>數B 逐年趨勢（111–115）</b></p>
+<div class="chartbox">
+<div class="legend">
+<span><i style="background:#c0392b"></i>難題數／年</span>
+<span><i style="background:#1f7a63"></i>混合題數／年</span>
+<span style="margin-left:auto;color:#9a857c">數B 自 111 學測（108 課綱）才有</span>
+</div>
+<div style="position:relative;height:290px"><canvas id="trendB" role="img"
+ aria-label="數B逐年難題與混合題長條圖：111到115年難題4到6題、混合題固定3題。"></canvas></div>
+</div>
+<p>數B 自 108 課綱才出現；難題每年 4–6 題、混合題固定 3 題，逐年平穩，且<b>每年都比數A略低</b>（同期數A難題為 7、5、6、6、8）。</p>
 <p style="margin:16px 0 2px"><b>③ 考點重心分兩派</b></p>
 <div class="chartbox">
 <div class="legend">
@@ -124,6 +141,15 @@ def build():
            "grid:{color:'#efe4e8'},title:{display:true,text:'← 數B 較重      數A 較重 →',color:'#2b2b2b'}},"
            "y:{ticks:{color:'#2b2b2b'},grid:{display:false}}}}});})();"
            ).replace("__ABL__", str(ab_labels)).replace("__ABV__", str(ab_vals))
+    js3 = ("(function(){new Chart(document.getElementById('trendB'),{type:'bar',"
+           "data:{labels:['111','112','113','114','115'],datasets:["
+           "{label:'難題數',data:__HB__,backgroundColor:'#c0392b',borderRadius:3,categoryPercentage:0.7,barPercentage:0.9},"
+           "{label:'混合題數',data:__MB__,backgroundColor:'#1f7a63',borderRadius:3,categoryPercentage:0.7,barPercentage:0.9}]},"
+           "options:{responsive:true,maintainAspectRatio:false,"
+           "plugins:{legend:{display:false},tooltip:{callbacks:{title:function(i){return '1'+i[0].label+' 學測數B';}}}},"
+           "scales:{y:{beginAtZero:true,max:9,ticks:{stepSize:3,color:'#9a857c'},grid:{color:'#efe4e8'},title:{display:true,text:'題數',color:'#9a857c'}},"
+           "x:{ticks:{color:'#2b2b2b'},grid:{display:false}}}}});})();"
+           ).replace("__HB__", str(hardB)).replace("__MB__", str(mixB))
 
     css = """
 :root{--maroon:#8c2740;--maroon-d:#6f1f33;--page:#f7f2ee;--card:#fff;--line:#e7dcd6;
@@ -197,13 +223,12 @@ new Chart(document.getElementById('trend'),{type:'bar',
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>108 課綱後學測數A考題變化趨勢</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>{css}</style>
 </head>
 <body>
-<div class="topbar"><b>108 課綱後 · 學測數A考題變化趨勢</b><span style="font-size:12.5px;opacity:.8">教學用 · 非公開連結</span></div>
+<div class="topbar"><b>108 課綱後 · 學測數A考題變化趨勢</b><span style="font-size:12.5px;opacity:.8">獨立分析頁 · 教學用</span></div>
 <div class="wrap">
 <div class="hero">
 <h1>108 課綱把學測數A考成什麼樣子？</h1>
@@ -259,6 +284,7 @@ new Chart(document.getElementById('trend'),{type:'bar',
 </div>
 <script>{js}</script>
 <script>{js2}</script>
+<script>{js3}</script>
 </body>
 </html>"""
 
