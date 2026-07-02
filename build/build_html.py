@@ -162,7 +162,7 @@ def _question_html(q, first=False):
     core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>' if q.get("core") else ""
     meta = (f'<div class="q-meta"{meta_style}>'
             f'<span class="tag">{html_rich(q["tag"])}</span>'
-            f'<span class="lv">{q["level"]}</span>{core}</div>')
+            f'<span class="lv">{q["level"]}</span>{_hard_badge(q["level"])}{core}</div>')
     body = f'<div class="q-body">{html_rich(q["body"])}{_table_html(q.get("table"))}{_opts_html(q.get("options"), _parse_answer(q.get("solution")))}</div>'
     btn = ('<button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" '
            'onclick="ts(this)">顯示解答</button>')
@@ -331,7 +331,7 @@ def _kp_html(kp):
     return (f'<div class="card" id="{kp["id"]}">'
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
             f'title="標記此考點已讀" aria-label="標記已讀"></button>'
-            f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}</p>'
+            f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}</p>'
             f'{prereq}'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
             f'<span class="label">重點與公式</span><ul class="points">{points}</ul>'
@@ -342,11 +342,51 @@ def _kp_html(kp):
             f"{strategy}{selfcheck}</div>")
 
 
+def _freq_badge(freq):
+    """考點旁的考頻徽章（★ 越多越常考）。"""
+    return f'<span class="kp-freq" title="近十年考頻">{html_rich(freq)}</span>' if freq else ""
+
+
+def _hard_badge(level):
+    """★★★ 題目標「學測難題」徽章。"""
+    return ' <span class="hard-badge">🔥 學測難題</span>' if level and "★★★" in level else ""
+
+
+def _mixed_html(mixed):
+    """混合題實戰：真學測非選題＋官方評分原則。可放多題組（list）或單一題組（dict）。"""
+    if not mixed:
+        return ""
+    groups = mixed if isinstance(mixed, list) else [mixed]
+    blocks = ""
+    for g in groups:
+        items = ""
+        for it in g["items"]:
+            opts = _opts_html(it.get("options"), None) if it.get("options") else ""
+            rub = ""
+            r = it.get("rubric")
+            if r:
+                full = "".join(f"<li>{html_rich(x)}</li>" for x in r["full"])
+                rub = ('<div class="mx-rub"><div class="mx-rub-h">✎ 官方評分原則</div>'
+                       f'<div class="mx-rub-row"><span class="mx-lvl mx-full">滿分</span>'
+                       f'<div>下列均須正確、且過程完整：<ol>{full}</ol></div></div>'
+                       f'<div class="mx-rub-row"><span class="mx-lvl mx-mid">部分</span><div>{html_rich(r["partial"])}</div></div>'
+                       f'<div class="mx-rub-row"><span class="mx-lvl mx-zero">零分</span><div>{html_rich(r["zero"])}</div></div></div>')
+            items += (f'<div class="mx-item"><div class="mx-q"><span class="mx-tag">{html_rich(it["tag"])}</span>'
+                      f'{html_rich(it["q"])}{opts}</div>'
+                      '<button class="sol-btn mini" data-s="看官方解答＋評分原則" data-h="收合" '
+                      'onclick="ts(this)">看官方解答＋評分原則</button>'
+                      f'<div class="sol"><div class="mx-ans"><b>滿分參考答案：</b>{html_rich(it["answer"])}</div>{rub}</div></div>')
+        src = f'<span class="mx-src">{html_rich(g["src"])}</span>' if g.get("src") else ""
+        blocks += (f'<div class="mx-group"><div class="mx-ctx"><b>題組情境</b>{src}<br>{html_rich(g["context"])}</div>{items}</div>')
+    return ('<div class="part" id="mixed">混合題實戰 <small>108 課綱新增 · 練「寫出過程」拿分（附官方評分原則）</small></div>'
+            f'<section class="mixed">{blocks}</section>')
+
+
 def _question_intro_html(q):
     """題組的共同題幹。"""
     core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>' if q.get("core") else ""
     meta = (f'<div class="q-meta"><span class="tag">{html_rich(q["tag"])}</span>'
-            f'<span class="lv">{q["level"]}</span>{core}</div>')
+            f'<span class="lv">{q["level"]}</span>{_hard_badge(q["level"])}{core}</div>')
     body = f'<div class="q-body">{html_rich(q["body"])}</div>'
     return meta + body
 
@@ -439,6 +479,8 @@ def _toolbar(unit, units):
         kp_opts.append('<option value="part0">Part 0 · 出題趨勢</option>')
     for kp in unit["kps"]:
         kp_opts.append(f'<option value="{kp["id"]}">{kp["num"]} · {kp.get("nav", kp["title"])}</option>')
+    if unit.get("mixed"):
+        kp_opts.append('<option value="mixed">🖊 混合題實戰</option>')
     kp_opts.append('<option value="part2">Part 2 · 模擬實戰</option>')
     kp_opts.append('<option value="part3">Part 3 · 考前速查</option>')
     return (f'<div class="toolbar"><span class="t-title">{unit["title"]}</span>'
@@ -469,6 +511,7 @@ def build_html(unit, units):
             '<div class="part">Part 1　建構概念：'
             f'{unit.get("part1_label","五大考點")} <small>先把觀念與公式打穩，再上戰場</small></div>'
             f'{kps_html}'
+            f'{_mixed_html(unit.get("mixed"))}'
             f'{_part2_html(unit.get("part2"))}'
             f'{_part3_html(unit.get("part3"))}'
             f'<div class="foot">{unit.get("foot","")}</div>')
