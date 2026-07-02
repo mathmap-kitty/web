@@ -26,7 +26,7 @@ CUES = [
     # 🎯 求最大／最小值
     {"cat": "max", "kw": r"二次式的極值", "hint": r"配方 → 看頂點", "unit": "poly", "kp": "kp2"},
     {"cat": "max", "kw": r"\(a\sin x+b\cos x\) 的最大值", "hint": r"疊合成 \(R\sin(x+\varphi)\)，最大 ＝ \(R=\sqrt{a^2+b^2}\)", "unit": "trig", "kp": "kp4"},
-    {"cat": "max", "kw": r"和固定／積固定求極值", "hint": r"算幾不等式 \(\dfrac{a+b}{2}\ge\sqrt{ab}\)", "unit": "numexpr", "kp": "kp4"},
+    {"cat": "max", "kw": r"（正數）和固定／積固定求極值", "hint": r"**務必是正數 \(a,b>0\)！**算幾不等式 \(\dfrac{a+b}{2}\ge\sqrt{ab}\)：和固定 → 積在 \(a=b\) 時最大；積固定 → 和在 \(a=b\) 時最小", "unit": "numexpr", "kp": "kp4"},
     {"cat": "max", "kw": r"\(px+qy\) 在可行域", "hint": r"線性規劃：只需檢查頂點", "unit": "linecir", "kp": "kp5"},
     {"cat": "max", "kw": r"柯西不等式", "hint": r"\((a^2+b^2)(x^2+y^2)\ge(ax+by)^2\)；平方和固定時求 \(ax+by\) 極值（等號在 \((a,b)\parallel(x,y)\)）", "unit": "pvec", "kp": "kp3"},
 
