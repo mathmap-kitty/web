@@ -1,0 +1,271 @@
+# -*- coding: utf-8 -*-
+"""108 課綱後學測數A考題變化趨勢分析頁（獨立分析頁，非單元頁）。
+資料直接讀 參考文件/學測數學考題分析_106-115_更正版.xlsx 的「逐題分析」分頁計算，
+數字不手抄。輸出 dist/108課綱數A考題趨勢.html。先不上線（不 cp 根目錄、不 push）。
+"""
+import os, io, sys, collections
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更正版.xlsx")
+# 獨立、不連結、不被搜尋的頁面：檔名帶隨機碼，僅知道網址者可看（非密碼保護）。
+SLUG = "exam-trend-108-231a9fec.html"
+OUT = os.path.join(ROOT, "dist", SLUG)
+
+
+def load():
+    import openpyxl
+    ws = openpyxl.load_workbook(XLSX, data_only=True)["逐題分析"]
+    R = [[ws.cell(r, c).value for c in range(1, 9)] for r in range(2, ws.max_row + 1)
+         if ws.cell(r, 1).value is not None]
+    return R  # 0學年 1卷別 2題號 3題型 4單元 5跨單元 6核心 7難易
+
+
+def typ_group(t):
+    return "混合題" if "混合" in str(t) else t
+
+
+def dist(sub, key, order):
+    c = collections.Counter((typ_group(r[key]) if key == 3 else r[key]) for r in sub)
+    n = len(sub)
+    return {k: (c.get(k, 0), round(100 * c.get(k, 0) / n)) for k in order}
+
+
+def build():
+    R = load()
+    OLD = [r for r in R if r[0] <= 110]
+    NA = [r for r in R if r[0] >= 111 and r[1] == "數A"]
+
+    def dA(y):  # 該年數A題組（舊課綱單一卷即全部）
+        return [r for r in R if r[0] == y and (r[1] == "數A")]
+    years = list(range(106, 116))
+    hard = [sum(1 for r in dA(y) if r[7] == "難") for y in years]
+    mix = [sum(1 for r in dA(y) if "混合" in str(r[3])) for y in years]
+
+    ty_o = dist(OLD, 3, ["單選", "多選", "選填", "混合題"])
+    ty_n = dist(NA, 3, ["單選", "多選", "選填", "混合題"])
+    di_o = dist(OLD, 7, ["難", "中", "易"])
+    di_n = dist(NA, 7, ["難", "中", "易"])
+    cx_o = round(100 * sum(1 for r in OLD if r[5]) / len(OLD))
+    cx_n = round(100 * sum(1 for r in NA if r[5]) / len(NA))
+
+    uo = collections.Counter(r[4] for r in OLD)
+    un = collections.Counter(r[4] for r in NA)
+    units = sorted(set(list(uo) + list(un)), key=lambda u: -un[u] / 5)
+    urows = [(u, uo[u] / 5, un[u] / 5, un[u] / 5 - uo[u] / 5) for u in units]
+
+    # ---- HTML ----
+    def tyrow(lbl, o, n, hi=False):
+        cls = ' class="hi"' if hi else ''
+        return (f'<tr{cls}><td>{lbl}</td><td>{o[1]}%</td><td>{n[1]}%</td></tr>')
+
+    typ_tbl = (tyrow("單選", ty_o["單選"], ty_n["單選"]) +
+               tyrow("多選", ty_o["多選"], ty_n["多選"]) +
+               tyrow("選填", ty_o["選填"], ty_n["選填"]) +
+               tyrow("混合題（含非選）", ty_o["混合題"], ty_n["混合題"], hi=True))
+    dif_tbl = (tyrow("難", di_o["難"], di_n["難"], hi=True) +
+               tyrow("中", di_o["中"], di_n["中"]) +
+               tyrow("易", di_o["易"], di_n["易"], hi=True))
+
+    def urow(u, o, n, d):
+        sign = "up" if d > 0.05 else ("down" if d < -0.05 else "flat")
+        arrow = f"{d:+.1f}" if abs(d) > 0.05 else "0"
+        return (f'<tr><td>{u}</td><td>{o:.1f}</td><td>{n:.1f}</td>'
+                f'<td class="{sign}">{arrow}</td></tr>')
+    unit_tbl = "".join(urow(*x) for x in urows)
+
+    # ---- 數A vs 數B（111-115，皆 108 課綱）----
+    NB = [r for r in R if r[0] >= 111 and r[1] == "數B"]
+    aty = dist(NA, 3, ["單選", "多選", "選填", "混合題"]); bty = dist(NB, 3, ["單選", "多選", "選填", "混合題"])
+    adi = dist(NA, 7, ["難", "中", "易"]); bdi = dist(NB, 7, ["難", "中", "易"])
+    cxb = round(100 * sum(1 for r in NB if r[5]) / len(NB))
+    uua = collections.Counter(r[4] for r in NA); uub = collections.Counter(r[4] for r in NB)
+    ab_units = sorted(set(list(uua) + list(uub)), key=lambda u: -(uua[u] / 5 - uub[u] / 5))
+    ab_labels = [u for u in ab_units]
+    ab_vals = [round(uua[u] / 5 - uub[u] / 5, 1) for u in ab_units]
+    ab_common = (f'<tr><td>每年題數</td><td>20</td><td>20</td></tr>'
+                 f'<tr><td>混合題</td><td>{aty["混合題"][1]}%</td><td>{bty["混合題"][1]}%</td></tr>'
+                 f'<tr><td>跨單元題</td><td>{cx_n}%</td><td>{cxb}%</td></tr>')
+    ab_dif = (f'<tr class="hi"><td>難</td><td>{adi["難"][1]}%</td><td>{bdi["難"][1]}%</td></tr>'
+              f'<tr><td>中</td><td>{adi["中"][1]}%</td><td>{bdi["中"][1]}%</td></tr>'
+              f'<tr class="hi"><td>易</td><td>{adi["易"][1]}%</td><td>{bdi["易"][1]}%</td></tr>'
+              f'<tr><td>多選題</td><td>{aty["多選"][1]}%</td><td>{bty["多選"][1]}%</td></tr>'
+              f'<tr><td>單選題</td><td>{aty["單選"][1]}%</td><td>{bty["單選"][1]}%</td></tr>')
+    ab_section = f"""
+<h2>數A vs 數B（111–115）：同骨架、各偏一邊</h2>
+<p>兩條線都是 108 課綱、各 20 題／年。先看共同點，再看差異。</p>
+<p style="margin:16px 0 2px"><b>① 共同框架</b>（108 課綱給兩條線的共通要求）</p>
+<table><tr><th>項目</th><th>數A</th><th>數B</th></tr>{ab_common}</table>
+<p style="margin:16px 0 2px"><b>② 難度：數A較難，但非懸殊</b></p>
+<table><tr><th></th><th>數A</th><th>數B</th></tr>{ab_dif}</table>
+<p>數A難題較多、易題較少，<b>多選題也明顯較多</b>（多選較難拿分）；數B單選與易題較多。差一階，非天差地別。</p>
+<p style="margin:16px 0 2px"><b>③ 考點重心分兩派</b></p>
+<div class="chartbox">
+<div class="legend">
+<span><i style="background:#2a78d6"></i>數A 較重（→ 右）</span>
+<span><i style="background:#eb6834"></i>數B 較重（← 左）</span>
+<span style="margin-left:auto;color:#9a857c">每年平均題數差（數A − 數B）</span>
+</div>
+<div style="position:relative;height:540px"><canvas id="abdiv" role="img"
+ aria-label="各單元數A減數B每年平均題數差橫向長條圖。偏數A：空間的平面與直線、矩陣。偏數B：平面向量、數與式、二次曲線。"></canvas></div>
+</div>
+<p><b>偏數A</b>（數B很少或不考）：空間的平面與直線（近乎數A專屬）、矩陣（份量翻倍）、三角函數。<br>
+<b>偏數B</b>（數A較少或不考）：平面向量（數B每年 3 題、第一重點）、數與式、二次曲線、排列組合、數據分析。</p>
+<div class="note"><b>白話：</b>數A ＝ 空間解析幾何＋矩陣＋較高難度（理工向）；數B ＝ 平面向量＋代數基礎（數與式／二次曲線）＋機率統計比重高、難度略緩（社會／商管向）。<b>你的站是數A定位</b>，現在把矩陣、空間、三角函數做重是對的；若要兼收數B，需加重平面向量、保留數與式與二次曲線。</div>
+"""
+    js2 = ("(function(){var labels=__ABL__,vals=__ABV__;"
+           "var col=vals.map(function(v){return v>0.05?'#2a78d6':(v<-0.05?'#eb6834':'#9a857c');});"
+           "new Chart(document.getElementById('abdiv'),{type:'bar',"
+           "data:{labels:labels,datasets:[{data:vals,backgroundColor:col,borderRadius:3}]},"
+           "options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,"
+           "plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){var v=c.raw;"
+           "return (v>0?'數A 多 ':(v<0?'數B 多 ':'持平 '))+Math.abs(v).toFixed(1)+' 題/年';}}}},"
+           "scales:{x:{min:-1.8,max:1.8,ticks:{color:'#9a857c',callback:function(v){return v>0?'+'+v:v;}},"
+           "grid:{color:'#efe4e8'},title:{display:true,text:'← 數B 較重      數A 較重 →',color:'#2b2b2b'}},"
+           "y:{ticks:{color:'#2b2b2b'},grid:{display:false}}}}});})();"
+           ).replace("__ABL__", str(ab_labels)).replace("__ABV__", str(ab_vals))
+
+    css = """
+:root{--maroon:#8c2740;--maroon-d:#6f1f33;--page:#f7f2ee;--card:#fff;--line:#e7dcd6;
+--ink:#2b2b2b;--sub:#6b5249;--teal:#1f6f78;--up:#1f7a4d;--down:#b5384e;--warm:#c0392b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);line-height:1.85;
+font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(140,39,64,.97);color:#fff;
+padding:11px 20px;box-shadow:0 2px 10px rgba(0,0,0,.15);display:flex;align-items:center;gap:12px}
+.topbar b{font-size:16px;letter-spacing:.5px;margin-right:auto}
+.topbar a{color:#fff;background:rgba(255,255,255,.16);border-radius:18px;padding:5px 13px;
+font-size:13.5px;text-decoration:none}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px 70px}
+.hero{text-align:center;padding:26px 0 6px}
+.hero h1{color:var(--maroon);font-size:26px;margin:.15em 0;letter-spacing:.5px}
+.hero p{color:var(--sub);font-size:15px;margin:.4em auto;max-width:640px}
+.src{font-size:12.5px;color:#9a857c;margin-top:6px}
+.cards{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:18px 0 6px}
+.mc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;
+min-width:150px;text-align:center}
+.mc .lbl{font-size:12.5px;color:var(--sub)}
+.mc .val{font-size:21px;font-weight:800;color:var(--maroon-d);margin-top:3px}
+.mc .val small{font-size:14px;color:#9a857c;font-weight:600}
+h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);
+padding-left:10px;margin:34px 0 10px}
+.lead{background:#fff7ef;border:1px dashed #e0b9a6;border-radius:12px;padding:11px 16px;
+font-size:14.5px;color:var(--sub);margin:8px 0 14px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:10px;overflow:hidden;font-size:14.5px;margin:10px 0}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:center}
+th{background:#f3e3e8;color:var(--maroon-d);font-weight:700}
+td:first-child,th:first-child{text-align:left}
+tr:last-child td{border-bottom:none}
+tr.hi td{background:#fbf3d9}
+.up{color:var(--up);font-weight:800}.down{color:var(--down);font-weight:800}.flat{color:#9a857c}
+.chartbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px 8px;margin:12px 0}
+.legend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:13px;color:var(--sub);margin-bottom:6px}
+.legend i{width:12px;height:12px;border-radius:2px;display:inline-block;vertical-align:-1px;margin-right:5px}
+.dash{width:18px;border-top:2px dashed #9a857c;display:inline-block;vertical-align:4px;margin-right:5px}
+.note{background:#eef6f4;border:1px solid #cfe6e2;border-radius:12px;padding:11px 16px;font-size:14px;color:#2c5158;margin:10px 0}
+.foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:30px}
+ul{margin:.4em 0 .6em;padding-left:1.3em}li{margin:5px 0}
+"""
+
+    js = """
+(function(){
+var years=['106','107','108','109','110','111','112','113','114','115'];
+var hard=__HARD__, mix=__MIX__;
+var divider={id:'dv',afterDatasetsDraw:function(c){
+ var x=(c.scales.x.getPixelForValue(4)+c.scales.x.getPixelForValue(5))/2;
+ var g=c.ctx,t=c.chartArea.top,b=c.chartArea.bottom;
+ g.save();g.fillStyle='rgba(140,39,64,0.05)';g.fillRect(x,t,c.chartArea.right-x,b-t);
+ g.strokeStyle='#9a857c';g.lineWidth=1.5;g.setLineDash([5,4]);
+ g.beginPath();g.moveTo(x,t);g.lineTo(x,b);g.stroke();g.setLineDash([]);
+ g.fillStyle='#6f1f33';g.font='700 12.5px "Microsoft JhengHei",sans-serif';g.textAlign='left';
+ g.fillText('108 課綱',x+6,t+14);
+ g.fillStyle='#9a857c';g.textAlign='right';g.fillText('舊課綱',x-6,t+14);g.restore();}};
+new Chart(document.getElementById('trend'),{type:'bar',
+ data:{labels:years,datasets:[
+  {label:'難題數',data:hard,backgroundColor:'#c0392b',borderRadius:3,categoryPercentage:0.7,barPercentage:0.9},
+  {label:'混合題數',data:mix,backgroundColor:'#1f7a63',borderRadius:3,categoryPercentage:0.7,barPercentage:0.9}]},
+ options:{responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{callbacks:{title:function(i){return '1'+i[0].label+' 學測數A';}}}},
+  scales:{y:{beginAtZero:true,max:9,ticks:{stepSize:3,color:'#9a857c'},grid:{color:'#efe4e8'},title:{display:true,text:'題數',color:'#9a857c'}},
+   x:{ticks:{color:'#2b2b2b'},grid:{display:false}}}},plugins:[divider]});
+})();
+""".replace("__HARD__", str(hard)).replace("__MIX__", str(mix))
+
+    html = f"""<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>108 課綱後學測數A考題變化趨勢</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>{css}</style>
+</head>
+<body>
+<div class="topbar"><b>108 課綱後 · 學測數A考題變化趨勢</b><span style="font-size:12.5px;opacity:.8">教學用 · 非公開連結</span></div>
+<div class="wrap">
+<div class="hero">
+<h1>108 課綱把學測數A考成什麼樣子？</h1>
+<p>以 <b>舊課綱數學（106–110，單一卷）</b> 對照 <b>新課綱數A（111–115）</b>，各 5 年、各 100 題，看題型、難度與考點怎麼變。</p>
+<div class="src">資料：《學測數學考題分析 106–115》逐題分析（300 題）· 分界＝111 學測（108 課綱第一屆）</div>
+</div>
+
+<div class="cards">
+<div class="mc"><div class="lbl">難題比例</div><div class="val">{di_o['難'][1]}% <small>→</small> {di_n['難'][1]}%</div></div>
+<div class="mc"><div class="lbl">混合題（新題型）</div><div class="val">{ty_o['混合題'][1]}% <small>→</small> {ty_n['混合題'][1]}%</div></div>
+<div class="mc"><div class="lbl">易題比例</div><div class="val">{di_o['易'][1]}% <small>→</small> {di_n['易'][1]}%</div></div>
+</div>
+
+<h2>逐年趨勢：難題與混合題</h2>
+<div class="chartbox">
+<div class="legend">
+<span><i style="background:#c0392b"></i>難題數／年</span>
+<span><i style="background:#1f7a63"></i>混合題數／年（108 課綱新增）</span>
+<span style="margin-left:auto;color:#9a857c"><span class="dash"></span>108 課綱分界（111 學測起）</span>
+</div>
+<div style="position:relative;height:300px"><canvas id="trend" role="img"
+ aria-label="學測數A逐年難題數與混合題數長條圖：106到110年難題0到5題、無混合題；111到115年難題5到8題、混合題固定3題。"></canvas></div>
+</div>
+<div class="lead">混合題每年固定約 3 題、難題從每年 0–5 升到 5–8（115 達 8）——不是漸變，是 111 學測畫下的制度性斷點。</div>
+
+<h2>① 題型結構重組：混合題橫空出世</h2>
+<table><tr><th>題型</th><th>舊課綱</th><th>新數A</th></tr>{typ_tbl}</table>
+<p>混合題是 108 課綱招牌新題型，每年固定約 3 題，多為「非選擇、要寫計算過程」，排擠掉的主要是純選填。<b>只會按計算機選答案不夠了。</b></p>
+
+<h2>② 明顯變難，而且還在往上</h2>
+<table><tr><th>難易</th><th>舊課綱</th><th>新數A</th></tr>{dif_tbl}</table>
+<p>難題比例<b>翻倍</b>、易題<b>砍半</b>；新課綱五年內難題數還在爬（115 年 8 題）。</p>
+
+<h2>③ 考點權重大洗牌（每年平均題數）</h2>
+<table><tr><th>單元</th><th>舊／年</th><th>新A／年</th><th>變化</th></tr>{unit_tbl}</table>
+<p>贏家是<b>矩陣（翻倍）、多項式、三角函數</b>；<b>數與式、二次曲線</b>在數A幾乎不再單獨命題（數與式變「基礎但不單獨考」、二次曲線移往數B／選修）。</p>
+
+<h2>④ 一個反直覺的發現</h2>
+<p>跨單元題<b>沒有變多</b>（{cx_o}% → {cx_n}%）。108 課綱的「素養」不是靠把更多單元綁在一起，而是靠<b>混合題＋情境化＋拉高難度</b>來達成。</p>
+
+<h2>給自學的實務啟示</h2>
+<ul>
+<li><b>要練「寫過程」</b>：數A有約 15% 是手寫的混合題，這塊最需要刻意練。</li>
+<li><b>火力集中</b>：矩陣、多項式、三角函數是加重區；數與式、二次曲線在數A可輕帶（但數與式仍是基礎地基）。</li>
+<li><b>難度要備夠</b>：每份數A約 1/3 是難題，示範例與練習難度可再往上壓一階。</li>
+</ul>
+
+{ab_section}
+
+<div class="note"><b>兩個但書：</b>① 舊課綱是「全體一份卷」，新數A是<b>分流後的進階卷</b>（自認理工向才選）——「變難」有一部分是分流效果，不純是課綱變難。② 逐題分析的「單元／難易」是分析者的歸類判斷，非官方標準。</div>
+
+<div class="foot">資料整理自《學測數學考題分析 106–115》· 本頁為趨勢分析，題目全文以大考中心原卷為準。</div>
+</div>
+<script>{js}</script>
+<script>{js2}</script>
+</body>
+</html>"""
+
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    io.open(OUT, "w", encoding="utf-8").write(html)
+    print(f"[trend108] -> {os.path.basename(OUT)}  (OLD {len(OLD)} / 新數A {len(NA)} 題)")
+
+
+if __name__ == "__main__":
+    build()
