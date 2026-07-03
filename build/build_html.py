@@ -9,17 +9,35 @@ import re
 from urllib.parse import quote
 from render import html_rich
 try:
-    from cues import CUES  # 解題線索（單一來源；同餵解題線索地圖頁與各考點標籤）
+    from cues import CUES, GROUPS  # 解題線索＋「同一招」群組（單一來源；同餵地圖頁與各考點標籤）
 except Exception:
-    CUES = []
+    CUES, GROUPS = [], {}
 try:
     from checks import CHECKS  # 考點「確認理解」概念小測（單一來源）
 except Exception:
     CHECKS = {}
+try:
+    from units import UNITS as _UNITS  # 單元中繼資料（檔名／emoji／title），供跨單元連結
+    _BY_SLUG = {u["slug"]: u for u in _UNITS}
+except Exception:
+    _BY_SLUG = {}
 _CUES_BY_KP = {}
 for _c in CUES:
     _CUES_BY_KP.setdefault((_c["unit"], _c["kp"]), []).append(_c)
 CLUEMAP_FILE = "115學測數學_解題線索地圖.html"
+
+_KP_NAV_CACHE = {}
+
+
+def _kp_nav(slug, kpid):
+    """惰性查某單元某考點的 nav 名稱（供觸類旁通跨單元連結顯示）。"""
+    if slug not in _KP_NAV_CACHE:
+        try:
+            _u = __import__(slug).UNIT
+            _KP_NAV_CACHE[slug] = {k["id"]: k.get("nav", k.get("title", "")) for k in _u["kps"]}
+        except Exception:
+            _KP_NAV_CACHE[slug] = {}
+    return _KP_NAV_CACHE[slug].get(kpid, "")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
@@ -410,15 +428,48 @@ def _hard_badge(level):
     return ' <span class="hard-badge">🔥 學測難題</span>' if level and "★★★" in level else ""
 
 
+def _touch_html(cs, cur_slug, cur_kp):
+    """觸類旁通：這個考點的線索若屬於某「同一招」群組（cues 的 g），
+    就列出同群、其他單元／考點的連結，串成小型聯想圖。"""
+    groups = []
+    for c in cs:
+        g = c.get("g")
+        if g and g not in groups:
+            groups.append(g)
+    rows = ""
+    for g in groups:
+        seen, links = set(), []
+        for c2 in CUES:
+            if c2.get("g") != g:
+                continue
+            key = (c2["unit"], c2["kp"])
+            if key == (cur_slug, cur_kp) or key in seen:
+                continue
+            seen.add(key)
+            u = _BY_SLUG.get(c2["unit"], {})
+            nav = _kp_nav(c2["unit"], c2["kp"])
+            links.append(f'<a class="ct-link" href="{u.get("file","")}#{c2["kp"]}">'
+                         f'{u.get("emoji","")} {u.get("title","")}·{nav} ↗</a>')
+        if links:
+            rows += (f'<div class="ct-row"><b class="ct-g">{html_rich(GROUPS.get(g, g))}</b>'
+                     f'<span class="ct-also">也用在</span>{"".join(links)}</div>')
+    if not rows:
+        return ""
+    return ('<div class="cue-touch"><span class="ct-lbl">🔗 觸類旁通 · 同一招多處用</span>'
+            f'{rows}</div>')
+
+
 def _cues_html(slug, kpid):
-    """考點旁「🔑 解題線索」：看到哪些關鍵字就想到這個考點（反查 cues.py）。"""
+    """考點旁「🔑 解題線索」：看到哪些關鍵字就想到這個考點（反查 cues.py），
+    並附「觸類旁通」跨單元同招串連。"""
     cs = _CUES_BY_KP.get((slug, kpid))
     if not cs:
         return ""
     kws = "、".join(f'<b class="cue-kw">{html_rich(c["kw"])}</b>' for c in cs)
     return (f'<div class="cues"><span class="cue-lbl">🔑 解題線索</span>'
             f'看到 {kws} → 想到這個考點。'
-            f'<a class="cue-more" href="{CLUEMAP_FILE}">全部線索地圖 →</a></div>')
+            f'<a class="cue-more" href="{CLUEMAP_FILE}">全部線索地圖 →</a>'
+            f'{_touch_html(cs, slug, kpid)}</div>')
 
 
 def _mixed_html(mixed):

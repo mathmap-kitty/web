@@ -4,6 +4,7 @@
 """
 import os
 import io
+import re
 import sys
 import importlib
 import collections
@@ -15,7 +16,16 @@ sys.path.insert(0, os.path.join(ROOT, "content"))
 from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta  # noqa: E402
 from render import html_rich  # noqa: E402
 from units import UNITS  # noqa: E402
-from cues import CATS, CUES  # noqa: E402
+from cues import CATS, CUES, GROUPS  # noqa: E402
+
+
+def _plain(*parts):
+    """把含 LaTeX／markdown 的文字清成可搜尋純文字（保留中文／數字／字母）。"""
+    s = " ".join(p for p in parts if p)
+    s = re.sub(r"\\[a-zA-Z]+\b", " ", s)      # \dfrac \sqrt ...
+    s = re.sub(r"[\\(){}\[\]$*_^|~]", " ", s)  # LaTeX／markdown 符號
+    s = re.sub(r"\s+", " ", s)
+    return s.strip()
 
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 OUT = os.path.join(ROOT, "dist", "115學測數學_解題線索地圖.html")
@@ -40,10 +50,38 @@ def _cue_row(c):
     nav = KP_NAV.get(c["unit"], {}).get(c["kp"], "")
     link = f'{u.get("file", "")}#{c["kp"]}'
     label = f'{u.get("emoji", "")} {u.get("title", "")} · {nav}'
-    return (f'<div class="cue-row"><div class="cue-main">'
-            f'<span class="cue-see">看到</span> <b class="cue-k">{html_rich(c["kw"])}</b>'
+    search = _plain(c["kw"], c["hint"], u.get("title", ""), nav)
+    tag = ""  # 「同一招」小標籤（有 g 才顯示）
+    if c.get("g"):
+        gname = _plain(GROUPS.get(c["g"], c["g"]))
+        tag = f'<span class="cue-g" title="{gname}">🔗 {gname}</span>'
+    return (f'<div class="cue-row" data-s="{search}"><div class="cue-main">'
+            f'<span class="cue-see">看到</span> <b class="cue-k">{html_rich(c["kw"])}</b>{tag}'
             f'<div class="cue-h">→ {html_rich(c["hint"])}</div></div>'
             f'<a class="cue-link" href="{link}">{label} ↗</a></div>')
+
+
+def _group_section():
+    """「同一招、跨單元」總覽（觸類旁通）：每個群組串起它出現的各考點。"""
+    rows = ""
+    for gid, label in GROUPS.items():
+        seen, chips = set(), ""
+        for c in CUES:
+            if c.get("g") != gid:
+                continue
+            key = (c["unit"], c["kp"])
+            if key in seen:
+                continue
+            seen.add(key)
+            u = BY_SLUG.get(c["unit"], {})
+            nav = KP_NAV.get(c["unit"], {}).get(c["kp"], "")
+            chips += (f'<a class="grp-chip" href="{u.get("file","")}#{c["kp"]}">'
+                      f'{u.get("emoji","")} {u.get("title","")}·{nav}</a>')
+        rows += (f'<div class="grp-row"><b class="grp-name">{html_rich(label)}</b>'
+                 f'<span class="grp-arrow">串起 →</span>{chips}</div>')
+    return ('<div class="grp-box"><div class="grp-h">🔗 同一招、跨單元（觸類旁通）'
+            '<small>同一個工具在不同單元反覆出現——記一招、通多題</small></div>'
+            f'{rows}</div>')
 
 
 def build():
@@ -53,7 +91,9 @@ def build():
     cards = ""
     for cid, label in CATS:
         rows = "".join(_cue_row(c) for c in by_cat.get(cid, []))
-        cards += f'<div class="cm-cat"><div class="cm-cat-h">{label}</div>{rows}</div>'
+        cards += (f'<div class="cm-cat"><div class="cm-cat-h">{label}</div>'
+                  f'<div class="cm-cat-body">{rows}</div></div>')
+    group = _group_section()
 
     css = _asset("style.css")
     extra = """
@@ -79,6 +119,25 @@ def build():
   .cue-link{flex:none;align-self:center;font-size:12.5px;color:#3a5a9a;background:#eef4fb;border:1px solid #cfe0f2;border-radius:16px;padding:3px 11px;text-decoration:none;white-space:nowrap}
   .cue-link:hover{background:#dce8f6}
   .clue-foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:26px}
+  .cl-search{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+  .cl-search input{flex:1;min-width:220px;padding:11px 16px;font-size:15px;font-family:inherit;
+    border:1.6px solid #cfe0f2;border-radius:24px;background:#fff;color:#333;outline:none}
+  .cl-search input:focus{border-color:#3a5a9a;box-shadow:0 0 0 3px rgba(58,90,154,.12)}
+  #clue-count{font-size:13px;color:#3a5a9a;font-weight:700;white-space:nowrap}
+  .clue-noresult{background:#fdf1e8;border:1px dashed #e6a76d;border-radius:12px;padding:12px 16px;
+    color:#a5642e;font-size:14px;margin:0 0 16px}
+  .grp-box{background:#f1f8f4;border:1px solid #cfe6d8;border-radius:14px;padding:12px 16px 8px;margin:0 0 18px}
+  .grp-h{font-weight:800;color:#2e6b46;font-size:16px;margin-bottom:8px}
+  .grp-h small{display:block;font-weight:600;color:#6a9a7e;font-size:12.5px;margin-top:1px}
+  .grp-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 8px;padding:7px 0;border-top:1px dashed #d6e8dd}
+  .grp-row:first-of-type{border-top:none}
+  .grp-name{color:#22406e;font-weight:800;font-size:14.5px}
+  .grp-arrow{color:#8aa896;font-size:12.5px}
+  .grp-chip{font-size:12.5px;color:#2e6b46;background:#fff;border:1px solid #bfe0cd;border-radius:14px;
+    padding:2px 10px;text-decoration:none;white-space:nowrap}
+  .grp-chip:hover{background:#eafaf0}
+  .cue-g{display:inline-block;margin-left:7px;font-size:11px;color:#2e6b46;background:#eef7f1;
+    border:1px solid #cfe6d8;border-radius:10px;padding:0 7px;font-weight:700;vertical-align:1px}
 """
     nav = ('<a href="index.html">📚 首頁</a>'
            '<a href="115學測數學_概念地圖.html">🗺️ 概念地圖</a>'
@@ -87,7 +146,12 @@ def build():
 <div class="clue-wrap">
 <div class="clue-hero"><h1>🧭 解題線索地圖</h1>
 <p>考試時不知道怎麼下手？別急著找公式——先想「<b>我要求什麼</b>」「<b>題目給了什麼線索</b>」，順著線索就能想到該用的知識點。</p></div>
-<div class="clue-note"><b>怎麼用：</b>從下面找到你題目的「線索關鍵字」→ 看它指向哪個知識點與怎麼用 → 點右邊連結直達該考點複習。同一個線索常串起<b>好幾個單元</b>的工具，多看幾次就會「觸類旁通」。</div>
+<div class="clue-note"><b>怎麼用：</b>卡住不知怎麼下手時，先想「<b>我要求什麼</b>」——在下面搜尋框<b>輸入你在題目看到的字</b>（如「垂直」「極值」「位數」），或往下找分類。點連結直達該考點複習。同一招常串起<b>好幾個單元</b>，多看幾次就「觸類旁通」。</div>
+<div class="cl-search"><input id="clue-q" type="search" autocomplete="off"
+  placeholder="🔍 輸入題目看到的關鍵字，例：垂直、夾角、極值、位數、面積…" oninput="clueFilter()">
+<span id="clue-count"></span></div>
+{group}
+<div id="clue-noresult" class="clue-noresult" style="display:none">找不到相符的線索——換個關鍵字（如「距離」「角度」「機率」），或往下瀏覽分類。</div>
 <div class="cm-cols">
 {cards}
 </div>
@@ -118,6 +182,20 @@ def build():
 <script src="{KATEX}/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{{delimiters:[{{left:'\\\\(',right:'\\\\)',display:false}},{{left:'\\\\[',right:'\\\\]',display:true}}]}});
+</script>
+<script>
+function clueFilter(){{
+ var q=document.getElementById('clue-q').value.trim().toLowerCase();
+ var rows=document.querySelectorAll('.cue-row'),n=0;
+ rows.forEach(function(r){{var hit=!q||(r.dataset.s||'').toLowerCase().indexOf(q)>=0;
+  r.style.display=hit?'':'none';if(hit)n++;}});
+ document.querySelectorAll('.cm-cat').forEach(function(cat){{
+  var any=[].slice.call(cat.querySelectorAll('.cue-row')).some(function(r){{return r.style.display!=='none';}});
+  cat.style.display=any?'':'none';}});
+ document.getElementById('clue-count').textContent=q?('找到 '+n+' 條'):'';
+ document.getElementById('clue-noresult').style.display=(q&&n===0)?'':'none';
+ var gb=document.querySelector('.grp-box');if(gb)gb.style.display=q?'none':'';
+}}
 </script>
 </body>
 </html>
