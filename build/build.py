@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.join(ROOT, "content"))
 from build_html import build_html        # noqa: E402
 from build_docx import build_docx        # noqa: E402
 from units import UNITS                   # noqa: E402
+from validate import validate            # noqa: E402  資料鏈結守門（考點/題目/part2_kp/checks/cues 一致性）
 
 DIST = os.path.join(ROOT, "dist")
 
@@ -39,6 +40,8 @@ def build_unit(slug):
 
 
 def main():
+    if not validate():   # 資料鏈結不一致（如 part2_kp 錯位）→ 直接擋下，不產出錯誤的頁
+        sys.exit(1)
     slugs = sys.argv[1:] or [u["slug"] for u in UNITS if os.path.exists(
         os.path.join(ROOT, "content", u["slug"] + ".py"))]
     for slug in slugs:
