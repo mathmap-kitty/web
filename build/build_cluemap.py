@@ -140,6 +140,7 @@ def build():
     border:1px solid #cfe6d8;border-radius:10px;padding:0 7px;font-weight:700;vertical-align:1px}
 """
     nav = ('<a href="index.html">📚 首頁</a>'
+           '<a href="115學測數學_待複習與錯題.html">📌 待複習與錯題</a>'
            '<a href="115學測數學_概念地圖.html">🗺️ 概念地圖</a>'
            '<a href="115學測數學_跨單元整合_脈絡地圖.html">🧩 脈絡地圖</a>')
     body = f"""<div class="cl-topbar"><span class="t-title">學測數A · 解題線索地圖</span>{nav}</div>

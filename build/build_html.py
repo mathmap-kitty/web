@@ -403,6 +403,14 @@ QUIZ_JS = (
     "if(D.indexOf(key)>=0)return;D.push(key);localStorage.setItem('mm-quiz-done',JSON.stringify(D));"
     "var Q=JSON.parse(localStorage.getItem('mm-quiz')||'{}'),u=Q[MMSLUG]||{a:0,c:0};u.a++;if(ok)u.c++;"
     "Q[MMSLUG]=u;localStorage.setItem('mm-quiz',JSON.stringify(Q));}catch(e){}}"
+    # 錯題清單（供全站『待複習與錯題』頁）：mm-wrong={題鍵:{s單元,f檔,t題tag,a錨點}}；答對移除、答錯加入。
+    "function logWrong(qi,ok,q){if(typeof MMSLUG==='undefined')return;try{"
+    "var key=MMSLUG+':q'+qi,W=JSON.parse(localStorage.getItem('mm-wrong')||'{}');"
+    "if(ok){delete W[key];}else{var qb=q.closest('.q-body'),m=qb?qb.previousElementSibling:null,"
+    "tg=m&&m.querySelector?m.querySelector('.tag'):null,anc=q.closest('[id]');"
+    "W[key]={s:MMSLUG,f:decodeURIComponent(location.pathname.split('/').pop()),"
+    "t:tg?tg.textContent:'練習題',a:anc?anc.id:''};}"
+    "localStorage.setItem('mm-wrong',JSON.stringify(W));}catch(e){}}"
     "document.querySelectorAll('.opts.quiz').forEach(function(q,qi){"
     "var ans=q.dataset.ans.split(',').map(num),multi=q.dataset.multi==='1';"
     "var opts=[].slice.call(q.querySelectorAll('.opt')),fb=q.querySelector('.opt-fb');var done=false,sel=[];"
@@ -412,7 +420,7 @@ QUIZ_JS = (
     "fb.textContent=ok?'✓ 答對了！':'✗ 答錯了，正解見綠色選項';fb.className='opt-fb '+(ok?'ok':'no');bump(ok);"
     # 概念小測（.kpcheck）：答對自動標『我懂了』、答錯『待複習』（走理解確認，不計入練習成績）；
     # 其餘（歷屆題＋模擬實戰）計入練習成績 persistQuiz。
-    "var kc=q.closest('.kpcheck');if(kc){if(typeof kpMastery==='function')kpMastery(kc.dataset.kp,ok?'ok':'review',true);}else{persistQuiz(qi,ok);}}"
+    "var kc=q.closest('.kpcheck');if(kc){if(typeof kpMastery==='function')kpMastery(kc.dataset.kp,ok?'ok':'review',true);}else{persistQuiz(qi,ok);logWrong(qi,ok,q);}}"
     "if(multi){var ck=q.querySelector('.opt-check');"
     "opts.forEach(function(b){b.addEventListener('click',function(){if(done)return;var i=num(b.dataset.i),k=sel.indexOf(i);"
     "if(k>=0){sel.splice(k,1);b.classList.remove('sel');}else{sel.push(i);b.classList.add('sel');}});});"
@@ -729,6 +737,7 @@ def _toolbar(unit, units):
 
     unit_opts = ['<option value="">單元 ▾</option>',
                  '<option value="index.html">📚 目錄首頁</option>',
+                 '<option value="115學測數學_待複習與錯題.html">📌 待複習與錯題</option>',
                  '<option value="115學測數學_概念地圖.html">🗺️ 概念地圖</option>',
                  '<option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option>',
                  '<option value="115學測數學_解題線索地圖.html">🧭 解題線索地圖</option>']
@@ -781,6 +790,7 @@ def build_html(unit, units):
             '<span class="upbar mst"><i id="mst-bar"></i></span>'
             '<span class="mst-rvline">⚠ 待複習 <b id="mst-rv">0</b>'
             '<button class="up-all" id="mst-jump" onclick="jumpReview()" style="display:none">跳到待複習 →</button></span>'
+            '<a class="up-all mst-all" href="115學測數學_待複習與錯題.html">📌 全站待複習與錯題</a>'
             '<span class="up-hint">（在各考點末「確認理解」作答或自評）</span></div>'
             f'{_part0_html(unit.get("part0"))}'
             '<div class="part">Part 1　建構概念：'
