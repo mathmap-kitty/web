@@ -60,6 +60,24 @@
   .feature .ft-go{float:right;font-weight:800;font-size:14px;background:rgba(255,255,255,.22);border-radius:20px;padding:3px 13px}
   .foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:34px}
   @media(max-width:560px){.hero h1{font-size:23px}.unit-head{font-size:18px}.section-title{font-size:16px}.section-title small{display:none}}
+  /* 繼續上次進度橫幅 */
+  .continue{display:flex;align-items:center;gap:12px;max-width:600px;margin:16px auto 0;background:linear-gradient(90deg,#8c2740,#ac4159);color:#fff;border-radius:14px;padding:12px 18px;text-decoration:none;box-shadow:0 4px 16px rgba(140,39,64,.3)}
+  .continue:hover{filter:brightness(1.07)}
+  .continue .cont-ico{font-size:24px;line-height:1}
+  .continue .cont-main{display:flex;flex-direction:column;line-height:1.35;margin-right:auto;min-width:0}
+  .continue .cont-main b{font-size:16px}
+  .continue .cont-sub{font-size:13px;opacity:.92;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .continue .cont-go{font-weight:800;white-space:nowrap;font-size:14px}
+  /* 單元卡已讀進度條 */
+  .uprog{display:flex;align-items:center;gap:9px;padding:0 20px 11px;margin-top:-3px}
+  .uprog .up-lbl{font-size:12px;color:#a06b7a;font-weight:700;white-space:nowrap;min-width:62px}
+  .uprog .up-track{flex:1;height:7px;background:#f0e0e6;border-radius:5px;overflow:hidden}
+  .uprog .up-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#8c2740,#c96f88);transition:width .35s}
+  .uprog.done .up-lbl{color:#2e7d46}
+  .uprog.done .up-track i{background:linear-gradient(90deg,#2e9e5b,#57c483)}
+  /* 收合 section 標題上的區進度（一律靠右；緊接的 caret 改固定小間距，避免兩個 auto 邊界對半分） */
+  .sec-prog{font-size:12.5px;font-weight:800;color:#8c2740;white-space:nowrap;background:#f0dde3;border-radius:12px;padding:1px 10px;margin-left:auto}
+  .sec-prog + .sec-caret{margin-left:6px}
 </style>
 </head>
 <body>
@@ -97,6 +115,12 @@
     <h1>學測數學重點整理</h1>
     <p>108 課綱數 A 全 11 單元，依四大主題分區。每個單元依其考點編排（重點與公式 · 常見誤解 · 歷屆試題 · 解題策略），並附模擬實戰與考前速查。</p>
   </div>
+
+  <a id="continue-bar" class="continue" href="#" style="display:none">
+    <span class="cont-ico">⏯</span>
+    <span class="cont-main"><b>繼續上次進度</b><span class="cont-sub" id="cont-sub"></span></span>
+    <span class="cont-go">前往 →</span>
+  </a>
 
   <div class="section">
     <h2 class="section-title" onclick="toggleSec(this)"><span class="num">1</span>代數與函數 <small>數與式 · 多項式 · 指對數</small><span class="sec-caret">＋</span></h2>
@@ -307,6 +331,45 @@
 </div>
 <script>
 function toggleSec(h){var s=h.parentElement;var o=s.classList.toggle("open");var c=h.querySelector(".sec-caret");if(c)c.textContent=o?"−":"＋";}
+</script>
+<script>
+/* 首頁進度：各單元卡『已讀 x/N』＋各區小計＋『繼續上次進度』橫幅（讀 localStorage，與單元頁共用鍵）。 */
+(function(){
+  var F2S={"115學測數學_數與式.html":"numexpr","115學測數學_多項式函數.html":"poly","115學測數學_指數與對數.html":"explog",
+    "115學測數學_數列與級數.html":"seq","115學測數學_排列組合與機率.html":"prob","115學測數學_數據分析.html":"data",
+    "115學測數學_三角.html":"trig","115學測數學_直線與圓.html":"linecir","115學測數學_平面向量.html":"pvec",
+    "115學測數學_空間向量.html":"space","115學測數學_矩陣.html":"matrix"};
+  var read; try{read=new Set(JSON.parse(localStorage.getItem("mm-read-kps")||"[]"));}catch(e){read=new Set();}
+  var best=null;
+  document.querySelectorAll(".section").forEach(function(sec){
+    var sd=0,st=0;
+    sec.querySelectorAll(".unit").forEach(function(card){
+      var head=card.querySelector(".unit-head"); if(!head)return;
+      var file=head.getAttribute("href"), slug=F2S[file];
+      var total=card.querySelectorAll('.sub a[href*="#kp"]').length, done=0;
+      if(slug){read.forEach(function(k){if(k.indexOf(slug+":kp")===0)done++;});}
+      if(done>total)done=total;
+      var full=(total>0&&done>=total), pct=total?Math.round(done/total*100):0;
+      var el=document.createElement("div"); el.className="uprog"+(full?" done":"");
+      el.innerHTML='<span class="up-lbl">'+(full?"✓ 已讀完":"已讀 "+done+"/"+total)+
+        '</span><span class="up-track"><i style="width:'+pct+'%"></i></span>';
+      head.parentNode.insertBefore(el, head.nextSibling);
+      sd+=done; st+=total;
+      if(slug&&done>0&&done<total&&(!best||done>best.done)){best={file:file,done:done,total:total,
+        title:(head.firstChild&&head.firstChild.textContent||"").trim()};}
+    });
+    if(sd>0){var sm=sec.querySelector(".section-title small");
+      if(sm){var b=document.createElement("span"); b.className="sec-prog"; b.textContent="已讀 "+sd+"/"+st;
+        sm.parentNode.insertBefore(b, sm.nextSibling);}}
+  });
+  var last; try{last=JSON.parse(localStorage.getItem("mm-last")||"null");}catch(e){last=null;}
+  var bar=document.getElementById("continue-bar"), target=null, sub="";
+  if(last&&last.file&&F2S[last.file]){
+    target=last.file+(last.kp&&/^kp\d+$/.test(last.kp)?"#"+last.kp:"");
+    sub=(last.title||"")+(last.kp&&/^kp\d+$/.test(last.kp)?" · 考點 "+last.kp.slice(2):"");
+  }else if(best){ target=best.file; sub=best.title+"（已讀 "+best.done+"/"+best.total+"）"; }
+  if(bar&&target){ bar.setAttribute("href",target); document.getElementById("cont-sub").textContent=sub; bar.style.display=""; }
+})();
 </script>
 </body>
 </html>

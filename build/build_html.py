@@ -48,8 +48,13 @@ PROGRESS_JS = (
     "var RK='mm-read-kps',MK='mm-kp-mastery';"
     "function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}"
     "function gM(){try{return JSON.parse(localStorage.getItem(MK)||'{}')}catch(e){return {}}}"
+    # 記錄「上次讀到哪」：首頁『繼續上次進度』用（鍵 mm-last＝{slug,file,title,kp}）
+    "function setLast(kp){try{var h=document.querySelector('.hero h1');"
+    "localStorage.setItem('mm-last',JSON.stringify({slug:MMSLUG,"
+    "file:decodeURIComponent(location.pathname.split('/').pop()),"
+    "title:h?h.textContent:document.title,kp:kp||''}));}catch(e){}}"
     "function kpToggle(b){var k=MMSLUG+':'+b.dataset.kp;var s=gR();var on=!s.has(k);on?s.add(k):s.delete(k);"
-    "localStorage.setItem(RK,JSON.stringify([...s]));upUnit();}"
+    "localStorage.setItem(RK,JSON.stringify([...s]));setLast(b.dataset.kp);upUnit();}"
     "function upUnit(){var s=gR();var done=MMKPS.filter(k=>s.has(MMSLUG+':'+k)).length,t=MMKPS.length;"
     "document.querySelectorAll('.kpchk').forEach(b=>b.classList.toggle('on',s.has(MMSLUG+':'+b.dataset.kp)));"
     "var tx=document.getElementById('up-txt');if(tx)tx.textContent=done+' / '+t;"
@@ -62,7 +67,7 @@ PROGRESS_JS = (
     "if(o[key]===st&&!force){delete o[key];}else{o[key]=st;}"
     "localStorage.setItem(MK,JSON.stringify(o));"
     "if(o[key]==='ok'){var s=gR();s.add(MMSLUG+':'+kp);localStorage.setItem(RK,JSON.stringify([...s]));}"
-    "upMastery();upUnit();}"
+    "setLast(kp);upMastery();upUnit();}"
     "function upMastery(){var o=gM(),ok=0,rv=0;MMKPS.forEach(function(k){var v=o[MMSLUG+':'+k];"
     "if(v==='ok')ok++;else if(v==='review')rv++;});"
     "document.querySelectorAll('.kpcheck').forEach(function(b){var v=o[MMSLUG+':'+b.dataset.kp]||'';"
@@ -77,6 +82,8 @@ PROGRESS_JS = (
     "var jp=document.getElementById('mst-jump');if(jp)jp.style.display=rv?'':'none';}"
     "function jumpReview(){var o=gM();for(var i=0;i<MMKPS.length;i++){"
     "if(o[MMSLUG+':'+MMKPS[i]]==='review'){location.hash=MMKPS[i];return;}}}"
+    # 一進單元頁就記錄為「上次位置」（若網址帶 #kpN 則連考點一起記）
+    "setLast((location.hash||'').replace('#',''));"
     "upUnit();upMastery();")
 
 
