@@ -51,7 +51,8 @@ def build():
 
     uo = collections.Counter(r[4] for r in OLD)
     un = collections.Counter(r[4] for r in NA)
-    units = sorted(set(list(uo) + list(un)), key=lambda u: -un[u] / 5)
+    # 次要鍵 u 讓同分單元順序固定，避免每次 build 因 set 迭代序不同而洗牌
+    units = sorted(set(list(uo) + list(un)), key=lambda u: (-un[u] / 5, u))
     urows = [(u, uo[u] / 5, un[u] / 5, un[u] / 5 - uo[u] / 5) for u in units]
 
     # ---- HTML ----
@@ -80,7 +81,7 @@ def build():
     adi = dist(NA, 7, ["難", "中", "易"]); bdi = dist(NB, 7, ["難", "中", "易"])
     cxb = round(100 * sum(1 for r in NB if r[5]) / len(NB))
     uua = collections.Counter(r[4] for r in NA); uub = collections.Counter(r[4] for r in NB)
-    ab_units = sorted(set(list(uua) + list(uub)), key=lambda u: -(uua[u] / 5 - uub[u] / 5))
+    ab_units = sorted(set(list(uua) + list(uub)), key=lambda u: (-(uua[u] / 5 - uub[u] / 5), u))
     ab_labels = [u for u in ab_units]
     ab_vals = [round(uua[u] / 5 - uub[u] / 5, 1) for u in ab_units]
     yb = list(range(111, 116))
