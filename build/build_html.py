@@ -426,9 +426,16 @@ def _solution_html(sol):
     return "".join(parts)
 
 
-def _question_html(q, first=False):
+def _question_html(q, first=False, qid="", kp=""):
     meta_style = ' style="margin-top:0"' if first else ""
-    core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>' if q.get("core") else ""
+    if q.get("core"):
+        if kp:  # 解題核心＝超連結，回上方對應考點複習
+            core = (f'<a class="core corelink" href="#{kp}" title="回上方複習這個考點">'
+                    f'解題核心：{html_rich(q["core"])} <span class="core-go">↑ 複習考點</span></a>')
+        else:
+            core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>'
+    else:
+        core = ""
     meta = (f'<div class="q-meta"{meta_style}>'
             f'<span class="tag">{html_rich(q["tag"])}</span>'
             f'<span class="lv">{q["level"]}</span>{_hard_badge(q["level"])}{core}</div>')
@@ -436,7 +443,9 @@ def _question_html(q, first=False):
     btn = ('<button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" '
            'onclick="ts(this)">顯示解答</button>')
     sol = f'<div class="sol">{_solution_html(q.get("solution"))}</div>'
-    return meta + body + btn + sol
+    inner = meta + body + btn + sol
+    # 每題包一層有 id 的外框（供錯題「重測」直達原題）＋ data-kp（對應考點）
+    return f'<div class="qwrap" id="{qid}" data-kp="{kp}">{inner}</div>' if qid else inner
 
 
 def _subq_html(sq):
@@ -482,9 +491,9 @@ QUIZ_JS = (
     "function logWrong(qi,ok,q){if(typeof MMSLUG==='undefined')return;try{"
     "var key=MMSLUG+':q'+qi,W=JSON.parse(localStorage.getItem('mm-wrong')||'{}');"
     "if(ok){delete W[key];}else{var qb=q.closest('.q-body'),m=qb?qb.previousElementSibling:null,"
-    "tg=m&&m.querySelector?m.querySelector('.tag'):null,dk=q.closest('[data-kp]'),ii=q.closest('[id]');"
+    "tg=m&&m.querySelector?m.querySelector('.tag'):null,ii=q.closest('[id]');"  # 題目外框 id＝重測直達原題
     "W[key]={s:MMSLUG,f:decodeURIComponent(location.pathname.split('/').pop()),"
-    "t:tg?tg.textContent:'練習題',a:dk?dk.getAttribute('data-kp'):(ii?ii.id:'')};}"
+    "t:tg?tg.textContent:'練習題',a:ii?ii.id:''};}"
     "localStorage.setItem('mm-wrong',JSON.stringify(W));}catch(e){}}"
     "document.querySelectorAll('.opts.quiz').forEach(function(q,qi){"
     "var ans=q.dataset.ans.split(',').map(num),multi=q.dataset.multi==='1';"
@@ -604,7 +613,8 @@ def _kp_html(kp, slug=""):
             for sq in q["subqs"]:
                 qs += _subq_html(sq)
         else:
-            qs += _question_html(q, first=(i == 0 and False))
+            qs += _question_html(q, first=(i == 0 and False),
+                                 qid=f'{kp["id"]}-q{i}', kp=kp["id"])
     strategy = ""
     if kp.get("strategy"):
         s = kp["strategy"]
@@ -778,10 +788,9 @@ def _part2_html(p2, slug=""):
     for g in p2["groups"]:
         items = ""
         for j, q in enumerate(g["questions"]):
-            qh = _question_html(q, first=(j == 0))
-            kp = q.get("kp") or (kps[gi] if gi < len(kps) else "")  # 對應考點（供錯題導回考點複習）
+            kp = q.get("kp") or (kps[gi] if gi < len(kps) else "")  # 對應考點（解題核心連回、複習用）
+            items += _question_html(q, first=(j == 0), qid=f'p2q{gi}', kp=kp)
             gi += 1
-            items += f'<div class="p2q" data-kp="{kp}">{qh}</div>' if kp else qh
         groups += f'<span class="label">{g["title"]}</span>{items}'
     return (f'<div class="part" id="part2">Part 2　喚起行動：模擬實戰（{p2.get("count","")}題）'
             f'<small>{p2.get("note","")}</small></div><div class="card">{groups}</div>')
