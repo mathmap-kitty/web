@@ -228,7 +228,7 @@ new Chart(document.getElementById('trend'),{type:'bar',
 <style>{css}</style>
 </head>
 <body>
-<div class="topbar"><b>108 課綱後 · 學測數A考題變化趨勢</b><span style="font-size:12.5px;opacity:.8">獨立分析頁 · 教學用</span></div>
+<div class="topbar"><b>108 課綱後 · 學測數A考題變化趨勢</b><a href="content-overview.html" style="color:#fff;background:rgba(255,255,255,.16);border-radius:18px;padding:5px 13px;font-size:13.5px;text-decoration:none">📚 內容總覽 →</a><span style="font-size:12.5px;opacity:.8">獨立分析頁 · 教學用</span></div>
 <div class="wrap">
 <div class="hero">
 <h1>108 課綱把學測數A考成什麼樣子？</h1>
