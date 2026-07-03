@@ -7,6 +7,7 @@ import os
 import io
 import re
 import sys
+import json
 from urllib.parse import quote
 # 確保 content/ 在 path 上（讓 units／cues／checks 可匯入），不論由哪個生成器匯入本模組
 _CONTENT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "content")
@@ -123,6 +124,94 @@ CONTINUE_JS = (
     "var s=document.getElementById('cont-sub');"
     "if(s)s.textContent=(last.title||'')+(kp?' · 考點 '+last.kp.slice(2):'');"
     "bar.style.display='';})();")
+
+
+# ===「匯出學習紀錄」摘要卡（首頁、概念地圖、內容總覽共用）===
+# 讀 localStorage（mm-read-kps 已讀／mm-kp-mastery 理解確認／mm-quiz 練習成績），彙整成一張可截圖繳交的卡。
+_UNITS_META = []
+for _u in _BY_SLUG.values():
+    try:
+        _n = len(__import__(_u["slug"]).UNIT["kps"])
+    except Exception:
+        _n = 0
+    _UNITS_META.append({"slug": _u["slug"], "e": _u.get("emoji", ""), "t": _u["title"], "n": _n})
+_UNITS_META_JS = json.dumps(_UNITS_META, ensure_ascii=False)
+
+EXPORT_BUTTON_HTML = ('<div class="export-wrap">'
+                      '<button class="export-btn" onclick="openExport()">📤 匯出學習紀錄</button></div>')
+
+EXPORT_MODAL_HTML = (
+    '<div id="export-modal" class="ex-modal">'
+    '<div class="ex-card" id="ex-card">'
+    '<div class="ex-head">📊 我的學習紀錄<span class="ex-brand">學測數學重點整理</span></div>'
+    '<div class="ex-meta"><label>姓名／班級：<input id="ex-name" placeholder="請填寫"></label>'
+    '<span class="ex-date" id="ex-date"></span></div>'
+    '<div class="ex-sec-t">單元完成度（已讀考點）</div>'
+    '<div class="ex-rows" id="ex-rows"></div>'
+    '<div class="ex-total" id="ex-total"></div>'
+    '<div class="ex-stats">'
+    '<div class="ex-stat"><div class="ex-k">✅ 確認理解</div><div class="ex-v" id="ex-mastery"></div></div>'
+    '<div class="ex-stat"><div class="ex-k">✏️ 練習作答</div><div class="ex-v" id="ex-quiz"></div></div></div>'
+    '<div class="ex-foot">自主學習佐證 · 紀錄存於本機瀏覽器 · 換裝置／清除瀏覽資料會歸零</div></div>'
+    '<div class="ex-controls"><span class="ex-tip">📸 截圖上方卡片即可繳交</span>'
+    '<button onclick="closeExport()">關閉</button></div></div>')
+
+EXPORT_CSS = (
+    ".export-wrap{text-align:center;margin:10px 0 4px}"
+    ".export-btn{background:#fff;color:#8c2740;border:1.6px solid #8c2740;border-radius:22px;padding:8px 20px;"
+    "font:inherit;font-weight:800;font-size:14.5px;cursor:pointer}"
+    ".export-btn:hover{background:#8c2740;color:#fff}"
+    ".ex-modal{display:none;position:fixed;inset:0;z-index:4000;background:rgba(30,12,18,.74);"
+    "flex-direction:column;align-items:center;justify-content:center;padding:16px;overflow:auto;"
+    "font-family:'Microsoft JhengHei','PingFang TC','Noto Sans TC','Segoe UI',system-ui,sans-serif}"
+    ".ex-card{background:#fff;border-radius:18px;max-width:410px;width:100%;padding:20px 22px;"
+    "box-shadow:0 12px 48px rgba(0,0,0,.45);color:#2b2b2b;line-height:1.7}"
+    ".ex-head{font-size:19px;font-weight:800;color:#8c2740;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}"
+    ".ex-brand{font-size:12px;color:#9a857c;font-weight:600;margin-left:auto}"
+    ".ex-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 14px;font-size:14px;color:#5a4a52}"
+    ".ex-meta input{border:1px solid #e0cdd5;border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;max-width:150px}"
+    ".ex-date{margin-left:auto;color:#8a7a72;font-size:13px}"
+    ".ex-sec-t{font-weight:800;color:#6f1f33;font-size:14px;margin:4px 0 7px}"
+    ".ex-rows{display:flex;flex-direction:column;gap:5px}"
+    ".ex-row{display:flex;align-items:center;gap:8px;font-size:13px}"
+    ".ex-u{flex:0 0 112px;color:#3a3a3a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"
+    ".ex-bar{flex:1;height:8px;background:#f0e0e6;border-radius:5px;overflow:hidden}"
+    ".ex-bar i{display:block;height:100%;background:linear-gradient(90deg,#8c2740,#c96f88)}"
+    ".ex-bar.f i{background:linear-gradient(90deg,#2e9e5b,#57c483)}"
+    ".ex-n{flex:0 0 42px;text-align:right;font-weight:700;color:#8c2740}"
+    ".ex-total{margin:11px 0;padding:8px 12px;background:#faf2f5;border-radius:10px;font-weight:800;"
+    "color:#6f1f33;text-align:center;font-size:14px}"
+    ".ex-stats{display:flex;gap:10px;flex-wrap:wrap}"
+    ".ex-stat{flex:1;min-width:135px;background:#f4f9f6;border:1px solid #d6e8de;border-radius:10px;padding:8px 12px}"
+    ".ex-stat .ex-k{font-size:12.5px;color:#2e6b46;font-weight:800}"
+    ".ex-stat .ex-v{font-size:13.5px;color:#3a3a3a;margin-top:2px}"
+    ".ex-foot{margin-top:12px;text-align:center;font-size:11px;color:#9a857c;line-height:1.5}"
+    ".ex-controls{display:flex;align-items:center;gap:14px;margin-top:14px}"
+    ".ex-controls button{background:#fff;color:#8c2740;border:none;border-radius:20px;padding:7px 22px;"
+    "font:inherit;font-weight:800;cursor:pointer}"
+    ".ex-tip{color:#fff;font-size:13px}")
+
+EXPORT_JS = (
+    "var UNITS_META=" + _UNITS_META_JS + ";"
+    "function openExport(){var read,mast,quiz;"
+    "try{read=new Set(JSON.parse(localStorage.getItem('mm-read-kps')||'[]'))}catch(e){read=new Set()}"
+    "try{mast=JSON.parse(localStorage.getItem('mm-kp-mastery')||'{}')}catch(e){mast={}}"
+    "try{quiz=JSON.parse(localStorage.getItem('mm-quiz')||'{}')}catch(e){quiz={}}"
+    "var tot=0,dn=0,rows='';UNITS_META.forEach(function(m){var d=0;"
+    "read.forEach(function(k){if(k.indexOf(m.slug+':kp')===0)d++;});if(d>m.n)d=m.n;tot+=m.n;dn+=d;"
+    "var p=m.n?Math.round(d/m.n*100):0,full=(d>=m.n&&m.n>0);"
+    "rows+='<div class=\"ex-row\"><span class=\"ex-u\">'+m.e+' '+m.t+'</span>"
+    "<span class=\"ex-bar'+(full?' f':'')+'\"><i style=\"width:'+p+'%\"></i></span>"
+    "<span class=\"ex-n\">'+d+'/'+m.n+'</span></div>';});"
+    "var ok=0,rv=0;for(var k in mast){if(mast[k]==='ok')ok++;else if(mast[k]==='review')rv++;}"
+    "var qa=0,qc=0;for(var s in quiz){qa+=quiz[s].a||0;qc+=quiz[s].c||0;}"
+    "document.getElementById('ex-date').textContent=new Date().toLocaleDateString('zh-TW');"
+    "document.getElementById('ex-rows').innerHTML=rows;"
+    "document.getElementById('ex-total').textContent='總計 已讀 '+dn+' / '+tot+' 考點（'+(tot?Math.round(dn/tot*100):0)+'%）';"
+    "document.getElementById('ex-mastery').textContent='已理解 '+ok+' 考點 · 待複習 '+rv+' 考點';"
+    "document.getElementById('ex-quiz').textContent=qa?('作答 '+qa+' 題 · 答對 '+qc+' 題（正確率 '+Math.round(qc/qa*100)+'%）'):'尚未作答';"
+    "document.getElementById('export-modal').style.display='flex';}"
+    "function closeExport(){document.getElementById('export-modal').style.display='none';}")
 
 
 # 流量分析：GA4 + Microsoft Clarity，統一插在每頁 <head>，11 個單元頁全部生效。
@@ -300,15 +389,22 @@ QUIZ_JS = (
     "ce=document.getElementById('qs-c'),ae=document.getElementById('qs-a');var C=0,A=0;"
     "function bump(ok){A++;if(ok)C++;if(box){box.hidden=false;ce.textContent=C;ae.textContent=A;}}"
     "function num(s){return parseInt(s,10);}"
-    "document.querySelectorAll('.opts.quiz').forEach(function(q){"
+    # 練習成績持久化（供首頁『匯出學習紀錄』）：mm-quiz={slug:{a,c}}；用題序去重，重整不灌水。
+    "function persistQuiz(qi,ok){if(typeof MMSLUG==='undefined')return;try{"
+    "var key=MMSLUG+':q'+qi,D=JSON.parse(localStorage.getItem('mm-quiz-done')||'[]');"
+    "if(D.indexOf(key)>=0)return;D.push(key);localStorage.setItem('mm-quiz-done',JSON.stringify(D));"
+    "var Q=JSON.parse(localStorage.getItem('mm-quiz')||'{}'),u=Q[MMSLUG]||{a:0,c:0};u.a++;if(ok)u.c++;"
+    "Q[MMSLUG]=u;localStorage.setItem('mm-quiz',JSON.stringify(Q));}catch(e){}}"
+    "document.querySelectorAll('.opts.quiz').forEach(function(q,qi){"
     "var ans=q.dataset.ans.split(',').map(num),multi=q.dataset.multi==='1';"
     "var opts=[].slice.call(q.querySelectorAll('.opt')),fb=q.querySelector('.opt-fb');var done=false,sel=[];"
     "function grade(p){if(done)return;done=true;opts.forEach(function(b){var i=num(b.dataset.i),c=ans.indexOf(i)>=0;"
     "if(c)b.classList.add('correct');if(p.indexOf(i)>=0&&!c)b.classList.add('wrong');b.disabled=true;});"
     "var ok=p.length===ans.length&&p.every(function(i){return ans.indexOf(i)>=0;});"
     "fb.textContent=ok?'✓ 答對了！':'✗ 答錯了，正解見綠色選項';fb.className='opt-fb '+(ok?'ok':'no');bump(ok);"
-    # 若此為考點「確認理解」的概念小測：答對自動標『我懂了』、答錯標『待複習』（學生仍可手動改）。
-    "var kc=q.closest('.kpcheck');if(kc&&typeof kpMastery==='function'){kpMastery(kc.dataset.kp,ok?'ok':'review',true);}}"
+    # 概念小測（.kpcheck）：答對自動標『我懂了』、答錯『待複習』（走理解確認，不計入練習成績）；
+    # 其餘（歷屆題＋模擬實戰）計入練習成績 persistQuiz。
+    "var kc=q.closest('.kpcheck');if(kc){if(typeof kpMastery==='function')kpMastery(kc.dataset.kp,ok?'ok':'review',true);}else{persistQuiz(qi,ok);}}"
     "if(multi){var ck=q.querySelector('.opt-check');"
     "opts.forEach(function(b){b.addEventListener('click',function(){if(done)return;var i=num(b.dataset.i),k=sel.indexOf(i);"
     "if(k>=0){sel.splice(k,1);b.classList.remove('sel');}else{sel.push(i);b.classList.add('sel');}});});"

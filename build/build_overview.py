@@ -15,7 +15,8 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "content"))
 from render import html_rich  # noqa: E402
 from units import UNITS  # noqa: E402
-from build_html import CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS  # noqa: E402  繼續上次進度橫幅
+from build_html import (CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS,  # noqa: E402  繼續上次進度橫幅
+                        EXPORT_BUTTON_HTML, EXPORT_MODAL_HTML, EXPORT_CSS, EXPORT_JS)  # 匯出學習紀錄
 try:
     from units import SECTIONS
 except Exception:
@@ -206,6 +207,7 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 </div>
 
 {CONTINUE_BANNER_HTML}
+{EXPORT_BUTTON_HTML}
 
 <div class="cards">
 <div class="mc"><div class="lbl">單元</div><div class="val">{st['units']}</div></div>
@@ -248,11 +250,14 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <title>學測數A · 內容總覽（章節・考點・歷屆考題）</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <style>{css}
-{CONTINUE_CSS}</style>
+{CONTINUE_CSS}
+{EXPORT_CSS}</style>
 </head>
 <body>
 {body}
+{EXPORT_MODAL_HTML}
 <script>{CONTINUE_JS}</script>
+<script>{EXPORT_JS}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script>

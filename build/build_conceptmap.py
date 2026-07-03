@@ -9,7 +9,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from build_html import (ANALYTICS, PRIVACY_HTML, _report_btn, og_meta,  # noqa: E402  共用追蹤碼＋頁尾隱私＋回報鈕＋分享卡
-                        CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS)  # 繼續上次進度橫幅
+                        CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS,  # 繼續上次進度橫幅
+                        EXPORT_BUTTON_HTML, EXPORT_MODAL_HTML, EXPORT_CSS, EXPORT_JS)  # 匯出學習紀錄
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 OUT = os.path.join(ROOT, "dist", "115學測數學_概念地圖.html")
 
@@ -388,6 +389,7 @@ def build():
 <div class="cm-hero"><h1>從大考反推的概念地圖</h1>
 <p>寫給「上課聽得懂、自己做卻卡住」的你——中間缺的是一座 <b>從「點狀題型」到「面狀概念」的橋</b>。這張地圖不照課本目錄，而是讓 <b>近十年大考數據</b> 決定重點與結構：依賴鏈（先學什麼）、熱度地圖（份量輕重）、概念網（跨單元連結）。</p></div>
 {CONTINUE_BANNER_HTML}
+{EXPORT_BUTTON_HTML}
 <div class="cm-prog">
 <button class="markbtn" id="markbtn" onclick="toggleMark()">✏️ 標記已讀</button>
 <span class="ptxt" id="ptxt">已讀 0 / 58 考點</span>
@@ -460,12 +462,15 @@ def build():
 {og}
 <style>{css}
 {extra}
-{CONTINUE_CSS}</style></head><body>
+{CONTINUE_CSS}
+{EXPORT_CSS}</style></head><body>
 {body}
+{EXPORT_MODAL_HTML}
 {PRIVACY_HTML}
 {_report_btn({"title": "概念地圖"})}
 <script>{js}</script>
 <script>{CONTINUE_JS}</script>
+<script>{EXPORT_JS}</script>
 </body></html>"""
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     io.open(OUT, "w", encoding="utf-8").write(html)
