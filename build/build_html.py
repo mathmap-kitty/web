@@ -144,7 +144,8 @@ EXPORT_MODAL_HTML = (
     '<div id="export-modal" class="ex-modal">'
     '<div class="ex-card" id="ex-card">'
     '<div class="ex-head">📊 我的學習紀錄<span class="ex-brand">學測數學重點整理</span></div>'
-    '<div class="ex-meta"><label>姓名／班級：<input id="ex-name" placeholder="請填寫"></label>'
+    '<div class="ex-meta"><label>姓名／班級：<input id="ex-name" placeholder="繳交必填"></label>'
+    '<span class="ex-namehint" id="ex-namehint">← 先填寫再截圖</span>'
     '<span class="ex-date" id="ex-date"></span></div>'
     '<div class="ex-sec-t">單元完成度（已讀考點）</div>'
     '<div class="ex-rows" id="ex-rows"></div>'
@@ -170,6 +171,8 @@ EXPORT_CSS = (
     ".ex-brand{font-size:12px;color:#9a857c;font-weight:600;margin-left:auto}"
     ".ex-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 14px;font-size:14px;color:#5a4a52}"
     ".ex-meta input{border:1px solid #e0cdd5;border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;max-width:150px}"
+    ".ex-namehint{color:#c0392b;font-size:12px;font-weight:700}"
+    ".ex-namehint.hide{display:none}"
     ".ex-date{margin-left:auto;color:#8a7a72;font-size:13px}"
     ".ex-sec-t{font-weight:800;color:#6f1f33;font-size:14px;margin:4px 0 7px}"
     ".ex-rows{display:flex;flex-direction:column;gap:5px}"
@@ -210,7 +213,12 @@ EXPORT_JS = (
     "document.getElementById('ex-total').textContent='總計 已讀 '+dn+' / '+tot+' 考點（'+(tot?Math.round(dn/tot*100):0)+'%）';"
     "document.getElementById('ex-mastery').textContent='已理解 '+ok+' 考點 · 待複習 '+rv+' 考點';"
     "document.getElementById('ex-quiz').textContent=qa?('作答 '+qa+' 題 · 答對 '+qc+' 題（正確率 '+Math.round(qc/qa*100)+'%）'):'尚未作答';"
-    "document.getElementById('export-modal').style.display='flex';}"
+    "document.getElementById('export-modal').style.display='flex';"
+    # 防呆：姓名沒填就提示＋聚焦，填了就把提示藏起來（避免匿名繳交）
+    "var nm=document.getElementById('ex-name'),nh=document.getElementById('ex-namehint');"
+    "function chkNm(){if(nh)nh.classList.toggle('hide',!!(nm&&nm.value.trim()));}"
+    "if(nm&&!nm._b){nm._b=1;nm.addEventListener('input',chkNm);}chkNm();"
+    "if(nm&&!nm.value.trim())setTimeout(function(){try{nm.focus();}catch(e){}},120);}"
     "function closeExport(){document.getElementById('export-modal').style.display='none';}")
 
 
