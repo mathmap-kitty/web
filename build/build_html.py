@@ -23,6 +23,10 @@ try:
 except Exception:
     CHECKS = {}
 try:
+    from part2_kp import PART2_KP  # Part2 各題→對應考點（錯題導回考點複習）
+except Exception:
+    PART2_KP = {}
+try:
     from units import UNITS as _UNITS  # 單元中繼資料（檔名／emoji／title），供跨單元連結
     _BY_SLUG = {u["slug"]: u for u in _UNITS}
 except Exception:
@@ -189,10 +193,11 @@ EXPORT_CSS = (
     ".export-btn{background:#fff;color:#8c2740;border:1.6px solid #8c2740;border-radius:22px;padding:8px 20px;"
     "font:inherit;font-weight:800;font-size:14.5px;cursor:pointer}"
     ".export-btn:hover{background:#8c2740;color:#fff}"
+    # 頂部對齊＋可捲動（避免內容比視窗高時，垂直置中把標題推到視窗上緣又捲不上去）
     ".ex-modal{display:none;position:fixed;inset:0;z-index:4000;background:rgba(30,12,18,.74);"
-    "flex-direction:column;align-items:center;justify-content:center;padding:16px;overflow:auto;"
+    "flex-direction:column;align-items:center;justify-content:flex-start;padding:20px 16px 28px;overflow:auto;"
     "font-family:'Microsoft JhengHei','PingFang TC','Noto Sans TC','Segoe UI',system-ui,sans-serif}"
-    ".ex-card{background:#fff;border-radius:18px;max-width:410px;width:100%;padding:20px 22px;"
+    ".ex-card{background:#fff;border-radius:18px;max-width:410px;width:100%;padding:20px 22px;flex-shrink:0;"
     "box-shadow:0 12px 48px rgba(0,0,0,.45);color:#2b2b2b;line-height:1.7}"
     ".ex-head{font-size:19px;font-weight:800;color:#8c2740;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}"
     ".ex-brand{font-size:12px;color:#9a857c;font-weight:600;margin-left:auto}"
@@ -477,9 +482,9 @@ QUIZ_JS = (
     "function logWrong(qi,ok,q){if(typeof MMSLUG==='undefined')return;try{"
     "var key=MMSLUG+':q'+qi,W=JSON.parse(localStorage.getItem('mm-wrong')||'{}');"
     "if(ok){delete W[key];}else{var qb=q.closest('.q-body'),m=qb?qb.previousElementSibling:null,"
-    "tg=m&&m.querySelector?m.querySelector('.tag'):null,anc=q.closest('[id]');"
+    "tg=m&&m.querySelector?m.querySelector('.tag'):null,dk=q.closest('[data-kp]'),ii=q.closest('[id]');"
     "W[key]={s:MMSLUG,f:decodeURIComponent(location.pathname.split('/').pop()),"
-    "t:tg?tg.textContent:'練習題',a:anc?anc.id:''};}"
+    "t:tg?tg.textContent:'練習題',a:dk?dk.getAttribute('data-kp'):(ii?ii.id:'')};}"
     "localStorage.setItem('mm-wrong',JSON.stringify(W));}catch(e){}}"
     "document.querySelectorAll('.opts.quiz').forEach(function(q,qi){"
     "var ans=q.dataset.ans.split(',').map(num),multi=q.dataset.multi==='1';"
@@ -764,14 +769,19 @@ def _part0_html(p0):
             f"{mp}{fig}</div>")
 
 
-def _part2_html(p2):
+def _part2_html(p2, slug=""):
     if not p2:
         return ""
+    kps = PART2_KP.get(slug, [])
     groups = ""
+    gi = 0
     for g in p2["groups"]:
         items = ""
         for j, q in enumerate(g["questions"]):
-            items += _question_html(q, first=(j == 0))
+            qh = _question_html(q, first=(j == 0))
+            kp = q.get("kp") or (kps[gi] if gi < len(kps) else "")  # 對應考點（供錯題導回考點複習）
+            gi += 1
+            items += f'<div class="p2q" data-kp="{kp}">{qh}</div>' if kp else qh
         groups += f'<span class="label">{g["title"]}</span>{items}'
     return (f'<div class="part" id="part2">Part 2　喚起行動：模擬實戰（{p2.get("count","")}題）'
             f'<small>{p2.get("note","")}</small></div><div class="card">{groups}</div>')
@@ -867,7 +877,7 @@ def build_html(unit, units):
             f'{unit.get("part1_label","五大考點")} <small>先把觀念與公式打穩，再上戰場</small></div>'
             f'{kps_html}'
             f'{_mixed_html(unit.get("mixed"))}'
-            f'{_part2_html(unit.get("part2"))}'
+            f'{_part2_html(unit.get("part2"), unit["slug"])}'
             f'{_part3_html(unit.get("part3"))}'
             f'<div class="foot">{unit.get("foot","")}</div>')
     report_btn = _report_btn(unit)
