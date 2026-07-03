@@ -6,7 +6,12 @@
 import os
 import io
 import re
+import sys
 from urllib.parse import quote
+# 確保 content/ 在 path 上（讓 units／cues／checks 可匯入），不論由哪個生成器匯入本模組
+_CONTENT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "content")
+if _CONTENT_DIR not in sys.path:
+    sys.path.insert(0, _CONTENT_DIR)
 from render import html_rich
 try:
     from cues import CUES, GROUPS  # 解題線索＋「同一招」群組（單一來源；同餵地圖頁與各考點標籤）
@@ -85,6 +90,39 @@ PROGRESS_JS = (
     # 一進單元頁就記錄為「上次位置」（若網址帶 #kpN 則連考點一起記）
     "setLast((location.hash||'').replace('#',''));"
     "upUnit();upMastery();")
+
+
+# ===「繼續上次進度」橫幅（首頁 index.html 內嵌一份；概念地圖／內容總覽引用下列共用常數）===
+# 讀 localStorage 的 mm-last（單元頁 setLast 寫入）。放一個 id="continue-bar" 的 <a> 即可自動生效。
+_F2S_JS = "{" + ",".join(f'"{u["file"]}":"{u["slug"]}"' for u in _BY_SLUG.values()) + "}"
+
+CONTINUE_BANNER_HTML = (
+    '<a id="continue-bar" class="continue" href="#" style="display:none">'
+    '<span class="cont-ico">⏯</span>'
+    '<span class="cont-main"><b>繼續上次進度</b><span class="cont-sub" id="cont-sub"></span></span>'
+    '<span class="cont-go">前往 →</span></a>')
+
+CONTINUE_CSS = (
+    ".continue{display:flex;align-items:center;gap:12px;max-width:600px;margin:16px auto;"
+    "background:linear-gradient(90deg,#8c2740,#ac4159);color:#fff;border-radius:14px;padding:12px 18px;"
+    "text-decoration:none;box-shadow:0 4px 16px rgba(140,39,64,.3)}"
+    ".continue:hover{filter:brightness(1.07)}"
+    ".continue .cont-ico{font-size:24px;line-height:1}"
+    ".continue .cont-main{display:flex;flex-direction:column;line-height:1.35;margin-right:auto;min-width:0}"
+    ".continue .cont-main b{font-size:16px}"
+    ".continue .cont-sub{font-size:13px;opacity:.92;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}"
+    ".continue .cont-go{font-weight:800;white-space:nowrap;font-size:14px}")
+
+CONTINUE_JS = (
+    "(function(){var F2S=" + _F2S_JS + ";var last;"
+    "try{last=JSON.parse(localStorage.getItem('mm-last')||'null')}catch(e){last=null}"
+    "var bar=document.getElementById('continue-bar');"
+    "if(!bar||!last||!last.file||!F2S[last.file])return;"
+    "var kp=last.kp&&/^kp\\d+$/.test(last.kp);"
+    "bar.setAttribute('href',last.file+(kp?'#'+last.kp:''));"
+    "var s=document.getElementById('cont-sub');"
+    "if(s)s.textContent=(last.title||'')+(kp?' · 考點 '+last.kp.slice(2):'');"
+    "bar.style.display='';})();")
 
 
 # 流量分析：GA4 + Microsoft Clarity，統一插在每頁 <head>，11 個單元頁全部生效。

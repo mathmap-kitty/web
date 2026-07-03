@@ -15,6 +15,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "content"))
 from render import html_rich  # noqa: E402
 from units import UNITS  # noqa: E402
+from build_html import CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS  # noqa: E402  繼續上次進度橫幅
 try:
     from units import SECTIONS
 except Exception:
@@ -204,6 +205,8 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <div class="src">資料由 content/*.py 單一來源自動彙整（數字非手抄）· 搭配「考題變化趨勢」頁一起看</div>
 </div>
 
+{CONTINUE_BANNER_HTML}
+
 <div class="cards">
 <div class="mc"><div class="lbl">單元</div><div class="val">{st['units']}</div></div>
 <div class="mc"><div class="lbl">考點</div><div class="val">{st['kp']}</div></div>
@@ -244,10 +247,12 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>學測數A · 內容總覽（章節・考點・歷屆考題）</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
-<style>{css}</style>
+<style>{css}
+{CONTINUE_CSS}</style>
 </head>
 <body>
 {body}
+<script>{CONTINUE_JS}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script>

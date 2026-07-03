@@ -59,7 +59,8 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 .note{background:#eef6f4;border:1px solid #cfe6e2;border-radius:12px;padding:11px 16px;font-size:14px;color:#2c5158;margin:14px 0}
 .foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:30px}
 @media(max-width:600px){.ov-q{white-space:normal}}
-</style>
+
+.continue{display:flex;align-items:center;gap:12px;max-width:600px;margin:16px auto;background:linear-gradient(90deg,#8c2740,#ac4159);color:#fff;border-radius:14px;padding:12px 18px;text-decoration:none;box-shadow:0 4px 16px rgba(140,39,64,.3)}.continue:hover{filter:brightness(1.07)}.continue .cont-ico{font-size:24px;line-height:1}.continue .cont-main{display:flex;flex-direction:column;line-height:1.35;margin-right:auto;min-width:0}.continue .cont-main b{font-size:16px}.continue .cont-sub{font-size:13px;opacity:.92;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.continue .cont-go{font-weight:800;white-space:nowrap;font-size:14px}</style>
 </head>
 <body>
 <div class="topbar"><b>學測數A · 內容總覽</b>
@@ -71,6 +72,8 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <p>一頁看完全站結構：<b>11 個單元 · 58 個考點</b>，以及每個考點列了哪些歷屆大考題。點任一項可直達該考點。</p>
 <div class="src">資料由 content/*.py 單一來源自動彙整（數字非手抄）· 搭配「考題變化趨勢」頁一起看</div>
 </div>
+
+<a id="continue-bar" class="continue" href="#" style="display:none"><span class="cont-ico">⏯</span><span class="cont-main"><b>繼續上次進度</b><span class="cont-sub" id="cont-sub"></span></span><span class="cont-go">前往 →</span></a>
 
 <div class="cards">
 <div class="mc"><div class="lbl">單元</div><div class="val">11</div></div>
@@ -104,6 +107,7 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 
 <div class="foot">內容總覽由單一來源自動生成；題目全文以大考中心原卷為準。</div>
 </div>
+<script>(function(){var F2S={"115學測數學_三角.html":"trig","115學測數學_排列組合與機率.html":"prob","115學測數學_空間向量.html":"space","115學測數學_多項式函數.html":"poly","115學測數學_直線與圓.html":"linecir","115學測數學_指數與對數.html":"explog","115學測數學_平面向量.html":"pvec","115學測數學_數據分析.html":"data","115學測數學_數列與級數.html":"seq","115學測數學_矩陣.html":"matrix","115學測數學_數與式.html":"numexpr"};var last;try{last=JSON.parse(localStorage.getItem('mm-last')||'null')}catch(e){last=null}var bar=document.getElementById('continue-bar');if(!bar||!last||!last.file||!F2S[last.file])return;var kp=last.kp&&/^kp\d+$/.test(last.kp);bar.setAttribute('href',last.file+(kp?'#'+last.kp:''));var s=document.getElementById('cont-sub');if(s)s.textContent=(last.title||'')+(kp?' · 考點 '+last.kp.slice(2):'');bar.style.display='';})();</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script>
