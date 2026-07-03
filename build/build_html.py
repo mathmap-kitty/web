@@ -137,6 +137,33 @@ for _u in _BY_SLUG.values():
     _UNITS_META.append({"slug": _u["slug"], "e": _u.get("emoji", ""), "t": _u["title"], "n": _n})
 _UNITS_META_JS = json.dumps(_UNITS_META, ensure_ascii=False)
 
+
+def _plain_txt(s):
+    """把含 LaTeX／markdown 的字串清成純文字（供搜尋比對／顯示）。"""
+    s = re.sub(r"\\[a-zA-Z]+\b", " ", s or "")
+    s = re.sub(r"[\\(){}\[\]$*_^|~]", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+# 站內搜尋索引：各單元「考點 nav」＋「Part3 速查表」→ 可查考點／公式關鍵字。
+_SEARCH = []
+for _u in _BY_SLUG.values():
+    try:
+        _U = __import__(_u["slug"]).UNIT
+    except Exception:
+        continue
+    _e, _t, _f = _u.get("emoji", ""), _u["title"], _u["file"]
+    for _k in _U.get("kps", []):
+        _lab = _plain_txt(_k.get("nav", _k.get("title", "")))
+        _SEARCH.append({"l": _lab, "u": _t, "e": _e, "f": _f, "a": _k["id"], "k": "考點",
+                        "s": (_lab + " " + _t).lower()})
+    for _r in (_U.get("part3") or {}).get("ref_table", []):
+        _lab = _plain_txt(_r.get("k", ""))
+        _det = _plain_txt(_r.get("v", ""))
+        _SEARCH.append({"l": _lab, "d": _det[:44], "u": _t, "e": _e, "f": _f, "a": "part3", "k": "速查",
+                        "s": (_lab + " " + _det + " " + _t).lower()})
+_SEARCH_JS = json.dumps(_SEARCH, ensure_ascii=False)
+
 EXPORT_BUTTON_HTML = ('<div class="export-wrap">'
                       '<button class="export-btn" onclick="openExport()">📤 匯出學習紀錄</button></div>')
 
@@ -220,6 +247,49 @@ EXPORT_JS = (
     "if(nm&&!nm._b){nm._b=1;nm.addEventListener('input',chkNm);}chkNm();"
     "if(nm&&!nm.value.trim())setTimeout(function(){try{nm.focus();}catch(e){}},120);}"
     "function closeExport(){document.getElementById('export-modal').style.display='none';}")
+
+
+# === 站內搜尋框（首頁）：輸入考點名或公式關鍵字 → 即時列出結果、直達考點／速查表 ===
+SEARCH_BOX_HTML = (
+    '<div class="site-search">'
+    '<input id="ss-q" type="search" autocomplete="off" oninput="ssSearch()" '
+    'placeholder="🔍 搜尋考點或公式，例：分點公式、內積、位數、餘弦定理…">'
+    '<div id="ss-results" class="ss-results"></div></div>')
+
+SEARCH_CSS = (
+    ".site-search{position:relative;max-width:600px;margin:16px auto 0}"
+    ".site-search input{width:100%;padding:11px 16px;font-size:15px;font-family:inherit;"
+    "border:1.6px solid #cfe0f2;border-radius:24px;background:#fff;color:#333;outline:none}"
+    ".site-search input:focus{border-color:#3a5a9a;box-shadow:0 0 0 3px rgba(58,90,154,.12)}"
+    ".ss-results{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:60;"
+    "background:#fff;border:1px solid #dcd0d5;border-radius:14px;box-shadow:0 8px 30px rgba(80,40,30,.18);"
+    "max-height:60vh;overflow:auto;padding:5px}"
+    ".ss-results.open{display:block}"
+    ".ss-item{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;border-radius:10px;"
+    "text-decoration:none;color:#333;border-bottom:1px solid #f2eaee}"
+    ".ss-item:last-child{border-bottom:none}.ss-item:hover{background:#faf2f5}"
+    ".ss-u{font-size:12px;color:#8c2740;background:#f6e7ec;border-radius:10px;padding:1px 8px;font-weight:700;white-space:nowrap}"
+    ".ss-l{flex:1;min-width:0;font-size:14.5px;color:#3a3a3a}"
+    ".ss-d{color:#9a857c;font-size:12.5px}"
+    ".ss-k{font-size:11.5px;color:#3a5a9a;background:#eef4fb;border-radius:9px;padding:1px 8px;font-weight:700;white-space:nowrap}"
+    ".ss-none{padding:12px 14px;color:#b06636;font-size:14px}")
+
+SEARCH_JS = (
+    "var SS=" + _SEARCH_JS + ";"
+    "function ssEsc(x){return (x||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}"
+    "function ssSearch(){var q=document.getElementById('ss-q').value.trim().toLowerCase(),"
+    "box=document.getElementById('ss-results');"
+    "if(!q){box.innerHTML='';box.classList.remove('open');return;}"
+    "var hits=SS.filter(function(e){return e.s.indexOf(q)>=0;}).slice(0,20);"
+    "if(!hits.length){box.innerHTML='<div class=\"ss-none\">找不到「'+ssEsc(q)+'」——換個關鍵字試試（如：距離、面積、機率）</div>';"
+    "box.classList.add('open');return;}"
+    "box.innerHTML=hits.map(function(e){return '<a class=\"ss-item\" href=\"'+e.f+'#'+e.a+'\">'"
+    "+'<span class=\"ss-u\">'+e.e+' '+ssEsc(e.u)+'</span>'"
+    "+'<span class=\"ss-l\">'+ssEsc(e.l)+(e.d?' <span class=\"ss-d\">'+ssEsc(e.d)+'</span>':'')+'</span>'"
+    "+'<span class=\"ss-k\">'+e.k+'</span></a>';}).join('');box.classList.add('open');}"
+    # 點結果外的地方關閉下拉
+    "document.addEventListener('click',function(ev){var s=document.querySelector('.site-search');"
+    "if(s&&!s.contains(ev.target)){var b=document.getElementById('ss-results');if(b)b.classList.remove('open');}});")
 
 
 # 流量分析：GA4 + Microsoft Clarity，統一插在每頁 <head>，11 個單元頁全部生效。
