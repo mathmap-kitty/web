@@ -422,6 +422,22 @@ UNIT = {
                 ],
             },
             "questions": [
+                {"tag": "107 · 多選 10", "level": "★★☆（中）", "core": "向量坐標應用：長度、面積、內積判角",
+                 "body": r"坐標平面上 \(\triangle ABC\)，\(\overrightarrow{AB}=(-4,3)\)、\(\overrightarrow{AC}=\left(\dfrac25,\dfrac45\right)\)。試選出正確的選項。",
+                 "options": [
+                     r"\(\overline{BC}=5\)",
+                     r"\(\triangle ABC\) 是直角三角形",
+                     r"\(\triangle ABC\) 的面積為 \(\dfrac{11}{5}\)",
+                     r"\(\sin B>\sin C\)",
+                     r"\(\cos A>\cos B\)"],
+                 "solution": {"brief": r"(2)(3)",
+                              "steps": [
+                                  r"\(\overrightarrow{BC}=\overrightarrow{AC}-\overrightarrow{AB}=\left(\dfrac25+4,\;\dfrac45-3\right)=\left(\dfrac{22}{5},-\dfrac{11}{5}\right)\)。",
+                                  r"(1)✗ \(|\overrightarrow{BC}|=\sqrt{\left(\tfrac{22}{5}\right)^2+\left(\tfrac{11}{5}\right)^2}=\dfrac{\sqrt{605}}{5}=\dfrac{11\sqrt5}{5}\approx4.92\neq5\)。",
+                                  r"(2)○ \(\overrightarrow{CA}\cdot\overrightarrow{CB}=\left(-\dfrac25,-\dfrac45\right)\cdot\left(-\dfrac{22}{5},\dfrac{11}{5}\right)=\dfrac{44}{25}-\dfrac{44}{25}=0\)，故 \(\angle C=90^\circ\)，為直角三角形。",
+                                  r"(3)○ 面積 \(=\dfrac12\left|\overrightarrow{AB}\times\overrightarrow{AC}\right|=\dfrac12\left|(-4)\cdot\dfrac45-3\cdot\dfrac25\right|=\dfrac12\cdot\dfrac{22}{5}=\dfrac{11}{5}\)。",
+                                  r"(4)✗ 正弦定理 \(\dfrac{\sin B}{\sin C}=\dfrac{\overline{AC}}{\overline{AB}}=\dfrac{2\sqrt5/5}{5}<1\)，故 \(\sin B<\sin C\)。",
+                                  r"(5)✗ \(\angle C=90^\circ\Rightarrow\angle A+\angle B=90^\circ\)；因 \(\overline{BC}>\overline{AC}\Rightarrow\angle A>\angle B\)，故 \(\cos A<\cos B\)。綜上選 (2)(3)。"]}},
                 {"tag": "旋轉範例", "level": "★★☆（中）", "core": "90° 與一般角的旋轉",
                  "body": r"設向量 \(\vec u=(3,1)\)。",
                  "subqs": [
