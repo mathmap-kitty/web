@@ -76,6 +76,7 @@ a{color:var(--maroon)}
   border-radius:999px;padding:5px 12px}
 .kchip:hover{background:var(--maroon-d)}
 .kchip .u{opacity:.8;font-size:11px;margin-right:4px}
+.kdnote{font-size:13px;color:var(--mut);background:#faf5ef;border:1px dashed var(--line);border-radius:8px;padding:6px 10px}
 
 .step{margin:8px 0;padding-left:2px}
 .step .stext{margin:2px 0}

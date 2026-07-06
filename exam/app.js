@@ -98,6 +98,8 @@ function makeCard(q){
   var secKd=sec('kd','📍 對應 mathmap 考點'); var chips=document.createElement('div'); chips.className='kchips';
   q.kaodian.forEach(function(k){ var a=document.createElement('a'); a.className='kchip'; a.href=k.url; a.target='_blank'; a.rel='noopener';
     a.innerHTML='<span class="u">〔'+k.unit+'〕</span>'+k.title; chips.appendChild(a); });
+  if(!q.kaodian.length){ var kn=document.createElement('div'); kn.className='kdnote';
+    kn.textContent='此題為數學 B 專屬範圍（圓錐截痕／球面經緯度／空間坐標），mathmap 考點待補。'; chips.appendChild(kn); }
   secKd.appendChild(chips);
 
   var order=[secKey, secKd];
