@@ -473,7 +473,8 @@ UNIT = {
                                   r"(1)✗ \(x=3\)：\((3-1)^2+y^2=4\Rightarrow y^2=0\)，只有 \(y=0\) 一個解。",
                                   r"(2)✗ 圓心 \((1,0)\) 非原點，不對稱於原點（如 \((3,0)\) 在圓上，\((-3,0)\) 不在）。",
                                   r"(4)✗ 圓心到直線 \(x+y-4=0\) 的距離 \(\dfrac{|1+0-4|}{\sqrt2}=\dfrac{3}{\sqrt2}\approx2.12>2\)，直線與圓不相交。",
-                                  r"(5)○ 設 \(x=1+2\cos\theta,\,y=2\sin\theta\)：\(x-y=1+2\cos\theta-2\sin\theta=1+2\sqrt2\cos(\theta+45^\circ)\)，最大值 \(1+2\sqrt2\)。故選 (3)(5)。"]}},
+                                  r"(5)○ 設 \(x=1+2\cos\theta,\,y=2\sin\theta\)：\(x-y=1+2\cos\theta-2\sin\theta=1+2\sqrt2\cos(\theta+45^\circ)\)，最大值 \(1+2\sqrt2\)。",
+                                  r"**(5) 另解（切線法）**：把 \(x-y=k\) 看成斜率 \(1\) 的直線族；\(x-y\) 要最大 \(\Leftrightarrow\) 直線 \(x-y-k=0\) 平移到與圓相切、\(k\) 最大。相切 \(\Leftrightarrow\) 圓心 \((1,0)\) 到直線距離 ＝ 半徑：\(\dfrac{|1-k|}{\sqrt2}=2\Rightarrow|k-1|=2\sqrt2\Rightarrow k=1\pm2\sqrt2\)，取最大 \(k=1+2\sqrt2\)。故選 (3)(5)。"]}},
             ],
             "selfcheck": {
                 "q": r"圓心到某直線距離 \(d=3\)、半徑 \(r=5\)，直線與圓的關係為何？",
