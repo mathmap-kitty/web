@@ -155,8 +155,11 @@ function makeCard(q){
 /* ---------- mode nav + contextual toolbar ---------- */
 function renderModeNav(){
   var nav=document.getElementById('modeNav'); nav.innerHTML='';
+  var home=document.createElement('a'); home.className='sitehome'; home.href='../';
+  home.title='回 mathmap 數學教材網總入口'; home.textContent='🏠 網站首頁';
+  nav.appendChild(home);
   var sc=starCount();
-  [['home','🏠 首頁'],['year','📅 按年度'],['topic','🎯 按考點'],['hard','🔥 難題集'],['list','📌 複習清單'+(sc?'（'+sc+'）':'')]].forEach(function(m){
+  [['home','📋 總覽'],['year','📅 按年度'],['topic','🎯 按考點'],['hard','🔥 難題集'],['list','📌 複習清單'+(sc?'（'+sc+'）':'')]].forEach(function(m){
     var b=document.createElement('button'); b.textContent=m[1]; if(state.view===m[0]) b.className='active';
     b.onclick=function(){ state.view=m[0]; render(); window.scrollTo(0,0); };
     nav.appendChild(b);

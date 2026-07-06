@@ -11,7 +11,7 @@ import openpyxl
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta  # noqa: E402  共用追蹤碼＋頁尾隱私＋回報鈕＋分享卡
+from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta, HOME_LINK  # noqa: E402  共用追蹤碼＋頁尾隱私＋回報鈕＋分享卡
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更正版.xlsx")
 OUT = os.path.join(ROOT, "dist", "115學測數學_跨單元整合_脈絡地圖.html")
@@ -537,7 +537,7 @@ def build():
     except Exception:
         navsel = '<a class="nav-select" href="index.html">📚 目錄首頁</a>'
 
-    toolbar = (f'<div class="toolbar"><span class="t-title">跨單元整合 · 脈絡地圖</span>{navsel}</div>')
+    toolbar = (f'<div class="toolbar"><span class="t-title">跨單元整合 · 脈絡地圖</span>{HOME_LINK}{navsel}</div>')
     js = ("function flt(btn,f){document.querySelectorAll('.filterbar button').forEach(b=>b.classList.remove('on'));"
           "btn.classList.add('on');"
           "document.querySelectorAll('.xq').forEach(c=>{c.style.display=(f==='all'||c.dataset.juan===f)?'':'none';});"

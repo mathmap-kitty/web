@@ -332,6 +332,13 @@ SITE_BASE = "https://mathmap-kitty.github.io/web/concept-map/"
 OG_IMAGE = SITE_BASE + "og-cover.png"
 OG_SITE_NAME = "115 學測數學重點整理"
 
+# 「🏠 網站首頁」pill：連回 repo 根的總入口 portal（../）。全站每頁頂欄共用；
+# 內聯樣式蓋過各頁 topbar 的白底連結樣式，讓「離開子站」的連結有視覺區隔。
+HOME_LINK = ('<a class="tb-home" href="../" style="background:rgba(255,255,255,.15);'
+             'color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;'
+             'padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;'
+             'white-space:nowrap">🏠 網站首頁</a>')
+
 
 def _esc_attr(s):
     return (s.replace("&", "&amp;").replace('"', "&quot;")
@@ -852,6 +859,7 @@ def _toolbar(unit, units):
     kp_opts.append('<option value="part2">Part 2 · 模擬實戰</option>')
     kp_opts.append('<option value="part3">Part 3 · 考前速查</option>')
     return (f'<div class="toolbar"><span class="t-title">{unit["title"]}</span>'
+            f'{HOME_LINK}'
             f'<select class="nav-select" onchange="if(this.value){{location.href=this.value;}}">'
             f'{"".join(unit_opts)}</select>'
             f'<select class="nav-select" onchange="if(this.value){{location.hash=this.value;this.selectedIndex=0;}}">'

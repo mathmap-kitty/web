@@ -10,7 +10,8 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from build_html import (ANALYTICS, PRIVACY_HTML, _report_btn, og_meta,  # noqa: E402  共用追蹤碼＋頁尾隱私＋回報鈕＋分享卡
                         CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS,  # 繼續上次進度橫幅
-                        EXPORT_BUTTON_HTML, EXPORT_MODAL_HTML, EXPORT_CSS, EXPORT_JS)  # 匯出學習紀錄
+                        EXPORT_BUTTON_HTML, EXPORT_MODAL_HTML, EXPORT_CSS, EXPORT_JS,  # 匯出學習紀錄
+                        HOME_LINK)  # 「🏠 網站首頁」pill
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
 OUT = os.path.join(ROOT, "dist", "115學測數學_概念地圖.html")
 
@@ -385,7 +386,7 @@ def build():
            '<option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option>'
            '<option value="115學測數學_解題線索地圖.html">🧭 解題線索地圖</option></select>')
     body = f"""<div class="cm-topbar"><span class="t-title">學測數A · 概念地圖（從大考反推）</span>
-<a class="home" href="index.html">📚 首頁</a>{nav}</div>
+{HOME_LINK}<a class="home" href="index.html">📚 目錄首頁</a>{nav}</div>
 <div class="cm-wrap">
 <div class="cm-hero"><h1>從大考反推的概念地圖</h1>
 <p>寫給「上課聽得懂、自己做卻卡住」的你——中間缺的是一座 <b>從「點狀題型」到「面狀概念」的橋</b>。這張地圖不照課本目錄，而是讓 <b>近十年大考數據</b> 決定重點與結構：依賴鏈（先學什麼）、熱度地圖（份量輕重）、概念網（跨單元連結）。</p></div>

@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "content"))
-from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta  # noqa: E402
+from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta, HOME_LINK  # noqa: E402
 from render import html_rich  # noqa: E402
 from units import UNITS  # noqa: E402
 from cues import CATS, CUES, GROUPS  # noqa: E402
@@ -139,7 +139,8 @@ def build():
   .cue-g{display:inline-block;margin-left:7px;font-size:11px;color:#2e6b46;background:#eef7f1;
     border:1px solid #cfe6d8;border-radius:10px;padding:0 7px;font-weight:700;vertical-align:1px}
 """
-    nav = ('<a href="index.html">📚 首頁</a>'
+    nav = (HOME_LINK
+           + '<a href="index.html">📚 目錄首頁</a>'
            '<a href="115學測數學_待複習與錯題.html">📌 待複習與錯題</a>'
            '<a href="115學測數學_概念地圖.html">🗺️ 概念地圖</a>'
            '<a href="115學測數學_跨單元整合_脈絡地圖.html">🧩 脈絡地圖</a>')

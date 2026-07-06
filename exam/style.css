@@ -96,6 +96,10 @@ a{color:var(--maroon)}
   padding:8px 18px;border-radius:999px;cursor:pointer}
 .modenav button:hover{background:rgba(255,255,255,.12)}
 .modenav button.active{background:var(--page);color:var(--maroon-d)}
+.modenav a.sitehome{display:inline-flex;align-items:center;background:rgba(255,255,255,.12);color:#f0d9e0;
+  border:1px solid rgba(255,255,255,.32);font-size:15px;font-weight:700;text-decoration:none;
+  padding:7px 15px;border-radius:999px;white-space:nowrap}
+.modenav a.sitehome:hover{background:rgba(255,255,255,.22)}
 .modenav .testbtn{margin-left:auto;background:rgba(255,255,255,.12);color:#f0d9e0;border:1px solid rgba(255,255,255,.25)}
 .modenav .testbtn:hover{background:rgba(255,255,255,.2)}
 .modenav .testbtn.on{background:#f0b756;color:#5a3708;border-color:#f0b756}

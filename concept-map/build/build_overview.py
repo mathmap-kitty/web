@@ -16,7 +16,8 @@ sys.path.insert(0, os.path.join(ROOT, "content"))
 from render import html_rich  # noqa: E402
 from units import UNITS  # noqa: E402
 from build_html import (CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS,  # noqa: E402  繼續上次進度橫幅
-                        EXPORT_BUTTON_HTML, EXPORT_MODAL_HTML, EXPORT_CSS, EXPORT_JS)  # 匯出學習紀錄
+                        EXPORT_BUTTON_HTML, EXPORT_MODAL_HTML, EXPORT_CSS, EXPORT_JS,  # 匯出學習紀錄
+                        HOME_LINK)  # 「🏠 網站首頁」pill
 try:
     from units import SECTIONS
 except Exception:
@@ -197,7 +198,7 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 """
 
     body = f"""<div class="topbar"><b>學測數A · 內容總覽</b>
-<a href="{TREND_FILE}">📊 考題變化趨勢 →</a>
+{HOME_LINK}<a href="{TREND_FILE}">📊 考題變化趨勢 →</a>
 <span style="font-size:12.5px;opacity:.8">獨立頁 · 教學用</span></div>
 <div class="wrap">
 <div class="hero">

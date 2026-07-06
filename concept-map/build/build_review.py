@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "content"))
-from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta  # noqa: E402
+from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta, HOME_LINK  # noqa: E402
 from units import UNITS  # noqa: E402
 
 KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
@@ -60,7 +60,8 @@ def build():
   .rv-note{background:#eef4fb;border:1px dashed #b7cef0;border-radius:12px;padding:10px 16px;font-size:13.5px;color:#3a4a63;margin:8px 0 4px;line-height:1.8}
   .rv-foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:26px}
 """
-    nav = ('<a href="index.html">📚 首頁</a>'
+    nav = (HOME_LINK
+           + '<a href="index.html">📚 目錄首頁</a>'
            '<a href="115學測數學_概念地圖.html">🗺️ 概念地圖</a>'
            '<a href="115學測數學_解題線索地圖.html">🧭 線索地圖</a>')
     body = f"""<div class="rv-topbar"><span class="t-title">學測數A · 待複習與錯題</span>{nav}</div>

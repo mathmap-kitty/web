@@ -7,6 +7,8 @@ import os, io, sys, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, HERE)
+from build_html import HOME_LINK  # noqa: E402  「🏠 網站首頁」pill
 XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更正版.xlsx")
 # 獨立頁：先不掛進 mathmap（首頁不連它），但同 repo、同風格，隨時加個連結即可併入。
 SLUG = "exam-trend-analysis.html"
@@ -229,7 +231,7 @@ new Chart(document.getElementById('trend'),{type:'bar',
 <style>{css}</style>
 </head>
 <body>
-<div class="topbar"><b>108 課綱後 · 學測數A考題變化趨勢</b><a href="content-overview.html" style="color:#fff;background:rgba(255,255,255,.16);border-radius:18px;padding:5px 13px;font-size:13.5px;text-decoration:none">📚 內容總覽 →</a><span style="font-size:12.5px;opacity:.8">獨立分析頁 · 教學用</span></div>
+<div class="topbar"><b>108 課綱後 · 學測數A考題變化趨勢</b>{HOME_LINK}<a href="content-overview.html" style="color:#fff;background:rgba(255,255,255,.16);border-radius:18px;padding:5px 13px;font-size:13.5px;text-decoration:none">📚 內容總覽 →</a><span style="font-size:12.5px;opacity:.8">獨立分析頁 · 教學用</span></div>
 <div class="wrap">
 <div class="hero">
 <h1>108 課綱把學測數A考成什麼樣子？</h1>
