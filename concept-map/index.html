@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<title>學測數學重點整理 · 目錄</title>
+<meta name="description" content="115 學測數A重點整理：11 單元考點地圖、先備、示範例與即時練習，中等程度也能自學看得懂。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="115 學測數學重點整理">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="學測數學重點整理 · 數A自學講義">
+<meta property="og:description" content="115 學測數A重點整理：11 單元考點地圖、先備、示範例與即時練習，中等程度也能自學看得懂。">
+<meta property="og:url" content="https://mathmap-kitty.github.io/web/concept-map/">
+<meta property="og:image" content="https://mathmap-kitty.github.io/web/concept-map/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="學測數學重點整理 · 數A自學講義">
+<meta name="twitter:description" content="115 學測數A重點整理：11 單元考點地圖、先備、示範例與即時練習，中等程度也能自學看得懂。">
+<meta name="twitter:image" content="https://mathmap-kitty.github.io/web/concept-map/og-cover.png">
+<style>
+  :root{--maroon:#8c2740;--maroon-d:#6f1f33;--page:#f7f2ee;--card:#fff;--line:#e7dcd6;--ink:#2b2b2b;--blue:#1f6f78}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink);font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;line-height:1.8}
+  .topbar{position:sticky;top:0;background:rgba(140,39,64,.97);color:#fff;padding:10px 20px;box-shadow:0 2px 10px rgba(0,0,0,.15);z-index:10;display:flex;align-items:center;gap:12px}
+  .topbar .tb-title{font-weight:800;font-size:17px;letter-spacing:.5px}
+  .topbar .nav-select{margin-left:auto;font-size:14px;font-weight:700;color:var(--maroon-d);background:#fff;border:1px solid rgba(255,255,255,.6);border-radius:8px;padding:6px 12px;cursor:pointer;max-width:58%}
+  @media(max-width:560px){.topbar .tb-title{font-size:14px}.topbar .nav-select{font-size:13px;padding:5px 8px}}
+  .wrap{max-width:880px;margin:0 auto;padding:0 18px 70px}
+  .hero{text-align:center;padding:30px 0 6px}
+  .hero h1{color:var(--maroon);font-size:28px;margin:.2em 0;letter-spacing:1px}
+  .hero p{color:#7a6a63;font-size:15px;margin:.3em auto;max-width:640px}
+  .section{margin-top:30px}
+  .section-title{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;font-size:18px;font-weight:800;color:var(--maroon-d);margin:0 0 14px;padding:9px 16px;background:linear-gradient(90deg,#f0dde3,rgba(240,221,227,0));border-left:5px solid var(--maroon);border-radius:0 10px 10px 0}
+  .section-title .num{flex-shrink:0;width:26px;height:26px;background:var(--maroon);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+  .section-title small{font-weight:600;color:#9a8a82;font-size:13px;margin-left:8px}
+  .section-units{display:none;flex-direction:column;gap:16px}
+  .section.open .section-units{display:flex}
+  .sec-caret{margin-left:auto;flex-shrink:0;width:25px;height:25px;background:var(--maroon);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;line-height:1;transition:.15s}
+  .section-title:hover .sec-caret{background:var(--maroon-d)}
+  .section.open .sec-caret{background:var(--maroon-d)}
+  .unit{background:var(--card);border-radius:14px;box-shadow:0 2px 10px rgba(80,40,30,.07);border-left:5px solid var(--maroon);overflow:hidden}
+  .unit-head{display:flex;align-items:center;gap:10px;padding:15px 20px;font-size:20px;font-weight:800;color:var(--maroon);text-decoration:none}
+  .unit-head:hover{background:#faf2f5}
+  .unit-head .tag{font-size:13px;font-weight:700;background:#f0dde3;color:var(--maroon-d);border-radius:20px;padding:2px 12px}
+  .unit-head .go{margin-left:auto;font-size:14px;color:var(--blue);font-weight:700}
+  .sub{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:8px;padding:0 20px 18px}
+  .sub a{display:block;padding:9px 14px;background:#faf6f2;border:1px solid var(--line);border-radius:10px;color:#4a3a34;text-decoration:none;font-size:14.5px;transition:.12s}
+  .sub a:hover{background:#f3e3e8;color:var(--maroon-d);border-color:#d9c2c9}
+  .sub a b{color:var(--maroon)}
+  .feature{display:block;margin:24px 0 8px;padding:16px 20px;background:linear-gradient(100deg,#1f6f78,#2c8a8a);color:#fff;border-radius:14px;text-decoration:none;box-shadow:0 4px 14px rgba(31,111,120,.28);transition:.15s}
+  .feature:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(31,111,120,.36)}
+  .feature .ft-t{font-size:18px;font-weight:800;letter-spacing:.5px}
+  .feature .ft-d{font-size:13.5px;opacity:.95;margin-top:4px;line-height:1.7}
+  .feature .ft-go{float:right;font-weight:800;font-size:14px;background:rgba(255,255,255,.22);border-radius:20px;padding:3px 13px}
+  .foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:34px}
+  @media(max-width:560px){.hero h1{font-size:23px}.unit-head{font-size:18px}.section-title{font-size:16px}.section-title small{display:none}}
+  /* 繼續上次進度橫幅 */
+  .continue{display:flex;align-items:center;gap:12px;max-width:600px;margin:16px auto 0;background:linear-gradient(90deg,#8c2740,#ac4159);color:#fff;border-radius:14px;padding:12px 18px;text-decoration:none;box-shadow:0 4px 16px rgba(140,39,64,.3)}
+  .continue:hover{filter:brightness(1.07)}
+  .continue .cont-ico{font-size:24px;line-height:1}
+  .continue .cont-main{display:flex;flex-direction:column;line-height:1.35;margin-right:auto;min-width:0}
+  .continue .cont-main b{font-size:16px}
+  .continue .cont-sub{font-size:13px;opacity:.92;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .continue .cont-go{font-weight:800;white-space:nowrap;font-size:14px}
+  /* 單元卡已讀進度條 */
+  .uprog{display:flex;align-items:center;gap:9px;padding:0 20px 11px;margin-top:-3px}
+  .uprog .up-lbl{font-size:12px;color:#a06b7a;font-weight:700;white-space:nowrap;min-width:62px}
+  .uprog .up-track{flex:1;height:7px;background:#f0e0e6;border-radius:5px;overflow:hidden}
+  .uprog .up-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#8c2740,#c96f88);transition:width .35s}
+  .uprog.done .up-lbl{color:#2e7d46}
+  .uprog.done .up-track i{background:linear-gradient(90deg,#2e9e5b,#57c483)}
+  /* 收合 section 標題上的區進度（一律靠右；緊接的 caret 改固定小間距，避免兩個 auto 邊界對半分） */
+  .sec-prog{font-size:12.5px;font-weight:800;color:#8c2740;white-space:nowrap;background:#f0dde3;border-radius:12px;padding:1px 10px;margin-left:auto}
+  .sec-prog + .sec-caret{margin-left:6px}
+  .export-wrap{text-align:center;margin:10px 0 4px}.export-btn{background:#fff;color:#8c2740;border:1.6px solid #8c2740;border-radius:22px;padding:8px 20px;font:inherit;font-weight:800;font-size:14.5px;cursor:pointer}.export-btn:hover{background:#8c2740;color:#fff}.ex-modal{display:none;position:fixed;inset:0;z-index:4000;background:rgba(30,12,18,.74);flex-direction:column;align-items:center;justify-content:flex-start;padding:20px 16px 28px;overflow:auto;font-family:'Microsoft JhengHei','PingFang TC','Noto Sans TC','Segoe UI',system-ui,sans-serif}.ex-card{background:#fff;border-radius:18px;max-width:410px;width:100%;padding:20px 22px;flex-shrink:0;box-shadow:0 12px 48px rgba(0,0,0,.45);color:#2b2b2b;line-height:1.7}.ex-head{font-size:19px;font-weight:800;color:#8c2740;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.ex-brand{font-size:12px;color:#9a857c;font-weight:600;margin-left:auto}.ex-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 14px;font-size:14px;color:#5a4a52}.ex-meta input{border:1px solid #e0cdd5;border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;max-width:150px}.ex-namehint{color:#c0392b;font-size:12px;font-weight:700}.ex-namehint.hide{display:none}.ex-date{margin-left:auto;color:#8a7a72;font-size:13px}.ex-sec-t{font-weight:800;color:#6f1f33;font-size:14px;margin:4px 0 7px}.ex-rows{display:flex;flex-direction:column;gap:5px}.ex-row{display:flex;align-items:center;gap:8px;font-size:13px}.ex-u{flex:0 0 112px;color:#3a3a3a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ex-bar{flex:1;height:8px;background:#f0e0e6;border-radius:5px;overflow:hidden}.ex-bar i{display:block;height:100%;background:linear-gradient(90deg,#8c2740,#c96f88)}.ex-bar.f i{background:linear-gradient(90deg,#2e9e5b,#57c483)}.ex-n{flex:0 0 42px;text-align:right;font-weight:700;color:#8c2740}.ex-total{margin:11px 0;padding:8px 12px;background:#faf2f5;border-radius:10px;font-weight:800;color:#6f1f33;text-align:center;font-size:14px}.ex-stats{display:flex;gap:10px;flex-wrap:wrap}.ex-stat{flex:1;min-width:135px;background:#f4f9f6;border:1px solid #d6e8de;border-radius:10px;padding:8px 12px}.ex-stat .ex-k{font-size:12.5px;color:#2e6b46;font-weight:800}.ex-stat .ex-v{font-size:13.5px;color:#3a3a3a;margin-top:2px}.ex-foot{margin-top:12px;text-align:center;font-size:11px;color:#9a857c;line-height:1.5}.ex-controls{display:flex;align-items:center;gap:14px;margin-top:14px}.ex-controls button{background:#fff;color:#8c2740;border:none;border-radius:20px;padding:7px 22px;font:inherit;font-weight:800;cursor:pointer}.ex-tip{color:#fff;font-size:13px}
+  .site-search{position:relative;max-width:600px;margin:16px auto 0}.site-search input{width:100%;padding:11px 16px;font-size:15px;font-family:inherit;border:1.6px solid #cfe0f2;border-radius:24px;background:#fff;color:#333;outline:none}.site-search input:focus{border-color:#3a5a9a;box-shadow:0 0 0 3px rgba(58,90,154,.12)}.ss-results{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:60;background:#fff;border:1px solid #dcd0d5;border-radius:14px;box-shadow:0 8px 30px rgba(80,40,30,.18);max-height:60vh;overflow:auto;padding:5px}.ss-results.open{display:block}.ss-item{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;border-radius:10px;text-decoration:none;color:#333;border-bottom:1px solid #f2eaee}.ss-item:last-child{border-bottom:none}.ss-item:hover{background:#faf2f5}.ss-u{font-size:12px;color:#8c2740;background:#f6e7ec;border-radius:10px;padding:1px 8px;font-weight:700;white-space:nowrap}.ss-l{flex:1;min-width:0;font-size:14.5px;color:#3a3a3a}.ss-d{color:#9a857c;font-size:12.5px}.ss-k{font-size:11.5px;color:#3a5a9a;background:#eef4fb;border-radius:9px;padding:1px 8px;font-weight:700;white-space:nowrap}.ss-none{padding:12px 14px;color:#b06636;font-size:14px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="tb-title">學測數學重點整理 · 目錄</span>
+  <select class="nav-select" onchange="if(this.value){location.href=this.value;}" aria-label="跳到單元">
+    <option value="">跳到單元 ▾</option>
+    <option value="115學測數學_待複習與錯題.html">📌 待複習與錯題</option>
+    <option value="115學測數學_概念地圖.html">🗺️ 概念地圖</option>
+    <option value="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</option>
+    <option value="115學測數學_解題線索地圖.html">🧭 解題線索地圖</option>
+    <optgroup label="① 代數與函數">
+      <option value="115學測數學_數與式.html">🔢 數與式</option>
+      <option value="115學測數學_多項式函數.html">📈 多項式函數</option>
+      <option value="115學測數學_指數與對數.html">📉 指數與對數</option>
+    </optgroup>
+    <optgroup label="② 數列・機率・統計">
+      <option value="115學測數學_數列與級數.html">🪜 數列與級數</option>
+      <option value="115學測數學_排列組合與機率.html">🎲 排列組合與機率</option>
+      <option value="115學測數學_數據分析.html">📊 數據分析</option>
+    </optgroup>
+    <optgroup label="③ 平面幾何">
+      <option value="115學測數學_三角.html">📐 三角</option>
+      <option value="115學測數學_直線與圓.html">⭕ 直線與圓</option>
+      <option value="115學測數學_平面向量.html">➡️ 平面向量</option>
+    </optgroup>
+    <optgroup label="④ 空間與矩陣">
+      <option value="115學測數學_空間向量.html">🧊 空間向量</option>
+      <option value="115學測數學_矩陣.html">🧮 矩陣</option>
+    </optgroup>
+  </select>
+</div>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>學測數學重點整理</h1>
+    <p>108 課綱數 A 全 11 單元，依四大主題分區。每個單元依其考點編排（重點與公式 · 常見誤解 · 歷屆試題 · 解題策略），並附模擬實戰與考前速查。</p>
+  </div>
+
+  <div class="site-search"><input id="ss-q" type="search" autocomplete="off" oninput="ssSearch()" placeholder="🔍 搜尋考點或公式，例：分點公式、內積、位數、餘弦定理…"><div id="ss-results" class="ss-results"></div></div>
+
+  <a id="continue-bar" class="continue" href="#" style="display:none">
+    <span class="cont-ico">⏯</span>
+    <span class="cont-main"><b>繼續上次進度</b><span class="cont-sub" id="cont-sub"></span></span>
+    <span class="cont-go">前往 →</span>
+  </a>
+
+  <div class="export-wrap"><button class="export-btn" onclick="openExport()">📤 匯出學習紀錄</button></div>
+
+  <div class="section">
+    <h2 class="section-title" onclick="toggleSec(this)"><span class="num">1</span>代數與函數 <small>數與式 · 多項式 · 指對數</small><span class="sec-caret">＋</span></h2>
+    <div class="section-units">
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_數與式.html">🔢 數與式 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_數與式.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_數與式.html#kp1"><b>考點 1</b>　實數系與有理／無理</a>
+        <a href="115學測數學_數與式.html#kp2"><b>考點 2</b>　絕對值</a>
+        <a href="115學測數學_數與式.html#kp3"><b>考點 3</b>　數線、距離與根號估算</a>
+        <a href="115學測數學_數與式.html#kp4"><b>考點 4</b>　乘法公式與算幾不等式</a>
+        <a href="115學測數學_數與式.html#kp5"><b>考點 5</b>　比例、百分率與加權平均</a>
+        <a href="115學測數學_數與式.html#kp6"><b>考點 6</b>　高斯（最大整數）函數</a>
+        <a href="115學測數學_數與式.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_數與式.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_多項式函數.html">📈 多項式函數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_多項式函數.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_多項式函數.html#kp1"><b>考點 1</b>　除法、餘式與因式定理</a>
+        <a href="115學測數學_多項式函數.html#kp2"><b>考點 2</b>　二次函數：判別式與配方</a>
+        <a href="115學測數學_多項式函數.html#kp3"><b>考點 3</b>　多項式方程式與不等式</a>
+        <a href="115學測數學_多項式函數.html#kp4"><b>考點 4</b>　高次方程式（有理根、勘根）</a>
+        <a href="115學測數學_多項式函數.html#kp5"><b>考點 5</b>　三次函數圖形與對稱中心</a>
+        <a href="115學測數學_多項式函數.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_多項式函數.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_指數與對數.html">📉 指數與對數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_指數與對數.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_指數與對數.html#kp1"><b>考點 1</b>　指數律與指數方程</a>
+        <a href="115學測數學_指數與對數.html#kp2"><b>考點 2</b>　對數的定義與運算</a>
+        <a href="115學測數學_指數與對數.html#kp3"><b>考點 3</b>　常用對數（科學記號、位數）</a>
+        <a href="115學測數學_指數與對數.html#kp4"><b>考點 4</b>　指數對數函數圖形</a>
+        <a href="115學測數學_指數與對數.html#kp5"><b>考點 5</b>　應用模型與數列結合</a>
+        <a href="115學測數學_指數與對數.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_指數與對數.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title" onclick="toggleSec(this)"><span class="num">2</span>數列・機率・統計 <small>數列 · 排列機率 · 數據分析</small><span class="sec-caret">＋</span></h2>
+    <div class="section-units">
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_數列與級數.html">🪜 數列與級數 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_數列與級數.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_數列與級數.html#kp1"><b>考點 1</b>　等差數列</a>
+        <a href="115學測數學_數列與級數.html#kp2"><b>考點 2</b>　等比數列</a>
+        <a href="115學測數學_數列與級數.html#kp3"><b>考點 3</b>　遞迴數列</a>
+        <a href="115學測數學_數列與級數.html#kp4"><b>考點 4</b>　級數求和與規律週期</a>
+        <a href="115學測數學_數列與級數.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_數列與級數.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_排列組合與機率.html">🎲 排列組合與機率 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_排列組合與機率.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_排列組合與機率.html#kp1"><b>考點 1</b>　計數原理與排列</a>
+        <a href="115學測數學_排列組合與機率.html#kp2"><b>考點 2</b>　組合與分組分配</a>
+        <a href="115學測數學_排列組合與機率.html#kp3"><b>考點 3</b>　古典機率</a>
+        <a href="115學測數學_排列組合與機率.html#kp4"><b>考點 4</b>　條件機率與貝氏</a>
+        <a href="115學測數學_排列組合與機率.html#kp5"><b>考點 5</b>　獨立事件與餘事件</a>
+        <a href="115學測數學_排列組合與機率.html#kp6"><b>考點 6</b>　期望值</a>
+        <a href="115學測數學_排列組合與機率.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_排列組合與機率.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_數據分析.html">📊 數據分析 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_數據分析.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_數據分析.html#kp1"><b>考點 1</b>　一維數據與標準差</a>
+        <a href="115學測數學_數據分析.html#kp2"><b>考點 2</b>　相關係數</a>
+        <a href="115學測數學_數據分析.html#kp3"><b>考點 3</b>　迴歸直線（最適直線）</a>
+        <a href="115學測數學_數據分析.html#kp4"><b>考點 4</b>　加權平均與資料判讀</a>
+        <a href="115學測數學_數據分析.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_數據分析.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title" onclick="toggleSec(this)"><span class="num">3</span>平面幾何 <small>三角 · 直線與圓 · 平面向量</small><span class="sec-caret">＋</span></h2>
+    <div class="section-units">
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_三角.html">📐 三角 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_三角.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_三角.html#kp1"><b>考點 1</b>　三角比、弧度與廣義角</a>
+        <a href="115學測數學_三角.html#kp2"><b>考點 2</b>　正弦定理、餘弦定理</a>
+        <a href="115學測數學_三角.html#kp3"><b>考點 3</b>　三角測量與幾何應用</a>
+        <a href="115學測數學_三角.html#kp4"><b>考點 4</b>　三角函數圖形（疊合、對稱）</a>
+        <a href="115學測數學_三角.html#kp5"><b>考點 5</b>　和差角、倍角</a>
+        <a href="115學測數學_三角.html#kp6"><b>考點 6</b>　角平分線、面積比與相似</a>
+        <a href="115學測數學_三角.html#kp7"><b>考點 7</b>　圓周角與二面角中的三角</a>
+        <a href="115學測數學_三角.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_三角.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_直線與圓.html">⭕ 直線與圓 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_直線與圓.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_直線與圓.html#kp1"><b>考點 1</b>　直線方程式與斜率</a>
+        <a href="115學測數學_直線與圓.html#kp2"><b>考點 2</b>　兩點距離與三角形</a>
+        <a href="115學測數學_直線與圓.html#kp3"><b>考點 3</b>　圓方程式</a>
+        <a href="115學測數學_直線與圓.html#kp4"><b>考點 4</b>　直線與圓的位置</a>
+        <a href="115學測數學_直線與圓.html#kp5"><b>考點 5</b>　平面區域與線性規劃</a>
+        <a href="115學測數學_直線與圓.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_直線與圓.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_平面向量.html">➡️ 平面向量 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_平面向量.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_平面向量.html#kp1"><b>考點 1</b>　向量的表示與運算</a>
+        <a href="115學測數學_平面向量.html#kp2"><b>考點 2</b>　線性組合、分點與面積比</a>
+        <a href="115學測數學_平面向量.html#kp3"><b>考點 3</b>　內積：夾角、垂直、正射影</a>
+        <a href="115學測數學_平面向量.html#kp4"><b>考點 4</b>　行列式與平行四邊形面積</a>
+        <a href="115學測數學_平面向量.html#kp5"><b>考點 5</b>　向量的旋轉與坐標應用</a>
+        <a href="115學測數學_平面向量.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_平面向量.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title" onclick="toggleSec(this)"><span class="num">4</span>空間與矩陣 <small>空間向量 · 矩陣</small><span class="sec-caret">＋</span></h2>
+    <div class="section-units">
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_空間向量.html">🧊 空間向量 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_空間向量.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_空間向量.html#kp1"><b>考點 1</b>　空間坐標與距離</a>
+        <a href="115學測數學_空間向量.html#kp2"><b>考點 2</b>　內積與垂直</a>
+        <a href="115學測數學_空間向量.html#kp3"><b>考點 3</b>　外積與體積</a>
+        <a href="115學測數學_空間向量.html#kp4"><b>考點 4</b>　平面方程式與距離</a>
+        <a href="115學測數學_空間向量.html#kp5"><b>考點 5</b>　空間直線與歪斜線</a>
+        <a href="115學測數學_空間向量.html#kp6"><b>考點 6</b>　二面角與立體</a>
+        <a href="115學測數學_空間向量.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_空間向量.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a class="unit-head" href="115學測數學_矩陣.html">🧮 矩陣 <span class="tag">115 學測</span><span class="go">進入單元 →</span></a>
+      <div class="sub">
+        <a href="115學測數學_矩陣.html#part0"><b>Part 0</b>　出題趨勢</a>
+        <a href="115學測數學_矩陣.html#kp1"><b>考點 1</b>　意義、相等與乘法</a>
+        <a href="115學測數學_矩陣.html#kp2"><b>考點 2</b>　矩陣的高次方</a>
+        <a href="115學測數學_矩陣.html#kp3"><b>考點 3</b>　反方陣與解矩陣方程式</a>
+        <a href="115學測數學_矩陣.html#kp4"><b>考點 4</b>　一次聯立與高斯消去</a>
+        <a href="115學測數學_矩陣.html#kp5"><b>考點 5</b>　平面線性變換</a>
+        <a href="115學測數學_矩陣.html#part2"><b>Part 2</b>　模擬實戰</a>
+        <a href="115學測數學_矩陣.html#part3"><b>Part 3</b>　考前速查</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <a class="feature" href="115學測數學_待複習與錯題.html" style="background:linear-gradient(100deg,#c0663a,#d98a4a);box-shadow:0 4px 14px rgba(192,102,58,.28)">
+    <span class="ft-go">去複習 →</span>
+    <div class="ft-t">📌 待複習與錯題（考前衝刺）</div>
+    <div class="ft-d">一頁看完 11 單元裡所有標記「待複習」的考點，以及你答錯過的題目——可一鍵去複習／重測，重測答對自動消失。純本機紀錄。</div>
+  </a>
+
+  <a class="feature" href="115學測數學_概念地圖.html" style="background:linear-gradient(100deg,#7a3a8c,#9a4aa0);box-shadow:0 4px 14px rgba(122,58,140,.28)">
+    <span class="ft-go">看地圖 →</span>
+    <div class="ft-t">🗺️ 概念地圖（從大考反推）</div>
+    <div class="ft-d">用近十年大考數據畫的概念地圖，三種看法：依賴鏈（先學什麼）、熱度地圖（哪裡份量最重）、跨單元概念網（大考愛綁哪些）。</div>
+  </a>
+
+  <a class="feature" href="115學測數學_跨單元整合_脈絡地圖.html">
+    <span class="ft-go">看脈絡 →</span>
+    <div class="ft-t">🧩 跨單元整合 · 脈絡地圖</div>
+    <div class="ft-d">106–115 共 25 道「A × B」跨單元題，依五大概念脈絡編排——看穿題目其實是哪兩個單元的結合，每張卡片可展開完整題目並直接跳到對應考點複習。</div>
+  </a>
+
+  <a class="feature" href="115學測數學_解題線索地圖.html" style="background:linear-gradient(100deg,#2f4a7a,#3a5a9a);box-shadow:0 4px 14px rgba(47,74,122,.28)">
+    <span class="ft-go">看地圖 →</span>
+    <div class="ft-t">🧭 解題線索地圖</div>
+    <div class="ft-d">考試不知道怎麼下手？從「你要求什麼」出發——求極值、距離、面積、角度…每個線索關鍵字直接指向該用的知識點，跨單元、觸類旁通。</div>
+  </a>
+
+  <div class="foot">學測數學重點整理 · 目錄首頁 · 108 課綱數 A 全 11 單元</div>
+  <div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
+
+</div>
+<script>
+function toggleSec(h){var s=h.parentElement;var o=s.classList.toggle("open");var c=h.querySelector(".sec-caret");if(c)c.textContent=o?"−":"＋";}
+</script>
+<script>
+/* 首頁進度：各單元卡『已讀 x/N』＋各區小計＋『繼續上次進度』橫幅（讀 localStorage，與單元頁共用鍵）。 */
+(function(){
+  var F2S={"115學測數學_數與式.html":"numexpr","115學測數學_多項式函數.html":"poly","115學測數學_指數與對數.html":"explog",
+    "115學測數學_數列與級數.html":"seq","115學測數學_排列組合與機率.html":"prob","115學測數學_數據分析.html":"data",
+    "115學測數學_三角.html":"trig","115學測數學_直線與圓.html":"linecir","115學測數學_平面向量.html":"pvec",
+    "115學測數學_空間向量.html":"space","115學測數學_矩陣.html":"matrix"};
+  var read; try{read=new Set(JSON.parse(localStorage.getItem("mm-read-kps")||"[]"));}catch(e){read=new Set();}
+  var best=null;
+  document.querySelectorAll(".section").forEach(function(sec){
+    var sd=0,st=0;
+    sec.querySelectorAll(".unit").forEach(function(card){
+      var head=card.querySelector(".unit-head"); if(!head)return;
+      var file=head.getAttribute("href"), slug=F2S[file];
+      var total=card.querySelectorAll('.sub a[href*="#kp"]').length, done=0;
+      if(slug){read.forEach(function(k){if(k.indexOf(slug+":kp")===0)done++;});}
+      if(done>total)done=total;
+      var full=(total>0&&done>=total), pct=total?Math.round(done/total*100):0;
+      var el=document.createElement("div"); el.className="uprog"+(full?" done":"");
+      el.innerHTML='<span class="up-lbl">'+(full?"✓ 已讀完":"已讀 "+done+"/"+total)+
+        '</span><span class="up-track"><i style="width:'+pct+'%"></i></span>';
+      head.parentNode.insertBefore(el, head.nextSibling);
+      sd+=done; st+=total;
+      if(slug&&done>0&&done<total&&(!best||done>best.done)){best={file:file,done:done,total:total,
+        title:(head.firstChild&&head.firstChild.textContent||"").trim()};}
+    });
+    if(sd>0){var sm=sec.querySelector(".section-title small");
+      if(sm){var b=document.createElement("span"); b.className="sec-prog"; b.textContent="已讀 "+sd+"/"+st;
+        sm.parentNode.insertBefore(b, sm.nextSibling);}}
+  });
+  var last; try{last=JSON.parse(localStorage.getItem("mm-last")||"null");}catch(e){last=null;}
+  var bar=document.getElementById("continue-bar"), target=null, sub="";
+  if(last&&last.file&&F2S[last.file]){
+    target=last.file+(last.kp&&/^kp\d+$/.test(last.kp)?"#"+last.kp:"");
+    sub=(last.title||"")+(last.kp&&/^kp\d+$/.test(last.kp)?" · 考點 "+last.kp.slice(2):"");
+  }else if(best){ target=best.file; sub=best.title+"（已讀 "+best.done+"/"+best.total+"）"; }
+  if(bar&&target){ bar.setAttribute("href",target); document.getElementById("cont-sub").textContent=sub; bar.style.display=""; }
+})();
+</script>
+
+<div id="export-modal" class="ex-modal"><div class="ex-card" id="ex-card"><div class="ex-head">📊 我的學習紀錄<span class="ex-brand">學測數學重點整理</span></div><div class="ex-meta"><label>姓名／班級：<input id="ex-name" placeholder="繳交必填"></label><span class="ex-namehint" id="ex-namehint">← 先填寫再截圖</span><span class="ex-date" id="ex-date"></span></div><div class="ex-sec-t">單元完成度（已讀考點）</div><div class="ex-rows" id="ex-rows"></div><div class="ex-total" id="ex-total"></div><div class="ex-stats"><div class="ex-stat"><div class="ex-k">✅ 確認理解</div><div class="ex-v" id="ex-mastery"></div></div><div class="ex-stat"><div class="ex-k">✏️ 練習作答</div><div class="ex-v" id="ex-quiz"></div></div></div><div class="ex-foot">自主學習佐證 · 紀錄存於本機瀏覽器 · 換裝置／清除瀏覽資料會歸零</div></div><div class="ex-controls"><span class="ex-tip">📸 截圖上方卡片即可繳交</span><button onclick="closeExport()">關閉</button></div></div>
+<script>
+var UNITS_META=[{"slug": "trig", "e": "📐", "t": "三角", "n": 7}, {"slug": "prob", "e": "🎲", "t": "排列組合與機率", "n": 6}, {"slug": "space", "e": "🧊", "t": "空間向量", "n": 6}, {"slug": "poly", "e": "📈", "t": "多項式函數", "n": 5}, {"slug": "linecir", "e": "⭕", "t": "直線與圓", "n": 5}, {"slug": "explog", "e": "📉", "t": "指數與對數", "n": 5}, {"slug": "pvec", "e": "➡️", "t": "平面向量", "n": 5}, {"slug": "data", "e": "📊", "t": "數據分析", "n": 4}, {"slug": "seq", "e": "🪜", "t": "數列與級數", "n": 4}, {"slug": "matrix", "e": "🧮", "t": "矩陣", "n": 5}, {"slug": "numexpr", "e": "🔢", "t": "數與式", "n": 6}];function openExport(){var read,mast,quiz;try{read=new Set(JSON.parse(localStorage.getItem('mm-read-kps')||'[]'))}catch(e){read=new Set()}try{mast=JSON.parse(localStorage.getItem('mm-kp-mastery')||'{}')}catch(e){mast={}}try{quiz=JSON.parse(localStorage.getItem('mm-quiz')||'{}')}catch(e){quiz={}}var tot=0,dn=0,rows='';UNITS_META.forEach(function(m){var d=0;read.forEach(function(k){if(k.indexOf(m.slug+':kp')===0)d++;});if(d>m.n)d=m.n;tot+=m.n;dn+=d;var p=m.n?Math.round(d/m.n*100):0,full=(d>=m.n&&m.n>0);rows+='<div class="ex-row"><span class="ex-u">'+m.e+' '+m.t+'</span><span class="ex-bar'+(full?' f':'')+'"><i style="width:'+p+'%"></i></span><span class="ex-n">'+d+'/'+m.n+'</span></div>';});var ok=0,rv=0;for(var k in mast){if(mast[k]==='ok')ok++;else if(mast[k]==='review')rv++;}var qa=0,qc=0;for(var s in quiz){qa+=quiz[s].a||0;qc+=quiz[s].c||0;}document.getElementById('ex-date').textContent=new Date().toLocaleDateString('zh-TW');document.getElementById('ex-rows').innerHTML=rows;document.getElementById('ex-total').textContent='總計 已讀 '+dn+' / '+tot+' 考點（'+(tot?Math.round(dn/tot*100):0)+'%）';document.getElementById('ex-mastery').textContent='已理解 '+ok+' 考點 · 待複習 '+rv+' 考點';document.getElementById('ex-quiz').textContent=qa?('作答 '+qa+' 題 · 答對 '+qc+' 題（正確率 '+Math.round(qc/qa*100)+'%）'):'尚未作答';document.getElementById('export-modal').style.display='flex';var nm=document.getElementById('ex-name'),nh=document.getElementById('ex-namehint');function chkNm(){if(nh)nh.classList.toggle('hide',!!(nm&&nm.value.trim()));}if(nm&&!nm._b){nm._b=1;nm.addEventListener('input',chkNm);}chkNm();if(nm&&!nm.value.trim())setTimeout(function(){try{nm.focus();}catch(e){}},120);}function closeExport(){document.getElementById('export-modal').style.display='none';}
+</script>
+<script>
+var SS=[{"l": "三角比、弧度與廣義角", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "kp1", "k": "考點", "s": "三角比、弧度與廣義角 三角"}, {"l": "正弦定理、餘弦定理", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "kp2", "k": "考點", "s": "正弦定理、餘弦定理 三角"}, {"l": "三角測量與幾何應用", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "kp3", "k": "考點", "s": "三角測量與幾何應用 三角"}, {"l": "三角函數圖形（疊合、對稱）", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "kp4", "k": "考點", "s": "三角函數圖形（疊合、對稱） 三角"}, {"l": "和差角、倍角", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "kp5", "k": "考點", "s": "和差角、倍角 三角"}, {"l": "角平分線、面積比與相似", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "kp6", "k": "考點", "s": "角平分線、面積比與相似 三角"}, {"l": "圓周角與二面角中的三角", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "kp7", "k": "考點", "s": "圓周角與二面角中的三角 三角"}, {"l": "三角比定義", "d": "= 對 斜 、 = 鄰 斜 、 = 對 鄰", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "三角比定義 = 對 斜 、 = 鄰 斜 、 = 對 鄰 三角"}, {"l": "三大關係", "d": "2+ 2=1 ； = ；倒數 , ,", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "三大關係 2+ 2=1 ； = ；倒數 , , 三角"}, {"l": "特殊角 sin", "d": "sin30°= frac12 、 sin45°= sqrt2 2 、 sin60°= s", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "特殊角 sin sin30°= frac12 、 sin45°= sqrt2 2 、 sin60°= sqrt3 2 三角"}, {"l": "弧度", "d": "180°= ；弧長 =r 、扇形面積 = frac12 r 2 （ 用弧度）", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "弧度 180°= ；弧長 =r 、扇形面積 = frac12 r 2 （ 用弧度） 三角"}, {"l": "正弦定理", "d": "a A = b B = c C =2R", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "正弦定理 a a = b b = c c =2r 三角"}, {"l": "餘弦定理", "d": "c 2=a 2+b 2-2ab C ； C= a 2+b 2-c 2 2ab", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "餘弦定理 c 2=a 2+b 2-2ab c ； c= a 2+b 2-c 2 2ab 三角"}, {"l": "面積", "d": "frac12 ab C= abc 4R =rs= s s-a s-b s-c", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "面積 frac12 ab c= abc 4r =rs= s s-a s-b s-c 三角"}, {"l": "和差角", "d": "A B = A B A B ； A B = A B A B", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "和差角 a b = a b a b ； a b = a b a b 三角"}, {"l": "倍角／降冪", "d": "sin2 =2 ； cos2 =1-2 2 ； 2 = 1- cos2 2", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "倍角／降冪 sin2 =2 ； cos2 =1-2 2 ； 2 = 1- cos2 2 三角"}, {"l": "疊合", "d": "a x+b x= a 2+b 2 , x+ ，極值 a 2+b 2", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "疊合 a x+b x= a 2+b 2 , x+ ，極值 a 2+b 2 三角"}, {"l": "圖形", "d": "y=a bx+c +d ：振幅 a 、週期 2 b", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "圖形 y=a bx+c +d ：振幅 a 、週期 2 b 三角"}, {"l": "圓周角", "d": "＝圓心角一半；直徑所對 =90° ；內接四邊形對角互補", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "圓周角 ＝圓心角一半；直徑所對 =90° ；內接四邊形對角互補 三角"}, {"l": "角平分線", "d": "A 平分線： BD DC = AB AC", "u": "三角", "e": "📐", "f": "115學測數學_三角.html", "a": "part3", "k": "速查", "s": "角平分線 a 平分線： bd dc = ab ac 三角"}, {"l": "計數原理與排列", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "kp1", "k": "考點", "s": "計數原理與排列 排列組合與機率"}, {"l": "組合與分組分配", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "kp2", "k": "考點", "s": "組合與分組分配 排列組合與機率"}, {"l": "古典機率", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "kp3", "k": "考點", "s": "古典機率 排列組合與機率"}, {"l": "條件機率與貝氏", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "kp4", "k": "考點", "s": "條件機率與貝氏 排列組合與機率"}, {"l": "獨立事件與餘事件", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "kp5", "k": "考點", "s": "獨立事件與餘事件 排列組合與機率"}, {"l": "期望值", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "kp6", "k": "考點", "s": "期望值 排列組合與機率"}, {"l": "加法 / 乘法原理", "d": "分類用 加 （或）、分步用 乘 （且）", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "加法 / 乘法原理 分類用 加 （或）、分步用 乘 （且） 排列組合與機率"}, {"l": "排列", "d": "P n r= n! n-r ! ；全排列 n! ；重複排列 n r", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "排列 p n r= n! n-r ! ；全排列 n! ；重複排列 n r 排列組合與機率"}, {"l": "不盡相異物排列", "d": "n! p! ,q! （有 p 個相同物就除 p! ）", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "不盡相異物排列 n! p! ,q! （有 p 個相同物就除 p! ） 排列組合與機率"}, {"l": "組合", "d": "C n r= n! r! n-r ! ； C n r=C n n-r ； C n r=C", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "組合 c n r= n! r! n-r ! ； c n r=c n n-r ； c n r=c n-1 r-1 +c n-1 r 排列組合與機率"}, {"l": "分組分配", "d": "有標籤逐組乘；均分 k 堆要再除 k!", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "分組分配 有標籤逐組乘；均分 k 堆要再除 k! 排列組合與機率"}, {"l": "排容原理", "d": "A B = A + B - A B", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "排容原理 a b = a + b - a b 排列組合與機率"}, {"l": "古典機率", "d": "P A = n A n S ；餘事件 P A' =1-P A", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "古典機率 p a = n a n s ；餘事件 p a' =1-p a 排列組合與機率"}, {"l": "加法法則", "d": "P A B =P A +P B -P A B", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "加法法則 p a b =p a +p b -p a b 排列組合與機率"}, {"l": "條件機率", "d": "P A B = P A B P B", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "條件機率 p a b = p a b p b 排列組合與機率"}, {"l": "貝氏定理", "d": "P B k A = P B k P A B k sum i P B i P A B i ", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "貝氏定理 p b k a = p b k p a b k sum i p b i p a b i ＝目標路徑 ÷ 全部路徑 排列組合與機率"}, {"l": "獨立事件", "d": "P A B =P A P B （互斥 獨立）", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "獨立事件 p a b =p a p b （互斥 獨立） 排列組合與機率"}, {"l": "至少一次", "d": "1- 1-p n （餘事件：反面是「全失敗」）", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "至少一次 1- 1-p n （餘事件：反面是「全失敗」） 排列組合與機率"}, {"l": "期望值", "d": "E X = x i p i ； E aX+b =aE X +b ； E X+Y =E X", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "期望值 e x = x i p i ； e ax+b =ae x +b ； e x+y =e x +e y 排列組合與機率"}, {"l": "二項分布期望", "d": "n 次、每次成功 p → E=np", "u": "排列組合與機率", "e": "🎲", "f": "115學測數學_排列組合與機率.html", "a": "part3", "k": "速查", "s": "二項分布期望 n 次、每次成功 p → e=np 排列組合與機率"}, {"l": "空間坐標與距離", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "kp1", "k": "考點", "s": "空間坐標與距離 空間向量"}, {"l": "內積與垂直", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "kp2", "k": "考點", "s": "內積與垂直 空間向量"}, {"l": "外積與體積", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "kp3", "k": "考點", "s": "外積與體積 空間向量"}, {"l": "平面方程式與距離", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "kp4", "k": "考點", "s": "平面方程式與距離 空間向量"}, {"l": "空間直線與歪斜線", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "kp5", "k": "考點", "s": "空間直線與歪斜線 空間向量"}, {"l": "二面角與立體", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "kp6", "k": "考點", "s": "二面角與立體 空間向量"}, {"l": "兩點距離 / 中點", "d": "x 2+ y 2+ z 2 ；中點取坐標平均", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "兩點距離 / 中點 x 2+ y 2+ z 2 ；中點取坐標平均 空間向量"}, {"l": "正立方體三長度", "d": "邊 a 、面對角線 sqrt2a 、體對角線 sqrt3a", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "正立方體三長度 邊 a 、面對角線 sqrt2a 、體對角線 sqrt3a 空間向量"}, {"l": "內積", "d": "u v=u 1v 1+u 2v 2+u 3v 3= u v", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "內積 u v=u 1v 1+u 2v 2+u 3v 3= u v 空間向量"}, {"l": "夾角 / 垂直", "d": "= u v u v ；垂直 u v=0", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "夾角 / 垂直 = u v u v ；垂直 u v=0 空間向量"}, {"l": "外積", "d": "u 2v 3-u 3v 2, ,u 3v 1-u 1v 3, ,u 1v 2-u 2v ", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "外積 u 2v 3-u 3v 2, ,u 3v 1-u 1v 3, ,u 1v 2-u 2v 1 ；同時垂直 u, v ， u v = u v 空間向量"}, {"l": "面積 / 體積", "d": "= frac12 u v ；平行六面體 = u v w ；四面體 = frac16", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "面積 / 體積 = frac12 u v ；平行六面體 = u v w ；四面體 = frac16 空間向量"}, {"l": "平面方程式", "d": "ax+by+cz=d ，法向量 a,b,c ；三點求平面用 AB AC", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "平面方程式 ax+by+cz=d ，法向量 a,b,c ；三點求平面用 ab ac 空間向量"}, {"l": "點到平面距離", "d": "ax 0+by 0+cz 0-d a 2+b 2+c 2", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "點到平面距離 ax 0+by 0+cz 0-d a 2+b 2+c 2 空間向量"}, {"l": "兩平面關係", "d": "夾角、平行、垂直全看法向量（垂直 n 1 n 2 =0 ）", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "兩平面關係 夾角、平行、垂直全看法向量（垂直 n 1 n 2 =0 ） 空間向量"}, {"l": "直線參數式", "d": "x 0+at, ,y 0+bt, ,z 0+ct ，方向向量 a,b,c", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "直線參數式 x 0+at, ,y 0+bt, ,z 0+ct ，方向向量 a,b,c 空間向量"}, {"l": "直線與平面", "d": "平行 d n=0 ；垂直 d ,/ !/ , n", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "直線與平面 平行 d n=0 ；垂直 d ,/ !/ , n 空間向量"}, {"l": "兩直線關係", "d": "方向平行 → 平行；不平行解聯立：有解相交、無解歪斜", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "兩直線關係 方向平行 → 平行；不平行解聯立：有解相交、無解歪斜 空間向量"}, {"l": "點到直線 / 歪斜線距離", "d": "AP d d ；歪斜 P 1P 2 d 1 d 2 d 1 d 2", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "點到直線 / 歪斜線距離 ap d d ；歪斜 p 1p 2 d 1 d 2 d 1 d 2 空間向量"}, {"l": "二面角 / 摺疊", "d": "兩半平面內各作垂直稜的線量夾角；摺疊沿稜建坐標、不改內部長度", "u": "空間向量", "e": "🧊", "f": "115學測數學_空間向量.html", "a": "part3", "k": "速查", "s": "二面角 / 摺疊 兩半平面內各作垂直稜的線量夾角；摺疊沿稜建坐標、不改內部長度 空間向量"}, {"l": "除法、餘式與因式定理", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "kp1", "k": "考點", "s": "除法、餘式與因式定理 多項式函數"}, {"l": "二次函數：判別式與配方", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "kp2", "k": "考點", "s": "二次函數：判別式與配方 多項式函數"}, {"l": "多項式方程式與不等式", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "kp3", "k": "考點", "s": "多項式方程式與不等式 多項式函數"}, {"l": "高次方程式（有理根、勘根）", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "kp4", "k": "考點", "s": "高次方程式（有理根、勘根） 多項式函數"}, {"l": "三次函數圖形與對稱中心", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "kp5", "k": "考點", "s": "三次函數圖形與對稱中心 多項式函數"}, {"l": "除法原理", "d": "f=g ,q+r ， r< g", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "除法原理 f=g ,q+r ， r< g 多項式函數"}, {"l": "餘式定理", "d": "f x 除以 x-a 餘 f a ；除以 ax-b 餘 f b a", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "餘式定理 f x 除以 x-a 餘 f a ；除以 ax-b 餘 f b a 多項式函數"}, {"l": "因式定理", "d": "x-a 為因式 f a =0 （ a 為根）", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "因式定理 x-a 為因式 f a =0 （ a 為根） 多項式函數"}, {"l": "除以二次式", "d": "設餘式 px+q ，用 f a ,f b 解聯立", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "除以二次式 設餘式 px+q ，用 f a ,f b 解聯立 多項式函數"}, {"l": "有理根定理", "d": "有理根 = ,常數項因數 最高次係數因數", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "有理根定理 有理根 = ,常數項因數 最高次係數因數 多項式函數"}, {"l": "判別式", "d": "D=b 2-4ac ： >0 兩相異實根、 =0 重根、 <0 無實根", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "判別式 d=b 2-4ac ： >0 兩相異實根、 =0 重根、 <0 無實根 多項式函數"}, {"l": "配方 / 頂點", "d": "對稱軸 x=- b 2a ，頂點 - b 2a , 4ac-b 2 4a", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "配方 / 頂點 對稱軸 x=- b 2a ，頂點 - b 2a , 4ac-b 2 4a 多項式函數"}, {"l": "根與係數（韋達）", "d": "+ =- b a 、 = c a", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "根與係數（韋達） + =- b a 、 = c a 多項式函數"}, {"l": "二次不等式", "d": "a>0 ： >0 取兩根外、 <0 取兩根內", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "二次不等式 a>0 ： >0 取兩根外、 <0 取兩根內 多項式函數"}, {"l": "高次 / 分式不等式", "d": "因式分解後 數線標根 ；奇次根變號、偶次根不變號；分式要移項通分、排除分母 0", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "高次 / 分式不等式 因式分解後 數線標根 ；奇次根變號、偶次根不變號；分式要移項通分、排除分母 0 多項式函數"}, {"l": "勘根定理", "d": "f a f b <0 a,b 間至少一根", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "勘根定理 f a f b <0 a,b 間至少一根 多項式函數"}, {"l": "奇偶函數", "d": "偶 f -x =f x （對稱 y 軸）；奇 f -x =-f x （對稱原點， f 0", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "奇偶函數 偶 f -x =f x （對稱 y 軸）；奇 f -x =-f x （對稱原點， f 0 =0 ） 多項式函數"}, {"l": "三次對稱中心", "d": "- b 3a , ,f ! - b 3a ，圖形點對稱", "u": "多項式函數", "e": "📈", "f": "115學測數學_多項式函數.html", "a": "part3", "k": "速查", "s": "三次對稱中心 - b 3a , ,f ! - b 3a ，圖形點對稱 多項式函數"}, {"l": "直線方程式與斜率", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "kp1", "k": "考點", "s": "直線方程式與斜率 直線與圓"}, {"l": "兩點距離與三角形", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "kp2", "k": "考點", "s": "兩點距離與三角形 直線與圓"}, {"l": "圓方程式", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "kp3", "k": "考點", "s": "圓方程式 直線與圓"}, {"l": "直線與圓的位置", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "kp4", "k": "考點", "s": "直線與圓的位置 直線與圓"}, {"l": "平面區域與線性規劃", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "kp5", "k": "考點", "s": "平面區域與線性規劃 直線與圓"}, {"l": "斜率", "d": "m= y 2-y 1 x 2-x 1 = ；鉛直線無斜率", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "斜率 m= y 2-y 1 x 2-x 1 = ；鉛直線無斜率 直線與圓"}, {"l": "直線方程式", "d": "點斜式 y-y 0=m x-x 0 ；一般式 ax+by+c=0 斜率 - a b", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "直線方程式 點斜式 y-y 0=m x-x 0 ；一般式 ax+by+c=0 斜率 - a b 直線與圓"}, {"l": "平行 / 垂直", "d": "平行 m 1=m 2 （不重合）；垂直 m 1m 2=-1", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "平行 / 垂直 平行 m 1=m 2 （不重合）；垂直 m 1m 2=-1 直線與圓"}, {"l": "點到直線距離", "d": "ax 0+by 0+c a 2+b 2 （最高頻工具）", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "點到直線距離 ax 0+by 0+c a 2+b 2 （最高頻工具） 直線與圓"}, {"l": "角平分線", "d": "到兩直線等距 L 1 , = L 2 , （兩條、互相垂直）", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "角平分線 到兩直線等距 l 1 , = l 2 , （兩條、互相垂直） 直線與圓"}, {"l": "距離 / 中點 / 重心", "d": "x 2+ y 2 ；中點取平均；重心取三頂點平均", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "距離 / 中點 / 重心 x 2+ y 2 ；中點取平均；重心取三頂點平均 直線與圓"}, {"l": "三角形面積", "d": "dfrac12 x 2-x 1 y 3-y 1 - x 3-x 1 y 2-y 1 ； ", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "三角形面積 dfrac12 x 2-x 1 y 3-y 1 - x 3-x 1 y 2-y 1 ； =0 即共線 直線與圓"}, {"l": "圓（標準 / 一般式）", "d": "x-h 2+ y-k 2=r 2 ；圓心 - D 2 ,- E 2 、 r= dfrac", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "圓（標準 / 一般式） x-h 2+ y-k 2=r 2 ；圓心 - d 2 ,- e 2 、 r= dfrac12 d 2+e 2-4f 直線與圓"}, {"l": "點與圓", "d": "代入 x-h 2+ y-k 2-r 2 ： <0 內、 =0 上、 >0 外", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "點與圓 代入 x-h 2+ y-k 2-r 2 ： <0 內、 =0 上、 >0 外 直線與圓"}, {"l": "直線與圓", "d": "圓心到線距 d 比半徑 r ： d>r 離、 d=r 切、 d<r 交", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "直線與圓 圓心到線距 d 比半徑 r ： d>r 離、 d=r 切、 d<r 交 直線與圓"}, {"l": "弦長 / 切線長", "d": "弦長 2 r 2-d 2 ；切線長 CP 2-r 2", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "弦長 / 切線長 弦長 2 r 2-d 2 ；切線長 cp 2-r 2 直線與圓"}, {"l": "圓上切線", "d": "x 2+y 2=r 2 上 x 0,y 0 ： x 0x+y 0y=r 2", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "圓上切線 x 2+y 2=r 2 上 x 0,y 0 ： x 0x+y 0y=r 2 直線與圓"}, {"l": "線性規劃", "d": "半平面交集為可行域； f=px+qy 極值在 頂點", "u": "直線與圓", "e": "⭕", "f": "115學測數學_直線與圓.html", "a": "part3", "k": "速查", "s": "線性規劃 半平面交集為可行域； f=px+qy 極值在 頂點 直線與圓"}, {"l": "指數律與指數方程", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "kp1", "k": "考點", "s": "指數律與指數方程 指數與對數"}, {"l": "對數的定義與運算", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "kp2", "k": "考點", "s": "對數的定義與運算 指數與對數"}, {"l": "常用對數（科學記號、位數）", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "kp3", "k": "考點", "s": "常用對數（科學記號、位數） 指數與對數"}, {"l": "指數對數函數圖形", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "kp4", "k": "考點", "s": "指數對數函數圖形 指數與對數"}, {"l": "應用模型與數列結合", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "kp5", "k": "考點", "s": "應用模型與數列結合 指數與對數"}, {"l": "指數律", "d": "a m a n=a m+n 、 a m n=a mn 、 a 0=1 、 a -n = ", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "指數律 a m a n=a m+n 、 a m n=a mn 、 a 0=1 、 a -n = 1 a n 指數與對數"}, {"l": "分數指數", "d": "a m/n = n a m ；連開 k 次平方根 ＝ 乘 1 2 k 次方", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "分數指數 a m/n = n a m ；連開 k 次平方根 ＝ 乘 1 2 k 次方 指數與對數"}, {"l": "對數定義", "d": "log a N=x a x=N （ a>0,a neq1,N>0 ）", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "對數定義 log a n=x a x=n （ a>0,a neq1,n>0 ） 指數與對數"}, {"l": "對數法則", "d": "MN = M+ N ； M N = M- N ； M k=k M", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "對數法則 mn = m+ n ； m n = m- n ； m k=k m 指數與對數"}, {"l": "換底公式", "d": "log a b= log c b log c a ； log a b= 1 log b ", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "換底公式 log a b= log c b log c a ； log a b= 1 log b a （互為倒數） 指數與對數"}, {"l": "位數 / 首位", "d": "位數 = N +1 ；首位看 N 小數部分的 10 小數", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "位數 / 首位 位數 = n +1 ；首位看 n 小數部分的 10 小數 指數與對數"}, {"l": "常用估計值", "d": "log2 approx0.301 、 log3 approx0.477 、 log7 a", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "常用估計值 log2 approx0.301 、 log3 approx0.477 、 log7 approx0.845 、 log5=1- log2 指數與對數"}, {"l": "指數函數", "d": "y=a x 過 0,1 、漸近 y=0 、值域 y>0", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "指數函數 y=a x 過 0,1 、漸近 y=0 、值域 y>0 指數與對數"}, {"l": "對數函數", "d": "y= log a x 過 1,0 、漸近 x=0 、定義域 x>0", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "對數函數 y= log a x 過 1,0 、漸近 x=0 、定義域 x>0 指數與對數"}, {"l": "互為反函數", "d": "y=a x 與 y= log a x 對稱於 y=x", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "互為反函數 y=a x 與 y= log a x 對稱於 y=x 指數與對數"}, {"l": "等比 ↔ 等差", "d": "等比數列取 變等差（公比 r → 公差 r ）", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "等比 ↔ 等差 等比數列取 變等差（公比 r → 公差 r ） 指數與對數"}, {"l": "成長衰退模型", "d": "Q t =Q 0 ,r ,t/T ；半衰期 r= dfrac12 ；複利 P 1+i n", "u": "指數與對數", "e": "📉", "f": "115學測數學_指數與對數.html", "a": "part3", "k": "速查", "s": "成長衰退模型 q t =q 0 ,r ,t/t ；半衰期 r= dfrac12 ；複利 p 1+i n 指數與對數"}, {"l": "向量的表示與運算", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "kp1", "k": "考點", "s": "向量的表示與運算 平面向量"}, {"l": "線性組合、分點與面積比", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "kp2", "k": "考點", "s": "線性組合、分點與面積比 平面向量"}, {"l": "內積：夾角、垂直、正射影", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "kp3", "k": "考點", "s": "內積：夾角、垂直、正射影 平面向量"}, {"l": "行列式與平行四邊形面積", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "kp4", "k": "考點", "s": "行列式與平行四邊形面積 平面向量"}, {"l": "向量的旋轉與坐標應用", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "kp5", "k": "考點", "s": "向量的旋轉與坐標應用 平面向量"}, {"l": "向量坐標", "d": "AB =B-A ； v = a 2+b 2 ；單位向量 v v", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "向量坐標 ab =b-a ； v = a 2+b 2 ；單位向量 v v 平面向量"}, {"l": "平行（共線）", "d": "a,b ,/ !/ , c,d ad-bc=0", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "平行（共線） a,b ,/ !/ , c,d ad-bc=0 平面向量"}, {"l": "分點公式", "d": "AP : PB =m:n OP = n OA +m OB m+n", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "分點公式 ap : pb =m:n op = n oa +m ob m+n 平面向量"}, {"l": "重心 / 共線", "d": "重心 OA + OB + OC 3 ； P 在 AB 上 係數和 =1", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "重心 / 共線 重心 oa + ob + oc 3 ； p 在 ab 上 係數和 =1 平面向量"}, {"l": "面積比", "d": "AP = AB + AC ABP= , ABC 、 ACP= , ABC 、 BCP= ", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "面積比 ap = ab + ac abp= , abc 、 acp= , abc 、 bcp= 1- - abc 平面向量"}, {"l": "內積", "d": "u v=u 1v 1+u 2v 2= u v", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "內積 u v=u 1v 1+u 2v 2= u v 平面向量"}, {"l": "夾角 / 垂直", "d": "= u v u v ；垂直 u v=0", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "夾角 / 垂直 = u v u v ；垂直 u v=0 平面向量"}, {"l": "正射影", "d": "向量 u v v 2 v ；長 u v v", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "正射影 向量 u v v 2 v ；長 u v v 平面向量"}, {"l": "行列式 / 面積", "d": "=ad-bc ；平行四邊形 、三角形 frac12", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "行列式 / 面積 =ad-bc ；平行四邊形 、三角形 frac12 平面向量"}, {"l": "旋轉", "d": "逆時針 ： x -y , ,x +y ；逆 90 ： x,y -y,x", "u": "平面向量", "e": "➡️", "f": "115學測數學_平面向量.html", "a": "part3", "k": "速查", "s": "旋轉 逆時針 ： x -y , ,x +y ；逆 90 ： x,y -y,x 平面向量"}, {"l": "一維數據與標準差", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "kp1", "k": "考點", "s": "一維數據與標準差 數據分析"}, {"l": "相關係數", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "kp2", "k": "考點", "s": "相關係數 數據分析"}, {"l": "迴歸直線（最適直線）", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "kp3", "k": "考點", "s": "迴歸直線（最適直線） 數據分析"}, {"l": "加權平均與資料判讀", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "kp4", "k": "考點", "s": "加權平均與資料判讀 數據分析"}, {"l": "集中量數", "d": "平均 x= x i n ；中位數 ＝ 排序後最中間；眾數 ＝ 最多次", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "集中量數 平均 x= x i n ；中位數 ＝ 排序後最中間；眾數 ＝ 最多次 數據分析"}, {"l": "四分位 / 百分位", "d": "中位數 ＝ 第 50 百分位； IQR=Q 3-Q 1 （中間 50 % ）；中位數、四", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "四分位 / 百分位 中位數 ＝ 第 50 百分位； iqr=q 3-q 1 （中間 50 % ）；中位數、四分位 抗極端值 數據分析"}, {"l": "變異數 / 標準差", "d": "2= 1 n x i- x 2 ； = 2", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "變異數 / 標準差 2= 1 n x i- x 2 ； = 2 數據分析"}, {"l": "線性變換", "d": "y=ax+b y=a x+b 、 sigma y= a sigma x （變異數 a 2", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "線性變換 y=ax+b y=a x+b 、 sigma y= a sigma x （變異數 a 2 ） 數據分析"}, {"l": "z 分數", "d": "z= x- x （平均 0 、標準差 1 ）", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "z 分數 z= x- x （平均 0 、標準差 1 ） 數據分析"}, {"l": "相關係數", "d": "-1 r le1 ；正負看方向、 r 看強弱；正係數變換不變、負係數變號", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "相關係數 -1 r le1 ；正負看方向、 r 看強弱；正係數變換不變、負係數變號 數據分析"}, {"l": "迴歸直線", "d": "y- y=r sigma y sigma x x- x ，過平均點 x, y", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "迴歸直線 y- y=r sigma y sigma x x- x ，過平均點 x, y 數據分析"}, {"l": "迴歸斜率", "d": "b=r sigma y sigma x = x i- x y i- y x i- x 2", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "迴歸斜率 b=r sigma y sigma x = x i- x y i- y x i- x 2 （與 r 同號） 數據分析"}, {"l": "加權 / 合併平均", "d": "加權 w ix i w i ；合併 n 1 x 1+n 2 x 2 n 1+n 2", "u": "數據分析", "e": "📊", "f": "115學測數學_數據分析.html", "a": "part3", "k": "速查", "s": "加權 / 合併平均 加權 w ix i w i ；合併 n 1 x 1+n 2 x 2 n 1+n 2 數據分析"}, {"l": "等差數列", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "kp1", "k": "考點", "s": "等差數列 數列與級數"}, {"l": "等比數列", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "kp2", "k": "考點", "s": "等比數列 數列與級數"}, {"l": "遞迴數列", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "kp3", "k": "考點", "s": "遞迴數列 數列與級數"}, {"l": "級數求和與規律週期", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "kp4", "k": "考點", "s": "級數求和與規律週期 數列與級數"}, {"l": "等差通項 / 和", "d": "a n=a 1+ n-1 d ； S n= n a 1+a n 2", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "等差通項 / 和 a n=a 1+ n-1 d ； s n= n a 1+a n 2 數列與級數"}, {"l": "等差中項", "d": "a,b,c 等差 b= a+c 2 （ 2b=a+c ）", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "等差中項 a,b,c 等差 b= a+c 2 （ 2b=a+c ） 數列與級數"}, {"l": "等比通項 / 和", "d": "a n=a 1r ,n-1 ； S n= a 1 r n-1 r-1 （ r neq1 ", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "等比通項 / 和 a n=a 1r ,n-1 ； s n= a 1 r n-1 r-1 （ r neq1 ） 數列與級數"}, {"l": "等比中項", "d": "a,b,c 等比 b 2=ac", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "等比中項 a,b,c 等比 b 2=ac 數列與級數"}, {"l": "無窮等比級數", "d": "r <1 ： S= a 1 1-r", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "無窮等比級數 r <1 ： s= a 1 1-r 數列與級數"}, {"l": "遞迴（構造等比）", "d": "a n+1 =pa n+q ：不動點 k ， a n-k 等比（公比 p ）", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "遞迴（構造等比） a n+1 =pa n+q ：不動點 k ， a n-k 等比（公比 p ） 數列與級數"}, {"l": "數學歸納法", "d": "驗 n=1 → 假設 n=k → 推 n=k+1", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "數學歸納法 驗 n=1 → 假設 n=k → 推 n=k+1 數列與級數"}, {"l": "基本級數和", "d": "sum 1 n i= n n+1 2 ； sum 1 n i 2= n n+1 2n+1", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "基本級數和 sum 1 n i= n n+1 2 ； sum 1 n i 2= n n+1 2n+1 6 數列與級數"}, {"l": "週期定位", "d": "N= 週期 商 ＋ 餘；看「餘數」對應位置", "u": "數列與級數", "e": "🪜", "f": "115學測數學_數列與級數.html", "a": "part3", "k": "速查", "s": "週期定位 n= 週期 商 ＋ 餘；看「餘數」對應位置 數列與級數"}, {"l": "意義、相等與乘法", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "kp1", "k": "考點", "s": "意義、相等與乘法 矩陣"}, {"l": "矩陣的高次方", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "kp2", "k": "考點", "s": "矩陣的高次方 矩陣"}, {"l": "反方陣與解矩陣方程式", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "kp3", "k": "考點", "s": "反方陣與解矩陣方程式 矩陣"}, {"l": "一次聯立與高斯消去", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "kp4", "k": "考點", "s": "一次聯立與高斯消去 矩陣"}, {"l": "平面線性變換", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "kp5", "k": "考點", "s": "平面線性變換 矩陣"}, {"l": "乘法可乘條件", "d": "A m n B n p =C m p （前行數＝後列數）", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "乘法可乘條件 a m n b n p =c m p （前行數＝後列數） 矩陣"}, {"l": "係數積行列式", "d": "kA =k ,n A （ n 階方陣）", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "係數積行列式 ka =k ,n a （ n 階方陣） 矩陣"}, {"l": "高次方降冪", "d": "找 A 2=kI 或 A 2=pA+qI ；二階用 A 2= tr A A- A I", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "高次方降冪 找 a 2=ki 或 a 2=pa+qi ；二階用 a 2= tr a a- a i 矩陣"}, {"l": "二階反方陣", "d": "A -1 = 1 ad-bc bmatrix d&-b -c&a bmatrix ， A", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "二階反方陣 a -1 = 1 ad-bc bmatrix d&-b -c&a bmatrix ， a neq0 才可逆 矩陣"}, {"l": "反方陣性質", "d": "AB -1 =B -1 A -1 ； A -1 -1 =A ；列運算 ,A I , ,I", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "反方陣性質 ab -1 =b -1 a -1 ； a -1 -1 =a ；列運算 ,a i , ,i a -1 , 矩陣"}, {"l": "解矩陣方程", "d": "AX=B X=A -1 B ； XA=B X=BA -1", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "解矩陣方程 ax=b x=a -1 b ； xa=b x=ba -1 矩陣"}, {"l": "相似求高次方", "d": "B=PAP -1 B n =PA n P -1", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "相似求高次方 b=pap -1 b n =pa n p -1 矩陣"}, {"l": "解的判別", "d": "000 k ,k neq0 無解； 000 mid0 無限多解；皆有主元 唯一解", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "解的判別 000 k ,k neq0 無解； 000 mid0 無限多解；皆有主元 唯一解 矩陣"}, {"l": "三平面（法向量）", "d": "皆不平行→交一點 唯一 ；交一線/兩兩交線 無限多/無 ；依法向量平行情形判別", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "三平面（法向量） 皆不平行→交一點 唯一 ；交一線/兩兩交線 無限多/無 ；依法向量平行情形判別 矩陣"}, {"l": "旋轉矩陣", "d": "R = bmatrix &- & bmatrix ， R n =R n ，面積不變", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "旋轉矩陣 r = bmatrix &- & bmatrix ， r n =r n ，面積不變 矩陣"}, {"l": "鏡射矩陣", "d": "bmatrix cos2 & sin2 sin2 &- cos2 bmatrix ， =", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "鏡射矩陣 bmatrix cos2 & sin2 sin2 &- cos2 bmatrix ， =-1 ，面積不變 矩陣"}, {"l": "伸縮 / 推移", "d": "伸縮 bmatrix h&0 0&k bmatrix 面積變 hk 倍；推移 =1 面積", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "伸縮 / 推移 伸縮 bmatrix h&0 0&k bmatrix 面積變 hk 倍；推移 =1 面積不變 矩陣"}, {"l": "面積黃金律", "d": "變換後面積 ＝ 原面積 M", "u": "矩陣", "e": "🧮", "f": "115學測數學_矩陣.html", "a": "part3", "k": "速查", "s": "面積黃金律 變換後面積 ＝ 原面積 m 矩陣"}, {"l": "實數系與有理／無理", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "kp1", "k": "考點", "s": "實數系與有理／無理 數與式"}, {"l": "絕對值", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "kp2", "k": "考點", "s": "絕對值 數與式"}, {"l": "數線、距離與根號估算", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "kp3", "k": "考點", "s": "數線、距離與根號估算 數與式"}, {"l": "乘法公式與算幾不等式", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "kp4", "k": "考點", "s": "乘法公式與算幾不等式 數與式"}, {"l": "比例、百分率與加權平均", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "kp5", "k": "考點", "s": "比例、百分率與加權平均 數與式"}, {"l": "高斯（最大整數）函數", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "kp6", "k": "考點", "s": "高斯（最大整數）函數 數與式"}, {"l": "實數系", "d": "正整數 整數 有理 實數；實數 ＝ 有理 無理", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "實數系 正整數 整數 有理 實數；實數 ＝ 有理 無理 數與式"}, {"l": "有理 / 無理", "d": "有理＝可化分數（有限或循環小數）；無理＝不循環無限小數", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "有理 / 無理 有理＝可化分數（有限或循環小數）；無理＝不循環無限小數 數與式"}, {"l": "運算判定", "d": "有理＋無理＝無理；無理±無理、無理×無理不一定", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "運算判定 有理＋無理＝無理；無理±無理、無理×無理不一定 數與式"}, {"l": "循環小數", "d": "0. ab = ab 99 、 0. abc = abc 999", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "循環小數 0. ab = ab 99 、 0. abc = abc 999 數與式"}, {"l": "絕對值意義", "d": "a ＝到原點距離； a-b ＝兩點距離", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "絕對值意義 a ＝到原點距離； a-b ＝兩點距離 數與式"}, {"l": "絕對值不等式", "d": "x k -k x k ； x k x -k 或 x k", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "絕對值不等式 x k -k x k ； x k x -k 或 x k 數與式"}, {"l": "三角不等式", "d": "a-b a b a + b ； x-a + x-b 最小 = a-b", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "三角不等式 a-b a b a + b ； x-a + x-b 最小 = a-b 數與式"}, {"l": "去絕對值技巧", "d": "幾何意義／分段討論；兩邊非負時 A B A 2 B 2", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "去絕對值技巧 幾何意義／分段討論；兩邊非負時 a b a 2 b 2 數與式"}, {"l": "距離 / 中點 / 分點", "d": "a-b 、 a+b 2 、 na+mb m+n", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "距離 / 中點 / 分點 a-b 、 a+b 2 、 na+mb m+n 數與式"}, {"l": "根號估算", "d": "N 夾相鄰平方根； a+b pm2 ab = a b", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "根號估算 n 夾相鄰平方根； a+b pm2 ab = a b 數與式"}, {"l": "乘法 / 對稱式", "d": "a b 2=a 2 pm2ab+b 2 ； a 2+b 2= a+b 2-2ab", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "乘法 / 對稱式 a b 2=a 2 pm2ab+b 2 ； a 2+b 2= a+b 2-2ab 數與式"}, {"l": "算幾不等式", "d": "a+b 2 ab （ a,b ge0 ， a=b 等號）； x+ kx ge2 k", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "算幾不等式 a+b 2 ab （ a,b ge0 ， a=b 等號）； x+ kx ge2 k 數與式"}, {"l": "百分率 / 加權", "d": "連續漲跌連乘；合併平均 = ax+by a+b （加權）", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "百分率 / 加權 連續漲跌連乘；合併平均 = ax+by a+b （加權） 數與式"}, {"l": "高斯函數", "d": "x x x +1 ； x+n = x +n ；負數往更小取（ -3.1 =-4 ）", "u": "數與式", "e": "🔢", "f": "115學測數學_數與式.html", "a": "part3", "k": "速查", "s": "高斯函數 x x x +1 ； x+n = x +n ；負數往更小取（ -3.1 =-4 ） 數與式"}];function ssEsc(x){return (x||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}function ssSearch(){var q=document.getElementById('ss-q').value.trim().toLowerCase(),box=document.getElementById('ss-results');if(!q){box.innerHTML='';box.classList.remove('open');return;}var hits=SS.filter(function(e){return e.s.indexOf(q)>=0;}).slice(0,20);if(!hits.length){box.innerHTML='<div class="ss-none">找不到「'+ssEsc(q)+'」——換個關鍵字試試（如：距離、面積、機率）</div>';box.classList.add('open');return;}box.innerHTML=hits.map(function(e){return '<a class="ss-item" href="'+e.f+'#'+e.a+'">'+'<span class="ss-u">'+e.e+' '+ssEsc(e.u)+'</span>'+'<span class="ss-l">'+ssEsc(e.l)+(e.d?' <span class="ss-d">'+ssEsc(e.d)+'</span>':'')+'</span>'+'<span class="ss-k">'+e.k+'</span></a>';}).join('');box.classList.add('open');}document.addEventListener('click',function(ev){var s=document.querySelector('.site-search');if(s&&!s.contains(ev.target)){var b=document.getElementById('ss-results');if(b)b.classList.remove('open');}});
+</script>
+</body>
+</html>

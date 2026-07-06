@@ -1,14 +1,20 @@
 # -*- coding: utf-8 -*-
 """一鍵建置：單一來源 -> 互動網頁 + Word（教師版／學生版）。
 
-用法：
+用法（在 concept-map/ 下執行）：
   python build/build.py            # 建置所有已登錄單元到 dist/
   python build/build.py matrix     # 只建置某單元
-輸出在 dist/（確認無誤後再覆蓋根目錄的正式檔）。
+輸出在 dist/（確認無誤後再覆蓋 concept-map/ 內的正式檔；正式網址為
+https://mathmap-kitty.github.io/web/concept-map/，repo 根目錄是總入口 portal）。
 """
 import os
 import sys
 import importlib
+
+# Windows 主控台預設 cp950，印 ✓✗ 等符號會 UnicodeEncodeError；強制 UTF-8 輸出
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)

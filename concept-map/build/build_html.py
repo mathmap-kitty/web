@@ -327,8 +327,8 @@ ANALYTICS = _analytics()
 
 
 # 社群分享卡（Open Graph + Twitter Card）：貼連結到 LINE／FB／IG 會顯示標題＋說明＋封面。
-# 全站共用一張封面 og-cover.png（1200×630，放站台根目錄）。換網域或封面只動這三個常數。
-SITE_BASE = "https://mathmap-kitty.github.io/web/"
+# 全站共用一張封面 og-cover.png（1200×630，放本子站 concept-map/ 根）。換網域或封面只動這三個常數。
+SITE_BASE = "https://mathmap-kitty.github.io/web/concept-map/"
 OG_IMAGE = SITE_BASE + "og-cover.png"
 OG_SITE_NAME = "115 學測數學重點整理"
 
