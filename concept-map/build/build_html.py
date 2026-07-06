@@ -332,6 +332,10 @@ SITE_BASE = "https://mathmap-kitty.github.io/web/concept-map/"
 OG_IMAGE = SITE_BASE + "og-cover.png"
 OG_SITE_NAME = "115 學測數學重點整理"
 
+# 全站 favicon（放 repo 根；concept-map 頁面在一層深，故用 ../）。隨 og_meta() 一起輸出。
+FAVICON_HTML = ('<link rel="icon" type="image/svg+xml" href="../favicon.svg">\n'
+                '<link rel="apple-touch-icon" href="../apple-touch-icon.png">')
+
 # 「🏠 網站首頁」pill：連回 repo 根的總入口 portal（../）。全站每頁頂欄共用；
 # 內聯樣式蓋過各頁 topbar 的白底連結樣式，讓「離開子站」的連結有視覺區隔。
 HOME_LINK = ('<a class="tb-home" href="../" style="background:rgba(255,255,255,.15);'
@@ -362,7 +366,8 @@ def og_meta(title, desc, page_file=""):
             f'<meta name="twitter:card" content="summary_large_image">\n'
             f'<meta name="twitter:title" content="{t}">\n'
             f'<meta name="twitter:description" content="{d}">\n'
-            f'<meta name="twitter:image" content="{OG_IMAGE}">')
+            f'<meta name="twitter:image" content="{OG_IMAGE}">\n'
+            f'{FAVICON_HTML}')
 
 # 頁尾隱私說明（GA／Clarity 流量統計告知），全站一致；要改文案：這裡＋三個靜態檔（index、概念地圖、脈絡地圖）。
 PRIVACY_HTML = ('<div style="text-align:center;font-size:12px;color:#9a857c;'

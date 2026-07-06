@@ -250,6 +250,8 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>學測數A · 內容總覽（章節・考點・歷屆考題）</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <style>{css}
 {CONTINUE_CSS}
