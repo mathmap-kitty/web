@@ -100,6 +100,9 @@ a{color:var(--maroon)}
   border:1px solid rgba(255,255,255,.32);font-size:15px;font-weight:700;text-decoration:none;
   padding:7px 15px;border-radius:999px;white-space:nowrap}
 .modenav a.sitehome:hover{background:rgba(255,255,255,.22)}
+.modenav .subjtoggle{display:inline-flex;gap:4px;background:rgba(0,0,0,.18);border-radius:999px;padding:3px}
+.modenav .subjtoggle button{padding:6px 16px;font-size:15px;border-radius:999px;color:#f0d9e0;background:transparent}
+.modenav .subjtoggle button.active{background:#f0b756;color:#5a3708}
 .modenav .testbtn{margin-left:auto;background:rgba(255,255,255,.12);color:#f0d9e0;border:1px solid rgba(255,255,255,.25)}
 .modenav .testbtn:hover{background:rgba(255,255,255,.2)}
 .modenav .testbtn.on{background:#f0b756;color:#5a3708;border-color:#f0b756}

@@ -3,36 +3,42 @@
 var DATA = window.EXAM_DATA || [];
 var YEARS = ['115','114','113','112','111'];
 var UNIT_ORDER = ['數與式','多項式函數','指數與對數','數列與級數','排列組合與機率','數據分析','三角','直線與圓','平面向量','空間向量','矩陣'];
-var state = { view:'home', year:'115', unit:'', diff:'', tUnit:'', tKp:'', hardBand:'hard' };
+var LS_SUBJ = 'exama_subject_v1';
+var state = { view:'home', subject:(localStorage.getItem(LS_SUBJ)||'A'), year:'115', unit:'', diff:'', tUnit:'', tKp:'', hardBand:'hard' };
 var LS = 'exama_done_v1';
 var done = JSON.parse(localStorage.getItem(LS) || '{}');
 var LS_STAR = 'exama_star_v1';
 var star = JSON.parse(localStorage.getItem(LS_STAR) || '{}');
 var LS_TEST = 'exama_testmode_v1';
 var testMode = localStorage.getItem(LS_TEST) === '1';
+var SUBJ = [];  // 目前科目（A/B）的題目，由 buildIndex() 填
 function saveStar(){ localStorage.setItem(LS_STAR, JSON.stringify(star)); }
 function saveDone(){ localStorage.setItem(LS, JSON.stringify(done)); }
-function starCount(){ return DATA.filter(function(q){ return star[qid(q)]; }).length; }
+function starCount(){ return SUBJ.filter(function(q){ return star[qid(q)]; }).length; }
 
-function qid(q){ return q.year+'-'+q.num; }
+function qid(q){ return (q.subject==='B'?'B':'')+q.year+'-'+q.num; }
 function rateNum(r){ var m = String(r).match(/(\d+)\s*%/); return m ? +m[1] : null; }
 function diffOf(q){ var n=rateNum(q.rate); if(n===null) return 'none'; if(n<20) return 'hard'; if(n<=50) return 'mid'; return 'easy'; }
 function el(tag,cls,html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
 
-/* ---------- 考點 index ---------- */
+/* ---------- 考點 index（依目前科目重建） ---------- */
 var byUnit = {};
-DATA.forEach(function(q){
-  var seenU={}, seenA={};
-  q.kaodian.forEach(function(k){
-    var u=byUnit[k.unit] || (byUnit[k.unit]={name:k.unit,qs:[],kps:{},korder:[]});
-    if(!seenU[k.unit]){ u.qs.push(q); seenU[k.unit]=1; }
-    var a=String(k.url).split('#')[1]||k.title;   // 以 anchor（kp1…）為考點身分，避免變體標題重複
-    var kp=u.kps[a];
-    if(!kp){ kp=u.kps[a]={title:k.title,url:k.url,qs:[]}; u.korder.push(a); }
-    else if(String(k.title).length>String(kp.title).length){ kp.title=k.title; kp.url=k.url; } // 取較完整的標題
-    if(!seenA[a]){ kp.qs.push(q); seenA[a]=1; }
+function buildIndex(){
+  SUBJ = DATA.filter(function(q){ return (q.subject||'A')===state.subject; });
+  byUnit = {};
+  SUBJ.forEach(function(q){
+    var seenU={}, seenA={};
+    q.kaodian.forEach(function(k){
+      var u=byUnit[k.unit] || (byUnit[k.unit]={name:k.unit,qs:[],kps:{},korder:[]});
+      if(!seenU[k.unit]){ u.qs.push(q); seenU[k.unit]=1; }
+      var a=String(k.url).split('#')[1]||k.title;   // 以 anchor（kp1…）為考點身分，避免變體標題重複
+      var kp=u.kps[a];
+      if(!kp){ kp=u.kps[a]={title:k.title,url:k.url,qs:[]}; u.korder.push(a); }
+      else if(String(k.title).length>String(kp.title).length){ kp.title=k.title; kp.url=k.url; } // 取較完整的標題
+      if(!seenA[a]){ kp.qs.push(q); seenA[a]=1; }
+    });
   });
-});
+}
 function unitsSorted(){ return Object.keys(byUnit).sort(function(a,b){ return UNIT_ORDER.indexOf(a)-UNIT_ORDER.indexOf(b); }); }
 function coveredKp(){ var n=0; for(var u in byUnit){ n+=Object.keys(byUnit[u].kps).length; } return n; }
 function anchorNum(url){ var h=String(url).split('#')[1]||''; var m=h.match(/(\d+)/); return m?+m[1]:999; }
@@ -158,6 +164,14 @@ function renderModeNav(){
   var home=document.createElement('a'); home.className='sitehome'; home.href='../';
   home.title='回 mathmap 數學教材網總入口'; home.textContent='🏠 網站首頁';
   nav.appendChild(home);
+  var subjWrap=document.createElement('div'); subjWrap.className='subjtoggle';
+  ['A','B'].forEach(function(s){
+    var b=document.createElement('button'); b.textContent='數學'+s; if(state.subject===s) b.className='active';
+    b.onclick=function(){ if(state.subject===s) return; state.subject=s; localStorage.setItem(LS_SUBJ,s);
+      state.tUnit=''; state.tKp=''; state.unit=''; render(); window.scrollTo(0,0); };
+    subjWrap.appendChild(b);
+  });
+  nav.appendChild(subjWrap);
   var sc=starCount();
   [['home','📋 總覽'],['year','📅 按年度'],['topic','🎯 按考點'],['hard','🔥 難題集'],['list','📌 複習清單'+(sc?'（'+sc+'）':'')]].forEach(function(m){
     var b=document.createElement('button'); b.textContent=m[1]; if(state.view===m[0]) b.className='active';
@@ -206,18 +220,18 @@ function bigBtn(t,d,fn){ var b=el('button','bigbtn'); b.innerHTML='<div class="t
 
 function renderHome(app){
   var dash=el('div','dash');
-  dash.appendChild(el('h2',null,'學測數學 A · 111–115 互動詳解'));
-  dash.appendChild(el('p','lead','5 個學年度、100 題完整詳解，附大考中心答對率與 mathmap 考點對應。選擇下面的方式開始複習。'));
+  dash.appendChild(el('h2',null,'學測數學 '+state.subject+' · 111–115 互動詳解'));
+  dash.appendChild(el('p','lead','5 個學年度、'+SUBJ.length+' 題完整詳解，附大考中心答對率與 mathmap 考點對應。選擇下面的方式開始複習。'));
 
-  var doneCount=DATA.filter(function(q){ return done[qid(q)]; }).length;
+  var doneCount=SUBJ.filter(function(q){ return done[qid(q)]; }).length;
   var stats=el('div','statgrid');
-  stats.appendChild(statCard(DATA.length,'總題數（111–115）'));
+  stats.appendChild(statCard(SUBJ.length,'總題數（111–115）'));
   stats.appendChild(statCard(YEARS.length+' 年','涵蓋學年度'));
   stats.appendChild(statCard(coveredKp()+' / 58','已觸及考點'));
   stats.appendChild(statCard(doneCount,'已複習題數','progress'));
   dash.appendChild(stats);
 
-  var dc={easy:0,mid:0,hard:0,none:0}; DATA.forEach(function(q){ dc[diffOf(q)]++; });
+  var dc={easy:0,mid:0,hard:0,none:0}; SUBJ.forEach(function(q){ dc[diffOf(q)]++; });
   var p1=el('div','panel'); p1.appendChild(el('h3',null,'難度分布（依大考中心答對率）'));
   var db=el('div','diffbar');
   ['easy','mid','hard','none'].forEach(function(k){ var s=document.createElement('span'); s.className='diff-'+k; s.style.flex=dc[k]||0.0001; s.textContent=dc[k]; db.appendChild(s); });
@@ -242,7 +256,7 @@ function renderHome(app){
   var bb=el('div','bigbtns');
   bb.appendChild(bigBtn('📅 按年度瀏覽','逐年 20 題，像做整份考卷一樣依序複習與檢討。',function(){ state.view='year'; render(); window.scrollTo(0,0); }));
   bb.appendChild(bigBtn('🎯 按考點複習','選單元／考點，跨 5 年集中攻略同一類題目，並可連到 mathmap 考點地圖。',function(){ state.view='topic'; render(); window.scrollTo(0,0); }));
-  bb.appendChild(bigBtn('🔥 挑戰難題集','歷屆答對率最低（<20%）的 13 題，由難到易，適合衝刺。',function(){ state.view='hard'; state.hardBand='hard'; render(); window.scrollTo(0,0); }));
+  bb.appendChild(bigBtn('🔥 挑戰難題集','歷屆答對率最低（<20%）的題目，由難到易排序，適合考前衝刺。',function(){ state.view='hard'; state.hardBand='hard'; render(); window.scrollTo(0,0); }));
   bb.appendChild(bigBtn('📌 我的複習清單','收藏想再看的題目與錯題，集中複習'+(starCount()?'（目前 '+starCount()+' 題）':'。'),function(){ state.view='list'; render(); window.scrollTo(0,0); }));
   dash.appendChild(bb);
   dash.appendChild(el('p','tiny','小提醒：右上角可開啟「✍️ 自我測驗模式」——先自己作答，再展開答案自評對錯；答錯的題會自動進入複習清單。'));
@@ -250,7 +264,7 @@ function renderHome(app){
 }
 
 function renderYear(app){
-  var list=DATA.filter(function(q){
+  var list=SUBJ.filter(function(q){
     if(q.year!==state.year) return false;
     if(state.unit && !q.kaodian.some(function(k){ return k.unit===state.unit; })) return false;
     if(state.diff){ var d=diffOf(q); if(d!==state.diff) return false; }
@@ -296,11 +310,11 @@ function renderTopic(app){
 function renderHard(app){
   var bands=[['hard','難（答對率 &lt;20%）'],['mid','中（20–50%）']];
   var chips=el('div','kpchips2'); chips.style.margin='16px 0 4px';
-  bands.forEach(function(b){ var n=DATA.filter(function(q){ return diffOf(q)===b[0]; }).length;
+  bands.forEach(function(b){ var n=SUBJ.filter(function(q){ return diffOf(q)===b[0]; }).length;
     var c=el('button','kpc'+(state.hardBand===b[0]?' active':'')); c.innerHTML=b[1]+'<span class="c">'+n+'</span>';
     c.onclick=function(){ state.hardBand=b[0]; render(); }; chips.appendChild(c); });
   app.appendChild(chips);
-  var list=DATA.filter(function(q){ return diffOf(q)===state.hardBand; })
+  var list=SUBJ.filter(function(q){ return diffOf(q)===state.hardBand; })
     .sort(function(a,b){ var ra=rateNum(a.rate), rb=rateNum(b.rate); if(ra!==rb) return ra-rb; if(a.year!==b.year) return (+b.year)-(+a.year); return a.num-b.num; });
   var head=el('div','topichead');
   head.innerHTML='<span class="th">'+(state.hardBand==='hard'?'🔥 歷屆難題集':'中難度題組')+'</span><div class="ts">'+(state.hardBand==='hard'?'答對率低於 20%':'答對率 20–50%')+'　·　共 '+list.length+' 題，由難到易排序（跨 111–115）</div>';
@@ -310,7 +324,7 @@ function renderHard(app){
 }
 
 function renderList(app){
-  var list=DATA.filter(function(q){ return star[qid(q)]; }).sort(function(a,b){ if(a.year!==b.year) return (+b.year)-(+a.year); return a.num-b.num; });
+  var list=SUBJ.filter(function(q){ return star[qid(q)]; }).sort(function(a,b){ if(a.year!==b.year) return (+b.year)-(+a.year); return a.num-b.num; });
   var head=el('div','topichead');
   head.innerHTML='<span class="th">📌 我的複習清單</span><div class="ts">你標記為「要複習／錯題」的題目，共 '+list.length+' 題</div>';
   if(list.length){ var rb=el('button','ghost-btn','全部收合'); rb.style.marginLeft='10px'; rb.onclick=resetAllReveal; head.appendChild(rb); }
@@ -321,6 +335,7 @@ function renderList(app){
 
 /* ---------- dispatch ---------- */
 function render(){
+  buildIndex();
   renderModeNav(); renderCtx();
   var app=document.getElementById('app'); app.innerHTML='';
   if(state.view==='home') return renderHome(app);
