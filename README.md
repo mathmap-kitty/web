@@ -1,6 +1,6 @@
 # mathmap 數學教材網（mathmap-kitty/web）
 
-線上網址：**https://mathmap-kitty.github.io/web/**（GitHub Pages，由 main 分支根目錄發布）。
+線上網址：**https://mathmap-kitty.github.io/web/index.html。
 
 ## 站台結構（2026-07 重整後）
 
