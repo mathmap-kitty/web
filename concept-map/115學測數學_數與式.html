@@ -53,6 +53,14 @@
   }
   .toolbar button:hover{background:#ffe6ee}
   .toolbar .nav-select{background:#fff; color:var(--maroon-d); border:none; border-radius:20px; padding:6px 12px; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer; max-width:44vw}
+  /* 手機：壓縮 sticky 工具列（原 ~138px 占 17% 螢幕）；tb-home 是內聯樣式故需 !important */
+  @media(max-width:560px){
+    .toolbar{padding:6px 10px; gap:6px}
+    .toolbar .t-title{font-size:15px}
+    .toolbar button{padding:4px 10px; font-size:12.5px}
+    .toolbar .nav-select{padding:4px 8px; font-size:12.5px; max-width:42vw}
+    .toolbar .tb-home{padding:2px 8px !important; font-size:11.5px !important}
+  }
   .card[id], .part[id]{scroll-margin-top:64px}
   .hero{padding:26px 0 6px; text-align:center}
   .hero h1{color:var(--maroon); margin:.1em 0; font-size:27px; letter-spacing:1px}

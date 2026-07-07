@@ -168,3 +168,12 @@ a{color:var(--maroon)}
   .bigbtns{grid-template-columns:1fr}
   .heatrow{grid-template-columns:88px 1fr 34px}
 }
+/* 手機：壓縮導覽列（原 ~198px 高） */
+@media(max-width:640px){
+  .modenav .wrap{gap:4px;padding-top:6px;padding-bottom:6px}
+  .modenav button{font-size:14px;padding:6px 12px}
+  .modenav a.sitehome{font-size:12.5px;padding:4px 10px}
+  .modenav .subjtoggle button{padding:5px 12px}
+  .site-head{padding:14px 0}
+  .site-head .sub{font-size:12.5px}
+}
