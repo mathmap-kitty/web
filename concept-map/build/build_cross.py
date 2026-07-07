@@ -12,7 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta, HOME_LINK  # noqa: E402  共用追蹤碼＋頁尾隱私＋回報鈕＋分享卡
-KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
+KATEX = "katex"  # 本地離線包，見 build_html.py 同名常數
 XLSX = os.path.join(ROOT, "參考文件", "學測數學考題分析_106-115_更正版.xlsx")
 OUT = os.path.join(ROOT, "dist", "115學測數學_跨單元整合_脈絡地圖.html")
 

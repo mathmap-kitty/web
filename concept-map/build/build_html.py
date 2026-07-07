@@ -50,7 +50,7 @@ def _kp_nav(slug, kpid):
     return _KP_NAV_CACHE[slug].get(kpid, "")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
+KATEX = "katex"  # 本地離線包（0.16.11，與 exam 同源；含 contrib/auto-render），不再走 CDN
 
 # 已讀進度（考點層，localStorage 鍵 mm-read-kps，格式 "slug:kpN"，與概念地圖共用）
 # 掌握度（理解確認，localStorage 鍵 mm-kp-mastery，值 "ok"／"review"）：每考點的「確認理解」互動。

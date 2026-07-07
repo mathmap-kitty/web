@@ -12,7 +12,7 @@ from build_html import (ANALYTICS, PRIVACY_HTML, _report_btn, og_meta,  # noqa: 
                         CONTINUE_BANNER_HTML, CONTINUE_CSS, CONTINUE_JS,  # 繼續上次進度橫幅
                         EXPORT_BUTTON_HTML, EXPORT_MODAL_HTML, EXPORT_CSS, EXPORT_JS,  # 匯出學習紀錄
                         HOME_LINK)  # 「🏠 網站首頁」pill
-KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
+KATEX = "katex"  # 本地離線包，見 build_html.py 同名常數
 OUT = os.path.join(ROOT, "dist", "115學測數學_概念地圖.html")
 
 

@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://mathmap-kitty.github.io/web/concept-map/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="katex/katex.min.css">
 <style>
 :root{
     --ink:#2b2b2b; --maroon:#8c2740; --maroon-d:#6f1f33; --rose:#b03a5b;
@@ -482,8 +482,8 @@
 <div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
 </div>
 <a class="report-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf7rBJ0OnAQTiZjUbq3gn6CKFgvz9wir8FzEUccXzTfl54DDw/viewform?usp=pp_url&entry.120093039=%E8%84%88%E7%B5%A1%E5%9C%B0%E5%9C%96" target="_blank" rel="noopener" title="發現內容有誤？點此回報">🚩 回報錯誤</a>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script src="katex/katex.min.js"></script>
+<script src="katex/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
 function flt(btn,f){document.querySelectorAll('.filterbar button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.xq').forEach(c=>{c.style.display=(f==='all'||c.dataset.juan===f)?'':'none';});document.querySelectorAll('.part').forEach(p=>{let g=p.nextElementSibling;while(g&&!g.classList.contains('xq-grid'))g=g.nextElementSibling;if(g){let vis=[...g.children].some(c=>c.style.display!=='none');p.style.display=vis?'':'none';p.nextElementSibling.style.display=vis?'':'none';}});}function toggleXq(h){var d=h.nextElementSibling;var o=d.classList.toggle('open');var c=h.querySelector('.caret');if(c)c.textContent=o?'\u2212':'\uFF0B';}function ts(b){var s=b.nextElementSibling;var o=s.classList.toggle('open');b.classList.toggle('active',o);b.textContent=o?b.dataset.h:b.dataset.s;}

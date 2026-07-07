@@ -27,7 +27,7 @@ def _plain(*parts):
     s = re.sub(r"\s+", " ", s)
     return s.strip()
 
-KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
+KATEX = "katex"  # 本地離線包，見 build_html.py 同名常數
 OUT = os.path.join(ROOT, "dist", "115學測數學_解題線索地圖.html")
 
 BY_SLUG = {u["slug"]: u for u in UNITS}

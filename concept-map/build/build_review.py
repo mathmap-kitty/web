@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.join(ROOT, "content"))
 from build_html import ANALYTICS, PRIVACY_HTML, _report_btn, og_meta, HOME_LINK  # noqa: E402
 from units import UNITS  # noqa: E402
 
-KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9"
+KATEX = "katex"  # 本地離線包，見 build_html.py 同名常數
 OUT = os.path.join(ROOT, "dist", "115學測數學_待複習與錯題.html")
 
 BY_SLUG = {u["slug"]: u for u in UNITS}
