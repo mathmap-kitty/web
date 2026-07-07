@@ -154,6 +154,11 @@ a{color:var(--maroon)}
 .uchip.active .c{color:#f0d9e0}
 .kpc.active{background:var(--maroon-d);color:#fff;border-color:var(--maroon-d)}
 .kpc.active .c{color:#e6c9d3}
+/* 未出題／課綱不含：灰色虛線籌碼（<a> 連到重點整理） */
+a.kpc.off{background:#f3ede9;color:#9a857c;border:1px dashed #cfbfb6;text-decoration:none;display:inline-flex;align-items:center}
+a.kpc.off:hover{background:#ece0d9;color:#7a655c}
+a.kpc.off .c{color:#8a5a0e;font-weight:700}
+.uchip.off{opacity:.55}
 .topichead{margin:16px 0 2px}
 .topichead .th{font-size:19px;font-weight:800;color:var(--maroon-d)}
 .topichead .ts{font-size:13px;color:var(--mut)}

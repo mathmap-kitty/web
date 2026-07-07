@@ -3,6 +3,22 @@
 var DATA = window.EXAM_DATA || [];
 var YEARS = ['115','114','113','112','111'];
 var UNIT_ORDER = ['數與式','多項式函數','指數與對數','數列與級數','排列組合與機率','數據分析','三角','直線與圓','平面向量','空間向量','矩陣'];
+/* 58 考點總目錄（mathmap 短標題）：供「按考點」補列未出題考點 */
+var KP_ALL = {
+ '數與式':[['kp1','實數系與有理／無理'],['kp2','絕對值'],['kp3','數線、距離與根號估算'],['kp4','乘法公式與算幾不等式'],['kp5','比例、百分率與加權平均'],['kp6','高斯（最大整數）函數']],
+ '多項式函數':[['kp1','除法、餘式與因式定理'],['kp2','二次函數：判別式與配方'],['kp3','多項式方程式與不等式'],['kp4','高次方程式（有理根、勘根）'],['kp5','三次函數圖形與對稱中心']],
+ '指數與對數':[['kp1','指數律與指數方程'],['kp2','對數的定義與運算'],['kp3','常用對數（科學記號、位數）'],['kp4','指數對數函數圖形'],['kp5','應用模型與數列結合']],
+ '數列與級數':[['kp1','等差數列'],['kp2','等比數列'],['kp3','遞迴數列'],['kp4','級數求和與規律週期']],
+ '排列組合與機率':[['kp1','計數原理與排列'],['kp2','組合與分組分配'],['kp3','古典機率'],['kp4','條件機率與貝氏'],['kp5','獨立事件與餘事件'],['kp6','期望值']],
+ '數據分析':[['kp1','一維數據與標準差'],['kp2','相關係數'],['kp3','迴歸直線（最適直線）'],['kp4','加權平均與資料判讀']],
+ '三角':[['kp1','三角比、弧度與廣義角'],['kp2','正弦定理、餘弦定理'],['kp3','三角測量與幾何應用'],['kp4','三角函數圖形（疊合、對稱）'],['kp5','和差角、倍角'],['kp6','角平分線、面積比與相似'],['kp7','圓周角與二面角中的三角']],
+ '直線與圓':[['kp1','直線方程式與斜率'],['kp2','兩點距離與三角形'],['kp3','圓方程式'],['kp4','直線與圓的位置'],['kp5','平面區域與線性規劃']],
+ '平面向量':[['kp1','向量的表示與運算'],['kp2','線性組合、分點與面積比'],['kp3','內積：夾角、垂直、正射影'],['kp4','行列式與平行四邊形面積'],['kp5','向量的旋轉與坐標應用']],
+ '空間向量':[['kp1','空間坐標與距離'],['kp2','內積與垂直'],['kp3','外積與體積'],['kp4','平面方程式與距離'],['kp5','空間直線與歪斜線'],['kp6','二面角與立體']],
+ '矩陣':[['kp1','意義、相等與乘法'],['kp2','矩陣的高次方'],['kp3','反方陣與解矩陣方程式'],['kp4','一次聯立與高斯消去'],['kp5','平面線性變換']]
+};
+/* 108 課綱「數B 不含」的考點（對照領綱：行列式/空間向量運算僅 11A、線性規劃在 12乙、三元消去法僅 11A） */
+var B_EXCLUDED = {'直線與圓':{'kp5':1},'平面向量':{'kp4':1},'空間向量':{'kp2':1,'kp3':1,'kp4':1,'kp5':1,'kp6':1},'矩陣':{'kp4':1}};
 var LS_SUBJ = 'exama_subject_v1';
 var state = { view:'home', subject:(localStorage.getItem(LS_SUBJ)||'A'), year:'115', unit:'', diff:'', tUnit:'', tKp:'', hardBand:'hard' };
 var LS = 'exama_done_v1';
@@ -207,9 +223,10 @@ function renderCtx(){
   } else if(state.view==='topic'){
     var wrap=el('div','topicnav');
     var chips=el('div','unitchips');
-    unitsSorted().forEach(function(u){
-      var c=el('button','uchip'+(state.tUnit===u?' active':''));
-      c.innerHTML=u+'<span class="c">'+byUnit[u].qs.length+'</span>';
+    UNIT_ORDER.forEach(function(u){
+      var n=byUnit[u]?byUnit[u].qs.length:0;
+      var c=el('button','uchip'+(state.tUnit===u?' active':'')+(n?'':' off'));
+      c.innerHTML=u+'<span class="c">'+n+'</span>';
       c.onclick=function(){ state.tUnit=u; state.tKp=''; render(); }; chips.appendChild(c);
     });
     wrap.appendChild(chips); bar.appendChild(wrap);
@@ -284,13 +301,25 @@ function renderYear(app){
 
 function renderTopic(app){
   if(!state.tUnit){ app.appendChild(el('div','empty','請從上方選擇一個單元，開始跨年度的考點複習。')); return; }
-  var u=byUnit[state.tUnit];
+  var u=byUnit[state.tUnit]||{qs:[],kps:{},korder:[]};
   var kwrap=el('div','kpchips2'); kwrap.style.margin='16px 0 4px';
   var allc=el('button','kpc'+(state.tKp===''?' active':'')); allc.innerHTML='全部<span class="c">'+u.qs.length+'</span>';
   allc.onclick=function(){ state.tKp=''; render(); }; kwrap.appendChild(allc);
   u.korder.slice().sort(function(a,b){ return anchorNum(u.kps[a].url)-anchorNum(u.kps[b].url); }).forEach(function(t){
     var kp=u.kps[t]; var c=el('button','kpc'+(state.tKp===t?' active':'')); c.innerHTML=kp.title+'<span class="c">'+kp.qs.length+'</span>';
     c.onclick=function(){ state.tKp=t; render(); }; kwrap.appendChild(c);
+  });
+  /* 未出題／課綱不含的考點：灰色籌碼，點了連到重點整理對應段落 */
+  (KP_ALL[state.tUnit]||[]).forEach(function(pair){
+    var a=pair[0], t=pair[1];
+    if(u.kps[a]) return;
+    var ex = state.subject==='B' && B_EXCLUDED[state.tUnit] && B_EXCLUDED[state.tUnit][a];
+    var lab = ex ? '數B課綱不含' : '近五年未出題';
+    var c=el('a','kpc off'); c.href='../concept-map/115學測數學_'+state.tUnit+'.html#'+a;
+    c.target='_blank'; c.rel='noopener';
+    c.title = ex ? '108 課綱數B不含此考點，可安心跳過' : '課綱範圍內，111–115 未出過題——不代表不會考；點我到重點整理複習';
+    c.innerHTML=t+'<span class="c">'+lab+'</span>';
+    kwrap.appendChild(c);
   });
   app.appendChild(kwrap);
 
