@@ -488,7 +488,7 @@ UNIT = {
                               "steps": [
                                   r"\(y=\sin(\pi x)\) 週期 \(2\)，在 \([0,3]\) 為「上凸峰 \([0,1]\)、下凹谷 \([1,2]\)、上凸峰 \([2,3]\)」。\(P,Q\) 在第一峰（\(x<1\)）故 \(k>0\)（(1)○）。",
                                   r"(2)✗ \(0<k<1\) 時第一、三峰各 \(2\) 交點，共 \(4\) 個（非 \(3\)）。",
-                                  r"設 \(t=\dfrac{\arcsin k}{\pi}\)：交點 \(x_1=t,\ x_2=1-t,\ x_3=2+t,\ x_4=3-t\)。(3)✗ \(x_1+x_2=t+(1-t)=1\)（對稱於 \(x=\tfrac12\)），非 \(<1\)。",
+                                  r"設第一個交點的 \(x\) 坐標為 \(t\)（\(0<t<\tfrac12\)、\(\sin(\pi t)=k\)）：第一峰對稱於 \(x=\tfrac12\)、第三峰是第一峰右移 \(2\)，故四交點為 \(x_1=t,\ x_2=1-t,\ x_3=2+t,\ x_4=3-t\)。(3)✗ \(x_1+x_2=t+(1-t)=1\)（對稱），非 \(<1\)。",
                                   r"(4)○ \(\overline{PQ}=x_2-x_1=1-2t\)、\(\overline{QR}=x_3-x_2=1+2t\)。\(2(1-2t)=1+2t\Rightarrow t=\dfrac16\Rightarrow k=\sin\dfrac\pi6=\dfrac12\)。",
                                   r"(5)○ 四交點之和 \(=t+(1-t)+(2+t)+(3-t)=6>5\)。故選 (1)(4)(5)。"]}},
                 {"tag": "115 數A · 多選 11", "level": "★★★（難）", "core": "y=cos(πx/2) 與過定點直線的交點：對稱與整數判別",
@@ -576,7 +576,7 @@ UNIT = {
                                   r"令 \(\angle ACD=\theta\)、\(\angle BCD=2\theta\)。直角 \(\triangle ACD\) 中 \(\angle ADC=90^\circ-\theta\)，故 \(\angle BDC=90^\circ+\theta\)。",
                                   r"\(\triangle BCD\) 正弦定理：\(\dfrac{\overline{BD}}{\sin\angle BCD}=\dfrac{\overline{BC}}{\sin\angle BDC}\Rightarrow\dfrac{\overline{BD}}{\overline{BC}}=\dfrac{\sin2\theta}{\sin(90^\circ+\theta)}=\dfrac{2\sin\theta\cos\theta}{\cos\theta}=2\sin\theta\)。",
                                   r"由 \(\overline{BC}=2\,\overline{BD}\Rightarrow\dfrac{\overline{BD}}{\overline{BC}}=\dfrac12=2\sin\theta\Rightarrow\sin\theta=\dfrac14\)，\(\tan\theta=\dfrac{1}{\sqrt{15}}\)。",
-                                  r"\(k=\dfrac{\overline{AD}}{\overline{AB}}=\dfrac{\tan\theta}{\tan3\theta}\)。\(\tan3\theta=\tan\theta\cdot\dfrac{3-\tan^2\theta}{1-3\tan^2\theta}=\dfrac{1}{\sqrt{15}}\cdot\dfrac{3-\frac1{15}}{1-\frac3{15}}=\dfrac{11}{3\sqrt{15}}\)。",
+                                  r"\(k=\dfrac{\overline{AD}}{\overline{AB}}=\dfrac{\tan\theta}{\tan3\theta}\)（直角邊 \(\overline{AD}=\overline{AC}\tan\theta\)、\(\overline{AB}=\overline{AC}\tan3\theta\)，\(\angle ACB=3\theta\)）。用教過的公式合成 \(3\theta=2\theta+\theta\)：\(\tan2\theta=\dfrac{2\tan\theta}{1-\tan^2\theta}=\dfrac{2/\sqrt{15}}{14/15}=\dfrac{\sqrt{15}}{7}\)，再 \(\tan3\theta=\dfrac{\tan2\theta+\tan\theta}{1-\tan2\theta\tan\theta}=\dfrac{\frac{\sqrt{15}}{7}+\frac{1}{\sqrt{15}}}{1-\frac17}=\dfrac{22/(7\sqrt{15})}{6/7}=\dfrac{11}{3\sqrt{15}}\)。",
                                   r"故 \(k=\dfrac{1/\sqrt{15}}{11/(3\sqrt{15})}=\dfrac{3}{11}\)。"]}},
             ],
             "selfcheck": {
@@ -700,14 +700,15 @@ UNIT = {
                  "body": r"\(\triangle ABC\) 內接於半徑 \(R=5\) 的圓，且 \(\angle A=30°\)。求邊 \(BC\)（即 \(a\)）。",
                  "solution": {"brief": r"\(BC=5\)",
                               "steps": [r"正弦定理 \(\dfrac{a}{\sin A}=2R\Rightarrow a=2R\sin A=2\times5\times\sin30°=10\times\dfrac12=5\)。"]}},
-                {"tag": "114 數A · 選填 17", "level": "★★★（難）", "core": "外接圓 ＋ 餘弦定理 ＋ 托勒密定理求弦長",
+                {"tag": "114 數A · 選填 17", "level": "★★★（難）", "core": "外接圓 ＋ 餘弦定理 ＋ 弦↔圓心角求弦長",
                  "body": r"\(\triangle ABC\) 中 \(\overline{AB}=\overline{BC}=3\)、\(\cos\angle ABC=-\dfrac18\)。外接圓上有一點 \(D\) 滿足 \(\overline{BD}=4\) 且 \(\overline{AD}<\overline{CD}\)，求 \(\overline{CD}\)（最簡根式）。",
                  "solution": {"brief": r"\(3+\sqrt2\)",
                               "steps": [
                                   r"餘弦定理：\(\overline{AC}^2=9+9-2\cdot9\cdot(-\tfrac18)=\dfrac{81}{4}\Rightarrow\overline{AC}=\dfrac92\)。\(\sin\angle ABC=\dfrac{3\sqrt7}{8}\)，外接圓 \(2R=\dfrac{\overline{AC}}{\sin B}=\dfrac{12}{\sqrt7}\)。",
-                                  r"\(ABCD\) 為圓內接四邊形，托勒密：\(\overline{AC}\cdot\overline{BD}=\overline{AB}\cdot\overline{CD}+\overline{BC}\cdot\overline{AD}\Rightarrow\dfrac92\cdot4=3(\overline{CD}+\overline{AD})\Rightarrow\overline{CD}+\overline{AD}=6\)。",
-                                  r"以弦 \(=2R\sin(\text{圓周角})\) 設 \(\overline{AB}=\overline{BC}=3\Rightarrow\sin=\dfrac{3}{2R}=\dfrac{\sqrt7}{4}\)（半弧角 \(\gamma\)，\(\cos\gamma=\tfrac34\)）；\(\overline{BD}=4\Rightarrow\sin\delta=\dfrac{\sqrt7}{3},\cos\delta=\dfrac{\sqrt2}{3}\)。",
-                                  r"\(\overline{CD}=2R\sin(\gamma+\delta)=\dfrac{12}{\sqrt7}\cdot\dfrac{3\sqrt7+\sqrt{14}}{12}=3+\sqrt2\)（另一根 \(\overline{AD}=3-\sqrt2<\overline{CD}\) 相符）。"]}},
+                                  r"**弦 ↔ 圓心角**：弦長 \(=2R\sin\)（圓心角的一半）。\(\overline{AB}=\overline{BC}=3\Rightarrow\) 各對半圓心角 \(\gamma\)：\(\sin\gamma=\dfrac{3}{2R}=\dfrac{\sqrt7}{4}\)、\(\cos\gamma=\dfrac34\)；\(\overline{BD}=4\Rightarrow\) 半圓心角 \(\delta\)：\(\sin\delta=\dfrac{4}{2R}=\dfrac{\sqrt7}{3}\)、\(\cos\delta=\dfrac{\sqrt2}{3}\)。",
+                                  r"由 \(\overline{AD}<\overline{CD}\) 知 \(D\) 在靠 \(A\) 那側（弦 \(BD\) 的劣弧經過 \(A\)；若在另一側，\(AD,CD\) 恰互換、不合）。故弧 \(AD=2\delta-2\gamma\)：\(\overline{AD}=2R\sin(\delta-\gamma)=\dfrac{12}{\sqrt7}\cdot\left(\dfrac{\sqrt7}{3}\cdot\dfrac34-\dfrac{\sqrt2}{3}\cdot\dfrac{\sqrt7}{4}\right)=\dfrac{12}{\sqrt7}\cdot\dfrac{3\sqrt7-\sqrt{14}}{12}=3-\sqrt2\)。",
+                                  r"繞一圈 \(360^\circ\)：弧 \(CD=360^\circ-2\gamma-2\gamma-(2\delta-2\gamma)=360^\circ-(2\gamma+2\delta)\)。由 \(\sin(180^\circ-x)=\sin x\)：\(\overline{CD}=2R\sin(\gamma+\delta)=\dfrac{12}{\sqrt7}\cdot\dfrac{3\sqrt7+\sqrt{14}}{12}=3+\sqrt2\)。",
+                                  r"**驗算（補充：托勒密定理）**——圓內接四邊形「對角線乘積 ＝ 兩組對邊乘積之和」：\(\overline{AC}\cdot\overline{BD}=\overline{AB}\cdot\overline{CD}+\overline{BC}\cdot\overline{AD}\)，左式 \(\dfrac92\cdot4=18\)、右式 \(3\big[(3+\sqrt2)+(3-\sqrt2)\big]=18\) ✓。"]}},
             ],
             "selfcheck": {
                 "q": r"圓中一弧所對的圓心角為 \(100^\circ\)，則此弧所對的圓周角為何？",
