@@ -113,7 +113,8 @@ UNIT = {
                     r"\(A_{m\times n}B_{n\times p}=C_{m\times p}\)，可乘條件是 [[前者行數＝後者列數||中間的 \(n\) 要相同才能乘；乘完後外圍的 \(m\times p\) 就是答案的階。「前行＝後列」記這四個字。]]；",
                     r"乘積第 \(i\) 列 \(j\) 行的元 \(c_{ij}=\)（【\(A\) 第 \(i\) 列】）與（【\(B\) 第 \(j\) 行】）對應相乘再相加；",
                     r"口訣：**[[左列右行內積||拿左矩陣的「一整列」去和右矩陣的「一整行」逐項相乘再相加，就是那一格的值。]]**；",
-                    r"二階具體算法：\(\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}p&q\\r&s\end{bmatrix}=\begin{bmatrix}ap+br&aq+bs\\cp+dr&cq+ds\end{bmatrix}\)。"]},
+                    r"二階具體算法：\(\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}p&q\\r&s\end{bmatrix}=\begin{bmatrix}ap+br&aq+bs\\cp+dr&cq+ds\end{bmatrix}\)；",
+                    r"看「行」的意義：\(A\begin{bmatrix}1\\0\end{bmatrix}=A\) 的第 \(1\) 行、\(A\begin{bmatrix}0\\1\end{bmatrix}=\) 第 \(2\) 行——**方陣的第 \(j\) 行 ＝ 基底 \(e_j\) 送出去的像**（\(115\) 數B單3、線性變換都靠這個觀點）。"]},
                 {"label": r"性質與三大陷阱", "lines": [
                     r"有結合律 \((AB)C=A(BC)\)、分配律 \(A(B+C)=AB+AC\)，但 **沒有交換律**，一般 【\(AB\neq BA\)】，由此衍生三個常錯：",
                     r"① \(AB=O\) 【不一定】 有 \(A=O\) 或 \(B=O\)（矩陣有 [[零因子||例如 \(\begin{bmatrix}0&1\\0&0\end{bmatrix}\) 自乘就得零矩陣，但它本身不是零矩陣。這在實數絕不會發生，是矩陣特有的陷阱。]]）；",
