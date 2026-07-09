@@ -547,7 +547,7 @@ UNIT = {
                                   r"「與 \(P\) 距離為 \(|x-y|\) 的所有點」＝ **以 \(P\) 為圓心、半徑 \(r=|x-y|\) 的圓**。此圓落在正方形內 \(\Leftrightarrow P\) 到四邊的距離都 \(\ge r\)。",
                                   r"即 \(\min(x,\,1-x,\,y,\,1-y)\ge|x-y|\)。由 \(y=x\) 對稱，只算 \(x\ge y\) 部分再乘 \(2\)。",
                                   r"\(x\ge y\) 時 \(|x-y|=x-y\)，四式化簡後只剩 \(y\ge\dfrac{x}{2}\) 與 \(y\ge2x-1\)（另兩式自動成立），上界 \(y\le x\)。",
-                                  r"面積（\(x\ge y\) 部分）\(=\displaystyle\int_0^{2/3}\!\!\left(x-\dfrac x2\right)dx+\int_{2/3}^{1}\!\!\big(x-(2x-1)\big)dx=\dfrac19+\left(\dfrac12-\dfrac49\right)=\dfrac16\)。",
+                                  r"三條界線 \(y=x\)、\(y=\dfrac x2\)、\(y=2x-1\) 兩兩相交於 \((0,0)\)、\(\left(\dfrac23,\dfrac13\right)\)、\((1,1)\)——\(x\ge y\) 部分就是這個三角形。鞋帶公式（一頂點在原點）：面積 \(=\dfrac12\left|\dfrac23\cdot1-1\cdot\dfrac13\right|=\dfrac16\)。",
                                   r"故 \(R\) 面積 \(=2\times\dfrac16=\dfrac13\)。"]}},
             ],
             "selfcheck": {
