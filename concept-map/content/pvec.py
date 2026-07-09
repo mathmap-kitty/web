@@ -286,13 +286,13 @@ UNIT = {
             },
             "questions": [
                 {"tag": "109 數A · 單選 2", "level": "★★☆（中）", "core": "內積移項 → 垂直",
-                 "body": r"相異四點 \(A,B,C,D\)，已知內積 \(\overrightarrow{AB}\cdot\overrightarrow{AC}=\overrightarrow{AB}\cdot\overrightarrow{AD}\)。試選出正確的選項。",
+                 "body": r"**空間中** 有相異四點 \(A,B,C,D\)，已知內積 \(\overrightarrow{AB}\cdot\overrightarrow{AC}=\overrightarrow{AB}\cdot\overrightarrow{AD}\)。試選出正確的選項。",
                  "options": [
                      r"\(\overrightarrow{AB}\cdot\overrightarrow{CD}=0\)",
                      r"\(\overrightarrow{AC}=\overrightarrow{AD}\)",
                      r"\(\overrightarrow{AB}\) 與 \(\overrightarrow{CD}\) 平行",
                      r"\(\overrightarrow{AD}\cdot\overrightarrow{BC}=0\)",
-                     r"\(A,B,C,D\) 四點共平面"],
+                     r"\(A,B,C,D\) 四點在同一平面上"],
                  "solution": {"brief": r"(1)",
                               "steps": [
                                   r"移項：\(\overrightarrow{AB}\cdot\overrightarrow{AC}-\overrightarrow{AB}\cdot\overrightarrow{AD}=\overrightarrow{AB}\cdot(\overrightarrow{AC}-\overrightarrow{AD})=0\)。",
