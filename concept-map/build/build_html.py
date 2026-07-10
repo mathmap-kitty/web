@@ -438,24 +438,31 @@ def _solution_html(sol):
     return "".join(parts)
 
 
+def _core_block(q, kp=""):
+    """解題核心：預設收合（SOIL：先讓學生判斷題型，再點按對照）。
+    沿用 sol-btn/ts() 機制（按鈕後緊接其 .sol），revealAll/hideAll 自動連動。"""
+    if not q.get("core"):
+        return ""
+    if kp:  # 解題核心＝超連結，回上方對應考點複習
+        core = (f'<a class="core corelink" href="#{kp}" title="回上方複習這個考點">'
+                f'解題核心：{html_rich(q["core"])} <span class="core-go">↑ 複習考點</span></a>')
+    else:
+        core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>'
+    return ('<button class="sol-btn core-btn" data-s="🔍 先判斷：這題是哪一類？（點我對照）" '
+            'data-h="收合對照" onclick="ts(this)">🔍 先判斷：這題是哪一類？（點我對照）</button>'
+            f'<div class="sol core-sol">{core}</div>')
+
+
 def _question_html(q, first=False, qid="", kp=""):
     meta_style = ' style="margin-top:0"' if first else ""
-    if q.get("core"):
-        if kp:  # 解題核心＝超連結，回上方對應考點複習
-            core = (f'<a class="core corelink" href="#{kp}" title="回上方複習這個考點">'
-                    f'解題核心：{html_rich(q["core"])} <span class="core-go">↑ 複習考點</span></a>')
-        else:
-            core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>'
-    else:
-        core = ""
     meta = (f'<div class="q-meta"{meta_style}>'
             f'<span class="tag">{html_rich(q["tag"])}</span>'
-            f'<span class="lv">{q["level"]}</span>{_hard_badge(q["level"])}{core}</div>')
+            f'<span class="lv">{q["level"]}</span>{_hard_badge(q["level"])}</div>')
     body = f'<div class="q-body">{html_rich(q["body"])}{_table_html(q.get("table"))}{_opts_html(q.get("options"), _parse_answer(q.get("solution")))}</div>'
     btn = ('<button class="sol-btn" data-s="顯示解答" data-h="隱藏解答" '
            'onclick="ts(this)">顯示解答</button>')
     sol = f'<div class="sol">{_solution_html(q.get("solution"))}</div>'
-    inner = meta + body + btn + sol
+    inner = meta + body + _core_block(q, kp) + btn + sol
     # 每題包一層有 id 的外框（供錯題「重測」直達原題）＋ data-kp（對應考點）
     return f'<div class="qwrap" id="{qid}" data-kp="{kp}">{inner}</div>' if qid else inner
 
@@ -758,11 +765,10 @@ def _mixed_html(mixed):
 
 def _question_intro_html(q):
     """題組的共同題幹。"""
-    core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>' if q.get("core") else ""
     meta = (f'<div class="q-meta"><span class="tag">{html_rich(q["tag"])}</span>'
-            f'<span class="lv">{q["level"]}</span>{_hard_badge(q["level"])}{core}</div>')
+            f'<span class="lv">{q["level"]}</span>{_hard_badge(q["level"])}</div>')
     body = f'<div class="q-body">{html_rich(q["body"])}</div>'
-    return meta + body
+    return meta + body + _core_block(q)
 
 
 def _part0_html(p0):

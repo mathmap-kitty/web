@@ -148,6 +148,15 @@
   .q-meta a.core.corelink:hover{color:var(--maroon-d)}
   .q-meta a.core.corelink:hover .core-go{background:#dce8f6}
   .core-go{color:#3a5a9a; background:#eef4fb; border-radius:9px; padding:0 8px; font-weight:800; font-size:12px; white-space:nowrap; margin-left:5px}
+  /* A1 解題核心預設收合（SOIL：先判斷、再對照）——只用 class 專屬選擇器，勿誤傷 KaTeX */
+  .sol-btn.core-btn{background:#eef4fb; color:#3a5a9a; border-color:#c7d8ee; white-space:normal; text-align:left; margin-right:8px}
+  .sol-btn.core-btn:hover{background:#3a5a9a; color:#fff}
+  .sol-btn.core-btn.active{background:#3a5a9a; color:#fff}
+  .sol.core-sol{background:#f4f8fd; border-left-color:#3a5a9a; padding:9px 14px}
+  .core-sol .core{display:block; font-weight:600; color:#7a6258; font-size:13.5px}
+  .core-sol a.core.corelink{text-decoration:none; cursor:pointer}
+  .core-sol a.core.corelink:hover{color:var(--maroon-d)}
+  .core-sol a.core.corelink:hover .core-go{background:#dce8f6}
   .qwrap[id]{scroll-margin-top:64px}
   .q-body{margin:6px 0}
   .opts{margin:10px 0 2px; color:#333}
