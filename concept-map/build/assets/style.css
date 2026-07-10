@@ -157,6 +157,9 @@
   .core-sol a.core.corelink{text-decoration:none; cursor:pointer}
   .core-sol a.core.corelink:hover{color:var(--maroon-d)}
   .core-sol a.core.corelink:hover .core-go{background:#dce8f6}
+  /* A2 Part3 開頭「帶走一句話」回想區塊 */
+  .recall{margin-bottom:16px; padding-bottom:12px; border-bottom:1px dashed #e0d2cb}
+  .recall-hint{font-size:13px; color:#9a857c; margin:2px 0 4px}
   .qwrap[id]{scroll-margin-top:64px}
   .q-body{margin:6px 0}
   .opts{margin:10px 0 2px; color:#333}

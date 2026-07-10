@@ -814,9 +814,34 @@ def _part2_html(p2, slug=""):
             f'<small>{p2.get("note","")}</small></div><div class="card">{groups}</div>')
 
 
-def _part3_html(p3):
+def _takeaway_sentence(slug):
+    """從單元知識地圖（soil_maps.SLIDES 的 SVG）抽出「帶走一句話」核心句。
+    同源重用：句子只存在地圖 SVG 一份，Part 3 回想區塊直接引用，不另存副本。"""
+    try:
+        from soil_maps import SLIDES
+    except Exception:
+        return ""
+    svg = SLIDES.get(slug, "")
+    # 錨定底部白字標籤「帶走一句話」（副標題那次是灰紫字），取其後第一個深紅粗體字＝核心句
+    m = re.search(r'fill="#fff"[^>]*>帶走一句話</text>.*?fill="#6f1f33"[^>]*>([^<]+)</text>', svg)
+    if svg and not m:
+        print(f"  ⚠ [{slug}] 知識地圖 SVG 找不到「帶走一句話」句（格式變了？），Part 3 回想區塊未渲染")
+    return m.group(1) if m else ""
+
+
+def _part3_html(p3, slug=""):
     if not p3:
         return ""
+    # SOIL A2：考前速查開頭先「提取」核心句（回想），而非直接重讀
+    recall = ""
+    tk = _takeaway_sentence(slug)
+    if tk:
+        recall = ('<div class="recall">'
+                  '<span class="label">先回想：這個單元帶走的一句話是什麼？</span>'
+                  '<p class="recall-hint">先在心裡把它說完整，再點開對照——回想一次，勝過重讀十次。</p>'
+                  '<button class="sol-btn" data-s="回想好了，點我對照" data-h="收合" '
+                  'onclick="ts(this)">回想好了，點我對照</button>'
+                  f'<div class="sol"><b>{tk}</b></div></div>')
     rows = ""
     for r in p3["ref_table"]:
         rows += f'<tr><td>{html_rich(r["k"])}</td><td>{html_rich(r["v"])}</td></tr>'
@@ -828,7 +853,7 @@ def _part3_html(p3):
     chk = (f'<span class="label">3-2　常見誤解總清單（考前自我檢查）</span>'
            f'<ol class="checklist">{checks}</ol>')
     return ('<div class="part" id="part3">Part 3　快速複習：考前翻這頁就好</div>'
-            f'<div class="card">{ref}{chk}</div>')
+            f'<div class="card">{recall}{ref}{chk}</div>')
 
 
 def _toolbar(unit, units):
@@ -906,7 +931,7 @@ def build_html(unit, units):
             f'{kps_html}'
             f'{_mixed_html(unit.get("mixed"))}'
             f'{_part2_html(unit.get("part2"), unit["slug"])}'
-            f'{_part3_html(unit.get("part3"))}'
+            f'{_part3_html(unit.get("part3"), unit["slug"])}'
             f'<div class="foot">{unit.get("foot","")}</div>')
     report_btn = _report_btn(unit)
     og_title = unit.get("page_title", unit["title"])
