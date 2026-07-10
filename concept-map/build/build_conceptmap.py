@@ -190,8 +190,11 @@ def _svg_dep():
         dx = max(40, (x2 - x1) * 0.45)
         d = f"M{x1:.0f},{y1:.0f} C{x1+dx:.0f},{y1:.0f} {x2-dx:.0f},{y2:.0f} {x2:.0f},{y2:.0f}"
         parts.append(f'<path d="{d}" fill="none" stroke="#cdbcc4" stroke-width="1.4" marker-end="url(#ar)" opacity="0.85"/>')
-        parts.append(f'<path d="{d}" fill="none" stroke="transparent" stroke-width="14" style="cursor:help">'
-                     f'<title>{LABEL[a]} → {LABEL[b]}：{why}</title></path>')
+        why_full = f'{LABEL[a]} → {LABEL[b]}：{why}'
+        why_attr = why_full.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
+        parts.append(f'<path d="{d}" fill="none" stroke="transparent" stroke-width="14" style="cursor:help" '
+                     f'class="edgehit" data-why="{why_attr}">'
+                     f'<title>{why_full}</title></path>')
     # nodes
     for nid, label, col, cy, unit in NODES:
         x, y, w, h, cx, _ = POS[nid]
@@ -329,7 +332,7 @@ def _legend_chips():
 
 
 def _legend():
-    return f'<div class="cm-legend"><b>顏色＝近十年大考份量（加權題數）：</b>{_legend_chips()}<span class="cm-note">越紅＝考越重；箭頭＝「先會 → 才好學」（<b>滑過箭頭看「為什麼需要」</b>）；最右欄＝大考高頻、反推起點（粗框，可點進單元）</span></div>'
+    return f'<div class="cm-legend"><b>顏色＝近十年大考份量（加權題數）：</b>{_legend_chips()}<span class="cm-note">越紅＝考越重；箭頭＝「先會 → 才好學」（<b>點一下或滑過箭頭，看「為什麼需要」</b>）；最右欄＝大考高頻、反推起點（粗框，可點進單元）</span></div>'
 
 
 def build():
@@ -345,8 +348,12 @@ def build():
   .cm-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
   .cm-tabs button{background:#fff;color:var(--maroon-d);border:1.5px solid var(--maroon);border-radius:22px;padding:7px 18px;font-size:14.5px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s}
   .cm-tabs button.on{background:var(--maroon);color:#fff}
-  .cm-view{display:none}
+  .cm-view{display:none; scroll-margin-top:72px}
   .cm-view.on{display:block}
+  /* B2 箭頭說明改可點（手機/平板）：浮動說明框 */
+  #edgetip{position:absolute; z-index:99; display:none; background:#3a2b30; color:#fff;
+    padding:8px 12px; border-radius:8px; font-size:12.5px; line-height:1.6;
+    box-shadow:0 4px 14px rgba(0,0,0,.25)}
   .cm-legend{background:#fff7ef;border:1px dashed #e0b9a6;border-radius:12px;padding:9px 16px;margin:8px 0 12px;font-size:13px;color:#6b5249;line-height:1.9}
   .cm-legend b{color:var(--maroon)}
   .cm-chip{display:inline-flex;align-items:center;gap:4px;margin:0 6px}
@@ -423,7 +430,23 @@ def build():
 </div>"""
     js = ("function cmTab(b,v){document.querySelectorAll('.cm-tabs button').forEach(x=>x.classList.remove('on'));"
           "b.classList.add('on');document.querySelectorAll('.cm-view').forEach(x=>x.classList.remove('on'));"
-          "document.getElementById('v-'+v).classList.add('on');}"
+          "var el=document.getElementById('v-'+v);el.classList.add('on');"
+          # B2 切視圖若目前捲得比新視圖頂端深，回捲到頂端貼齊 topbar 下緣，地圖上緣不被蓋
+          "var tb=document.querySelector('.cm-topbar');"
+          "var top=el.getBoundingClientRect().top+pageYOffset-((tb?tb.offsetHeight:0)+10);"
+          "if(pageYOffset>top)window.scrollTo(0,Math.max(0,top));}"
+          # B2 箭頭「為什麼需要」：點/觸控顯示浮動說明（hover 的 <title> 保留）；點其他處關閉
+          "document.addEventListener('click',function(e){"
+          "var t=e.target&&e.target.closest?e.target.closest('.edgehit'):null;"
+          "var tip=document.getElementById('edgetip');"
+          "if(t){if(!tip){tip=document.createElement('div');tip.id='edgetip';document.body.appendChild(tip);}"
+          "tip.textContent=t.dataset.why;tip.style.display='block';"
+          "tip.style.maxWidth=Math.min(320,window.innerWidth-24)+'px';"
+          "var m=12,x=e.pageX+m,y=e.pageY+m,r=tip.getBoundingClientRect();"
+          "if(e.clientX+m+r.width>window.innerWidth)x=Math.max(6,e.pageX-r.width-m);"
+          "if(e.clientY+m+r.height>window.innerHeight)y=e.pageY-r.height-m;"
+          "tip.style.left=x+'px';tip.style.top=y+'px';e.stopPropagation();}"
+          "else if(tip)tip.style.display='none';});"
           "var RK='mm-read-kps';"
           "var KPN={trig:7,prob:6,space:6,poly:5,linecir:5,explog:5,pvec:5,matrix:5,data:4,seq:4,numexpr:6};"
           "function kk(u){var a=[];for(var i=1;i<=KPN[u];i++)a.push(u+':kp'+i);return a;}"

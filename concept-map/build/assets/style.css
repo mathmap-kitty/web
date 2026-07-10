@@ -24,6 +24,12 @@
   }
   .toolbar button:hover{background:#ffe6ee}
   .toolbar .nav-select{background:#fff; color:var(--maroon-d); border:none; border-radius:20px; padding:6px 12px; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer; max-width:44vw}
+  /* B2 header 瘦身：下捲收合成單排（≤60px），上捲或點擊展開；跳錨點時強制收合固定遮擋高度 */
+  .tb-caret{display:none; font-size:12.5px; opacity:.85; white-space:nowrap}
+  .toolbar.min{cursor:pointer; padding-top:8px; padding-bottom:8px}
+  .toolbar.min > *{display:none}
+  .toolbar.min > .t-title{display:inline; margin-right:8px}
+  .toolbar.min > .tb-caret{display:inline}
   /* 手機：壓縮 sticky 工具列（原 ~138px 占 17% 螢幕）；tb-home 是內聯樣式故需 !important */
   @media(max-width:560px){
     .toolbar{padding:6px 10px; gap:6px}

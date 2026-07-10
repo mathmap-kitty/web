@@ -18,6 +18,38 @@
     document.querySelectorAll('.sol').forEach(function(s){ s.classList.remove('open'); });
     document.querySelectorAll('.sol-btn').forEach(function(b){ b.classList.remove('active'); b.textContent=b.dataset.s||'顯示解答'; });
   }
+  // B2 置頂工具列瘦身：下捲收合成單排、上捲或點擊展開；
+  // 錨點跳轉一律先收合再 scrollIntoView 重新定位，讓 scroll-margin-top:64px 兩態都不遮字
+  (function(){
+    var tb = document.querySelector('.toolbar');
+    if (!tb) return;
+    var lastY = window.pageYOffset, lock = 0;
+    function setMin(on){ tb.classList.toggle('min', on); }
+    window.addEventListener('scroll', function(){
+      var y = window.pageYOffset;
+      if (Date.now() < lock) { lastY = y; return; }  // 程式跳轉中：維持收合
+      if (y < 40) setMin(false);
+      else if (y > lastY + 6) setMin(true);
+      else if (y < lastY - 6) setMin(false);
+      lastY = y;
+    }, {passive: true});
+    tb.addEventListener('click', function(){
+      if (tb.classList.contains('min')) setMin(false);
+    });
+    function jumpFix(){
+      var id = location.hash.slice(1);
+      var el = id && document.getElementById(id);
+      if (!el) return;
+      setMin(true); lock = Date.now() + 900;
+      requestAnimationFrame(function(){ el.scrollIntoView(); });
+    }
+    window.addEventListener('hashchange', jumpFix);
+    if (location.hash) {
+      if (document.readyState === 'loading')
+        document.addEventListener('DOMContentLoaded', jumpFix);
+      else jumpFix();
+    }
+  })();
   // Part 0 直覺挑戰：點選直覺答案 → 標示正解／誤答 → 展開「為什麼」說明（只作答一次）
   function chal(btn){
     var box = btn.closest('.chal');

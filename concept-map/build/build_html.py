@@ -918,6 +918,7 @@ def _toolbar(unit, units):
     kp_opts.append('<option value="part2">Part 2 · 模擬實戰</option>')
     kp_opts.append('<option value="part3">Part 3 · 考前速查</option>')
     return (f'<div class="toolbar"><span class="t-title">{unit["title"]}</span>'
+            '<span class="tb-caret">▾ 展開選單</span>'
             f'{HOME_LINK}'
             f'<select class="nav-select" onchange="if(this.value){{location.href=this.value;}}">'
             f'{"".join(unit_opts)}</select>'
