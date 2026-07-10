@@ -18,6 +18,19 @@
     document.querySelectorAll('.sol').forEach(function(s){ s.classList.remove('open'); });
     document.querySelectorAll('.sol-btn').forEach(function(b){ b.classList.remove('active'); b.textContent=b.dataset.s||'顯示解答'; });
   }
+  // Part 0 直覺挑戰：點選直覺答案 → 標示正解／誤答 → 展開「為什麼」說明（只作答一次）
+  function chal(btn){
+    var box = btn.closest('.chal');
+    if (!box || box.classList.contains('done')) return;
+    box.classList.add('done');
+    box.querySelectorAll('.chal-opt').forEach(function(o){
+      o.disabled = true;
+      if (o.dataset.ok === '1') o.classList.add('right');
+    });
+    if (btn.dataset.ok !== '1') btn.classList.add('wrong');
+    var rv = box.querySelector('.chal-reveal');
+    if (rv) rv.classList.add('open');
+  }
   // 附註浮動說明：點按開關，一次只開一個，點別處關閉；並自動避免超出畫面被切到
   function tn(ev, el){
     ev.stopPropagation();

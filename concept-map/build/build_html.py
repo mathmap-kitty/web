@@ -771,6 +771,28 @@ def _question_intro_html(q):
     return meta + body + _core_block(q)
 
 
+def _challenge_html(ch):
+    """B1 直覺挑戰（SOIL：製造認知落差）。content 的 part0 提供 challenge 資料才渲染。
+    三步固定：點直覺答案 → 揭示正解 → 一句話說明＋錨點連到考點。"""
+    if not ch:
+        return ""
+    kpid = ch.get("kp", "")
+    kpnum = re.sub(r"\D", "", kpid)
+    opts = "".join(
+        f'<button class="chal-opt" data-ok="{1 if i == ch["answer"] else 0}" '
+        f'onclick="chal(this)">{html_rich(o)}</button>'
+        for i, o in enumerate(ch["options"]))
+    link = (f'<a class="chal-go" href="#{kpid}">→ 前往考點 {kpnum} 看懂為什麼</a>'
+            if kpid else "")
+    return ('<div class="card chal">'
+            '<span class="label">🎯 直覺挑戰：先猜猜看</span>'
+            f'<p class="chal-q">{html_rich(ch["q"])}</p>'
+            f'<div class="chal-opts">{opts}</div>'
+            '<div class="chal-reveal">'
+            f'<p><b>正解：{html_rich(ch["options"][ch["answer"]])}</b>　{html_rich(ch["reveal"])}</p>'
+            f'{link}</div></div>')
+
+
 def _part0_html(p0):
     if not p0:
         return ""
@@ -790,6 +812,7 @@ def _part0_html(p0):
     return (f'<div class="part" id="part0">Part 0　引起動機：{heading}'
             f'<small>{sub}</small></div>'
             f'{opener}'
+            f'{_challenge_html(p0.get("challenge"))}'
             '<div class="card">'
             '<span class="label">近十年出題趨勢（106–115）</span>'
             f"{table}"
