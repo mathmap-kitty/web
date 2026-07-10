@@ -523,7 +523,11 @@ QUIZ_JS = (
     "fb.textContent=ok?'✓ 答對了！':'✗ 答錯了，正解見綠色選項';fb.className='opt-fb '+(ok?'ok':'no');bump(ok);"
     # 概念小測（.kpcheck）：答對自動標『我懂了』、答錯『待複習』（走理解確認，不計入練習成績）；
     # 其餘（歷屆題＋模擬實戰）計入練習成績 persistQuiz。
-    "var kc=q.closest('.kpcheck');if(kc){if(typeof kpMastery==='function')kpMastery(kc.dataset.kp,ok?'ok':'review',true);}else{persistQuiz(qi,ok);logWrong(qi,ok,q);}}"
+    "var kc=q.closest('.kpcheck');if(kc){q.dataset.done='1';q.dataset.ok=ok?'1':'0';"
+    "var kqs=[].slice.call(kc.querySelectorAll('.opts.quiz'));"
+    "if(kqs.every(function(x){return x.dataset.done==='1';})&&typeof kpMastery==='function'){"
+    "kpMastery(kc.dataset.kp,kqs.every(function(x){return x.dataset.ok==='1';})?'ok':'review',true);}}"
+    "else{persistQuiz(qi,ok);logWrong(qi,ok,q);}}"
     "if(multi){var ck=q.querySelector('.opt-check');"
     "opts.forEach(function(b){b.addEventListener('click',function(){if(done)return;var i=num(b.dataset.i),k=sel.indexOf(i);"
     "if(k>=0){sel.splice(k,1);b.classList.remove('sel');}else{sel.push(i);b.classList.add('sel');}});});"
@@ -588,12 +592,15 @@ def _kpcheck_html(kp, slug=""):
         return ""
     body = ""
     if chk:  # 概念選擇題 → 即時批改（正解須存在才互動；answer 為 1-based list）
-        ans = chk.get("answer")
-        why = f'<div class="kc-why">{html_rich(chk["why"])}</div>' if chk.get("why") else ""
-        why_btn = ('<button class="sol-btn mini" data-s="為什麼" data-h="收合" onclick="ts(this)">為什麼</button>'
-                   f'<div class="sol">{why}</div>') if why else ""
-        body = (f'<div class="kc-q">{html_rich(chk["q"])}</div>'
-                f'{_opts_html(chk["options"], ans)}{why_btn}')
+        # C1 微集：可為 2 題 list（辨析＋變情境）；全部作答完且全對才自動標「我懂了」（QUIZ_JS）
+        for c in (chk if isinstance(chk, list) else [chk]):
+            ans = c.get("answer")
+            why = f'<div class="kc-why">{html_rich(c["why"])}</div>' if c.get("why") else ""
+            why_btn = ('<button class="sol-btn mini" data-s="為什麼" data-h="收合" onclick="ts(this)">為什麼</button>'
+                       f'<div class="sol">{why}</div>') if why else ""
+            tag = f'<div class="kc-tag">{html_rich(c["tag"])}</div>' if c.get("tag") else ""
+            body += (f'{tag}<div class="kc-q">{html_rich(c["q"])}</div>'
+                     f'{_opts_html(c["options"], ans)}{why_btn}')
     elif sc:  # 退回：原 1 分鐘自我檢查（看答案揭曉）
         ans = "".join(f'<p>{html_rich(x)}</p>' for x in sc["a"]) if isinstance(sc["a"], (list, tuple)) \
             else f'<p>{html_rich(sc["a"])}</p>'

@@ -182,6 +182,8 @@
   .chal-reveal p{margin:.2em 0 .4em}
   .chal-go{display:inline-block; font-weight:800; color:#3a5a9a; text-decoration:none}
   .chal-go:hover{color:var(--maroon-d)}
+  /* C1 確認理解 2 題微集：題型標籤 */
+  .kc-tag{margin-top:12px; font-weight:800; font-size:13px; color:var(--maroon-d)}
   .qwrap[id]{scroll-margin-top:64px}
   .q-body{margin:6px 0}
   .opts{margin:10px 0 2px; color:#333}
