@@ -346,6 +346,8 @@ def build():
   .cm-hero h1{color:var(--maroon);font-size:25px;margin:.1em 0;letter-spacing:1px}
   .cm-hero p{color:#7a6a63;font-size:14.5px;margin:.3em auto;max-width:760px}
   .cm-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
+  .cm-tabhint{text-align:center;font-size:12.5px;color:#9a857c;margin:0 0 8px}
+  .cm-tabhint b{color:var(--maroon-d)}
   .cm-tabs button{background:#fff;color:var(--maroon-d);border:1.5px solid var(--maroon);border-radius:22px;padding:7px 18px;font-size:14.5px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s}
   .cm-tabs button.on{background:var(--maroon);color:#fff}
   .cm-view{display:none; scroll-margin-top:72px}
@@ -408,6 +410,7 @@ def build():
 <button class="on" data-v="dep" onclick="cmTab(this,'dep')">② 概念依賴鏈</button>
 <button data-v="heat" onclick="cmTab(this,'heat')">① 大考熱度地圖</button>
 <button data-v="net" onclick="cmTab(this,'net')">③ 跨單元概念網</button></div>
+<div class="cm-tabhint">建議看法：先 <b>①</b> 熱度知輕重 → 再 <b>②</b> 依賴鏈排順序 → 最後 <b>③</b> 概念網看綁考（預設開 ②，最常用）</div>
 
 <div class="cm-view on" id="v-dep">
 {_legend()}
