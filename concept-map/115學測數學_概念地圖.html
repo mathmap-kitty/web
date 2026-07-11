@@ -25,6 +25,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <style>:root{
     --ink:#2b2b2b; --maroon:#8c2740; --maroon-d:#6f1f33; --rose:#b03a5b;
+    --accent:#b45309; /* D2 強調色：只給「判斷關鍵」粗體字（酒紅=結構、#c0392b=答案） */
     --ans:#c0392b; --btn:#1f6f78; --btn-bg:#e9f5f4; --btn-bd:#1f6f78;
     --card:#ffffff; --page:#f7f2ee; --callout:#fdf3ee; --strat:#eef6f1; --line:#e7dcd6;
   }
@@ -401,6 +402,9 @@
     border:1.5px solid #d6a3b4; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:700;
     text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.15)}
   .report-btn:hover{background:#fbeef2; border-color:var(--rose)}
+  /* D2 強調色統一（老師核可樣張後全站套用）：琥珀橘＝判斷關鍵。
+     只染 b 標籤（KaTeX 不產生 b，避開後代 span 雷）；置於檔尾以覆蓋前面的 .callout b 酒紅 */
+  ul.points b, .sol b, .kc-why b, .chal-reveal b, table.mis td.cor b, .callout b{color:var(--accent)}
 
 
   .cm-topbar{position:sticky;top:0;z-index:50;background:rgba(140,39,64,.97);color:#fff;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 18px;box-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}

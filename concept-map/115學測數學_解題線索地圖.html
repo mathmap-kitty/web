@@ -29,6 +29,7 @@
 <style>
 :root{
     --ink:#2b2b2b; --maroon:#8c2740; --maroon-d:#6f1f33; --rose:#b03a5b;
+    --accent:#b45309; /* D2 強調色：只給「判斷關鍵」粗體字（酒紅=結構、#c0392b=答案） */
     --ans:#c0392b; --btn:#1f6f78; --btn-bg:#e9f5f4; --btn-bd:#1f6f78;
     --card:#ffffff; --page:#f7f2ee; --callout:#fdf3ee; --strat:#eef6f1; --line:#e7dcd6;
   }
@@ -53,6 +54,20 @@
   }
   .toolbar button:hover{background:#ffe6ee}
   .toolbar .nav-select{background:#fff; color:var(--maroon-d); border:none; border-radius:20px; padding:6px 12px; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer; max-width:44vw}
+  /* B2 header 瘦身：下捲收合成單排（≤60px），上捲或點擊展開；跳錨點時強制收合固定遮擋高度 */
+  .tb-caret{display:none; font-size:12.5px; opacity:.85; white-space:nowrap}
+  .toolbar.min{cursor:pointer; padding-top:8px; padding-bottom:8px}
+  .toolbar.min > *{display:none}
+  .toolbar.min > .t-title{display:inline; margin-right:8px}
+  .toolbar.min > .tb-caret{display:inline}
+  /* 手機：壓縮 sticky 工具列（原 ~138px 占 17% 螢幕）；tb-home 是內聯樣式故需 !important */
+  @media(max-width:560px){
+    .toolbar{padding:6px 10px; gap:6px}
+    .toolbar .t-title{font-size:15px}
+    .toolbar button{padding:4px 10px; font-size:12.5px}
+    .toolbar .nav-select{padding:4px 8px; font-size:12.5px; max-width:42vw}
+    .toolbar .tb-home{padding:2px 8px !important; font-size:11.5px !important}
+  }
   .card[id], .part[id]{scroll-margin-top:64px}
   .hero{padding:26px 0 6px; text-align:center}
   .hero h1{color:var(--maroon); margin:.1em 0; font-size:27px; letter-spacing:1px}
@@ -169,6 +184,36 @@
   .q-meta a.core.corelink:hover{color:var(--maroon-d)}
   .q-meta a.core.corelink:hover .core-go{background:#dce8f6}
   .core-go{color:#3a5a9a; background:#eef4fb; border-radius:9px; padding:0 8px; font-weight:800; font-size:12px; white-space:nowrap; margin-left:5px}
+  /* A1 解題核心預設收合（SOIL：先判斷、再對照）——只用 class 專屬選擇器，勿誤傷 KaTeX */
+  .sol-btn.core-btn{background:#eef4fb; color:#3a5a9a; border-color:#c7d8ee; white-space:normal; text-align:left; margin-right:8px}
+  .sol-btn.core-btn:hover{background:#3a5a9a; color:#fff}
+  .sol-btn.core-btn.active{background:#3a5a9a; color:#fff}
+  .sol.core-sol{background:#f4f8fd; border-left-color:#3a5a9a; padding:9px 14px}
+  .core-sol .core{display:block; font-weight:600; color:#7a6258; font-size:13.5px}
+  .core-sol a.core.corelink{text-decoration:none; cursor:pointer}
+  .core-sol a.core.corelink:hover{color:var(--maroon-d)}
+  .core-sol a.core.corelink:hover .core-go{background:#dce8f6}
+  /* A2 Part3 開頭「帶走一句話」回想區塊 */
+  .recall{margin-bottom:16px; padding-bottom:12px; border-bottom:1px dashed #e0d2cb}
+  .recall-hint{font-size:13px; color:#9a857c; margin:2px 0 4px}
+  /* B1 Part0 直覺挑戰（先猜 → 揭示 → 為什麼）——全 class 專屬選擇器 */
+  .chal-q{font-size:15.5px; margin:6px 0 10px}
+  .chal-opts{display:flex; flex-wrap:wrap; gap:10px}
+  .chal-opt{padding:7px 18px; cursor:pointer; background:#fff; color:var(--ink);
+    border:1.5px solid #d9c8c0; border-radius:20px; font-size:14.5px; font-weight:700;
+    font-family:inherit; transition:.15s}
+  .chal-opt:hover{border-color:var(--maroon); color:var(--maroon)}
+  .chal.done .chal-opt{cursor:default; opacity:.55}
+  .chal.done .chal-opt.right{opacity:1; background:#e8f5ee; border-color:#2e8b57; color:#20744a}
+  .chal.done .chal-opt.wrong{opacity:1; background:#fdecea; border-color:#c0392b; color:#c0392b}
+  .chal-reveal{display:none; margin-top:12px; padding:10px 14px; background:#fdf6ec;
+    border-left:4px solid #d99a2b; border-radius:0 8px 8px 0; font-size:14.5px}
+  .chal-reveal.open{display:block}
+  .chal-reveal p{margin:.2em 0 .4em}
+  .chal-go{display:inline-block; font-weight:800; color:#3a5a9a; text-decoration:none}
+  .chal-go:hover{color:var(--maroon-d)}
+  /* C1 確認理解 2 題微集：題型標籤 */
+  .kc-tag{margin-top:12px; font-weight:800; font-size:13px; color:var(--maroon-d)}
   .qwrap[id]{scroll-margin-top:64px}
   .q-body{margin:6px 0}
   .opts{margin:10px 0 2px; color:#333}
@@ -361,6 +406,9 @@
     border:1.5px solid #d6a3b4; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:700;
     text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.15)}
   .report-btn:hover{background:#fbeef2; border-color:var(--rose)}
+  /* D2 強調色統一（老師核可樣張後全站套用）：琥珀橘＝判斷關鍵。
+     只染 b 標籤（KaTeX 不產生 b，避開後代 span 雷）；置於檔尾以覆蓋前面的 .callout b 酒紅 */
+  ul.points b, .sol b, .kc-why b, .chal-reveal b, table.mis td.cor b, .callout b{color:var(--accent)}
 
 
   .cl-topbar{position:sticky;top:0;z-index:50;background:rgba(140,39,64,.97);color:#fff;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 18px;box-shadow:0 2px 10px rgba(0,0,0,.15)}
