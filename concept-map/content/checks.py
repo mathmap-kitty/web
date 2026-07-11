@@ -11,32 +11,67 @@ answer 用 1-based list；**全部題目作答完且全對**才自動標「我�
 
 CHECKS = {
     # ── 矩陣 ──────────────────────────────────────────────
-    ("matrix", "kp1"): {
-        "q": r"設 \(A\) 為 \(2\times3\) 矩陣、\(B\) 為 \(3\times4\) 矩陣，則乘積 \(AB\) 是幾階矩陣？",
-        "options": [r"\(2\times4\)", r"\(3\times3\)", r"\(4\times2\)", r"無法相乘"],
-        "answer": [1],
-        "why": r"「前列 × 後行」：\((2\times\mathbf3)(\mathbf3\times4)\) 中間的 \(3\) 相同才可乘，結果取外側 \(2\times4\)。"},
-    ("matrix", "kp2"): {
-        "q": r"若方陣 \(A\) 滿足 \(A^2=I\)，則 \(A^{100}\) 為何？",
-        "options": [r"\(I\)", r"\(A\)", r"\(A^2\)", r"\(100A\)"],
-        "answer": [1],
-        "why": r"\(A^{100}=(A^2)^{50}=I^{50}=I\)。求高次方先找「乘幾次會回到 \(I\) 或出現循環」。"},
-    ("matrix", "kp3"): {
-        "q": r"\(2\times2\) 方陣 \(A=\begin{pmatrix}a&b\\c&d\end{pmatrix}\) 可逆（有反方陣）的條件是？",
-        "options": [r"\(ad-bc\neq0\)", r"\(ad-bc=0\)", r"\(a+d\neq0\)", r"\(abcd\neq0\)"],
-        "answer": [1],
-        "why": r"行列式 \(\det A=ad-bc\neq0\) 才有反方陣，\(A^{-1}=\dfrac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}\)。"},
-    ("matrix", "kp4"): {
-        "q": r"二元一次聯立方程組「恰有唯一解」的條件（用係數行列式判斷）是？",
-        "options": [r"係數行列式 \(\neq0\)", r"係數行列式 \(=0\)", r"常數項都為 \(0\)", r"兩式係數成比例"],
-        "answer": [1],
-        "why": r"係數行列式 \(\neq0\Leftrightarrow\) 兩直線不平行 \(\Leftrightarrow\) 恰一交點（唯一解）；\(=0\) 則無解或無限多解。"},
-    ("matrix", "kp5"): {
-        "q": r"將平面上每一點對 \(x\) 軸鏡射的線性變換矩陣為何？",
-        "options": [r"\(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)", r"\(\begin{pmatrix}-1&0\\0&1\end{pmatrix}\)",
-                    r"\(\begin{pmatrix}0&1\\1&0\end{pmatrix}\)", r"\(\begin{pmatrix}0&-1\\1&0\end{pmatrix}\)"],
-        "answer": [1],
-        "why": r"對 \(x\) 軸鏡射 \((x,y)\to(x,-y)\)；矩陣兩行 ＝ 基底 \((1,0),(0,1)\) 的像 \((1,0),(0,-1)\)。"},
+    # ── C1：每考點 2 題微集（第1題辨析＋第2題變敘述/變情境），老師已審核（2026-07-10）──
+    ("matrix", "kp1"): [
+        {"tag": r"第 1 題｜辨析：可以乘嗎？幾階？",
+         "q": r"\(A\) 是 \(2\times3\) 階、\(B\) 是 \(3\times4\) 階——\(AB\) 可以乘嗎？結果幾階？",
+         "options": [r"不可以", r"可以，結果 \(2\times4\)——「前行＝後列、外圍定階」",
+                     r"可以，結果 \(3\times3\)", r"可以，結果 \(2\times3\)"],
+         "answer": [2],
+         "why": r"可乘條件＝**前者行數（\(3\)）＝後者列數（\(3\)）**；成品階數＝外圍 \(2\times4\)。"},
+        {"tag": r"第 2 題｜變敘述：換個面貌再做一次",
+         "q": r"\(\begin{bmatrix}2&0\\1&3\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=\) ？",
+         "options": [r"\(\begin{bmatrix}2\\7\end{bmatrix}\)", r"\(\begin{bmatrix}2\\6\end{bmatrix}\)",
+                     r"\(\begin{bmatrix}4\\6\end{bmatrix}\)", r"\(\begin{bmatrix}1\\6\end{bmatrix}\)"],
+         "answer": [1],
+         "why": r"左列右行內積：\((2,0)\cdot(1,2)=2\)、\((1,3)\cdot(1,2)=7\)；矩陣 × 行向量還是行向量。"}],
+    ("matrix", "kp2"): [
+        {"tag": r"第 1 題｜辨析：先做什麼最省力？",
+         "q": r"要算 \(A^{50}\)——先做什麼最省力？",
+         "options": [r"直接乘 \(50\) 次", r"每個元素各自 \(50\) 次方",
+                     r"先求反方陣", r"先算 \(A^2\)，看是否為 \(kI\) 或 \(pA+qI\)"],
+         "answer": [4],
+         "why": r"高次方反射＝**先算 \(A^2\) 找降冪**（\(kI\) 或凱萊–漢米頓 \(pA+qI\)）；「元素各自次方」是本單元最經典誤解。"},
+        {"tag": r"第 2 題｜變敘述：換個面貌再做一次",
+         "q": r"\(B=\begin{bmatrix}0&2\\2&0\end{bmatrix}\)。求 \(B^4\)。",
+         "options": [r"\(16I\)", r"\(\begin{bmatrix}0&16\\16&0\end{bmatrix}\)",
+                     r"\(8I\)", r"\(\begin{bmatrix}0&8\\8&0\end{bmatrix}\)"],
+         "answer": [1],
+         "why": r"\(B^2=4I\Rightarrow B^4=(4I)^2=16I\)；答 (2) 是以為「反對角會一直保持」——先算 \(B^2\) 就看穿了。"}],
+    ("matrix", "kp3"): [
+        {"tag": r"第 1 題｜辨析：可逆的條件？",
+         "q": r"二階方陣 \(A=\begin{bmatrix}a&b\\c&d\end{bmatrix}\) **有反方陣**的條件？",
+         "options": [r"\(a\neq0\)", r"所有元素非零", r"\(ad-bc\neq0\)", r"\(A\) 是對角矩陣"],
+         "answer": [3],
+         "why": r"可逆 \(\Leftrightarrow\det=ad-bc\neq0\)；「元素全非零」既不充分也不必要。"},
+        {"tag": r"第 2 題｜變敘述：換個面貌再做一次",
+         "q": r"求 \(\begin{bmatrix}3&1\\5&2\end{bmatrix}\) 的反方陣。",
+         "options": [r"\(\begin{bmatrix}2&1\\5&3\end{bmatrix}\)", r"\(\begin{bmatrix}2&-1\\-5&3\end{bmatrix}\)",
+                     r"\(\begin{bmatrix}3&5\\1&2\end{bmatrix}\)", r"\(\begin{bmatrix}-2&1\\5&-3\end{bmatrix}\)"],
+         "answer": [2],
+         "why": r"主對角**對調**、副對角**變號**、除以 \(\det=6-5=1\)；(1) 是忘了變號。"}],
+    ("matrix", "kp4"): [
+        {"tag": r"第 1 題｜辨析：這一列代表什麼？",
+         "q": r"列運算化簡後，最末列出現 \(\left[\,0\;0\;0\mid5\,\right]\)——代表什麼？",
+         "options": [r"無解——\(0=5\) 矛盾", r"無限多解", r"恰有一解", r"\(x=5\)"],
+         "answer": [1],
+         "why": r"\([\,0\,0\,0\mid k\,]\)（\(k\neq0\)）＝矛盾式 → **無解**；\([\,0\,0\,0\mid0\,]\) 才可能無限多解——看最末列是判別關鍵。"},
+        {"tag": r"第 2 題｜變情境：換個場景再做一次",
+         "q": r"文具店：\(2\) 枝筆＋\(1\) 本筆記本 \(65\) 元；\(1\) 枝筆＋\(1\) 本筆記本 \(45\) 元。\(1\) 枝筆多少元？",
+         "options": [r"\(25\)", r"\(45\)", r"\(15\)", r"\(20\)"],
+         "answer": [4],
+         "why": r"兩式**相減**（列運算的精神）：筆 \(=65-45=20\)（筆記本 \(25\)）；解聯立就是矩陣消去的日常版。"}],
+    ("matrix", "kp5"): [
+        {"tag": r"第 1 題｜辨析：面積變幾倍？",
+         "q": r"圖形經矩陣 \(M\) 變換後，面積變為幾倍？",
+         "options": [r"\(\det M\) 倍（可為負）", r"\(|\det M|\) 倍", r"\(M\) 的元素和倍", r"不變"],
+         "answer": [2],
+         "why": r"面積黃金律＝**\(|\det M|\)**——行列式可能為負（鏡射 \(\det=-1\)），面積要取絕對值。"},
+        {"tag": r"第 2 題｜變敘述：換個面貌再做一次",
+         "q": r"三角形面積 \(5\)，經 \(M=\begin{bmatrix}2&1\\1&2\end{bmatrix}\) 變換後面積是多少？",
+         "options": [r"\(10\)", r"\(5\)", r"\(15\)", r"\(30\)"],
+         "answer": [3],
+         "why": r"\(|\det M|=|4-1|=3\) → \(5\times3=15\)；答 \(10\) 是只乘了對角線其中一個 \(2\)。"}],
 
     # ── 數與式 ────────────────────────────────────────────
     ("numexpr", "kp1"): {
