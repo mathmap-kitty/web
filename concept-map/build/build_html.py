@@ -369,10 +369,12 @@ def og_meta(title, desc, page_file=""):
             f'<meta name="twitter:image" content="{OG_IMAGE}">\n'
             f'{FAVICON_HTML}')
 
-# 頁尾隱私說明（GA／Clarity 流量統計告知），全站一致；要改文案：這裡＋三個靜態檔（index、概念地圖、脈絡地圖）。
+# 頁尾隱私說明（GA／Clarity 流量統計告知）＋版權列，全站一致；要改文案：這裡＋靜態檔（兩個 index、exam、404）。
 PRIVACY_HTML = ('<div style="text-align:center;font-size:12px;color:#9a857c;'
-                'padding:16px 14px 28px;line-height:1.7">本站使用 Google Analytics 與 '
-                'Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>')
+                'padding:16px 14px 8px;line-height:1.7">本站使用 Google Analytics 與 '
+                'Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>'
+                '<div style="text-align:center;font-size:12.5px;color:#9a857c;'
+                'padding:0 14px 30px">mathmap 數學地圖 © Kitty</div>')
 
 
 def _asset(name):

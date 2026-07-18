@@ -227,7 +227,7 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <a href="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</a>　·
 <a href="115學測數學_解題線索地圖.html">🧭 解題線索地圖</a>　·
 <a href="{TREND_FILE}">📊 考題變化趨勢</a>
-<br><b>單元頁結構：</b>Part 0 出題趨勢 → Part 1 各考點（先備・重點公式・常見誤解・示範例・<b>歷屆試題</b>・確認理解） → 混合題實戰 → Part 2 模擬實戰 → Part 3 考前速查。</div>
+<br><b>單元頁結構：</b>Part 0 出題趨勢 → Part 1 各考點（先備・重點公式・常見誤解・示範例・<b>歷屆試題</b>・確認理解） → 混合題實戰 → Part 2 模擬實戰 → Part 3 考前速查。</div><div style="text-align:center;font-size:12.5px;color:#9a857c;padding:0 14px 30px">mathmap 數學地圖 © Kitty</div>
 
 <h2>四大主題分組</h2>
 <div class="secbox">{sec_html}</div>
