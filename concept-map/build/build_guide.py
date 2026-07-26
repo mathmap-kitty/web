@@ -193,6 +193,66 @@ GUIDE_CSS = """
   .g-stat b{color:var(--maroon)}
 """
 
+TOOLBAR_JS = """
+  // 置頂工具列（取代共用 app.js 的 B2 版本）：講義頁工具列有兩排，
+  // 收合／展開時高度變化會把下方內容推上推下，原版會和捲動事件互相觸發 → 畫面抖動。
+  // 這裡改成：切換時同步補償捲動位置，並在補償期間鎖住自動切換。
+  (function(){
+    var tb = document.querySelector('.toolbar');
+    if (!tb) return;
+    var lastY = window.pageYOffset, lock = 0;
+    function setMin(on){
+      if (tb.classList.contains('min') === on) return;
+      var before = tb.offsetHeight;
+      tb.classList.toggle('min', on);
+      var d = before - tb.offsetHeight;      // 高度差＝下方內容位移量
+      if (d && window.pageYOffset > 0){
+        lock = Date.now() + 300;             // 補償產生的捲動事件不再回頭切換
+        window.scrollBy(0, -d);
+      }
+      lastY = window.pageYOffset;
+    }
+    window.addEventListener('scroll', function(){
+      var y = window.pageYOffset;
+      if (Date.now() < lock){ lastY = y; return; }
+      if (y < 40) setMin(false);
+      else if (y > lastY + 12) setMin(true);   // 門檻放寬，避免小幅晃動就切換
+      else if (y < lastY - 12) setMin(false);
+      lastY = y;
+    }, {passive: true});
+    tb.addEventListener('click', function(e){
+      if (tb.classList.contains('min') && !(e.target.closest && e.target.closest('a,select,button'))){
+        setMin(false);
+        lock = Date.now() + 1200;            // 手動展開後別馬上自動收回
+      }
+    });
+    function jumpFix(){
+      var id = location.hash.slice(1);
+      var el = id && document.getElementById(id);
+      if (!el) return;
+      setMin(true); lock = Date.now() + 900;
+      requestAnimationFrame(function(){ el.scrollIntoView(); });
+    }
+    window.addEventListener('hashchange', jumpFix);
+    if (location.hash){
+      if (document.readyState === 'loading')
+        document.addEventListener('DOMContentLoaded', jumpFix);
+      else jumpFix();
+    }
+  })();
+"""
+
+
+def guide_js():
+    """共用 app.js 去掉原本的工具列段落，換上 TOOLBAR_JS（concept-map 各頁不受影響）。"""
+    js = _asset("app.js")
+    i = js.find("  // B2 置頂工具列瘦身")
+    j = js.find("\n  })();", i)
+    if i < 0 or j < 0:
+        return js + TOOLBAR_JS          # 找不到就附加，至少不會壞
+    return js[:i] + TOOLBAR_JS + js[j + len("\n  })();"):]
+
+
 GUIDE_JS = """
   // 圖片燈箱：點圖放大（沿用站台 .lightbox 樣式）
   (function(){
@@ -262,10 +322,38 @@ def render_ul(items):
     return "".join(out)
 
 
+MIN_FIG = 300          # 圖片顯示寬度下限（Word 裡很多圖插得很小，網頁上放大到看得清楚）
+
+
+def _png_w(src):
+    """讀 PNG 檔頭取原生寬度（不依賴 PIL）；讀不到回 0。"""
+    try:
+        with open(os.path.join(IMG, src), "rb") as f:
+            head = f.read(24)
+        if head[:8] != b"\x89PNG\r\n\x1a\n":
+            return 0
+        return int.from_bytes(head[16:20], "big")
+    except Exception:
+        return 0
+
+
+def disp_w(b):
+    """實際顯示寬度：至少 MIN_FIG，但不超過原生解析度（低解析度小圖最多放大兩倍），
+    免得放大變糊。浮動小圖維持原本指定的寬度。"""
+    w = b.get("w") or 0
+    nat = _png_w(b.get("src", ""))
+    if not nat:
+        return w
+    cap = nat if nat >= 200 else nat * 2          # 低解析度小圖最多放大兩倍
+    floor = 200 if b.get("float") else MIN_FIG    # 靠右浮動的小圖不必放到那麼大
+    return int(min(max(w, floor), cap))
+
+
 def fig_html(b):
     cls = "gfig gfig-float" if b.get("float") else "gfig"
     # 用 min(100%,…) 而不是固定 px：手機窄螢幕才不會被圖撐出橫向捲動
-    w = f' style="max-width:min(100%,{b["w"]}px)"' if b.get("w") else ""
+    dw = disp_w(b)
+    w = f' style="max-width:min(100%,{dw}px)"' if dw else ""
     alt = _html.escape(b.get("alt", "") or "", quote=True)
     cap = f'<figcaption>{b["cap"]}</figcaption>' if b.get("cap") else ""
     return (f'<figure class="{cls}"{w}><img src="img/{b["src"]}" alt="{alt}" '
@@ -468,7 +556,7 @@ def og_meta(title, desc, page_file=""):
 
 def page(title, desc, file, body, data, cur=None):
     css = _asset("style.css") + GUIDE_CSS
-    js = _asset("app.js") + GUIDE_JS
+    js = guide_js() + GUIDE_JS
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -578,7 +666,12 @@ def main():
     if not os.path.isdir(dst):
         shutil.copytree(KATEX_SRC, dst)
         print("[guide] 複製 KaTeX → guide/katex/")
-    n = len([f for f in os.listdir(IMG) if f.lower().endswith(".png")])
+    # 重畫的 SVG 圖（原稿解析度太低者）一併複製過去
+    figs = os.path.join(HERE, "assets", "guide-figs")
+    if os.path.isdir(figs):
+        for f in os.listdir(figs):
+            shutil.copy(os.path.join(figs, f), os.path.join(IMG, f))
+    n = len([f for f in os.listdir(IMG) if f.lower().endswith((".png", ".svg"))])
     with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(build_index(data))
     print(f"[guide] index.html　（圖片 {n} 張在 guide/img/）")

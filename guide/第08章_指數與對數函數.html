@@ -585,23 +585,38 @@
   }
   function revealAll(){ _stageToggle(true); }
   function hideAll(){ _stageToggle(false); }
-  // B2 置頂工具列瘦身：下捲收合成單排、上捲或點擊展開；
-  // 錨點跳轉一律先收合再 scrollIntoView 重新定位，讓 scroll-margin-top:64px 兩態都不遮字
+
+  // 置頂工具列（取代共用 app.js 的 B2 版本）：講義頁工具列有兩排，
+  // 收合／展開時高度變化會把下方內容推上推下，原版會和捲動事件互相觸發 → 畫面抖動。
+  // 這裡改成：切換時同步補償捲動位置，並在補償期間鎖住自動切換。
   (function(){
     var tb = document.querySelector('.toolbar');
     if (!tb) return;
     var lastY = window.pageYOffset, lock = 0;
-    function setMin(on){ tb.classList.toggle('min', on); }
+    function setMin(on){
+      if (tb.classList.contains('min') === on) return;
+      var before = tb.offsetHeight;
+      tb.classList.toggle('min', on);
+      var d = before - tb.offsetHeight;      // 高度差＝下方內容位移量
+      if (d && window.pageYOffset > 0){
+        lock = Date.now() + 300;             // 補償產生的捲動事件不再回頭切換
+        window.scrollBy(0, -d);
+      }
+      lastY = window.pageYOffset;
+    }
     window.addEventListener('scroll', function(){
       var y = window.pageYOffset;
-      if (Date.now() < lock) { lastY = y; return; }  // 程式跳轉中：維持收合
+      if (Date.now() < lock){ lastY = y; return; }
       if (y < 40) setMin(false);
-      else if (y > lastY + 6) setMin(true);
-      else if (y < lastY - 6) setMin(false);
+      else if (y > lastY + 12) setMin(true);   // 門檻放寬，避免小幅晃動就切換
+      else if (y < lastY - 12) setMin(false);
       lastY = y;
     }, {passive: true});
-    tb.addEventListener('click', function(){
-      if (tb.classList.contains('min')) setMin(false);
+    tb.addEventListener('click', function(e){
+      if (tb.classList.contains('min') && !(e.target.closest && e.target.closest('a,select,button'))){
+        setMin(false);
+        lock = Date.now() + 1200;            // 手動展開後別馬上自動收回
+      }
     });
     function jumpFix(){
       var id = location.hash.slice(1);
@@ -611,12 +626,13 @@
       requestAnimationFrame(function(){ el.scrollIntoView(); });
     }
     window.addEventListener('hashchange', jumpFix);
-    if (location.hash) {
+    if (location.hash){
       if (document.readyState === 'loading')
         document.addEventListener('DOMContentLoaded', jumpFix);
       else jumpFix();
     }
   })();
+
   // Part 0 直覺挑戰：點選直覺答案 → 標示正解／誤答 → 展開「為什麼」說明（只作答一次）
   function chal(btn){
     var box = btn.closest('.chal');

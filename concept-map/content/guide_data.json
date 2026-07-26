@@ -1375,8 +1375,8 @@
     },
     {
      "t": "sec",
-     "html": "三、、平面區域與線性規劃",
-     "plain": "三、、平面區域與線性規劃",
+     "html": "三、平面區域與線性規劃",
+     "plain": "三、平面區域與線性規劃",
      "kind": "sec"
     },
     {
@@ -1801,7 +1801,7 @@
       },
       {
        "lvl": 0,
-       "html": "圓方程式（★★☆）：<code>106</code><code>多</code><code>9</code>、<code>111</code><code>混</code><code>18–20</code>"
+       "html": "圓方程式（★★☆）：<code>106</code><code>多</code><code>9</code>、<code>111</code><code>混</code><code>18</code><code>–</code><code>20</code>"
       },
       {
        "lvl": 0,
@@ -1827,7 +1827,7 @@
    "secs": [
     "一、斜率與直線方程式",
     "二、距離公式：從一維到二維",
-    "三、、平面區域與線性規劃",
+    "三、平面區域與線性規劃",
     "四、圓方程式",
     "五、直線與圓的位置：距離決定一切",
     "六、切線與切線段長"
@@ -4335,8 +4335,8 @@
     },
     {
      "t": "sec",
-     "html": "六、三角函數圖形",
-     "plain": "六、三角函數圖形",
+     "html": "四、三角函數圖形",
+     "plain": "四、三角函數圖形",
      "kind": "sec"
     },
     {
@@ -4576,7 +4576,7 @@
       },
       {
        "lvl": 0,
-       "html": "<b>正餘弦定理 ↔ 圓與外接圓</b>：正弦定理的 \\(2R\\) 直接連到第 3 章圓與外接圓；圓內接、圓周角的題常與餘弦定理合用（如 <code>111</code><code>多</code><code>8</code>、<code>110</code><code>單</code><code>3</code>、<code>111</code><code>混</code><code>18–20</code>）。"
+       "html": "<b>正餘弦定理 ↔ 圓與外接圓</b>：正弦定理的 \\(2R\\) 直接連到第 3 章圓與外接圓；圓內接、圓周角的題常與餘弦定理合用（如 <code>111</code><code>多</code><code>8</code>、<code>110</code><code>單</code><code>3</code>、<code>111</code><code>混</code><code>18</code><code>–</code><code>20</code>）。"
       },
       {
        "lvl": 0,
@@ -4619,7 +4619,7 @@
       },
       {
        "lvl": 0,
-       "html": "圓周角與二面角中的三角（★★☆）：<code>109</code><code>多</code><code>13</code>、<code>110</code><code>單</code><code>3</code>、<code>111</code><code>混</code><code>18–20</code>、<code>111</code><code>多</code><code>11</code>"
+       "html": "圓周角與二面角中的三角（★★☆）：<code>109</code><code>多</code><code>13</code>、<code>110</code><code>單</code><code>3</code>、<code>111</code><code>混</code><code>18</code><code>–</code><code>20</code>、<code>111</code><code>多</code><code>11</code>"
       }
      ]
     },
@@ -4639,7 +4639,7 @@
     "一、三角比與特殊角",
     "二、正弦定理與餘弦定理",
     "三、和差角與倍角公式",
-    "六、三角函數圖形"
+    "四、三角函數圖形"
    ]
   },
   {
@@ -5067,7 +5067,7 @@
       },
       {
        "lvl": 0,
-       "html": "<b>旋轉接矩陣</b>：向量繞原點旋轉，用第 13 章的旋轉矩陣 \\(\\begin{pmatrix}\n\\cos\\theta &amp; - sin\\theta \\\\\n\\sin\\theta &amp; \\cos\\theta\n\\end{pmatrix}\\) 一步到位（如 <code>110</code><code>多</code><code>8</code>、<code>114</code><code>混</code><code>18–20</code>）——又把三角與矩陣串起來。"
+       "html": "<b>旋轉接矩陣</b>：向量繞原點旋轉，用第 13 章的旋轉矩陣 \\(\\begin{pmatrix}\n\\cos\\theta &amp; - sin\\theta \\\\\n\\sin\\theta &amp; \\cos\\theta\n\\end{pmatrix}\\) 一步到位（如 <code>110</code><code>多</code><code>8</code>、<code>114</code><code>混</code><code>18</code><code>–</code><code>20</code>）——又把三角與矩陣串起來。"
       }
      ]
     },
@@ -5094,7 +5094,7 @@
       },
       {
        "lvl": 0,
-       "html": "向量與旋轉、坐標（★★☆）：<code>110</code><code>多</code><code>8</code>、<code>112</code><code>混</code><code>18–20</code>、<code>114</code><code>混</code><code>18–20</code>"
+       "html": "向量與旋轉、坐標（★★☆）：<code>110</code><code>多</code><code>8</code>、<code>112</code><code>混</code><code>18</code><code>–</code><code>20</code>、<code>114</code><code>混</code><code>18</code><code>–</code><code>20</code>"
       }
      ]
     },
@@ -5367,8 +5367,8 @@
     },
     {
      "t": "sec",
-     "html": "三、外積：空間獨有的新工具",
-     "plain": "三、外積：空間獨有的新工具",
+     "html": "四、外積：空間獨有的新工具",
+     "plain": "四、外積：空間獨有的新工具",
      "kind": "sec"
     },
     {
@@ -5439,8 +5439,8 @@
     },
     {
      "t": "sec",
-     "html": "四、體積：純量三重積",
-     "plain": "四、體積：純量三重積",
+     "html": "五、體積：純量三重積",
+     "plain": "五、體積：純量三重積",
      "kind": "sec"
     },
     {
@@ -5587,7 +5587,7 @@
       },
       {
        "lvl": 0,
-       "html": "外積、行列式・面積／體積（★★★）：<code>113</code><code>單</code><code>2</code>、<code>112</code><code>單</code><code>5</code>、<code>114</code><code>單</code><code>6</code>、<code>111</code><code>選</code><code>17</code>、<code>115</code><code>混</code><code>18–20</code>"
+       "html": "外積、行列式・面積／體積（★★★）：<code>113</code><code>單</code><code>2</code>、<code>112</code><code>單</code><code>5</code>、<code>114</code><code>單</code><code>6</code>、<code>111</code><code>選</code><code>17</code>、<code>115</code><code>混</code><code>18</code><code>–</code><code>20</code>"
       }
      ]
     },
@@ -5606,8 +5606,8 @@
     "一、空間概念",
     "二、空間坐標與距離",
     "三、空間向量與內積",
-    "三、外積：空間獨有的新工具",
-    "四、體積：純量三重積"
+    "四、外積：空間獨有的新工具",
+    "五、體積：純量三重積"
    ]
   },
   {
@@ -5883,8 +5883,8 @@
      "items": [
       {
        "lvl": 0,
-       "fig": "image31.png",
-       "w": 60,
+       "fig": "fig_ch12_skew.svg",
+       "w": 320,
        "alt": "",
        "html": ""
       },
@@ -6037,7 +6037,7 @@
      "items": [
       {
        "lvl": 0,
-       "html": "平面方程式、投影與點到平面距離（★★★）：<code>107</code><code>多</code><code>11</code>、<code>108</code><code>多</code><code>13</code>、<code>110</code><code>選</code><code>B</code>、<code>111</code><code>選</code><code>16</code>、<code>112</code><code>選</code><code>16</code>、<code>113</code><code>混</code><code>18–19</code>、<code>114</code><code>選</code><code>14</code>"
+       "html": "平面方程式、投影與點到平面距離（★★★）：<code>107</code><code>多</code><code>11</code>、<code>108</code><code>多</code><code>13</code>、<code>110</code><code>選</code><code>B</code>、<code>111</code><code>選</code><code>16</code>、<code>112</code><code>選</code><code>16</code>、<code>113</code><code>混</code><code>18</code><code>–</code><code>19</code>、<code>114</code><code>選</code><code>14</code>"
       },
       {
        "lvl": 0,
@@ -6608,7 +6608,7 @@
       },
       {
        "lvl": 0,
-       "html": "<b>旋轉矩陣 ＝ 第 10 章的兌現</b>：\\(\\begin{pmatrix}\n\\cos\\theta &amp; - sin\\theta \\\\\n\\sin\\theta &amp; \\cos\\theta\n\\end{pmatrix}\\) 把向量繞原點轉 \\(\\theta\\)，正是第 10 章「向量旋轉交給矩陣」的登場；它又用到第 9 章的 \\(\\cos\\theta\\)、\\(\\sin\\theta\\)（如 <code>110</code><code>多</code><code>8</code>、<code>112</code><code>多</code><code>11</code>、<code>114</code><code>混</code><code>18–20</code>）。"
+       "html": "<b>旋轉矩陣 ＝ 第 10 章的兌現</b>：\\(\\begin{pmatrix}\n\\cos\\theta &amp; - sin\\theta \\\\\n\\sin\\theta &amp; \\cos\\theta\n\\end{pmatrix}\\) 把向量繞原點轉 \\(\\theta\\)，正是第 10 章「向量旋轉交給矩陣」的登場；它又用到第 9 章的 \\(\\cos\\theta\\)、\\(\\sin\\theta\\)（如 <code>110</code><code>多</code><code>8</code>、<code>112</code><code>多</code><code>11</code>、<code>114</code><code>混</code><code>18</code><code>–</code><code>20</code>）。"
       },
       {
        "lvl": 0,
@@ -6643,7 +6643,7 @@
       },
       {
        "lvl": 0,
-       "html": "線性變換・旋轉／鏡射／面積／可逆（★★★）：<code>110</code><code>多</code><code>8</code>、<code>112</code><code>多</code><code>11</code>、<code>113</code><code>多</code><code>12</code>、<code>114</code><code>混</code><code>18–20</code>"
+       "html": "線性變換・旋轉／鏡射／面積／可逆（★★★）：<code>110</code><code>多</code><code>8</code>、<code>112</code><code>多</code><code>11</code>、<code>113</code><code>多</code><code>12</code>、<code>114</code><code>混</code><code>18</code><code>–</code><code>20</code>"
       }
      ]
     },
@@ -6691,7 +6691,7 @@
     },
     {
      "t": "p",
-     "html": "(3) 克拉瑪公式 \\(\\mathrm{\\Delta} =\\)<span class=\"ublank\"></span> \\(\\mathrm{\\Delta}_{x} =\\)<span class=\"ublank\"></span> \\(\\mathrm{\\Delta}_{y} =\\)<span class=\"ublank\"></span> .",
+     "html": "(3) 克拉瑪公式 \\(\\mathrm{\\Delta} =\\)<span class=\"ublank\"></span> \\(\\mathrm{\\Delta}_{x} =\\)<span class=\"ublank\"></span><span class=\"ublank\"></span> \\(\\mathrm{\\Delta}_{y} =\\)<span class=\"ublank\"></span> .",
      "indent": 1
     },
     {
@@ -6701,7 +6701,7 @@
     },
     {
      "t": "p",
-     "html": "(ii) \\(\\mathrm{\\Delta}\\  = 0 = \\mathrm{\\Delta}_{x} = \\mathrm{\\Delta}_{y}\\) ， 則<span class=\"ublank\"></span>.",
+     "html": "(ii) \\(\\mathrm{\\Delta}\\  = 0 = \\mathrm{\\Delta}_{x} = \\mathrm{\\Delta}_{y}\\) ， 則<span class=\"ublank\"></span> .",
      "indent": 1
     },
     {

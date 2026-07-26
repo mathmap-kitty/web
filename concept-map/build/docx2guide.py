@@ -930,6 +930,24 @@ TYPO_FIXES = [
     ("空間中個元素的關係", "空間中各元素的關係"),   # 第12章 三、
 ]
 
+# 原稿解析度太低、放大就糊的圖 → 換成重畫的 SVG（放在 build/assets/guide-figs/）
+# {原檔名: (替換檔名, 顯示寬度 px)}
+IMG_SWAP = {
+    "image31.png": ("fig_ch12_skew.svg", 320),   # 第12章 三、兩直線的 u、v（原檔只有 92×69）
+}
+
+
+def apply_img_swap(x):
+    if isinstance(x, list):
+        return [apply_img_swap(v) for v in x]
+    if isinstance(x, dict):
+        for key in ("src", "fig"):
+            if x.get(key) in IMG_SWAP:
+                new, w = IMG_SWAP[x[key]]
+                x[key], x["w"] = new, w
+        return {k: apply_img_swap(v) for k, v in x.items()}
+    return x
+
 
 def apply_typo_fixes(x):
     """把 TYPO_FIXES 套到所有文字欄位（含清單項目、表格格子）。"""
@@ -1089,7 +1107,7 @@ def build(docx_path):
             chapters.append(ap)
             print(f"  附錄獨立成頁：{ap['title']}（原在第 {ap['from_ch']} 章章末）")
 
-    chapters = apply_typo_fixes(chapters)
+    chapters = apply_img_swap(apply_typo_fixes(chapters))
     for ch in chapters:
         ch["file"] = (f"附錄_{ch['title']}.html" if ch.get("kind") == "appendix"
                       else f"第{ch['n']:02d}章_{ch['title']}.html")

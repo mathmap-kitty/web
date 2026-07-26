@@ -543,7 +543,7 @@
 <div class="hero"><h1>附錄　解二元一次聯立方程組</h1><p>學測數學A 複習講義　·　第 13 章補充</p></div><div class="legend">使用方式：內容中的 <span class="blank" style="cursor:default"><span class="q">？</span></span> 就是講義的填空——<b>點一下顯示答案</b>，再點一下收回；也可用上方 <b>「全部顯示答案」</b> 一次切換整章（＝教師版）。圖可點擊放大。</div><section class="card sec-card c-star"><h2 class="sec-h" id="s1"><span class="num">★</span><span>\(\left\{ \begin{array}{r}
 a_{1}x + b_{1}y = c_{1} \\
 a_{2}x + b_{2}y = c_{2}
-\end{array} \right.\ \)</span></h2><p class="gp ind">(1) 代入消去法</p><p class="gp ind">(2) 加減消去法</p><p class="gp ind">(3) 克拉瑪公式 \(\mathrm{\Delta} =\)<span class="ublank"></span> \(\mathrm{\Delta}_{x} =\)<span class="ublank"></span> \(\mathrm{\Delta}_{y} =\)<span class="ublank"></span> .</p><p class="gp ind">若(i) \(\mathrm{\Delta} \neq 0\) ，則 \(x = \ \frac{\mathrm{\Delta}_{x}}{\mathrm{\Delta}}\  = \ \frac{\left| \begin{matrix}
+\end{array} \right.\ \)</span></h2><p class="gp ind">(1) 代入消去法</p><p class="gp ind">(2) 加減消去法</p><p class="gp ind">(3) 克拉瑪公式 \(\mathrm{\Delta} =\)<span class="ublank"></span> \(\mathrm{\Delta}_{x} =\)<span class="ublank"></span><span class="ublank"></span> \(\mathrm{\Delta}_{y} =\)<span class="ublank"></span> .</p><p class="gp ind">若(i) \(\mathrm{\Delta} \neq 0\) ，則 \(x = \ \frac{\mathrm{\Delta}_{x}}{\mathrm{\Delta}}\  = \ \frac{\left| \begin{matrix}
 c_{1} &amp; b_{1} \\
 c_{2} &amp; b_{2}
 \end{matrix} \right|}{\left| \begin{matrix}
@@ -555,7 +555,7 @@ a_{2} &amp; c_{2}
 \end{matrix} \right|}{\left| \begin{matrix}
 a_{1} &amp; b_{1} \\
 a_{2} &amp; b_{2}
-\end{matrix} \right|}\).</p><p class="gp ind">(ii) \(\mathrm{\Delta}\  = 0 = \mathrm{\Delta}_{x} = \mathrm{\Delta}_{y}\) ， 則<span class="ublank"></span>.</p><p class="gp ind">(iii)\(\ \mathrm{\Delta}\  = 0\)，\(\mathrm{\Delta}_{x}或{\ \mathrm{\Delta}}_{y}\) 有其中一個不為0， 則<span class="ublank"></span>.</p><p class="gp ind">(4) 高斯消去法：把增廣矩陣化成階梯形 \(\left\lbrack \begin{matrix}
+\end{matrix} \right|}\).</p><p class="gp ind">(ii) \(\mathrm{\Delta}\  = 0 = \mathrm{\Delta}_{x} = \mathrm{\Delta}_{y}\) ， 則<span class="ublank"></span> .</p><p class="gp ind">(iii)\(\ \mathrm{\Delta}\  = 0\)，\(\mathrm{\Delta}_{x}或{\ \mathrm{\Delta}}_{y}\) 有其中一個不為0， 則<span class="ublank"></span>.</p><p class="gp ind">(4) 高斯消去法：把增廣矩陣化成階梯形 \(\left\lbrack \begin{matrix}
 a_{1} &amp; b_{1} \\
 a_{2} &amp; b_{2}
 \end{matrix}\ \ \ \begin{matrix}
@@ -630,23 +630,38 @@ y
   }
   function revealAll(){ _stageToggle(true); }
   function hideAll(){ _stageToggle(false); }
-  // B2 置頂工具列瘦身：下捲收合成單排、上捲或點擊展開；
-  // 錨點跳轉一律先收合再 scrollIntoView 重新定位，讓 scroll-margin-top:64px 兩態都不遮字
+
+  // 置頂工具列（取代共用 app.js 的 B2 版本）：講義頁工具列有兩排，
+  // 收合／展開時高度變化會把下方內容推上推下，原版會和捲動事件互相觸發 → 畫面抖動。
+  // 這裡改成：切換時同步補償捲動位置，並在補償期間鎖住自動切換。
   (function(){
     var tb = document.querySelector('.toolbar');
     if (!tb) return;
     var lastY = window.pageYOffset, lock = 0;
-    function setMin(on){ tb.classList.toggle('min', on); }
+    function setMin(on){
+      if (tb.classList.contains('min') === on) return;
+      var before = tb.offsetHeight;
+      tb.classList.toggle('min', on);
+      var d = before - tb.offsetHeight;      // 高度差＝下方內容位移量
+      if (d && window.pageYOffset > 0){
+        lock = Date.now() + 300;             // 補償產生的捲動事件不再回頭切換
+        window.scrollBy(0, -d);
+      }
+      lastY = window.pageYOffset;
+    }
     window.addEventListener('scroll', function(){
       var y = window.pageYOffset;
-      if (Date.now() < lock) { lastY = y; return; }  // 程式跳轉中：維持收合
+      if (Date.now() < lock){ lastY = y; return; }
       if (y < 40) setMin(false);
-      else if (y > lastY + 6) setMin(true);
-      else if (y < lastY - 6) setMin(false);
+      else if (y > lastY + 12) setMin(true);   // 門檻放寬，避免小幅晃動就切換
+      else if (y < lastY - 12) setMin(false);
       lastY = y;
     }, {passive: true});
-    tb.addEventListener('click', function(){
-      if (tb.classList.contains('min')) setMin(false);
+    tb.addEventListener('click', function(e){
+      if (tb.classList.contains('min') && !(e.target.closest && e.target.closest('a,select,button'))){
+        setMin(false);
+        lock = Date.now() + 1200;            // 手動展開後別馬上自動收回
+      }
     });
     function jumpFix(){
       var id = location.hash.slice(1);
@@ -656,12 +671,13 @@ y
       requestAnimationFrame(function(){ el.scrollIntoView(); });
     }
     window.addEventListener('hashchange', jumpFix);
-    if (location.hash) {
+    if (location.hash){
       if (document.readyState === 'loading')
         document.addEventListener('DOMContentLoaded', jumpFix);
       else jumpFix();
     }
   })();
+
   // Part 0 直覺挑戰：點選直覺答案 → 標示正解／誤答 → 展開「為什麼」說明（只作答一次）
   function chal(btn){
     var box = btn.closest('.chal');
