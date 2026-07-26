@@ -2,7 +2,7 @@
 """產生全站 sitemap.xml（寫到 repo 根，隨 Pages 發布）。
 
 用法：python build/gen_sitemap.py   （在 concept-map/ 下執行；頁面增減後重跑再 push）
-- 收錄：總入口、concept-map 全部 HTML、exam/
+- 收錄：總入口、concept-map 全部 HTML、guide/（複習講義）、exam/
 - lastmod 取各檔最後一次 git commit 日期；中文檔名自動 percent-encode
 """
 import os
@@ -39,6 +39,13 @@ for f in sorted(os.listdir(CM)):
         continue
     loc = SITE + "concept-map/" + ("" if f == "index.html" else quote(f))
     entries.append((loc, "concept-map/" + f))
+GUIDE = os.path.join(REPO, "guide")     # 複習講義子站（站台根，13 章 + 附錄 + 目錄頁）
+if os.path.isdir(GUIDE):
+    for f in sorted(os.listdir(GUIDE)):
+        if not f.endswith(".html"):
+            continue
+        loc = SITE + "guide/" + ("" if f == "index.html" else quote(f))
+        entries.append((loc, "guide/" + f))
 entries.append((SITE + "exam/", "exam/index.html"))
 
 rows = []

@@ -91,3 +91,51 @@ KaTeX 會在數學式內部產生**大量 `<span>`**，這種選擇器會套到�
 ## 八、環境備註
 - 這些檔案是在 Cowork 環境產生的；`.docx` 用 `python-docx` 製作（`make_template.py`）。Claude Code 在一般開發環境，工具更自由，可自行選用 Node／Python／SSG。
 - KaTeX 目前走 CDN，開啟需連網；要離線發佈再改本地打包即可。
+
+---
+
+## 九、《學測數學A 複習講義》網頁版（2026-07 新增；站台根的 `guide/`）
+
+老師另有一份上課用的 Word 講義（全教用＝答案玫瑰色、全學用＝底線挖空），已轉成網頁版。
+**它是獨立子站，不屬於 concept-map**（老師的定位：那是重點整理、這是上課講義）：
+
+```
+/web/guide/              ← 發布位置，與 exam/ 同層；網址 …/web/guide/
+    index.html           ← 目錄頁
+    第01章_…html ～ 第13章_…html、附錄_解二元一次聯立方程組.html
+    img/                 ← 45 張圖（docx 內嵌 32 ＋ 從 PDF 裁的手繪圖 13）
+    katex/               ← 自帶一份（與 exam/ 相同作法，不依賴 concept-map）
+```
+產線腳本仍放在 `concept-map/build/`（要共用 `build_html.py` 的分享卡／流量統計／頁尾與
+`build/assets/` 的 CSS/JS），資料檔在 `concept-map/content/guide_data.json`。
+
+### 產線（三支腳本，都在 `concept-map/` 下執行）
+```
+python build/pdf_figs.py --sheet   # ① 從教師版 PDF 裁 13 張 Word 手繪圖 → guide/img/（--sheet 出總覽圖供人工確認）
+python build/docx2guide.py         # ② 教師版 .docx → content/guide_data.json（＋內嵌圖 32 張 → guide/img/）
+python build/build_guide.py        # ③ JSON → /web/guide/*.html（第一次會複製 KaTeX）
+python build/gen_sitemap.py        # ④ 頁面增減後重跑，更新 sitemap.xml
+```
+來源檔（不在 repo 內）：`D:\gmail\115\01_教學\複習講義\學測數A_脈絡複習講義_全教用.docx / .pdf`
+
+### 原理與雷
+- **答案怎麼認出來的**：`docx2guide.py` 先在 docx 裡把「玫瑰色 9C5A6E」的 run 用 `⟦…⟧` 包起來
+  （OMML 數學式內的 `m:r` 也包），再交給 `pandoc -f docx+styles -t json`。
+  段落樣式（SecHead／SubHead／NoteBox／HL）保留成 `custom-style`，數學式自動變 LaTeX。
+- **數學式挖空的切法**：一條式子裡的標記會先合併成一段；切不出合法 LaTeX 時
+  退回「整條式子當答案」，寧可整條變按鈕也不要讓 KaTeX 壞掉（`split_math`）。
+- **KaTeX 0.16 不支援 `\mspace`**（會印出紅字原文）→ `_fix_tex()` 換成 `\,`。
+- **Word 手繪圖（`w:pict` VML）pandoc 完全看不到**：指對數圖形、解的三種情形、
+  點到直線示意圖等 13 張，改用 `pdf_figs.py` 從 PDF 座標裁圖；安插位置寫在
+  `docx2guide.py` 的 `TABLE_FIGS` / `EMPTY_ROW_FIGS` / `AFTER_FIGS`。
+- **`.wmf` 舊式方程式物件**瀏覽器不能顯示 → `WMF_TEX` 直接改寫成 LaTeX。
+- 圖片寬度一律 `max-width:min(100%,Npx)`，寫死 px 會讓手機出現橫向捲動。
+- 講義頁沿用 `build/assets/style.css` 與 `app.js`（`tb()`／`revealAll()`／漸進渲染都直接重用），
+  講義專屬樣式集中在 `build_guide.py` 的 `GUIDE_CSS`；分享卡網址前綴不同，
+  `build_guide.py` 自己有一份 `og_meta()`（指向 `…/web/guide/`）。
+- **原稿一對一對不上的地方**，都集中成表格，改了原稿要回來看：
+  `TYPO_FIXES`（錯字，如「空間中個元素」→「各元素」）、`fix_intercept_annot()`
+  （截距式 (a,0)/(0,b) 掛回對應詞下方）、`split_off_appendix()`（第13章章末補充獨立成頁）。
+  對不上會在建置時印警告。
+- 章末「考場心法」在 Word 是 HL 樣式、後面可能還接幾句同框的句子 → `_tidy()` 會併回心法框，
+  否則會被誤判成章末補充。

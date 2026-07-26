@@ -1,0 +1,54 @@
+{
+ "vfig_ch3_proj.png": {
+  "w": 300,
+  "cap": "對稱點：Q 是 P、R 的中點"
+ },
+ "vfig_ch3_half.png": {
+  "w": 430,
+  "cap": "直線把平面分成兩側：代一點看正負"
+ },
+ "vfig_ch8_exp_gt1.png": {
+  "w": 0,
+  "cap": "y=a^x（a>1）遞增"
+ },
+ "vfig_ch8_exp_lt1.png": {
+  "w": 0,
+  "cap": "y=a^x（0<a<1）遞減"
+ },
+ "vfig_ch8_log_gt1.png": {
+  "w": 0,
+  "cap": "y=log_a x（a>1）遞增"
+ },
+ "vfig_ch8_log_lt1.png": {
+  "w": 0,
+  "cap": "y=log_a x（0<a<1）遞減"
+ },
+ "vfig_ch9_tri.png": {
+  "w": 165,
+  "cap": "直角三角形：對邊／鄰邊／斜邊"
+ },
+ "vfig_ch13_one.png": {
+  "w": 0,
+  "cap": "恰有一組解：兩線相交"
+ },
+ "vfig_ch13_none.png": {
+  "w": 0,
+  "cap": "無解：兩線平行"
+ },
+ "vfig_ch13_many.png": {
+  "w": 0,
+  "cap": "無限多組解：兩線重合"
+ },
+ "vfig_ch13_v_one.png": {
+  "w": 0,
+  "cap": "恰一解：兩向量不平行"
+ },
+ "vfig_ch13_v_none.png": {
+  "w": 0,
+  "cap": "無解：向量平行、常數不合"
+ },
+ "vfig_ch13_v_many.png": {
+  "w": 0,
+  "cap": "無限多解：向量平行且相合"
+ }
+}
