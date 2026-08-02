@@ -79,4 +79,6 @@
 - **Git push 狀態**：
   - `main` = `3a1096d` — **已 push**，本輪所有 SOIL 成果與體檢修正都在線上。
   - `feat/guide-web-version` = `edd63e4` — **已 push**（同名遠端分支），**未合併回 main**。
-  - 本交接檔（`AGENTS.md` + `handoff.md`）commit 於 `feat/guide-web-version`，**尚未 push**。
+  - 本交接檔（`AGENTS.md` + `handoff.md`）= `3dd461b`，**已 push** 至 `feat/guide-web-version`。
+  - ⚠️ 註：本檔 push 時 git 回「Everything up-to-date」——因為平行 session 的 push 先把此 commit 帶上去了。
+    這個 repo 常有多 session 同時操作**同一個工作目錄**，收工前務必 `git rev-parse HEAD` 與 `origin/<branch>` 比對確認。
