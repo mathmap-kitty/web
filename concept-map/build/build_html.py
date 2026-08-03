@@ -27,6 +27,10 @@ try:
 except Exception:
     PART2_KP = {}
 try:
+    from exam_rates import RATES as EXAM_RATES  # 考點×大考中心答對率（build/gen_examrates.py 產生）
+except Exception:
+    EXAM_RATES = {}
+try:
     from units import UNITS as _UNITS  # 單元中繼資料（檔名／emoji／title），供跨單元連結
     _BY_SLUG = {u["slug"]: u for u in _UNITS}
 except Exception:
@@ -676,6 +680,7 @@ def _kp_html(kp, slug=""):
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
             f'title="標記此考點已讀" aria-label="標記已讀"></button>'
             f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}'
+            f'{_rate_badge(slug, kp["id"])}'
             f'<span class="kp-mastery" data-kp="{kp["id"]}"></span></p>'
             f'{prereq}'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
@@ -691,6 +696,24 @@ def _kp_html(kp, slug=""):
 def _freq_badge(freq):
     """考點旁的考頻徽章（★ 越多越常考）。"""
     return f'<span class="kp-freq" title="近十年考頻">{html_rich(freq)}</span>' if freq else ""
+
+
+def _rate_badge(slug, kpid):
+    """考點旁的官方答對率徽章：這個考點對應的歷屆數 A 題目，全國平均多少人答對。
+
+    來源 content/exam_rates.py（由 build/gen_examrates.py 從 exam/ 題庫導出）。
+    只有樣本 >= 3 題的考點才有資料——樣本再少就只是「那一題難」，不是「這個考點難」。
+    多選題採全對率，與單選答對率同構念（完全答對的比例）才能一起平均。
+    """
+    hit = EXAM_RATES.get((slug, kpid))
+    if not hit:
+        return ""
+    rate, n, n_multi = hit
+    tip = f"111–115 學測數 A 對應此考點 {n} 題的平均"
+    if n_multi:
+        tip += f"（其中 {n_multi} 題多選，採全對率）"
+    return (f'<span class="kp-rate" title="{_esc_attr(tip)}">'
+            f'全國答對率 {rate:.0f}%<i>{n} 題</i></span>')
 
 
 def _hard_badge(level):
