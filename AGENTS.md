@@ -130,7 +130,10 @@ PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才�
 - [x] SOIL **D2**（強調色統一：琥珀橘 `--accent:#b45309` 只給判斷關鍵）
 - [x] SOIL **D3**（概念地圖加「建議看法」一句）
 - [x] SOIL **D4**（Part2 題序打散、交錯練習）
-- [x] SOIL **D5**（KaTeX 分塊漸進渲染＋全頁切換分段：首屏 833ms→0、revealAll 1034ms→4ms）
+- [x] SOIL **D5**（KaTeX 漸進渲染＋全頁切換分段：revealAll 1034ms→4ms）
+      ⚠️ 初版的「首屏 833ms→0」是**延到 DOMContentLoaded 後才渲染**換來的，不是分塊——
+      當時 `_mmChunks()` 只掃 body 層找 `.card`，整個 `.wrap` 是單一分塊，分塊從沒生效。
+      已於 `1d96bf5` 修好（下探 `.wrap`／`.card`）：矩陣頁 11→137 塊、最長單次凍結 106ms→21ms。
 - [x] KaTeX 本地化、sitemap、favicon、自訂 404、行動版 sticky 壓縮（**其他 session**）
 - [x] `guide/` 複習講義子站 13 章（**其他 session**，在 `feat/guide-web-version` 分支）
 

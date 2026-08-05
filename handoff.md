@@ -123,14 +123,15 @@ python build/build.py           # 重建 11 單元頁
 ## 🚦 目前狀態
 
 - **可運行**：`concept-map/` 全站可 build、validate 綠燈；`guide/` 15 頁已驗（KaTeX 0 錯誤）。
-- **已上線**：`main` = **`171759b`**，**已 push**。含 SOIL 全部成果 ＋ `guide/` 子站 ＋ 總入口三張卡
-  ＋ 33 個考點答對率徽章 ＋ 58 個考點星等 ＋ 路線選擇器 ＋ 講義題號直達 exam。
+- **已上線**：`main` = **`1d96bf5`**，**已 push**。含 SOIL 全部成果 ＋ `guide/` 子站 ＋ 總入口三張卡
+  ＋ 33 個考點答對率徽章 ＋ 58 個考點星等 ＋ 路線選擇器 ＋ 講義題號直達 exam
+  ＋ **D5 分塊漸進渲染修復**。
 - **做一半的**：沒有。
-- **平行進行中**：⚠️ 另一個 session 正在修「D5 漸進渲染分塊失效」（見下），
-  它會動 `concept-map/build/assets/app.js` 並重建 11 個單元頁。
-  **那些單元頁本輪剛加了路線選擇器**——若該 session 是從舊 checkout 出發，
-  合併時要確認 `routebar` / `data-freq` / `ROUTE_JS` 還在，別被舊檔蓋掉。
-- **分支狀況**：`main` = `171759b`（＝`origin/main`，乾淨）；
+- **D5 分塊失效已修**（`1d96bf5`）：`_mmChunks()` 改成遇到 `.wrap`／`.card` 都往內下探。
+  該 session 是先 rebase 到 `171759b` 才重建，**路線選擇器沒被蓋掉**（已逐頁 diff 確認
+  11 頁差異都只有 `_mmChunks` 那一段）。矩陣頁分塊數 11 → 137、最長單次凍結
+  106ms → 21ms、首屏渲染完成 106ms → 1.4ms；代價是全頁總 CPU 107ms → 176ms。
+- **分支狀況**：`main` = `1d96bf5`（＝`origin/main`，乾淨）；
   `feat/guide-web-version` = `87361e3` 已併入 main，**分支還留著沒刪**（怕有平行 session 還在用）。
 - **平行作業**：這個 repo 常有多個 session 動**同一個工作目錄**。收工前務必
   `git rev-parse HEAD` 與 `origin/<branch>` 比對確認。
@@ -156,11 +157,11 @@ python build/build.py           # 重建 11 單元頁
 4. **（老師尚未定）錯誤代碼 → 回補考點**：ChatGPT 版每單元有 4 類錯誤代碼（如直線與圓的 D/E/M/R），
    可接上現有待複習頁。等方案 A/B 上線看反應再決定。
 
-5. **修 D5 漸進渲染分塊失效**（已開背景任務，另一 session 進行中）
-   `app.js` 的 `_mmChunks()` 只掃 `document.body.children` 找 `.card`，但單元頁實際結構是
-   `body > div.wrap > (div.part | div.card)*` —— body 層一個 `.card` 都沒有，
-   於是**整個 `.wrap` 變成單一分塊**（矩陣頁 986 個數學式一次渲染完），漸進效果從沒發生過。
-   殘留好處只有「延到 DOMContentLoaded 後才渲染」，所以首屏仍是快的。
+5. ~~**修 D5 漸進渲染分塊失效**~~ **已完成**（`1d96bf5`）。留一個**可選**的後續：
+   分塊變多後批次數 2 → 13，而 `schedule()` 的後備計時器是 250ms。前景分頁 rIC
+   正常觸發時不受影響，但 rIC 被餓死時全頁渲染完的牆鐘時間會從約 0.5s 拉長到約 3s
+   （首屏仍在第一批就完成，只影響「還沒捲到的下半頁」）。若要改，動的是後備計時器的
+   間隔或 12ms 時間預算，**不可拿掉 rIC + setTimeout 雙保險本身**。
 
 6. **（可選）答對率的延伸用法**：`content/exam_rates.py` 是結構化資料，
    除了考點徽章與路線排序，也能餵給概念地圖做難度熱度。
@@ -175,6 +176,12 @@ python build/build.py           # 重建 11 單元頁
 - **驗證要驗語意、不要只驗一致性**：A2 第一版用錯 regex，11 個單元全抽成徽章文字「必考核心」，
   而自動比對還「通過」（因為兩邊用同一支錯的 regex）。**抽取式的驗證一定要人眼看一次內容**。
 - **KaTeX 高度會有假象**：驗矩陣式沒散掉要看 `.katex .mtable` 數量與 vlist 列數，不能只量 `getBoundingClientRect().height`。
+- **效能優化要驗「機制真的生效」，不是只看端點數字**：D5 初版量到「首屏 833ms→0」就結案，
+  但那是延後渲染換來的，分塊其實一塊都沒切（`_mmChunks()` 回傳 11、整個 `.wrap` 是一塊）。
+  下次量效能請一併記**分塊數／批次數**這種能證明機制有跑的中間量。
+- **預覽分頁是 `hidden`**：本環境的 Browser pane 不顯示，`document.visibilityState` 永遠是 hidden，
+  `setTimeout` 被節流、`rIC` 被餓死 → **牆鐘時間量不準**。要比較效能請量
+  `performance.now()` 夾出來的**同步 CPU 時間**（單次最長凍結／總 CPU），那個不受節流影響。
 - **dist 內的樣張預覽**：KaTeX 路徑要改成 `../katex/` 才會渲染（`build_html` 產出的是 `katex/`）。
 - **`build_conceptmap.py` 的 JS 寫在 Python 字串裡**：註解要用 `#`，寫 `//` 會是 Python 語法錯誤，
   而且失敗時若照舊複製 `dist/`，會把**舊檔**蓋成正式檔（發生過一次，已修）。
