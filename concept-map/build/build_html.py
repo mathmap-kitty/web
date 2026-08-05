@@ -101,6 +101,22 @@ PROGRESS_JS = (
     "upUnit();upMastery();")
 
 
+# 入口診斷（方案 B）：只判斷「第一步從哪個抽屜切入」，不要求算答案。
+# 互動慣例與 B1 直覺挑戰一致：點選 → 即時對錯 → 展開一句話說明 → 錨點回考點。
+# 作答後鎖定該題（避免亂點湊對），答對數即時累計。
+ENTRYDIAG_JS = (
+    "function edPick(b){var c=b.closest('.edcard');if(!c||c.classList.contains('done'))return;"
+    "c.classList.add('done');"
+    "var ok=b.dataset.ok==='1';b.classList.add(ok?'right':'wrong');"
+    "if(!ok){var t=c.querySelector('.ed-opt[data-ok=\"1\"]');if(t)t.classList.add('right');}"
+    "c.classList.add(ok?'is-ok':'is-no');"
+    "c.querySelectorAll('.ed-opt').forEach(function(x){x.disabled=true;});"
+    "var n=document.getElementById('ed-ok');"
+    "if(n)n.textContent=document.querySelectorAll('.edcard.is-ok').length;"
+    "var fb=c.querySelector('.ed-fb');"
+    "if(fb&&typeof ensureMath==='function')ensureMath(fb);}")
+
+
 # 路線選擇器（方案 A）：把 Part 1 的考點卡依路線篩選／重排。
 #   完整複習  ＝ 全部顯示、恢復原順序
 #   先拿基本分＝ 只留 3★ 高頻考點，並依官方答對率由高到低排（難的排後面）
@@ -733,7 +749,7 @@ def _kp_html(kp, slug=""):
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
             f'title="標記此考點已讀" aria-label="標記已讀"></button>'
             f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}'
-            f'{_rate_badge(slug, kp["id"])}'
+            f'{_axis_badge(kp)}{_rate_badge(slug, kp["id"])}'
             f'<span class="kp-mastery" data-kp="{kp["id"]}"></span></p>'
             f'{prereq}'
             f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
@@ -749,6 +765,20 @@ def _kp_html(kp, slug=""):
 def _freq_badge(freq):
     """考點旁的考頻徽章（★ 越多越常考）。"""
     return f'<span class="kp-freq" title="近十年考頻">{html_rich(freq)}</span>' if freq else ""
+
+
+def _axis_badge(kp):
+    """考點標題旁的入口標籤：第一個是建議入口（實心），其餘是也會用到的（淡色）。"""
+    ax = kp.get("axis")
+    if not ax:
+        return ""
+    out = ""
+    for i, k in enumerate(ax):
+        cls = "ax-tag main" if i == 0 else "ax-tag"
+        tip = "建議從這裡切入" if i == 0 else "這個考點也會用到"
+        out += (f'<span class="{cls}" title="{_esc_attr(tip)}">'
+                f'{AXIS_ICON.get(k, "◆")}{html_rich(k)}</span>')
+    return f'<span class="ax-tags">{out}</span>'
 
 
 def _rate_badge(slug, kpid):
@@ -878,6 +908,60 @@ def _challenge_html(ch):
             f'{link}</div></div>')
 
 
+AXIS_ICON = {"式": "＝", "根": "◉", "圖": "📈",
+             "方向": "↗", "方程": "＝", "距離": "📏", "區域": "▨",
+             "項": "①", "遞迴": "↻", "和": "∑", "函數模型": "📈"}
+
+
+def _axes_html(ax):
+    """入口 N 格（方案 B）：把題目先分進 3–4 個抽屜，再挑公式。
+
+    content 的 part0 有 axes 才渲染；沒有的單元完全不受影響。
+    """
+    if not ax:
+        return ""
+    cells = ""
+    for it in ax["items"]:
+        k = it["key"]
+        cells += (f'<div class="axcell" data-ax="{_esc_attr(k)}">'
+                  f'<span class="ax-k"><i>{AXIS_ICON.get(k, "◆")}</i>{html_rich(k)}</span>'
+                  f'<span class="ax-d">{html_rich(it["desc"])}</span>'
+                  f'<span class="ax-h">{html_rich(it["hint"])}</span></div>')
+    return ('<div class="card axes"><span class="label">🗂️ 先分抽屜：這題在講什麼</span>'
+            f'<div class="callout">{html_rich(ax["intro"])}</div>'
+            f'<div class="axgrid">{cells}</div></div>')
+
+
+def _entrydiag_html(ed, axes):
+    """入口診斷：只判斷「第一步從哪個抽屜切入」，不要求算出答案。
+
+    與 B1 直覺挑戰同一套互動慣例（點選 → 即時對錯 → 一句話說明 → 錨點回考點），
+    但選項固定是那幾個入口表示，練的是「辨識」而不是「計算」。
+    """
+    if not ed or not axes:
+        return ""
+    keys = [it["key"] for it in axes["items"]]
+    cards = ""
+    for i, c in enumerate(ed["cards"]):
+        opts = "".join(
+            f'<button class="ed-opt" data-ok="{1 if k == c["a"] else 0}" '
+            f'onclick="edPick(this)">{html_rich(k)}</button>' for k in keys)
+        kpid = c.get("kp", "")
+        link = (f'<a class="ed-go" href="#{kpid}">→ 考點 {re.sub(r"[^0-9]", "", kpid)}</a>'
+                if kpid else "")
+        cards += (f'<div class="edcard" data-i="{i}">'
+                  f'<div class="ed-q"><span class="ed-n">{i + 1}</span>{html_rich(c["q"])}</div>'
+                  f'<div class="ed-opts">{opts}</div>'
+                  f'<div class="ed-fb"><b class="ed-ans">入口：{html_rich(c["a"])}</b>'
+                  f'<span class="ed-why">{html_rich(c["why"])}</span>{link}</div></div>')
+    return ('<div class="card entrydiag">'
+            f'<span class="label">🧭 {html_rich(ed.get("heading", "入口診斷"))}</span>'
+            f'<div class="callout">{html_rich(ed.get("note", ""))}</div>'
+            f'<div class="ed-prog">答對 <b id="ed-ok">0</b> / {len(ed["cards"])}'
+            '<span class="ed-hint">（只選抽屜，先不要算）</span></div>'
+            f'{cards}</div>')
+
+
 def _part0_html(p0):
     if not p0:
         return ""
@@ -897,6 +981,8 @@ def _part0_html(p0):
     return (f'<div class="part" id="part0">Part 0　引起動機：{heading}'
             f'<small>{sub}</small></div>'
             f'{opener}'
+            f'{_axes_html(p0.get("axes"))}'
+            f'{_entrydiag_html(p0.get("entrydiag"), p0.get("axes"))}'
             f'{_challenge_html(p0.get("challenge"))}'
             '<div class="card">'
             '<span class="label">近十年出題趨勢（106–115）</span>'
@@ -1090,6 +1176,7 @@ def build_html(unit, units):
 <script>
 window.MMSLUG="{unit["slug"]}";window.MMKPS={[k["id"] for k in unit["kps"]]};
 {PROGRESS_JS}
+{ENTRYDIAG_JS}
 {ROUTE_JS}</script>
 <script>
 {LIGHTBOX_JS}</script>

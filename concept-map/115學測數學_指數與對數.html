@@ -300,6 +300,50 @@
   /* 考頻徽章 / 學測難題徽章 */
   .kp-freq{display:inline-block; margin-left:9px; font-size:12.5px; color:#c98a00; font-weight:800; vertical-align:2px; letter-spacing:1px}
   .hard-badge{display:inline-block; background:#fbe4e4; color:#b5384e; border-radius:6px; padding:0 7px; font-size:12px; font-weight:700; margin-left:2px}
+  /* ── 方案 B：入口三格 ＋ 入口診斷（先把題目分抽屜，再挑公式） ── */
+  .axgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin:10px 0 2px}
+  .axcell{background:#fbfaf8; border:1px solid var(--line); border-top:3px solid var(--btn);
+    border-radius:10px; padding:11px 13px}
+  .ax-k{display:flex; align-items:center; gap:7px; font-size:17px; font-weight:800; color:var(--btn)}
+  .ax-k i{font-style:normal; font-size:15px; width:24px; height:24px; line-height:24px; text-align:center;
+    background:#e9f5f4; border-radius:7px}
+  .ax-d{display:block; margin-top:5px; font-size:14px; color:#4a3a34; font-weight:600}
+  .ax-h{display:block; margin-top:4px; font-size:13px; color:#6f7f7e; line-height:1.7}
+  /* 考點標題旁的入口標籤 */
+  .ax-tags{display:inline-flex; gap:4px; margin-left:8px; vertical-align:2px}
+  .ax-tag{display:inline-block; padding:0 8px; border-radius:20px; font-size:12px; font-weight:700;
+    background:#eef5f5; color:#4a7b7f; border:1px solid #cfe3e3; white-space:nowrap; cursor:help}
+  .ax-tag.main{background:var(--btn); color:#fff; border-color:var(--btn)}
+  /* 入口診斷卡 */
+  .entrydiag .ed-prog{font-size:14px; font-weight:700; color:var(--maroon-d); margin:10px 0 2px}
+  .entrydiag .ed-prog b{font-size:16px}
+  .ed-hint{font-weight:500; color:#9a857c; font-size:13px; margin-left:8px}
+  .edcard{border:1px solid var(--line); border-left:4px solid #cfd6dd; border-radius:0 10px 10px 0;
+    padding:11px 14px; margin:10px 0; background:#fff; transition:.15s}
+  .edcard.is-ok{border-left-color:#1f7a45; background:#f6fbf8}
+  .edcard.is-no{border-left-color:#c0663a; background:#fdf8f5}
+  .ed-q{font-size:15px; color:var(--ink); line-height:1.9}
+  .ed-n{display:inline-block; width:21px; height:21px; line-height:21px; text-align:center; margin-right:8px;
+    background:#f0dde3; color:var(--maroon-d); border-radius:50%; font-size:12.5px; font-weight:700}
+  .ed-opts{display:flex; gap:7px; flex-wrap:wrap; margin:9px 0 0}
+  .ed-opt{display:inline-flex; align-items:center; min-height:40px; padding:5px 20px; cursor:pointer;
+    background:var(--btn-bg); color:var(--btn); border:1.5px solid var(--btn-bd); border-radius:20px;
+    font-size:15px; font-weight:800; font-family:inherit; transition:.15s}
+  .ed-opt:hover:not(:disabled){background:var(--btn); color:#fff}
+  .ed-opt:disabled{cursor:default; opacity:.55}
+  .ed-opt.right{background:#1f7a45; border-color:#1f7a45; color:#fff; opacity:1}
+  .ed-opt.wrong{background:#fdecea; border-color:#c0663a; color:#a8452a; opacity:1}
+  .ed-fb{display:none; margin-top:9px; padding-top:9px; border-top:1px dashed var(--line)}
+  .edcard.done .ed-fb{display:block}
+  .ed-ans{color:var(--btn); font-size:14.5px}
+  .ed-why{display:block; margin-top:3px; font-size:14px; color:#5a4a44; line-height:1.85}
+  .ed-go{display:inline-block; margin-top:6px; font-size:13.5px; font-weight:700; color:var(--maroon);
+    text-decoration:none; border-bottom:1.5px solid #e3c6d0}
+  .ed-go:hover{border-bottom-color:var(--maroon)}
+  @media(max-width:560px){
+    .ed-opt{flex:1 1 auto; justify-content:center; padding:5px 12px}
+    .ax-tags{display:flex; margin:5px 0 0}
+  }
   /* 路線選擇器：把 58 個考點縮成看得完的份量（只影響 Part 1 的考點卡） */
   .routebar{display:flex; align-items:center; flex-wrap:wrap; gap:8px 10px;
     background:#fbf7f4; border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:14px 0 4px}
@@ -636,6 +680,7 @@
 <script>
 window.MMSLUG="explog";window.MMKPS=['kp1', 'kp2', 'kp3', 'kp4', 'kp5'];
 var RK='mm-read-kps',MK='mm-kp-mastery';function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}function gM(){try{return JSON.parse(localStorage.getItem(MK)||'{}')}catch(e){return {}}}function setLast(kp){try{var h=document.querySelector('.hero h1');localStorage.setItem('mm-last',JSON.stringify({slug:MMSLUG,file:decodeURIComponent(location.pathname.split('/').pop()),title:h?h.textContent:document.title,kp:kp||''}));}catch(e){}}function kpToggle(b){var k=MMSLUG+':'+b.dataset.kp;var s=gR();var on=!s.has(k);on?s.add(k):s.delete(k);localStorage.setItem(RK,JSON.stringify([...s]));setLast(b.dataset.kp);upUnit();}function upUnit(){var s=gR();var done=MMKPS.filter(k=>s.has(MMSLUG+':'+k)).length,t=MMKPS.length;document.querySelectorAll('.kpchk').forEach(b=>b.classList.toggle('on',s.has(MMSLUG+':'+b.dataset.kp)));var tx=document.getElementById('up-txt');if(tx)tx.textContent=done+' / '+t;var bar=document.getElementById('up-bar');if(bar)bar.style.width=(t?done/t*100:0)+'%';}function markAllKp(){var s=gR();var all=MMKPS.every(k=>s.has(MMSLUG+':'+k));MMKPS.forEach(k=>{var key=MMSLUG+':'+k;all?s.delete(key):s.add(key);});localStorage.setItem(RK,JSON.stringify([...s]));upUnit();}function kpMastery(kp,st,force){var o=gM(),key=MMSLUG+':'+kp;if(o[key]===st&&!force){delete o[key];}else{o[key]=st;}localStorage.setItem(MK,JSON.stringify(o));if(o[key]==='ok'){var s=gR();s.add(MMSLUG+':'+kp);localStorage.setItem(RK,JSON.stringify([...s]));}setLast(kp);upMastery();upUnit();}function upMastery(){var o=gM(),ok=0,rv=0;MMKPS.forEach(function(k){var v=o[MMSLUG+':'+k];if(v==='ok')ok++;else if(v==='review')rv++;});document.querySelectorAll('.kpcheck').forEach(function(b){var v=o[MMSLUG+':'+b.dataset.kp]||'';b.classList.toggle('is-ok',v==='ok');b.classList.toggle('is-rv',v==='review');var ok0=b.querySelector('.kc-ok'),rv0=b.querySelector('.kc-rv');if(ok0)ok0.classList.toggle('on',v==='ok');if(rv0)rv0.classList.toggle('on',v==='review');});document.querySelectorAll('.kp-mastery').forEach(function(e){var v=o[MMSLUG+':'+e.dataset.kp]||'';e.textContent=v==='ok'?'✓ 已理解':(v==='review'?'⚠ 待複習':'');e.className='kp-mastery '+v;});var mt=document.getElementById('mst-txt');if(mt)mt.textContent=ok;var rv2=document.getElementById('mst-rv');if(rv2)rv2.textContent=rv;var mb=document.getElementById('mst-bar');if(mb)mb.style.width=(MMKPS.length?ok/MMKPS.length*100:0)+'%';var jp=document.getElementById('mst-jump');if(jp)jp.style.display=rv?'':'none';}function jumpReview(){var o=gM();for(var i=0;i<MMKPS.length;i++){if(o[MMSLUG+':'+MMKPS[i]]==='review'){location.hash=MMKPS[i];return;}}}setLast((location.hash||'').replace('#',''));upUnit();upMastery();
+function edPick(b){var c=b.closest('.edcard');if(!c||c.classList.contains('done'))return;c.classList.add('done');var ok=b.dataset.ok==='1';b.classList.add(ok?'right':'wrong');if(!ok){var t=c.querySelector('.ed-opt[data-ok="1"]');if(t)t.classList.add('right');}c.classList.add(ok?'is-ok':'is-no');c.querySelectorAll('.ed-opt').forEach(function(x){x.disabled=true;});var n=document.getElementById('ed-ok');if(n)n.textContent=document.querySelectorAll('.edcard.is-ok').length;var fb=c.querySelector('.ed-fb');if(fb&&typeof ensureMath==='function')ensureMath(fb);}
 var RTK='mm-route',_rtCards=null,_rtAnchor=null,_rtParent=null;function _rtInit(){var c=[].slice.call(document.querySelectorAll('.card[data-freq]'));if(!c.length)return false;_rtCards=c;_rtParent=c[0].parentNode;_rtAnchor=c[c.length-1].nextSibling;return true;}function _rtRate(el){var v=el.getAttribute('data-rate');return v===null?-1:+v;}function setRoute(r,quiet){if(!_rtCards&&!_rtInit())return;var m=gM(),show=[],hidden=0;if(r==='basic'){show=_rtCards.filter(function(e){return +e.dataset.freq>=3;});show.sort(function(a,b){return _rtRate(b)-_rtRate(a);});}else if(r==='review'){show=_rtCards.filter(function(e){return m[MMSLUG+':'+e.id]==='review';});}else{r='all';show=_rtCards.slice();}hidden=_rtCards.length-show.length;_rtCards.forEach(function(e){e.style.display='none';});show.forEach(function(e){e.style.display='';_rtParent.insertBefore(e,_rtAnchor);});document.querySelectorAll('.rb-btn').forEach(function(b){b.classList.toggle('on',b.dataset.r===r);});if(!show.length&&r!=='all'){_rtCards.forEach(function(e){e.style.display='';_rtParent.insertBefore(e,_rtAnchor);});document.querySelectorAll('.rb-btn').forEach(function(b){b.classList.toggle('on',b.dataset.r===r);});var n0=document.getElementById('rb-note');if(n0)n0.textContent=(r==='basic')?'這個單元沒有 ★★★ 考點，已顯示全部':'這個單元目前沒有待複習的考點，已顯示全部——在各考點末「確認理解」作答，答錯會自動標記';if(!quiet){try{localStorage.setItem(RTK,r);}catch(e){}}return;}var n=document.getElementById('rb-note');if(n){if(r==='basic'){n.textContent='只顯示 '+show.length+' 個必考核心，答對率高的排前面（其餘 '+hidden+' 個先收起來）';}else if(r==='review'){n.textContent='只顯示你標記待複習的 '+show.length+' 個考點';}else{n.textContent='';}}if(!quiet){try{localStorage.setItem(RTK,r);}catch(e){}}if(typeof ensureMath==='function')show.forEach(function(e){ensureMath(e);});}(function(){if(!_rtInit())return;var r='all';try{r=localStorage.getItem(RTK)||'all';}catch(e){}if(location.hash&&document.querySelector(location.hash+'.card'))r='all';setRoute(r,1);})();</script>
 <script>
 (function(){var lb=document.getElementById('lightbox');if(!lb)return;var sc=document.getElementById('lb-scroll');function op(svg){sc.innerHTML='';sc.appendChild(svg.cloneNode(true));lb.classList.add('open');document.documentElement.style.overflow='hidden';sc.scrollTop=0;sc.scrollLeft=0;}function cl(){lb.classList.remove('open');sc.innerHTML='';document.documentElement.style.overflow='';}document.querySelectorAll('figure.tfig').forEach(function(f){var s=f.querySelector('svg');if(!s)return;f.addEventListener('click',function(e){e.stopPropagation();op(s);});});lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-close')||e.target.classList.contains('lb-scroll'))cl();});document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});})();</script>

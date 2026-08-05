@@ -271,6 +271,50 @@
   /* 考頻徽章 / 學測難題徽章 */
   .kp-freq{display:inline-block; margin-left:9px; font-size:12.5px; color:#c98a00; font-weight:800; vertical-align:2px; letter-spacing:1px}
   .hard-badge{display:inline-block; background:#fbe4e4; color:#b5384e; border-radius:6px; padding:0 7px; font-size:12px; font-weight:700; margin-left:2px}
+  /* ── 方案 B：入口三格 ＋ 入口診斷（先把題目分抽屜，再挑公式） ── */
+  .axgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin:10px 0 2px}
+  .axcell{background:#fbfaf8; border:1px solid var(--line); border-top:3px solid var(--btn);
+    border-radius:10px; padding:11px 13px}
+  .ax-k{display:flex; align-items:center; gap:7px; font-size:17px; font-weight:800; color:var(--btn)}
+  .ax-k i{font-style:normal; font-size:15px; width:24px; height:24px; line-height:24px; text-align:center;
+    background:#e9f5f4; border-radius:7px}
+  .ax-d{display:block; margin-top:5px; font-size:14px; color:#4a3a34; font-weight:600}
+  .ax-h{display:block; margin-top:4px; font-size:13px; color:#6f7f7e; line-height:1.7}
+  /* 考點標題旁的入口標籤 */
+  .ax-tags{display:inline-flex; gap:4px; margin-left:8px; vertical-align:2px}
+  .ax-tag{display:inline-block; padding:0 8px; border-radius:20px; font-size:12px; font-weight:700;
+    background:#eef5f5; color:#4a7b7f; border:1px solid #cfe3e3; white-space:nowrap; cursor:help}
+  .ax-tag.main{background:var(--btn); color:#fff; border-color:var(--btn)}
+  /* 入口診斷卡 */
+  .entrydiag .ed-prog{font-size:14px; font-weight:700; color:var(--maroon-d); margin:10px 0 2px}
+  .entrydiag .ed-prog b{font-size:16px}
+  .ed-hint{font-weight:500; color:#9a857c; font-size:13px; margin-left:8px}
+  .edcard{border:1px solid var(--line); border-left:4px solid #cfd6dd; border-radius:0 10px 10px 0;
+    padding:11px 14px; margin:10px 0; background:#fff; transition:.15s}
+  .edcard.is-ok{border-left-color:#1f7a45; background:#f6fbf8}
+  .edcard.is-no{border-left-color:#c0663a; background:#fdf8f5}
+  .ed-q{font-size:15px; color:var(--ink); line-height:1.9}
+  .ed-n{display:inline-block; width:21px; height:21px; line-height:21px; text-align:center; margin-right:8px;
+    background:#f0dde3; color:var(--maroon-d); border-radius:50%; font-size:12.5px; font-weight:700}
+  .ed-opts{display:flex; gap:7px; flex-wrap:wrap; margin:9px 0 0}
+  .ed-opt{display:inline-flex; align-items:center; min-height:40px; padding:5px 20px; cursor:pointer;
+    background:var(--btn-bg); color:var(--btn); border:1.5px solid var(--btn-bd); border-radius:20px;
+    font-size:15px; font-weight:800; font-family:inherit; transition:.15s}
+  .ed-opt:hover:not(:disabled){background:var(--btn); color:#fff}
+  .ed-opt:disabled{cursor:default; opacity:.55}
+  .ed-opt.right{background:#1f7a45; border-color:#1f7a45; color:#fff; opacity:1}
+  .ed-opt.wrong{background:#fdecea; border-color:#c0663a; color:#a8452a; opacity:1}
+  .ed-fb{display:none; margin-top:9px; padding-top:9px; border-top:1px dashed var(--line)}
+  .edcard.done .ed-fb{display:block}
+  .ed-ans{color:var(--btn); font-size:14.5px}
+  .ed-why{display:block; margin-top:3px; font-size:14px; color:#5a4a44; line-height:1.85}
+  .ed-go{display:inline-block; margin-top:6px; font-size:13.5px; font-weight:700; color:var(--maroon);
+    text-decoration:none; border-bottom:1.5px solid #e3c6d0}
+  .ed-go:hover{border-bottom-color:var(--maroon)}
+  @media(max-width:560px){
+    .ed-opt{flex:1 1 auto; justify-content:center; padding:5px 12px}
+    .ax-tags{display:flex; margin:5px 0 0}
+  }
   /* 路線選擇器：把 58 個考點縮成看得完的份量（只影響 Part 1 的考點卡） */
   .routebar{display:flex; align-items:center; flex-wrap:wrap; gap:8px 10px;
     background:#fbf7f4; border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:14px 0 4px}
