@@ -101,6 +101,55 @@ PROGRESS_JS = (
     "upUnit();upMastery();")
 
 
+# 路線選擇器（方案 A）：把 Part 1 的考點卡依路線篩選／重排。
+#   完整複習  ＝ 全部顯示、恢復原順序
+#   先拿基本分＝ 只留 3★ 高頻考點，並依官方答對率由高到低排（難的排後面）
+#   錯題回補  ＝ 只留自評／小測判定為「待複習」的考點
+# 選擇存 localStorage（鍵 mm-route），跨單元沿用——學生選一次就好。
+# 不另外包容器：考點卡是 .wrap 的連續兄弟節點，直接在原位重排，
+# 避免動到 app.js 依 DOM 層級做的分塊渲染。
+ROUTE_JS = (
+    "var RTK='mm-route',_rtCards=null,_rtAnchor=null,_rtParent=null;"
+    "function _rtInit(){var c=[].slice.call(document.querySelectorAll('.card[data-freq]'));"
+    "if(!c.length)return false;_rtCards=c;_rtParent=c[0].parentNode;"
+    "_rtAnchor=c[c.length-1].nextSibling;return true;}"
+    "function _rtRate(el){var v=el.getAttribute('data-rate');return v===null?-1:+v;}"
+    "function setRoute(r,quiet){"
+    "if(!_rtCards&&!_rtInit())return;"
+    "var m=gM(),show=[],hidden=0;"
+    "if(r==='basic'){"
+    "show=_rtCards.filter(function(e){return +e.dataset.freq>=3;});"
+    # 難的排後面：有答對率的由高到低；沒有官方資料的排最後（不臆測它的難易）
+    "show.sort(function(a,b){return _rtRate(b)-_rtRate(a);});"
+    "}else if(r==='review'){"
+    "show=_rtCards.filter(function(e){return m[MMSLUG+':'+e.id]==='review';});"
+    "}else{r='all';show=_rtCards.slice();}"
+    "hidden=_rtCards.length-show.length;"
+    "_rtCards.forEach(function(e){e.style.display='none';});"
+    "show.forEach(function(e){e.style.display='';_rtParent.insertBefore(e,_rtAnchor);});"
+    "document.querySelectorAll('.rb-btn').forEach(function(b){b.classList.toggle('on',b.dataset.r===r);});"
+    # 篩不到東西時一律退回全部顯示並說明——不能讓學生翻到下一個單元看到空白的 Part 1
+    "if(!show.length&&r!=='all'){_rtCards.forEach(function(e){e.style.display='';"
+    "_rtParent.insertBefore(e,_rtAnchor);});"
+    "document.querySelectorAll('.rb-btn').forEach(function(b){b.classList.toggle('on',b.dataset.r===r);});"
+    "var n0=document.getElementById('rb-note');"
+    "if(n0)n0.textContent=(r==='basic')?'這個單元沒有 ★★★ 考點，已顯示全部'"
+    ":'這個單元目前沒有待複習的考點，已顯示全部——在各考點末「確認理解」作答，答錯會自動標記';"
+    "if(!quiet){try{localStorage.setItem(RTK,r);}catch(e){}}return;}"
+    "var n=document.getElementById('rb-note');"
+    "if(n){if(r==='basic'){n.textContent='只顯示 '+show.length+' 個必考核心，答對率高的排前面（其餘 '+hidden+' 個先收起來）';}"
+    "else if(r==='review'){n.textContent='只顯示你標記待複習的 '+show.length+' 個考點';}"
+    "else{n.textContent='';}}"
+    "if(!quiet){try{localStorage.setItem(RTK,r);}catch(e){}}"
+    # 篩選後版面位移，帶錨點進來的要重新對位；數學式也可能還沒渲染到
+    "if(typeof ensureMath==='function')show.forEach(function(e){ensureMath(e);});"
+    "}"
+    "(function(){if(!_rtInit())return;var r='all';try{r=localStorage.getItem(RTK)||'all';}catch(e){}"
+    # 帶 #kpN 進頁時一律走完整模式，否則目標考點可能剛好被篩掉、跳過去是空的
+    "if(location.hash&&document.querySelector(location.hash+'.card'))r='all';"
+    "setRoute(r,1);})();")
+
+
 # ===「繼續上次進度」橫幅（首頁 index.html 內嵌一份；概念地圖／內容總覽引用下列共用常數）===
 # 讀 localStorage 的 mm-last（單元頁 setLast 寫入）。放一個 id="continue-bar" 的 <a> 即可自動生效。
 _F2S_JS = "{" + ",".join(f'"{u["file"]}":"{u["slug"]}"' for u in _BY_SLUG.values()) + "}"
@@ -676,7 +725,11 @@ def _kp_html(kp, slug=""):
                   '<button class="sol-btn wk-btn" data-s="💡 看詳解（每步都說明為什麼）" '
                   'data-h="收合詳解" onclick="ts(this)">💡 看詳解（每步都說明為什麼）</button>'
                   f'<div class="sol wk-reveal"><ol class="wk-steps">{steps}</ol>{wans}</div></div>')
-    return (f'<div class="card" id="{kp["id"]}">'
+    # 路線選擇器要用的兩個訊號：考頻星數、官方答對率（沒有資料就不寫這個屬性）
+    _fr = (kp.get("freq") or "").count("★")
+    _rt = EXAM_RATES.get((slug, kp["id"]))
+    _data = f' data-freq="{_fr}"' + (f' data-rate="{_rt[0]:.0f}"' if _rt else "")
+    return (f'<div class="card" id="{kp["id"]}"{_data}>'
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
             f'title="標記此考點已讀" aria-label="標記已讀"></button>'
             f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}'
@@ -960,6 +1013,22 @@ def _toolbar(unit, units):
             '<button onclick="hideAll()">全部隱藏</button></div>')
 
 
+def _routebar_html():
+    """Part 1 上方的「今天走哪條路」：一次把 58 個考點縮成看得完的份量。
+
+    只篩 Part 1 的考點卡；Part 0 趨勢、Part 2 實戰、Part 3 速查一律保留。
+    """
+    return (
+        '<div class="routebar" id="routebar">'
+        '<span class="rb-lbl">🧭 今天走哪條路？</span>'
+        '<span class="rb-btns">'
+        '<button class="rb-btn on" data-r="all" onclick="setRoute(\'all\')">完整複習</button>'
+        '<button class="rb-btn" data-r="basic" onclick="setRoute(\'basic\')">先拿基本分</button>'
+        '<button class="rb-btn" data-r="review" onclick="setRoute(\'review\')">錯題回補</button>'
+        '</span>'
+        '<span class="rb-note" id="rb-note"></span></div>')
+
+
 def build_html(unit, units):
     css = _asset("style.css")
     js = _asset("app.js")
@@ -984,6 +1053,7 @@ def build_html(unit, units):
             f'{_part0_html(unit.get("part0"))}'
             '<div class="part">Part 1　建構概念：'
             f'{unit.get("part1_label","五大考點")} <small>先把觀念與公式打穩，再上戰場</small></div>'
+            f'{_routebar_html()}'
             f'{kps_html}'
             f'{_mixed_html(unit.get("mixed"))}'
             f'{_part2_html(unit.get("part2"), unit["slug"])}'
@@ -1019,7 +1089,8 @@ def build_html(unit, units):
 {js}</script>
 <script>
 window.MMSLUG="{unit["slug"]}";window.MMKPS={[k["id"] for k in unit["kps"]]};
-{PROGRESS_JS}</script>
+{PROGRESS_JS}
+{ROUTE_JS}</script>
 <script>
 {LIGHTBOX_JS}</script>
 <script>

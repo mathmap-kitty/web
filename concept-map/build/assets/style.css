@@ -271,6 +271,23 @@
   /* 考頻徽章 / 學測難題徽章 */
   .kp-freq{display:inline-block; margin-left:9px; font-size:12.5px; color:#c98a00; font-weight:800; vertical-align:2px; letter-spacing:1px}
   .hard-badge{display:inline-block; background:#fbe4e4; color:#b5384e; border-radius:6px; padding:0 7px; font-size:12px; font-weight:700; margin-left:2px}
+  /* 路線選擇器：把 58 個考點縮成看得完的份量（只影響 Part 1 的考點卡） */
+  .routebar{display:flex; align-items:center; flex-wrap:wrap; gap:8px 10px;
+    background:#fbf7f4; border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:14px 0 4px}
+  .rb-lbl{font-weight:800; color:var(--maroon-d); font-size:14.5px; white-space:nowrap}
+  .rb-btns{display:flex; gap:6px; flex-wrap:wrap}
+  .rb-btn{display:inline-flex; align-items:center; min-height:34px;
+    background:#fff; color:#6b5249; border:1.5px solid var(--line); border-radius:20px;
+    padding:5px 14px; font-size:13.5px; font-weight:700; font-family:inherit; cursor:pointer; transition:.15s}
+  .rb-btn:hover{border-color:var(--maroon); color:var(--maroon)}
+  .rb-btn.on{background:var(--maroon); border-color:var(--maroon); color:#fff}
+  .rb-note{flex:1 1 100%; font-size:13px; color:#7a6a63; line-height:1.6}
+  .rb-note:empty{display:none}
+  @media(max-width:560px){
+    .rb-lbl{flex:1 1 100%}
+    /* 手機是學生主力裝置：觸控目標留 40px，別讓按鈕小到按不準 */
+    .rb-btn{min-height:40px; padding:4px 12px; font-size:13px}
+  }
   /* 官方答對率徽章：中性灰藍，純資訊、不做紅綠判斷（強調色只留給判斷關鍵） */
   .kp-rate{display:inline-block; margin-left:9px; padding:0 8px; border:1px solid #d3d9e0; border-radius:20px;
            background:#f4f6f8; color:#5c6b7a; font-size:12px; font-weight:700; vertical-align:2px; white-space:nowrap; cursor:help}
