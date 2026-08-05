@@ -32,6 +32,13 @@ a{color:var(--maroon)}
 /* ---- question card ---- */
 .qcard{background:var(--card);border:1px solid var(--line);border-radius:14px;
   margin:18px 0;overflow:hidden;box-shadow:0 1px 3px rgba(140,39,64,.06)}
+/* 從講義／重點整理用 ?q= 連進來時，短暫高亮目標題，避免學生不知道跳到哪 */
+.qcard{scroll-margin-top:88px}   /* sticky 工具列 75px + 留白，跳題時不被遮住 */
+.qcard.deep-hit{border-color:var(--maroon);box-shadow:0 0 0 3px rgba(140,39,64,.18)}
+@media(prefers-reduced-motion:no-preference){
+  .qcard.deep-hit{animation:deepHit 3s ease-out 1}
+  @keyframes deepHit{0%,55%{box-shadow:0 0 0 4px rgba(140,39,64,.28)}100%{box-shadow:0 0 0 3px rgba(140,39,64,.18)}}
+}
 .qcard-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
 .col{padding:18px 20px}
 .col.q{border-right:1px solid var(--line);background:#fffdfb}

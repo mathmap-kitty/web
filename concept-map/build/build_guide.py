@@ -160,6 +160,13 @@ GUIDE_CSS = """
   .card.c-drill{border-left-color:#2e7d5b; background:#f8fbf9}
   .card.c-drill .sec-h{color:#256c4d}
   .card.c-drill .sec-h .num{background:#2e7d5b}
+  /* 練習指引題號 → exam 直達連結（只有 111–115 有，106–110 維持純文字） */
+  .qlink{text-decoration:none; border-bottom:1.5px solid #9ecdb6; border-radius:3px;
+         padding:1px 2px 0; transition:.13s; white-space:nowrap}
+  .qlink:hover, .qlink:focus-visible{background:#e3f2ea; border-bottom-color:#2e7d5b}
+  .qlink code{color:#256c4d; font-weight:700}
+  .qlink .qx{font-size:10px; color:#6da58a; margin-left:1px; vertical-align:1px}
+  .qlink:hover .qx{color:#2e7d5b}
   .card.c-star{border-left-color:#7a5ea8}
   .card.c-star .sec-h{color:#5e4487; font-size:18px}
   .card.c-star .sec-h .num{background:#7a5ea8}
@@ -454,7 +461,33 @@ def chapter_body(ch):
         out.append(block_html(b))
     if open_card:
         out.append("</section>")
-    return "".join(out)
+    return link_exam_refs("".join(out))
+
+
+# 「練習指引」的題號 → 直接連到 exam/ 那一題。
+# exam 子站只收 111–115，106–110 沒有對應題目，維持純文字不加連結。
+EXAM_YEARS = {"111", "112", "113", "114", "115"}
+RE_QREF = re.compile(
+    r"<code>(\d{3})</code><code>([單多選])</code><code>([0-9A-Za-z]+)</code>")
+QTYPE_NAME = {"單": "單選", "多": "多選", "選": "選填"}
+
+
+def link_exam_refs(html):
+    r"""把 <code>115</code><code>單</code><code>3</code> 包成連到 exam 的連結。
+
+    exam 的題號是**全卷連續編號 1–20**（單選 1–6、多選 7–12、選填 13–17、
+    混合 18、非選 19–20），與講義標的題號一致，所以直接用數字即可，
+    不需要「選填 A→13」這類字母對映（已對 139 個引用逐一驗證）。
+    另開分頁：學生是在讀講義的過程中去對題目，不該把講義頁弄丟。
+    """
+    def sub(m):
+        yr, tp, num = m.group(1), m.group(2), m.group(3)
+        if yr not in EXAM_YEARS or not num.isdigit():
+            return m.group(0)          # 106–110 或非數字題號 → 不連
+        tip = f"到歷屆試題互動練習看 {yr} 學測數A 第 {num} 題（{QTYPE_NAME.get(tp, tp)}）· 另開分頁"
+        return (f'<a class="qlink" href="../exam/?q={yr}-{num}" target="_blank" '
+                f'rel="noopener" title="{esc(tip)}">{m.group(0)}<span class="qx">↗</span></a>')
+    return RE_QREF.sub(sub, html)
 
 
 # 小節標題進下拉選單／目錄連結時只能是純文字，常用符號改成看得懂的字

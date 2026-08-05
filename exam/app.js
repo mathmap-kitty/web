@@ -376,7 +376,61 @@ function render(){
   return renderYear(app);
 }
 
-function start(){ render(); }
+/* ---------- 深層連結 ?q=<qid>：從複習講義／重點整理直接跳到某一題 ----------
+   qid 格式同 qid()：數A「111-7」、數B「B111-7」（num 是全卷連續編號 1–20）。
+   必須在第一次 render 前設好 state，否則預設只顯示 115 年、目標題不會被畫出來。 */
+function readDeepLink(){
+  var m=/[?&]q=(B?\d{3}-[0-9A-Za-z]+)/.exec(location.search);
+  return m ? m[1] : '';
+}
+function applyDeepLink(t){
+  var m=/^(B?)(\d{3})-([0-9A-Za-z]+)$/.exec(t||'');
+  if(!m) return '';
+  state.subject = m[1] ? 'B' : 'A';
+  state.year = m[2];
+  state.view = 'year';
+  state.unit = ''; state.diff = '';   // 清掉篩選，否則目標題可能被濾掉
+  return t;
+}
+/* 跳到目標題有兩個東西會把它弄丟：
+     ① 瀏覽器的捲動位置還原（reload 時會把 scrollY 拉回 0，蓋掉我們的捲動）
+     ② 題目截圖是 loading="lazy"，陸續載入時會把下面的內容一路往下推
+   所以：先關掉捲動還原，再持續校正到「位置連續兩次不變」為止（上限 2.5 秒）。 */
+function focusDeepLink(t){
+  if(!t) return;
+  var card=document.getElementById('q-'+t);
+  if(!card) return;
+  card.classList.add('deep-hit');
+  function go(){ try{ card.scrollIntoView({block:'start'}); }catch(e){ card.scrollIntoView(); } }
+
+  // 學生一旦自己動了，就別再硬拉回去（校正期間仍可能有人急著往下滑）
+  var userMoved=false;
+  var EVTS=['wheel','touchstart','keydown','mousedown'];
+  function onUser(){ userMoved=true; stop(); }
+  function stop(){ EVTS.forEach(function(e){ window.removeEventListener(e, onUser); }); }
+  EVTS.forEach(function(e){ window.addEventListener(e, onUser, {passive:true}); });
+
+  var last=-1, stable=0, tries=0;
+  (function align(){
+    if(userMoved){ setTimeout(fade, 0); return; }
+    go();
+    var abs=Math.round(card.getBoundingClientRect().top+window.scrollY);
+    stable = (abs===last) ? stable+1 : 0;
+    last=abs;
+    if(stable>=2 || ++tries>16){                 // 穩定了、或 16×150ms 到頂就收手
+      stop(); fade(); return;
+    }
+    setTimeout(align, 150);
+  })();
+  function fade(){ setTimeout(function(){ card.classList.remove('deep-hit'); }, 3200); }
+}
+
+function start(){
+  var t=applyDeepLink(readDeepLink());
+  if(t && 'scrollRestoration' in history){ try{ history.scrollRestoration='manual'; }catch(e){} }
+  render();
+  if(t) setTimeout(function(){ focusDeepLink(t); }, 0);
+}
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', start);
 else start();
 })();
