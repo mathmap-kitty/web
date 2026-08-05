@@ -768,17 +768,23 @@ def _freq_badge(freq):
 
 
 def _axis_badge(kp):
-    """考點標題旁的入口標籤：第一個是建議入口（實心），其餘是也會用到的（淡色）。"""
+    """考點標題旁的入口組合。
+
+    老師的觀察（2026-08-05）：**實際考題多半是「主＋次」兩格的組合，不是單一格**。
+    所以標成有方向的組合「式 ▸ 根」＝從式切入、接著處理根，而不是主／次分列——
+    後者會讓學生以為次要那格可以不管。
+    """
     ax = kp.get("axis")
     if not ax:
         return ""
-    out = ""
-    for i, k in enumerate(ax):
-        cls = "ax-tag main" if i == 0 else "ax-tag"
-        tip = "建議從這裡切入" if i == 0 else "這個考點也會用到"
-        out += (f'<span class="{cls}" title="{_esc_attr(tip)}">'
-                f'{AXIS_ICON.get(k, "◆")}{html_rich(k)}</span>')
-    return f'<span class="ax-tags">{out}</span>'
+    if len(ax) >= 2:
+        tip = f"常見組合：從「{ax[0]}」切入，接著會用到「{ax[1]}」"
+    else:
+        tip = f"建議從「{ax[0]}」切入"
+    parts = [f'<span class="ax-tag{" main" if i == 0 else ""}">'
+             f'{AXIS_ICON.get(k, "◆")}{html_rich(k)}</span>' for i, k in enumerate(ax)]
+    inner = '<span class="ax-arrow">▸</span>'.join(parts)
+    return f'<span class="ax-tags" title="{_esc_attr(tip)}">{inner}</span>'
 
 
 def _rate_badge(slug, kpid):
