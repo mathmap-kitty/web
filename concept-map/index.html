@@ -132,6 +132,80 @@
 
   <div class="export-wrap"><button class="export-btn" onclick="openExport()">📤 匯出學習紀錄</button></div>
 
+  <!-- ROUTE-START 由 build/gen_index_route.py 產生，勿手改；改動請跑該腳本 -->
+<style>
+  .idx-route{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;background:#fbf7f4;
+    border:1px solid var(--line,#e7dcd6);border-radius:12px;padding:10px 14px;margin:16px 0 4px}
+  .idx-route .rb-lbl{font-weight:800;color:#6f1f33;font-size:14.5px;white-space:nowrap}
+  .idx-route .rb-btns{display:flex;gap:6px;flex-wrap:wrap}
+  .idx-route .rb-btn{display:inline-flex;align-items:center;min-height:34px;background:#fff;color:#6b5249;
+    border:1.5px solid var(--line,#e7dcd6);border-radius:20px;padding:5px 14px;font-size:13.5px;
+    font-weight:700;font-family:inherit;cursor:pointer;transition:.15s}
+  .idx-route .rb-btn:hover{border-color:#8c2740;color:#8c2740}
+  .idx-route .rb-btn.on{background:#8c2740;border-color:#8c2740;color:#fff}
+  .idx-route .rb-note{flex:1 1 100%;font-size:13px;color:#7a6a63;line-height:1.6}
+  .idx-route .rb-note:empty{display:none}
+  .unit.rt-empty{opacity:.5}
+  @media(max-width:560px){
+    .idx-route .rb-lbl{flex:1 1 100%}
+    .idx-route .rb-btn{min-height:40px;padding:4px 12px;font-size:13px}
+  }
+</style>
+<div class="idx-route" id="idx-route">
+  <span class="rb-lbl">🧭 今天走哪條路？</span>
+  <span class="rb-btns">
+    <button class="rb-btn on" data-r="all" onclick="idxRoute('all')">完整複習</button>
+    <button class="rb-btn" data-r="basic" onclick="idxRoute('basic')">先拿基本分</button>
+    <button class="rb-btn" data-r="review" onclick="idxRoute('review')">錯題回補</button>
+  </span>
+  <span class="rb-note" id="idx-rb-note"></span>
+</div>
+<script>window.MMROUTE={f:{"115學測數學_三角.html":{kp:{kp1:2,kp2:3,kp3:2,kp4:3,kp5:3,kp6:2,kp7:2},slug:"trig"},"115學測數學_排列組合與機率.html":{kp:{kp1:3,kp2:2,kp3:2,kp4:3,kp5:2,kp6:3},slug:"prob"},"115學測數學_空間向量.html":{kp:{kp1:2,kp2:2,kp3:3,kp4:3,kp5:2,kp6:2},slug:"space"},"115學測數學_多項式函數.html":{kp:{kp1:3,kp2:3,kp3:2,kp4:2,kp5:3},slug:"poly"},"115學測數學_直線與圓.html":{kp:{kp1:3,kp2:2,kp3:2,kp4:3,kp5:2},slug:"linecir"},"115學測數學_指數與對數.html":{kp:{kp1:2,kp2:2,kp3:2,kp4:3,kp5:3},slug:"explog"},"115學測數學_平面向量.html":{kp:{kp1:2,kp2:3,kp3:3,kp4:2,kp5:2},slug:"pvec"},"115學測數學_數據分析.html":{kp:{kp1:3,kp2:2,kp3:3,kp4:2},slug:"data"},"115學測數學_數列與級數.html":{kp:{kp1:3,kp2:2,kp3:2,kp4:1},slug:"seq"},"115學測數學_矩陣.html":{kp:{kp1:2,kp2:2,kp3:1,kp4:3,kp5:3},slug:"matrix"},"115學測數學_數與式.html":{kp:{kp1:2,kp2:3,kp3:2,kp4:2,kp5:1,kp6:2},slug:"numexpr"}}};</script>
+<script>
+(function(){
+  var D=window.MMROUTE||{f:{},s:{}};
+  function meta(a){
+    var h=a.getAttribute('href')||'', i=h.indexOf('#');
+    if(i<0) return null;
+    var file=h.slice(0,i), kp=h.slice(i+1);
+    var u=D.f[file]; if(!u||!(kp in u.kp)) return null;
+    return {file:file,kp:kp,freq:u.kp[kp],slug:u.slug};
+  }
+  function mastery(){ try{ return JSON.parse(localStorage.getItem('mm-kp-mastery')||'{}'); }catch(e){ return {}; } }
+  window.idxRoute=function(r,quiet){
+    var m=mastery(), shown=0, total=0, units=0;
+    document.querySelectorAll('.unit').forEach(function(card){
+      var vis=0, any=0;
+      card.querySelectorAll('.sub a[href*="#kp"]').forEach(function(a){
+        var d=meta(a); any++;
+        var show=true;
+        if(d){
+          total++;
+          if(r==='basic') show = d.freq>=3;
+          else if(r==='review') show = m[d.slug+':'+d.kp]==='review';
+        }
+        a.style.display = show ? '' : 'none';
+        if(show){ vis++; shown++; }
+      });
+      var empty = any>0 && vis===0;
+      card.classList.toggle('rt-empty', empty && r!=='all');
+      if(!empty) units++;
+    });
+    document.querySelectorAll('.idx-route .rb-btn').forEach(function(b){ b.classList.toggle('on', b.dataset.r===r); });
+    var n=document.getElementById('idx-rb-note');
+    if(n){
+      if(r==='basic') n.textContent='只列 '+shown+' 個必考核心考點（共 '+total+' 個），涵蓋 '+units+' 個單元。點進單元後也是同一條路線。';
+      else if(r==='review') n.textContent = shown ? ('只列你標記待複習的 '+shown+' 個考點。') : '目前沒有標記待複習的考點——先到各考點末「確認理解」作答，答錯會自動標記。';
+      else n.textContent='';
+    }
+    if(!quiet){ try{ localStorage.setItem('mm-route', r); }catch(e){} }
+  };
+  var r='all'; try{ r=localStorage.getItem('mm-route')||'all'; }catch(e){}
+  idxRoute(r,1);
+})();
+</script>
+<!-- ROUTE-END -->
+
   <div class="section">
     <h2 class="section-title" onclick="toggleSec(this)"><span class="num">1</span>代數與函數 <small>數與式 · 多項式 · 指對數</small><span class="sec-caret">＋</span></h2>
     <div class="section-units">
