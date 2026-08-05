@@ -579,13 +579,19 @@
       {left:'\\[', right:'\\]', display:true}], throwOnError:false};
   var _mmPend = [];  // 尚未渲染的分塊（DOM 順序）
   function _mmChunks(){
-    // 分塊單位：各 .card 的直接子元素（教學內容都在卡片裡）＋其餘 body 頂層元素
+    // 分塊單位：各 .card 的直接子元素（教學內容都在卡片裡）＋其餘頂層元素。
+    // 實際 DOM 是 body > .wrap > (.part | .card)*，卡片在版心裡而不在 body 層，
+    // 所以遇到 .wrap／.card 都要往內下探——只掃 body 會讓整個 .wrap 變成單一分塊，
+    // 12ms 時間預算迴圈一輪就渲染完全頁，等於完全沒有分塊。
     var list = [];
-    Array.prototype.forEach.call(document.body.children, function(top){
-      if (top.classList && top.classList.contains('card') && top.children.length)
-        Array.prototype.push.apply(list, top.children);
-      else list.push(top);
-    });
+    (function walk(parent){
+      Array.prototype.forEach.call(parent.children, function(el){
+        if (el.children.length && el.classList &&
+            (el.classList.contains('wrap') || el.classList.contains('card')))
+          walk(el);
+        else list.push(el);
+      });
+    })(document.body);
     return list;
   }
   function ensureMath(root){
