@@ -84,6 +84,41 @@ function resetAllReveal(){
 function sec(cls,label){ var d=document.createElement('div'); d.className='sec '+cls;
   var l=document.createElement('div'); l.className='lab'; l.textContent=label; d.appendChild(l); return d; }
 
+/* ---------- 文字題幹 / 選項 渲染（左欄恆顯示，立即算 KaTeX；行內數學以 $...$ 標記） ---------- */
+function texNow(latex, display){
+  var e=document.createElement(display?'div':'span');
+  e.className=display?'katex-block':'katex-inline';
+  if(window.katex){ try{ katex.render(latex, e, {displayMode:display, throwOnError:false, strict:false}); }
+    catch(err){ e.textContent=latex; } }
+  else { e.textContent=latex; e.setAttribute('data-tex',latex); if(display) e.setAttribute('data-disp','1'); }
+  return e;
+}
+function renderRich(container, str){
+  var parts=String(str).split(/\$([^$]*)\$/);   // 偶數段=文字，奇數段=行內數學
+  for(var i=0;i<parts.length;i++){
+    if(i%2===0){ if(parts[i]!=='') container.appendChild(document.createTextNode(parts[i])); }
+    else { container.appendChild(texNow(parts[i], false)); }
+  }
+}
+function renderStem(items, cls){
+  var wrap=document.createElement('div'); wrap.className=cls;
+  items.forEach(function(it){
+    if(it.t==='fig'){ var im=new Image(); im.loading='lazy'; im.src=it.src; im.className='qfig'; im.alt='題目附圖'; wrap.appendChild(im); }
+    else { var pp=document.createElement('p'); pp.className='qpara'; renderRich(pp, it.c); wrap.appendChild(pp); }
+  });
+  return wrap;
+}
+function renderOpts(opts){
+  var box=document.createElement('div'); box.className='qopts';
+  opts.forEach(function(o,i){
+    var row=document.createElement('div'); row.className='qopt';
+    var lab=document.createElement('span'); lab.className='olab'; lab.textContent='('+(i+1)+')';
+    var body=document.createElement('span'); body.className='obody'; renderRich(body,o);
+    row.appendChild(lab); row.appendChild(body); box.appendChild(row);
+  });
+  return box;
+}
+
 function makeCard(q){
   var card=document.createElement('section'); card.className='qcard'; card.id='q-'+qid(q);
   var grid=document.createElement('div'); grid.className='qcard-grid'; card.appendChild(grid);
@@ -92,8 +127,14 @@ function makeCard(q){
   var head=document.createElement('div'); head.className='qhead';
   head.innerHTML='<span class="badge">'+q.year+' 第'+q.num+'題</span><span class="badge type">'+q.type+'</span><span class="rate">答對率 '+q.rate+'</span>';
   L.appendChild(head);
-  if(q.stem){ var si=new Image(); si.loading='lazy'; si.src=q.stem; si.className='qimg'; si.alt='題組共用題幹'; L.appendChild(si); }
-  var im=new Image(); im.loading='lazy'; im.src=q.img; im.className='qimg'; im.alt='第'+q.num+'題'; L.appendChild(im);
+  if(q.qtext){
+    if(q.gstem){ var gs=renderStem(q.gstem,'qstem gstem'); var gl=document.createElement('div'); gl.className='glab'; gl.textContent='題組共用題幹'; gs.insertBefore(gl,gs.firstChild); L.appendChild(gs); }
+    L.appendChild(renderStem(q.qtext,'qstem'));
+    if(q.opts && q.opts.length){ L.appendChild(renderOpts(q.opts)); }
+  } else {
+    if(q.stem){ var si=new Image(); si.loading='lazy'; si.src=q.stem; si.className='qimg'; si.alt='題組共用題幹'; L.appendChild(si); }
+    var im=new Image(); im.loading='lazy'; im.src=q.img; im.className='qimg'; im.alt='第'+q.num+'題'; L.appendChild(im);
+  }
   var foot=document.createElement('div'); foot.className='qfoot';
   var dt=document.createElement('label'); dt.className='done-toggle';
   var cb=document.createElement('input'); cb.type='checkbox'; cb.checked=!!done[qid(q)];

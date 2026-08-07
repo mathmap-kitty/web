@@ -50,6 +50,17 @@ a{color:var(--maroon)}
 .rate{margin-left:auto;font-size:13px;color:var(--maroon-d);background:var(--rose-bg);
   border:1px solid #e6ccd5;border-radius:8px;padding:3px 10px;font-weight:600;white-space:nowrap}
 .qimg{width:100%;border:1px solid var(--line);border-radius:8px;background:#fff;display:block;margin:6px 0}
+/* ---- 文字題幹 / 選項 ---- */
+.qstem{font-size:16.5px;color:var(--ink);line-height:1.85}
+.qpara{margin:.45em 0}
+.qpara .katex,.obody .katex{font-size:1.02em}
+.qfig{display:block;max-width:100%;height:auto;margin:12px auto;border:1px solid var(--line);border-radius:8px;background:#fff;padding:6px}
+.qstem.gstem{background:#faf5ef;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:14px}
+.glab{font-size:12px;font-weight:700;letter-spacing:.5px;color:var(--gold);margin-bottom:4px}
+.qopts{margin:12px 0 2px;display:flex;flex-direction:column;gap:7px}
+.qopt{display:flex;gap:8px;align-items:baseline;font-size:16px;line-height:1.7}
+.olab{flex:0 0 auto;font-weight:700;color:var(--maroon-d);min-width:26px}
+.obody{min-width:0;overflow-x:auto;overflow-y:hidden}
 .done-toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--mut);cursor:pointer}
 .qfoot{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:10px}
 .star-btn{border:1px solid var(--line);background:#fff;color:var(--gold);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
