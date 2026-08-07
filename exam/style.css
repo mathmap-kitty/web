@@ -60,7 +60,7 @@ a{color:var(--maroon)}
 .qopts{margin:12px 0 2px;display:flex;flex-direction:column;gap:7px}
 .qopt{display:flex;gap:8px;align-items:baseline;font-size:16px;line-height:1.7}
 .olab{flex:0 0 auto;font-weight:700;color:var(--maroon-d);min-width:26px}
-.obody{min-width:0;overflow-x:auto;overflow-y:hidden}
+.obody{min-width:0;overflow-wrap:anywhere}
 .done-toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--mut);cursor:pointer}
 .qfoot{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:10px}
 .star-btn{border:1px solid var(--line);background:#fff;color:var(--gold);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
