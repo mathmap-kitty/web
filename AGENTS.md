@@ -50,6 +50,8 @@ D:\web\
 │   │   ├── checks.py               # 「確認理解」題庫（每考點 2 題微集）
 │   │   ├── part2_kp.py             # Part2 各題對應考點（★位置制，見雷區）
 │   │   ├── cues.py                 # 解題線索（線索地圖＋考點🔑標籤）
+│   │   ├── exam_rates.py           # 考點×官方答對率（gen_examrates.py 產生，勿手改）
+│   │   ├── exam_qs.py              # 考點×歷屆題清單（gen_exam_index.py 產生，勿手改）
 │   │   ├── soil_maps.py            # 各單元知識地圖 SVG（含「帶走一句話」）
 │   │   ├── openers.py / corr_figs.py     # Part0 開場圖／相關係數教學圖
 │   │   └── guide_data.json         # guide/ 子站內容來源
@@ -60,6 +62,7 @@ D:\web\
 │   │   ├── build_conceptmap.py / build_cluemap.py / build_cross.py
 │   │   ├── build_review.py / build_overview.py / build_trend108.py
 │   │   ├── build_guide.py / docx2guide.py            # guide/ 子站
+│   │   ├── gen_examrates.py / gen_exam_index.py      # 從 exam/ 導出快照（只讀不改 exam/）
 │   │   ├── gen_sitemap.py / pdf_figs.py / validate.py
 │   │   └── assets/{style.css, app.js, guide-figs/}   # 單元頁共用 CSS/JS
 │   ├── dist/                       # 建置產物（gitignore）
@@ -119,6 +122,8 @@ PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才�
 ### 已完成
 - [x] 11 單元 × 58 考點內容建置、全部上線
 - [x] 三張地圖（概念地圖三視圖／解題線索／跨單元脈絡）
+- [x] **考點卡 → exam 反向連結**（319 條，57/58 考點；`gen_exam_index.py` → `exam_qs.py`）
+      補上 9 個考點原本「沒有 111–115 真題可看」的盲區；預設收合，數A／數B 分列
 - [x] 互動系統：填空、顯示解答、練習即時批改、錯題記錄、進度追蹤、匯出學習紀錄、站內搜尋、待複習彙整
 - [x] 考點×考題對應體檢 **A/B/C 包全修**（164 題反向檢核；去課綱外工具、補教學缺口、詳解補推導、跨單元先備標註）
 - [x] **全站選項對卷複查 91 題**（修 4 處與官方原卷不符）
@@ -138,6 +143,8 @@ PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才�
 - [x] `guide/` 複習講義子站 13 章（**其他 session**，在 `feat/guide-web-version` 分支）
 
 ### 待辦
+- [ ] **`guide/` 掛上 58 考點錨點**：三個子站裡只有 guide 沒接骨架
+      （`concept-map → guide` 目前 0 條）。章層級可直接做；kp → 小節層級要老師定。
 - [ ] **`feat/guide-web-version` 合併回 `main`**，並決定 guide 是否連進總入口導覽
 - [ ] SOIL **D1**：知識地圖上方加一行使用指引（老師說「先不做」，隨時可撿）
 - [ ] **B1 直覺挑戰擴充**到其餘 8 單元（現只有 3 個高頻單元有）

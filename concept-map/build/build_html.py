@@ -31,6 +31,10 @@ try:
 except Exception:
     EXAM_RATES = {}
 try:
+    from exam_qs import EXAM_QS  # 考點×歷屆題清單（build/gen_exam_index.py 產生）
+except Exception:
+    EXAM_QS = {}
+try:
     from units import UNITS as _UNITS  # 單元中繼資料（檔名／emoji／title），供跨單元連結
     _BY_SLUG = {u["slug"]: u for u in _UNITS}
 except Exception:
@@ -759,6 +763,7 @@ def _kp_html(kp, slug=""):
             f'{mis}'
             f'{worked}'
             f'<span class="label">歷屆試題</span>{qs}'
+            f'{_exam_links_html(slug, kp["id"])}'
             f"{strategy}{selfcheck}</div>")
 
 
@@ -808,6 +813,52 @@ def _rate_badge(slug, kpid):
 def _hard_badge(level):
     """★★★ 題目標「學測難題」徽章。"""
     return ' <span class="hard-badge">🔥 學測難題</span>' if level and "★★★" in level else ""
+
+
+def _exam_links_html(slug, kpid):
+    """考點卡末尾「📝 這個考點的歷屆全題」——連回 exam/ 子站的逐題詳解。
+
+    為什麼要有這塊：考點卡本身只精選幾題（含解題核心），但 exam/ 那 200 題早就
+    標好了 kaodian 考點對應——**方向卻是單向的**（exam → 考點 319 條，考點 → exam 0 條）。
+    這裡把同一份對應表反轉回來，學生在考點卡就能看到「這個考點近五年考過哪些題」，
+    點過去有逐步詳解、官方答對率、該題的其他考點與收藏／自我測驗。
+
+    版型決定（老師 2026-08-08 定案「方案 a」）：
+      - 預設**收合**（<details>），不干擾現有由上而下的閱讀動線；考點卡不會變胖。
+      - 數 A 與數 B **分列**：數 B 對數 A 考生是額外練習，不該跟正課題材混在一起。
+      - 一律 target=_blank：與講義題號直達 exam 同一個理由（老師要求「另開分頁避免迷路」）。
+
+    資料來源 content/exam_qs.py（由 build/gen_exam_index.py 從 exam/ 題庫導出，只讀不改）。
+    """
+    items = EXAM_QS.get((slug, kpid))
+    if not items:
+        return ""
+
+    def chip(y, s, n, t, r):
+        # 深連結格式見 exam/app.js readDeepLink()：數 B 的 B 在年份前面
+        qid = f'{"B" if s == "B" else ""}{y}-{n}'
+        rate = f'<i class="exq-r">{r:.0f}%</i>' if r is not None else ""
+        tip = f'{y} 學測數{s} 第 {n} 題（{t}）' + (f'　全國答對率 {r:.0f}%' if r is not None else "")
+        return (f'<a class="exq-chip" href="../exam/?q={qid}" target="_blank" rel="noopener" '
+                f'title="{_esc_attr(tip)}">{y}<span class="exq-n">-{n}</span>'
+                f'<span class="exq-t">{t}</span>{rate}</a>')
+
+    rows = ""
+    for subj, label, cls in (("A", "數A", ""), ("B", "數B", " b")):
+        got = [i for i in items if i[1] == subj]
+        if not got:
+            continue
+        chips = "".join(chip(*i) for i in got)
+        rows += (f'<div class="exq-row"><span class="exq-sub{cls}">{label}'
+                 f'<i>{len(got)}</i></span><span class="exq-chips">{chips}</span></div>')
+
+    n_a = sum(1 for i in items if i[1] == "A")
+    n_b = len(items) - n_a
+    parts = ([f"數A {n_a} 題"] if n_a else []) + ([f"數B {n_b} 題"] if n_b else [])
+    return ('<details class="exqs"><summary>'
+            f'<b>📝 這個考點的歷屆全題</b><span class="exq-cnt">{"　·　".join(parts)}</span>'
+            '<span class="exq-hint">111–115 · 點題號看逐步詳解（另開分頁）</span>'
+            f'</summary><div class="exq-body">{rows}</div></details>')
 
 
 def _touch_html(cs, cur_slug, cur_kp):
