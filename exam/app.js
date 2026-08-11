@@ -151,7 +151,7 @@ function makeCard(q){
   R.innerHTML='<h3>解題引導（點按鈕逐步顯示）</h3>';
   var bar=document.createElement('div'); bar.className='reveal-bar'; R.appendChild(bar);
 
-  var secKey=sec('key','💡 解題關鍵'); var kp=document.createElement('div'); kp.textContent=q.key; secKey.appendChild(kp);
+  var secKey=sec('key','💡 解題關鍵'); var kp=document.createElement('div'); renderRich(kp, q.key); secKey.appendChild(kp);
   var secKd=sec('kd','📍 對應 mathmap 考點'); var chips=document.createElement('div'); chips.className='kchips';
   q.kaodian.forEach(function(k){ var a=document.createElement('a'); a.className='kchip'; a.href=k.url; a.target='_blank'; a.rel='noopener';
     a.innerHTML='<span class="u">〔'+k.unit+'〕</span>'+k.title; chips.appendChild(a); });
@@ -162,12 +162,12 @@ function makeCard(q){
   var order=[secKey, secKd];
   q.steps.forEach(function(st){ var ss=document.createElement('div'); ss.className='sec step-sec';
     if(st.type==='math'){ ss.appendChild(texEl(st.c,true)); }
-    else { var tx=document.createElement('div'); tx.className='stext'; tx.textContent=st.c; ss.appendChild(tx); }
+    else { var tx=document.createElement('div'); tx.className='stext'; renderRich(tx, st.c); ss.appendChild(tx); }
     order.push(ss); });
   if(q.fig){ var fs=document.createElement('div'); fs.className='sec step-sec'; var fi=new Image(); fi.loading='lazy'; fi.src=q.fig; fi.className='sfig'; fi.alt='詳解圖'; fs.appendChild(fi); order.push(fs); }
 
   var secAns=sec('ans','✅ 答案'); var av=document.createElement('div'); av.className='ans-val';
-  q.answer.forEach(function(s){ if(s.m) av.appendChild(texEl(s.m,false)); else av.appendChild(document.createTextNode(s.t)); });
+  q.answer.forEach(function(s){ if(s.m) av.appendChild(texEl(s.m,false)); else renderRich(av, s.t); });
   secAns.appendChild(av);
   if(testMode){
     var g=document.createElement('div'); g.className='grade';
