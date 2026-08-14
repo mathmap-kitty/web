@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MathMap 複習後診斷｜教師與學生操作流程">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>複習後診斷操作手冊</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><text y=%2252%22 font-size=%2252%22>&#128203;</text></svg>">
+<style>
+  /* ── 色票承襲 mathmap 全站：酒紅 #8c2740、暖米 #f7f2ee、湖綠 #1f6f78 ──
+     教師動線用酒紅、學生動線用湖綠，顏色本身就是分軌資訊。
+     CJK 沒有可內嵌的字體，字級與字重差異承擔全部的層次。 */
+  :root{
+    color-scheme: light;
+    --ground:#f7f2ee;  --surface:#fffdfb;  --sunk:#f1e9e3;
+    --ink:#2b2b2b;     --muted:#7a6a63;    --faint:#a5948b;
+    --line:#e7dcd6;    --line-firm:#d8c8c0;
+    --maroon:#8c2740;  --maroon-soft:#f3e2e6;  --maroon-ink:#6f1f33;
+    --teal:#1f6f78;    --teal-soft:#e2f0f0;    --teal-ink:#175058;
+    --ok:#16794a;   --ok-bg:#e7f6ee;
+    --warn:#9a6700; --warn-bg:#fdf3dc;
+    --bad:#b42318;  --bad-bg:#fbeae8;
+    --info:#1f6f78; --info-bg:#e2f0f0;
+    --none:#6d6259; --none-bg:#efe9e4;
+    --shadow:0 1px 2px rgba(80,40,30,.05), 0 8px 24px -12px rgba(80,40,30,.18);
+    --sans:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Mono",Consolas,"Noto Sans Mono",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --ground:#1c1917;  --surface:#252120;  --sunk:#171413;
+      --ink:#ece5df;     --muted:#a9998f;    --faint:#7d6f66;
+      --line:#3a3230;    --line-firm:#4b403c;
+      --maroon:#e0899e;  --maroon-soft:#3a2027;  --maroon-ink:#f0b6c4;
+      --teal:#71c2c9;    --teal-soft:#16302f;    --teal-ink:#9ad8dd;
+      --ok:#5fc48d;   --ok-bg:#14291f;
+      --warn:#e0b25c;  --warn-bg:#2c2312;
+      --bad:#f08a7e;  --bad-bg:#331a17;
+      --info:#71c2c9; --info-bg:#16302f;
+      --none:#9b8e85; --none-bg:#282322;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --ground:#1c1917;  --surface:#252120;  --sunk:#171413;
+    --ink:#ece5df;     --muted:#a9998f;    --faint:#7d6f66;
+    --line:#3a3230;    --line-firm:#4b403c;
+    --maroon:#e0899e;  --maroon-soft:#3a2027;  --maroon-ink:#f0b6c4;
+    --teal:#71c2c9;    --teal-soft:#16302f;    --teal-ink:#9ad8dd;
+    --ok:#5fc48d;   --ok-bg:#14291f;
+    --warn:#e0b25c;  --warn-bg:#2c2312;
+    --bad:#f08a7e;  --bad-bg:#331a17;
+    --info:#71c2c9; --info-bg:#16302f;
+    --none:#9b8e85; --none-bg:#282322;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.8;
+  }
+  .page{width:min(100% - 2.5rem, 63rem); margin-inline:auto; padding-block:3.5rem 5rem;
+        display:flex; flex-direction:column; gap:3.5rem}
+
+  /* ── 標題區 ── */
+  .masthead{display:flex; flex-direction:column; gap:1rem}
+  .eyebrow{font-size:.78rem; font-weight:700; letter-spacing:.22em; color:var(--muted); margin:0}
+  h1{margin:0; font-size:clamp(2rem,5.2vw,3.1rem); line-height:1.15; font-weight:800;
+     letter-spacing:-.01em; text-wrap:balance}
+  .thesis{margin:0; max-width:38ch; font-size:1.18rem; line-height:1.7; color:var(--maroon-ink);
+          font-weight:700; border-left:4px solid var(--maroon); padding-left:1rem}
+  .standfirst{margin:0; max-width:64ch; color:var(--muted)}
+
+  /* ── 網址卡 ── */
+  .links{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .linkcard{background:var(--surface); border:1px solid var(--line); border-radius:.75rem;
+            padding:1.15rem 1.3rem; display:flex; flex-direction:column; gap:.4rem;
+            box-shadow:var(--shadow); border-top:3px solid var(--accent,var(--line-firm))}
+  .linkcard.t{--accent:var(--maroon)}
+  .linkcard.s{--accent:var(--teal)}
+  .linkcard .who{font-size:.75rem; font-weight:800; letter-spacing:.14em; color:var(--accent)}
+  .linkcard .what{font-weight:700}
+  .linkcard code{font-family:var(--mono); font-size:.82rem; color:var(--muted); word-break:break-all;
+                 background:var(--sunk); padding:.35rem .5rem; border-radius:.35rem}
+
+  /* ── 分軌區塊 ── */
+  section{display:flex; flex-direction:column; gap:1.5rem}
+  .track-head{display:flex; align-items:baseline; gap:.85rem; flex-wrap:wrap;
+              padding-bottom:.7rem; border-bottom:2px solid var(--accent)}
+  .track-head h2{margin:0; font-size:1.55rem; font-weight:800; letter-spacing:-.01em; color:var(--accent)}
+  .track-head .note{font-size:.9rem; color:var(--muted)}
+  .teacher{--accent:var(--maroon)}
+  .student{--accent:var(--teal)}
+  .neutral{--accent:var(--line-firm)}
+  .neutral .track-head h2{color:var(--ink)}
+
+  /* ── 時間軸：三天的間隔是這套系統的主張，所以用時間當骨架 ── */
+  .timeline{display:flex; flex-direction:column; gap:0; margin:0; padding:0; list-style:none}
+  .step{display:grid; grid-template-columns:5.5rem 1fr; gap:0 1.4rem; position:relative}
+  .step::before{content:""; position:absolute; left:5.5rem; top:0; bottom:0; width:2px;
+                background:var(--line); transform:translateX(-1px)}
+  .step:first-child::before{top:1.1rem}
+  .step:last-child::before{bottom:auto; height:1.1rem}
+  .when{text-align:right; padding-top:.55rem; font-family:var(--mono); font-size:.8rem;
+        font-weight:700; color:var(--accent); letter-spacing:.02em}
+  .when small{display:block; font-family:var(--sans); font-size:.72rem; font-weight:400;
+              color:var(--faint); letter-spacing:0}
+  .body{padding:.35rem 0 1.9rem 0; position:relative}
+  .body::before{content:""; position:absolute; left:-1.4rem; top:.95rem; width:.6rem; height:.6rem;
+                border-radius:50%; background:var(--accent); transform:translateX(-.3rem);
+                outline:3px solid var(--ground)}
+  .body h3{margin:0 0 .45rem; font-size:1.08rem; font-weight:800}
+  .body p{margin:0 0 .6rem; max-width:62ch}
+  .body ul{margin:.2rem 0 .6rem; padding-left:1.15rem; max-width:62ch}
+  .body li{margin:.25rem 0}
+  .body li::marker{color:var(--faint)}
+
+  .say{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent);
+       border-radius:0 .55rem .55rem 0; padding:.8rem 1rem; margin:.6rem 0; max-width:62ch}
+  .say .lbl{display:block; font-size:.7rem; font-weight:800; letter-spacing:.14em;
+            color:var(--muted); margin-bottom:.25rem}
+  .say p{margin:0; font-weight:600}
+
+  .flag{display:flex; gap:.7rem; align-items:flex-start; background:var(--warn-bg);
+        border-radius:.55rem; padding:.75rem 1rem; margin:.6rem 0; max-width:62ch;
+        border:1px solid color-mix(in srgb, var(--warn) 25%, transparent)}
+  .flag.hard{background:var(--bad-bg); border-color:color-mix(in srgb, var(--bad) 25%, transparent)}
+  .flag .mark{font-weight:800; color:var(--warn); flex:none}
+  .flag.hard .mark{color:var(--bad)}
+  .flag p{margin:0; font-size:.95rem}
+
+  /* ── 學生步驟：編號有意義（必須照順序做） ── */
+  .steps{counter-reset:s; list-style:none; margin:0; padding:0;
+         display:grid; gap:.9rem}
+  .steps li{counter-increment:s; background:var(--surface); border:1px solid var(--line);
+            border-radius:.7rem; padding:1rem 1.2rem 1rem 3.6rem; position:relative;
+            box-shadow:var(--shadow)}
+  .steps li::before{content:counter(s); position:absolute; left:1.1rem; top:.95rem;
+                    width:1.7rem; height:1.7rem; border-radius:50%;
+                    background:var(--teal); color:var(--surface);
+                    font-family:var(--mono); font-size:.85rem; font-weight:700;
+                    display:grid; place-items:center}
+  /* 只有「步驟標題」那個 strong 是區塊；句子中間的強調要留在行內，
+     否則會被推成獨立一行，把句子切斷。 */
+  .steps > li > strong{display:block; margin-bottom:.15rem}
+  .steps p{margin:.15rem 0 0; color:var(--muted); font-size:.95rem; max-width:60ch}
+
+  /* ── 表格 ── */
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:.7rem;
+             background:var(--surface)}
+  table{border-collapse:collapse; width:100%; min-width:34rem; font-size:.94rem}
+  caption{text-align:left; padding:.9rem 1.1rem .1rem; color:var(--muted); font-size:.88rem}
+  th,td{padding:.62rem .9rem; text-align:left; border-bottom:1px solid var(--line);
+        vertical-align:top}
+  thead th{font-size:.78rem; letter-spacing:.08em; color:var(--muted); font-weight:700;
+           background:var(--sunk); border-bottom:1px solid var(--line-firm)}
+  tbody tr:last-child td{border-bottom:0}
+  td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums}
+  tfoot td{font-weight:700; background:var(--sunk); border-top:1px solid var(--line-firm)}
+
+  .pill{display:inline-block; border-radius:999px; padding:.12rem .6rem; font-size:.82rem;
+        font-weight:700; white-space:nowrap}
+  .p-ok{color:var(--ok); background:var(--ok-bg)}
+  .p-warn{color:var(--warn); background:var(--warn-bg)}
+  .p-bad{color:var(--bad); background:var(--bad-bg)}
+  .p-info{color:var(--info); background:var(--info-bg)}
+  .p-none{color:var(--none); background:var(--none-bg)}
+
+  code{font-family:var(--mono); font-size:.88em; background:var(--sunk);
+       padding:.1rem .35rem; border-radius:.3rem}
+  strong{font-weight:800}
+  .lede{margin:0; max-width:64ch; color:var(--muted)}
+
+  footer{border-top:1px solid var(--line); padding-top:1.25rem; color:var(--faint);
+         font-size:.85rem; display:flex; flex-wrap:wrap; gap:.4rem 1.5rem}
+
+  @media (max-width:34rem){
+    .step{grid-template-columns:1fr; gap:0}
+    .step::before{left:.3rem}
+    .when{text-align:left; padding-left:1.4rem; padding-top:.2rem}
+    .when small{display:inline; margin-left:.4rem}
+    .body{padding-left:1.4rem}
+    .body::before{left:.3rem; transform:translateX(-.3rem)}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+  @media print{
+    /* 用瀏覽器列印（Ctrl+P）→ 另存 PDF。學生流程會自己起新頁，方便只印那幾張發下去。 */
+    @page{size:A4; margin:14mm 13mm}
+    html,body{background:#fff; color:#000; font-size:10.6pt; line-height:1.65}
+    .page{width:auto; padding:0; gap:1.6rem}
+    .linkcard,.steps li,.tablewrap,.say,.flag{box-shadow:none}
+    h1{font-size:20pt}
+    .track-head h2{font-size:14pt}
+    .body h3{font-size:11.4pt}
+    .thesis{font-size:12pt}
+    /* 學生流程獨占整頁，老師才能只印那一張發下去，不夾帶後面的參考表。
+       並壓緊到剛好一張 A4——一人一張，30 個學生就是 30 張紙。 */
+    section.student{break-before:page; break-after:page; gap:1rem}
+    section.student .lede{display:none}
+    section.student .steps{gap:.6rem}
+    section.student .steps li{padding:.72rem 1rem .72rem 3.2rem}
+    section.student .steps li::before{top:.72rem}
+    section.student .steps > li > strong{font-size:11pt}
+    section.student .steps p{font-size:10pt; line-height:1.6}
+    section.student .flag{padding:.7rem 1rem}
+    .step,.steps li,.flag,.say,tr{break-inside:avoid}
+    .track-head,h1,h2,h3{break-after:avoid}
+    thead{display:table-header-group}
+    table{min-width:0; font-size:9.6pt}
+    th,td{padding:.32rem .5rem}
+    .tablewrap{overflow:visible}
+    a[href]{text-decoration:none}
+    footer{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">MATHMAP · 複習後診斷</p>
+    <h1>複習後診斷操作手冊</h1>
+    <p class="thesis">「你剛讀完就答對，不算學會。隔三天還答得出來，才算。」</p>
+    <p class="standfirst">
+      這套系統把每個核心概念拆成<strong>概念理解、線索辨識、應用遷移</strong>三種能力分開取證，
+      再用「隔三天的第二次確認」判斷是不是真的穩定。
+      11 個單元、540 題、58 個核心概念，作答紀錄只存在學生自己的瀏覽器裡。
+    </p>
+  </header>
+
+  <div class="links">
+    <div class="linkcard t">
+      <span class="who">老師用</span>
+      <span class="what">班級彙整</span>
+      <code>mathmap-kitty.github.io/web/diagnostic/teacher/</code>
+    </div>
+    <div class="linkcard s">
+      <span class="who">學生用</span>
+      <span class="what">診斷系統</span>
+      <code>mathmap-kitty.github.io/web/diagnostic/app/</code>
+    </div>
+  </div>
+
+  <section class="teacher">
+    <div class="track-head">
+      <h2>老師的操作流程</h2>
+      <span class="note">這套系統沒有後台——你就是排程器</span>
+    </div>
+
+    <p class="lede">
+      系統的判讀機制假設「有人在第三天把學生叫回來」。高中生不會自己回來，
+      所以請把它當<strong>課堂診斷工具</strong>排進課表，而不是丟給學生自學。
+    </p>
+
+    <ol class="timeline">
+      <li class="step">
+        <div class="when">課前<small>一週內</small></div>
+        <div class="body">
+          <h3>選單元，卡好兩節課</h3>
+          <p>初診要一整段不受打斷的時間，第三天之後還要再借五到十分鐘。挑單元時先看下面的時間表——
+             <strong>排列組合與機率是 24 題、約 30 分鐘</strong>，比其他單元都長。</p>
+          <ul>
+            <li>學生要能上網、自備手機或平板（系統在瀏覽器裡跑，不必安裝）</li>
+            <li>提醒他們<strong>用同一台裝置、同一個瀏覽器</strong>，而且不要開無痕</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="when">第 1 天<small>初診當堂</small></div>
+        <div class="body">
+          <h3>當堂做完初診，現場看四件事</h3>
+          <p>把網址寫在黑板上。作答時每題下面有一個「你對答案的信心」低／中／高——
+             <strong>這一格務必要求他們填</strong>，系統靠它抓出「以為自己會、其實不會」的人。</p>
+          <div class="say">
+            <span class="lbl">開場請說</span>
+            <p>「這不是考試、不算成績。它在找你哪裡不熟。答錯沒關係，但『信心』那一格要老實填。」</p>
+          </div>
+          <ul>
+            <li>有沒有人卡在「不知道下一步按哪」→ 介面問題</li>
+            <li>實際花幾分鐘，有沒有超過預估 → 題數要不要調整</li>
+            <li>有幾個人跳過信心欄 → 跳過就是判讀失真</li>
+            <li>報告出來後，有沒有人問「所以我現在要幹嘛」→ 補強指引不夠明確</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="when">第 1 天<small>接著做</small></div>
+        <div class="body">
+          <h3>看報告、進補強</h3>
+          <p>報告頁把每個核心概念標成五種狀態，並列出「前三項優先補強」。
+             接著到補強頁，會出現<strong>「先回去讀這些核心概念」</strong>清單，
+             每一條直接連到重點整理網頁的對應段落，學生不必自己找。</p>
+          <p>如果有弱能力，會出現「開始立即變式」——用<strong>同能力、不同題目</strong>再驗一次。
+             全部答對後才能按「排程第 3 天延後確認」。</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="when">第 4 天<small>或之後</small></div>
+        <div class="body">
+          <h3>課前五分鐘，全班一起做延後確認</h3>
+          <p>時間沒到按鈕是鎖住的，系統顯示「可確認日期」。到期後回到補強頁按
+             「開始第 3 天延後確認」，全對才會升到「穩定掌握」。</p>
+          <div class="flag hard">
+            <span class="mark">最容易失敗的一步</span>
+            <p>不要指望學生自己記得回來。<strong>把它排進那節課的前五分鐘</strong>，
+               全班一起做完再上課。這是整套流程唯一真正的風險點。</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="when">收檔案<small>當堂或課後</small></div>
+        <div class="body">
+          <h3>請學生匯出 JSON 交給你</h3>
+          <p>系統<strong>沒有後台，你看不到任何學生資料</strong>。要看全班結果，只有一條路：
+             請學生到「資料」頁按<strong>匯出資料</strong>，把檔案傳給你。</p>
+          <ul>
+            <li>任課班走 Google Classroom、導師班走 LINE 都可以</li>
+            <li>請他們把檔名存成 <code>座號01.json</code> 這種格式</li>
+            <li>Classroom 自動加上的「姓名 - 」前綴系統會自動剝掉，不用手改</li>
+          </ul>
+          <div class="flag">
+            <span class="mark">為什麼是檔名</span>
+            <p>匯出檔<strong>刻意不含姓名、學號、班級與 Email</strong>——程式會主動擋掉這些欄位。
+               所以檔名才是身分，對應關係只存在你的資料夾裡。萬一檔案外流，別人看不出是誰。</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="when">彙整<small>兩分鐘</small></div>
+        <div class="body">
+          <h3>整包拖進班級彙整頁</h3>
+          <p>打開老師端網址，把收到的 JSON <strong>一次全部拖進去</strong>。檔案不會上傳到任何地方，
+             全在你的瀏覽器裡處理。</p>
+          <ul>
+            <li><strong>「以為自己會，但其實不會」名單</strong>——答錯又填高信心的人，按核心概念分組。
+                這些學生不會來問你，因為他們不知道自己錯了</li>
+            <li>各核心概念的班級分布長條——一眼看出哪個概念整班都紅</li>
+            <li>學生 × 核心概念矩陣，依「需複習數」由多到少排序</li>
+            <li>可匯出 CSV（Excel 直接開）或列印成 PDF</li>
+          </ul>
+          <p>檔案被改過會標 <span class="pill p-bad">⚠</span>，並在 CSV 的備註欄寫明原因。</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="student">
+    <div class="track-head">
+      <h2>學生的操作流程</h2>
+      <span class="note">可直接印給學生</span>
+    </div>
+
+    <p class="lede">
+      這一段的用詞是寫給學生看的，可以整段列印或截圖發下去。
+    </p>
+
+    <ol class="steps">
+      <li>
+        <strong>打開網址，選今天要做的單元</strong>
+        <p>用手機或平板都可以，不用安裝任何東西。記住你用哪一台、哪個瀏覽器打開——之後要用同一台。</p>
+      </li>
+      <li>
+        <strong>照著做初診，每題都填「信心」</strong>
+        <p>選完答案後，下面有「你對答案的信心」低／中／高。<strong>這一格很重要</strong>：它讓系統看出你是「真的會」還是「以為自己會」。老實填，不會扣分。</p>
+      </li>
+      <li>
+        <strong>做完看報告</strong>
+        <p>每個核心概念會給一個狀態，還會標出「前三項優先補強」。這不是分數，是告訴你「哪裡該補」。</p>
+      </li>
+      <li>
+        <strong>照著補強清單回去讀</strong>
+        <p>補強頁有「先回去讀這些核心概念」，點一下就跳到重點整理的那一段，不用自己翻。</p>
+      </li>
+      <li>
+        <strong>做立即變式，確認不是猜對的</strong>
+        <p>系統會出<strong>不一樣的題目</strong>考同一個能力。全對之後，按「排程第 3 天延後確認」。</p>
+      </li>
+      <li>
+        <strong>第 3 天回來，做延後確認</strong>
+        <p>時間沒到按鈕點不下去。這是整套系統最重要的一步——<strong>隔三天還答得出來，才算真的學會。</strong></p>
+      </li>
+      <li>
+        <strong>到「資料」頁按「匯出資料」，把檔案交給老師</strong>
+        <p>檔名存成你的座號，例如 <code>座號07.json</code>。檔案裡<strong>沒有你的姓名和學號</strong>。</p>
+      </li>
+    </ol>
+
+    <div class="flag hard">
+      <span class="mark">三件會讓紀錄消失的事</span>
+      <p>換另一台裝置、清除瀏覽器資料、用無痕模式——你的作答紀錄只存在原本那台裝置的瀏覽器裡，
+         做這三件事就會歸零，要從頭做一次。</p>
+    </div>
+  </section>
+
+  <section class="neutral">
+    <div class="track-head"><h2>五種狀態代表什麼</h2></div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>狀態</th><th>什麼時候出現</th><th>下一步</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pill p-none">○ 尚未診斷</span></td>
+            <td>這個核心概念還沒有有效作答</td>
+            <td>做初診</td>
+          </tr>
+          <tr>
+            <td><span class="pill p-info">… 證據不足</span></td>
+            <td>有效題數少於 3 題，或三種能力沒測齊</td>
+            <td>把初診做完整</td>
+          </tr>
+          <tr>
+            <td><span class="pill p-bad">! 需要複習</span></td>
+            <td>總正確率低於 ⅔，或任一種能力低於 ⅔</td>
+            <td>回教材讀 → 立即變式</td>
+          </tr>
+          <tr>
+            <td><span class="pill p-warn">△ 初步掌握</span></td>
+            <td>初診過關，但延後確認還沒完成</td>
+            <td>第 3 天回來確認</td>
+          </tr>
+          <tr>
+            <td><span class="pill p-ok">✓ 穩定掌握</span></td>
+            <td>立即變式全過、延後題全對、隔了至少 3 天，且沒有未解除的「高信心答錯」</td>
+            <td>這個概念可以先放下</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flag">
+      <span class="mark">高信心答錯</span>
+      <p>答錯又把信心填「高」，系統會開一個風險標記——這代表<strong>「你不知道你不知道」</strong>，
+         比單純不會更危險。要解除，必須在同一種能力上<strong>答對兩題不同的題目，其中至少一題是延後題</strong>；
+         中間錯一次就重來。一般測驗抓不到這種學生，這套抓得到。</p>
+    </div>
+  </section>
+
+  <section class="neutral">
+    <div class="track-head">
+      <h2>11 個單元的題數與時間</h2>
+      <span class="note">排課用</span>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <caption>初診＝當堂做的題數；立即變式與延後確認題數相同，是不同的題目。</caption>
+        <thead>
+          <tr>
+            <th>單元</th>
+            <th class="num">核心概念</th>
+            <th class="num">初診</th>
+            <th class="num">立即變式</th>
+            <th class="num">延後確認</th>
+            <th>初診時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>數與式</td><td class="num">6</td><td class="num">18</td><td class="num">18</td><td class="num">18</td><td>18–24 分</td></tr>
+          <tr><td>多項式函數</td><td class="num">5</td><td class="num">15</td><td class="num">15</td><td class="num">15</td><td>15–20 分</td></tr>
+          <tr><td>直線與圓</td><td class="num">5</td><td class="num">15</td><td class="num">15</td><td class="num">15</td><td>15–20 分</td></tr>
+          <tr><td>數列與級數</td><td class="num">4</td><td class="num">12</td><td class="num">12</td><td class="num">12</td><td>12–16 分</td></tr>
+          <tr><td><strong>排列組合與機率</strong></td><td class="num">6</td><td class="num">24</td><td class="num">24</td><td class="num">24</td><td><strong>24–32 分</strong></td></tr>
+          <tr><td>數據分析</td><td class="num">4</td><td class="num">12</td><td class="num">12</td><td class="num">12</td><td>12–16 分</td></tr>
+          <tr><td>指數與對數</td><td class="num">5</td><td class="num">15</td><td class="num">15</td><td class="num">15</td><td>15–20 分</td></tr>
+          <tr><td>三角</td><td class="num">7</td><td class="num">21</td><td class="num">21</td><td class="num">21</td><td>20–25 分</td></tr>
+          <tr><td>平面向量</td><td class="num">5</td><td class="num">15</td><td class="num">15</td><td class="num">15</td><td>15–20 分</td></tr>
+          <tr><td>空間向量</td><td class="num">6</td><td class="num">18</td><td class="num">18</td><td class="num">18</td><td>18–24 分</td></tr>
+          <tr><td>矩陣</td><td class="num">5</td><td class="num">15</td><td class="num">15</td><td class="num">15</td><td>15–20 分</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td>合計</td><td class="num">58</td><td class="num">180</td><td class="num">180</td><td class="num">180</td><td>540 題</td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="flag">
+      <span class="mark">排列組合與機率為什麼特別長</span>
+      <p>它由原本的「排列組合」與「機率」兩個單元合併而成，其中「計數原理與排列」這個核心概念
+         收了 25 題（其他概念 9–11 題）。如果一節課塞不下，可以之後從中挑題精簡——
+         但每個核心概念的三種能力都必須留題，否則立即變式派不出題。</p>
+    </div>
+  </section>
+
+  <section class="neutral">
+    <div class="track-head"><h2>先想清楚的幾件事</h2></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>狀況</th><th>為什麼會這樣</th><th>怎麼處理</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>學生說「我明明進步了，還是沒有穩定」</td>
+            <td>延後確認必須<strong>全對</strong>，錯一題就不算。標準訂得很高。</td>
+            <td>事先講清楚：這不是打分數，是在確認哪些已經不用再管了。</td>
+          </tr>
+          <tr>
+            <td>第 3 天按鈕點不下去</td>
+            <td>時間戳沒到，系統不接受提早確認。</td>
+            <td>看畫面上的「可確認日期」，那天之後再做。</td>
+          </tr>
+          <tr>
+            <td>學生的紀錄不見了</td>
+            <td>換裝置、清快取或用無痕。資料只存在原本那個瀏覽器。</td>
+            <td>只能重做。事前提醒比事後補救有效。</td>
+          </tr>
+          <tr>
+            <td>拖進彙整頁後顯示「略過」</td>
+            <td>不是診斷系統的匯出檔，或裡面還沒有完成的報告。</td>
+            <td>展開檔案清單看原因，請該生重新匯出。</td>
+          </tr>
+          <tr>
+            <td>某份資料標了 ⚠</td>
+            <td>SHA-256 完整性檢查沒過，內容被改過。</td>
+            <td>可以直接問學生。不過偽造一份「我很穩定」的報告，換到的是你本來就不會給的分數。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <span>mathmap 數學教材網 · 複習後診斷</span>
+    <span>11 單元 · 540 題 · 58 核心概念</span>
+    <span>資料僅存於使用者瀏覽器，無伺服器、無外部請求</span>
+  </footer>
+
+</div>
+</body>
+</html>

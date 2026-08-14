@@ -32,16 +32,32 @@ web/
 
 - 學生端：`/web/diagnostic/app/`（本機預覽 `http://localhost:8765/diagnostic/app/`）
 - **教師端班級彙整：`/web/diagnostic/teacher/`**
+- **操作手冊（教師＋學生流程）：`/web/diagnostic/handbook/`**
 - 驗收報告：`/web/diagnostic/review/final/system-final-acceptance-review.html`
 
 ```
 diagnostic/
 ├── app/        # 學生端（index.html + main.mjs + repository.mjs + styles.css + vendor/katex）
 ├── teacher/    # 教師端班級彙整（index.html + app.js，純前端，不上傳檔案）
+├── handbook/   # 操作手冊（index.html ＋ 同名 PDF）
 ├── content/    # 題庫與知識結構 JSON（questions/<unit>/questions.json 等）
 ├── engine/     # diagnose.mjs 判讀引擎（無外部相依）
 └── review/     # 驗收報告（內部文件，非學生教材）
 ```
+
+### handbook/ 的 PDF 怎麼重產
+
+手冊的單一來源是 `handbook/index.html`（列印樣式已設好：學生流程 `break-before/after:page`
+獨占第 4 頁，壓成一張 A4 方便一人發一張）。改完 HTML 後重產 PDF：
+
+```bash
+"/c/Program Files/Google/Chrome/Application/chrome.exe" --headless --disable-gpu \
+  --no-pdf-header-footer \
+  --print-to-pdf="D:\gmail\Mathmap_workspace\diagnostic\handbook\複習後診斷操作手冊.pdf" \
+  "file:///D:/gmail/Mathmap_workspace/diagnostic/handbook/index.html"
+```
+
+或直接在瀏覽器開 `index.html` 按 Ctrl+P 另存 PDF（可自選紙張與頁碼範圍）。
 
 ### teacher/ 怎麼用
 
