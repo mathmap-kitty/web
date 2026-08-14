@@ -78,7 +78,8 @@ D:\gmail\Mathmap_workspace\
 ├── exam/                   # ② 歷屆試題子站（源頭在本機外部，勿在此改）
 ├── guide/                  # ③ 複習講義子站（13 章＋附錄＋katex/＋img/）
 └── diagnostic/             # ④ 複習後診斷系統（⚠ 未公開；源頭在本機外部，勿在此改）
-    ├── app/                #    靜態前端：index.html/main.mjs/repository.mjs/styles.css/vendor/katex
+    ├── app/                #    學生端：index.html/main.mjs/repository.mjs/styles.css/vendor/katex
+    ├── teacher/            #    教師端班級彙整（index.html + app.js；★UNITS 表與 app/main.mjs 同源，要同步）
     ├── content/            #    題庫與知識結構 JSON（questions/<unit>/questions.json 等）
     ├── engine/             #    diagnose.mjs 判讀引擎（無外部相依）
     └── review/             #    驗收報告（內部文件，非學生教材）

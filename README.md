@@ -30,16 +30,34 @@ web/
 `index.html` 沒有入口卡、`sitemap.xml` 不收錄、四張頁面都掛 `noindex,nofollow`。
 原因：技術驗收全項通過，但驗收報告載明 Gate 5「真實學生實證」尚未補齊，故先自用試跑。
 
-- 自用網址：`/web/diagnostic/app/`（本機預覽 `http://localhost:8765/diagnostic/app/`）
+- 學生端：`/web/diagnostic/app/`（本機預覽 `http://localhost:8765/diagnostic/app/`）
+- **教師端班級彙整：`/web/diagnostic/teacher/`**
 - 驗收報告：`/web/diagnostic/review/final/system-final-acceptance-review.html`
 
 ```
 diagnostic/
-├── app/        # 靜態前端（index.html + main.mjs + repository.mjs + styles.css + vendor/katex）
+├── app/        # 學生端（index.html + main.mjs + repository.mjs + styles.css + vendor/katex）
+├── teacher/    # 教師端班級彙整（index.html + app.js，純前端，不上傳檔案）
 ├── content/    # 題庫與知識結構 JSON（questions/<unit>/questions.json 等）
 ├── engine/     # diagnose.mjs 判讀引擎（無外部相依）
 └── review/     # 驗收報告（內部文件，非學生教材）
 ```
+
+### teacher/ 怎麼用
+
+診斷系統**沒有後端**，老師看不到學生資料。要彙整全班：
+
+1. 學生在「資料」頁按**匯出資料**，得到一個 JSON（含 SHA-256 完整性雜湊，
+   且刻意**不含**姓名／學號／班級／Email——匯入時有正則主動擋掉這些欄位）
+2. 學生把檔案存成 `座號01.json` 之類再交出來（Google Classroom 或 LINE）
+   ——**檔名才是身分**，資料本身永遠匿名
+3. 老師把整包檔案拖進 `teacher/`，得到：班級統計、**高信心答錯名單**、
+   各核心概念分布、學生×核心概念矩陣；可匯出 CSV（含 BOM，Excel 直接開）或列印 PDF
+
+檔名會自動剝掉 Google Classroom 的「姓名 - 檔名」前綴。被改過的檔案會標 ⚠ 並在 CSV 留備註。
+
+⚠️ `teacher/app.js` 裡的 `UNITS` 表是從 `app/main.mjs` 的 `units` 複製過來的
+（核心概念名稱），**兩邊改動要同步**。
 
 **更新方式**：從 `D:\gmail\ChatGPT_複習\診斷系統\` 整包覆蓋 `app/ content/ engine/`。
 資料夾結構刻意與源頭一致，所以子站內所有相對連結（`../engine/`、`../content/`、

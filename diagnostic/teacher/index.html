@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MathMap 複習後診斷｜班級彙整（教師用）">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>班級彙整｜複習後診斷（教師用）</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><text y=%2252%22 font-size=%2252%22>📊</text></svg>">
+  <style>
+    :root{color-scheme:light;--ink:#2b2b2b;--muted:#7a6a63;--surface:#fff;--canvas:#f7f2ee;--maroon:#8c2740;--maroon-d:#6f1f33;--teal:#1f6f78;--border:#e7dcd6;--shadow:0 2px 12px rgba(80,40,30,.08);
+      --ok:#16794a;--ok-bg:#ecfdf3;--warn:#9a6700;--warn-bg:#fffaeb;--bad:#b42318;--bad-bg:#fef3f2;--none:#667085;--none-bg:#f2f4f7;--info:#1f6f78;--info-bg:#e9f5f4}
+    *{box-sizing:border-box}
+    html,body{max-width:100%}
+    body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;line-height:1.8}
+    .topbar{position:sticky;top:0;z-index:6;display:flex;align-items:center;gap:8px;min-height:58px;padding:8px max(16px,calc((100% - 1180px)/2));background:var(--maroon);color:#fff;box-shadow:var(--shadow)}
+    .topbar a{color:#fff;font-weight:800;text-decoration:none}
+    .topbar .tag{margin-left:auto;font-size:.82rem;padding:3px 10px;border:1px solid #ffffff66;border-radius:999px}
+    main{width:min(100% - 32px,1180px);margin:26px auto 80px}
+    h1{font-size:clamp(1.5rem,3.4vw,2.1rem);margin:.1em 0 .3em}
+    h2{font-size:1.15rem;margin:0 0 .4em}
+    .lead{color:var(--muted);max-width:760px;margin:.2em 0 1.2em}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+    .drop{border:2px dashed #c9b8b0;border-radius:16px;padding:34px 20px;text-align:center;background:#fffdfb;transition:.15s}
+    .drop.hot{border-color:var(--maroon);background:#fdf3f5}
+    .drop p{margin:.3em 0}
+    .drop .big{font-size:1.1rem;font-weight:800;color:var(--maroon)}
+    button,.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border:1px solid var(--maroon);border-radius:999px;padding:6px 18px;background:#fff;color:var(--maroon);font:inherit;font-weight:700;cursor:pointer}
+    button.primary{background:var(--maroon);color:#fff}
+    button.ghost{border-color:var(--teal);color:var(--teal)}
+    button:disabled{opacity:.45;cursor:not-allowed}
+    button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #7c3aed;outline-offset:3px}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:4px 0 0}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 16px}
+    .stat strong{display:block;font-size:1.7rem;color:var(--teal);line-height:1.25}
+    .stat span{color:var(--muted);font-size:.9rem}
+    .table-wrap{max-width:100%;overflow-x:auto}
+    table{border-collapse:collapse;min-width:640px;width:100%}
+    th,td{border-bottom:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{position:sticky;top:58px;background:#fbf7f4;color:var(--maroon-d);z-index:2}
+    th.kpcol{font-size:.86rem;font-weight:700;min-width:112px}
+    td.name{font-weight:800;white-space:nowrap}
+    .cell{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:2px 9px;font-size:.84rem;font-weight:700;white-space:nowrap}
+    .STABLE{color:var(--ok);background:var(--ok-bg)}
+    .EMERGING{color:var(--warn);background:var(--warn-bg)}
+    .NEEDS_REVIEW{color:var(--bad);background:var(--bad-bg)}
+    .INSUFFICIENT_EVIDENCE{color:var(--info);background:var(--info-bg)}
+    .UNTESTED{color:var(--none);background:var(--none-bg)}
+    .flagdot{color:#b42318;font-weight:900;cursor:help}
+    .bar{display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--none-bg);min-width:110px}
+    .bar i{display:block;height:100%}
+    .legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;margin-top:10px}
+    .legend span{display:inline-flex;align-items:center;gap:5px}
+    .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+    .alert{border-left:5px solid var(--bad);background:#fff1f1;padding:10px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+    .notice{border-left:5px solid var(--info);background:var(--info-bg);padding:10px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+    .muted{color:var(--muted)}
+    .files li{margin:2px 0}
+    .files code{background:#f4ece8;padding:1px 6px;border-radius:5px}
+    select{font:inherit;padding:7px 10px;border:1px solid var(--border);border-radius:9px;background:#fff;color:inherit}
+    details summary{cursor:pointer;font-weight:700;color:var(--maroon-d)}
+    .hcw td{background:#fff8f8}
+    @media(max-width:700px){main{width:min(100% - 20px,760px)}.card{padding:16px}thead th{top:52px}}
+    @media print{.topbar,.drop,.row.noprint,.legend{display:none}body{background:#fff}.card{box-shadow:none;border:1px solid #ccc}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">MathMap</a>
+    <span aria-hidden="true">／</span><strong>班級彙整（教師用）</strong>
+    <span class="tag">檔案不上傳，全在本機瀏覽器處理</span>
+  </header>
+
+  <main id="main">
+    <h1>複習後診斷 · 班級彙整</h1>
+    <p class="lead">把學生匯出的 <code>.json</code> 一次全部拖進來（可整包多選）。<strong>檔名就是學生代號</strong>——匯出檔本身刻意不含姓名、學號與 Email，對應關係只存在你的資料夾裡。</p>
+
+    <div class="card">
+      <div class="drop" id="drop">
+        <p class="big">把 JSON 檔拖到這裡</p>
+        <p class="muted">或 <button id="pick" type="button">選擇檔案</button>　支援一次選取整個資料夾內的多個檔案</p>
+        <input id="file" type="file" accept="application/json,.json" multiple hidden>
+      </div>
+      <div id="load-msg" role="status" aria-live="polite"></div>
+    </div>
+
+    <div id="result" hidden>
+      <div class="card">
+        <div class="row noprint" style="margin-bottom:12px">
+          <label for="unit"><strong>單元</strong></label>
+          <select id="unit"></select>
+          <button id="csv" class="ghost" type="button">匯出 CSV</button>
+          <button id="print" class="ghost" type="button">列印／存 PDF</button>
+          <button id="clear" type="button">清空重來</button>
+        </div>
+        <div class="stats" id="stats"></div>
+      </div>
+
+      <div class="card">
+        <h2>⚠️ 以為自己會，但其實不會</h2>
+        <p class="muted" style="margin-top:0">答錯而且信心選「高」的紀錄。這些學生不會主動來問你，因為他們不知道自己錯了——這是最該優先處理的一群。</p>
+        <div id="hcw"></div>
+      </div>
+
+      <div class="card">
+        <h2>各核心概念的班級分布</h2>
+        <div class="table-wrap"><table id="kptable"></table></div>
+        <div class="legend">
+          <span><i class="sw" style="background:#16794a"></i>穩定掌握</span>
+          <span><i class="sw" style="background:#9a6700"></i>初步掌握</span>
+          <span><i class="sw" style="background:#b42318"></i>需要複習</span>
+          <span><i class="sw" style="background:#1f6f78"></i>證據不足</span>
+          <span><i class="sw" style="background:#667085"></i>尚未診斷</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>學生 × 核心概念</h2>
+        <div class="table-wrap"><table id="matrix"></table></div>
+        <p class="muted" style="font-size:.88rem">🔴 = 該核心概念有「高信心答錯」。列以「需要複習的數量」由多到少排序。</p>
+      </div>
+
+      <div class="card">
+        <details>
+          <summary>已載入的檔案（<span id="fcount">0</span>）與略過的檔案</summary>
+          <ul class="files" id="flist"></ul>
+        </details>
+      </div>
+    </div>
+  </main>
+
+<script src="app.js"></script>
+</body>
+</html>
