@@ -1,0 +1,1055 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "probability",
+  "unitName": "機率",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-12",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "probability-p0-kp1-concept",
+      "kpId": "probability:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "擲一顆公平的六面骰一次，點數大於 4 的機率為何？",
+      "options": [
+        "\\(\\dfrac16\\)",
+        "\\(\\dfrac13\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac56\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac13\\)",
+      "firstBarrier": "能否把六個點數視為等可能，正確數出 5、6 兩個有利結果。",
+      "solution": "共有 6 個等可能結果，其中 2 個大於 4，所以機率為 \\(\\dfrac26=\\dfrac13\\)。",
+      "distractorNotes": [
+        "只算到點數 6。",
+        null,
+        "把三個點數誤列為有利結果。",
+        "把大於 2 誤作條件。",
+        "用補事件時只排除一個點數。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp1-recognition",
+      "kpId": "probability:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "連續擲一枚公平硬幣兩次，恰出現一次正面的機率為何？",
+      "options": [
+        "\\(\\dfrac14\\)",
+        "\\(\\dfrac13\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac34\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac12\\)",
+      "firstBarrier": "能否列出兩次投擲的四個等可能有序結果。",
+      "solution": "樣本空間為正正、正反、反正、反反；恰一次正面有 2 個，因此機率為 \\(\\dfrac24=\\dfrac12\\)。",
+      "distractorNotes": [
+        "只計正反，漏掉反正。",
+        "把三種正面個數誤當等可能。",
+        null,
+        "算成至少一次正面。",
+        "認為必定會出現一次正面。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp1-application",
+      "kpId": "probability:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "同時擲兩顆公平的四面骰，每顆骰子的點數皆為 1、2、3、4。兩顆骰子的點數和至少為 6 的機率為何？",
+      "options": [
+        "\\(\\dfrac3{16}\\)",
+        "\\(\\dfrac38\\)",
+        "\\(\\dfrac37\\)",
+        "\\(\\dfrac25\\)",
+        "\\(\\dfrac58\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac38\\)",
+      "firstBarrier": "能否把兩顆骰子視為可區分，建立 16 個等可能的有序點數對。",
+      "solution": "共有 \\(4\\times4=16\\) 個等可能結果；點數和為 6、7、8 分別有 3、2、1 個，所以機率為 \\(\\dfrac{3+2+1}{16}=\\dfrac38\\)。",
+      "distractorNotes": [
+        "漏掉點數和等於 6。",
+        null,
+        "把七種點數和誤當等可能。",
+        "把兩顆骰子視為不可區分。",
+        "補事件的邊界歸類錯誤。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp1-concept",
+      "kpId": "probability:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "袋中有 3 顆紅球與 2 顆藍球，任取一球，每顆球被取出的機會相同。取到藍球的機率為何？",
+      "options": [
+        "\\(\\dfrac15\\)",
+        "\\(\\dfrac25\\)",
+        "\\(\\dfrac35\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac32\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac25\\)",
+      "firstBarrier": "能否以球的總數作分母、藍球數作分子。",
+      "solution": "5 顆球等可能，藍球有 2 顆，因此機率為 \\(\\dfrac25\\)。",
+      "distractorNotes": [
+        "只把一顆藍球列為有利。",
+        null,
+        "算成紅球機率。",
+        "用藍球數除以紅球數。",
+        "把比值顛倒。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp1-recognition",
+      "kpId": "probability:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "連續擲一枚公平硬幣兩次，至少出現一次正面的機率為何？",
+      "options": [
+        "\\(\\dfrac14\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac34\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(\\dfrac34\\)",
+      "firstBarrier": "能否建立四個等可能結果，或以「兩次皆反面」作補事件。",
+      "solution": "只有反反不符合，所以機率為 \\(1-\\dfrac14=\\dfrac34\\)。",
+      "distractorNotes": [
+        "算成兩次皆正面。",
+        "只看第一次投擲。",
+        "把正面次數種類誤當等可能。",
+        null,
+        "誤認至少一次正面必然發生。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp1-application",
+      "kpId": "probability:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從 1 至 20 的整數中等可能選一個，選到質數的機率為何？",
+      "options": [
+        "\\(\\dfrac15\\)",
+        "\\(\\dfrac3{10}\\)",
+        "\\(\\dfrac25\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac35\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac25\\)",
+      "firstBarrier": "能否完整列出 20 以內的質數，且不把 1 當成質數。",
+      "solution": "質數為 2、3、5、7、11、13、17、19，共 8 個，所以機率為 \\(\\dfrac8{20}=\\dfrac25\\)。",
+      "distractorNotes": [
+        "嚴重漏列質數。",
+        "漏列兩個質數或誤刪 2。",
+        null,
+        "把 1 或部分合數列為質數。",
+        "把多數奇數都當成質數。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp1-concept",
+      "kpId": "probability:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "使用「有利結果數除以全部結果數」計算古典機率時，最重要的前提是哪一項？",
+      "options": [
+        "所有結果必須等可能。",
+        "有利結果必須只有一個。",
+        "樣本空間必須只有偶數個結果。",
+        "每個事件彼此獨立。",
+        "機率必須大於二分之一。"
+      ],
+      "answerIndex": 0,
+      "answer": "所有結果必須等可能。",
+      "firstBarrier": "能否辨識古典機率的等可能前提，而非只套用計數公式。",
+      "solution": "只有在基本結果等可能時，結果個數的比例才等於機率。",
+      "distractorNotes": [
+        null,
+        "有利結果可以不只一個。",
+        "結果總數不必是偶數。",
+        "單次樣本點不要求事件獨立。",
+        "機率大小不是使用條件。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp1-recognition",
+      "kpId": "probability:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "同時擲兩顆公平的六面骰，點數和為 7 的機率為何？",
+      "options": [
+        "\\(\\dfrac1{12}\\)",
+        "\\(\\dfrac16\\)",
+        "\\(\\dfrac17\\)",
+        "\\(\\dfrac5{18}\\)",
+        "\\(\\dfrac7{36}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac16\\)",
+      "firstBarrier": "能否以 36 個有序點數對作樣本空間，並數出 6 個有利結果。",
+      "solution": "和為 7 的有序對有 6 個，因此機率為 \\(\\dfrac6{36}=\\dfrac16\\)。",
+      "distractorNotes": [
+        "漏算交換次序。",
+        null,
+        "把點數和 2 至 12 誤當等可能。",
+        "有利結果計數過多。",
+        "把點數和直接放入分子。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp1-application",
+      "kpId": "probability:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "選",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "袋中有 3 顆紅球與 2 顆藍球，不放回任取 2 顆。取到兩球顏色不同的機率為何？",
+      "options": [
+        "\\(\\dfrac25\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac35\\)",
+        "\\(\\dfrac7{10}\\)",
+        "\\(\\dfrac45\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac35\\)",
+      "firstBarrier": "能否以兩球組合建立等可能樣本空間，避免重複計算先後。",
+      "solution": "全部取法有 \\(\\binom52=10\\) 種；一紅一藍有 \\(3\\times2=6\\) 種，所以機率為 \\(\\dfrac6{10}=\\dfrac35\\)。",
+      "distractorNotes": [
+        "只使用其中一色的比例。",
+        "把兩種顏色誤認為各占一半。",
+        null,
+        "補事件計數錯誤。",
+        "把有序抽取與無序組合混用。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp2-concept",
+      "kpId": "probability:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若事件 \\(A\\) 與事件 \\(B\\) 互斥，下列哪一項一定成立？",
+      "options": [
+        "\\(A\\cap B=\\varnothing\\)",
+        "\\(A=B\\)",
+        "\\(A\\cup B=\\varnothing\\)",
+        "\\(P(A)=P(B)\\)",
+        "\\(P(A\\mid B)=1\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(A\\cap B=\\varnothing\\)",
+      "firstBarrier": "能否把互斥翻成兩事件不能同時發生，也就是交集為空集合。",
+      "solution": "互斥的定義是 \\(A\\cap B=\\varnothing\\)。",
+      "distractorNotes": [
+        null,
+        "互斥不代表兩事件相同。",
+        "聯集通常不是空集合。",
+        "兩事件機率不必相等。",
+        "互斥時條件機率不會是 1。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp2-recognition",
+      "kpId": "probability:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從 1 至 10 的整數中等可能選一個。令 \\(A\\) 表示選到偶數，\\(B\\) 表示選到大於 6 的數。\\(P(A\\cap B)\\) 為何？",
+      "options": [
+        "\\(\\dfrac1{10}\\)",
+        "\\(\\dfrac15\\)",
+        "\\(\\dfrac25\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac7{10}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac15\\)",
+      "firstBarrier": "能否把交集理解成同時滿足偶數與大於 6。",
+      "solution": "交集為 \\(\\{8,10\\}\\)，所以機率為 \\(\\dfrac2{10}=\\dfrac15\\)。",
+      "distractorNotes": [
+        "只列出一個交集元素。",
+        null,
+        "算成大於 6 的事件。",
+        "算成偶數事件。",
+        "把聯集誤作交集。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp2-application",
+      "kpId": "probability:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從標有 1 至 12 的十二張卡片中等可能抽出一張。令事件 A 表示抽到偶數，事件 B 表示抽到 3 的倍數。抽到偶數或 3 的倍數的機率為何？",
+      "options": [
+        "\\(\\dfrac16\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac56\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac23\\)",
+      "firstBarrier": "能否辨識「或」是聯集，並把交集只計算一次。",
+      "solution": "\\(n(A\\cup B)=6+4-2=8\\)，所以機率為 \\(\\dfrac8{12}=\\dfrac23\\)。",
+      "distractorNotes": [
+        "只計算交集。",
+        "只計算事件 A。",
+        null,
+        "未扣除重複的交集。",
+        "誤認所有數都屬於聯集。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp2-concept",
+      "kpId": "probability:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "路",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(P(A)=0.4\\)、\\(P(B)=0.5\\)，且 \\(A\\)、\\(B\\) 獨立，則 \\(P(A\\cap B)\\) 為何？",
+      "options": [
+        "\\(0.1\\)",
+        "\\(0.2\\)",
+        "\\(0.4\\)",
+        "\\(0.5\\)",
+        "\\(0.9\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(0.2\\)",
+      "firstBarrier": "能否以獨立事件的乘法關係計算交集。",
+      "solution": "獨立時 \\(P(A\\cap B)=P(A)P(B)=0.4\\times0.5=0.2\\)。",
+      "distractorNotes": [
+        "把兩機率相減。",
+        null,
+        "只保留事件 A 的機率。",
+        "只保留事件 B 的機率。",
+        "把兩機率直接相加。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp2-recognition",
+      "kpId": "probability:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "路",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "同時擲一枚公平硬幣與一顆公平六面骰。出現正面或骰子出現 6 點的機率為何？",
+      "options": [
+        "\\(\\dfrac1{12}\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac7{12}\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac56\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac7{12}\\)",
+      "firstBarrier": "能否在兩個獨立但不互斥的事件中，扣除同時發生的交集。",
+      "solution": "所求為 \\(\\dfrac12+\\dfrac16-\\dfrac1{12}=\\dfrac7{12}\\)。",
+      "distractorNotes": [
+        "只算交集。",
+        "只算正面。",
+        null,
+        "直接相加但算術化簡錯誤。",
+        "用錯補事件。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp2-application",
+      "kpId": "probability:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "路",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某零件每次檢測不合格的機率為 \\(\\dfrac14\\)，兩次檢測結果彼此獨立。兩次檢測至少有一次不合格的機率為何？",
+      "options": [
+        "\\(\\dfrac1{16}\\)",
+        "\\(\\dfrac14\\)",
+        "\\(\\dfrac38\\)",
+        "\\(\\dfrac7{16}\\)",
+        "\\(\\dfrac12\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(\\dfrac7{16}\\)",
+      "firstBarrier": "能否改算兩次皆合格的補事件，而非直接把機率加倍。",
+      "solution": "兩次皆合格的機率為 \\(\\left(\\dfrac34\\right)^2=\\dfrac9{16}\\)，所以至少一次不合格為 \\(1-\\dfrac9{16}=\\dfrac7{16}\\)。",
+      "distractorNotes": [
+        "算成兩次皆不合格。",
+        "只看一次檢測。",
+        "把兩次不合格機率錯誤相加。",
+        null,
+        "直接把單次機率乘以 2。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp2-concept",
+      "kpId": "probability:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "關於事件 \\(A\\) 與其餘事件 \\(A^c\\)，下列哪一項正確？",
+      "options": [
+        "\\(P(A^c)=P(A)\\)",
+        "\\(P(A^c)=1-P(A)\\)",
+        "\\(P(A^c)=1+P(A)\\)",
+        "\\(A\\cap A^c=A\\)",
+        "\\(A\\cup A^c=\\varnothing\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(P(A^c)=1-P(A)\\)",
+      "firstBarrier": "能否理解事件與餘事件恰好分割整個樣本空間。",
+      "solution": "事件與餘事件互斥且聯集為樣本空間，因此 \\(P(A^c)=1-P(A)\\)。",
+      "distractorNotes": [
+        "兩者機率不一定相同。",
+        null,
+        "機率總和不會超過 1。",
+        "交集應為空集合。",
+        "聯集應為樣本空間。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp2-recognition",
+      "kpId": "probability:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(P(A)=0.6\\)、\\(P(B)=0.5\\)、\\(P(A\\cup B)=0.8\\)，則 \\(P(A\\cap B)\\) 為何？",
+      "options": [
+        "\\(0.1\\)",
+        "\\(0.2\\)",
+        "\\(0.3\\)",
+        "\\(0.4\\)",
+        "\\(0.8\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(0.3\\)",
+      "firstBarrier": "能否由聯集公式反求交集。",
+      "solution": "由 \\(P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\)，得交集機率為 \\(0.6+0.5-0.8=0.3\\)。",
+      "distractorNotes": [
+        "相減次序錯誤。",
+        "漏加其中一事件。",
+        null,
+        "算術錯誤。",
+        "直接把聯集當成交集。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp2-application",
+      "kpId": "probability:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某班 40 人中，會打籃球的有 22 人，會打排球的有 18 人，兩者都會的有 10 人。隨機選一人，至少會其中一種球類的機率為何？",
+      "options": [
+        "\\(\\dfrac14\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac34\\)",
+        "\\(\\dfrac45\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac34\\)",
+      "firstBarrier": "能否用容斥原理處理兩項技能重疊的人數。",
+      "solution": "至少會一種的人數為 \\(22+18-10=30\\)，機率為 \\(\\dfrac{30}{40}=\\dfrac34\\)。",
+      "distractorNotes": [
+        "只看兩者都會。",
+        "漏算其中一群。",
+        null,
+        "交集扣除錯誤。",
+        "未扣除重複人數。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp3-concept",
+      "kpId": "probability:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(P(B)>0\\)，下列哪一個算式是 \\(P(A\\mid B)\\) 的定義？",
+      "options": [
+        "\\(\\dfrac{P(A)}{P(B)}\\)",
+        "\\(\\dfrac{P(A\\cap B)}{P(A)}\\)",
+        "\\(\\dfrac{P(A\\cap B)}{P(B)}\\)",
+        "\\(P(A)+P(B)\\)",
+        "\\(P(A)P(B)\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac{P(A\\cap B)}{P(B)}\\)",
+      "firstBarrier": "能否辨識條件 \\(B\\) 會成為更新後樣本空間的分母。",
+      "solution": "條件機率定義為 \\(P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}\\)。",
+      "distractorNotes": [
+        "分子缺少交集。",
+        "分母放成欲求事件。",
+        null,
+        "誤用加法。",
+        "只有獨立事件交集才可直接相乘。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp3-recognition",
+      "kpId": "probability:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從 1 至 12 的整數中等可能選一個。已知選到偶數，則該數也是 3 的倍數的機率為何？",
+      "options": [
+        "\\(\\dfrac16\\)",
+        "\\(\\dfrac14\\)",
+        "\\(\\dfrac13\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac23\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac13\\)",
+      "firstBarrier": "能否把樣本空間縮成六個偶數，再數其中的 3 倍數。",
+      "solution": "偶數為 2、4、6、8、10、12，其中 6、12 是 3 的倍數，所以機率為 \\(\\dfrac26=\\dfrac13\\)。",
+      "distractorNotes": [
+        "仍用原來 12 個數作分母。",
+        "交集或分母計數錯誤。",
+        null,
+        "把條件前後顛倒。",
+        "把非 3 倍數也列入。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp3-application",
+      "kpId": "probability:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲盒有 2 顆紅球、1 顆藍球；乙盒有 1 顆紅球、3 顆藍球。先等可能選一個盒子，再從該盒隨機取出一球。已知取出的是紅球，所選盒子為甲盒的機率為何？",
+      "options": [
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac8{11}\\)",
+        "\\(\\dfrac34\\)",
+        "\\(\\dfrac{11}{12}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac8{11}\\)",
+      "firstBarrier": "能否把已知紅球當成更新條件，而非直接回答甲盒內紅球比例。",
+      "solution": "甲且紅的路徑機率為 \\(\\dfrac13\\)，乙且紅為 \\(\\dfrac18\\)，所以所求為 \\(\\dfrac{\\dfrac13}{\\dfrac13+\\dfrac18}=\\dfrac8{11}\\)。",
+      "distractorNotes": [
+        "未依紅球更新先驗。",
+        "把甲盒紅球比例當答案。",
+        null,
+        "只比較紅球顆數。",
+        "直接相加兩盒紅球比例。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp3-concept",
+      "kpId": "probability:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "值",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲機器生產量占 60%，不良率為 2%；乙機器生產量占 40%，不良率為 5%。隨機抽一件產品，其為不良品的機率為何？",
+      "options": [
+        "\\(0.02\\)",
+        "\\(0.03\\)",
+        "\\(0.032\\)",
+        "\\(0.05\\)",
+        "\\(0.07\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(0.032\\)",
+      "firstBarrier": "能否依來源比例加權兩條不良品路徑。",
+      "solution": "全機率為 \\(0.6\\times0.02+0.4\\times0.05=0.032\\)。",
+      "distractorNotes": [
+        "只用甲機器不良率。",
+        "直接平均兩個不良率。",
+        null,
+        "只用乙機器不良率。",
+        "把兩個不良率直接相加。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp3-recognition",
+      "kpId": "probability:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某次測驗共有男生 40 人、女生 20 人；其中男生 30 人及女生 10 人通過。已知隨機抽到的是通過者，該生為男生的機率為何？",
+      "options": [
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac34\\)",
+        "\\(\\dfrac45\\)",
+        "\\(\\dfrac56\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac34\\)",
+      "firstBarrier": "能否把通過者 40 人視為條件後的新樣本空間。",
+      "solution": "通過者共 40 人，其中男生 30 人，因此機率為 \\(\\dfrac{30}{40}=\\dfrac34\\)。",
+      "distractorNotes": [
+        "只比較男女通過人數的差。",
+        "仍以全體 60 人作分母。",
+        null,
+        "分母或約分錯誤。",
+        "把男生原有人數當分母。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp3-application",
+      "kpId": "probability:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某疾病盛行率為 10%。檢驗對患者呈陽性的機率為 80%，對未患病者誤呈陽性的機率為 20%。隨機一人檢驗呈陽性，此人患病的機率為何？",
+      "options": [
+        "\\(\\dfrac1{10}\\)",
+        "\\(\\dfrac4{13}\\)",
+        "\\(\\dfrac25\\)",
+        "\\(\\dfrac45\\)",
+        "\\(\\dfrac9{10}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac4{13}\\)",
+      "firstBarrier": "能否同時計入盛行率、真陽性與偽陽性兩條路徑。",
+      "solution": "患病且陽性為 \\(0.1\\times0.8=0.08\\)，未患病且陽性為 \\(0.9\\times0.2=0.18\\)，所以所求為 \\(\\dfrac{0.08}{0.26}=\\dfrac4{13}\\)。",
+      "distractorNotes": [
+        "直接使用盛行率。",
+        null,
+        "只比較檢驗準確率。",
+        "把敏感度直接當反向條件。",
+        "忽略偽陽性。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp3-concept",
+      "kpId": "probability:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "路",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "關於 \\(P(A\\mid B)\\) 與 \\(P(B\\mid A)\\)，下列哪一項正確？",
+      "options": [
+        "兩者永遠相等。",
+        "只要兩事件互斥就相等。",
+        "兩者通常不同，必須依各自條件重新計算。",
+        "兩者相加一定為 1。",
+        "兩者相乘一定為 0。"
+      ],
+      "answerIndex": 2,
+      "answer": "兩者通常不同，必須依各自條件重新計算。",
+      "firstBarrier": "能否區分條件方向，避免把正向條件與反向條件混為一談。",
+      "solution": "條件事件不同會改變分母，因此兩個條件機率通常不同。",
+      "distractorNotes": [
+        "忽略條件方向。",
+        "互斥時通常無法形成有意義的雙向條件。",
+        null,
+        "兩者不是餘事件。",
+        "沒有必然的乘積關係。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp3-recognition",
+      "kpId": "probability:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "袋中有 3 顆紅球、2 顆藍球，不放回連取兩球。已知第一球是紅球，第二球是藍球的機率為何？",
+      "options": [
+        "\\(\\dfrac25\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac35\\)",
+        "\\(\\dfrac23\\)",
+        "\\(\\dfrac34\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac12\\)",
+      "firstBarrier": "能否在第一球為紅球後更新袋中總數與顏色數。",
+      "solution": "第一球取走紅球後，剩下 2 紅 2 藍，共 4 球，所以第二球為藍球的機率為 \\(\\dfrac24=\\dfrac12\\)。",
+      "distractorNotes": [
+        "仍使用抽取前藍球比例。",
+        null,
+        "把剩餘紅球比例當答案。",
+        "分母未隨抽球更新。",
+        "把條件事件重複相乘。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp3-application",
+      "kpId": "probability:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "以 \\(\\dfrac13\\) 的機率選甲盒、\\(\\dfrac23\\) 的機率選乙盒。甲盒有 3 紅 1 藍，乙盒有 1 紅 1 藍。選盒後取一球，已知取到紅球，選到甲盒的機率為何？",
+      "options": [
+        "\\(\\dfrac14\\)",
+        "\\(\\dfrac13\\)",
+        "\\(\\dfrac37\\)",
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac34\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac37\\)",
+      "firstBarrier": "能否在選盒機率不相等時，先算兩條紅球路徑再正規化。",
+      "solution": "甲且紅為 \\(\\dfrac13\\times\\dfrac34=\\dfrac14\\)，乙且紅為 \\(\\dfrac23\\times\\dfrac12=\\dfrac13\\)，所以所求為 \\(\\dfrac{\\dfrac14}{\\dfrac14+\\dfrac13}=\\dfrac37\\)。",
+      "distractorNotes": [
+        "只算甲且紅的聯合機率。",
+        "仍使用選甲盒的先驗機率。",
+        null,
+        "把兩條路徑視為相等。",
+        "只用甲盒紅球比例。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp4-concept",
+      "kpId": "probability:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "擲一顆公平六面骰一次，以點數作為隨機變數 \\(X\\)。\\(E(X)\\) 為何？",
+      "options": [
+        "\\(3\\)",
+        "\\(\\dfrac72\\)",
+        "\\(4\\)",
+        "\\(\\dfrac92\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac72\\)",
+      "firstBarrier": "能否對六個等可能點數作加權平均。",
+      "solution": "\\(E(X)=\\dfrac{1+2+3+4+5+6}{6}=\\dfrac72\\)。",
+      "distractorNotes": [
+        "取中間整數時向下捨去。",
+        null,
+        "把眾數或任一點數當期望值。",
+        "平均計算錯誤。",
+        "把最大值當期望值。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp4-recognition",
+      "kpId": "probability:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "隨機變數 \\(X\\) 取 0、1、2 的機率依序為 \\(\\dfrac14、\\dfrac12、\\dfrac14\\)。\\(E(X)\\) 為何？",
+      "options": [
+        "\\(\\dfrac12\\)",
+        "\\(\\dfrac34\\)",
+        "\\(1\\)",
+        "\\(\\dfrac54\\)",
+        "\\(\\dfrac32\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否把每個數值乘上其機率後相加。",
+      "solution": "\\(E(X)=0\\times\\dfrac14+1\\times\\dfrac12+2\\times\\dfrac14=1\\)。",
+      "distractorNotes": [
+        "漏掉數值 2 的貢獻。",
+        "加權算術錯誤。",
+        null,
+        "把機率直接加到數值。",
+        "未依機率加權。"
+      ]
+    },
+    {
+      "id": "probability-p0-kp4-application",
+      "kpId": "probability:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某遊戲先付 20 元，再擲一顆公平的六面骰。若出現 1、2、3 點，獎金為 0 元；出現 4、5 點，獎金為 30 元；出現 6 點，獎金為 90 元。玩家每玩一次的淨收益期望值為多少元？",
+      "options": [
+        "\\(-20\\)",
+        "\\(0\\)",
+        "\\(5\\)",
+        "\\(20\\)",
+        "\\(25\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否先建立獎金機率分配，再將固定費用扣除一次。",
+      "solution": "獎金期望值為 \\(0\\times\\dfrac36+30\\times\\dfrac26+90\\times\\dfrac16=25\\) 元，淨收益期望值為 \\(25-20=5\\) 元。",
+      "distractorNotes": [
+        "只看到費用。",
+        "誤判遊戲公平。",
+        null,
+        "把費用當成期望值。",
+        "忘記扣除費用。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp4-concept",
+      "kpId": "probability:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知隨機變數 \\(X\\) 的期望值為 4，則 \\(E(2X+3)\\) 為何？",
+      "options": [
+        "\\(8\\)",
+        "\\(9\\)",
+        "\\(10\\)",
+        "\\(11\\)",
+        "\\(14\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(11\\)",
+      "firstBarrier": "能否使用期望值的線性性質，常數 3 只加一次。",
+      "solution": "\\(E(2X+3)=2E(X)+3=2\\times4+3=11\\)。",
+      "distractorNotes": [
+        "漏加常數。",
+        "把常數加在乘法之前。",
+        "算術錯誤。",
+        null,
+        "把常數也乘以 2。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp4-recognition",
+      "kpId": "probability:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某彩券獎金為 0、50、200 元，其機率依序為 0.80、0.15、0.05。每張彩券的獎金期望值為多少元？",
+      "options": [
+        "\\(10\\)",
+        "\\(15\\)",
+        "\\(17.5\\)",
+        "\\(25\\)",
+        "\\(50\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(17.5\\)",
+      "firstBarrier": "能否依各獎金機率加權，而不是對三個獎金作普通平均。",
+      "solution": "期望值為 \\(0\\times0.80+50\\times0.15+200\\times0.05=17.5\\) 元。",
+      "distractorNotes": [
+        "漏算部分獎金。",
+        "加權乘法錯誤。",
+        null,
+        "只計最高獎的貢獻或加權錯誤。",
+        "把最常見的非零獎金當期望值。"
+      ]
+    },
+    {
+      "id": "probability-p1-kp4-application",
+      "kpId": "probability:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "路",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某遊戲有 40% 的機率淨賺 30 元，60% 的機率淨損失 10 元。每玩一次的淨收益期望值為多少元？",
+      "options": [
+        "\\(-6\\)",
+        "\\(0\\)",
+        "\\(2\\)",
+        "\\(6\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否把損失寫成負值後進行加權。",
+      "solution": "期望值為 \\(30\\times0.4+(-10)\\times0.6=12-6=6\\) 元。",
+      "distractorNotes": [
+        "把獲利與損失的權重對調。",
+        "誤判為公平遊戲。",
+        "符號或乘法錯誤。",
+        null,
+        "只算獲利路徑。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp4-concept",
+      "kpId": "probability:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "關於期望值，下列哪一項正確？",
+      "options": [
+        "期望值一定是隨機變數可能實際取得的值。",
+        "期望值是長期重複試驗平均結果所趨近的數值，不一定能在單次試驗出現。",
+        "期望值一定等於最大值與最小值的平均。",
+        "只要結果等可能，期望值必為整數。",
+        "期望值只適用於獲利問題。"
+      ],
+      "answerIndex": 1,
+      "answer": "期望值是長期重複試驗平均結果所趨近的數值，不一定能在單次試驗出現。",
+      "firstBarrier": "能否把期望值理解為機率加權的長期平均，而非必然出現的單次結果。",
+      "solution": "期望值可以是所有可能值之間的數，未必是單次可取得的結果。",
+      "distractorNotes": [
+        "期望值不一定是可能值。",
+        null,
+        "機率不等時不能只平均端點。",
+        "即使等可能也可能得到非整數。",
+        "任何數值型隨機變數都可談期望值。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp4-recognition",
+      "kpId": "probability:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "路",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一名球員每次罰球命中的機率為 0.3，連續罰球 10 次，各次結果彼此獨立。命中球數的期望值為何？",
+      "options": [
+        "\\(0.3\\)",
+        "\\(1\\)",
+        "\\(3\\)",
+        "\\(7\\)",
+        "\\(10\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否辨識二項試驗成功次數的期望值為試驗次數乘成功率。",
+      "solution": "命中球數期望值為 \\(10\\times0.3=3\\)。",
+      "distractorNotes": [
+        "只寫單次命中率。",
+        "把期望值誤作一次。",
+        null,
+        "算成未命中期望次數。",
+        "把試驗次數當期望值。"
+      ]
+    },
+    {
+      "id": "probability-p2-kp4-application",
+      "kpId": "probability:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "路",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "連續擲公平硬幣 3 次，令 \\(X\\) 為正面出現次數。某遊戲的淨收益為 \\(12X-10\\) 元，淨收益期望值為多少元？",
+      "options": [
+        "\\(-10\\)",
+        "\\(2\\)",
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(26\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否先求正面次數期望值，再使用線性性質處理收益。",
+      "solution": "\\(E(X)=3\\times\\dfrac12=\\dfrac32\\)，所以 \\(E(12X-10)=12\\times\\dfrac32-10=8\\) 元。",
+      "distractorNotes": [
+        "只保留固定成本。",
+        "期望正面次數或常數處理錯誤。",
+        "乘法或減法錯誤。",
+        null,
+        "先取最大正面次數再扣費用。"
+      ]
+    }
+  ]
+}

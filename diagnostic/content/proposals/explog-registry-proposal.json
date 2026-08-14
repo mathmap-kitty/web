@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "proposalStatus": "BLUEPRINT_APPROVED_EXISTING_REGISTRY_NOT_PUBLISHED",
+  "unit": {
+    "id": "explog",
+    "name": "指數與對數",
+    "reuseExistingRegistry": true,
+    "points": [
+      {"id": "explog:kp1", "title": "指數律與指數方程", "registryStatus": "EXISTING"},
+      {"id": "explog:kp2", "title": "對數的定義與運算", "registryStatus": "EXISTING"},
+      {"id": "explog:kp3", "title": "常用對數（科學記號、位數）", "registryStatus": "EXISTING"},
+      {"id": "explog:kp4", "title": "指數對數函數圖形", "registryStatus": "EXISTING"},
+      {"id": "explog:kp5", "title": "應用模型與數列結合", "registryStatus": "EXISTING"}
+    ]
+  },
+  "coreRepresentations": [
+    {"id": "power", "label": "次", "meaning": "辨認反覆運算、倍率與週期的指數結構"},
+    {"id": "expression", "label": "式", "meaning": "在指數式與對數式間互譯並檢查條件"},
+    {"id": "graph", "label": "圖", "meaning": "判讀函數圖形、定義域、漸近線與區域"},
+    {"id": "sequence", "label": "序", "meaning": "連接等差等比、成長衰退與線性化"}
+  ],
+  "prerequisitePolicy": "REUSE_GATE1_APPROVED_EDGES_NO_GRAPH_CHANGE",
+  "relatedEdges": {"total": 9, "weightedPrerequisite": 7, "nonWeightedLinks": 2},
+  "questionPlan": {
+    "knowledgePoints": 5,
+    "stages": 3,
+    "abilities": 3,
+    "total": 45,
+    "perStage": 15,
+    "perAbility": 15,
+    "perKnowledgePoint": 9
+  },
+  "activationCondition": "教師核准藍圖後才製作 5 題代表題；完整 45 題另行核准後才出版、整合並加入完整題庫總覽。"
+}

@@ -1,0 +1,1443 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "seq",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp1-c1",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "若 [[a,b,c]] 為等差數列中依序相鄰的三項，必定滿足哪一個關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a+b=c]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2b=a+c]]"
+        },
+        {
+          "id": "C",
+          "text": "[[b^2=ac]]"
+        },
+        {
+          "id": "D",
+          "text": "[[b=a+c]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "等差數列相鄰差相等：[[b-a=c-b]]，整理得 [[2b=a+c]]。",
+      "distractorMap": {
+        "C": "seq.CONCEPT.003"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp1-r1",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "等差數列首項為 [[5]]，公差為 [[-2]]，其一般項為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a_n=5-2n]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a_n=7-2n]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a_n=5+2n]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a_n=3-2n]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[a_n=a_1+(n-1)d=5-2(n-1)=7-2n]]。常見錯誤是把公差算了 [[n]] 次。",
+      "distractorMap": {
+        "A": "seq.CONCEPT.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp1-a1",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "[[x,10,16]] 依序為等差數列的三項，則 [[x]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[8]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "中項關係給出 [[2\\cdot10=x+16]]，因此 [[x=4]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp1-r2",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "下列哪一個以正整數 [[n]] 為索引的數列一定是等差數列？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a_n=n^2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a_n=2^n]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a_n=3n-1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a_n=\\frac1n]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[a_n=3n-1]] 的相鄰差恆為 [[3]]。其餘三個數列的相鄰差不固定。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp1-a2",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 100,
+      "stem": "正數 [[a,b,c]] 依序成等差數列，且 [[\\log a,\\log b,\\log c]] 也依序成等差數列。必有何結論？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a<b<c]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a>b>c]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a=b=c]]"
+        },
+        {
+          "id": "D",
+          "text": "[[ac=1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩組中項關係分別為 [[2b=a+c]] 與 [[b^2=ac]]。由算幾不等式，[[\\frac{a+c}{2}\\ge\\sqrt{ac}]]；本題兩邊都等於 [[b]]，故等號成立，得到 [[a=b=c]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp2-c1",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "若非零數 [[a,b,c]] 依序為等比數列的三項，必定滿足哪一個關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2b=a+c]]"
+        },
+        {
+          "id": "B",
+          "text": "[[b^2=ac]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a+b=c]]"
+        },
+        {
+          "id": "D",
+          "text": "[[b=a+c]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "相鄰公比相等：[[\\frac ba=\\frac cb]]，交叉相乘得 [[b^2=ac]]。",
+      "distractorMap": {
+        "A": "seq.CONCEPT.003"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp2-r1",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "等比數列首項為 [[3]]、公比為 [[2]]。要計算前 [[4]] 項和 [[S_4]]，下列哪一個列式最直接？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3+2\\cdot4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3\\cdot\\frac{1-2^4}{1-2}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3\\cdot2^4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac{3+24}{2}\\cdot4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "有限等比級數使用 [[S_n=a_1\\frac{1-r^n}{1-r}]]，代入 [[a_1=3]]、[[r=2]]、[[n=4]]，即 [[3\\cdot\\frac{1-2^4}{1-2}]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp2-a1",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "等差數列 [[x_n=1+2(n-1)]]，令 [[y_n=3^{x_n}]]。則 [[y_n]] 的公比為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[9]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "相鄰輸入增加 [[2]]，所以 [[\\frac{y_{n+1}}{y_n}=3^{x_{n+1}-x_n}=3^2=9]]。",
+      "distractorMap": {
+        "A": "seq.REPRESENTATION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp2-r2",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "等比數列 [[2,6,18]] 倒序寫成 [[18,6,2]] 後，新公比為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac13]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "原公比為 [[3]]；順序反轉後，相鄰項的比變為原公比的倒數，即 [[\\frac13]]。",
+      "distractorMap": {
+        "A": "seq.CONCEPT.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 95,
+      "stem": "數列 [[T_n=200+80\\left(\\frac12\\right)^{n-1}]]，則 [[T_4]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[10]]"
+        },
+        {
+          "id": "B",
+          "text": "[[200]]"
+        },
+        {
+          "id": "C",
+          "text": "[[210]]"
+        },
+        {
+          "id": "D",
+          "text": "[[280]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[T_4=200+80\\left(\\frac12\\right)^3=200+10=210]]。每次減半的是超過 [[200]] 的變動量，不是整個 [[T_n]]。",
+      "distractorMap": {
+        "A": "seq.MODELING.001",
+        "B": "seq.MODELING.001",
+        "D": "seq.MODELING.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp3-c1",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "只知道遞迴式 [[a_{n+1}=2a_n]]，要唯一決定數列還缺少什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "公差"
+        },
+        {
+          "id": "B",
+          "text": "公比"
+        },
+        {
+          "id": "C",
+          "text": "至少一個初始值"
+        },
+        {
+          "id": "D",
+          "text": "前 [[n]] 項和"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "遞迴式說明下一項如何由前一項產生，但仍需至少一個初始值，才能唯一決定整個數列。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "第一週存款為 [[200]] 元，以後每週比前一週多存 [[50]] 元。若第 [[n]] 週存款為 [[a_n]]，正確遞迴表示為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a_{n+1}=a_n+50, a_1=200]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a_{n+1}=50a_n, a_1=200]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a_{n+1}=a_n+200, a_1=50]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a_n=200n+50]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "「每週比前一週多 [[50]]」表示 [[a_{n+1}=a_n+50]]，並需保留初始條件 [[a_1=200]]。",
+      "distractorMap": {
+        "B": "seq.PROCEDURE.001",
+        "C": "seq.PROCEDURE.001",
+        "D": "seq.PROCEDURE.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "數列滿足 [[a_1=1]]、[[a_{n+1}=2a_n+1]]，則 [[a_4]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[7]]"
+        },
+        {
+          "id": "B",
+          "text": "[[8]]"
+        },
+        {
+          "id": "C",
+          "text": "[[15]]"
+        },
+        {
+          "id": "D",
+          "text": "[[16]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "逐項生成：[[a_2=3]]、[[a_3=7]]、[[a_4=15]]。",
+      "distractorMap": {
+        "A": "seq.PROCEDURE.001",
+        "B": "seq.PROCEDURE.001",
+        "D": "seq.PROCEDURE.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp3-r2",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 95,
+      "stem": "遞迴式 [[a_{n+1}=3a_n-4]] 的固定點 [[c]] 滿足 [[c=3c-4]]，故 [[c=2]]。要把遞迴轉成等比形式，應定義哪一個新數列？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[b_n=a_n-2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[b_n=a_n+2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[b_n=2a_n]]"
+        },
+        {
+          "id": "D",
+          "text": "[[b_n=a_n-4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "以固定點平移，令 [[b_n=a_n-2]]，即可得到 [[b_{n+1}=a_{n+1}-2=3(a_n-2)=3b_n]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp3-a2",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 110,
+      "stem": "數列滿足 [[a_1=2]]、[[a_{n+1}=2a_n+1]]。下列哪一個一般項正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a_n=2^n]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a_n=3\\cdot2^{n-1}-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a_n=2n]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a_n=3^n-1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "令 [[b_n=a_n+1]]，則 [[b_{n+1}=2b_n]] 且 [[b_1=3]]，所以 [[b_n=3\\cdot2^{n-1}]]，因此 [[a_n=3\\cdot2^{n-1}-1]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "[[sum_{k=2}^{5}k]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[9]]"
+        },
+        {
+          "id": "B",
+          "text": "[[12]]"
+        },
+        {
+          "id": "C",
+          "text": "[[14]]"
+        },
+        {
+          "id": "D",
+          "text": "[[15]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "展開為 [[2+3+4+5=14]]。上下限決定從第幾個索引加到第幾個索引。",
+      "distractorMap": {
+        "A": "seq.PROCEDURE.002",
+        "B": "seq.PROCEDURE.002",
+        "D": "seq.PROCEDURE.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "交錯和 [[1-2+3-4+\\cdots+99-100]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-100]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-50]]"
+        },
+        {
+          "id": "C",
+          "text": "[[0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[50]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "每兩項配對：[[(1-2)+(3-4)+\\cdots+(99-100)]]，共有 [[50]] 組，每組為 [[-1]]，所以和為 [[-50]]。",
+      "distractorMap": {
+        "A": "seq.PROCEDURE.002",
+        "C": "seq.PROCEDURE.002",
+        "D": "seq.PROCEDURE.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "[[sum_{k=1}^{10}(2k-1)]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[55]]"
+        },
+        {
+          "id": "B",
+          "text": "[[90]]"
+        },
+        {
+          "id": "C",
+          "text": "[[100]]"
+        },
+        {
+          "id": "D",
+          "text": "[[110]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "這是前 [[10]] 個正奇數的和，等於 [[10^2=100]]；也可展開後用等差級數公式。",
+      "distractorMap": {
+        "A": "seq.PROCEDURE.002",
+        "B": "seq.PROCEDURE.002",
+        "D": "seq.PROCEDURE.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp4-r2",
+      "itemVersion": "2",
+      "primaryConceptId": "seq:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "數列 [[2,-1,3,2,-1,3,\\ldots]] 以三項為一週期，前 [[8]] 項和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[8]]"
+        },
+        {
+          "id": "B",
+          "text": "[[9]]"
+        },
+        {
+          "id": "C",
+          "text": "[[10]]"
+        },
+        {
+          "id": "D",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "一個完整週期的和為 [[2-1+3=4]]。前 [[8]] 項含兩個完整週期，再加 [[2,-1]]，所以總和為 [[2\\cdot4+1=9]]。",
+      "distractorMap": {
+        "A": "seq.RECOGNITION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "seq-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 95,
+      "stem": "[[sum_{k=1}^{4}k(k+1)]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[20]]"
+        },
+        {
+          "id": "B",
+          "text": "[[30]]"
+        },
+        {
+          "id": "C",
+          "text": "[[40]]"
+        },
+        {
+          "id": "D",
+          "text": "[[50]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "展開為 [[1\\cdot2+2\\cdot3+3\\cdot4+4\\cdot5=2+6+12+20=40]]。也可拆成 [[sum k^2+sum k]]。",
+      "distractorMap": {
+        "A": "seq.PROCEDURE.002",
+        "B": "seq.PROCEDURE.002",
+        "D": "seq.PROCEDURE.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "itemId": "seq-kp1-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "等差數列的相鄰兩項之差具有什麼特徵？",
+      "options": [
+        {
+          "id": "A",
+          "text": "隨項數增加"
+        },
+        {
+          "id": "B",
+          "text": "固定不變"
+        },
+        {
+          "id": "C",
+          "text": "恆為正數"
+        },
+        {
+          "id": "D",
+          "text": "等於首項"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "等差數列的定義是相鄰兩項之差為固定常數，即公差。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp1-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "等差數列滿足 [[a_3=7]]、[[a_8=22]]，其公差為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[a_8-a_3=5d=15]]，所以 [[d=3]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp1-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "等差數列首項為 [[4]]、公差為 [[3]]，則 [[a_2+a_5]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[20]]"
+        },
+        {
+          "id": "B",
+          "text": "[[21]]"
+        },
+        {
+          "id": "C",
+          "text": "[[22]]"
+        },
+        {
+          "id": "D",
+          "text": "[[23]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[a_2=7]]、[[a_5=16]]，所以 [[a_2+a_5=23]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "等差數列前 [[n]] 項和 [[S_n]]，可由首項與第 [[n]] 項寫成哪一式？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[S_n=a_1+a_n]]"
+        },
+        {
+          "id": "B",
+          "text": "[[S_n=\\frac{n(a_1+a_n)}{2}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[S_n=na_1a_n]]"
+        },
+        {
+          "id": "D",
+          "text": "[[S_n=\\frac{a_1+a_n}{n}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "首尾配對的和皆為 [[a_1+a_n]]，平均每項為其一半，故 [[S_n=\\frac{n(a_1+a_n)}{2}]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp2-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "非零數 [[a,b,c]] 依序成等比數列，則中項 [[b]] 與前後兩項有何關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2b=a+c]]"
+        },
+        {
+          "id": "B",
+          "text": "[[b^2=ac]]"
+        },
+        {
+          "id": "C",
+          "text": "[[b=a+c]]"
+        },
+        {
+          "id": "D",
+          "text": "[[b=ac]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "設公比為 [[r]]，則 [[b=ar]]、[[c=ar^2]]，所以 [[b^2=ac]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp2-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "一個非零等比數列的正負號正、負、正、負交替，則公比具有什麼特徵？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[q>1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[0<q<1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[q<0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[q=0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "每乘一次公比就改變符號，因此公比必為負數。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp2-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "等比數列滿足 [[a_2=6]]、[[a_5=162]]，且公比為正，則首項為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\frac{a_5}{a_2}=q^3=27]]，故 [[q=3]]；[[a_1=\\frac{6}{3}=2]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "等比數列首項為 [[a]]、公比為 [[q\\ne1]]，前 [[n]] 項和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a(1-q^n)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac{a(1-q^n)}{1-q}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac{a(1-q)}{1-q^n}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[aq^{n-1}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由 [[S_n-qS_n=a-aq^n]]，得 [[S_n=\\frac{a(1-q^n)}{1-q}]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp3-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "若只知道 [[a_{n+1}=a_n+2n]]，要唯一決定數列還需要什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "任一項的初始值"
+        },
+        {
+          "id": "B",
+          "text": "公比"
+        },
+        {
+          "id": "C",
+          "text": "前 [[n]] 項和"
+        },
+        {
+          "id": "D",
+          "text": "極限"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "遞迴式只描述相鄰項關係，還須一個初始值才能逐項唯一決定數列。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp3-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "對遞迴式 [[a_{n+1}=2a_n+3]]，若要平移成等比型，應先找哪一個固定點 [[c]]？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[c=2c+3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[c=2c-3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2c=c+3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[c=3c+2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "固定點代入後前後不變，須滿足 [[c=2c+3]]，再以 [[a_n-c]] 作平移。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp3-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "數列滿足 [[a_1=3]]、[[a_{n+1}=a_n+2n]]，則 [[a_4]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[11]]"
+        },
+        {
+          "id": "B",
+          "text": "[[13]]"
+        },
+        {
+          "id": "C",
+          "text": "[[15]]"
+        },
+        {
+          "id": "D",
+          "text": "[[17]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "依序加上 [[2,4,6]]，所以 [[a_4=3+2+4+6=15]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "兩個數列具有相同遞迴規則與相同初始值，則可得何結論？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩數列必逐項相同"
+        },
+        {
+          "id": "B",
+          "text": "兩數列只在首項相同"
+        },
+        {
+          "id": "C",
+          "text": "兩數列公差必為 [[0]]"
+        },
+        {
+          "id": "D",
+          "text": "仍無法比較"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "由相同初始值出發，每一步套用相同規則，數學歸納可得各項皆相同。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp4-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "下列哪一式正確表達有限和的線性性？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sum_{k=1}^n(ca_k)=c\\sum_{k=1}^n a_k]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sum_{k=1}^n(ca_k)=\\sum_{k=1}^n a_k+c]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sum_{k=1}^n(a_k+b_k)=\\sum_{k=1}^n a_k\\sum_{k=1}^n b_k]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sum_{k=1}^n c= c]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "常數可提出求和符號外：[[\\sum ca_k=c\\sum a_k]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp4-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "數列 [[4,-1,2,4,-1,2,\\ldots]] 以三項為一週期。計算前 [[20]] 項和時，最適合先做什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "分成 [[6]] 個完整週期再加前 [[2]] 項"
+        },
+        {
+          "id": "B",
+          "text": "分成 [[7]] 個完整週期"
+        },
+        {
+          "id": "C",
+          "text": "只計算一個週期"
+        },
+        {
+          "id": "D",
+          "text": "把每一項都改成 [[0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[20=6\\times3+2]]，所以先算 [[6]] 個完整週期，再補一週期的前 [[2]] 項。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp4-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "[[\\sum_{k=1}^{10}k(k+1)]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[385]]"
+        },
+        {
+          "id": "B",
+          "text": "[[420]]"
+        },
+        {
+          "id": "C",
+          "text": "[[440]]"
+        },
+        {
+          "id": "D",
+          "text": "[[450]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\sum(k^2+k)=\\sum k^2+\\sum k=385+55=440]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "seq-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "seq:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "等差級數使用首尾配對求和，關鍵依據是什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "每一對首尾項的和相同"
+        },
+        {
+          "id": "B",
+          "text": "每一項都相同"
+        },
+        {
+          "id": "C",
+          "text": "公差一定為正"
+        },
+        {
+          "id": "D",
+          "text": "項數一定為偶數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "等差數列中，第一項加末項、第二項加倒數第二項等，所得和皆相同；奇數項時中間項也符合平均關係。",
+      "distractorMap": {}
+    }
+  ]
+}

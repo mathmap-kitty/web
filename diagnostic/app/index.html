@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MathMap 複習後診斷系統十一單元整合">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <title>複習後診斷｜十一單元整合</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><text y=%2252%22 font-size=%2252%22>∑</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <script defer src="vendor/katex/katex.min.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="topbar">
+    <a class="brand" id="mathmap-home" href="../">MathMap</a>
+    <span aria-hidden="true">／</span><strong>複習後診斷</strong>
+    <span id="save-state" class="save-state" role="status" aria-live="polite">本機儲存</span>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <nav class="bottom-nav" aria-label="主要導覽">
+    <a href="#/home" data-nav="home">今日任務</a>
+    <a href="#/session" data-nav="session">作答</a>
+    <a href="#/report" data-nav="report">報告</a>
+    <a href="#/remediation" data-nav="remediation">補強</a>
+    <a href="#/data" data-nav="data">資料</a>
+  </nav>
+  <noscript>此診斷工具需要 JavaScript 才能記錄作答與產生報告。</noscript>
+  <script type="module" src="main.mjs"></script>
+</body>
+</html>

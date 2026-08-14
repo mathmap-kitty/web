@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "pvec",
+  "status": "IN_REVIEW_NOT_PUBLISHED",
+  "items": [
+    {
+      "id": "pvec-rep-kp1",
+      "kpId": "pvec:kp1",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "已知向量 u=(2,−1)、v=(−1,3)，若 w=2u−v，則 w 的長度為何？",
+      "options": ["√5", "√10", "5", "5√2", "10"],
+      "answerIndex": 3,
+      "answer": "5√2",
+      "firstBarrier": "能否先逐分量完成向量的倍數與相減，再使用長度公式。",
+      "solution": "w=2(2,−1)−(−1,3)=(5,−5)，所以長度為 √(25+25)=5√2。",
+      "diagnosticDistractors": {
+        "0": "把題式誤看成 u+v。",
+        "1": "分量運算或平方和計算錯誤。",
+        "2": "只取單一分量的絕對值。",
+        "4": "把兩分量絕對值直接相加，未使用歐氏長度。"
+      }
+    },
+    {
+      "id": "pvec-rep-kp2",
+      "kpId": "pvec:kp2",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "點 P 將線段 AB 內分，且 AP:PB=2:1。若以 O 為原點，則向量 OP 應如何用向量 OA、OB 表示？",
+      "options": ["(2/3)OA+(1/3)OB", "(1/3)OA+(2/3)OB", "2OA+OB", "OA+2OB", "(1/2)(OA+OB)"],
+      "answerIndex": 1,
+      "answer": "(1/3)OA+(2/3)OB",
+      "firstBarrier": "能否判斷 P 靠近 B，因此 B 的位置向量係數應較大。",
+      "solution": "由 AP:PB=2:1，P 從 A 朝 B 前進全程的 2/3，所以 OP=OA+(2/3)AB=(1/3)OA+(2/3)OB。",
+      "diagnosticDistractors": {
+        "0": "把內分比兩端的權重直接照抄，未注意交叉加權。",
+        "2": "忘記將係數正規化，使係數和不為 1。",
+        "3": "雖注意 B 的權重較大，仍忘記除以比值總和。",
+        "4": "把 P 誤認為中點。"
+      }
+    },
+    {
+      "id": "pvec-rep-kp3",
+      "kpId": "pvec:kp3",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "已知向量 u=(3,4)、v=(1,2)，則 u 在 v 方向上的正射影長為何？",
+      "options": ["√5", "11/5", "11√5/5", "11", "5√5/11"],
+      "answerIndex": 2,
+      "answer": "11√5/5",
+      "firstBarrier": "能否分清正射影長應除以 v 的長度，而不是長度平方。",
+      "solution": "u·v=11，且 |v|=√5，因此正射影長為 |u·v|/|v|=11/√5=11√5/5。",
+      "diagnosticDistractors": {
+        "0": "只算出 v 的長度。",
+        "1": "除以 |v|²，算成投影向量的係數。",
+        "3": "只算內積，忘記除以投影方向的長度。",
+        "4": "把正確比值倒置。"
+      }
+    },
+    {
+      "id": "pvec-rep-kp4",
+      "kpId": "pvec:kp4",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "平面上 A=(1,1)、B=(5,2)、C=(3,6)，則三角形 ABC 的面積為何？",
+      "options": ["8", "9", "10", "18", "36"],
+      "answerIndex": 1,
+      "answer": "9",
+      "firstBarrier": "能否先以同一起點建立 AB、AC，再將行列式絕對值除以 2。",
+      "solution": "AB=(4,1)、AC=(2,5)，行列式為 4×5−1×2=18，所以三角形面積為 18/2=9。",
+      "diagnosticDistractors": {
+        "0": "坐標差或行列式乘減時發生錯誤。",
+        "2": "誤把坐標差簡化成底乘高。",
+        "3": "求得平行四邊形面積後忘記除以 2。",
+        "4": "把行列式結果再次乘以 2。"
+      }
+    },
+    {
+      "id": "pvec-rep-kp5",
+      "kpId": "pvec:kp5",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "將點 P=(2,−1) 以原點 O 為中心逆時針旋轉 90°，所得點 P′ 的坐標為何？",
+      "options": ["(−1,−2)", "(−1,2)", "(1,2)", "(2,1)", "(1,−2)"],
+      "answerIndex": 2,
+      "answer": "(1,2)",
+      "firstBarrier": "能否把逆時針旋轉 90° 的規則辨識為 (x,y) 變成 (−y,x)。",
+      "solution": "逆時針旋轉 90° 時，(x,y) 變成 (−y,x)，所以 (2,−1) 變成 (1,2)。",
+      "diagnosticDistractors": {
+        "0": "兩個坐標都取負，誤當成旋轉 180°。",
+        "1": "只交換坐標，符號處理錯誤。",
+        "3": "只改第二坐標符號，沒有交換坐標。",
+        "4": "套用順時針旋轉 90° 的規則。"
+      }
+    }
+  ]
+}

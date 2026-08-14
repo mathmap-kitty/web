@@ -1,0 +1,2257 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "pvec",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "若 [[\\vec{u}+\\vec{v}=\\vec{0}]]，則下列何者必定成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\vec{u}=\\vec{v}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\vec{u}=-\\vec{v}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\left|\\vec{u}\\right|=0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\vec{u}\\cdot\\vec{v}=0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\vec{u}]] 與 [[\\vec{v}]] 同方向"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "移項可得 [[\\vec{u}=-\\vec{v}]]。",
+      "distractorMap": {
+        "A": "pvec.KP1.CONCEPT.001",
+        "C": "pvec.KP1.CONCEPT.002",
+        "D": "pvec.KP1.CONCEPT.003",
+        "E": "pvec.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "已知向量 [[\\vec{u}=(2,-1)]]、[[\\vec{v}=(-1,3)]]，若 [[\\vec{w}=2\\vec{u}-\\vec{v}]]，則 [[\\left|\\vec{w}\\right|]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt{10}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5\\sqrt2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[10]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[\\vec{w}=(5,-5)]]，故 [[\\left|\\vec{w}\\right|=\\sqrt{25+25}=5\\sqrt2]]。",
+      "distractorMap": {
+        "A": "pvec.KP1.RECOGNITION.001",
+        "B": "pvec.KP1.RECOGNITION.002",
+        "C": "pvec.KP1.RECOGNITION.003",
+        "E": "pvec.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "已知 [[A=(1,2)]]、[[B=(4,-2)]]，則 [[\\overrightarrow{AB}]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(3,-4)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(-3,4)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(5,0)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(3,4)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-5,0)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{AB}=B-A=(4-1,-2-2)=(3,-4)]]。",
+      "distractorMap": {
+        "B": "pvec.KP1.APPLICATION.001",
+        "C": "pvec.KP1.APPLICATION.002",
+        "D": "pvec.KP1.APPLICATION.003",
+        "E": "pvec.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "若 [[c]] 為實數，則 [[\\left|c\\vec{u}\\right|]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[c\\left|\\vec{u}\\right|]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\left|c\\right|\\left|\\vec{u}\\right|]]"
+        },
+        {
+          "id": "C",
+          "text": "[[c^2\\left|\\vec{u}\\right|]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\left|\\vec{u}\\right|+c]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\left|\\vec{u}\\right|/c]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "向量縮放 [[c]] 倍後，長度縮放 [[\\left|c\\right|]] 倍。",
+      "distractorMap": {
+        "A": "pvec.KP1.CONCEPT.001",
+        "C": "pvec.KP1.CONCEPT.002",
+        "D": "pvec.KP1.CONCEPT.003",
+        "E": "pvec.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "若 [[\\vec{u}=(1,-2)]]、[[\\vec{v}=(3,1)]]，則 [[2\\vec{u}+\\vec{v}]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(5,-3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(4,-1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(5,3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(-1,-5)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(2,-4)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[2\\vec{u}+\\vec{v}=(2,-4)+(3,1)=(5,-3)]]。",
+      "distractorMap": {
+        "B": "pvec.KP1.RECOGNITION.001",
+        "C": "pvec.KP1.RECOGNITION.002",
+        "D": "pvec.KP1.RECOGNITION.003",
+        "E": "pvec.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "點 [[A=(2,-1)]] 沿向量 [[(-3,4)]] 平移後到達 [[B]]，則 [[B]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-1,3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(5,-5)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-5,3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,3)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-1,5)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[B=(2,-1)+(-3,4)=(-1,3)]]。",
+      "distractorMap": {
+        "B": "pvec.KP1.APPLICATION.001",
+        "C": "pvec.KP1.APPLICATION.002",
+        "D": "pvec.KP1.APPLICATION.003",
+        "E": "pvec.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "若 [[(a,b)=(3,-2)]]，則下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a=3,b=2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a=-3,b=-2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a=3,b=-2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a+b=5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[ab=6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "向量相等表示對應分量相等，所以 [[a=3,b=-2]]。",
+      "distractorMap": {
+        "A": "pvec.KP1.CONCEPT.001",
+        "B": "pvec.KP1.CONCEPT.002",
+        "D": "pvec.KP1.CONCEPT.003",
+        "E": "pvec.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "與向量 [[(-3,4)]] 同方向的單位向量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-3/5,4/5)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(3/5,-4/5)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-4/5,3/5)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(-3,4)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(3/5,4/5)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "原向量長度為 [[5]]，故同方向單位向量為 [[(-3/5,4/5)]]。",
+      "distractorMap": {
+        "B": "pvec.KP1.RECOGNITION.001",
+        "C": "pvec.KP1.RECOGNITION.002",
+        "D": "pvec.KP1.RECOGNITION.003",
+        "E": "pvec.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "平行四邊形 [[ABCD]] 的頂點依序為 [[A=(1,0)]]、[[B=(3,2)]]、[[C=(6,1)]]，則 [[D]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(4,-1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(2,-1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(8,3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(4,1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(2,3)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[D=A+C-B=(1,0)+(6,1)-(3,2)=(4,-1)]]。",
+      "distractorMap": {
+        "B": "pvec.KP1.APPLICATION.001",
+        "C": "pvec.KP1.APPLICATION.002",
+        "D": "pvec.KP1.APPLICATION.003",
+        "E": "pvec.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "若 [[P=(1-t)A+tB]]，其中 [[t]] 為實數，則點 [[P]] 必位於何處？",
+      "options": [
+        {
+          "id": "A",
+          "text": "直線 AB 上"
+        },
+        {
+          "id": "B",
+          "text": "線段 AB 內部"
+        },
+        {
+          "id": "C",
+          "text": "AB 的中垂線上"
+        },
+        {
+          "id": "D",
+          "text": "通過 A 且垂直 AB 的直線上"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "因兩係數和為 [[1]]，且 t 可為任意實數，P 位於直線 AB 上；不一定在線段內。",
+      "distractorMap": {
+        "B": "pvec.KP2.CONCEPT.001",
+        "C": "pvec.KP2.CONCEPT.002",
+        "D": "pvec.KP2.CONCEPT.003",
+        "E": "pvec.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "點 [[P]] 將線段 [[AB]] 內分，且 [[AP:PB=2:1]]。則 [[\\overrightarrow{OP}]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\frac23\\overrightarrow{OA}+\\frac13\\overrightarrow{OB}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac13\\overrightarrow{OA}+\\frac23\\overrightarrow{OB}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2\\overrightarrow{OA}+\\overrightarrow{OB}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\overrightarrow{OA}+2\\overrightarrow{OB}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac12(\\overrightarrow{OA}+\\overrightarrow{OB})]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{OP}=\\overrightarrow{OA}+\\frac23\\overrightarrow{AB}=\\frac13\\overrightarrow{OA}+\\frac23\\overrightarrow{OB}]]。",
+      "distractorMap": {
+        "A": "pvec.KP2.RECOGNITION.001",
+        "C": "pvec.KP2.RECOGNITION.002",
+        "D": "pvec.KP2.RECOGNITION.003",
+        "E": "pvec.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "三角形頂點為 [[A=(0,0)]]、[[B=(6,0)]]、[[C=(0,3)]]，其重心坐標為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(2,1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(3,3/2)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(2,3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(6,3)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(1,2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "重心為 [[((0+6+0)/3,(0+0+3)/3)=(2,1)]]。",
+      "distractorMap": {
+        "B": "pvec.KP2.APPLICATION.001",
+        "C": "pvec.KP2.APPLICATION.002",
+        "D": "pvec.KP2.APPLICATION.003",
+        "E": "pvec.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "若 [[\\vec{a},\\vec{b}]] 不平行，且 [[x\\vec{a}+y\\vec{b}=x_1\\vec{a}+y_1\\vec{b}]]，則何者必定成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x+y=x_1+y_1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x=x_1,y=y_1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x=y]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x_1=-x,y_1=-y]]"
+        },
+        {
+          "id": "E",
+          "text": "無法比較係數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "移項得 [[(x-x_1)\\vec{a}+(y-y_1)\\vec{b}=\\vec0]]。因兩向量不平行，故 [[x=x_1,y=y_1]]。",
+      "distractorMap": {
+        "A": "pvec.KP2.CONCEPT.001",
+        "C": "pvec.KP2.CONCEPT.002",
+        "D": "pvec.KP2.CONCEPT.003",
+        "E": "pvec.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "若 [[\\overrightarrow{OP}=\\frac34\\overrightarrow{OA}+\\frac14\\overrightarrow{OB}]]，且 [[P]] 在線段 [[AB]] 上，則 [[AP:PB]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1:3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3:1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1:4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4:1]]"
+        },
+        {
+          "id": "E",
+          "text": "[[1:1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "P 從 A 朝 B 前進全程的 [[1/4]]，故 [[AP:PB=1:3]]。",
+      "distractorMap": {
+        "B": "pvec.KP2.RECOGNITION.001",
+        "C": "pvec.KP2.RECOGNITION.002",
+        "D": "pvec.KP2.RECOGNITION.003",
+        "E": "pvec.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "若 [[A=(1,2)]]、[[B=(-1,3)]]，且 [[\\overrightarrow{OP}=2\\overrightarrow{OA}-\\overrightarrow{OB}]]，則 [[P]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(3,1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,5)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-3,-1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(3,7)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(1,-1)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{OP}=2(1,2)-(-1,3)=(3,1)]]。",
+      "distractorMap": {
+        "B": "pvec.KP2.APPLICATION.001",
+        "C": "pvec.KP2.APPLICATION.002",
+        "D": "pvec.KP2.APPLICATION.003",
+        "E": "pvec.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "線段 [[AB]] 的中點 [[M]] 滿足何種關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\overrightarrow{OM}=\\overrightarrow{OA}+\\overrightarrow{OB}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\overrightarrow{OM}=\\frac12(\\overrightarrow{OA}+\\overrightarrow{OB})]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\overrightarrow{AM}=\\overrightarrow{AB}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\overrightarrow{OM}=\\overrightarrow{OB}-\\overrightarrow{OA}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\overrightarrow{AM}=2\\overrightarrow{AB}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "中點的位置向量為兩端點位置向量的平均。",
+      "distractorMap": {
+        "A": "pvec.KP2.CONCEPT.001",
+        "C": "pvec.KP2.CONCEPT.002",
+        "D": "pvec.KP2.CONCEPT.003",
+        "E": "pvec.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "三角形 [[ABC]] 的重心為 [[G]]，則 [[\\overrightarrow{OG}]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac12(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac13(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\overrightarrow{OA}-\\overrightarrow{OB}+\\overrightarrow{OC}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac23(\\overrightarrow{OA}+\\overrightarrow{OB})]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{OG}=\\frac13(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})]]。",
+      "distractorMap": {
+        "A": "pvec.KP2.RECOGNITION.001",
+        "B": "pvec.KP2.RECOGNITION.002",
+        "D": "pvec.KP2.RECOGNITION.003",
+        "E": "pvec.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "在三角形 [[ABC]] 中，[[M]] 為 [[BC]] 中點，則 [[\\overrightarrow{AM}]] 如何用 [[\\overrightarrow{AB},\\overrightarrow{AC}]] 表示？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\overrightarrow{AB}+\\overrightarrow{AC}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac12\\overrightarrow{AB}+\\frac12\\overrightarrow{AC}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac12\\overrightarrow{AB}-\\frac12\\overrightarrow{AC}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2\\overrightarrow{AB}+2\\overrightarrow{AC}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\overrightarrow{AC}-\\overrightarrow{AB}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由 M 為 BC 中點，[[\\overrightarrow{AM}=\\frac12(\\overrightarrow{AB}+\\overrightarrow{AC})]]。",
+      "distractorMap": {
+        "A": "pvec.KP2.APPLICATION.001",
+        "C": "pvec.KP2.APPLICATION.002",
+        "D": "pvec.KP2.APPLICATION.003",
+        "E": "pvec.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "非零向量 [[\\vec{u},\\vec{v}]] 垂直的充分必要條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\vec{u}+\\vec{v}=\\vec0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\vec{u}\\cdot\\vec{v}=0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\left|\\vec{u}\\right|=\\left|\\vec{v}\\right|]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\vec{u}=2\\vec{v}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\det(\\vec{u},\\vec{v})=0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由內積定義，非零向量垂直恰等價於內積為零。",
+      "distractorMap": {
+        "A": "pvec.KP3.CONCEPT.001",
+        "C": "pvec.KP3.CONCEPT.002",
+        "D": "pvec.KP3.CONCEPT.003",
+        "E": "pvec.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "已知 [[\\vec{u}=(3,4)]]、[[\\vec{v}=(1,2)]]，則 [[\\vec{u}]] 在 [[\\vec{v}]] 方向上的正射影長為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac{11}{5}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac{11\\sqrt5}{5}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[11]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac{5\\sqrt5}{11}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\vec{u}\\cdot\\vec{v}=11]]、[[\\left|\\vec{v}\\right|=\\sqrt5]]，故正射影長為 [[11/\\sqrt5=11\\sqrt5/5]]。",
+      "distractorMap": {
+        "A": "pvec.KP3.RECOGNITION.001",
+        "B": "pvec.KP3.RECOGNITION.002",
+        "D": "pvec.KP3.RECOGNITION.003",
+        "E": "pvec.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "若 [[(1,2)]] 與 [[(2,k)]] 垂直，則 [[k]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[1]]"
+        },
+        {
+          "id": "E",
+          "text": "[[2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[1\\cdot2+2k=0]]，故 [[k=-1]]。",
+      "distractorMap": {
+        "A": "pvec.KP3.APPLICATION.001",
+        "C": "pvec.KP3.APPLICATION.002",
+        "D": "pvec.KP3.APPLICATION.003",
+        "E": "pvec.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "兩個非零向量的內積為正，則其夾角必為何種角？",
+      "options": [
+        {
+          "id": "A",
+          "text": "銳角"
+        },
+        {
+          "id": "B",
+          "text": "直角"
+        },
+        {
+          "id": "C",
+          "text": "鈍角"
+        },
+        {
+          "id": "D",
+          "text": "平角"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "內積為正表示夾角餘弦為正，因此夾角為銳角。",
+      "distractorMap": {
+        "B": "pvec.KP3.CONCEPT.001",
+        "C": "pvec.KP3.CONCEPT.002",
+        "D": "pvec.KP3.CONCEPT.003",
+        "E": "pvec.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "向量 [[(1,-2)]] 與 [[(3,1)]] 的夾角為何種角？",
+      "options": [
+        {
+          "id": "A",
+          "text": "銳角"
+        },
+        {
+          "id": "B",
+          "text": "直角"
+        },
+        {
+          "id": "C",
+          "text": "鈍角"
+        },
+        {
+          "id": "D",
+          "text": "平角"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "內積為 [[1\\cdot3+(-2)\\cdot1=1>0]]，所以夾角為銳角。",
+      "distractorMap": {
+        "B": "pvec.KP3.RECOGNITION.001",
+        "C": "pvec.KP3.RECOGNITION.002",
+        "D": "pvec.KP3.RECOGNITION.003",
+        "E": "pvec.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "向量 [[(2,3)]] 在 [[(1,0)]] 方向上的正射影向量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(2,0)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(0,3)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(2,3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,0)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(0,2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "投影到 x 軸方向只保留第一分量，故為 [[(2,0)]]。",
+      "distractorMap": {
+        "B": "pvec.KP3.APPLICATION.001",
+        "C": "pvec.KP3.APPLICATION.002",
+        "D": "pvec.KP3.APPLICATION.003",
+        "E": "pvec.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "柯西不等式 [[\\left|\\vec{u}\\cdot\\vec{v}\\right|\\le\\left|\\vec{u}\\right|\\left|\\vec{v}\\right|]] 取等號時，兩非零向量必須如何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "互相垂直"
+        },
+        {
+          "id": "B",
+          "text": "互相平行"
+        },
+        {
+          "id": "C",
+          "text": "長度相等"
+        },
+        {
+          "id": "D",
+          "text": "內積為零"
+        },
+        {
+          "id": "E",
+          "text": "皆為單位向量"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "取等號表示夾角餘弦絕對值為 [[1]]，故兩向量平行或反平行。",
+      "distractorMap": {
+        "A": "pvec.KP3.CONCEPT.001",
+        "C": "pvec.KP3.CONCEPT.002",
+        "D": "pvec.KP3.CONCEPT.003",
+        "E": "pvec.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "已知 [[\\left|\\vec{u}\\right|=2]]、[[\\left|\\vec{v}\\right|=3]]、[[\\vec{u}\\cdot\\vec{v}=-3]]，則兩向量夾角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[120^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[150^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[\\cos\\theta=-3/(2\\cdot3)=-1/2]]，故 [[\\theta=120^\\circ]]。",
+      "distractorMap": {
+        "A": "pvec.KP3.RECOGNITION.001",
+        "B": "pvec.KP3.RECOGNITION.002",
+        "C": "pvec.KP3.RECOGNITION.003",
+        "E": "pvec.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "若 [[\\left|\\vec{u}\\right|=3]]、[[\\left|\\vec{v}\\right|=4]]，且 [[\\vec{u}\\perp\\vec{v}]]，則 [[\\left|\\vec{u}+\\vec{v}\\right|]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[7]]"
+        },
+        {
+          "id": "D",
+          "text": "[[12]]"
+        },
+        {
+          "id": "E",
+          "text": "[[25]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\left|\\vec{u}+\\vec{v}\\right|^2=3^2+4^2=25]]，故長度為 [[5]]。",
+      "distractorMap": {
+        "A": "pvec.KP3.APPLICATION.001",
+        "C": "pvec.KP3.APPLICATION.002",
+        "D": "pvec.KP3.APPLICATION.003",
+        "E": "pvec.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "交換行列式中的兩個向量後，行列式值如何改變？",
+      "options": [
+        {
+          "id": "A",
+          "text": "不變"
+        },
+        {
+          "id": "B",
+          "text": "變為相反數"
+        },
+        {
+          "id": "C",
+          "text": "變為平方"
+        },
+        {
+          "id": "D",
+          "text": "變為絕對值"
+        },
+        {
+          "id": "E",
+          "text": "必變為零"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\det(\\vec{v},\\vec{u})=-\\det(\\vec{u},\\vec{v})]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.CONCEPT.001",
+        "C": "pvec.KP4.CONCEPT.002",
+        "D": "pvec.KP4.CONCEPT.003",
+        "E": "pvec.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "平面上 [[A=(1,1)]]、[[B=(5,2)]]、[[C=(3,6)]]，則三角形 [[ABC]] 面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[8]]"
+        },
+        {
+          "id": "B",
+          "text": "[[9]]"
+        },
+        {
+          "id": "C",
+          "text": "[[10]]"
+        },
+        {
+          "id": "D",
+          "text": "[[18]]"
+        },
+        {
+          "id": "E",
+          "text": "[[36]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{AB}=(4,1)]]、[[\\overrightarrow{AC}=(2,5)]]，面積為 [[\\frac12|20-2|=9]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.RECOGNITION.001",
+        "C": "pvec.KP4.RECOGNITION.002",
+        "D": "pvec.KP4.RECOGNITION.003",
+        "E": "pvec.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "以 [[(2,1)]]、[[(-1,3)]] 為鄰邊的平行四邊形面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[7]]"
+        },
+        {
+          "id": "D",
+          "text": "[[8]]"
+        },
+        {
+          "id": "E",
+          "text": "[[9]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "面積為 [[|2\\cdot3-1\\cdot(-1)|=7]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.APPLICATION.001",
+        "B": "pvec.KP4.APPLICATION.002",
+        "D": "pvec.KP4.APPLICATION.003",
+        "E": "pvec.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "兩平面向量的行列式為零，且兩者皆非零，則何者必定成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "互相垂直"
+        },
+        {
+          "id": "B",
+          "text": "互相平行"
+        },
+        {
+          "id": "C",
+          "text": "長度相等"
+        },
+        {
+          "id": "D",
+          "text": "夾角為 [[60^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "內積為零"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "行列式為零表示張成的平行四邊形面積為零，因此兩向量平行。",
+      "distractorMap": {
+        "A": "pvec.KP4.CONCEPT.001",
+        "C": "pvec.KP4.CONCEPT.002",
+        "D": "pvec.KP4.CONCEPT.003",
+        "E": "pvec.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "三角形頂點為 [[(0,0)]]、[[(4,0)]]、[[(1,3)]]，其面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[8]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "底長為 [[4]]，高為 [[3]]，面積為 [[\\frac12\\cdot4\\cdot3=6]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.RECOGNITION.001",
+        "B": "pvec.KP4.RECOGNITION.002",
+        "D": "pvec.KP4.RECOGNITION.003",
+        "E": "pvec.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "以 [[(a,1)]]、[[(2,3)]] 為鄰邊的平行四邊形面積為 [[7]]，且 [[a>1]]，則 [[a]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        },
+        {
+          "id": "E",
+          "text": "[[5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[|3a-2|=7]]，得 [[a=3]] 或 [[a=-5/3]]；由 [[a>1]]，所以 [[a=3]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.APPLICATION.001",
+        "B": "pvec.KP4.APPLICATION.002",
+        "D": "pvec.KP4.APPLICATION.003",
+        "E": "pvec.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "同一起點的兩向量所張成三角形面積，是其所張成平行四邊形面積的多少倍？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1/4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1/2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "三角形面積為行列式絕對值的 [[1/2]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.CONCEPT.001",
+        "C": "pvec.KP4.CONCEPT.002",
+        "D": "pvec.KP4.CONCEPT.003",
+        "E": "pvec.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "若 [[\\det(\\vec{u},\\vec{v})=-6]]，則由 [[\\vec{u},\\vec{v}]] 張成的三角形面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-6]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "三角形面積為 [[\\frac12|-6|=3]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.RECOGNITION.001",
+        "B": "pvec.KP4.RECOGNITION.002",
+        "D": "pvec.KP4.RECOGNITION.003",
+        "E": "pvec.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "點 [[P=(1,2)]]、[[Q=(5,4)]]、[[R=(k,6)]] 所成三角形面積為 [[8]]，且 [[k<5]]，則 [[k]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{PQ}=(4,2)]]、[[\\overrightarrow{PR}=(k-1,4)]]，故 [[\\frac12|18-2k|=8]]。得 [[k=1]] 或 [[17]]，由 [[k<5]] 取 [[k=1]]。",
+      "distractorMap": {
+        "A": "pvec.KP4.APPLICATION.001",
+        "B": "pvec.KP4.APPLICATION.002",
+        "D": "pvec.KP4.APPLICATION.003",
+        "E": "pvec.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "平面向量 [[(x,y)]] 以原點為中心逆時針旋轉 [[90^\\circ]] 後變為何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(y,-x)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(-y,x)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-x,-y)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(y,x)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-x,y)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "逆時針旋轉 [[90^\\circ]] 的規則為 [[(x,y)\\mapsto(-y,x)]]。",
+      "distractorMap": {
+        "A": "pvec.KP5.CONCEPT.001",
+        "C": "pvec.KP5.CONCEPT.002",
+        "D": "pvec.KP5.CONCEPT.003",
+        "E": "pvec.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "將 [[P=(2,-1)]] 以原點為中心逆時針旋轉 [[90^\\circ]]，所得 [[P_1]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-1,-2)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(-1,2)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(1,2)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(1,-2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[(2,-1)\\mapsto(1,2)]]。",
+      "distractorMap": {
+        "A": "pvec.KP5.RECOGNITION.001",
+        "B": "pvec.KP5.RECOGNITION.002",
+        "D": "pvec.KP5.RECOGNITION.003",
+        "E": "pvec.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "向量 [[(3,4)]] 順時針旋轉 [[90^\\circ]] 後為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-4,3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(4,-3)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-3,-4)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(4,3)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-4,-3)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "順時針旋轉 [[90^\\circ]] 為 [[(x,y)\\mapsto(y,-x)]]，故得 [[(4,-3)]]。",
+      "distractorMap": {
+        "A": "pvec.KP5.APPLICATION.001",
+        "C": "pvec.KP5.APPLICATION.002",
+        "D": "pvec.KP5.APPLICATION.003",
+        "E": "pvec.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "平面旋轉必定保留下列哪一項？",
+      "options": [
+        {
+          "id": "A",
+          "text": "每一點的 x 坐標"
+        },
+        {
+          "id": "B",
+          "text": "每一點的 y 坐標"
+        },
+        {
+          "id": "C",
+          "text": "向量長度與夾角"
+        },
+        {
+          "id": "D",
+          "text": "向量的兩個分量"
+        },
+        {
+          "id": "E",
+          "text": "所有點的位置"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "旋轉保留長度與夾角，但通常改變坐標分量與位置。",
+      "distractorMap": {
+        "A": "pvec.KP5.CONCEPT.001",
+        "B": "pvec.KP5.CONCEPT.002",
+        "D": "pvec.KP5.CONCEPT.003",
+        "E": "pvec.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "點 [[(-2,5)]] 以原點為中心旋轉 [[180^\\circ]] 後為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(2,-5)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(-5,2)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(5,-2)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,5)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-2,-5)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[(x,y)\\mapsto(-x,-y)]]，故 [[(-2,5)\\mapsto(2,-5)]]。",
+      "distractorMap": {
+        "B": "pvec.KP5.RECOGNITION.001",
+        "C": "pvec.KP5.RECOGNITION.002",
+        "D": "pvec.KP5.RECOGNITION.003",
+        "E": "pvec.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "點 [[A=(1,1)]] 以 [[C=(1,-1)]] 為中心逆時針旋轉 [[90^\\circ]] 後為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-1,-1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(3,-1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,-3)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-1,1)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{CA}=(0,2)]]，旋轉後為 [[(-2,0)]]，加回 C 得 [[(-1,-1)]]。",
+      "distractorMap": {
+        "B": "pvec.KP5.APPLICATION.001",
+        "C": "pvec.KP5.APPLICATION.002",
+        "D": "pvec.KP5.APPLICATION.003",
+        "E": "pvec.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "連續做兩次逆時針 [[90^\\circ]] 旋轉，等同於一次多少度旋轉？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[180^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[270^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[360^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩次 [[90^\\circ]] 合成 [[180^\\circ]]。",
+      "distractorMap": {
+        "A": "pvec.KP5.CONCEPT.001",
+        "B": "pvec.KP5.CONCEPT.002",
+        "D": "pvec.KP5.CONCEPT.003",
+        "E": "pvec.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "下列哪個矩陣表示順時針旋轉 [[90^\\circ]]？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{pmatrix}-1&0\\\\0&-1\\end{pmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "順時針 [[90^\\circ]] 使 [[(x,y)\\mapsto(y,-x)]]，矩陣為 [[\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}]]。",
+      "distractorMap": {
+        "A": "pvec.KP5.RECOGNITION.001",
+        "C": "pvec.KP5.RECOGNITION.002",
+        "D": "pvec.KP5.RECOGNITION.003",
+        "E": "pvec.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "pvec-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "pvec:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "將點 [[(2,0)]] 以原點為中心逆時針旋轉 [[120^\\circ]]，所得坐標為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-1,\\sqrt3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,\\sqrt3)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-\\sqrt3,1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(-1,-\\sqrt3)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(0,2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "新坐標為 [[(2\\cos120^\\circ,2\\sin120^\\circ)=(-1,\\sqrt3)]]。",
+      "distractorMap": {
+        "B": "pvec.KP5.APPLICATION.001",
+        "C": "pvec.KP5.APPLICATION.002",
+        "D": "pvec.KP5.APPLICATION.003",
+        "E": "pvec.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "平面向量 45 題教師核准（2026-08-13）"
+      }
+    }
+  ]
+}

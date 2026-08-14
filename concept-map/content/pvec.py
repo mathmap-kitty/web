@@ -4,10 +4,10 @@ r"""平面向量單元 · 單一來源內容（單元8：平面向量）。
 挖空原則：只挖「公式與概念關鍵」（自行判斷）。
 例題以官方原卷（106~115學測數學試卷.pdf）為準，答案對官方答案頁校正；數 B 題不採用。
 
-考點對應核心概念分析（單元8）：
+核心概念對應核心概念分析（單元8）：
   ① 向量運算與線性組合（分點、面積比）  ② 內積（夾角、垂直、正射影）
   ③ 行列式（面積）  ④ 向量與旋轉、坐標
-※ 本檔逐考點建置中；先 Part 0＋考點 1。
+※ 本檔逐核心概念建置中；先 Part 0＋核心概念 1。
 """
 
 # 向量加法：三角形法（首尾相接 u→v）＋平行四邊形法，對角線 = u+v
@@ -28,14 +28,14 @@ UNIT = {
     "emoji": "➡️",
     "title": "平面向量",
     "exam_tag": "115 學測",
-    "hero_sub": "Part 1 五大考點 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
-    "hero_sub2": "每個考點皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
-    "part1_label": "五大考點",
+    "hero_sub": "Part 1 五大核心概念 ｜ Part 2 模擬實戰 ｜ Part 3 考前速查",
+    "hero_sub2": "每個核心概念皆含：重點與公式 · 常見誤解 · 歷屆試題 · 解題策略",
+    "part1_label": "五大核心概念",
     "foot": "115 學測數學 · 平面向量 · 學測數學重點整理",
 
     "part0": {
         "opener": {"svg": soil_maps.SLIDES["pvec"], "hero": True,
-                   "caption": r"**單元知識地圖**：先備 → 各考點（★越多＝越常考） → 跨單元最愛綁考 → 帶走一句話"},
+                   "caption": r"**單元知識地圖**：先備 → 各核心概念（★越多＝越常考） → 跨單元最愛綁考 → 帶走一句話"},
         "heading": "為什麼平面向量是幾何題的萬用語言",
         "trend_table": {
             "years": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115],
@@ -53,7 +53,7 @@ UNIT = {
 
     "kps": [
         {
-            "num": "考點 1", "id": "kp1", "nav": "向量的表示與運算", "freq": "★★☆",
+            "num": "核心概念 1", "id": "kp1", "nav": "向量的表示與運算", "freq": "★★☆",
             "title": r"向量的表示、運算與平行",
             "intro": r"向量同時帶 **大小** 與 **方向**。先把向量「**坐標化**」，加減、係數積、長度、平行全部變成坐標的計算。",
             "prereq": [
@@ -137,11 +137,11 @@ UNIT = {
             ],
         },
         {
-            "num": "考點 2", "id": "kp2", "nav": "線性組合、分點與面積比", "freq": "★★★ 必考",
+            "num": "核心概念 2", "id": "kp2", "nav": "線性組合、分點與面積比", "freq": "★★★ 必考",
             "title": r"線性組合、分點與面積比",
             "intro": r"用兩個不平行向量當 **基底**，把平面上每個向量都「組合」出來。重點是 **分點公式**、**重心**，以及把 **面積比** 直接讀成線性組合的係數。",
             "prereq": [
-                r"**向量加減、係數積**（考點 1）",
+                r"**向量加減、係數積**（核心概念 1）",
                 r"**內分點**的比例概念",
                 r"「**基底**」＝兩個不平行的向量",
             ],
@@ -211,7 +211,7 @@ UNIT = {
                  "solution": {"brief": r"(3)(4)(5)",
                               "steps": [
                                   r"(3)○ 餘弦定理：\(\cos A=\dfrac{6^2+5^2-4^2}{2\cdot6\cdot5}=\dfrac{45}{60}=\dfrac34\)（\(\sin A=\dfrac{\sqrt7}{4}\)，\([ABC]=\dfrac12\cdot6\cdot5\cdot\dfrac{\sqrt7}{4}=\dfrac{15\sqrt7}{4}\)）。",
-                                  r"**定 \(P\)**：\(\angle B\) 角平分線交 \(\overline{AC}\) 於 \(F\)，由角平分線定理（三角單元 考點 6）\(AF:FC=BA:BC=6:4=3:2\Rightarrow\overrightarrow{AF}=\dfrac35\overrightarrow{AC}\)。設 \(\overrightarrow{AP}=x\overrightarrow{AB}+y\overrightarrow{AC}\)。",
+                                  r"**定 \(P\)**：\(\angle B\) 角平分線交 \(\overline{AC}\) 於 \(F\)，由角平分線定理（三角單元 核心概念 6）\(AF:FC=BA:BC=6:4=3:2\Rightarrow\overrightarrow{AF}=\dfrac35\overrightarrow{AC}\)。設 \(\overrightarrow{AP}=x\overrightarrow{AB}+y\overrightarrow{AC}\)。",
                                   r"\(P\) 在 \(\overline{CD}\) 上：以 \(\overrightarrow{AD}=\dfrac12\overrightarrow{AB}\) 改寫 \(\overrightarrow{AP}=2x\,\overrightarrow{AD}+y\,\overrightarrow{AC}\)，套「在直線 \(DC\) 上 \(\Leftrightarrow\) 係數和 \(=1\)」得 \(2x+y=1\)；同理 \(P\) 在 \(\overline{BF}\) 上：\(\overrightarrow{AP}=x\,\overrightarrow{AB}+\dfrac{5y}{3}\overrightarrow{AF}\)，得 \(x+\dfrac53y=1\)。解得 \(x=\dfrac27,\,y=\dfrac37\)。",
                                   r"故 \(\overrightarrow{AP}=\dfrac27\overrightarrow{AB}+\dfrac37\overrightarrow{AC}\)（(2)✗，係數恰相反）；且 \(P\) 在 \(\overline{CD}\) 上 \(\overrightarrow{CP}=\dfrac47\overrightarrow{CD}\)（(1)✗，非 \(\tfrac37\)）。",
                                   r"(4)○ \([ACP]=x\,[ABC]=\dfrac27\cdot\dfrac{15\sqrt7}{4}=\dfrac{15\sqrt7}{14}\)（\(\overrightarrow{AB}\) 係數 \(x\) ＝ 對 \(\overline{AC}\) 的高之比）。",
@@ -244,11 +244,11 @@ UNIT = {
             ],
         },
         {
-            "num": "考點 3", "id": "kp3", "nav": "內積：夾角、垂直、正射影", "freq": "★★★ 必考",
+            "num": "核心概念 3", "id": "kp3", "nav": "內積：夾角、垂直、正射影", "freq": "★★★ 必考",
             "title": r"內積：夾角、垂直與正射影",
             "intro": r"內積是平面向量的「**萬用尺**」——一個式子同時量長度、夾角、垂直，還能求 **正射影**。（與空間向量的內積完全同理。）",
             "prereq": [
-                r"**向量坐標、長度**（考點 1）",
+                r"**向量坐標、長度**（核心概念 1）",
                 r"**三角的 \(\cos\)**（求夾角會用到）",
                 r"「**垂直**」的概念",
             ],
@@ -331,11 +331,11 @@ UNIT = {
             ],
         },
         {
-            "num": "考點 4", "id": "kp4", "nav": "行列式與平行四邊形面積", "freq": "★★☆",
+            "num": "核心概念 4", "id": "kp4", "nav": "行列式與平行四邊形面積", "freq": "★★☆",
             "title": r"行列式與平行四邊形面積",
             "intro": r"兩向量「張成」的平行四邊形面積 ＝ **行列式絕對值**。善用行列式「**對每個向量都是線性**」的性質，許多面積比題不必算坐標就能解。",
             "prereq": [
-                r"**向量坐標**（考點 1）",
+                r"**向量坐標**（核心概念 1）",
                 r"**二階行列式** \(ad-bc\)（也可現學）",
                 r"**平行四邊形、三角形面積**的概念",
             ],
@@ -387,11 +387,11 @@ UNIT = {
             ],
         },
         {
-            "num": "考點 5", "id": "kp5", "nav": "向量的旋轉與坐標應用", "freq": "★★☆",
+            "num": "核心概念 5", "id": "kp5", "nav": "向量的旋轉與坐標應用", "freq": "★★☆",
             "title": r"向量的旋轉與坐標應用",
             "intro": r"把向量「**旋轉**」一個角度，是平面向量與三角、矩陣的交會點。掌握旋轉公式（尤其 \(90^\circ\)）與「用向量解坐標幾何」的手法。",
             "prereq": [
-                r"**向量坐標、加減**（考點 1）",
+                r"**向量坐標、加減**（核心概念 1）",
                 r"**特殊角的 \(\sin,\cos\)**（一般角旋轉用）",
                 r"「**垂直、保長**」的概念",
             ],
@@ -470,7 +470,7 @@ UNIT = {
     ],
 
     "part2": {
-        "count": "10", "note": "難度貼近學測，涵蓋五大考點 · 建議自行限時 40 分鐘作答後再對照詳解",
+        "count": "10", "note": "難度貼近學測，涵蓋五大核心概念 · 建議自行限時 40 分鐘作答後再對照詳解",
         "groups": [
             {"title": "一、單選題", "questions": [
                 {"tag": "練習 1", "level": "★☆☆", "core": "向量坐標運算",

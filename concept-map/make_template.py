@@ -91,7 +91,7 @@ c = t.cell(0, 0); shade(c, 'FDF3EE')
 c.paragraphs[0].text = ''
 set_run(c.paragraphs[0].add_run('填寫說明（很重要，請先看）'), 11, True, MAROON)
 notes = [
-    '1. 這份是「一個單元」用的；每個單元複製一份來填。考點數、題數都不限，不需要的欄位留空或刪除即可。',
+    '1. 這份是「一個單元」用的；每個單元複製一份來填。核心概念數、題數都不限，不需要的欄位留空或刪除即可。',
     '2. 要「挖空／點按鈕才出現」的答案，請用【 】框起來。例：m 列 n 行的矩陣記為【m×n】階。',
     '3. 「常見誤解→正解」的正解、以及歷屆／練習的簡答與詳解，我會自動做成按鈕（不用特別標）。',
     '4. 數學照平常打就好：次方 A^n、行列式 det(A)、分數 1/2、矩陣寫成 [[a,b],[c,d]]、根號 √3、角度 60°、θ 等都可以，我會轉成漂亮排版。',
@@ -110,12 +110,12 @@ blank_line('一句話副標（可留空）：')
 hr()
 
 # ---------- Part 1 ----------
-para('Part 1　建構概念：各考點', 14, True, MAROON, before=8, after=2)
-para('（以下為「一個考點」的欄位，需要幾個考點就複製幾份）', 10, False, GRAY, before=0, after=6, italic=True)
+para('Part 1　建構概念：各核心概念', 14, True, MAROON, before=8, after=2)
+para('（以下為「一個核心概念」的欄位，需要幾個核心概念就複製幾份）', 10, False, GRAY, before=0, after=6, italic=True)
 
-para('考點 ○：（標題）' + '  ' + BLANK, 12, True, BLUE, before=4, after=3)
+para('核心概念 ○：（標題）' + '  ' + BLANK, 12, True, BLUE, before=4, after=3)
 
-blank_line('這個考點在學什麼（1～3 句）：')
+blank_line('這個核心概念在學什麼（1～3 句）：')
 
 para('重點與公式（逐條列，挖空答案用【 】框起來）', 11, True, None, before=4, after=2)
 rich([('範例：', {'color': GRAY}), ('兩矩陣相等須「【同階】」且「【對應位置元素全相等】」。',
@@ -141,7 +141,7 @@ blank_line('　選項（選擇題才填，例：(1)… (2)…）：')
 blank_line('　簡答（會做成按鈕）：')
 blank_line('　解題關鍵 / 詳解（會做成按鈕）：')
 
-para('解題策略（這個考點的整體提醒）', 11, True, None, before=6, after=2)
+para('解題策略（這個核心概念的整體提醒）', 11, True, None, before=6, after=2)
 para('　' + BLANK, 11, False, GRAY, after=2)
 para('　' + BLANK, 11, False, GRAY, after=4)
 hr()
@@ -149,7 +149,7 @@ hr()
 # ---------- Part 2 ----------
 para('Part 2　模擬實戰練習（可選）', 14, True, MAROON, before=8, after=2)
 para('（一題一組，可複製多份；題型：單選 / 多選 / 選填 / 非選擇）', 10, False, GRAY, before=0, after=6, italic=True)
-blank_line('練習 ○　難易度：　　考點：')
+blank_line('練習 ○　難易度：　　核心概念：')
 blank_line('　題型（單選 / 多選 / 選填 / 非選）：')
 blank_line('　題目：')
 blank_line('　選項（選擇題才填）：')

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "explog",
+  "status": "IN_REVIEW_NOT_PUBLISHED",
+  "items": [
+    {
+      "id": "explog-rep-kp1",
+      "kpId": "explog:kp1",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "解方程式 (1/8)^(x−1)=4^(2−x)。",
+      "options": ["−2", "−1", "0", "1", "2"],
+      "answerIndex": 1,
+      "answer": "−1",
+      "firstBarrier": "能否把分數底數與整數底數都化為同一底數，且正確處理負指數。",
+      "solution": "將兩邊化為底數 2：2^(−3x+3)=2^(4−2x)，故 −3x+3=4−2x，得到 x=−1。",
+      "diagnosticDistractors": {
+        "0": "化同底後移項符號錯誤。",
+        "2": "忽略 1/8 的負指數。",
+        "3": "把次方再次方的指數誤作相加。",
+        "4": "只比較外層指數，未先統一底數。"
+      }
+    },
+    {
+      "id": "explog-rep-kp2",
+      "kpId": "explog:kp2",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "解方程式 log₂(x−1)+log₂(x+1)=3。",
+      "options": ["−3", "−1", "1", "3", "−3 或 3"],
+      "answerIndex": 3,
+      "answer": "3",
+      "firstBarrier": "能否先由真數條件得到 x>1，合併對數後保留符合定義域的解。",
+      "solution": "真數條件給 x>1。合併得 log₂[(x−1)(x+1)]=3，所以 x²−1=8，得到 x=±3；只有 x=3 符合 x>1。",
+      "diagnosticDistractors": {
+        "0": "只解代數方程，未檢查真數條件。",
+        "1": "把 log 的和錯誤處理成真數相加。",
+        "2": "誤將 log₂ 1 視為 1。",
+        "4": "找到兩個代數解，但未排除不在定義域者。"
+      }
+    },
+    {
+      "id": "explog-rep-kp3",
+      "kpId": "explog:kp3",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "已知 log 2≈0.3010。將 2^100 寫成 a×10^n，其中 1≤a<10，則 ([a],n) 為何？[a] 表示不超過 a 的最大整數。",
+      "options": ["(1,30)", "(1,31)", "(2,30)", "(2,31)", "(3,30)"],
+      "answerIndex": 0,
+      "answer": "(1,30)",
+      "firstBarrier": "能否把常用對數的整數部分解讀為科學記號指數，並以小數部分判斷有效數字的整數部分。",
+      "solution": "log(2^100)=100log2≈30.10，所以 2^100=10^0.10×10^30。因 1<10^0.10<2，故 [a]=1，n=30。",
+      "diagnosticDistractors": {
+        "1": "把位數 31 誤當成科學記號的指數 n。",
+        "2": "把 10^0.10 的整數部分誤判為 2。",
+        "3": "同時混淆位數與有效數字。",
+        "4": "將小數部分 0.10 粗略誤讀為有效數字 3。"
+      }
+    },
+    {
+      "id": "explog-rep-kp4",
+      "kpId": "explog:kp4",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "下列哪一個關係式所表示的圖形，與 y=log₂x 的圖形完全相同？",
+      "options": ["2y=log₂(x²)", "y=log₂(2x)", "x=2^y", "x=2^(−y)", "y=log₂|x|"],
+      "answerIndex": 2,
+      "answer": "x=2^y",
+      "firstBarrier": "能否在代數互譯後繼續檢查原式定義域，而不是只看化簡後的形式。",
+      "solution": "y=log₂x 與 x=2^y 互為等價敘述，且都要求 x>0。選項 1 與 5 多出 x<0 的分支；選項 2 上移 1；選項 4 對應 y=−log₂x。",
+      "diagnosticDistractors": {
+        "0": "只化簡為 log₂|x|，忽略多出的負半軸。",
+        "1": "忽略真數乘 2 造成的鉛直平移。",
+        "3": "把反函數與指數負號混淆。",
+        "4": "認為加入絕對值不影響圖形的定義域。"
+      }
+    },
+    {
+      "id": "explog-rep-kp5",
+      "kpId": "explog:kp5",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "正項等比數列 ⟨a_n⟩ 滿足 log₂a₃=5、log₂a₇=13，則此數列的公比為何？",
+      "options": ["2", "4", "8", "16", "32"],
+      "answerIndex": 1,
+      "answer": "4",
+      "firstBarrier": "能否看出正項等比數列取對數後成為等差數列，且索引差 4 對應四個公差。",
+      "solution": "令 b_n=log₂a_n，則 ⟨b_n⟩ 為等差數列，公差為 log₂r。由 b₇−b₃=13−5=8，得 4log₂r=8，所以 log₂r=2，r=4。",
+      "diagnosticDistractors": {
+        "0": "將對數差 8 直接除以錯誤的項數差。",
+        "2": "把 13−5=8 直接當成公比。",
+        "3": "只注意相隔四項，誤以為公比為 2^4。",
+        "4": "將 a₇/a₃ 的倍率誤當成原數列單步公比。"
+      }
+    }
+  ]
+}

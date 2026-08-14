@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "proposalStatus": "BLUEPRINT_IN_REVIEW_EXISTING_REGISTRY_NOT_PUBLISHED",
+  "unit": {
+    "id": "trig",
+    "name": "三角比與三角函數",
+    "reuseExistingRegistry": true,
+    "points": [
+      {"id":"trig:kp1","title":"三角比、弧度與廣義角","registryStatus":"EXISTING"},
+      {"id":"trig:kp2","title":"正弦定理、餘弦定理","registryStatus":"EXISTING"},
+      {"id":"trig:kp3","title":"三角測量與幾何應用","registryStatus":"EXISTING"},
+      {"id":"trig:kp4","title":"三角函數圖形（疊合、對稱）","registryStatus":"EXISTING"},
+      {"id":"trig:kp5","title":"和差角、倍角","registryStatus":"EXISTING"},
+      {"id":"trig:kp6","title":"角平分線、面積比與相似","registryStatus":"EXISTING"},
+      {"id":"trig:kp7","title":"圓周角與二面角中的三角","registryStatus":"EXISTING"}
+    ]
+  },
+  "evidence":{"core":18,"bridge":5,"recent111To115":19,"recentCore":14},
+  "coreRepresentations":[
+    {"id":"angle","label":"角","meaning":"象限、弧度、方向角、倍角與區間"},
+    {"id":"side","label":"邊","meaning":"三角比、定理、距離、分點與弦長"},
+    {"id":"expression","label":"式","meaning":"恆等式、疊合、方程與不等式"},
+    {"id":"graph","label":"圖","meaning":"單位圓、三角形、波形、截面與交點"}
+  ],
+  "prerequisitePolicy":"REUSE_GATE1_APPROVED_EDGES_NO_GRAPH_CHANGE",
+  "relatedEdges":{"total":11,"weightedPrerequisite":8,"nonWeightedLinks":3},
+  "questionPlan":{"knowledgePoints":7,"stages":3,"abilities":3,"total":63,"perStage":21,"perAbility":21,"perKnowledgePoint":9},
+  "activationCondition":"教師核准藍圖後才製作7題代表題；完整63題另行核准後才出版、整合及更新完整題庫總覽。"
+}

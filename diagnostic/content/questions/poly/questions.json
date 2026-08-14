@@ -1,0 +1,1633 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "poly",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "itemId": "poly-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "多項式 f(x) 除以 x-a 的餘數，應如何表示？",
+      "options": [
+        {
+          "id": "A",
+          "text": "f(-a)"
+        },
+        {
+          "id": "B",
+          "text": "f(a)"
+        },
+        {
+          "id": "C",
+          "text": "f'(a)"
+        },
+        {
+          "id": "D",
+          "text": "a"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由餘式定理，除以 x-a 的餘數為 f(a)。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "要求 P(x) 除以 x+1 的餘數，最直接應計算哪一個值？",
+      "options": [
+        {
+          "id": "A",
+          "text": "P(1)"
+        },
+        {
+          "id": "B",
+          "text": "P(-1)"
+        },
+        {
+          "id": "C",
+          "text": "P'(1)"
+        },
+        {
+          "id": "D",
+          "text": "P'(-1)"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "x+1=x-(-1)，故代入 -1。",
+      "distractorMap": {
+        "A": "poly.CONDITION.001"
+      }
+    },
+    {
+      "itemId": "poly-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "f(x)=x^3-2x^2+3x-5 除以 x-2 的餘數為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "-1"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "f(2)=8-8+6-5=1。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 45,
+      "stem": "若 P(x) 可被 x-3 整除，則下列何者必定成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "P(-3)=0"
+        },
+        {
+          "id": "B",
+          "text": "P(0)=3"
+        },
+        {
+          "id": "C",
+          "text": "P(3)=0"
+        },
+        {
+          "id": "D",
+          "text": "P(3)=3"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "因式定理：x-3 為因式等價於 P(3)=0。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "P(x)=x^4+ax+3 除以 x-1 的餘數為 8，則 a 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "P(1)=1+a+3=8，所以 a=4。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "二次函數 f(x)=ax^2+bx+c（a≠0）的圖形對稱軸為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "x=b/(2a)"
+        },
+        {
+          "id": "B",
+          "text": "x=-b/(2a)"
+        },
+        {
+          "id": "C",
+          "text": "x=-2a/b"
+        },
+        {
+          "id": "D",
+          "text": "x=c"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "二次函數的對稱軸為 x=-b/(2a)。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "若二次函數 f(x)=ax^2+bx+c 滿足 a>0 且判別式 b^2-4ac<0，可判斷何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "f(x) 對所有實數 x 皆大於 0"
+        },
+        {
+          "id": "B",
+          "text": "f(x) 對所有實數 x 皆小於 0"
+        },
+        {
+          "id": "C",
+          "text": "圖形與 x 軸交於兩點"
+        },
+        {
+          "id": "D",
+          "text": "無法判斷正負"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "開口向上且無實根，整個圖形位於 x 軸上方。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "函數 f(x)=2x^2-8x+11 的最小值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "-5"
+        },
+        {
+          "id": "B",
+          "text": "-3"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "f(x)=2(x-2)^2+3，最小值為 3。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 45,
+      "stem": "要判斷二次方程式 ax^2+bx+c=0（a≠0）是否有重根，應檢查哪一個條件？",
+      "options": [
+        {
+          "id": "A",
+          "text": "a+b+c=0"
+        },
+        {
+          "id": "B",
+          "text": "b^2-4ac<0"
+        },
+        {
+          "id": "C",
+          "text": "b^2-4ac=0"
+        },
+        {
+          "id": "D",
+          "text": "b^2-4ac>0"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "二次方程式有重根的判別條件是 b^2-4ac=0。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "函數 g(x)=-x^2+4x-1 的最大值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "-1"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "g(x)=-(x-2)^2+3，最大值為 3。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "用因式分解解多項式不等式時，建立正負號表前最先需要找出什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "最高次項係數、所有實根及其重數"
+        },
+        {
+          "id": "B",
+          "text": "所有複數根的虛部"
+        },
+        {
+          "id": "C",
+          "text": "函數在 x=0 的值即可"
+        },
+        {
+          "id": "D",
+          "text": "導函數的所有係數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "實根切分數線區間，最高次項係數與各根的重數共同決定區間符號。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "已知二次式 (x-2)(x+1) 的兩根為 -1、2，且最高次項係數為正。要使此二次式大於 0，應選哪一類區間？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩根之間：-1<x<2"
+        },
+        {
+          "id": "B",
+          "text": "兩根外側：x<-1 或 x>2"
+        },
+        {
+          "id": "C",
+          "text": "只取兩個根：x=-1 或 x=2"
+        },
+        {
+          "id": "D",
+          "text": "所有實數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "開口向上的二次式在兩根外側為正；嚴格大於 0 不含兩根。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "不等式 x^2-5x+6≤0 的解為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "x≤2 或 x≥3"
+        },
+        {
+          "id": "B",
+          "text": "2≤x≤3"
+        },
+        {
+          "id": "C",
+          "text": "2<x<3"
+        },
+        {
+          "id": "D",
+          "text": "所有實數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "(x-2)(x-3)≤0，開口向上，解在兩根之間並含端點。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 45,
+      "stem": "不等式 x^2+1>0 的實數解為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "無解"
+        },
+        {
+          "id": "B",
+          "text": "x>1"
+        },
+        {
+          "id": "C",
+          "text": "x<-1 或 x>1"
+        },
+        {
+          "id": "D",
+          "text": "所有實數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "對所有實數 x，x^2≥0，所以 x^2+1>0。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "不等式 (x-1)^2(x+2)<0 的解為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "x<-2"
+        },
+        {
+          "id": "B",
+          "text": "-2<x<1"
+        },
+        {
+          "id": "C",
+          "text": "x<-2 或 x>1"
+        },
+        {
+          "id": "D",
+          "text": "所有 x≠1"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "(x-1)^2 除 x=1 外皆為正，乘積符號由 x+2 決定；嚴格小於 0 得 x<-2。",
+      "distractorMap": {
+        "B": "poly.CONDITION.002"
+      }
+    },
+    {
+      "itemId": "poly-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "整係數多項式 a_nx^n+⋯+a_0 若有最簡非零有理根 p/q（q>0），則 p、q 必須分別滿足何條件？",
+      "options": [
+        {
+          "id": "A",
+          "text": "p 整除 a_n，q 整除 a_0"
+        },
+        {
+          "id": "B",
+          "text": "p 整除 a_0，q 整除 a_n"
+        },
+        {
+          "id": "C",
+          "text": "p、q 都整除 a_0"
+        },
+        {
+          "id": "D",
+          "text": "p、q 都整除 a_n"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "對最簡非零有理根 p/q，有理根定理給出 p∣a_0 且 q∣a_n。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "實係數奇次多項式方程式必定具有下列何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "至少一個實根"
+        },
+        {
+          "id": "B",
+          "text": "恰有一個實根"
+        },
+        {
+          "id": "C",
+          "text": "所有根都是整數"
+        },
+        {
+          "id": "D",
+          "text": "沒有重根"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "奇次多項式兩端趨勢相反，由連續性至少穿越 x 軸一次。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "方程式 x^3-6x^2+11x-6=0 的三個實根為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "-1、-2、-3"
+        },
+        {
+          "id": "B",
+          "text": "1、2、3"
+        },
+        {
+          "id": "C",
+          "text": "1、1、6"
+        },
+        {
+          "id": "D",
+          "text": "-1、2、3"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "x^3-6x^2+11x-6=(x-1)(x-2)(x-3)。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 60,
+      "stem": "要證明 x^3+x+1=0 在 (-1,0) 中至少有一根，最直接使用哪組資訊？",
+      "options": [
+        {
+          "id": "A",
+          "text": "f(-1)=-1、f(0)=1，且 f 連續"
+        },
+        {
+          "id": "B",
+          "text": "f(-1)=1、f(0)=1"
+        },
+        {
+          "id": "C",
+          "text": "最高次係數為 1"
+        },
+        {
+          "id": "D",
+          "text": "常數項為 1"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "端點函數值異號且多項式連續，由介值定理可知區間內至少有根。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 120,
+      "stem": "方程式 2x^3-3x^2-8x+12=0 的兩個正根之和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "7/2"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "9/2"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "多項式可分解為 (x-2)(x+2)(2x-3)，正根為 2、3/2，和為 7/2。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "三次函數 f(x)=ax^3+bx^2+cx+d（a≠0）圖形的對稱中心，其 x 坐標為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "-b/(3a)"
+        },
+        {
+          "id": "B",
+          "text": "-b/(2a)"
+        },
+        {
+          "id": "C",
+          "text": "b/(3a)"
+        },
+        {
+          "id": "D",
+          "text": "-c/(3a)"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "三次函數的反曲點也是圖形對稱中心，x 坐標為 -b/(3a)。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "函數 f(x)=x^3-3x 的圖形以下列哪一點為對稱中心？",
+      "options": [
+        {
+          "id": "A",
+          "text": "(0,0)"
+        },
+        {
+          "id": "B",
+          "text": "(1,0)"
+        },
+        {
+          "id": "C",
+          "text": "(0,-3)"
+        },
+        {
+          "id": "D",
+          "text": "(1,-2)"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "f(-x)=-f(x)，為奇函數，圖形以原點為中心對稱。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "三次函數 f(x)=x^3-6x^2+9x+4 的圖形對稱中心為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1,8)"
+        },
+        {
+          "id": "B",
+          "text": "(2,6)"
+        },
+        {
+          "id": "C",
+          "text": "(2,4)"
+        },
+        {
+          "id": "D",
+          "text": "(3,4)"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "中心 x=6/3=2，且 f(2)=8-24+18+4=6。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 45,
+      "stem": "函數 h(x)=(x-1)^3+2 的圖形對稱中心為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "(-1,2)"
+        },
+        {
+          "id": "B",
+          "text": "(1,-2)"
+        },
+        {
+          "id": "C",
+          "text": "(1,2)"
+        },
+        {
+          "id": "D",
+          "text": "(2,1)"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "y=x^3 向右 1、向上 2，中心移到 (1,2)。",
+      "distractorMap": {
+        "A": "poly.REPRESENTATION.002"
+      }
+    },
+    {
+      "itemId": "poly-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "三次函數 f(x)=x^3+3x^2-9x+5 的圖形對稱中心 y 坐標為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "-16"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "中心 x=-3/3=-1，f(-1)=-1+3+9+5=16。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp1-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "已知多項式 [[P(x)=(x-2)Q(x)+5]]，則 [[P(2)]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "無法判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "令 [[x=2]]，含有 [[x-2]] 的項為 [[0]]，所以 [[P(2)=5]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp1-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "要求多項式 [[P(x)]] 除以 [[2x-3]] 的餘數，最直接應計算哪一個值？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[P(-\\frac{3}{2})]]"
+        },
+        {
+          "id": "B",
+          "text": "[[P(\\frac{3}{2})]]"
+        },
+        {
+          "id": "C",
+          "text": "[[P(-3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[P(3)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "令 [[2x-3=0]]，得 [[x=\\frac{3}{2}]]；餘數為 [[P(\\frac{3}{2})]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp1-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "若 [[P(x)=x^3+ax^2-4]] 可被 [[x+2]] 整除，則 [[a]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "由因式定理，[[P(-2)=0]]。因此 [[-8+4a-4=0]]，得 [[a=3]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "若 [[a\\ne b]] 且 [[P(a)=P(b)=0]]，則下列何者必為 [[P(x)]] 的因式？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x-a+b]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(x-a)(x-b)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x-ab]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(x+a)(x+b)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由因式定理，[[x-a]] 與 [[x-b]] 都是因式；因 [[a\\ne b]]，故其乘積也是因式。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "二次函數 [[f(x)=a(x-h)^2+k]]（[[a\\ne0]]）的頂點為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(a,k)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(h,k)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(h,a)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(-h,k)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "頂點式直接顯示圖形平移量，頂點為 [[(h,k)]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "要找 [[f(x)=-2x^2+8x-3]] 的最大值，先求哪一個 [[x]] 值最有效？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "拋物線開口向下，最大值在對稱軸 [[x=-\\frac{b}{2a}=2]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "方程式 [[x^2-4x+m=0]] 沒有實根，則 [[m]] 的範圍為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[m<4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[m\\le4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[m>4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[m\\ge4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "沒有實根須 [[\\Delta=16-4m<0]]，所以 [[m>4]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "二次函數圖形與 [[x]] 軸恰有一個交點，等價於哪一個條件？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\Delta<0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\Delta=0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\Delta>0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a=0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "恰有一個交點表示二次方程式有重根，因此判別式 [[\\Delta=0]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "多項式含有偶數重因式 [[(x-a)^2]]。通過 [[x=a]] 時，該因式的正負號如何變化？",
+      "options": [
+        {
+          "id": "A",
+          "text": "由正變負"
+        },
+        {
+          "id": "B",
+          "text": "由負變正"
+        },
+        {
+          "id": "C",
+          "text": "不改變正負號"
+        },
+        {
+          "id": "D",
+          "text": "一定等於正數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "偶次方在根的兩側同號，所以通過偶數重根時正負號不改變。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "對 [[(x+3)(x-1)^2(x-4)]] 製作正負號表時，在哪一個零點的兩側不需改變整體符號？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4]]"
+        },
+        {
+          "id": "D",
+          "text": "三個都要改變"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[x=1]] 是偶數重根，通過此點時整體符號不變。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "不等式 [[(x+2)(x-1)\\le0]] 的解為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x\\le-2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-2\\le x\\le1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x\\ge1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x<-2]] 或 [[x>1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "兩根為 [[-2,1]]，最高次項係數為正，乘積在兩根之間不大於 [[0]]，且端點要包含。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "解多項式不等式 [[F(x)\\le0]] 時，若 [[F(a)=0]]，是否應把 [[x=a]] 納入解集？",
+      "options": [
+        {
+          "id": "A",
+          "text": "一定納入"
+        },
+        {
+          "id": "B",
+          "text": "一定排除"
+        },
+        {
+          "id": "C",
+          "text": "只有 [[a>0]] 才納入"
+        },
+        {
+          "id": "D",
+          "text": "無法由題意判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "符號 [[\\le]] 包含等號，因此所有使 [[F(x)=0]] 的實數都應納入解集。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "實係數多項式若有非實根 [[2+3i]]，則必定還有哪一個根？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-2+3i]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2-3i]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-2-3i]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3+2i]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "實係數多項式的非實根成共軛對，因此 [[2-3i]] 也是根。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "要分解 [[2x^3-x^2-8x+4]]，下列哪一個分組最能直接提出共同因式？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x^2(2x-1)-4(2x-1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x^2(2x+1)-4(2x+1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2x(x^2-4)-(x^2-4)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x(2x^2-1)-4(2x-1)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "前兩項與後兩項分組後皆含 [[2x-1]]，可得 [[(x^2-4)(2x-1)]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "方程式 [[x^4-5x^2+4=0]] 的所有正實根之和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "令 [[y=x^2]]，得 [[(y-1)(y-4)=0]]，正實根為 [[1,2]]，和為 [[3]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "關於實係數多項式方程式，下列何者一定正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "偶次方程式一定有實根"
+        },
+        {
+          "id": "B",
+          "text": "奇次方程式至少有一個實根"
+        },
+        {
+          "id": "C",
+          "text": "所有複數根都是實根"
+        },
+        {
+          "id": "D",
+          "text": "非實根不會成對出現"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "實係數奇次多項式兩端趨勢相反，由連續性知至少有一個實根。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "若三次函數圖形以 [[(h,k)]] 為對稱中心，則下列關係何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[f(h+t)+f(h-t)=2k]]"
+        },
+        {
+          "id": "B",
+          "text": "[[f(h+t)-f(h-t)=2k]]"
+        },
+        {
+          "id": "C",
+          "text": "[[f(h+t)f(h-t)=k]]"
+        },
+        {
+          "id": "D",
+          "text": "[[f(h+t)=f(h-t)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "中心對稱表示成對函數值的平均為 [[k]]，所以其和為 [[2k]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "函數 [[f(x)=(x+2)^3-5]] 的圖形對稱中心為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-2,-5)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(2,-5)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-2,5)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,5)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "與 [[y=x^3]] 相比，圖形向左平移 [[2]]、向下平移 [[5]]，中心為 [[(-2,-5)]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "三次函數 [[f(x)=x^3-3x^2-9x+7]] 的圖形對稱中心為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(1,-4)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,4)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-1,-4)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(-1,4)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "中心的 [[x]] 坐標為 [[-\\frac{b}{3a}=1]]，再算 [[f(1)=-4]]，故中心為 [[(1,-4)]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "poly-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "poly:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "三次函數圖形的反曲點與其對稱中心之間有何關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩點永不相同"
+        },
+        {
+          "id": "B",
+          "text": "反曲點就是對稱中心"
+        },
+        {
+          "id": "C",
+          "text": "反曲點一定在 [[x]] 軸上"
+        },
+        {
+          "id": "D",
+          "text": "只有首項係數為正時才相同"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "三次函數的反曲點正是圖形的中心對稱點。",
+      "distractorMap": {}
+    }
+  ]
+}

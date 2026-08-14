@@ -1,0 +1,1316 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "matrix",
+  "unitName": "矩陣",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-14",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "matrix-p0-kp1-concept",
+      "kpId": "matrix:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A\\) 為 \\(2\\times3\\) 階矩陣、\\(B\\) 為 \\(3\\times4\\) 階矩陣，則 \\(AB\\) 的階數為何？",
+      "options": [
+        "\\(2\\times3\\)",
+        "\\(2\\times4\\)",
+        "\\(3\\times3\\)",
+        "\\(3\\times4\\)",
+        "無法相乘"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\times4\\)",
+      "firstBarrier": "能否用內側階數判斷可乘，再由外側階數決定乘積大小。",
+      "solution": "內側的 \\(3\\) 相同，所以可乘；外側留下 \\(2\\times4\\)，故 \\(AB\\) 為 \\(2\\times4\\) 階。",
+      "distractorNotes": [
+        "直接沿用 A 的階數。",
+        null,
+        "把內側階數當成答案。",
+        "直接沿用 B 的階數。",
+        "忽略內側階數相同。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp1-recognition",
+      "kpId": "matrix:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "設 \\(A=\\begin{bmatrix}1&2\\\\-1&3\\end{bmatrix}\\)、\\(B=\\begin{bmatrix}2&0\\\\1&-1\\end{bmatrix}\\)，則乘積 \\(AB\\) 的第 1 列第 2 行元素為何？",
+      "options": [
+        "\\(-4\\)",
+        "\\(-2\\)",
+        "\\(-1\\)",
+        "\\(0\\)",
+        "\\(2\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(-2\\)",
+      "firstBarrier": "能否依左列右行取 A 的第 1 列與 B 的第 2 行做內積。",
+      "solution": "\\((AB)_{12}=1\\cdot0+2\\cdot(-1)=-2\\)。",
+      "distractorNotes": [
+        "把同一列元素直接相乘。",
+        null,
+        "只取第二項乘積，漏掉加總。",
+        "只算第一組乘積。",
+        "忽略負號。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp1-application",
+      "kpId": "matrix:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\begin{bmatrix}1&2\\\\0&1\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=\\begin{bmatrix}5\\\\2\\end{bmatrix}\\)，則 \\(x+y\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(5\\)",
+        "\\(7\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否把矩陣乘向量翻成兩條聯立方程式。",
+      "solution": "由第二列得 \\(y=2\\)，第一列得 \\(x+2y=5\\)，故 \\(x=1\\)，所以 \\(x+y=3\\)。",
+      "distractorNotes": [
+        "只取 x 的值。",
+        "只取 y 的值。",
+        null,
+        "把右側第一個分量直接當答案。",
+        "把兩個右側分量相加。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp1-concept",
+      "kpId": "matrix:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列關於同階方陣的敘述，何者一定正確？",
+      "options": [
+        "\\(AB=BA\\)",
+        "\\(AB=O\\Rightarrow A=O\\text{ 或 }B=O\\)",
+        "\\(AI=IA=A\\)",
+        "\\(AB=AC\\Rightarrow B=C\\)",
+        "\\((A+B)^2=A^2+2AB+B^2\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(AI=IA=A\\)",
+      "firstBarrier": "能否分辨矩陣乘法保有的性質與實數運算中失效的性質。",
+      "solution": "單位方陣是矩陣乘法的單位元素，所以 \\(AI=IA=A\\)；其餘敘述一般不成立。",
+      "distractorNotes": [
+        "矩陣乘法一般不可交換。",
+        "矩陣可能有零因子。",
+        null,
+        "A 未必可逆，不能任意消去。",
+        "一般還有 BA 項，不能合併成 2AB。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp1-recognition",
+      "kpId": "matrix:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "令 \\(S=\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}\\)、\\(A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\)，則 \\(SA\\) 為何？",
+      "options": [
+        "\\(\\begin{bmatrix}b&a\\\\d&c\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}c&d\\\\a&b\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}a&c\\\\b&d\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}d&c\\\\b&a\\end{bmatrix}\\)",
+        "\\(A\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\begin{bmatrix}c&d\\\\a&b\\end{bmatrix}\\)",
+      "firstBarrier": "能否看出左乘交換矩陣會交換兩個橫列。",
+      "solution": "直接相乘得 \\(SA=\\begin{bmatrix}c&d\\\\a&b\\end{bmatrix}\\)，效果是交換 A 的兩列。",
+      "distractorNotes": [
+        "誤作交換兩行。",
+        null,
+        "誤作轉置。",
+        "同時交換列與行。",
+        "忽略左乘矩陣的作用。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp1-application",
+      "kpId": "matrix:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(A+B=\\begin{bmatrix}5&1\\\\2&4\\end{bmatrix}\\)、\\(A=\\begin{bmatrix}2&-1\\\\3&0\\end{bmatrix}\\)，則 \\(B\\) 的所有元素總和為何？",
+      "options": [
+        "\\(4\\)",
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(10\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否依對應位置做矩陣減法。",
+      "solution": "\\(B=\\begin{bmatrix}3&2\\\\-1&4\\end{bmatrix}\\)，元素和為 \\(3+2-1+4=8\\)。",
+      "distractorNotes": [
+        "部分位置減法符號錯誤。",
+        "漏算一個元素。",
+        null,
+        "把負數也取正。",
+        "把兩矩陣全部元素直接相加。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp1-concept",
+      "kpId": "matrix:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一般同階方陣 \\(A,B\\) 滿足下列哪一個展開式？",
+      "options": [
+        "\\((A+B)^2=A^2+2AB+B^2\\)",
+        "\\((A+B)^2=A^2+AB+BA+B^2\\)",
+        "\\((A+B)^2=A^2+BA+B^2\\)",
+        "\\((A+B)^2=A^2+B^2\\)",
+        "\\((A+B)^2=AB+BA\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((A+B)^2=A^2+AB+BA+B^2\\)",
+      "firstBarrier": "能否保留矩陣乘法順序，完整展開兩個括號。",
+      "solution": "\\((A+B)(A+B)=A^2+AB+BA+B^2\\)，因為一般 \\(AB\\ne BA\\)，不可合併。",
+      "distractorNotes": [
+        "把 AB 與 BA 誤認相同。",
+        null,
+        "漏掉 AB。",
+        "漏掉兩個交叉項。",
+        "漏掉兩個平方項。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp1-recognition",
+      "kpId": "matrix:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "計算 \\(\\begin{bmatrix}1&0&2\\\\-1&3&1\\end{bmatrix}\\begin{bmatrix}2\\\\1\\\\-1\\end{bmatrix}\\)。",
+      "options": [
+        "\\(\\begin{bmatrix}0\\\\0\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}0\\\\1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}4\\\\0\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}1\\\\1\\end{bmatrix}\\)",
+        "無法相乘"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(\\begin{bmatrix}0\\\\0\\end{bmatrix}\\)",
+      "firstBarrier": "能否逐列與直行向量做內積。",
+      "solution": "第一個分量為 \\(2-2=0\\)，第二個分量為 \\(-2+3-1=0\\)，故結果為零向量。",
+      "distractorNotes": [
+        null,
+        "第二列加總錯誤。",
+        "第一列符號錯誤。",
+        "把分量直接相加。",
+        "誤判階數不相容。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp1-application",
+      "kpId": "matrix:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "陣",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某兩狀態數量向量為 \\(v=\\begin{bmatrix}40\\\\60\\end{bmatrix}\\)，經 \\(M=\\begin{bmatrix}0.8&0.1\\\\0.2&0.9\\end{bmatrix}\\) 作用一次後，第一狀態數量為何？",
+      "options": [
+        "\\(32\\)",
+        "\\(34\\)",
+        "\\(38\\)",
+        "\\(46\\)",
+        "\\(54\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(38\\)",
+      "firstBarrier": "能否用 M 的第一列與原狀態向量做內積。",
+      "solution": "第一狀態為 \\(0.8\\cdot40+0.1\\cdot60=32+6=38\\)。",
+      "distractorNotes": [
+        "只算第一來源保留量。",
+        "比例乘錯。",
+        null,
+        "把第二列結果當第一列。",
+        "把兩比例直接加在 60 上。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp2-concept",
+      "kpId": "matrix:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "矩陣高次方 \\(A^n\\) 的意義為何？",
+      "options": [
+        "A 的每個元素各自 n 次方",
+        "A 與自己相乘 n 次",
+        "A 的所有元素乘 n",
+        "\\(\\det A\\) 的 n 次方",
+        "A 與 n 階單位方陣相乘"
+      ],
+      "answerIndex": 1,
+      "answer": "A 與自己相乘 n 次",
+      "firstBarrier": "能否區分矩陣冪與元素逐項冪。",
+      "solution": "\\(A^n\\) 表示 \\(A\\) 依矩陣乘法與自己連乘 n 次。",
+      "distractorNotes": [
+        "把矩陣冪誤作逐項冪。",
+        null,
+        "把次方誤作係數積。",
+        "只處理行列式。",
+        "混淆指數與矩陣階數。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp2-recognition",
+      "kpId": "matrix:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}\\)，則 \\(A^5\\) 的第 1 列第 2 行元素為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(10\\)",
+        "\\(25\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否從低次冪看出上三角元素隨次方線性增加。",
+      "solution": "可歸納 \\(A^n=\\begin{bmatrix}1&n\\\\0&1\\end{bmatrix}\\)，故所求為 \\(5\\)。",
+      "distractorNotes": [
+        "以為 A 的冪不變。",
+        "少乘一次。",
+        null,
+        "把 1 到 4 相加。",
+        "把元素 1 做五次方以外的錯誤運算。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp2-application",
+      "kpId": "matrix:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "設 \\(I\\) 為二階單位方陣，且 \\(A^2=3A-2I\\)，則 \\(A^5\\) 等於何者？",
+      "options": [
+        "\\(5A-4I\\)",
+        "\\(8A-7I\\)",
+        "\\(16A-15I\\)",
+        "\\(31A-30I\\)",
+        "\\(32A-31I\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(31A-30I\\)",
+      "firstBarrier": "能否利用二次關係逐次降冪。",
+      "solution": "依序得 \\(A^3=7A-6I\\)、\\(A^4=15A-14I\\)，因此 \\(A^5=31A-30I\\)。",
+      "distractorNotes": [
+        "遞推過早停止。",
+        "係數遞推錯誤。",
+        "所得接近 A⁴。",
+        null,
+        "忽略遞推減項。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp2-concept",
+      "kpId": "matrix:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若方陣 \\(A\\) 滿足 \\(A^3=I\\)，則 \\(A^8\\) 等於何者？",
+      "options": [
+        "\\(I\\)",
+        "\\(A\\)",
+        "\\(A^2\\)",
+        "\\(A^3\\)",
+        "\\(A^5\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(A^2\\)",
+      "firstBarrier": "能否以週期 3 化簡指數。",
+      "solution": "\\(A^8=A^6A^2=(A^3)^2A^2=A^2\\)。",
+      "distractorNotes": [
+        "把餘數 2 誤作 0。",
+        "把餘數算成 1。",
+        null,
+        "未完全化簡。",
+        "只減去一次 3。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp2-recognition",
+      "kpId": "matrix:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A=\\begin{bmatrix}2&0\\\\0&-1\\end{bmatrix}\\)，則 \\(A^4\\) 為何？",
+      "options": [
+        "\\(\\begin{bmatrix}8&0\\\\0&-4\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}16&0\\\\0&-1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}16&0\\\\0&1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}4&0\\\\0&1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}16&0\\\\0&4\\end{bmatrix}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\begin{bmatrix}16&0\\\\0&1\\end{bmatrix}\\)",
+      "firstBarrier": "能否利用對角矩陣冪等於各對角元素分別取冪。",
+      "solution": "\\(A^4=\\begin{bmatrix}2^4&0\\\\0&(-1)^4\\end{bmatrix}=\\begin{bmatrix}16&0\\\\0&1\\end{bmatrix}\\)。",
+      "distractorNotes": [
+        "把四次方誤作乘 4。",
+        "負數偶次方符號錯誤。",
+        null,
+        "把 2 四次方算成 4。",
+        "把第二個元素也誤乘 4。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp2-application",
+      "kpId": "matrix:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A^2=A+I\\)，則 \\(A^4\\) 等於何者？",
+      "options": [
+        "\\(A+2I\\)",
+        "\\(2A+I\\)",
+        "\\(3A+2I\\)",
+        "\\(4A+I\\)",
+        "\\(A^2+I\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(3A+2I\\)",
+      "firstBarrier": "能否反覆以 A²=A+I 降冪。",
+      "solution": "\\(A^3=A(A+I)=2A+I\\)，所以 \\(A^4=A(2A+I)=2A^2+A=3A+2I\\)。",
+      "distractorNotes": [
+        "係數遞推不完整。",
+        "所得為 A³。",
+        null,
+        "把次方直接當係數。",
+        "未降到 A 與 I。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp2-concept",
+      "kpId": "matrix:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A^2=O\\)，則 \\(I+A\\) 的反方陣為何？",
+      "options": [
+        "\\(I+A\\)",
+        "\\(I-A\\)",
+        "\\(-I+A\\)",
+        "\\(A\\)",
+        "不存在"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(I-A\\)",
+      "firstBarrier": "能否利用平方為零直接驗證乘積。",
+      "solution": "\\((I+A)(I-A)=I-A^2=I\\)，故反方陣為 \\(I-A\\)。",
+      "distractorNotes": [
+        "乘回會得到 I+2A。",
+        null,
+        "符號配置錯誤。",
+        "A 本身不會乘回 I。",
+        "忽略可直接構造反方陣。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp2-recognition",
+      "kpId": "matrix:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "令 \\(R=\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}\\)，則 \\(R^4\\) 為何？",
+      "options": [
+        "\\(-I\\)",
+        "\\(I\\)",
+        "\\(R\\)",
+        "\\(-R\\)",
+        "\\(O\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(I\\)",
+      "firstBarrier": "能否辨認 R 表示逆時針旋轉 90 度，四次回到原位。",
+      "solution": "\\(R^2=-I\\)，故 \\(R^4=I\\)。",
+      "distractorNotes": [
+        "只算到二次方。",
+        null,
+        "只算一次旋轉。",
+        "只算到三次方。",
+        "旋轉矩陣不會變成零矩陣。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp2-application",
+      "kpId": "matrix:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A=\\begin{bmatrix}1&1\\\\1&0\\end{bmatrix}\\)，則 \\(A^3\\) 所有元素的總和為何？",
+      "options": [
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(9\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否正確連乘並辨認費波那契型矩陣。",
+      "solution": "\\(A^2=\\begin{bmatrix}2&1\\\\1&1\\end{bmatrix}\\)，\\(A^3=\\begin{bmatrix}3&2\\\\2&1\\end{bmatrix}\\)，元素和為 \\(8\\)。",
+      "distractorNotes": [
+        "漏算一個元素。",
+        "矩陣平方錯誤。",
+        "只加三個元素。",
+        null,
+        "把次方當倍數。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp3-concept",
+      "kpId": "matrix:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "二階方陣 \\(A\\) 可逆的充要條件為何？",
+      "options": [
+        "\\(\\det A=0\\)",
+        "\\(\\det A\\ne0\\)",
+        "A 的元素都不為 0",
+        "A 為對稱矩陣",
+        "A 的兩列元素和相等"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\det A\\ne0\\)",
+      "firstBarrier": "能否把可逆性與行列式是否為零連結。",
+      "solution": "方陣可逆若且唯若行列式不為零。",
+      "distractorNotes": [
+        "行列式為零正是不可逆。",
+        null,
+        "元素可含零仍可能可逆。",
+        "對稱不是可逆的充要條件。",
+        "列和相等與可逆無直接關係。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp3-recognition",
+      "kpId": "matrix:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\) 且 \\(ad-bc\\ne0\\)，則 \\(A^{-1}\\) 為何？",
+      "options": [
+        "\\(\\dfrac1{ad-bc}\\begin{bmatrix}a&-b\\\\-c&d\\end{bmatrix}\\)",
+        "\\(\\dfrac1{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}\\)",
+        "\\(\\dfrac1{ad+bc}\\begin{bmatrix}d&b\\\\c&a\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}d&-c\\\\-b&a\\end{bmatrix}\\)",
+        "\\(\\dfrac1{ad-bc}A\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac1{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}\\)",
+      "firstBarrier": "能否記得交換主對角、變號副對角並除以行列式。",
+      "solution": "二階反方陣公式為 \\(A^{-1}=\\dfrac1{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}\\)。",
+      "distractorNotes": [
+        "未交換主對角。",
+        null,
+        "行列式符號與元素符號皆錯。",
+        "漏除行列式且轉置錯誤。",
+        "只把原矩陣除以行列式。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp3-application",
+      "kpId": "matrix:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\begin{bmatrix}2&1\\\\1&1\\end{bmatrix}X=I\\)，則 \\(X\\) 為何？",
+      "options": [
+        "\\(\\begin{bmatrix}2&-1\\\\-1&1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}1&1\\\\1&2\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}1&-1\\\\-1&2\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}1&-1\\\\1&2\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}2&1\\\\1&1\\end{bmatrix}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\begin{bmatrix}1&-1\\\\-1&2\\end{bmatrix}\\)",
+      "firstBarrier": "能否辨認 AX=I 的解為 A 的反方陣。",
+      "solution": "行列式為 \\(1\\)，故 \\(X=A^{-1}=\\begin{bmatrix}1&-1\\\\-1&2\\end{bmatrix}\\)。",
+      "distractorNotes": [
+        "主對角交換不完整。",
+        "副對角未變號。",
+        null,
+        "只改一個副對角符號。",
+        "誤認 A 為自身反方陣。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp3-concept",
+      "kpId": "matrix:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若可逆方陣 \\(A,B\\) 同階，則 \\((AB)^{-1}\\) 等於何者？",
+      "options": [
+        "\\(A^{-1}B^{-1}\\)",
+        "\\(B^{-1}A^{-1}\\)",
+        "\\(AB^{-1}\\)",
+        "\\(A^{-1}B\\)",
+        "\\((A+B)^{-1}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(B^{-1}A^{-1}\\)",
+      "firstBarrier": "能否保留矩陣乘法的反向消去順序。",
+      "solution": "\\((AB)(B^{-1}A^{-1})=I\\)，所以 \\((AB)^{-1}=B^{-1}A^{-1}\\)。",
+      "distractorNotes": [
+        "忽略反方陣順序必須反轉。",
+        null,
+        "只對 B 取反方陣。",
+        "只對 A 取反方陣。",
+        "混淆乘積與和。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp3-recognition",
+      "kpId": "matrix:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(AX=B\\) 且 \\(A\\) 可逆，則 \\(X\\) 應寫成何者？",
+      "options": [
+        "\\(BA^{-1}\\)",
+        "\\(A^{-1}B\\)",
+        "\\(AB^{-1}\\)",
+        "\\(B^{-1}A\\)",
+        "\\(A+B\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(A^{-1}B\\)",
+      "firstBarrier": "能否在等式左側同樣左乘 A 的反方陣。",
+      "solution": "左乘 \\(A^{-1}\\)：\\(A^{-1}AX=A^{-1}B\\)，故 \\(X=A^{-1}B\\)。",
+      "distractorNotes": [
+        "把左乘誤作右乘。",
+        null,
+        "對錯誤矩陣取反方陣。",
+        "順序與取反方陣都錯。",
+        "把乘法方程誤作加法。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp3-application",
+      "kpId": "matrix:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}X=\\begin{bmatrix}4&2\\\\3&6\\end{bmatrix}\\)，則 \\(X\\) 所有元素總和為何？",
+      "options": [
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(9\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否以左側對角矩陣的反方陣縮放 B 的各列。",
+      "solution": "\\(X=\\begin{bmatrix}1/2&0\\\\0&1/3\\end{bmatrix}\\begin{bmatrix}4&2\\\\3&6\\end{bmatrix}=\\begin{bmatrix}2&1\\\\1&2\\end{bmatrix}\\)，元素和為 \\(6\\)。",
+      "distractorNotes": [
+        "漏算一個元素。",
+        "只加主對角。",
+        null,
+        "除法方向錯誤。",
+        "直接加 B 的元素。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp3-concept",
+      "kpId": "matrix:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A\\) 為二階方陣，則 \\(\\det(3A)\\) 等於何者？",
+      "options": [
+        "\\(3\\det A\\)",
+        "\\(6\\det A\\)",
+        "\\(9\\det A\\)",
+        "\\(27\\det A\\)",
+        "\\((\\det A)^3\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(9\\det A\\)",
+      "firstBarrier": "能否分辨二階方陣的兩列都被倍率 3 放大。",
+      "solution": "二階方陣每一列都乘 3，所以行列式乘 \\(3^2=9\\)。",
+      "distractorNotes": [
+        "只計一列倍率。",
+        "把階數當倍數。",
+        null,
+        "誤用三階方陣倍率。",
+        "把係數移到行列式的次方。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp3-recognition",
+      "kpId": "matrix:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "方陣 \\(A=\\begin{bmatrix}a&1\\\\2&a\\end{bmatrix}\\) 可逆的條件為何？",
+      "options": [
+        "\\(a\\ne0\\)",
+        "\\(a\\ne1\\)",
+        "\\(a^2\\ne2\\)",
+        "\\(a>2\\)",
+        "所有實數 a 都可逆"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(a^2\\ne2\\)",
+      "firstBarrier": "能否先算行列式再排除為零的參數。",
+      "solution": "\\(\\det A=a^2-2\\)，故可逆條件為 \\(a^2\\ne2\\)。",
+      "distractorNotes": [
+        "只檢查主對角元素。",
+        "把副對角乘積誤作 1。",
+        null,
+        "限制過強。",
+        "忽略可能行列式為零。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp3-application",
+      "kpId": "matrix:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(X\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}\\)，則 \\(X\\) 為何？",
+      "options": [
+        "\\(\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}0&2\\\\3&0\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}0&3\\\\2&0\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}3&0\\\\0&2\\end{bmatrix}\\)",
+        "\\(I\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\begin{bmatrix}0&2\\\\3&0\\end{bmatrix}\\)",
+      "firstBarrier": "能否注意未知矩陣在左側，應右乘交換矩陣的反方陣。",
+      "solution": "交換矩陣 \\(S\\) 滿足 \\(S^{-1}=S\\)，故 \\(X=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}S=\\begin{bmatrix}0&2\\\\3&0\\end{bmatrix}\\)。",
+      "distractorNotes": [
+        "未消去右側 S。",
+        null,
+        "把乘法順序反轉。",
+        "只交換主對角。",
+        "把 S 誤認成右側矩陣的反方陣。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp4-concept",
+      "kpId": "matrix:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三元一次方程組經消去後恰有唯一解，列梯形矩陣至少應具備何種特徵？",
+      "options": [
+        "出現一列全為 0",
+        "每個未知數欄都有樞紐",
+        "常數欄必為 0",
+        "所有係數皆為正",
+        "三列彼此相同"
+      ],
+      "answerIndex": 1,
+      "answer": "每個未知數欄都有樞紐",
+      "firstBarrier": "能否以樞紐數判斷唯一解。",
+      "solution": "三個未知數欄都要有樞紐，才沒有自由變數且方程組一致。",
+      "distractorNotes": [
+        "零列通常代表可能有自由變數。",
+        null,
+        "常數不必全為零。",
+        "係數正負與唯一性無關。",
+        "相同列代表相依。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp4-recognition",
+      "kpId": "matrix:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "增廣矩陣中若出現一列 \\(\\begin{bmatrix}0&0&0&|&1\\end{bmatrix}\\)，方程組的解況為何？",
+      "options": [
+        "唯一解",
+        "無限多解",
+        "無解",
+        "恰有兩解",
+        "無法判斷"
+      ],
+      "answerIndex": 2,
+      "answer": "無解",
+      "firstBarrier": "能否把該列翻成矛盾等式 0=1。",
+      "solution": "此列代表 \\(0=1\\)，產生矛盾，因此方程組無解。",
+      "distractorNotes": [
+        "矛盾列不可能有唯一解。",
+        "零係數不等於零等式。",
+        null,
+        "線性方程組不會恰有兩個解。",
+        "該列已足以判定無解。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp4-application",
+      "kpId": "matrix:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某方程組消去後增廣矩陣為 \\(\\left[\\begin{array}{ccc|c}1&2&-1&3\\\\0&a&1&2\\\\0&0&a-1&b\\end{array}\\right]\\)。無論 b 為何，恰有唯一解的 a 條件為何？",
+      "options": [
+        "\\(a=0\\)",
+        "\\(a=1\\)",
+        "\\(a\\ne0\\)",
+        "\\(a\\ne1\\)",
+        "\\(a\\ne0\\text{ 且 }a\\ne1\\)"
+      ],
+      "answerIndex": 4,
+      "answer": "\\(a\\ne0\\text{ 且 }a\\ne1\\)",
+      "firstBarrier": "能否檢查三個樞紐而非只看最後一列。",
+      "solution": "唯一解需 \\(1,a,a-1\\) 均不為零，故 \\(a\\ne0\\) 且 \\(a\\ne1\\)。",
+      "distractorNotes": [
+        "第二個樞紐消失。",
+        "第三個樞紐消失。",
+        "漏檢查 a-1。",
+        "漏檢查 a。",
+        null
+      ]
+    },
+    {
+      "id": "matrix-p1-kp4-concept",
+      "kpId": "matrix:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一個一致的三元一次方程組只有兩個樞紐，則其解況為何？",
+      "options": [
+        "唯一解",
+        "無解",
+        "無限多解",
+        "恰有兩解",
+        "一定全為零解"
+      ],
+      "answerIndex": 2,
+      "answer": "無限多解",
+      "firstBarrier": "能否由一致與自由變數共同判斷無限多解。",
+      "solution": "三個未知數只有兩個樞紐，至少有一個自由變數；又已知一致，因此有無限多解。",
+      "distractorNotes": [
+        "存在自由變數，不是唯一解。",
+        "題目已說一致。",
+        null,
+        "線性系統不會只有兩個離散解。",
+        "未必是齊次系統。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp4-recognition",
+      "kpId": "matrix:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "列梯形增廣矩陣為 \\(\\left[\\begin{array}{ccc|c}1&0&2&5\\\\0&1&-1&1\\\\0&0&1&2\\end{array}\\right]\\)，則 \\(x\\) 為何？",
+      "options": [
+        "\\(-1\\)",
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(5\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否由下往上回代。",
+      "solution": "先得 \\(z=2\\)，再由第一列 \\(x+2z=5\\)，故 \\(x=1\\)。",
+      "distractorNotes": [
+        "移項符號錯誤。",
+        "誤把 x 當零。",
+        null,
+        "把 z 當作 x。",
+        "直接取常數 5。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp4-application",
+      "kpId": "matrix:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解方程組 \\(\\begin{cases}x+y+z=6\\\\x-y=0\\\\z=2\\end{cases}\\)，則 \\(x\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\)",
+      "firstBarrier": "能否利用簡單方程先代入，再解剩餘兩個未知數。",
+      "solution": "由 \\(z=2\\)、\\(x=y\\)，代入第一式得 \\(2x+2=6\\)，故 \\(x=2\\)。",
+      "distractorNotes": [
+        "少除以 2。",
+        null,
+        "把總和平均分成三份但未驗證。",
+        "移項錯誤。",
+        "直接取第一式常數。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp4-concept",
+      "kpId": "matrix:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "高斯消去中的基本列運算，對原方程組解集合有何影響？",
+      "options": [
+        "一定增加解的個數",
+        "一定減少解的個數",
+        "保持解集合不變",
+        "把所有解變成零解",
+        "只保留整數解"
+      ],
+      "answerIndex": 2,
+      "answer": "保持解集合不變",
+      "firstBarrier": "能否理解基本列運算是等價變形。",
+      "solution": "交換兩列、非零倍乘一列、以一列倍數加到另一列都保持方程組解集合不變。",
+      "distractorNotes": [
+        "等價變形不會增加解。",
+        "等價變形不會減少解。",
+        null,
+        "不會強迫所有解為零。",
+        "不會限制解必為整數。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp4-recognition",
+      "kpId": "matrix:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "方程組 \\(\\begin{cases}x+y=2\\\\2x+2y=k\\end{cases}\\) 無解的條件為何？",
+      "options": [
+        "\\(k=0\\)",
+        "\\(k=2\\)",
+        "\\(k=4\\)",
+        "\\(k\\ne4\\)",
+        "所有 k 都無解"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(k\\ne4\\)",
+      "firstBarrier": "能否比較兩式左側倍數與右側常數是否一致。",
+      "solution": "第二式左側是第一式的 2 倍；一致需 \\(k=4\\)，所以 \\(k\\ne4\\) 時無解。",
+      "distractorNotes": [
+        "沒有依比例調整常數。",
+        "直接沿用第一式常數。",
+        "k=4 時其實有無限多解。",
+        null,
+        "忽略 k=4 的一致情況。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp4-application",
+      "kpId": "matrix:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解方程組 \\(\\begin{cases}x+y+z=1\\\\x-y=1\\\\z=0\\end{cases}\\)，則 \\((x,y,z)\\) 為何？",
+      "options": [
+        "\\((0,1,0)\\)",
+        "\\((1,0,0)\\)",
+        "\\((1,1,0)\\)",
+        "\\((0,0,1)\\)",
+        "\\((1,-1,0)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((1,0,0)\\)",
+      "firstBarrier": "能否先用 z=0 降成二元聯立再相加消去。",
+      "solution": "由 \\(z=0\\)，得 \\(x+y=1\\)、\\(x-y=1\\)。相加得 \\(x=1\\)，故 \\(y=0\\)。",
+      "distractorNotes": [
+        "交換 x、y。",
+        null,
+        "未滿足第一式。",
+        "把 z 誤作 1。",
+        "只使用第二式。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp5-concept",
+      "kpId": "matrix:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若線性變換矩陣為 \\(M\\)，則 M 的第一行與第二行分別代表什麼？",
+      "options": [
+        "兩個橫列的總和",
+        "基底向量 \\((1,0)\\)、\\((0,1)\\) 的像",
+        "兩條座標軸的斜率",
+        "行列式與跡",
+        "兩個特徵值"
+      ],
+      "answerIndex": 1,
+      "answer": "基底向量 \\((1,0)\\)、\\((0,1)\\) 的像",
+      "firstBarrier": "能否以基底向量的像解讀矩陣各直行。",
+      "solution": "\\(M(1,0)^T\\) 與 \\(M(0,1)^T\\) 分別取出 M 的第一、第二行，因此兩行就是兩個基底向量的像。",
+      "distractorNotes": [
+        "元素和不是幾何作用。",
+        null,
+        "矩陣行不直接等於座標軸斜率。",
+        "行列式與跡是數值。",
+        "一般不能直接讀成特徵值。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp5-recognition",
+      "kpId": "matrix:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列哪個矩陣表示以原點為中心逆時針旋轉 \\(90^\\circ\\)？",
+      "options": [
+        "\\(\\begin{bmatrix}0&1\\\\-1&0\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}-1&0\\\\0&1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}\\)",
+        "\\(I\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}\\)",
+      "firstBarrier": "能否追蹤基底向量 (1,0) 旋轉後到 (0,1)。",
+      "solution": "逆時針旋轉 \\(90^\\circ\\) 的矩陣為 \\(\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}\\)。",
+      "distractorNotes": [
+        "這是順時針旋轉 90 度。",
+        null,
+        "這是對 y 軸鏡射。",
+        "這是對 x 軸鏡射。",
+        "單位矩陣不改變點。"
+      ]
+    },
+    {
+      "id": "matrix-p0-kp5-application",
+      "kpId": "matrix:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "線性變換 T 滿足 \\(T(1,0)=(2,1)\\)、\\(T(0,1)=(-1,1)\\)。三角形 O(0,0)、P(1,0)、Q(0,1) 經 T 變換後面積為何？",
+      "options": [
+        "\\(\\dfrac12\\)",
+        "\\(1\\)",
+        "\\(\\dfrac32\\)",
+        "\\(2\\)",
+        "\\(3\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac32\\)",
+      "firstBarrier": "能否由基底像建立矩陣，再用行列式絕對值作面積倍率。",
+      "solution": "變換矩陣為 \\(\\begin{bmatrix}2&-1\\\\1&1\\end{bmatrix}\\)，行列式為 3；原面積 \\(1/2\\)，故像面積為 \\(3/2\\)。",
+      "distractorNotes": [
+        "未套用倍率。",
+        "行列式計算錯誤。",
+        null,
+        "把單方向伸縮當面積倍率。",
+        "忘記乘原面積。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp5-concept",
+      "kpId": "matrix:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "平面線性變換矩陣為 M，任意圖形的面積倍率為何？",
+      "options": [
+        "\\(\\det M\\)",
+        "\\(|\\det M|\\)",
+        "\\((\\det M)^2\\)",
+        "矩陣元素總和",
+        "矩陣跡"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(|\\det M|\\)",
+      "firstBarrier": "能否記得面積不可為負，因此取行列式絕對值。",
+      "solution": "面積倍率為 \\(|\\det M|\\)；行列式負號只表示方向反轉。",
+      "distractorNotes": [
+        "行列式可能為負，不能直接作面積。",
+        null,
+        "無須再平方。",
+        "元素總和無此幾何意義。",
+        "跡不是面積倍率。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp5-recognition",
+      "kpId": "matrix:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列哪個矩陣表示對 x 軸鏡射？",
+      "options": [
+        "\\(\\begin{bmatrix}-1&0\\\\0&1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}\\)",
+        "\\(\\begin{bmatrix}0&-1\\\\-1&0\\end{bmatrix}\\)",
+        "\\(-I\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}\\)",
+      "firstBarrier": "能否知道對 x 軸鏡射保留 x 坐標、反轉 y 坐標。",
+      "solution": "\\((x,y)\\mapsto(x,-y)\\)，故矩陣為 \\(\\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}\\)。",
+      "distractorNotes": [
+        "這是對 y 軸鏡射。",
+        null,
+        "這是對直線 y=x 鏡射。",
+        "這是對直線 y=-x 鏡射。",
+        "這是旋轉 180 度。"
+      ]
+    },
+    {
+      "id": "matrix-p1-kp5-application",
+      "kpId": "matrix:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "線性變換 \\(T(x,y)=(x+y,x-y)\\)，則點 \\((2,1)\\) 的像為何？",
+      "options": [
+        "\\((1,3)\\)",
+        "\\((3,1)\\)",
+        "\\((3,-1)\\)",
+        "\\((2,0)\\)",
+        "\\((1,1)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((3,1)\\)",
+      "firstBarrier": "能否把點坐標依序代入兩個輸出分量。",
+      "solution": "\\(T(2,1)=(2+1,2-1)=(3,1)\\)。",
+      "distractorNotes": [
+        "交換輸出分量。",
+        null,
+        "第二分量符號錯誤。",
+        "只做相減。",
+        "把兩坐標各自減 1。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp5-concept",
+      "kpId": "matrix:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "先做線性變換 A，再做線性變換 B，合成變換矩陣為何？",
+      "options": [
+        "\\(AB\\)",
+        "\\(BA\\)",
+        "\\(A+B\\)",
+        "\\(A-B\\)",
+        "\\(B^{-1}A\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(BA\\)",
+      "firstBarrier": "能否依函數合成順序把先作用的矩陣放在右側。",
+      "solution": "向量 v 先變成 Av，再變成 B(Av)=BAv，所以合成矩陣為 BA。",
+      "distractorNotes": [
+        "把作用順序寫反。",
+        null,
+        "合成不是矩陣相加。",
+        "合成不是矩陣相減。",
+        "無須取反方陣。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp5-recognition",
+      "kpId": "matrix:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若平面變換矩陣 M 滿足 \\(\\det M=-2\\)，下列何者正確？",
+      "options": [
+        "面積縮小為一半且方向不變",
+        "面積放大 2 倍且方向反轉",
+        "面積放大 2 倍且方向不變",
+        "面積不變且方向反轉",
+        "圖形必壓成一直線"
+      ],
+      "answerIndex": 1,
+      "answer": "面積放大 2 倍且方向反轉",
+      "firstBarrier": "能否分別解讀行列式絕對值與正負號。",
+      "solution": "\\(|\\det M|=2\\) 表示面積放大 2 倍；負號表示定向反轉。",
+      "distractorNotes": [
+        "倍率與方向都判錯。",
+        null,
+        "忽略負號代表反轉。",
+        "忽略絕對值為 2。",
+        "只有行列式為 0 才壓成低維。"
+      ]
+    },
+    {
+      "id": "matrix-p2-kp5-application",
+      "kpId": "matrix:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\((1,2)\\) 先逆時針旋轉 \\(90^\\circ\\)，再對 x 軸鏡射，最後的像為何？",
+      "options": [
+        "\\((-2,-1)\\)",
+        "\\((-2,1)\\)",
+        "\\((2,-1)\\)",
+        "\\((2,1)\\)",
+        "\\((1,-2)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((-2,-1)\\)",
+      "firstBarrier": "能否依指定順序連續追蹤兩次幾何變換。",
+      "solution": "先旋轉得 \\((-2,1)\\)，再對 x 軸鏡射得 \\((-2,-1)\\)。",
+      "distractorNotes": [
+        null,
+        "只完成旋轉。",
+        "把旋轉方向做反。",
+        "旋轉與鏡射順序錯誤。",
+        "只做對 x 軸鏡射。"
+      ]
+    }
+  ]
+}

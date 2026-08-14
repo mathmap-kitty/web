@@ -1,0 +1,1055 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "data",
+  "unitName": "數據分析",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-12",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "data-p0-kp1-concept",
+      "kpId": "data:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將一組資料的每個數都加上 5。下列敘述何者正確？",
+      "options": [
+        "平均數與標準差都不變",
+        "平均數加 5，標準差不變",
+        "平均數不變，標準差加 5",
+        "平均數與標準差都加 5",
+        "平均數乘 5，標準差乘 5"
+      ],
+      "answerIndex": 1,
+      "answer": "平均數加 5，標準差不變",
+      "firstBarrier": "能否區分平移對中心與離散程度的影響。",
+      "solution": "全部資料加 5 時，平均數加 5；各筆資料與平均數的離差不變，因此標準差不變。",
+      "distractorNotes": [
+        "忽略平均數的平移。",
+        null,
+        "把常數錯加到標準差。",
+        "把平均與標準差視為相同轉換。",
+        "把加法轉換誤作倍數轉換。"
+      ]
+    },
+    {
+      "id": "data-p0-kp1-recognition",
+      "kpId": "data:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "表",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "資料 3、5、7、8、20 的中位數為何？",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "8.6"
+      ],
+      "answerIndex": 2,
+      "answer": "7",
+      "firstBarrier": "能否先排序並找出奇數筆資料的中央位置。",
+      "solution": "資料已排序，共 5 筆，中央第 3 筆為 7。",
+      "distractorNotes": [
+        "取中央兩數之一。",
+        "誤把 5 與 7 平均。",
+        null,
+        "取錯中央位置。",
+        "把算術平均數當成中位數。"
+      ]
+    },
+    {
+      "id": "data-p0-kp1-application",
+      "kpId": "data:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一組資料 \\(x\\) 的平均數為 \\(12\\)，標準差為 \\(3\\)。將每筆資料依 \\(y=-2x+5\\) 轉換後，新資料 \\(y\\) 的平均數與標準差依序為何？",
+      "options": [
+        "\\((-19,1)\\)",
+        "\\((-19,6)\\)",
+        "\\((-19,-6)\\)",
+        "\\((29,6)\\)",
+        "\\((29,11)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((-19,6)\\)",
+      "firstBarrier": "能否區分平移與縮放對平均數、標準差的不同影響，並知道標準差不會是負數。",
+      "solution": "\\(\\mu_y=-2\\times12+5=-19\\)，\\(\\sigma_y=|-2|\\times3=6\\)。",
+      "distractorNotes": [
+        "把常數錯加到標準差。",
+        null,
+        "得到不可能的負標準差。",
+        "忽略負倍率。",
+        "把標準差套入完整線性式。"
+      ]
+    },
+    {
+      "id": "data-p1-kp1-concept",
+      "kpId": "data:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "資料 \\(x\\) 的平均數為 4、變異數為 2。若 \\(y=3x-1\\)，則 \\(y\\) 的平均數與變異數為何？",
+      "options": [
+        "\\((11,5)\\)",
+        "\\((11,6)\\)",
+        "\\((11,18)\\)",
+        "\\((13,6)\\)",
+        "\\((13,18)\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\((11,18)\\)",
+      "firstBarrier": "能否知道變異數受倍率平方影響。",
+      "solution": "平均數為 \\(3\\times4-1=11\\)，變異數為 \\(3^2\\times2=18\\)。",
+      "distractorNotes": [
+        "把常數加到變異數。",
+        "只乘倍率 3。",
+        null,
+        "平均數未減 1。",
+        "平均數與變異數都算錯。"
+      ]
+    },
+    {
+      "id": "data-p1-kp1-recognition",
+      "kpId": "data:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某次測驗平均為 50、標準差為 10。依 \\(T=50+10\\dfrac{S-50}{10}\\) 換算，原始分數 65 的 T 分數為何？",
+      "options": [
+        "55",
+        "60",
+        "65",
+        "70",
+        "75"
+      ],
+      "answerIndex": 2,
+      "answer": "65",
+      "firstBarrier": "能否把離均差除以標準差後再換算。",
+      "solution": "代入得 \\(T=50+10\\times\\dfrac{15}{10}=65\\)。",
+      "distractorNotes": [
+        "只加入一半離均差。",
+        "漏乘換算倍率。",
+        null,
+        "標準化計算過大。",
+        "直接把離均差加兩次。"
+      ]
+    },
+    {
+      "id": "data-p1-kp1-application",
+      "kpId": "data:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "表",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲組資料為 4、4、4、4；乙組資料為 1、3、5、7。兩組平均數與標準差的比較何者正確？",
+      "options": [
+        "平均數相同，甲組標準差較小",
+        "平均數相同，乙組標準差較小",
+        "甲組平均數較大，標準差相同",
+        "乙組平均數較大，標準差相同",
+        "平均數與標準差都相同"
+      ],
+      "answerIndex": 0,
+      "answer": "平均數相同，甲組標準差較小",
+      "firstBarrier": "能否分別比較中心與離散，而非只看總和。",
+      "solution": "兩組平均數皆為 4；甲組每筆皆等於平均數，標準差為 0，故甲組較小。",
+      "distractorNotes": [
+        null,
+        "離散方向判反。",
+        "兩組平均數其實相同。",
+        "平均數與標準差都判錯。",
+        "忽略乙組的離散。"
+      ]
+    },
+    {
+      "id": "data-p2-kp1-concept",
+      "kpId": "data:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "表",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一組資料的標準差等於 0，必定表示什麼？",
+      "options": [
+        "資料筆數為 0",
+        "平均數為 0",
+        "所有資料都相等",
+        "資料中有一半是 0",
+        "最大值等於最小值的相反數"
+      ],
+      "answerIndex": 2,
+      "answer": "所有資料都相等",
+      "firstBarrier": "能否理解標準差為零代表所有離均差皆為零。",
+      "solution": "平方離差平均為零，只可能每筆資料都等於平均數。",
+      "distractorNotes": [
+        "資料筆數不能由標準差判定。",
+        "共同數值不必為 0。",
+        null,
+        "不要求資料含 0。",
+        "最大最小值應相等。"
+      ]
+    },
+    {
+      "id": "data-p2-kp1-recognition",
+      "kpId": "data:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "資料 \\(x\\) 的平均數為 8、標準差為 2。若 \\(y=x-3\\)，則 \\(y\\) 的平均數與標準差為何？",
+      "options": [
+        "\\((5,2)\\)",
+        "\\((5,-1)\\)",
+        "\\((8,2)\\)",
+        "\\((8,5)\\)",
+        "\\((11,2)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((5,2)\\)",
+      "firstBarrier": "能否辨認減常數只平移平均數。",
+      "solution": "平均數變為 \\(8-3=5\\)，標準差仍為 2。",
+      "distractorNotes": [
+        null,
+        "把常數減到標準差。",
+        "忽略平移。",
+        "把常數加到標準差。",
+        "平移方向判反。"
+      ]
+    },
+    {
+      "id": "data-p2-kp1-application",
+      "kpId": "data:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "表",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩組資料的平均數都為 10。甲組資料都介於 9 與 11 之間，乙組資料都介於 0 與 20 之間，且乙組含有 0 與 20。何者一定正確？",
+      "options": [
+        "甲組標準差大於乙組",
+        "甲組標準差等於乙組",
+        "甲組標準差小於乙組",
+        "兩組標準差都為 10",
+        "資訊不足，無法比較"
+      ],
+      "answerIndex": 2,
+      "answer": "甲組標準差小於乙組",
+      "firstBarrier": "能否由所有離均差的範圍比較離散程度。",
+      "solution": "甲組每筆離均差絕對值至多 1；乙組至少含兩筆離均差絕對值為 10，因此乙組標準差較大。",
+      "distractorNotes": [
+        "離散方向判反。",
+        "忽略極端值。",
+        null,
+        "把平均數當標準差。",
+        "現有條件已足以比較。"
+      ]
+    },
+    {
+      "id": "data-p0-kp2-concept",
+      "kpId": "data:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "相關係數 \\(r\\) 的可能範圍為何？",
+      "options": [
+        "\\(r<0\\)",
+        "\\(0\\le r\\le1\\)",
+        "\\(-1\\le r\\le1\\)",
+        "\\(-2\\le r\\le2\\)",
+        "\\(r>1\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(-1\\le r\\le1\\)",
+      "firstBarrier": "能否掌握相關係數的基本範圍。",
+      "solution": "任何相關係數均介於 −1 與 1 之間。",
+      "distractorNotes": [
+        "只保留負相關。",
+        "漏掉負相關。",
+        null,
+        "範圍過大。",
+        "相關係數不會大於 1。"
+      ]
+    },
+    {
+      "id": "data-p0-kp2-recognition",
+      "kpId": "data:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若散布圖上的所有點恰落在一條斜率為負的直線上，相關係數為何？",
+      "options": [
+        "\\(-1\\)",
+        "\\(-0.5\\)",
+        "\\(0\\)",
+        "\\(0.5\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(-1\\)",
+      "firstBarrier": "能否由完全負線性關係判定相關係數。",
+      "solution": "完全落在負斜率直線上，代表完全負相關，故 \\(r=-1\\)。",
+      "distractorNotes": [
+        null,
+        "低估線性強度。",
+        "把負相關誤作無相關。",
+        "方向判反。",
+        "把負斜率誤作正相關。"
+      ]
+    },
+    {
+      "id": "data-p0-kp2-application",
+      "kpId": "data:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "二維資料 \\((x,y)\\) 的相關係數為 \\(-0.6\\)。若 \\(u=3x+1\\)，\\(v=-2y+4\\)，則 \\(u,v\\) 的相關係數為何？",
+      "options": [
+        "\\(-1.2\\)",
+        "\\(-0.6\\)",
+        "\\(0\\)",
+        "\\(0.6\\)",
+        "\\(1.2\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(0.6\\)",
+      "firstBarrier": "能否判斷平移不影響相關，而一個負倍率會反轉方向。",
+      "solution": "只有一軸反向，因此相關係數變號、大小不變，得 \\(0.6\\)。",
+      "distractorNotes": [
+        "直接乘倍率且超出範圍。",
+        "忽略負倍率。",
+        "誤認平移消除相關。",
+        null,
+        "只算倍率大小且超出範圍。"
+      ]
+    },
+    {
+      "id": "data-p1-kp2-concept",
+      "kpId": "data:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(u=-2x+1\\)、\\(v=-5y+3\\)，則 \\(r_{uv}\\) 與 \\(r_{xy}\\) 的關係為何？",
+      "options": [
+        "\\(r_{uv}=-r_{xy}\\)",
+        "\\(r_{uv}=r_{xy}\\)",
+        "\\(r_{uv}=0\\)",
+        "\\(r_{uv}=10r_{xy}\\)",
+        "\\(r_{uv}=r_{xy}+4\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(r_{uv}=r_{xy}\\)",
+      "firstBarrier": "能否知道兩軸同時反向會保留相關方向。",
+      "solution": "兩個倍率皆為負，符號相乘為正；平移不影響相關，故相關係數不變。",
+      "distractorNotes": [
+        "只注意其中一軸反向。",
+        null,
+        "誤認轉換消除相關。",
+        "直接乘倍率大小。",
+        "把平移量加到相關。"
+      ]
+    },
+    {
+      "id": "data-p1-kp2-recognition",
+      "kpId": "data:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某散布圖呈近似圓形雲狀，沒有明顯上升或下降的直線趨勢。其相關係數最可能接近何者？",
+      "options": [
+        "\\(-1\\)",
+        "\\(-0.7\\)",
+        "\\(0\\)",
+        "\\(0.7\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(0\\)",
+      "firstBarrier": "能否把無明顯線性方向辨認為相關接近零。",
+      "solution": "沒有明顯直線趨勢時，線性相關通常接近 0。",
+      "distractorNotes": [
+        "誤判完全負相關。",
+        "誤判強負相關。",
+        null,
+        "誤判強正相關。",
+        "誤判完全正相關。"
+      ]
+    },
+    {
+      "id": "data-p1-kp2-application",
+      "kpId": "data:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(r_{xy}=0.75\\)。若 \\(u=-x\\)、\\(v=4y-2\\)，則 \\(r_{uv}\\) 為何？",
+      "options": [
+        "\\(-0.75\\)",
+        "\\(-0.25\\)",
+        "\\(0\\)",
+        "\\(0.75\\)",
+        "\\(3\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(-0.75\\)",
+      "firstBarrier": "能否辨識只有 x 軸反向，相關係數應變號。",
+      "solution": "一個倍率為負、另一個為正，因此 \\(r_{uv}=-0.75\\)。",
+      "distractorNotes": [
+        null,
+        "錯誤縮小相關大小。",
+        "誤認平移消除相關。",
+        "忽略負倍率。",
+        "直接乘倍率 4。"
+      ]
+    },
+    {
+      "id": "data-p2-kp2-concept",
+      "kpId": "data:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某研究發現冰品銷量與中暑人數高度正相關。下列推論何者最恰當？",
+      "options": [
+        "吃冰一定造成中暑",
+        "中暑一定使人買冰",
+        "兩者有線性關聯，但不能只據此判定因果",
+        "相關係數必為 1",
+        "兩者平均數必相同"
+      ],
+      "answerIndex": 2,
+      "answer": "兩者有線性關聯，但不能只據此判定因果",
+      "firstBarrier": "能否區分相關與因果。",
+      "solution": "高度相關只描述共同變動，可能另有氣溫等共同因素，不能直接推論因果。",
+      "distractorNotes": [
+        "把相關當因果。",
+        "把因果方向反推。",
+        null,
+        "高度相關不等於完全相關。",
+        "相關與平均數無此關係。"
+      ]
+    },
+    {
+      "id": "data-p2-kp2-recognition",
+      "kpId": "data:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在原本具有明顯正線性趨勢的散布圖中加入一個遠離趨勢的極端點。相關係數可能如何改變？",
+      "options": [
+        "必定變成 1",
+        "必定變成 −1",
+        "可能明顯減小",
+        "完全不變",
+        "必定變成 0"
+      ],
+      "answerIndex": 2,
+      "answer": "可能明顯減小",
+      "firstBarrier": "能否辨識離群點可能大幅影響相關係數。",
+      "solution": "遠離原趨勢的極端點可能削弱原有線性關係，使相關係數明顯減小。",
+      "distractorNotes": [
+        "不會必定完全正相關。",
+        "不會必定完全負相關。",
+        null,
+        "相關係數對離群點敏感。",
+        "不一定恰為 0。"
+      ]
+    },
+    {
+      "id": "data-p2-kp2-application",
+      "kpId": "data:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(r_{xy}=-0.8\\)。若 \\(u=2x-7\\)、\\(v=5y+1\\)，則 \\(r_{uv}\\) 為何？",
+      "options": [
+        "\\(-4\\)",
+        "\\(-0.8\\)",
+        "\\(0\\)",
+        "\\(0.8\\)",
+        "\\(4\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(-0.8\\)",
+      "firstBarrier": "能否知道兩個正倍率與平移都不改變相關係數。",
+      "solution": "兩軸倍率皆為正，平移不影響相關，因此仍為 \\(-0.8\\)。",
+      "distractorNotes": [
+        "直接乘倍率。",
+        null,
+        "誤認平移消除相關。",
+        "方向判反。",
+        "結果超出合法範圍。"
+      ]
+    },
+    {
+      "id": "data-p0-kp3-concept",
+      "kpId": "data:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "以 \\(y\\) 對 \\(x\\) 的迴歸直線必定通過哪一點？",
+      "options": [
+        "\\((0,0)\\)",
+        "\\((1,1)\\)",
+        "\\((\\mu_x,\\mu_y)\\)",
+        "\\((\\sigma_x,\\sigma_y)\\)",
+        "\\((r,r)\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\((\\mu_x,\\mu_y)\\)",
+      "firstBarrier": "能否掌握迴歸直線通過兩變數平均點。",
+      "solution": "最小平方法的迴歸直線必通過 \\((\\mu_x,\\mu_y)\\)。",
+      "distractorNotes": [
+        "不必通過原點。",
+        "沒有此固定點。",
+        null,
+        "標準差點不是必經點。",
+        "相關係數不是座標平均。"
+      ]
+    },
+    {
+      "id": "data-p0-kp3-recognition",
+      "kpId": "data:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(r=0.5\\)、\\(\\sigma_x=2\\)、\\(\\sigma_y=6\\)，則以 \\(y\\) 對 \\(x\\) 的迴歸斜率為何？",
+      "options": [
+        "\\(\\dfrac16\\)",
+        "\\(\\dfrac23\\)",
+        "\\(1\\)",
+        "\\(\\dfrac32\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(\\dfrac32\\)",
+      "firstBarrier": "能否正確使用斜率公式並辨認標準差比的方向。",
+      "solution": "\\(b=r\\dfrac{\\sigma_y}{\\sigma_x}=0.5\\times\\dfrac62=\\dfrac32\\)。",
+      "distractorNotes": [
+        "標準差比與相關都用錯。",
+        "把標準差比寫反。",
+        "忽略相關大小。",
+        null,
+        "只取 y 標準差。"
+      ]
+    },
+    {
+      "id": "data-p0-kp3-application",
+      "kpId": "data:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "資料中，\\(\\mu_x=10\\)、\\(\\sigma_x=2\\)、\\(\\mu_y=20\\)、\\(\\sigma_y=3\\)、\\(r=0.8\\)。以迴歸直線估計，當 \\(x=15\\) 時，\\(y\\) 的預測值為何？",
+      "options": [
+        "\\(23\\)",
+        "\\(24\\)",
+        "\\(25\\)",
+        "\\(26\\)",
+        "\\(32\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(26\\)",
+      "firstBarrier": "能否先求迴歸斜率，再使用平均點。",
+      "solution": "斜率為 \\(0.8\\times\\dfrac32=1.2\\)，故 \\(y-20=1.2(x-10)\\)，代入得 \\(y=26\\)。",
+      "distractorNotes": [
+        "漏掉標準差比。",
+        "標準差比寫反。",
+        "誤認斜率為 1。",
+        null,
+        "錯寫為通過原點。"
+      ]
+    },
+    {
+      "id": "data-p1-kp3-concept",
+      "kpId": "data:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "迴歸直線的主要用途為何？",
+      "options": [
+        "保證每個點都在線上",
+        "描述線性趨勢並作估計",
+        "證明兩變數具有因果",
+        "使相關係數變成 1",
+        "找出資料的最大值"
+      ],
+      "answerIndex": 1,
+      "answer": "描述線性趨勢並作估計",
+      "firstBarrier": "能否理解迴歸線是趨勢估計，不是逐點精確配適。",
+      "solution": "迴歸直線用來描述整體線性趨勢並預測平均反應。",
+      "distractorNotes": [
+        "資料點通常不全在線上。",
+        null,
+        "迴歸不能單獨證明因果。",
+        "不會改變相關係數。",
+        "不是尋找最大值。"
+      ]
+    },
+    {
+      "id": "data-p1-kp3-recognition",
+      "kpId": "data:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某迴歸直線為 \\(y=2x+1\\)，且 \\(x\\) 的平均數為 3。則 \\(y\\) 的平均數為何？",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "7",
+        "9"
+      ],
+      "answerIndex": 3,
+      "answer": "7",
+      "firstBarrier": "能否利用迴歸線通過平均點。",
+      "solution": "代入平均點：\\(\\mu_y=2\\times3+1=7\\)。",
+      "distractorNotes": [
+        "只取 x 平均。",
+        "漏加截距。",
+        "只乘斜率。",
+        null,
+        "重複加入平均。"
+      ]
+    },
+    {
+      "id": "data-p1-kp3-application",
+      "kpId": "data:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "原迴歸直線為 \\(y=3x+2\\)。改用 \\(u=x+1\\)、\\(v=2y\\) 表示時，新的迴歸直線為何？",
+      "options": [
+        "\\(v=3u+1\\)",
+        "\\(v=3u-1\\)",
+        "\\(v=6u+4\\)",
+        "\\(v=6u-2\\)",
+        "\\(v=6u+2\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(v=6u-2\\)",
+      "firstBarrier": "能否先反解舊變數，再完整代入兩軸轉換。",
+      "solution": "\\(x=u-1\\)，所以 \\(v=2[3(u-1)+2]=6u-2\\)。",
+      "distractorNotes": [
+        "漏乘 v 的倍率。",
+        "截距與倍率都錯。",
+        "未將 x 改寫為 u−1。",
+        null,
+        "截距化簡錯誤。"
+      ]
+    },
+    {
+      "id": "data-p2-kp3-concept",
+      "kpId": "data:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "關於「y 對 x」與「x 對 y」的兩條迴歸直線，下列何者正確？",
+      "options": [
+        "兩條斜率永遠互為倒數",
+        "兩條直線永遠重合",
+        "通常不能把其中一條直接代數反解成另一條",
+        "兩條都必通過原點",
+        "兩條斜率都等於相關係數"
+      ],
+      "answerIndex": 2,
+      "answer": "通常不能把其中一條直接代數反解成另一條",
+      "firstBarrier": "能否區分預測方向，避免把兩條迴歸線視為同一方程。",
+      "solution": "兩條線分別最小化不同方向的誤差，通常不能直接互相反解。",
+      "distractorNotes": [
+        "只有完全相關時才可能符合。",
+        "通常不重合。",
+        null,
+        "都通過平均點而非原點。",
+        "斜率還含標準差比。"
+      ]
+    },
+    {
+      "id": "data-p2-kp3-recognition",
+      "kpId": "data:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若以 \\(y\\) 對 \\(x\\) 的迴歸斜率為負，則相關係數的符號為何？",
+      "options": [
+        "必為負",
+        "必為正",
+        "必為 0",
+        "可能正也可能負",
+        "無法定義"
+      ],
+      "answerIndex": 0,
+      "answer": "必為負",
+      "firstBarrier": "能否從斜率公式辨認斜率與相關係數同號。",
+      "solution": "標準差皆為正，所以迴歸斜率與相關係數同號。",
+      "distractorNotes": [
+        null,
+        "符號方向錯誤。",
+        "負斜率不可能對應零相關。",
+        "符號可判定。",
+        "只要標準差非零即可定義。"
+      ]
+    },
+    {
+      "id": "data-p2-kp3-application",
+      "kpId": "data:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "資料中，\\(\\mu_x=4\\)、\\(\\sigma_x=2\\)、\\(\\mu_y=10\\)、\\(\\sigma_y=4\\)、\\(r=-0.5\\)。以迴歸直線估計，當 \\(x=6\\) 時，\\(y\\) 為何？",
+      "options": [
+        "6",
+        "8",
+        "9",
+        "10",
+        "12"
+      ],
+      "answerIndex": 1,
+      "answer": "8",
+      "firstBarrier": "能否處理負相關的迴歸斜率並以平均點估計。",
+      "solution": "斜率為 \\(-0.5\\times\\dfrac42=-1\\)，故 \\(y-10=-(x-4)\\)，代入 \\(x=6\\) 得 \\(y=8\\)。",
+      "distractorNotes": [
+        "離均差或斜率算錯。",
+        null,
+        "只用相關係數乘離均差。",
+        "忽略 x 的改變。",
+        "把負斜率看成正斜率。"
+      ]
+    },
+    {
+      "id": "data-p0-kp4-concept",
+      "kpId": "data:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "合併兩群資料的平均數時，除了兩群平均數外，還必須知道什麼？",
+      "options": [
+        "兩群最大值",
+        "兩群最小值",
+        "兩群資料筆數",
+        "兩群中位數",
+        "兩群標準差"
+      ],
+      "answerIndex": 2,
+      "answer": "兩群資料筆數",
+      "firstBarrier": "能否辨識合併平均需要以資料筆數作權重。",
+      "solution": "合併總量等於各群平均乘資料筆數後相加，因此必須知道兩群筆數。",
+      "distractorNotes": [
+        "最大值不是必要權重。",
+        "最小值不是必要權重。",
+        null,
+        "中位數不足以合併平均。",
+        "標準差不是合併平均的必要條件。"
+      ]
+    },
+    {
+      "id": "data-p0-kp4-recognition",
+      "kpId": "data:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲班 20 人平均 70 分，乙班 30 人平均 80 分。兩班合併平均為何？",
+      "options": [
+        "74",
+        "75",
+        "76",
+        "77",
+        "78"
+      ],
+      "answerIndex": 2,
+      "answer": "76",
+      "firstBarrier": "能否用班級人數加權，而非直接平均兩個平均數。",
+      "solution": "合併平均為 \\(\\dfrac{20\\times70+30\\times80}{50}=76\\)。",
+      "distractorNotes": [
+        "總分加權算錯。",
+        "直接平均後略作調整。",
+        null,
+        "權重方向或算術錯誤。",
+        "過度偏向乙班平均。"
+      ]
+    },
+    {
+      "id": "data-p0-kp4-application",
+      "kpId": "data:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲、乙兩班合計 60 人。甲班平均 72 分，乙班平均 84 分，合併平均 80 分。乙班有多少人？",
+      "options": [
+        "20",
+        "24",
+        "30",
+        "36",
+        "40"
+      ],
+      "answerIndex": 4,
+      "answer": "40",
+      "firstBarrier": "能否把班級人數視為權重，將合併平均還原成總分關係。",
+      "solution": "設乙班有 \\(n\\) 人，則 \\(72(60-n)+84n=80\\times60\\)，解得 \\(n=40\\)。",
+      "distractorNotes": [
+        "求得甲班人數後答錯對象。",
+        "依分差作錯誤分配。",
+        "直接假設兩班同人數。",
+        "比例換算錯誤。",
+        null
+      ]
+    },
+    {
+      "id": "data-p1-kp4-concept",
+      "kpId": "data:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩群資料筆數皆為正，合併平均數必定位於何處？",
+      "options": [
+        "小於兩群平均數",
+        "大於兩群平均數",
+        "介於兩群平均數之間或等於其中之一",
+        "等於兩群平均數的和",
+        "只由較大群的平均決定"
+      ],
+      "answerIndex": 2,
+      "answer": "介於兩群平均數之間或等於其中之一",
+      "firstBarrier": "能否理解正權重平均的範圍。",
+      "solution": "正權重的加權平均必介於各群平均數的最小值與最大值之間。",
+      "distractorNotes": [
+        "違反加權平均範圍。",
+        "違反加權平均範圍。",
+        null,
+        "平均不是總和。",
+        "較大群影響較大但非唯一決定。"
+      ]
+    },
+    {
+      "id": "data-p1-kp4-recognition",
+      "kpId": "data:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某科成績由作業占 30%、考試占 70%。小明作業 80 分、考試 90 分，總成績為何？",
+      "options": [
+        "83",
+        "84",
+        "85",
+        "86",
+        "87"
+      ],
+      "answerIndex": 4,
+      "answer": "87",
+      "firstBarrier": "能否把百分比轉為權重並加總。",
+      "solution": "總成績為 \\(0.3\\times80+0.7\\times90=87\\)。",
+      "distractorNotes": [
+        "權重套錯或算術錯誤。",
+        "直接平均後錯調。",
+        "把兩項直接平均。",
+        "權重計算差 1。",
+        null
+      ]
+    },
+    {
+      "id": "data-p1-kp4-application",
+      "kpId": "data:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將每公斤 60 元的米 2 公斤與每公斤 80 元的米 3 公斤混合。混合後每公斤平均成本為何？",
+      "options": [
+        "68 元",
+        "70 元",
+        "72 元",
+        "74 元",
+        "76 元"
+      ],
+      "answerIndex": 2,
+      "answer": "72 元",
+      "firstBarrier": "能否以公斤數作權重，而非直接平均單價。",
+      "solution": "總成本為 \\(2\\times60+3\\times80=360\\) 元，總重 5 公斤，平均為 72 元。",
+      "distractorNotes": [
+        "權重算術錯誤。",
+        "直接平均兩單價。",
+        null,
+        "過度偏向高價米。",
+        "總成本或總重算錯。"
+      ]
+    },
+    {
+      "id": "data-p2-kp4-concept",
+      "kpId": "data:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "只知道甲班平均 70 分、乙班平均 80 分，能否確定兩班合併平均？",
+      "options": [
+        "一定是 75 分",
+        "一定大於 80 分",
+        "一定小於 70 分",
+        "還需知道兩班人數",
+        "還需知道兩班最高分"
+      ],
+      "answerIndex": 3,
+      "answer": "還需知道兩班人數",
+      "firstBarrier": "能否辨識缺少權重時不能合併平均。",
+      "solution": "兩班人數不同會改變權重，因此必須知道人數。",
+      "distractorNotes": [
+        "只有人數相同才是 75。",
+        "不會超過較大平均。",
+        "不會低於較小平均。",
+        null,
+        "最高分不是必要資訊。"
+      ]
+    },
+    {
+      "id": "data-p2-kp4-recognition",
+      "kpId": "data:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某表中 A 欄單位為「千人」、B 欄單位為「萬人」。若 A=25、B=3，則何者較大？",
+      "options": [
+        "A 較大",
+        "B 較大",
+        "兩者相等",
+        "無法比較",
+        "A 是 B 的 10 倍"
+      ],
+      "answerIndex": 1,
+      "answer": "B 較大",
+      "firstBarrier": "能否先統一單位再比較。",
+      "solution": "A 為 2.5 萬人，B 為 3 萬人，所以 B 較大。",
+      "distractorNotes": [
+        "忽略單位只比 25 與 3。",
+        null,
+        "單位換算錯誤。",
+        "資訊足以比較。",
+        "比例方向錯誤。"
+      ]
+    },
+    {
+      "id": "data-p2-kp4-application",
+      "kpId": "data:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲、乙、丙三種商品的單件利潤分別為 100、200、300 元，銷售件數比為 \\(2:3:5\\)。平均每件利潤為何？",
+      "options": [
+        "180 元",
+        "200 元",
+        "220 元",
+        "230 元",
+        "250 元"
+      ],
+      "answerIndex": 3,
+      "answer": "230 元",
+      "firstBarrier": "能否以銷售件數比作權重計算平均利潤。",
+      "solution": "平均為 \\(\\dfrac{2\\times100+3\\times200+5\\times300}{2+3+5}=230\\) 元。",
+      "distractorNotes": [
+        "漏算高利潤商品權重。",
+        "誤認中間值即平均。",
+        "總和或分母計算錯誤。",
+        null,
+        "過度偏向丙商品。"
+      ]
+    }
+  ]
+}

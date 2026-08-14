@@ -1,0 +1,1838 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "trig",
+  "unitName": "三角比與三角函數",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-13",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "trig-p0-kp1-concept",
+      "kpId": "trig:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\theta\\) 與 \\(\\theta+2\\pi\\) 的終邊相同，兩角稱為何種關係？",
+      "options": [
+        "互補角",
+        "互餘角",
+        "同界角",
+        "對頂角",
+        "半角"
+      ],
+      "answerIndex": 2,
+      "answer": "同界角",
+      "firstBarrier": "能否辨識相差整數圈的角為同界角。",
+      "solution": "相差 \\(2\\pi\\) 的整數倍時終邊相同，故為同界角。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「互補角」。",
+        "將關鍵條件誤讀後得到「互餘角」。",
+        null,
+        "將關鍵條件誤讀後得到「對頂角」。",
+        "將關鍵條件誤讀後得到「半角」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp1-recognition",
+      "kpId": "trig:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知角 \\(\\theta\\) 的終邊在第二象限，且 \\(\\sin\\theta=\\dfrac35\\)，則 \\(\\cos\\left(\\theta+\\dfrac{\\pi}{2}\\right)\\) 為何？",
+      "options": [
+        "\\(-\\dfrac45\\)",
+        "\\(-\\dfrac35\\)",
+        "\\(\\dfrac35\\)",
+        "\\(\\dfrac45\\)",
+        "\\(\\dfrac53\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(-\\dfrac35\\)",
+      "firstBarrier": "能否辨識加 \\(\\dfrac{\\pi}{2}\\) 的函數轉換並處理負號。",
+      "solution": "\\(\\cos(\\theta+\\frac{\\pi}{2})=-\\sin\\theta=-\\frac35\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(-\\dfrac45\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\dfrac35\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac45\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac53\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp1-application",
+      "kpId": "trig:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(150^\\circ\\) 等於多少弧度？",
+      "options": [
+        "\\(\\dfrac{2\\pi}{3}\\)",
+        "\\(\\dfrac{3\\pi}{4}\\)",
+        "\\(\\dfrac{5\\pi}{6}\\)",
+        "\\(\\dfrac{7\\pi}{6}\\)",
+        "\\(\\dfrac{5\\pi}{3}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\dfrac{5\\pi}{6}\\)",
+      "firstBarrier": "能否正確使用角度與弧度換算。",
+      "solution": "\\(150^\\circ\\times\\dfrac{\\pi}{180^\\circ}=\\dfrac{5\\pi}{6}\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\dfrac{2\\pi}{3}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac{3\\pi}{4}\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\dfrac{7\\pi}{6}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac{5\\pi}{3}\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp1-concept",
+      "kpId": "trig:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\theta\\) 在第三象限，則下列何者必為正？",
+      "options": [
+        "\\(\\sin\\theta\\)",
+        "\\(\\cos\\theta\\)",
+        "\\(\\tan\\theta\\)",
+        "\\(\\sin\\theta\\tan\\theta\\)",
+        "\\(\\sin\\theta+\\cos\\theta\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\tan\\theta\\)",
+      "firstBarrier": "能否依象限判斷三角函數正負。",
+      "solution": "第三象限的正弦、餘弦皆負，因此正切為正；\\(\\sin\\theta\\tan\\theta<0\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\sin\\theta\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\cos\\theta\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\sin\\theta\\tan\\theta\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\sin\\theta+\\cos\\theta\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp1-recognition",
+      "kpId": "trig:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(-\\dfrac{7\\pi}{6}\\) 的終邊位於第幾象限？",
+      "options": [
+        "第一象限",
+        "第二象限",
+        "第三象限",
+        "第四象限",
+        "坐標軸上"
+      ],
+      "answerIndex": 1,
+      "answer": "第二象限",
+      "firstBarrier": "能否將負角化為 \\(0\\) 到 \\(2\\pi\\) 的同界角。",
+      "solution": "\\(-\\frac{7\\pi}{6}+2\\pi=\\frac{5\\pi}{6}\\)，位於第二象限。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「第一象限」。",
+        null,
+        "將關鍵條件誤讀後得到「第三象限」。",
+        "將關鍵條件誤讀後得到「第四象限」。",
+        "將關鍵條件誤讀後得到「坐標軸上」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp1-application",
+      "kpId": "trig:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\cos\\theta=-\\dfrac{12}{13}\\)，且 \\(\\theta\\) 在第二象限，則 \\(\\tan\\theta\\) 為何？",
+      "options": [
+        "\\(-\\dfrac5{12}\\)",
+        "\\(\\dfrac5{12}\\)",
+        "\\(-\\dfrac{12}{5}\\)",
+        "\\(\\dfrac{12}{5}\\)",
+        "\\(\\dfrac{13}{5}\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(-\\dfrac5{12}\\)",
+      "firstBarrier": "能否由象限決定正弦符號，再求正切。",
+      "solution": "第二象限 \\(\\sin\\theta=\\frac5{13}\\)，故 \\(\\tan\\theta=-\\frac5{12}\\)。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(\\dfrac5{12}\\)」。",
+        "將關鍵條件誤讀後得到「\\(-\\dfrac{12}{5}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac{12}{5}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac{13}{5}\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp1-concept",
+      "kpId": "trig:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列何者對所有有定義的 \\(\\theta\\) 都成立？",
+      "options": [
+        "\\(\\sin\\theta+\\cos\\theta=1\\)",
+        "\\(\\sin^2\\theta+\\cos^2\\theta=1\\)",
+        "\\(\\tan\\theta=\\sin\\theta\\cos\\theta\\)",
+        "\\(\\sin2\\theta=2\\sin\\theta\\)",
+        "\\(\\cos2\\theta=2\\cos\\theta\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\sin^2\\theta+\\cos^2\\theta=1\\)",
+      "firstBarrier": "能否辨識基本平方關係。",
+      "solution": "基本恆等式為 \\(\\sin^2\\theta+\\cos^2\\theta=1\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\sin\\theta+\\cos\\theta=1\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\tan\\theta=\\sin\\theta\\cos\\theta\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\sin2\\theta=2\\sin\\theta\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\cos2\\theta=2\\cos\\theta\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp1-recognition",
+      "kpId": "trig:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "與 \\(\\dfrac{13\\pi}{6}\\) 同界且介於 \\(0\\) 與 \\(2\\pi\\) 的角為何？",
+      "options": [
+        "\\(\\dfrac{\\pi}{6}\\)",
+        "\\(\\dfrac{5\\pi}{6}\\)",
+        "\\(\\dfrac{7\\pi}{6}\\)",
+        "\\(\\dfrac{11\\pi}{6}\\)",
+        "\\(\\dfrac{13\\pi}{6}\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(\\dfrac{\\pi}{6}\\)",
+      "firstBarrier": "能否減去一整圈取得主值範圍內的角。",
+      "solution": "\\(\\frac{13\\pi}{6}-2\\pi=\\frac{\\pi}{6}\\)。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(\\dfrac{5\\pi}{6}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac{7\\pi}{6}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac{11\\pi}{6}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac{13\\pi}{6}\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp1-application",
+      "kpId": "trig:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\sin\\theta=-\\dfrac45\\)、\\(\\cos\\theta=\\dfrac35\\)，則 \\(\\theta\\) 的終邊在哪一象限？",
+      "options": [
+        "第一象限",
+        "第二象限",
+        "第三象限",
+        "第四象限",
+        "無法判定"
+      ],
+      "answerIndex": 3,
+      "answer": "第四象限",
+      "firstBarrier": "能否同時使用正弦與餘弦符號判斷象限。",
+      "solution": "正弦負、餘弦正，故終邊在第四象限。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「第一象限」。",
+        "將關鍵條件誤讀後得到「第二象限」。",
+        "將關鍵條件誤讀後得到「第三象限」。",
+        null,
+        "將關鍵條件誤讀後得到「無法判定」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp2-concept",
+      "kpId": "trig:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知三角形的兩邊及其夾角，通常應優先使用哪一定理求第三邊？",
+      "options": [
+        "正弦定理",
+        "餘弦定理",
+        "畢氏定理",
+        "角平分線定理",
+        "海龍公式"
+      ],
+      "answerIndex": 1,
+      "answer": "餘弦定理",
+      "firstBarrier": "能否依已知條件選擇定理。",
+      "solution": "兩邊及夾角對應餘弦定理。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「正弦定理」。",
+        null,
+        "將關鍵條件誤讀後得到「畢氏定理」。",
+        "將關鍵條件誤讀後得到「角平分線定理」。",
+        "將關鍵條件誤讀後得到「海龍公式」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp2-recognition",
+      "kpId": "trig:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在三角形 \\(ABC\\) 中，若 \\(a:b=\\sin A:\\sin B\\)，此關係源自何者？",
+      "options": [
+        "正弦定理",
+        "餘弦定理",
+        "畢氏定理",
+        "面積公式",
+        "中線定理"
+      ],
+      "answerIndex": 0,
+      "answer": "正弦定理",
+      "firstBarrier": "能否辨識邊與對角正弦比的表示。",
+      "solution": "由 \\(\\frac a{\\sin A}=\\frac b{\\sin B}\\) 可得。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「餘弦定理」。",
+        "將關鍵條件誤讀後得到「畢氏定理」。",
+        "將關鍵條件誤讀後得到「面積公式」。",
+        "將關鍵條件誤讀後得到「中線定理」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp2-application",
+      "kpId": "trig:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在三角形 \\(ABC\\) 中，\\(A=60^\\circ\\)、\\(a=\\sqrt3\\)、\\(b=2\\)，則 \\(c\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(\\sqrt3\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "有兩個可能值"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否由正弦定理發現 \\(\\sin B=1\\) 並完成求邊。",
+      "solution": "\\(\\sin B=1\\)，故 \\(B=90^\\circ,C=30^\\circ\\)，再由正弦定理得 \\(c=1\\)。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(2\\)」。",
+        "將關鍵條件誤讀後得到「\\(3\\)」。",
+        "將關鍵條件誤讀後得到「有兩個可能值」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp2-concept",
+      "kpId": "trig:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "邊",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若三邊 \\(a,b,c\\) 對應角 \\(A,B,C\\)，則 \\(c^2\\) 等於何者？",
+      "options": [
+        "\\(a^2+b^2+2ab\\cos C\\)",
+        "\\(a^2+b^2-2ab\\cos C\\)",
+        "\\(a^2-b^2+2ab\\cos C\\)",
+        "\\((a+b)^2\\)",
+        "\\(2ab\\sin C\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(a^2+b^2-2ab\\cos C\\)",
+      "firstBarrier": "能否正確辨識餘弦定理符號。",
+      "solution": "\\(c^2=a^2+b^2-2ab\\cos C\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(a^2+b^2+2ab\\cos C\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(a^2-b^2+2ab\\cos C\\)」。",
+        "將關鍵條件誤讀後得到「\\((a+b)^2\\)」。",
+        "將關鍵條件誤讀後得到「\\(2ab\\sin C\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp2-recognition",
+      "kpId": "trig:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三邊為 \\(3,4,5\\) 的三角形，其最大角為何？",
+      "options": [
+        "\\(30^\\circ\\)",
+        "\\(45^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(120^\\circ\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(90^\\circ\\)",
+      "firstBarrier": "能否由三邊辨識直角三角形。",
+      "solution": "\\(3^2+4^2=5^2\\)，故最大角為直角。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(30^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(45^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(60^\\circ\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(120^\\circ\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp2-application",
+      "kpId": "trig:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三角形兩邊長為 \\(5,7\\)，夾角為 \\(60^\\circ\\)，第三邊長為何？",
+      "options": [
+        "\\(\\sqrt{19}\\)",
+        "\\(\\sqrt{39}\\)",
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\sqrt{39}\\)",
+      "firstBarrier": "能否正確代入餘弦定理。",
+      "solution": "\\(c^2=25+49-70\\cdot\\frac12=39\\)，故 \\(c=\\sqrt{39}\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\sqrt{19}\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(6\\)」。",
+        "將關鍵條件誤讀後得到「\\(8\\)」。",
+        "將關鍵條件誤讀後得到「\\(12\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp2-concept",
+      "kpId": "trig:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "邊",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若固定兩邊 \\(a,b\\)，則夾角 \\(C\\) 增大時，對邊 \\(c\\) 如何變化？",
+      "options": [
+        "嚴格減小",
+        "保持不變",
+        "嚴格增大",
+        "先增後減",
+        "無法判定"
+      ],
+      "answerIndex": 2,
+      "answer": "嚴格增大",
+      "firstBarrier": "能否由餘弦定理理解邊角單調關係。",
+      "solution": "\\(C\\) 增大時 \\(\\cos C\\) 減小，使 \\(c^2=a^2+b^2-2ab\\cos C\\) 增大。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「嚴格減小」。",
+        "將關鍵條件誤讀後得到「保持不變」。",
+        null,
+        "將關鍵條件誤讀後得到「先增後減」。",
+        "將關鍵條件誤讀後得到「無法判定」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp2-recognition",
+      "kpId": "trig:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三角形中 \\(A=30^\\circ,B=45^\\circ,a=2\\)，則 \\(b\\) 為何？",
+      "options": [
+        "\\(\\sqrt2\\)",
+        "\\(2\\)",
+        "\\(2\\sqrt2\\)",
+        "\\(\\sqrt3\\)",
+        "\\(4\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(2\\sqrt2\\)",
+      "firstBarrier": "能否保持邊與對角的正確配對。",
+      "solution": "\\(\\frac b{\\sin45^\\circ}=\\frac2{\\sin30^\\circ}=4\\)，故 \\(b=2\\sqrt2\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\sqrt2\\)」。",
+        "將關鍵條件誤讀後得到「\\(2\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(4\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp2-application",
+      "kpId": "trig:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三邊為 \\(2,3,4\\) 的三角形，最大角 \\(C\\) 的餘弦值為何？",
+      "options": [
+        "\\(-\\dfrac14\\)",
+        "\\(\\dfrac14\\)",
+        "\\(\\dfrac12\\)",
+        "\\(-\\dfrac12\\)",
+        "\\(\\dfrac34\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(-\\dfrac14\\)",
+      "firstBarrier": "能否以最大邊為對邊代入餘弦定理。",
+      "solution": "\\(\\cos C=\\frac{2^2+3^2-4^2}{2\\cdot2\\cdot3}=-\\frac14\\)。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(\\dfrac14\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac12\\)」。",
+        "將關鍵條件誤讀後得到「\\(-\\dfrac12\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\dfrac34\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp3-concept",
+      "kpId": "trig:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "仰角是從哪一條基準線向上量到視線的角？",
+      "options": [
+        "鉛直線",
+        "水平線",
+        "塔身",
+        "地面法線",
+        "任意斜線"
+      ],
+      "answerIndex": 1,
+      "answer": "水平線",
+      "firstBarrier": "能否掌握仰角的定義。",
+      "solution": "仰角由觀測者的水平線向上量至視線。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「鉛直線」。",
+        null,
+        "將關鍵條件誤讀後得到「塔身」。",
+        "將關鍵條件誤讀後得到「地面法線」。",
+        "將關鍵條件誤讀後得到「任意斜線」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp3-recognition",
+      "kpId": "trig:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "觀測點到塔底距離為 \\(d\\)，仰角為 \\(\\alpha\\)，忽略眼高，塔高應表示為何？",
+      "options": [
+        "\\(d\\sin\\alpha\\)",
+        "\\(d\\cos\\alpha\\)",
+        "\\(d\\tan\\alpha\\)",
+        "\\(d/\\tan\\alpha\\)",
+        "\\(d\\cot^2\\alpha\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(d\\tan\\alpha\\)",
+      "firstBarrier": "能否在直角三角形中配對對邊與鄰邊。",
+      "solution": "\\(\\tan\\alpha=\\frac{h}{d}\\)，故 \\(h=d\\tan\\alpha\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(d\\sin\\alpha\\)」。",
+        "將關鍵條件誤讀後得到「\\(d\\cos\\alpha\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(d/\\tan\\alpha\\)」。",
+        "將關鍵條件誤讀後得到「\\(d\\cot^2\\alpha\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp3-application",
+      "kpId": "trig:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "朝塔底前進 \\(20\\) 公尺後，塔頂仰角由 \\(30^\\circ\\) 變為 \\(45^\\circ\\)。忽略眼高，塔高為何？",
+      "options": [
+        "\\(10(\\sqrt3-1)\\)",
+        "\\(10\\sqrt3\\)",
+        "\\(10(\\sqrt3+1)\\)",
+        "\\(20\\)",
+        "\\(20\\sqrt3\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(10(\\sqrt3+1)\\)",
+      "firstBarrier": "能否共用同一塔高並正確設定水平距離差。",
+      "solution": "設近處距離與塔高皆為 \\(h\\)，則 \\(\\frac h{h+20}=\\tan30^\\circ\\)，得 \\(h=10(\\sqrt3+1)\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(10(\\sqrt3-1)\\)」。",
+        "將關鍵條件誤讀後得到「\\(10\\sqrt3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(20\\)」。",
+        "將關鍵條件誤讀後得到「\\(20\\sqrt3\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp3-concept",
+      "kpId": "trig:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "同一物體在距離較近處觀測時，其他條件不變，仰角通常如何變化？",
+      "options": [
+        "變小",
+        "變大",
+        "不變",
+        "必為 \\(45^\\circ\\)",
+        "無法比較"
+      ],
+      "answerIndex": 1,
+      "answer": "變大",
+      "firstBarrier": "能否理解固定高度下距離與仰角的關係。",
+      "solution": "固定高度時水平距離減少，正切值與仰角均增加。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「變小」。",
+        null,
+        "將關鍵條件誤讀後得到「不變」。",
+        "將關鍵條件誤讀後得到「必為 \\(45^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「無法比較」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp3-recognition",
+      "kpId": "trig:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某斜坡水平前進 \\(12\\) 公尺、上升 \\(5\\) 公尺，坡角 \\(\\alpha\\) 滿足何者？",
+      "options": [
+        "\\(\\sin\\alpha=\\dfrac5{12}\\)",
+        "\\(\\tan\\alpha=\\dfrac5{12}\\)",
+        "\\(\\cos\\alpha=\\dfrac5{12}\\)",
+        "\\(\\tan\\alpha=\\dfrac{12}{5}\\)",
+        "\\(\\sin\\alpha=\\dfrac{12}{13}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\tan\\alpha=\\dfrac5{12}\\)",
+      "firstBarrier": "能否辨識坡度為鉛直變化除以水平變化。",
+      "solution": "\\(\\tan\\alpha=\\frac{上升}{水平}=\\frac5{12}\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\sin\\alpha=\\dfrac5{12}\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\cos\\alpha=\\dfrac5{12}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\tan\\alpha=\\dfrac{12}{5}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\sin\\alpha=\\dfrac{12}{13}\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp3-application",
+      "kpId": "trig:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "邊",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩地 \\(A,B\\) 相距 \\(100\\) 公尺，從兩地觀測同一點 \\(C\\)，得 \\(\\angle A=30^\\circ,\\angle B=45^\\circ\\)。則 \\(AC\\) 為何？",
+      "options": [
+        "\\(50\\sqrt2\\)",
+        "\\(50(\\sqrt3-1)\\)",
+        "\\(100(\\sqrt3-1)\\)",
+        "\\(100\\sqrt3\\)",
+        "\\(200\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(100(\\sqrt3-1)\\)",
+      "firstBarrier": "能否先求第三角，再使用正弦定理。",
+      "solution": "\\(C=105^\\circ\\)，\\(AC=100\\frac{\\sin45^\\circ}{\\sin105^\\circ}=100(\\sqrt3-1)\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(50\\sqrt2\\)」。",
+        "將關鍵條件誤讀後得到「\\(50(\\sqrt3-1)\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(100\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(200\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp3-concept",
+      "kpId": "trig:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "使用三角測量建立模型時，下列何者最應先確認？",
+      "options": [
+        "計算機顏色",
+        "角度單位與幾何位置",
+        "答案是否整數",
+        "是否使用正弦",
+        "圖形是否等腰"
+      ],
+      "answerIndex": 1,
+      "answer": "角度單位與幾何位置",
+      "firstBarrier": "能否辨識建模前的必要資訊。",
+      "solution": "角度單位、觀測位置與所對邊關係決定方程是否正確。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「計算機顏色」。",
+        null,
+        "將關鍵條件誤讀後得到「答案是否整數」。",
+        "將關鍵條件誤讀後得到「是否使用正弦」。",
+        "將關鍵條件誤讀後得到「圖形是否等腰」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp3-recognition",
+      "kpId": "trig:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一條拉線長 \\(10\\) 公尺，與水平地面夾角 \\(30^\\circ\\)，其鉛直高度為何？",
+      "options": [
+        "\\(5\\)",
+        "\\(5\\sqrt3\\)",
+        "\\(10\\)",
+        "\\(10\\sqrt3\\)",
+        "\\(20\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否辨識斜邊與對邊。",
+      "solution": "高度為 \\(10\\sin30^\\circ=5\\)。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(5\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(10\\)」。",
+        "將關鍵條件誤讀後得到「\\(10\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(20\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp3-application",
+      "kpId": "trig:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲地看塔頂仰角為 \\(30^\\circ\\)，向塔前進 \\(30\\) 公尺後仰角為 \\(60^\\circ\\)。塔高為何？",
+      "options": [
+        "\\(10\\sqrt3\\)",
+        "\\(15\\sqrt3\\)",
+        "\\(20\\sqrt3\\)",
+        "\\(30\\)",
+        "\\(30\\sqrt3\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(15\\sqrt3\\)",
+      "firstBarrier": "能否以兩個觀測式消去未知距離。",
+      "solution": "設近處距離 \\(x\\)，則 \\(h=\\sqrt3x=(x+30)/\\sqrt3\\)，得 \\(x=15,h=15\\sqrt3\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(10\\sqrt3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(20\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(30\\)」。",
+        "將關鍵條件誤讀後得到「\\(30\\sqrt3\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp4-concept",
+      "kpId": "trig:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=a\\sin x+d\\) 的中線為何？",
+      "options": [
+        "\\(x=a\\)",
+        "\\(x=d\\)",
+        "\\(y=a\\)",
+        "\\(y=d\\)",
+        "\\(y=a+d\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(y=d\\)",
+      "firstBarrier": "能否辨識鉛直平移量決定中線。",
+      "solution": "函數上下平移 \\(d\\)，中線為 \\(y=d\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(x=a\\)」。",
+        "將關鍵條件誤讀後得到「\\(x=d\\)」。",
+        "將關鍵條件誤讀後得到「\\(y=a\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(y=a+d\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp4-recognition",
+      "kpId": "trig:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(f(x)=2\\sin(3x-\\frac\\pi2)+1\\)，下列何者正確？",
+      "options": [
+        "振幅為 \\(1\\)",
+        "週期為 \\(3\\pi\\)",
+        "最大值為 \\(2\\)",
+        "最小值為 \\(-1\\)",
+        "向右平移 \\(\\frac\\pi2\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "最小值為 \\(-1\\)",
+      "firstBarrier": "能否分辨振幅、週期、上下平移與相位。",
+      "solution": "振幅 \\(2\\)、週期 \\(\\frac{2\\pi}{3}\\)、中線 \\(y=1\\)，故值域為 \\([-1,3]\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「振幅為 \\(1\\)」。",
+        "將關鍵條件誤讀後得到「週期為 \\(3\\pi\\)」。",
+        "將關鍵條件誤讀後得到「最大值為 \\(2\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「向右平移 \\(\\frac\\pi2\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp4-application",
+      "kpId": "trig:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=3\\cos2x\\) 的振幅與週期依序為何？",
+      "options": [
+        "\\(3,\\pi\\)",
+        "\\(2,3\\pi\\)",
+        "\\(3,2\\pi\\)",
+        "\\(1,\\pi\\)",
+        "\\(6,\\pi\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(3,\\pi\\)",
+      "firstBarrier": "能否分別讀取外部係數與角頻率。",
+      "solution": "振幅為 \\(3\\)，週期為 \\(\\frac{2\\pi}{2}=\\pi\\)。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(2,3\\pi\\)」。",
+        "將關鍵條件誤讀後得到「\\(3,2\\pi\\)」。",
+        "將關鍵條件誤讀後得到「\\(1,\\pi\\)」。",
+        "將關鍵條件誤讀後得到「\\(6,\\pi\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp4-concept",
+      "kpId": "trig:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將 \\(y=\\sin x\\) 向上平移 \\(2\\) 單位後，值域為何？",
+      "options": [
+        "\\([-1,1]\\)",
+        "\\([0,2]\\)",
+        "\\([1,3]\\)",
+        "\\([2,3]\\)",
+        "\\([-3,-1]\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\([1,3]\\)",
+      "firstBarrier": "能否將整個值域同步平移。",
+      "solution": "原值域 \\([-1,1]\\) 向上平移 2 得 \\([1,3]\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\([-1,1]\\)」。",
+        "將關鍵條件誤讀後得到「\\([0,2]\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\([2,3]\\)」。",
+        "將關鍵條件誤讀後得到「\\([-3,-1]\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp4-recognition",
+      "kpId": "trig:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(y=\\sin(x-\\frac\\pi3)\\) 由 \\(y=\\sin x\\) 如何平移？",
+      "options": [
+        "向左 \\(\\frac\\pi3\\)",
+        "向右 \\(\\frac\\pi3\\)",
+        "向上 \\(\\frac\\pi3\\)",
+        "向下 \\(\\frac\\pi3\\)",
+        "不平移"
+      ],
+      "answerIndex": 1,
+      "answer": "向右 \\(\\frac\\pi3\\)",
+      "firstBarrier": "能否辨識函數內部位移方向。",
+      "solution": "以 \\(x-\\frac\\pi3\\) 取代 \\(x\\)，故向右平移 \\(\\frac\\pi3\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「向左 \\(\\frac\\pi3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「向上 \\(\\frac\\pi3\\)」。",
+        "將關鍵條件誤讀後得到「向下 \\(\\frac\\pi3\\)」。",
+        "將關鍵條件誤讀後得到「不平移」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp4-application",
+      "kpId": "trig:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(0\\le x\\le2\\pi\\) 時，方程 \\(\\sin x=\\frac12\\) 有幾個解？",
+      "options": [
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(2\\)",
+      "firstBarrier": "能否由正弦圖形找出一週期內交點數。",
+      "solution": "解為 \\(x=\\frac\\pi6,\\frac{5\\pi}{6}\\)，共 2 個。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(0\\)」。",
+        "將關鍵條件誤讀後得到「\\(1\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(3\\)」。",
+        "將關鍵條件誤讀後得到「\\(4\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp4-concept",
+      "kpId": "trig:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=\\cos x\\) 關於哪一條直線對稱？",
+      "options": [
+        "\\(x=0\\)",
+        "\\(y=x\\)",
+        "\\(x=\\frac\\pi2\\)",
+        "\\(y=0\\)",
+        "沒有對稱軸"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(x=0\\)",
+      "firstBarrier": "能否辨識餘弦為偶函數。",
+      "solution": "\\(\\cos(-x)=\\cos x\\)，故圖形關於 \\(y\\) 軸，即 \\(x=0\\) 對稱。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(y=x\\)」。",
+        "將關鍵條件誤讀後得到「\\(x=\\frac\\pi2\\)」。",
+        "將關鍵條件誤讀後得到「\\(y=0\\)」。",
+        "將關鍵條件誤讀後得到「沒有對稱軸」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp4-recognition",
+      "kpId": "trig:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=-2\\sin x+3\\) 的最大值為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(5\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否以中線加振幅求最大值，不受負號干擾。",
+      "solution": "中線為 3、振幅為 2，最大值為 \\(3+2=5\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(1\\)」。",
+        "將關鍵條件誤讀後得到「\\(2\\)」。",
+        "將關鍵條件誤讀後得到「\\(3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(6\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp4-application",
+      "kpId": "trig:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(0\\le x\\le2\\pi\\) 時，\\(\\cos2x=0\\) 有幾個解？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(4\\)",
+      "firstBarrier": "能否考慮角頻率使區間內涵蓋兩個週期。",
+      "solution": "\\(2x=\\frac\\pi2+k\\pi\\)，故 \\(x=\\frac\\pi4+\\frac{k\\pi}{2}\\)，區間內共 4 解。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(1\\)」。",
+        "將關鍵條件誤讀後得到「\\(2\\)」。",
+        "將關鍵條件誤讀後得到「\\(3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(6\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp5-concept",
+      "kpId": "trig:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\sin(\\alpha+\\beta)\\) 的展開式為何？",
+      "options": [
+        "\\(\\sin\\alpha+\\sin\\beta\\)",
+        "\\(\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta\\)",
+        "\\(\\sin\\alpha\\sin\\beta+\\cos\\alpha\\cos\\beta\\)",
+        "\\(2\\sin\\alpha\\sin\\beta\\)",
+        "\\(\\cos\\alpha\\cos\\beta-\\sin\\alpha\\sin\\beta\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta\\)",
+      "firstBarrier": "能否辨識正弦和角公式。",
+      "solution": "\\(\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\sin\\alpha+\\sin\\beta\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\sin\\alpha\\sin\\beta+\\cos\\alpha\\cos\\beta\\)」。",
+        "將關鍵條件誤讀後得到「\\(2\\sin\\alpha\\sin\\beta\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\cos\\alpha\\cos\\beta-\\sin\\alpha\\sin\\beta\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp5-recognition",
+      "kpId": "trig:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\cos75^\\circ\\) 可寫成下列何者？",
+      "options": [
+        "\\(\\cos45^\\circ\\cos30^\\circ-\\sin45^\\circ\\sin30^\\circ\\)",
+        "\\(\\cos45^\\circ\\cos30^\\circ+\\sin45^\\circ\\sin30^\\circ\\)",
+        "\\(\\sin45^\\circ\\cos30^\\circ\\)",
+        "\\(2\\cos45^\\circ\\cos30^\\circ\\)",
+        "\\(\\cos45^\\circ+\\cos30^\\circ\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(\\cos45^\\circ\\cos30^\\circ-\\sin45^\\circ\\sin30^\\circ\\)",
+      "firstBarrier": "能否把 \\(75^\\circ\\) 拆角並套用餘弦和角公式。",
+      "solution": "\\(75^\\circ=45^\\circ+30^\\circ\\)，套用餘弦和角公式。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(\\cos45^\\circ\\cos30^\\circ+\\sin45^\\circ\\sin30^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\sin45^\\circ\\cos30^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(2\\cos45^\\circ\\cos30^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\cos45^\\circ+\\cos30^\\circ\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp5-application",
+      "kpId": "trig:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(0<\\theta<\\frac\\pi2\\) 且 \\(\\tan\\theta=\\frac12\\)，則 \\(\\sin2\\theta\\) 為何？",
+      "options": [
+        "\\(\\frac15\\)",
+        "\\(\\frac25\\)",
+        "\\(\\frac35\\)",
+        "\\(\\frac45\\)",
+        "\\(\\frac54\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(\\frac45\\)",
+      "firstBarrier": "能否選用以正切表示的倍角形式。",
+      "solution": "\\(\\sin2\\theta=\\frac{2\\tan\\theta}{1+\\tan^2\\theta}=\\frac45\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\frac15\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac25\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac35\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\frac54\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp5-concept",
+      "kpId": "trig:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\cos2\\theta\\) 不等於下列何者？",
+      "options": [
+        "\\(\\cos^2\\theta-\\sin^2\\theta\\)",
+        "\\(2\\cos^2\\theta-1\\)",
+        "\\(1-2\\sin^2\\theta\\)",
+        "\\(1-\\sin^2\\theta\\)",
+        "\\(\\frac{1-\\tan^2\\theta}{1+\\tan^2\\theta}\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(1-\\sin^2\\theta\\)",
+      "firstBarrier": "能否辨識餘弦倍角的多種等價形式。",
+      "solution": "\\(1-\\sin^2\\theta=\\cos^2\\theta\\)，一般不等於 \\(\\cos2\\theta\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\cos^2\\theta-\\sin^2\\theta\\)」。",
+        "將關鍵條件誤讀後得到「\\(2\\cos^2\\theta-1\\)」。",
+        "將關鍵條件誤讀後得到「\\(1-2\\sin^2\\theta\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\frac{1-\\tan^2\\theta}{1+\\tan^2\\theta}\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp5-recognition",
+      "kpId": "trig:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\sin15^\\circ\\) 的值為何？",
+      "options": [
+        "\\(\\frac{\\sqrt6-\\sqrt2}{4}\\)",
+        "\\(\\frac{\\sqrt6+\\sqrt2}{4}\\)",
+        "\\(\\frac{\\sqrt3-1}{2}\\)",
+        "\\(\\frac12\\)",
+        "\\(\\frac{\\sqrt2}{2}\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(\\frac{\\sqrt6-\\sqrt2}{4}\\)",
+      "firstBarrier": "能否以 \\(45^\\circ-30^\\circ\\) 套用正弦差角公式。",
+      "solution": "\\(\\sin15^\\circ=\\sin(45^\\circ-30^\\circ)=\\frac{\\sqrt6-\\sqrt2}{4}\\)。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「\\(\\frac{\\sqrt6+\\sqrt2}{4}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac{\\sqrt3-1}{2}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac12\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac{\\sqrt2}{2}\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp5-application",
+      "kpId": "trig:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\sin\\theta=\\frac35\\)、\\(\\cos\\theta=\\frac45\\)，則 \\(\\cos2\\theta\\) 為何？",
+      "options": [
+        "\\(-\\frac7{25}\\)",
+        "\\(\\frac7{25}\\)",
+        "\\(\\frac{12}{25}\\)",
+        "\\(\\frac{24}{25}\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\frac7{25}\\)",
+      "firstBarrier": "能否選用平方差形式並維持順序。",
+      "solution": "\\(\\cos2\\theta=\\cos^2\\theta-\\sin^2\\theta=\\frac{16-9}{25}=\\frac7{25}\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(-\\frac7{25}\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\frac{12}{25}\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac{24}{25}\\)」。",
+        "將關鍵條件誤讀後得到「\\(1\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp5-concept",
+      "kpId": "trig:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "和差角公式最主要的用途為何？",
+      "options": [
+        "把兩角和差的三角值連結到各角三角值",
+        "把所有角變成銳角",
+        "消除所有根號",
+        "只適用直角三角形",
+        "把角度轉成弧度"
+      ],
+      "answerIndex": 0,
+      "answer": "把兩角和差的三角值連結到各角三角值",
+      "firstBarrier": "能否理解公式連結的數學對象。",
+      "solution": "它將 \\(\\alpha\\pm\\beta\\) 的三角值表示為 \\(\\alpha,\\beta\\) 的三角值組合。",
+      "distractorNotes": [
+        null,
+        "將關鍵條件誤讀後得到「把所有角變成銳角」。",
+        "將關鍵條件誤讀後得到「消除所有根號」。",
+        "將關鍵條件誤讀後得到「只適用直角三角形」。",
+        "將關鍵條件誤讀後得到「把角度轉成弧度」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp5-recognition",
+      "kpId": "trig:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\tan\\alpha=2,\\tan\\beta=\\frac13\\)，則 \\(\\tan(\\alpha+\\beta)\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(\\frac53\\)",
+        "\\(5\\)",
+        "\\(7\\)",
+        "不存在"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(7\\)",
+      "firstBarrier": "能否正確套用正切和角公式及其分母。",
+      "solution": "\\(\\tan(\\alpha+\\beta)=\\frac{2+1/3}{1-2/3}=7\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(1\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac53\\)」。",
+        "將關鍵條件誤讀後得到「\\(5\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「不存在」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp5-application",
+      "kpId": "trig:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(0<\\theta<\\frac\\pi2\\) 且 \\(\\cos2\\theta=-\\frac35\\)，則 \\(\\sin\\theta\\) 為何？",
+      "options": [
+        "\\(\\frac15\\)",
+        "\\(\\frac25\\)",
+        "\\(\\frac{\\sqrt5}{5}\\)",
+        "\\(\\frac{2\\sqrt5}{5}\\)",
+        "\\(\\frac45\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(\\frac{2\\sqrt5}{5}\\)",
+      "firstBarrier": "能否由倍角式求平方值並依象限取正根。",
+      "solution": "\\(1-2\\sin^2\\theta=-\\frac35\\)，故 \\(\\sin^2\\theta=\\frac45\\)，取正得 \\(\\sin\\theta=\\frac{2\\sqrt5}{5}\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\frac15\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac25\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac{\\sqrt5}{5}\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\frac45\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp6-concept",
+      "kpId": "trig:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "角平分線定理連結的是哪兩組比？",
+      "options": [
+        "兩個角與兩個面積",
+        "對邊兩段與鄰邊",
+        "兩條高與兩條中線",
+        "周長與面積",
+        "外角與內角"
+      ],
+      "answerIndex": 1,
+      "answer": "對邊兩段與鄰邊",
+      "firstBarrier": "能否陳述角平分線定理。",
+      "solution": "內角平分線將對邊分成與兩鄰邊成比例的兩段。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「兩個角與兩個面積」。",
+        null,
+        "將關鍵條件誤讀後得到「兩條高與兩條中線」。",
+        "將關鍵條件誤讀後得到「周長與面積」。",
+        "將關鍵條件誤讀後得到「外角與內角」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp6-recognition",
+      "kpId": "trig:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "邊",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(AD\\) 是 \\(\\angle A\\) 的內角平分線，則下列何者正確？",
+      "options": [
+        "\\(BD=DC\\)",
+        "\\(BD:DC=AB:AC\\)",
+        "\\(AB:BD=AC:BC\\)",
+        "\\(AD:DC=AB:AC\\)",
+        "\\([ABD]=[ACD]\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(BD:DC=AB:AC\\)",
+      "firstBarrier": "能否把圖形元素正確配對。",
+      "solution": "角平分線定理給 \\(BD:DC=AB:AC\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(BD=DC\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(AB:BD=AC:BC\\)」。",
+        "將關鍵條件誤讀後得到「\\(AD:DC=AB:AC\\)」。",
+        "將關鍵條件誤讀後得到「\\([ABD]=[ACD]\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp6-application",
+      "kpId": "trig:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(AD\\) 為 \\(\\angle A\\) 內角平分線。已知 \\(AB=6,AC=9,[ABD]=12\\)，則 \\([ACD]\\) 為何？",
+      "options": [
+        "\\(8\\)",
+        "\\(12\\)",
+        "\\(15\\)",
+        "\\(18\\)",
+        "\\(27\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(18\\)",
+      "firstBarrier": "能否把底邊比連結到同高三角形的面積比。",
+      "solution": "\\(BD:DC=2:3\\)，且兩小三角形同高，故 \\([ACD]=12\\times\\frac32=18\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(8\\)」。",
+        "將關鍵條件誤讀後得到「\\(12\\)」。",
+        "將關鍵條件誤讀後得到「\\(15\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(27\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp6-concept",
+      "kpId": "trig:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩個三角形同高時，面積比等於何者？",
+      "options": [
+        "周長比",
+        "底邊比",
+        "底邊比平方",
+        "高的平方比",
+        "角度比"
+      ],
+      "answerIndex": 1,
+      "answer": "底邊比",
+      "firstBarrier": "能否辨識三角形面積公式中的共同因子。",
+      "solution": "\\([\\triangle]=\\frac12\\times底\\times高\\)，同高時面積比等於底邊比。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「周長比」。",
+        null,
+        "將關鍵條件誤讀後得到「底邊比平方」。",
+        "將關鍵條件誤讀後得到「高的平方比」。",
+        "將關鍵條件誤讀後得到「角度比」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp6-recognition",
+      "kpId": "trig:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "相似三角形邊長比為 \\(2:3\\)，面積比為何？",
+      "options": [
+        "\\(2:3\\)",
+        "\\(4:9\\)",
+        "\\(8:27\\)",
+        "\\(\\sqrt2:\\sqrt3\\)",
+        "\\(1:1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(4:9\\)",
+      "firstBarrier": "能否辨識面積比是相似比平方。",
+      "solution": "面積比為 \\(2^2:3^2=4:9\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(2:3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(8:27\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\sqrt2:\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(1:1\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp6-application",
+      "kpId": "trig:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在三角形 \\(ABC\\) 中，\\(AD\\) 平分 \\(\\angle A\\)，\\(BD=4,DC=6,AB=8\\)，則 \\(AC\\) 為何？",
+      "options": [
+        "\\(10\\)",
+        "\\(12\\)",
+        "\\(14\\)",
+        "\\(16\\)",
+        "\\(18\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(12\\)",
+      "firstBarrier": "能否由對邊分段比回推鄰邊。",
+      "solution": "\\(4:6=8:AC\\)，解得 \\(AC=12\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(10\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(14\\)」。",
+        "將關鍵條件誤讀後得到「\\(16\\)」。",
+        "將關鍵條件誤讀後得到「\\(18\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp6-concept",
+      "kpId": "trig:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "角",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若兩三角形有兩角分別相等，則兩三角形必如何？",
+      "options": [
+        "全等",
+        "相似",
+        "等腰",
+        "等面積",
+        "互補"
+      ],
+      "answerIndex": 1,
+      "answer": "相似",
+      "firstBarrier": "能否辨識 AA 相似判定。",
+      "solution": "兩角相等即可由 AA 判定相似。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「全等」。",
+        null,
+        "將關鍵條件誤讀後得到「等腰」。",
+        "將關鍵條件誤讀後得到「等面積」。",
+        "將關鍵條件誤讀後得到「互補」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp6-recognition",
+      "kpId": "trig:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "相似三角形面積比為 \\(25:9\\)，對應邊長比為何？",
+      "options": [
+        "\\(25:9\\)",
+        "\\(5:3\\)",
+        "\\(3:5\\)",
+        "\\(625:81\\)",
+        "\\(16:6\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(5:3\\)",
+      "firstBarrier": "能否由面積比取正平方根得到邊比。",
+      "solution": "對應邊比為 \\(\\sqrt{25:9}=5:3\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(25:9\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(3:5\\)」。",
+        "將關鍵條件誤讀後得到「\\(625:81\\)」。",
+        "將關鍵條件誤讀後得到「\\(16:6\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp6-application",
+      "kpId": "trig:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(AD\\) 平分 \\(\\angle A\\)，且 \\(AB:AC=3:5\\)。若 \\([ABC]=64\\)，則 \\([ABD]\\) 為何？",
+      "options": [
+        "\\(16\\)",
+        "\\(24\\)",
+        "\\(32\\)",
+        "\\(40\\)",
+        "\\(48\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(24\\)",
+      "firstBarrier": "能否以面積比拆分總面積。",
+      "solution": "\\([ABD]:[ACD]=3:5\\)，故 \\([ABD]=64\\times\\frac38=24\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(16\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(32\\)」。",
+        "將關鍵條件誤讀後得到「\\(40\\)」。",
+        "將關鍵條件誤讀後得到「\\(48\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp7-concept",
+      "kpId": "trig:kp7",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "同弧所對的圓周角彼此有何關係？",
+      "options": [
+        "互補",
+        "相等",
+        "互餘",
+        "相差 \\(90^\\circ\\)",
+        "沒有固定關係"
+      ],
+      "answerIndex": 1,
+      "answer": "相等",
+      "firstBarrier": "能否辨識同弧圓周角定理。",
+      "solution": "同弧所對的圓周角相等。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「互補」。",
+        null,
+        "將關鍵條件誤讀後得到「互餘」。",
+        "將關鍵條件誤讀後得到「相差 \\(90^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「沒有固定關係」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp7-recognition",
+      "kpId": "trig:kp7",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若圓心角 \\(\\angle AOB=100^\\circ\\)，同弧上的圓周角 \\(\\angle ACB\\) 為何？",
+      "options": [
+        "\\(25^\\circ\\)",
+        "\\(50^\\circ\\)",
+        "\\(100^\\circ\\)",
+        "\\(200^\\circ\\)",
+        "\\(80^\\circ\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(50^\\circ\\)",
+      "firstBarrier": "能否辨識圓周角為同弧圓心角的一半。",
+      "solution": "\\(\\angle ACB=\\frac12\\angle AOB=50^\\circ\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(25^\\circ\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(100^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(200^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(80^\\circ\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p0-kp7-application",
+      "kpId": "trig:kp7",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "邊",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "半徑為 \\(5\\) 的圓中，弦 \\(AB=8\\)，點 \\(C\\) 位於優弧 \\(AB\\) 上，則 \\(\\sin\\angle ACB\\) 為何？",
+      "options": [
+        "\\(\\frac35\\)",
+        "\\(\\frac45\\)",
+        "\\(\\frac43\\)",
+        "\\(\\frac85\\)",
+        "\\(\\frac12\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\frac45\\)",
+      "firstBarrier": "能否把弦長與圓周角連結為擴充正弦定理。",
+      "solution": "\\(\\frac{AB}{\\sin\\angle ACB}=2R=10\\)，故 \\(\\sin\\angle ACB=\\frac45\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(\\frac35\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(\\frac43\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac85\\)」。",
+        "將關鍵條件誤讀後得到「\\(\\frac12\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp7-concept",
+      "kpId": "trig:kp7",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "直徑所對的圓周角為何？",
+      "options": [
+        "\\(30^\\circ\\)",
+        "\\(45^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(180^\\circ\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(90^\\circ\\)",
+      "firstBarrier": "能否辨識泰勒斯定理。",
+      "solution": "半圓所對的圓周角為直角。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(30^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(45^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(60^\\circ\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(180^\\circ\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp7-recognition",
+      "kpId": "trig:kp7",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "邊",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "半徑為 \\(6\\) 的圓中，圓心角為 \\(60^\\circ\\) 所對弦長為何？",
+      "options": [
+        "\\(3\\)",
+        "\\(6\\)",
+        "\\(6\\sqrt2\\)",
+        "\\(6\\sqrt3\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否用等邊三角形或弦長公式辨識弦長。",
+      "solution": "兩半徑與弦形成等邊三角形，弦長為 \\(6\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(6\\sqrt2\\)」。",
+        "將關鍵條件誤讀後得到「\\(6\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(12\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p1-kp7-application",
+      "kpId": "trig:kp7",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "外接圓半徑為 \\(4\\) 的三角形中，角 \\(A=30^\\circ\\)，則對邊 \\(a\\) 為何？",
+      "options": [
+        "\\(2\\)",
+        "\\(4\\)",
+        "\\(4\\sqrt2\\)",
+        "\\(4\\sqrt3\\)",
+        "\\(8\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(4\\)",
+      "firstBarrier": "能否使用擴充正弦定理 \\(a=2R\\sin A\\)。",
+      "solution": "\\(a=2\\cdot4\\cdot\\sin30^\\circ=4\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(2\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(4\\sqrt2\\)」。",
+        "將關鍵條件誤讀後得到「\\(4\\sqrt3\\)」。",
+        "將關鍵條件誤讀後得到「\\(8\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp7-concept",
+      "kpId": "trig:kp7",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "二面角通常應在哪一種截面中量測？",
+      "options": [
+        "任意平面",
+        "同時垂直於稜線的截面",
+        "平行於稜線的截面",
+        "水平面",
+        "底面"
+      ],
+      "answerIndex": 1,
+      "answer": "同時垂直於稜線的截面",
+      "firstBarrier": "能否辨識二面角的正確截面。",
+      "solution": "以垂直稜線的截面截出兩半平面的交線，其夾角才代表二面角。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「任意平面」。",
+        null,
+        "將關鍵條件誤讀後得到「平行於稜線的截面」。",
+        "將關鍵條件誤讀後得到「水平面」。",
+        "將關鍵條件誤讀後得到「底面」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp7-recognition",
+      "kpId": "trig:kp7",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "角",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "圓半徑為 \\(10\\)，弦長為 \\(10\\sqrt3\\)，則較小圓心角為何？",
+      "options": [
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(120^\\circ\\)",
+        "\\(150^\\circ\\)",
+        "\\(180^\\circ\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(120^\\circ\\)",
+      "firstBarrier": "能否由弦長公式回推半圓心角。",
+      "solution": "\\(10\\sqrt3=20\\sin\\frac\\theta2\\)，得 \\(\\sin\\frac\\theta2=\\frac{\\sqrt3}{2}\\)，故較小 \\(\\theta=120^\\circ\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(60^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(90^\\circ\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(150^\\circ\\)」。",
+        "將關鍵條件誤讀後得到「\\(180^\\circ\\)」。"
+      ]
+    },
+    {
+      "id": "trig-p2-kp7-application",
+      "kpId": "trig:kp7",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "邊",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三角形一邊 \\(a=6\\)，其對角 \\(A=45^\\circ\\)，則外接圓半徑 \\(R\\) 為何？",
+      "options": [
+        "\\(3\\)",
+        "\\(3\\sqrt2\\)",
+        "\\(6\\)",
+        "\\(6\\sqrt2\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(3\\sqrt2\\)",
+      "firstBarrier": "能否由 \\(a=2R\\sin A\\) 解出半徑。",
+      "solution": "\\(R=\\frac{a}{2\\sin A}=\\frac6{\\sqrt2}=3\\sqrt2\\)。",
+      "distractorNotes": [
+        "將關鍵條件誤讀後得到「\\(3\\)」。",
+        null,
+        "將關鍵條件誤讀後得到「\\(6\\)」。",
+        "將關鍵條件誤讀後得到「\\(6\\sqrt2\\)」。",
+        "將關鍵條件誤讀後得到「\\(12\\)」。"
+      ]
+    }
+  ]
+}

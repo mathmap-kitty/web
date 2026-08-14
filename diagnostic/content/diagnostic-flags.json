@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.1.0",
+  "flags": [
+    {"id":"HIGH_CONFIDENCE_WRONG","kind":"CURRENT_RISK","trigger":"An associated risk state is OPEN or CONFIRMING.","clear":"Associated risk state becomes RESOLVED."},
+    {"id":"HISTORICAL_HIGH_CONFIDENCE_WRONG","kind":"HISTORY","trigger":"A high-confidence wrong event occurred in this learning cycle.","clear":"Never delete history; do not display this as a current unresolved warning."},
+    {"id":"SPEED_SUPPORT","kind":"SUPPORT","trigger":"At least two distinct, correct, unhinted, non-delayed decision items in the current learning cycle exceed 1.5 times expected time.","clear":"The active evidence window no longer contains two qualifying slow decision items."},
+    {"id":"RETEST_INCOMPLETE","kind":"SCHEDULE","trigger":"Current remediation cycle has delayed evidence but does not yet meet stable minimums and has no failed delayed attempt.","clear":"Cycle passes stable minimums or becomes FAILED."},
+    {"id":"RETEST_FAILED","kind":"SCHEDULE","trigger":"Any delayed decision attempt in the current remediation cycle is incorrect.","clear":"A new remediationCycleId begins; historical flag remains in the closed cycle."},
+    {"id":"HISTORICAL_RETEST_FAILURE","kind":"HISTORY","trigger":"A closed, non-current remediation cycle contains an incorrect delayed attempt.","clear":"Never delete history; this flag does not affect the current mastery state."},
+    {"id":"TIME_DATA_MISSING","kind":"DATA_QUALITY","trigger":"A decision attempt lacks valid effective or expected time.","clear":"Never mutate history; current report clears when its active evidence window has no missing time."},
+    {"id":"CONFIDENCE_DATA_MISSING","kind":"DATA_QUALITY","trigger":"A decision attempt has no confidence value.","clear":"Never infer a value; current report clears when its active evidence window is complete."},
+    {"id":"HINT_DEPENDENT","kind":"EVIDENCE","trigger":"An ability has correct hinted evidence but no unhinted decision evidence.","clear":"A different unhinted item supplies that ability evidence."},
+    {"id":"DUPLICATE_IGNORED","kind":"DATA_QUALITY","trigger":"A submission repeats the same sessionId+itemId+itemVersion+attemptOrdinal.","clear":"Event flag is retained in audit history and excluded from counts."},
+    {"id":"NONINDEPENDENT_ITEM_VERSION","kind":"EVIDENCE","trigger":"More than one itemVersion shares the same permanent itemId in the evidence window.","clear":"Versions remain in history; only one independent item is counted."},
+    {"id":"LEGACY_AUXILIARY_ONLY","kind":"EVIDENCE","trigger":"Legacy mm-* or exama_* data exists but current decision evidence is empty.","clear":"Current-cycle decision evidence is collected."}
+  ],
+  "highConfidenceRiskStateMachine": {
+    "states": ["OPEN", "CONFIRMING", "RESOLVED"],
+    "severity": {"WATCH":"One high-confidence wrong attempt for the same concept and ability in a learning cycle.","CRITICAL":"Two or more high-confidence wrong attempts for the same concept and ability in a learning cycle."},
+    "transitions": [
+      {"from":null,"to":"OPEN","when":"A high-confidence wrong attempt occurs."},
+      {"from":"OPEN","to":"CONFIRMING","when":"One later, different, unhinted item in the same ability is correct."},
+      {"from":"CONFIRMING","to":"RESOLVED","when":"A second later, different, unhinted item in the same ability is correct and at least one confirmation occurs on day 1 or later."},
+      {"from":"CONFIRMING","to":"OPEN","when":"A confirming item is incorrect."}
+    ],
+    "stableAllowedStates": ["RESOLVED"]
+  }
+}

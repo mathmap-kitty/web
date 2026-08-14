@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "proposalStatus": "BLUEPRINT_APPROVED_EXISTING_REGISTRY_NOT_PUBLISHED",
+  "unit": {
+    "id": "data",
+    "name": "數據分析",
+    "reuseExistingRegistry": true,
+    "points": [
+      {"id": "data:kp1", "title": "一維數據與標準差", "registryStatus": "EXISTING"},
+      {"id": "data:kp2", "title": "相關係數", "registryStatus": "EXISTING"},
+      {"id": "data:kp3", "title": "迴歸直線（最適直線）", "registryStatus": "EXISTING"},
+      {"id": "data:kp4", "title": "加權平均與資料判讀", "registryStatus": "EXISTING"}
+    ]
+  },
+  "coreRepresentations": [
+    {"id": "table", "label": "表", "meaning": "整理資料、次數、比例與單位"},
+    {"id": "measure", "label": "量", "meaning": "用統計量摘要中心與離散"},
+    {"id": "plot", "label": "圖", "meaning": "由分布圖或散布圖判讀形狀與關聯"},
+    {"id": "line", "label": "線", "meaning": "處理線性轉換、迴歸與預測"}
+  ],
+  "prerequisitePolicy": "REUSE_GATE1_APPROVED_EDGES_NO_GRAPH_CHANGE",
+  "prerequisiteEdges": [
+    {"from": "numexpr:kp5", "to": "data:kp1", "teacherStatus": "APPROVED"},
+    {"from": "numexpr:kp5", "to": "data:kp4", "teacherStatus": "APPROVED"},
+    {"from": "data:kp1", "to": "data:kp2", "teacherStatus": "APPROVED"},
+    {"from": "data:kp2", "to": "data:kp3", "teacherStatus": "APPROVED"},
+    {"from": "data:kp1", "to": "data:kp4", "teacherStatus": "APPROVED"}
+  ],
+  "questionPlan": {
+    "knowledgePoints": 4,
+    "stages": 3,
+    "abilities": 3,
+    "total": 36,
+    "perStage": 12,
+    "perAbility": 12,
+    "perKnowledgePoint": 9
+  },
+  "activationCondition": "教師核准藍圖後才製作 4 題代表題；完整 36 題另行核准後才出版與整合。"
+}

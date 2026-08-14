@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "space",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "generatedAt": "2026-08-13",
+  "blueprintDecision": "APPROVED",
+  "items": [
+    {
+      "id": "space-rep-kp1",
+      "kpId": "space:kp1",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "坐標空間中，A=(1,−2,3)、B=(4,2,6)，則線段 AB 的長度為何？",
+      "options": ["5", "√18", "√34", "34", "√50"],
+      "answerIndex": 2,
+      "answer": "√34",
+      "firstBarrier": "能否把空間距離寫成三個坐標差的平方和，而不是只處理兩個坐標。",
+      "solution": "三個坐標差為 3、4、3，所以 AB=√(3²+4²+3²)=√34。",
+      "diagnosticDistractors": {
+        "0": "漏掉 z 坐標差，只算平面距離。",
+        "1": "坐標相減或平方和計算錯誤。",
+        "3": "算出平方和 34 後忘記開根號。",
+        "4": "把端點坐標平方相加，而非先取坐標差。"
+      }
+    },
+    {
+      "id": "space-rep-kp2",
+      "kpId": "space:kp2",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "已知空間向量 u=(1,1,0)、v=(1,0,1)，兩向量的夾角為何？",
+      "options": ["30°", "45°", "60°", "90°", "120°"],
+      "answerIndex": 2,
+      "answer": "60°",
+      "firstBarrier": "能否先算內積與兩向量長度，再由 cosθ 判斷夾角。",
+      "solution": "u·v=1，且 |u|=|v|=√2，所以 cosθ=1/(√2·√2)=1/2，故 θ=60°。",
+      "diagnosticDistractors": {
+        "0": "把 cosθ=1/2 誤認為 30°。",
+        "1": "長度或特殊角對應錯誤。",
+        "3": "只看到兩向量各有一個零分量就誤判垂直。",
+        "4": "忽略內積為正，誤選鈍角。"
+      }
+    },
+    {
+      "id": "space-rep-kp3",
+      "kpId": "space:kp3",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "坐標空間中，O 為原點，B=(1,2,0)、C=(0,1,2)，則三角形 OBC 的面積為何？",
+      "options": ["√21/4", "√21/2", "√21", "21/2", "7/2"],
+      "answerIndex": 1,
+      "answer": "√21/2",
+      "firstBarrier": "能否先用 OB×OC 求平行四邊形面積，再除以 2。",
+      "solution": "OB×OC=(4,−2,1)，其長度為 √21，所以三角形面積為 √21/2。",
+      "diagnosticDistractors": {
+        "0": "把三角形面積多除一次 2。",
+        "2": "得到外積長度後忘記除以 2。",
+        "3": "把外積長度平方 21 直接除以 2。",
+        "4": "外積分量或長度計算錯誤。"
+      }
+    },
+    {
+      "id": "space-rep-kp4",
+      "kpId": "space:kp4",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "點 P=(3,−1,2) 到平面 2x−y+2z=5 的距離為何？",
+      "options": ["1/3", "1", "2", "3", "6"],
+      "answerIndex": 2,
+      "answer": "2",
+      "firstBarrier": "能否從平面係數讀出法向量，並在距離公式中同時處理絕對值與法向量長度。",
+      "solution": "距離為 |2·3−(−1)+2·2−5|/√(2²+(−1)²+2²)=6/3=2。",
+      "diagnosticDistractors": {
+        "0": "分子或分母計算後又多除一次。",
+        "1": "代入平面式時符號處理錯誤。",
+        "3": "只算出法向量長度。",
+        "4": "只算分子，忘記除以法向量長度。"
+      }
+    },
+    {
+      "id": "space-rep-kp5",
+      "kpId": "space:kp5",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "直線 L₁：(x,y,z)=(t,t,0)，直線 L₂：(x,y,z)=(1+s,−s,1)。兩直線的關係為何？",
+      "options": ["平行", "重合", "相交但不垂直", "相交且垂直", "歪斜"],
+      "answerIndex": 4,
+      "answer": "歪斜",
+      "firstBarrier": "能否先比較方向向量，再檢查聯立是否有共同點，而不是把不平行直接判成相交。",
+      "solution": "方向向量 (1,1,0) 與 (1,−1,0) 不平行；但 L₁ 上所有點的 z=0，L₂ 上所有點的 z=1，不可能相交，因此兩直線歪斜。",
+      "diagnosticDistractors": {
+        "0": "未比較方向向量便誤判平行。",
+        "1": "把兩條不同直線誤認為同一直線。",
+        "2": "以為空間中兩直線不平行就必定相交。",
+        "3": "只看到方向向量內積為 0，忽略兩直線沒有交點。"
+      }
+    },
+    {
+      "id": "space-rep-kp6",
+      "kpId": "space:kp6",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "兩平面沿直線 AB 相交且二面角為 90°。點 C、D 分別在兩平面內，CM、DM 均垂直 AB 於同一點 M，且 CM=DM=3，則 CD 為何？",
+      "options": ["3", "3√2", "6", "√13", "6√2"],
+      "answerIndex": 1,
+      "answer": "3√2",
+      "firstBarrier": "能否辨認 CM、DM 都垂直公共稜，因此 ∠CMD 就是二面角。",
+      "solution": "因 CM、DM 分別位於兩半平面且都垂直公共稜 AB，所以 ∠CMD=90°。由畢氏定理，CD=√(3²+3²)=3√2。",
+      "diagnosticDistractors": {
+        "0": "只取單一垂直距離。",
+        "2": "把兩段長度直接相加。",
+        "3": "誤把公共稜長度或其他無關量帶入。",
+        "4": "平方和計算後又多乘一次 2。"
+      }
+    }
+  ]
+}

@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.join(ROOT, "content"))
 from build_html import build_html        # noqa: E402
 from build_docx import build_docx        # noqa: E402
 from units import UNITS                   # noqa: E402
-from validate import validate            # noqa: E402  資料鏈結守門（考點/題目/part2_kp/checks/cues 一致性）
+from validate import validate            # noqa: E402  資料鏈結守門（核心概念/題目/part2_kp/checks/cues 一致性）
 
 DIST = os.path.join(ROOT, "dist")
 

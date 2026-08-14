@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "proposalStatus": "BLUEPRINT_APPROVED_NOT_ACTIVATED",
+  "unit": {
+    "id": "probability",
+    "name": "機率",
+    "points": [
+      {"id": "probability:kp1", "title": "樣本空間與古典機率", "teacherStatus": "APPROVED"},
+      {"id": "probability:kp2", "title": "事件運算、餘事件與獨立", "teacherStatus": "APPROVED"},
+      {"id": "probability:kp3", "title": "條件機率、全機率與貝氏", "teacherStatus": "APPROVED"},
+      {"id": "probability:kp4", "title": "隨機變數與期望值", "teacherStatus": "APPROVED"}
+    ]
+  },
+  "coreRepresentations": [
+    {"id": "space", "label": "空", "meaning": "建立等可能樣本空間"},
+    {"id": "event", "label": "事", "meaning": "整理事件交、聯、餘與獨立"},
+    {"id": "path", "label": "路", "meaning": "用樹狀圖或列聯表處理條件路徑"},
+    {"id": "value", "label": "值", "meaning": "建立結果分配並計算期望值"}
+  ],
+  "prerequisiteEdges": [
+    {"from": "comb:kp1", "to": "probability:kp1", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED", "reason": "古典機率需要先正確計數樣本點"},
+    {"from": "probability:kp1", "to": "probability:kp2", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED", "reason": "事件運算建立在樣本空間與事件表示上"},
+    {"from": "probability:kp2", "to": "probability:kp3", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED", "reason": "條件機率需要交集、聯集與事件關係"},
+    {"from": "probability:kp1", "to": "probability:kp4", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED", "reason": "期望值需要先建立結果的機率分配"}
+  ],
+  "questionPlan": {
+    "knowledgePoints": 4,
+    "stages": 3,
+    "abilities": 3,
+    "total": 36,
+    "perStage": 12,
+    "perAbility": 12,
+    "perKnowledgePoint": 9
+  },
+  "legacyCompatibility": {
+    "policy": "KEEP_LEGACY_IDS_AND_MAP_NEW_ITEMS",
+    "legacyUnit": "prob",
+    "mappings": [
+      {"legacyId": "prob:kp3", "newId": "probability:kp1"},
+      {"legacyId": "prob:kp5", "newId": "probability:kp2"},
+      {"legacyId": "prob:kp4", "newId": "probability:kp3"},
+      {"legacyId": "prob:kp6", "newId": "probability:kp4"}
+    ],
+    "automaticAlias": false,
+    "existingEvidence": "UNCHANGED"
+  },
+  "activationCondition": "教師核准藍圖與後續完整 36 題後，才建立正式 registry 變更與五階段整合。"
+}

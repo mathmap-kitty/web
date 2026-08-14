@@ -1,0 +1,1577 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "space",
+  "unitName": "空間向量",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-13",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "space-i-kp1-c",
+      "kpId": "space:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P=(2,-3,5)\\) 到 \\(xy\\) 平面的距離為何？",
+      "options": [
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(5\\)",
+        "\\(\\sqrt{38}\\)",
+        "\\(10\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否直接由第三坐標判斷到 \\(xy\\) 平面的距離。",
+      "solution": "到 \\(xy\\) 平面的距離為 \\(|z|=5\\)。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        "混淆坐標差、坐標和或坐標平面。",
+        null,
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-i-kp1-r",
+      "kpId": "space:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "坐標空間中，\\(A=(1,-2,3)\\)、\\(B=(4,2,6)\\)，則 \\(\\overline{AB}\\) 為何？",
+      "options": [
+        "\\(5\\)",
+        "\\(\\sqrt{18}\\)",
+        "\\(\\sqrt{34}\\)",
+        "\\(34\\)",
+        "\\(\\sqrt{50}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\sqrt{34}\\)",
+      "firstBarrier": "能否把空間距離寫成三個坐標差的平方和。",
+      "solution": "\\(\\overline{AB}=\\sqrt{3^2+4^2+3^2}=\\sqrt{34}\\)。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        "混淆坐標差、坐標和或坐標平面。",
+        null,
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-i-kp1-a",
+      "kpId": "space:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "邊長為 \\(2\\) 的正立方體，其體對角線長為何？",
+      "options": [
+        "\\(2\\)",
+        "\\(2\\sqrt2\\)",
+        "\\(2\\sqrt3\\)",
+        "\\(4\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(2\\sqrt3\\)",
+      "firstBarrier": "能否分清邊、面對角線與體對角線。",
+      "solution": "體對角線為 \\(\\sqrt{2^2+2^2+2^2}=2\\sqrt3\\)。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        "混淆坐標差、坐標和或坐標平面。",
+        null,
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-v-kp1-c",
+      "kpId": "space:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(A=(1,2,3)\\)、\\(B=(5,0,-1)\\) 的中點為何？",
+      "options": [
+        "\\((2,1,1)\\)",
+        "\\((3,1,1)\\)",
+        "\\((3,2,1)\\)",
+        "\\((6,2,2)\\)",
+        "\\((4,-2,-4)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((3,1,1)\\)",
+      "firstBarrier": "能否將三個對應坐標分別取平均。",
+      "solution": "中點為 \\(\\left(\\dfrac{1+5}{2},\\dfrac{2+0}{2},\\dfrac{3-1}{2}\\right)=(3,1,1)\\)。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        null,
+        "混淆坐標差、坐標和或坐標平面。",
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-v-kp1-r",
+      "kpId": "space:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P=(-4,2,0)\\) 位於哪一個坐標平面？",
+      "options": [
+        "\\(xy\\) 平面",
+        "\\(yz\\) 平面",
+        "\\(zx\\) 平面",
+        "三個坐標平面",
+        "不在任何坐標平面"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(xy\\) 平面",
+      "firstBarrier": "能否由等於零的坐標辨認坐標平面。",
+      "solution": "因 \\(z=0\\)，所以 \\(P\\) 位於 \\(xy\\) 平面。",
+      "distractorNotes": [
+        null,
+        "漏掉一個坐標或空間維度。",
+        "混淆坐標差、坐標和或坐標平面。",
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-v-kp1-a",
+      "kpId": "space:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "正立方體的體對角線長為 \\(6\\sqrt3\\)，其邊長為何？",
+      "options": [
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(6\\)",
+        "\\(9\\)",
+        "\\(18\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否由體對角線反推邊長。",
+      "solution": "若邊長為 \\(a\\)，則 \\(a\\sqrt3=6\\sqrt3\\)，故 \\(a=6\\)。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        "混淆坐標差、坐標和或坐標平面。",
+        null,
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-d-kp1-c",
+      "kpId": "space:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩點 \\(A(x_1,y_1,z_1)\\)、\\(B(x_2,y_2,z_2)\\) 的距離公式為何？",
+      "options": [
+        "\\(\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\)",
+        "\\(\\sqrt{(x_2+x_1)^2+(y_2+y_1)^2+(z_2+z_1)^2}\\)",
+        "\\(\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\\)",
+        "\\(|x_2-x_1|+|y_2-y_1|+|z_2-z_1|\\)",
+        "\\((x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\\)",
+      "firstBarrier": "能否辨認三維歐氏距離的完整形式。",
+      "solution": "空間距離是三個坐標差的平方和再開根號。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        "混淆坐標差、坐標和或坐標平面。",
+        null,
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-d-kp1-r",
+      "kpId": "space:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(Q=(-3,4,2)\\) 到 \\(yz\\) 平面的距離為何？",
+      "options": [
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(\\sqrt{29}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否辨認 \\(yz\\) 平面由 \\(x=0\\) 表示。",
+      "solution": "距離為 \\(|x|=|-3|=3\\)。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        null,
+        "混淆坐標差、坐標和或坐標平面。",
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-d-kp1-a",
+      "kpId": "space:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(A=(-1,2,0)\\)、\\(B=(2,-2,4)\\)，則 \\(\\overline{AB}\\) 為何？",
+      "options": [
+        "\\(5\\)",
+        "\\(\\sqrt{33}\\)",
+        "\\(\\sqrt{41}\\)",
+        "\\(7\\)",
+        "\\(41\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\sqrt{41}\\)",
+      "firstBarrier": "能否正確處理負坐標造成的坐標差。",
+      "solution": "\\(\\overline{AB}=\\sqrt{3^2+(-4)^2+4^2}=\\sqrt{41}\\)。",
+      "distractorNotes": [
+        "漏掉一個坐標或空間維度。",
+        "混淆坐標差、坐標和或坐標平面。",
+        null,
+        "平方和、開根號或長度比例計算錯誤。",
+        "套用無關的平面或向量公式。"
+      ]
+    },
+    {
+      "id": "space-i-kp2-c",
+      "kpId": "space:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩個非零向量 \\(\\vec u,\\vec v\\) 垂直的充要條件為何？",
+      "options": [
+        "\\(\\vec u=\\vec v\\)",
+        "\\(|\\vec u|=|\\vec v|\\)",
+        "\\(\\vec u\\cdot\\vec v=0\\)",
+        "\\(\\vec u\\times\\vec v=\\vec0\\)",
+        "\\(\\vec u\\cdot\\vec v=1\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\vec u\\cdot\\vec v=0\\)",
+      "firstBarrier": "能否把垂直直接轉成內積為零。",
+      "solution": "非零向量垂直當且僅當 \\(\\vec u\\cdot\\vec v=0\\)。",
+      "distractorNotes": [
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        null,
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-i-kp2-r",
+      "kpId": "space:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\vec u=(1,-2,2)\\)、\\(\\vec v=(2,1,0)\\)，兩向量夾角為何？",
+      "options": [
+        "\\(30^\\circ\\)",
+        "\\(45^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(120^\\circ\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(90^\\circ\\)",
+      "firstBarrier": "能否先由內積判斷垂直。",
+      "solution": "\\(\\vec u\\cdot\\vec v=2-2+0=0\\)，故夾角為 \\(90^\\circ\\)。",
+      "distractorNotes": [
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        "特殊角與餘弦值對應錯誤。",
+        null,
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-i-kp2-a",
+      "kpId": "space:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\vec u=(1,1,0)\\)、\\(\\vec v=(1,0,1)\\)，兩向量夾角為何？",
+      "options": [
+        "\\(30^\\circ\\)",
+        "\\(45^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(120^\\circ\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(60^\\circ\\)",
+      "firstBarrier": "能否先算內積與兩向量長度，再由餘弦判斷夾角。",
+      "solution": "\\(\\vec u\\cdot\\vec v=1\\)，\\(|\\vec u|=|\\vec v|=\\sqrt2\\)，故 \\(\\cos\\theta=\\dfrac12\\)，所以 \\(\\theta=60^\\circ\\)。",
+      "distractorNotes": [
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        null,
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-v-kp2-c",
+      "kpId": "space:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\vec u\\cdot\\vec v<0\\)，則兩個非零向量的夾角必為何種角？",
+      "options": [
+        "銳角",
+        "直角",
+        "鈍角",
+        "零角",
+        "無法判斷"
+      ],
+      "answerIndex": 2,
+      "answer": "鈍角",
+      "firstBarrier": "能否由內積符號判斷夾角範圍。",
+      "solution": "內積為負表示 \\(\\cos\\theta<0\\)，故夾角為鈍角。",
+      "distractorNotes": [
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        null,
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-v-kp2-r",
+      "kpId": "space:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\vec u=(2,1,2)\\) 在 \\(\\vec v=(1,0,0)\\) 方向上的正射影長為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(\\sqrt5\\)",
+        "\\(\\sqrt6\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\)",
+      "firstBarrier": "能否使用投影長 \\(\\dfrac{|\\vec u\\cdot\\vec v|}{|\\vec v|}\\)。",
+      "solution": "投影長為 \\(\\dfrac{|2|}{1}=2\\)。",
+      "distractorNotes": [
+        "未先計算內積或忽略內積正負。",
+        null,
+        "向量長度或正射影分母使用錯誤。",
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-v-kp2-a",
+      "kpId": "space:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(|\\vec u|=2\\)、\\(|\\vec v|=3\\)，夾角為 \\(60^\\circ\\)，則 \\(\\vec u\\cdot\\vec v\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(5\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否使用內積的幾何式。",
+      "solution": "\\(\\vec u\\cdot\\vec v=2\\cdot3\\cdot\\cos60^\\circ=3\\)。",
+      "distractorNotes": [
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        null,
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-d-kp2-c",
+      "kpId": "space:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若非零向量滿足 \\(\\vec u\\cdot\\vec v=|\\vec u||\\vec v|\\)，則兩向量的方向關係為何？",
+      "options": [
+        "同方向",
+        "反方向",
+        "互相垂直",
+        "夾角為 \\(60^\\circ\\)",
+        "無法判斷"
+      ],
+      "answerIndex": 0,
+      "answer": "同方向",
+      "firstBarrier": "能否由餘弦等於一判斷同方向。",
+      "solution": "此時 \\(\\cos\\theta=1\\)，故 \\(\\theta=0^\\circ\\)，兩向量同方向。",
+      "distractorNotes": [
+        null,
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-d-kp2-r",
+      "kpId": "space:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\vec a=(1,2,-1)\\)、\\(\\vec b=(2,-1,k)\\) 且 \\(\\vec a\\perp\\vec b\\)，則 \\(k\\) 為何？",
+      "options": [
+        "\\(-2\\)",
+        "\\(-1\\)",
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(0\\)",
+      "firstBarrier": "能否把垂直條件轉成含參數的內積方程。",
+      "solution": "\\(2-2-k=0\\)，故 \\(k=0\\)。",
+      "distractorNotes": [
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        null,
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-d-kp2-a",
+      "kpId": "space:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\vec u=(3,4,0)\\) 在 \\(\\vec v=(1,0,0)\\) 上的正射影向量為何？",
+      "options": [
+        "\\((3,0,0)\\)",
+        "\\((0,4,0)\\)",
+        "\\((3,4,0)\\)",
+        "\\((1,0,0)\\)",
+        "\\((5,0,0)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((3,0,0)\\)",
+      "firstBarrier": "能否分清投影長與投影向量。",
+      "solution": "投影向量為 \\(\\dfrac{\\vec u\\cdot\\vec v}{|\\vec v|^2}\\vec v=3(1,0,0)=(3,0,0)\\)。",
+      "distractorNotes": [
+        null,
+        "未先計算內積或忽略內積正負。",
+        "向量長度或正射影分母使用錯誤。",
+        "特殊角與餘弦值對應錯誤。",
+        "把內積、外積或垂直條件混淆。"
+      ]
+    },
+    {
+      "id": "space-i-kp3-c",
+      "kpId": "space:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列何者必定同時垂直 \\(\\vec u\\) 與 \\(\\vec v\\)？",
+      "options": [
+        "\\(\\vec u+\\vec v\\)",
+        "\\(\\vec u-\\vec v\\)",
+        "\\(\\vec u\\cdot\\vec v\\)",
+        "\\(\\vec u\\times\\vec v\\)",
+        "\\(|\\vec u|+|\\vec v|\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(\\vec u\\times\\vec v\\)",
+      "firstBarrier": "能否辨認外積的方向意義。",
+      "solution": "\\(\\vec u\\times\\vec v\\) 同時垂直兩個原向量。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        null,
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-i-kp3-r",
+      "kpId": "space:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\vec u=(1,0,0)\\)、\\(\\vec v=(0,1,0)\\)，則 \\(\\vec u\\times\\vec v\\) 為何？",
+      "options": [
+        "\\((0,0,1)\\)",
+        "\\((0,0,-1)\\)",
+        "\\((1,1,0)\\)",
+        "\\(0\\)",
+        "\\((1,-1,0)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((0,0,1)\\)",
+      "firstBarrier": "能否依右手定則及坐標公式決定外積方向。",
+      "solution": "\\((1,0,0)\\times(0,1,0)=(0,0,1)\\)。",
+      "distractorNotes": [
+        null,
+        "混淆內積與外積的結果型態。",
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-i-kp3-a",
+      "kpId": "space:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "坐標空間中，\\(O\\) 為原點，\\(B=(1,2,0)\\)、\\(C=(0,1,2)\\)，則三角形 \\(OBC\\) 的面積為何？",
+      "options": [
+        "\\(\\dfrac{\\sqrt{21}}4\\)",
+        "\\(\\dfrac{\\sqrt{21}}2\\)",
+        "\\(\\sqrt{21}\\)",
+        "\\(\\dfrac{21}2\\)",
+        "\\(\\dfrac72\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac{\\sqrt{21}}2\\)",
+      "firstBarrier": "能否用外積求平行四邊形面積後再除以二。",
+      "solution": "\\(\\overrightarrow{OB}\\times\\overrightarrow{OC}=(4,-2,1)\\)，長度 \\(\\sqrt{21}\\)，故面積為 \\(\\dfrac{\\sqrt{21}}2\\)。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        null,
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-v-kp3-c",
+      "kpId": "space:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "交換外積順序後，下列何者正確？",
+      "options": [
+        "\\(\\vec v\\times\\vec u=\\vec u\\times\\vec v\\)",
+        "\\(\\vec v\\times\\vec u=-\\vec u\\times\\vec v\\)",
+        "\\(\\vec v\\times\\vec u=0\\)",
+        "長度必加倍",
+        "方向與長度都無法比較"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\vec v\\times\\vec u=-\\vec u\\times\\vec v\\)",
+      "firstBarrier": "能否辨認外積的反交換性。",
+      "solution": "外積交換順序會反向：\\(\\vec v\\times\\vec u=-\\vec u\\times\\vec v\\)。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        null,
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-v-kp3-r",
+      "kpId": "space:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "行列式 \\(\\begin{vmatrix}1&0&0\\\\0&2&0\\\\0&0&3\\end{vmatrix}\\) 的值為何？",
+      "options": [
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否辨認對角矩陣行列式為對角元素乘積。",
+      "solution": "行列式為 \\(1\\cdot2\\cdot3=6\\)。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        null,
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-v-kp3-a",
+      "kpId": "space:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三個互相垂直的向量長度分別為 \\(2,3,4\\)，所張平行六面體體積為何？",
+      "options": [
+        "\\(9\\)",
+        "\\(12\\)",
+        "\\(18\\)",
+        "\\(24\\)",
+        "\\(48\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(24\\)",
+      "firstBarrier": "能否使用兩兩垂直時的體積特例。",
+      "solution": "體積為 \\(2\\cdot3\\cdot4=24\\)。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        null,
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-d-kp3-c",
+      "kpId": "space:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三角形由同一起點的兩向量 \\(\\vec u,\\vec v\\) 張成，其面積為何？",
+      "options": [
+        "\\(|\\vec u\\times\\vec v|\\)",
+        "\\(\\dfrac12|\\vec u\\times\\vec v|\\)",
+        "\\(|\\vec u\\cdot\\vec v|\\)",
+        "\\(\\dfrac16|\\vec u\\cdot\\vec v|\\)",
+        "\\(|\\vec u||\\vec v|\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac12|\\vec u\\times\\vec v|\\)",
+      "firstBarrier": "能否區分三角形與平行四邊形面積倍率。",
+      "solution": "三角形面積為平行四邊形的一半，即 \\(\\dfrac12|\\vec u\\times\\vec v|\\)。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        null,
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-d-kp3-r",
+      "kpId": "space:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\vec u=(1,1,0)\\)、\\(\\vec v=(0,1,1)\\)，以兩向量為鄰邊的平行四邊形面積為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(\\sqrt2\\)",
+        "\\(\\sqrt3\\)",
+        "\\(2\\)",
+        "\\(3\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\sqrt3\\)",
+      "firstBarrier": "能否由外積分量求長度。",
+      "solution": "\\(\\vec u\\times\\vec v=(1,-1,1)\\)，故面積為 \\(\\sqrt3\\)。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        "外積順序、方向或分量計算錯誤。",
+        null,
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-d-kp3-a",
+      "kpId": "space:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "體",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三條互相垂直的棱長為 \\(3,4,5\\)，以其為三條棱的四面體體積為何？",
+      "options": [
+        "\\(5\\)",
+        "\\(10\\)",
+        "\\(20\\)",
+        "\\(30\\)",
+        "\\(60\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(10\\)",
+      "firstBarrier": "能否由平行六面體體積轉成四面體體積。",
+      "solution": "四面體體積為 \\(\\dfrac16(3\\cdot4\\cdot5)=10\\)。",
+      "distractorNotes": [
+        "混淆內積與外積的結果型態。",
+        null,
+        "外積順序、方向或分量計算錯誤。",
+        "面積的二分之一或體積的六分之一倍率錯誤。",
+        "把外積長度、平方或三重積混為一談。"
+      ]
+    },
+    {
+      "id": "space-i-kp4-c",
+      "kpId": "space:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "平面 \\(2x-y+3z=7\\) 的一個法向量為何？",
+      "options": [
+        "\\((2,-1,3)\\)",
+        "\\((2,1,3)\\)",
+        "\\((7,0,0)\\)",
+        "\\((1,1,1)\\)",
+        "\\((-2,-1,-3)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((2,-1,3)\\)",
+      "firstBarrier": "能否直接由平面方程式係數讀出法向量。",
+      "solution": "法向量可取 \\((2,-1,3)\\)。",
+      "distractorNotes": [
+        null,
+        "沒有先讀出或求出平面法向量。",
+        "代入平面方程式時符號或常數項錯誤。",
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-i-kp4-r",
+      "kpId": "space:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P=(1,2,3)\\) 是否在平面 \\(x+y+z=6\\) 上？",
+      "options": [
+        "是",
+        "否，距離為 \\(1\\)",
+        "否，距離為 \\(\\sqrt3\\)",
+        "只有投影點在平面上",
+        "資料不足"
+      ],
+      "answerIndex": 0,
+      "answer": "是",
+      "firstBarrier": "能否以代入方程式判斷點是否在平面上。",
+      "solution": "\\(1+2+3=6\\)，所以點在平面上。",
+      "distractorNotes": [
+        null,
+        "沒有先讀出或求出平面法向量。",
+        "代入平面方程式時符號或常數項錯誤。",
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-i-kp4-a",
+      "kpId": "space:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P=(3,-1,2)\\) 到平面 \\(2x-y+2z=5\\) 的距離為何？",
+      "options": [
+        "\\(\\dfrac13\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(6\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(2\\)",
+      "firstBarrier": "能否同時處理絕對值與法向量長度。",
+      "solution": "距離為 \\(\\dfrac{|6+1+4-5|}{\\sqrt{4+1+4}}=\\dfrac63=2\\)。",
+      "distractorNotes": [
+        "沒有先讀出或求出平面法向量。",
+        "代入平面方程式時符號或常數項錯誤。",
+        null,
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-v-kp4-c",
+      "kpId": "space:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩個相異平面平行時，其法向量必須符合何種關係？",
+      "options": [
+        "互相垂直",
+        "方向平行",
+        "長度相等",
+        "內積為一",
+        "外積長度為一"
+      ],
+      "answerIndex": 1,
+      "answer": "方向平行",
+      "firstBarrier": "能否把平面平行轉成法向量平行。",
+      "solution": "兩個相異平面平行時，法向量方向平行。",
+      "distractorNotes": [
+        "沒有先讀出或求出平面法向量。",
+        null,
+        "代入平面方程式時符號或常數項錯誤。",
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-v-kp4-r",
+      "kpId": "space:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P=(3,0,0)\\) 在平面 \\(x=1\\) 上的投影點為何？",
+      "options": [
+        "\\((0,0,0)\\)",
+        "\\((1,0,0)\\)",
+        "\\((2,0,0)\\)",
+        "\\((3,1,0)\\)",
+        "\\((3,0,1)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((1,0,0)\\)",
+      "firstBarrier": "能否沿平面的法向量方向投影。",
+      "solution": "平面法向量沿 \\(x\\) 軸，投影只把 \\(x\\) 坐標改為 \\(1\\)，得 \\((1,0,0)\\)。",
+      "distractorNotes": [
+        "沒有先讀出或求出平面法向量。",
+        null,
+        "代入平面方程式時符號或常數項錯誤。",
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-v-kp4-a",
+      "kpId": "space:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "原點到平面 \\(2x-y+2z=9\\) 的距離為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(6\\)",
+        "\\(9\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否正確代入原點並除以法向量長度。",
+      "solution": "距離為 \\(\\dfrac9{\\sqrt{4+1+4}}=3\\)。",
+      "distractorNotes": [
+        "沒有先讀出或求出平面法向量。",
+        "代入平面方程式時符號或常數項錯誤。",
+        null,
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-d-kp4-c",
+      "kpId": "space:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩平面垂直時，下列哪一個法向量條件正確？",
+      "options": [
+        "兩法向量平行",
+        "兩法向量相等",
+        "兩法向量內積為零",
+        "兩法向量長度相等",
+        "兩法向量外積為零"
+      ],
+      "answerIndex": 2,
+      "answer": "兩法向量內積為零",
+      "firstBarrier": "能否把平面垂直轉成法向量垂直。",
+      "solution": "兩平面垂直時，兩法向量內積為零。",
+      "distractorNotes": [
+        "沒有先讀出或求出平面法向量。",
+        "代入平面方程式時符號或常數項錯誤。",
+        null,
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-d-kp4-r",
+      "kpId": "space:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "法向量 \\((1,2,-1)\\) 且通過 \\(P=(1,0,2)\\) 的平面方程式為何？",
+      "options": [
+        "\\(x+2y-z=-1\\)",
+        "\\(x+2y-z=1\\)",
+        "\\(x-2y+z=-1\\)",
+        "\\(x+2y+z=3\\)",
+        "\\(x+y+z=3\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(x+2y-z=-1\\)",
+      "firstBarrier": "能否以法向量和一點決定平面常數。",
+      "solution": "代入 \\(P\\)：\\(1+0-2=-1\\)，故平面為 \\(x+2y-z=-1\\)。",
+      "distractorNotes": [
+        null,
+        "沒有先讀出或求出平面法向量。",
+        "代入平面方程式時符號或常數項錯誤。",
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-d-kp4-a",
+      "kpId": "space:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "面",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "通過 \\(O=(0,0,0)\\)、\\(A=(1,0,1)\\)、\\(B=(0,1,1)\\) 的平面方程式為何？",
+      "options": [
+        "\\(x+y-z=0\\)",
+        "\\(x-y+z=0\\)",
+        "\\(x+y+z=0\\)",
+        "\\(x-y-z=0\\)",
+        "\\(x+y-z=1\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(x+y-z=0\\)",
+      "firstBarrier": "能否由兩個面內向量的外積取得法向量。",
+      "solution": "\\(\\overrightarrow{OA}\\times\\overrightarrow{OB}=(-1,-1,1)\\)，故可寫成 \\(x+y-z=0\\)。",
+      "distractorNotes": [
+        null,
+        "沒有先讀出或求出平面法向量。",
+        "代入平面方程式時符號或常數項錯誤。",
+        "點到平面距離漏掉絕對值或法向量長度。",
+        "混淆平行、垂直、投影與在平面上的條件。"
+      ]
+    },
+    {
+      "id": "space-i-kp5-c",
+      "kpId": "space:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "空間中兩直線方向向量不平行時，兩直線可能為何？",
+      "options": [
+        "只可能相交",
+        "只可能歪斜",
+        "相交或歪斜",
+        "平行或重合",
+        "必定垂直"
+      ],
+      "answerIndex": 2,
+      "answer": "相交或歪斜",
+      "firstBarrier": "能否記得空間中存在歪斜線。",
+      "solution": "方向不平行時，兩直線可能相交，也可能歪斜。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        "以為空間中不平行的兩直線必定相交。",
+        null,
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-i-kp5-r",
+      "kpId": "space:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "直線 \\(L_1:(x,y,z)=(t,t,0)\\)，\\(L_2:(x,y,z)=(1+s,-s,1)\\)。兩直線關係為何？",
+      "options": [
+        "平行",
+        "重合",
+        "相交但不垂直",
+        "相交且垂直",
+        "歪斜"
+      ],
+      "answerIndex": 4,
+      "answer": "歪斜",
+      "firstBarrier": "能否比較方向後再檢查是否有共同點。",
+      "solution": "方向不平行，但 \\(L_1\\) 的 \\(z=0\\)、\\(L_2\\) 的 \\(z=1\\)，無交點，故歪斜。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        "以為空間中不平行的兩直線必定相交。",
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。",
+        null
+      ]
+    },
+    {
+      "id": "space-i-kp5-a",
+      "kpId": "space:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "直線方向向量為 \\((1,2,-1)\\)，平面法向量為 \\((2,-1,0)\\)。此直線的方向與平面的關係為何？",
+      "options": [
+        "平行",
+        "垂直",
+        "必定在平面上",
+        "必定相交且垂直",
+        "無法判斷"
+      ],
+      "answerIndex": 0,
+      "answer": "平行",
+      "firstBarrier": "能否使用方向向量與法向量的內積判斷線面方向關係。",
+      "solution": "內積 \\(2-2+0=0\\)，故直線方向平行於平面。",
+      "distractorNotes": [
+        null,
+        "只比較方向向量，沒有檢查共同點。",
+        "以為空間中不平行的兩直線必定相交。",
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-v-kp5-c",
+      "kpId": "space:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "直線垂直於平面的充分必要方向條件為何？",
+      "options": [
+        "方向向量垂直法向量",
+        "方向向量平行法向量",
+        "方向向量長度等於法向量",
+        "兩向量內積為零",
+        "兩向量外積長度為一"
+      ],
+      "answerIndex": 1,
+      "answer": "方向向量平行法向量",
+      "firstBarrier": "能否分清直線平行與垂直平面的條件。",
+      "solution": "直線垂直平面時，方向向量平行於平面法向量。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        null,
+        "以為空間中不平行的兩直線必定相交。",
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-v-kp5-r",
+      "kpId": "space:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(L_1:(x,y,z)=(t,0,0)\\)、\\(L_2:(x,y,z)=(0,1+s,0)\\)，兩直線關係為何？",
+      "options": [
+        "平行",
+        "重合",
+        "相交且垂直",
+        "相交但不垂直",
+        "歪斜"
+      ],
+      "answerIndex": 2,
+      "answer": "相交且垂直",
+      "firstBarrier": "能否聯立參數找交點並比較方向。",
+      "solution": "取 \\(t=0,s=-1\\) 時交於原點，且方向 \\((1,0,0)\\)、\\((0,1,0)\\) 垂直。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        "以為空間中不平行的兩直線必定相交。",
+        null,
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-v-kp5-a",
+      "kpId": "space:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P=(1,3,4)\\) 到 \\(x\\) 軸的距離為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(\\sqrt{26}\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否把到坐標軸的最短距離轉成垂直分量長度。",
+      "solution": "到 \\(x\\) 軸距離為 \\(\\sqrt{3^2+4^2}=5\\)。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        "以為空間中不平行的兩直線必定相交。",
+        "混淆直線平行與垂直平面的向量條件。",
+        null,
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-d-kp5-c",
+      "kpId": "space:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩歪斜線之間的距離應沿何種方向量取？",
+      "options": [
+        "任一連線",
+        "其中一線方向",
+        "兩線的公垂線",
+        "坐標軸方向",
+        "兩方向向量的和"
+      ],
+      "answerIndex": 2,
+      "answer": "兩線的公垂線",
+      "firstBarrier": "能否辨認最短連線必須同時垂直兩直線。",
+      "solution": "兩歪斜線的最短距離沿公垂線量取。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        "以為空間中不平行的兩直線必定相交。",
+        null,
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-d-kp5-r",
+      "kpId": "space:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "直線 \\(L:(x,y,z)=(1+t,2-t,3+2t)\\) 的方向向量為何？",
+      "options": [
+        "\\((1,2,3)\\)",
+        "\\((1,-1,2)\\)",
+        "\\((t,-t,2t)\\)",
+        "\\((1,1,2)\\)",
+        "\\((-1,1,-2)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((1,-1,2)\\)",
+      "firstBarrier": "能否由參數式讀出參數係數。",
+      "solution": "方向向量由 \\(t\\) 的係數讀得 \\((1,-1,2)\\)。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        null,
+        "以為空間中不平行的兩直線必定相交。",
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-d-kp5-a",
+      "kpId": "space:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "面",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "平行直線 \\(L_1:(x,y,z)=(t,0,0)\\)、\\(L_2:(x,y,z)=(s,3,4)\\) 的距離為何？",
+      "options": [
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(7\\)",
+        "\\(\\sqrt{26}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否取垂直於共同方向的坐標差。",
+      "solution": "兩線皆沿 \\(x\\) 軸方向，垂直距離為 \\(\\sqrt{3^2+4^2}=5\\)。",
+      "distractorNotes": [
+        "只比較方向向量，沒有檢查共同點。",
+        "以為空間中不平行的兩直線必定相交。",
+        null,
+        "混淆直線平行與垂直平面的向量條件。",
+        "最短距離沒有沿公垂線方向計算。"
+      ]
+    },
+    {
+      "id": "space-i-kp6-c",
+      "kpId": "space:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩平面沿 \\(AB\\) 相交且二面角為 \\(90^\\circ\\)。\\(CM,DM\\) 分別在兩平面內且皆垂直 \\(AB\\) 於同一點 \\(M\\)，若 \\(CM=DM=3\\)，則 \\(CD\\) 為何？",
+      "options": [
+        "\\(3\\)",
+        "\\(3\\sqrt2\\)",
+        "\\(6\\)",
+        "\\(\\sqrt{13}\\)",
+        "\\(6\\sqrt2\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(3\\sqrt2\\)",
+      "firstBarrier": "能否辨認 \\(\\angle CMD\\) 就是二面角。",
+      "solution": "\\(\\angle CMD=90^\\circ\\)，故 \\(CD=\\sqrt{3^2+3^2}=3\\sqrt2\\)。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        null,
+        "把面內任意角誤認為二面角。",
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-i-kp6-r",
+      "kpId": "space:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "要量沿公共稜 \\(l\\) 的二面角，應選哪一對射線？",
+      "options": [
+        "兩面內任意射線",
+        "兩條都平行 \\(l\\) 的射線",
+        "兩面內且都垂直 \\(l\\) 的射線",
+        "一條垂直 \\(l\\)、一條平行 \\(l\\)",
+        "兩條空間歪斜射線"
+      ],
+      "answerIndex": 2,
+      "answer": "兩面內且都垂直 \\(l\\) 的射線",
+      "firstBarrier": "能否辨認二面角的標準量法。",
+      "solution": "二面角由兩半平面內各作一條垂直公共稜的射線來量。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        "把面內任意角誤認為二面角。",
+        null,
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-i-kp6-a",
+      "kpId": "space:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩平面法向量為 \\((1,0,0)\\)、\\((1,1,0)\\)，兩平面的銳二面角為何？",
+      "options": [
+        "\\(30^\\circ\\)",
+        "\\(45^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(135^\\circ\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(45^\\circ\\)",
+      "firstBarrier": "能否由法向量夾角求平面夾角。",
+      "solution": "\\(\\cos\\theta=\\dfrac1{\\sqrt2}\\)，故銳二面角為 \\(45^\\circ\\)。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        null,
+        "把面內任意角誤認為二面角。",
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-v-kp6-c",
+      "kpId": "space:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "把平面圖形沿一條線摺疊時，下列何者保持不變？",
+      "options": [
+        "兩半平面的二面角",
+        "跨越摺線兩點的空間距離",
+        "每個半平面內原有的邊長與角度",
+        "所有點的坐標",
+        "兩平面的法向量"
+      ],
+      "answerIndex": 2,
+      "answer": "每個半平面內原有的邊長與角度",
+      "firstBarrier": "能否辨認摺疊是剛性運動。",
+      "solution": "摺疊不改變各半平面內原有的邊長與角度。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        "把面內任意角誤認為二面角。",
+        null,
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-v-kp6-r",
+      "kpId": "space:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩平面法向量 \\(\\vec n_1,\\vec n_2\\) 滿足何條件時，兩平面垂直？",
+      "options": [
+        "\\(\\vec n_1=\\vec n_2\\)",
+        "\\(\\vec n_1\\parallel\\vec n_2\\)",
+        "\\(\\vec n_1\\cdot\\vec n_2=0\\)",
+        "\\(|\\vec n_1|=|\\vec n_2|\\)",
+        "\\(\\vec n_1\\times\\vec n_2=\\vec0\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\vec n_1\\cdot\\vec n_2=0\\)",
+      "firstBarrier": "能否把平面垂直轉成法向量內積為零。",
+      "solution": "兩平面垂直時，法向量互相垂直，故內積為零。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        "把面內任意角誤認為二面角。",
+        null,
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-v-kp6-a",
+      "kpId": "space:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩半平面的二面角為 \\(60^\\circ\\)。從公共稜同一點向兩面內各作長 \\(2\\) 的垂線，兩垂線端點距離為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(2\\sqrt2\\)",
+        "\\(2\\sqrt3\\)",
+        "\\(4\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\)",
+      "firstBarrier": "能否在二面角截面中使用餘弦定理。",
+      "solution": "距離平方為 \\(2^2+2^2-2\\cdot2\\cdot2\\cos60^\\circ=4\\)，故距離為 \\(2\\)。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        null,
+        "把面內任意角誤認為二面角。",
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-d-kp6-c",
+      "kpId": "space:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列何者最能說明二面角不是兩平面內任意兩線的夾角？",
+      "options": [
+        "兩線必須等長",
+        "兩線必須都垂直公共稜",
+        "兩線必須平行",
+        "兩線必須通過原點",
+        "兩線必須在同一平面"
+      ],
+      "answerIndex": 1,
+      "answer": "兩線必須都垂直公共稜",
+      "firstBarrier": "能否保留二面角定義中的垂直公共稜條件。",
+      "solution": "量二面角的兩條射線必須分別位於兩面內，且都垂直公共稜。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        null,
+        "把面內任意角誤認為二面角。",
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-d-kp6-r",
+      "kpId": "space:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "坐標平面 \\(x=0\\) 與 \\(y=0\\) 的公共稜及二面角分別為何？",
+      "options": [
+        "\\(x\\) 軸，\\(90^\\circ\\)",
+        "\\(y\\) 軸，\\(90^\\circ\\)",
+        "\\(z\\) 軸，\\(90^\\circ\\)",
+        "\\(z\\) 軸，\\(45^\\circ\\)",
+        "原點，\\(90^\\circ\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(z\\) 軸，\\(90^\\circ\\)",
+      "firstBarrier": "能否由兩坐標平面的交集與法向量判讀。",
+      "solution": "同時滿足 \\(x=0,y=0\\) 得 \\(z\\) 軸；法向量 \\((1,0,0)\\)、\\((0,1,0)\\) 垂直，故二面角 \\(90^\\circ\\)。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        "把面內任意角誤認為二面角。",
+        null,
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    },
+    {
+      "id": "space-d-kp6-a",
+      "kpId": "space:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "體",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩平面法向量分別為 \\((1,1,1)\\)、\\((1,-1,0)\\)，兩平面的夾角為何？",
+      "options": [
+        "\\(30^\\circ\\)",
+        "\\(45^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(120^\\circ\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(90^\\circ\\)",
+      "firstBarrier": "能否先由法向量內積判斷兩平面垂直。",
+      "solution": "法向量內積為 \\(1-1+0=0\\)，故兩平面夾角為 \\(90^\\circ\\)。",
+      "distractorNotes": [
+        "未以兩條都垂直公共稜的方向量二面角。",
+        "把面內任意角誤認為二面角。",
+        "摺疊後錯誤改變原圖形的邊長或角度。",
+        null,
+        "法向量夾角、二面角或立體距離計算錯誤。"
+      ]
+    }
+  ]
+}

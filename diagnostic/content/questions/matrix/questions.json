@@ -1,0 +1,2257 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "matrix",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "若 [[A]] 為 [[2\\times3]] 階矩陣、[[B]] 為 [[3\\times4]] 階矩陣，則 [[AB]] 的階數為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2\\times3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2\\times4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3\\times3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3\\times4]]"
+        },
+        {
+          "id": "E",
+          "text": "無法相乘"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "內側的 [[3]] 相同，所以可乘；外側留下 [[2\\times4]]，故 [[AB]] 為 [[2\\times4]] 階。",
+      "distractorMap": {
+        "A": "matrix.KP1.CONCEPT.001",
+        "C": "matrix.KP1.CONCEPT.002",
+        "D": "matrix.KP1.CONCEPT.003",
+        "E": "matrix.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "設 [[A=\\begin{bmatrix}1&2\\\\-1&3\\end{bmatrix}]]、[[B=\\begin{bmatrix}2&0\\\\1&-1\\end{bmatrix}]]，則乘積 [[AB]] 的第 1 列第 2 行元素為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[(AB)_{12}=1\\cdot0+2\\cdot(-1)=-2]]。",
+      "distractorMap": {
+        "A": "matrix.KP1.RECOGNITION.001",
+        "C": "matrix.KP1.RECOGNITION.002",
+        "D": "matrix.KP1.RECOGNITION.003",
+        "E": "matrix.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "若 [[\\begin{bmatrix}1&2\\\\0&1\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=\\begin{bmatrix}5\\\\2\\end{bmatrix}]]，則 [[x+y]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[7]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "由第二列得 [[y=2]]，第一列得 [[x+2y=5]]，故 [[x=1]]，所以 [[x+y=3]]。",
+      "distractorMap": {
+        "A": "matrix.KP1.APPLICATION.001",
+        "B": "matrix.KP1.APPLICATION.002",
+        "D": "matrix.KP1.APPLICATION.003",
+        "E": "matrix.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "下列關於同階方陣的敘述，何者一定正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[AB=BA]]"
+        },
+        {
+          "id": "B",
+          "text": "[[AB=O\\Rightarrow A=O\\text{ 或 }B=O]]"
+        },
+        {
+          "id": "C",
+          "text": "[[AI=IA=A]]"
+        },
+        {
+          "id": "D",
+          "text": "[[AB=AC\\Rightarrow B=C]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(A+B)^2=A^2+2AB+B^2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "單位方陣是矩陣乘法的單位元素，所以 [[AI=IA=A]]；其餘敘述一般不成立。",
+      "distractorMap": {
+        "A": "matrix.KP1.CONCEPT.001",
+        "B": "matrix.KP1.CONCEPT.002",
+        "D": "matrix.KP1.CONCEPT.003",
+        "E": "matrix.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "令 [[S=\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}]]、[[A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}]]，則 [[SA]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{bmatrix}b&a\\\\d&c\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{bmatrix}c&d\\\\a&b\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{bmatrix}a&c\\\\b&d\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}d&c\\\\b&a\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[A]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "直接相乘得 [[SA=\\begin{bmatrix}c&d\\\\a&b\\end{bmatrix}]]，效果是交換 A 的兩列。",
+      "distractorMap": {
+        "A": "matrix.KP1.RECOGNITION.001",
+        "C": "matrix.KP1.RECOGNITION.002",
+        "D": "matrix.KP1.RECOGNITION.003",
+        "E": "matrix.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "已知 [[A+B=\\begin{bmatrix}5&1\\\\2&4\\end{bmatrix}]]、[[A=\\begin{bmatrix}2&-1\\\\3&0\\end{bmatrix}]]，則 [[B]] 的所有元素總和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[B=\\begin{bmatrix}3&2\\\\-1&4\\end{bmatrix}]]，元素和為 [[3+2-1+4=8]]。",
+      "distractorMap": {
+        "A": "matrix.KP1.APPLICATION.001",
+        "B": "matrix.KP1.APPLICATION.002",
+        "D": "matrix.KP1.APPLICATION.003",
+        "E": "matrix.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "一般同階方陣 [[A,B]] 滿足下列哪一個展開式？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(A+B)^2=A^2+2AB+B^2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(A+B)^2=A^2+AB+BA+B^2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(A+B)^2=A^2+BA+B^2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(A+B)^2=A^2+B^2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(A+B)^2=AB+BA]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[(A+B)(A+B)=A^2+AB+BA+B^2]]，因為一般 [[AB\\ne BA]]，不可合併。",
+      "distractorMap": {
+        "A": "matrix.KP1.CONCEPT.001",
+        "C": "matrix.KP1.CONCEPT.002",
+        "D": "matrix.KP1.CONCEPT.003",
+        "E": "matrix.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "計算 [[\\begin{bmatrix}1&0&2\\\\-1&3&1\\end{bmatrix}\\begin{bmatrix}2\\\\1\\\\-1\\end{bmatrix}]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{bmatrix}0\\\\0\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{bmatrix}0\\\\1\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{bmatrix}4\\\\0\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}1\\\\1\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "無法相乘"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "第一個分量為 [[2-2=0]]，第二個分量為 [[-2+3-1=0]]，故結果為零向量。",
+      "distractorMap": {
+        "B": "matrix.KP1.RECOGNITION.001",
+        "C": "matrix.KP1.RECOGNITION.002",
+        "D": "matrix.KP1.RECOGNITION.003",
+        "E": "matrix.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "某兩狀態數量向量為 [[v=\\begin{bmatrix}40\\\\60\\end{bmatrix}]]，經 [[M=\\begin{bmatrix}0.8&0.1\\\\0.2&0.9\\end{bmatrix}]] 作用一次後，第一狀態數量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[32]]"
+        },
+        {
+          "id": "B",
+          "text": "[[34]]"
+        },
+        {
+          "id": "C",
+          "text": "[[38]]"
+        },
+        {
+          "id": "D",
+          "text": "[[46]]"
+        },
+        {
+          "id": "E",
+          "text": "[[54]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "第一狀態為 [[0.8\\cdot40+0.1\\cdot60=32+6=38]]。",
+      "distractorMap": {
+        "A": "matrix.KP1.APPLICATION.001",
+        "B": "matrix.KP1.APPLICATION.002",
+        "D": "matrix.KP1.APPLICATION.003",
+        "E": "matrix.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "矩陣高次方 [[A^n]] 的意義為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "A 的每個元素各自 n 次方"
+        },
+        {
+          "id": "B",
+          "text": "A 與自己相乘 n 次"
+        },
+        {
+          "id": "C",
+          "text": "A 的所有元素乘 n"
+        },
+        {
+          "id": "D",
+          "text": "[[\\det A]] 的 n 次方"
+        },
+        {
+          "id": "E",
+          "text": "A 與 n 階單位方陣相乘"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[A^n]] 表示 [[A]] 依矩陣乘法與自己連乘 n 次。",
+      "distractorMap": {
+        "A": "matrix.KP2.CONCEPT.001",
+        "C": "matrix.KP2.CONCEPT.002",
+        "D": "matrix.KP2.CONCEPT.003",
+        "E": "matrix.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "若 [[A=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}]]，則 [[A^5]] 的第 1 列第 2 行元素為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10]]"
+        },
+        {
+          "id": "E",
+          "text": "[[25]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "可歸納 [[A^n=\\begin{bmatrix}1&n\\\\0&1\\end{bmatrix}]]，故所求為 [[5]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.RECOGNITION.001",
+        "B": "matrix.KP2.RECOGNITION.002",
+        "D": "matrix.KP2.RECOGNITION.003",
+        "E": "matrix.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "設 [[I]] 為二階單位方陣，且 [[A^2=3A-2I]]，則 [[A^5]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5A-4I]]"
+        },
+        {
+          "id": "B",
+          "text": "[[8A-7I]]"
+        },
+        {
+          "id": "C",
+          "text": "[[16A-15I]]"
+        },
+        {
+          "id": "D",
+          "text": "[[31A-30I]]"
+        },
+        {
+          "id": "E",
+          "text": "[[32A-31I]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "依序得 [[A^3=7A-6I]]、[[A^4=15A-14I]]，因此 [[A^5=31A-30I]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.APPLICATION.001",
+        "B": "matrix.KP2.APPLICATION.002",
+        "C": "matrix.KP2.APPLICATION.003",
+        "E": "matrix.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若方陣 [[A]] 滿足 [[A^3=I]]，則 [[A^8]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[I]]"
+        },
+        {
+          "id": "B",
+          "text": "[[A]]"
+        },
+        {
+          "id": "C",
+          "text": "[[A^2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[A^3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[A^5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[A^8=A^6A^2=(A^3)^2A^2=A^2]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.CONCEPT.001",
+        "B": "matrix.KP2.CONCEPT.002",
+        "D": "matrix.KP2.CONCEPT.003",
+        "E": "matrix.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "若 [[A=\\begin{bmatrix}2&0\\\\0&-1\\end{bmatrix}]]，則 [[A^4]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{bmatrix}8&0\\\\0&-4\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{bmatrix}16&0\\\\0&-1\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{bmatrix}16&0\\\\0&1\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}4&0\\\\0&1\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\begin{bmatrix}16&0\\\\0&4\\end{bmatrix}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[A^4=\\begin{bmatrix}2^4&0\\\\0&(-1)^4\\end{bmatrix}=\\begin{bmatrix}16&0\\\\0&1\\end{bmatrix}]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.RECOGNITION.001",
+        "B": "matrix.KP2.RECOGNITION.002",
+        "D": "matrix.KP2.RECOGNITION.003",
+        "E": "matrix.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "若 [[A^2=A+I]]，則 [[A^4]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[A+2I]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2A+I]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3A+2I]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4A+I]]"
+        },
+        {
+          "id": "E",
+          "text": "[[A^2+I]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[A^3=A(A+I)=2A+I]]，所以 [[A^4=A(2A+I)=2A^2+A=3A+2I]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.APPLICATION.001",
+        "B": "matrix.KP2.APPLICATION.002",
+        "D": "matrix.KP2.APPLICATION.003",
+        "E": "matrix.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 [[A^2=O]]，則 [[I+A]] 的反方陣為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[I+A]]"
+        },
+        {
+          "id": "B",
+          "text": "[[I-A]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-I+A]]"
+        },
+        {
+          "id": "D",
+          "text": "[[A]]"
+        },
+        {
+          "id": "E",
+          "text": "不存在"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[(I+A)(I-A)=I-A^2=I]]，故反方陣為 [[I-A]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.CONCEPT.001",
+        "C": "matrix.KP2.CONCEPT.002",
+        "D": "matrix.KP2.CONCEPT.003",
+        "E": "matrix.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "令 [[R=\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}]]，則 [[R^4]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-I]]"
+        },
+        {
+          "id": "B",
+          "text": "[[I]]"
+        },
+        {
+          "id": "C",
+          "text": "[[R]]"
+        },
+        {
+          "id": "D",
+          "text": "[[-R]]"
+        },
+        {
+          "id": "E",
+          "text": "[[O]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[R^2=-I]]，故 [[R^4=I]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.RECOGNITION.001",
+        "C": "matrix.KP2.RECOGNITION.002",
+        "D": "matrix.KP2.RECOGNITION.003",
+        "E": "matrix.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "若 [[A=\\begin{bmatrix}1&1\\\\1&0\\end{bmatrix}]]，則 [[A^3]] 所有元素的總和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[7]]"
+        },
+        {
+          "id": "D",
+          "text": "[[8]]"
+        },
+        {
+          "id": "E",
+          "text": "[[9]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[A^2=\\begin{bmatrix}2&1\\\\1&1\\end{bmatrix}]]，[[A^3=\\begin{bmatrix}3&2\\\\2&1\\end{bmatrix}]]，元素和為 [[8]]。",
+      "distractorMap": {
+        "A": "matrix.KP2.APPLICATION.001",
+        "B": "matrix.KP2.APPLICATION.002",
+        "C": "matrix.KP2.APPLICATION.003",
+        "E": "matrix.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "二階方陣 [[A]] 可逆的充要條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\det A=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\det A\\ne0]]"
+        },
+        {
+          "id": "C",
+          "text": "A 的元素都不為 0"
+        },
+        {
+          "id": "D",
+          "text": "A 為對稱矩陣"
+        },
+        {
+          "id": "E",
+          "text": "A 的兩列元素和相等"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "方陣可逆若且唯若行列式不為零。",
+      "distractorMap": {
+        "A": "matrix.KP3.CONCEPT.001",
+        "C": "matrix.KP3.CONCEPT.002",
+        "D": "matrix.KP3.CONCEPT.003",
+        "E": "matrix.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "若 [[A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}]] 且 [[ad-bc\\ne0]]，則 [[A^{-1}]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\dfrac1{ad-bc}\\begin{bmatrix}a&-b\\\\-c&d\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac1{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac1{ad+bc}\\begin{bmatrix}d&b\\\\c&a\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}d&-c\\\\-b&a\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac1{ad-bc}A]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "二階反方陣公式為 [[A^{-1}=\\dfrac1{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.RECOGNITION.001",
+        "C": "matrix.KP3.RECOGNITION.002",
+        "D": "matrix.KP3.RECOGNITION.003",
+        "E": "matrix.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "若 [[\\begin{bmatrix}2&1\\\\1&1\\end{bmatrix}X=I]]，則 [[X]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{bmatrix}2&-1\\\\-1&1\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{bmatrix}1&1\\\\1&2\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{bmatrix}1&-1\\\\-1&2\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}1&-1\\\\1&2\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\begin{bmatrix}2&1\\\\1&1\\end{bmatrix}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "行列式為 [[1]]，故 [[X=A^{-1}=\\begin{bmatrix}1&-1\\\\-1&2\\end{bmatrix}]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.APPLICATION.001",
+        "B": "matrix.KP3.APPLICATION.002",
+        "D": "matrix.KP3.APPLICATION.003",
+        "E": "matrix.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若可逆方陣 [[A,B]] 同階，則 [[(AB)^{-1}]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[A^{-1}B^{-1}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[B^{-1}A^{-1}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[AB^{-1}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[A^{-1}B]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(A+B)^{-1}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[(AB)(B^{-1}A^{-1})=I]]，所以 [[(AB)^{-1}=B^{-1}A^{-1}]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.CONCEPT.001",
+        "C": "matrix.KP3.CONCEPT.002",
+        "D": "matrix.KP3.CONCEPT.003",
+        "E": "matrix.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "若 [[AX=B]] 且 [[A]] 可逆，則 [[X]] 應寫成何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[BA^{-1}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[A^{-1}B]]"
+        },
+        {
+          "id": "C",
+          "text": "[[AB^{-1}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[B^{-1}A]]"
+        },
+        {
+          "id": "E",
+          "text": "[[A+B]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "左乘 [[A^{-1}]]：[[A^{-1}AX=A^{-1}B]]，故 [[X=A^{-1}B]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.RECOGNITION.001",
+        "C": "matrix.KP3.RECOGNITION.002",
+        "D": "matrix.KP3.RECOGNITION.003",
+        "E": "matrix.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "若 [[\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}X=\\begin{bmatrix}4&2\\\\3&6\\end{bmatrix}]]，則 [[X]] 所有元素總和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[7]]"
+        },
+        {
+          "id": "E",
+          "text": "[[9]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[X=\\begin{bmatrix}1/2&0\\\\0&1/3\\end{bmatrix}\\begin{bmatrix}4&2\\\\3&6\\end{bmatrix}=\\begin{bmatrix}2&1\\\\1&2\\end{bmatrix}]]，元素和為 [[6]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.APPLICATION.001",
+        "B": "matrix.KP3.APPLICATION.002",
+        "D": "matrix.KP3.APPLICATION.003",
+        "E": "matrix.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 [[A]] 為二階方陣，則 [[\\det(3A)]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3\\det A]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6\\det A]]"
+        },
+        {
+          "id": "C",
+          "text": "[[9\\det A]]"
+        },
+        {
+          "id": "D",
+          "text": "[[27\\det A]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(\\det A)^3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "二階方陣每一列都乘 3，所以行列式乘 [[3^2=9]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.CONCEPT.001",
+        "B": "matrix.KP3.CONCEPT.002",
+        "D": "matrix.KP3.CONCEPT.003",
+        "E": "matrix.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "方陣 [[A=\\begin{bmatrix}a&1\\\\2&a\\end{bmatrix}]] 可逆的條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a\\ne0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a\\ne1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a^2\\ne2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a>2]]"
+        },
+        {
+          "id": "E",
+          "text": "所有實數 a 都可逆"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\det A=a^2-2]]，故可逆條件為 [[a^2\\ne2]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.RECOGNITION.001",
+        "B": "matrix.KP3.RECOGNITION.002",
+        "D": "matrix.KP3.RECOGNITION.003",
+        "E": "matrix.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "若 [[X\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}]]，則 [[X]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{bmatrix}0&2\\\\3&0\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{bmatrix}0&3\\\\2&0\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}3&0\\\\0&2\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[I]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "交換矩陣 [[S]] 滿足 [[S^{-1}=S]]，故 [[X=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}S=\\begin{bmatrix}0&2\\\\3&0\\end{bmatrix}]]。",
+      "distractorMap": {
+        "A": "matrix.KP3.APPLICATION.001",
+        "C": "matrix.KP3.APPLICATION.002",
+        "D": "matrix.KP3.APPLICATION.003",
+        "E": "matrix.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "三元一次方程組經消去後恰有唯一解，列梯形矩陣至少應具備何種特徵？",
+      "options": [
+        {
+          "id": "A",
+          "text": "出現一列全為 0"
+        },
+        {
+          "id": "B",
+          "text": "每個未知數欄都有樞紐"
+        },
+        {
+          "id": "C",
+          "text": "常數欄必為 0"
+        },
+        {
+          "id": "D",
+          "text": "所有係數皆為正"
+        },
+        {
+          "id": "E",
+          "text": "三列彼此相同"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "三個未知數欄都要有樞紐，才沒有自由變數且方程組一致。",
+      "distractorMap": {
+        "A": "matrix.KP4.CONCEPT.001",
+        "C": "matrix.KP4.CONCEPT.002",
+        "D": "matrix.KP4.CONCEPT.003",
+        "E": "matrix.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "增廣矩陣中若出現一列 [[\\begin{bmatrix}0&0&0&|&1\\end{bmatrix}]]，方程組的解況為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "唯一解"
+        },
+        {
+          "id": "B",
+          "text": "無限多解"
+        },
+        {
+          "id": "C",
+          "text": "無解"
+        },
+        {
+          "id": "D",
+          "text": "恰有兩解"
+        },
+        {
+          "id": "E",
+          "text": "無法判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "此列代表 [[0=1]]，產生矛盾，因此方程組無解。",
+      "distractorMap": {
+        "A": "matrix.KP4.RECOGNITION.001",
+        "B": "matrix.KP4.RECOGNITION.002",
+        "D": "matrix.KP4.RECOGNITION.003",
+        "E": "matrix.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "某方程組消去後增廣矩陣為 [[\\left[\\begin{array}{ccc|c}1&2&-1&3\\\\0&a&1&2\\\\0&0&a-1&b\\end{array}\\right]]]。無論 b 為何，恰有唯一解的 a 條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a=1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a\\ne0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a\\ne1]]"
+        },
+        {
+          "id": "E",
+          "text": "[[a\\ne0\\text{ 且 }a\\ne1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "E"
+        ]
+      },
+      "explanation": "唯一解需 [[1,a,a-1]] 均不為零，故 [[a\\ne0]] 且 [[a\\ne1]]。",
+      "distractorMap": {
+        "A": "matrix.KP4.APPLICATION.001",
+        "B": "matrix.KP4.APPLICATION.002",
+        "C": "matrix.KP4.APPLICATION.003",
+        "D": "matrix.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "一個一致的三元一次方程組只有兩個樞紐，則其解況為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "唯一解"
+        },
+        {
+          "id": "B",
+          "text": "無解"
+        },
+        {
+          "id": "C",
+          "text": "無限多解"
+        },
+        {
+          "id": "D",
+          "text": "恰有兩解"
+        },
+        {
+          "id": "E",
+          "text": "一定全為零解"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "三個未知數只有兩個樞紐，至少有一個自由變數；又已知一致，因此有無限多解。",
+      "distractorMap": {
+        "A": "matrix.KP4.CONCEPT.001",
+        "B": "matrix.KP4.CONCEPT.002",
+        "D": "matrix.KP4.CONCEPT.003",
+        "E": "matrix.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "列梯形增廣矩陣為 [[\\left[\\begin{array}{ccc|c}1&0&2&5\\\\0&1&-1&1\\\\0&0&1&2\\end{array}\\right]]]，則 [[x]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "先得 [[z=2]]，再由第一列 [[x+2z=5]]，故 [[x=1]]。",
+      "distractorMap": {
+        "A": "matrix.KP4.RECOGNITION.001",
+        "B": "matrix.KP4.RECOGNITION.002",
+        "D": "matrix.KP4.RECOGNITION.003",
+        "E": "matrix.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "解方程組 [[\\begin{cases}x+y+z=6\\\\x-y=0\\\\z=2\\end{cases}]]，則 [[x]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由 [[z=2]]、[[x=y]]，代入第一式得 [[2x+2=6]]，故 [[x=2]]。",
+      "distractorMap": {
+        "A": "matrix.KP4.APPLICATION.001",
+        "C": "matrix.KP4.APPLICATION.002",
+        "D": "matrix.KP4.APPLICATION.003",
+        "E": "matrix.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "高斯消去中的基本列運算，對原方程組解集合有何影響？",
+      "options": [
+        {
+          "id": "A",
+          "text": "一定增加解的個數"
+        },
+        {
+          "id": "B",
+          "text": "一定減少解的個數"
+        },
+        {
+          "id": "C",
+          "text": "保持解集合不變"
+        },
+        {
+          "id": "D",
+          "text": "把所有解變成零解"
+        },
+        {
+          "id": "E",
+          "text": "只保留整數解"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "交換兩列、非零倍乘一列、以一列倍數加到另一列都保持方程組解集合不變。",
+      "distractorMap": {
+        "A": "matrix.KP4.CONCEPT.001",
+        "B": "matrix.KP4.CONCEPT.002",
+        "D": "matrix.KP4.CONCEPT.003",
+        "E": "matrix.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "方程組 [[\\begin{cases}x+y=2\\\\2x+2y=k\\end{cases}]] 無解的條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[k=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[k=2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[k=4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[k\\ne4]]"
+        },
+        {
+          "id": "E",
+          "text": "所有 k 都無解"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "第二式左側是第一式的 2 倍；一致需 [[k=4]]，所以 [[k\\ne4]] 時無解。",
+      "distractorMap": {
+        "A": "matrix.KP4.RECOGNITION.001",
+        "B": "matrix.KP4.RECOGNITION.002",
+        "C": "matrix.KP4.RECOGNITION.003",
+        "E": "matrix.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "解方程組 [[\\begin{cases}x+y+z=1\\\\x-y=1\\\\z=0\\end{cases}]]，則 [[(x,y,z)]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(0,1,0)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,0,0)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(1,1,0)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(0,0,1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(1,-1,0)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由 [[z=0]]，得 [[x+y=1]]、[[x-y=1]]。相加得 [[x=1]]，故 [[y=0]]。",
+      "distractorMap": {
+        "A": "matrix.KP4.APPLICATION.001",
+        "C": "matrix.KP4.APPLICATION.002",
+        "D": "matrix.KP4.APPLICATION.003",
+        "E": "matrix.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "若線性變換矩陣為 [[M]]，則 M 的第一行與第二行分別代表什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩個橫列的總和"
+        },
+        {
+          "id": "B",
+          "text": "基底向量 [[(1,0)]]、[[(0,1)]] 的像"
+        },
+        {
+          "id": "C",
+          "text": "兩條座標軸的斜率"
+        },
+        {
+          "id": "D",
+          "text": "行列式與跡"
+        },
+        {
+          "id": "E",
+          "text": "兩個特徵值"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[M(1,0)^T]] 與 [[M(0,1)^T]] 分別取出 M 的第一、第二行，因此兩行就是兩個基底向量的像。",
+      "distractorMap": {
+        "A": "matrix.KP5.CONCEPT.001",
+        "C": "matrix.KP5.CONCEPT.002",
+        "D": "matrix.KP5.CONCEPT.003",
+        "E": "matrix.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "下列哪個矩陣表示以原點為中心逆時針旋轉 [[90^\\circ]]？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{bmatrix}0&1\\\\-1&0\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{bmatrix}-1&0\\\\0&1\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[I]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "逆時針旋轉 [[90^\\circ]] 的矩陣為 [[\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}]]。",
+      "distractorMap": {
+        "A": "matrix.KP5.RECOGNITION.001",
+        "C": "matrix.KP5.RECOGNITION.002",
+        "D": "matrix.KP5.RECOGNITION.003",
+        "E": "matrix.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "線性變換 T 滿足 [[T(1,0)=(2,1)]]、[[T(0,1)=(-1,1)]]。三角形 O(0,0)、P(1,0)、Q(0,1) 經 T 變換後面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\dfrac12]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac32]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "變換矩陣為 [[\\begin{bmatrix}2&-1\\\\1&1\\end{bmatrix}]]，行列式為 3；原面積 [[1/2]]，故像面積為 [[3/2]]。",
+      "distractorMap": {
+        "A": "matrix.KP5.APPLICATION.001",
+        "B": "matrix.KP5.APPLICATION.002",
+        "D": "matrix.KP5.APPLICATION.003",
+        "E": "matrix.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "平面線性變換矩陣為 M，任意圖形的面積倍率為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\det M]]"
+        },
+        {
+          "id": "B",
+          "text": "[[|\\det M|]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(\\det M)^2]]"
+        },
+        {
+          "id": "D",
+          "text": "矩陣元素總和"
+        },
+        {
+          "id": "E",
+          "text": "矩陣跡"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "面積倍率為 [[|\\det M|]]；行列式負號只表示方向反轉。",
+      "distractorMap": {
+        "A": "matrix.KP5.CONCEPT.001",
+        "C": "matrix.KP5.CONCEPT.002",
+        "D": "matrix.KP5.CONCEPT.003",
+        "E": "matrix.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "下列哪個矩陣表示對 x 軸鏡射？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\begin{bmatrix}-1&0\\\\0&1\\end{bmatrix}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\begin{bmatrix}0&-1\\\\-1&0\\end{bmatrix}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[-I]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[(x,y)\\mapsto(x,-y)]]，故矩陣為 [[\\begin{bmatrix}1&0\\\\0&-1\\end{bmatrix}]]。",
+      "distractorMap": {
+        "A": "matrix.KP5.RECOGNITION.001",
+        "C": "matrix.KP5.RECOGNITION.002",
+        "D": "matrix.KP5.RECOGNITION.003",
+        "E": "matrix.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "線性變換 [[T(x,y)=(x+y,x-y)]]，則點 [[(2,1)]] 的像為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(1,3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(3,1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(3,-1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,0)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(1,1)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[T(2,1)=(2+1,2-1)=(3,1)]]。",
+      "distractorMap": {
+        "A": "matrix.KP5.APPLICATION.001",
+        "C": "matrix.KP5.APPLICATION.002",
+        "D": "matrix.KP5.APPLICATION.003",
+        "E": "matrix.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "先做線性變換 A，再做線性變換 B，合成變換矩陣為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[AB]]"
+        },
+        {
+          "id": "B",
+          "text": "[[BA]]"
+        },
+        {
+          "id": "C",
+          "text": "[[A+B]]"
+        },
+        {
+          "id": "D",
+          "text": "[[A-B]]"
+        },
+        {
+          "id": "E",
+          "text": "[[B^{-1}A]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "向量 v 先變成 Av，再變成 B(Av)=BAv，所以合成矩陣為 BA。",
+      "distractorMap": {
+        "A": "matrix.KP5.CONCEPT.001",
+        "C": "matrix.KP5.CONCEPT.002",
+        "D": "matrix.KP5.CONCEPT.003",
+        "E": "matrix.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "若平面變換矩陣 M 滿足 [[\\det M=-2]]，下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "面積縮小為一半且方向不變"
+        },
+        {
+          "id": "B",
+          "text": "面積放大 2 倍且方向反轉"
+        },
+        {
+          "id": "C",
+          "text": "面積放大 2 倍且方向不變"
+        },
+        {
+          "id": "D",
+          "text": "面積不變且方向反轉"
+        },
+        {
+          "id": "E",
+          "text": "圖形必壓成一直線"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[|\\det M|=2]] 表示面積放大 2 倍；負號表示定向反轉。",
+      "distractorMap": {
+        "A": "matrix.KP5.RECOGNITION.001",
+        "C": "matrix.KP5.RECOGNITION.002",
+        "D": "matrix.KP5.RECOGNITION.003",
+        "E": "matrix.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "matrix-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "matrix:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "點 [[(1,2)]] 先逆時針旋轉 [[90^\\circ]]，再對 x 軸鏡射，最後的像為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-2,-1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(-2,1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(2,-1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(1,-2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "先旋轉得 [[(-2,1)]]，再對 x 軸鏡射得 [[(-2,-1)]]。",
+      "distractorMap": {
+        "B": "matrix.KP5.APPLICATION.001",
+        "C": "matrix.KP5.APPLICATION.002",
+        "D": "matrix.KP5.APPLICATION.003",
+        "E": "matrix.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "矩陣 45 題教師核准（2026-08-14）"
+      }
+    }
+  ]
+}

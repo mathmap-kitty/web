@@ -1,0 +1,2257 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "explog",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "若 [[a>0]]、[[a\\ne1]]，且 [[a^u=a^v]]，則下列何者必定成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[u+v=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[u=v]]"
+        },
+        {
+          "id": "C",
+          "text": "[[uv=1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[u=-v]]"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "因底數合法且不為 1，指數函數為一對一函數，所以 [[u=v]]。",
+      "distractorMap": {
+        "A": "explog.KP1.CONCEPT.001",
+        "C": "explog.KP1.CONCEPT.002",
+        "D": "explog.KP1.CONCEPT.003",
+        "E": "explog.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "將 [[\\sqrt[3]{x^2}]] 寫成有理指數形式，何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x^{2/3}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x^{3/2}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x^{-2/3}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2x^{1/3}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3x^{1/2}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\sqrt[3]{x^2}=(x^2)^{1/3}=x^{2/3}]]。",
+      "distractorMap": {
+        "B": "explog.KP1.RECOGNITION.001",
+        "C": "explog.KP1.RECOGNITION.002",
+        "D": "explog.KP1.RECOGNITION.003",
+        "E": "explog.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "解方程式 [[(1/8)^{x-1}=4^{2-x}]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[1]]"
+        },
+        {
+          "id": "E",
+          "text": "[[2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "將兩邊化為底數 2：[[2^{-3x+3}=2^{4-2x}]]，故 [[-3x+3=4-2x]]，得到 [[x=-1]]。",
+      "distractorMap": {
+        "A": "explog.KP1.APPLICATION.001",
+        "C": "explog.KP1.APPLICATION.002",
+        "D": "explog.KP1.APPLICATION.003",
+        "E": "explog.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "下列何者與 [[a^{-3}]] 相等？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-a^3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1/a^3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1/(3a)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a/3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3/a]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "依負指數定義，[[a^{-3}=1/a^3]]。",
+      "distractorMap": {
+        "A": "explog.KP1.CONCEPT.001",
+        "C": "explog.KP1.CONCEPT.002",
+        "D": "explog.KP1.CONCEPT.003",
+        "E": "explog.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "化簡 [[(27x^6)^{1/3}]]，其中 [[x>0]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3x^2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[9x^2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3x^3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[27x^2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3x^6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[27^{1/3}=3]]，且 [[(x^6)^{1/3}=x^2]]，故為 [[3x^2]]。",
+      "distractorMap": {
+        "B": "explog.KP1.RECOGNITION.001",
+        "C": "explog.KP1.RECOGNITION.002",
+        "D": "explog.KP1.RECOGNITION.003",
+        "E": "explog.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "解方程式 [[9^{x+1}=27^{2x-1}]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3/4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5/4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[5/2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "化為 [[3^{2x+2}=3^{6x-3}]]，所以 [[2x+2=6x-3]]，得 [[x=5/4]]。",
+      "distractorMap": {
+        "A": "explog.KP1.APPLICATION.001",
+        "B": "explog.KP1.APPLICATION.002",
+        "D": "explog.KP1.APPLICATION.003",
+        "E": "explog.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 [[0<a<1]]，則 [[a^x]] 隨 [[x]] 增加如何變化？",
+      "options": [
+        {
+          "id": "A",
+          "text": "嚴格遞增"
+        },
+        {
+          "id": "B",
+          "text": "嚴格遞減"
+        },
+        {
+          "id": "C",
+          "text": "保持不變"
+        },
+        {
+          "id": "D",
+          "text": "先增後減"
+        },
+        {
+          "id": "E",
+          "text": "沒有固定趨勢"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "底數介於 0 與 1 時，指數函數嚴格遞減。",
+      "distractorMap": {
+        "A": "explog.KP1.CONCEPT.001",
+        "C": "explog.KP1.CONCEPT.002",
+        "D": "explog.KP1.CONCEPT.003",
+        "E": "explog.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "[[16^{3/4}]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8]]"
+        },
+        {
+          "id": "D",
+          "text": "[[12]]"
+        },
+        {
+          "id": "E",
+          "text": "[[64]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[16^{3/4}=(16^{1/4})^3=2^3=8]]。",
+      "distractorMap": {
+        "A": "explog.KP1.RECOGNITION.001",
+        "B": "explog.KP1.RECOGNITION.002",
+        "D": "explog.KP1.RECOGNITION.003",
+        "E": "explog.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "解方程式 [[2^{2x}-5\\cdot2^x+4=0]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x=2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x=0]] 或 [[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x=1]] 或 [[4]]"
+        },
+        {
+          "id": "E",
+          "text": "無解"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "令 [[t=2^x]]，則 [[t^2-5t+4=0]]，得 [[t=1]] 或 [[4]]，故 [[x=0]] 或 [[2]]。",
+      "distractorMap": {
+        "A": "explog.KP1.APPLICATION.001",
+        "B": "explog.KP1.APPLICATION.002",
+        "D": "explog.KP1.APPLICATION.003",
+        "E": "explog.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "[[\\log_a b]] 有意義的必要條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a>0,b>0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a>0,a\\ne1,b>0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a\\ne0,b\\ge0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a>1,b>0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[a<0,b>0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "實數對數要求底數 [[a>0]]、[[a\\ne1]]，真數 [[b>0]]。",
+      "distractorMap": {
+        "A": "explog.KP2.CONCEPT.001",
+        "C": "explog.KP2.CONCEPT.002",
+        "D": "explog.KP2.CONCEPT.003",
+        "E": "explog.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "[[\\log_3 81]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[9]]"
+        },
+        {
+          "id": "E",
+          "text": "[[27]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "因 [[3^4=81]]，所以 [[\\log_3 81=4]]。",
+      "distractorMap": {
+        "A": "explog.KP2.RECOGNITION.001",
+        "B": "explog.KP2.RECOGNITION.002",
+        "D": "explog.KP2.RECOGNITION.003",
+        "E": "explog.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "解方程式 [[\\log_2(x-1)+\\log_2(x+1)=3]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[-3]] 或 [[3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "真數條件給 [[x>1]]。合併得 [[\\log_2[(x-1)(x+1)]=3]]，所以 [[x^2-1=8]]，只有 [[x=3]] 合法。",
+      "distractorMap": {
+        "A": "explog.KP2.APPLICATION.001",
+        "B": "explog.KP2.APPLICATION.002",
+        "C": "explog.KP2.APPLICATION.003",
+        "E": "explog.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "下列對數性質何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\log_a(M+N)=\\log_aM+\\log_aN]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\log_a(MN)=\\log_aM+\\log_aN]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\log_a(M/N)=\\log_aM\\,/\\,\\log_aN]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\log_a(M^r)=(\\log_aM)^r]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\log_a1=1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "對數的乘法公式為 [[\\log_a(MN)=\\log_aM+\\log_aN]]。",
+      "distractorMap": {
+        "A": "explog.KP2.CONCEPT.001",
+        "C": "explog.KP2.CONCEPT.002",
+        "D": "explog.KP2.CONCEPT.003",
+        "E": "explog.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "化簡 [[2\\log_3x-\\log_3y]]，其中 [[x,y>0]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\log_3(2x-y)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\log_3(x^2/y)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\log_3(x^2-y)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\log_3(2x/y)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\log_3(x/y^2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[2\\log_3x=\\log_3x^2]]，再相減得 [[\\log_3(x^2/y)]]。",
+      "distractorMap": {
+        "A": "explog.KP2.RECOGNITION.001",
+        "C": "explog.KP2.RECOGNITION.002",
+        "D": "explog.KP2.RECOGNITION.003",
+        "E": "explog.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "解方程式 [[\\log_5(x+4)-\\log_5x=1]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4/5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "E",
+          "text": "無解"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "由 [[x>0]]，合併得 [[\\log_5[(x+4)/x]=1]]，故 [[(x+4)/x=5]]，得 [[x=1]]。",
+      "distractorMap": {
+        "B": "explog.KP2.APPLICATION.001",
+        "C": "explog.KP2.APPLICATION.002",
+        "D": "explog.KP2.APPLICATION.003",
+        "E": "explog.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 [[M>0]]，則 [[\\log_a(M^2)]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(\\log_aM)^2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2\\log_aM]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\log_aM+2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\log_a(2M)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac12\\log_aM]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "依冪次公式，[[\\log_a(M^2)=2\\log_aM]]。",
+      "distractorMap": {
+        "A": "explog.KP2.CONCEPT.001",
+        "C": "explog.KP2.CONCEPT.002",
+        "D": "explog.KP2.CONCEPT.003",
+        "E": "explog.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "方程式 [[\\log_2(x-3)=0]] 的解為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        },
+        {
+          "id": "E",
+          "text": "[[5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[\\log_2(x-3)=0]] 表示 [[x-3=2^0=1]]，所以 [[x=4]]。",
+      "distractorMap": {
+        "A": "explog.KP2.RECOGNITION.001",
+        "B": "explog.KP2.RECOGNITION.002",
+        "C": "explog.KP2.RECOGNITION.003",
+        "E": "explog.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "解不等式 [[\\log_{1/2}(x-1)>-2]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x>5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1<x<5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x<5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[0<x<5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[x>1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "先得 [[x>1]]。因底數 [[1/2<1]]，故 [[x-1<(1/2)^{-2}=4]]，所以 [[1<x<5]]。",
+      "distractorMap": {
+        "A": "explog.KP2.APPLICATION.001",
+        "C": "explog.KP2.APPLICATION.002",
+        "D": "explog.KP2.APPLICATION.003",
+        "E": "explog.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "若 [[N]] 是正整數，且 [[10^{k-1}\\le N<10^k]]，則 [[N]] 有幾位數？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[k-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[k]]"
+        },
+        {
+          "id": "C",
+          "text": "[[k+1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10k]]"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "位於 [[10^{k-1}]] 至 [[10^k]] 之前的正整數恰有 [[k]] 位。",
+      "distractorMap": {
+        "A": "explog.KP3.CONCEPT.001",
+        "C": "explog.KP3.CONCEPT.002",
+        "D": "explog.KP3.CONCEPT.003",
+        "E": "explog.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "已知 [[\\log2\\approx0.3010]]，則 [[\\log8]] 約為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0.3010]]"
+        },
+        {
+          "id": "B",
+          "text": "[[0.6020]]"
+        },
+        {
+          "id": "C",
+          "text": "[[0.9030]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2.4080]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3.0100]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\log8=\\log(2^3)=3\\log2\\approx0.9030]]。",
+      "distractorMap": {
+        "A": "explog.KP3.RECOGNITION.001",
+        "B": "explog.KP3.RECOGNITION.002",
+        "D": "explog.KP3.RECOGNITION.003",
+        "E": "explog.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "已知 [[\\log2\\approx0.3010]]。將 [[2^{100}]] 寫成 [[a\\times10^n]]，其中 [[1\\le a<10]]，則 [[([a],n)]] 為何？[[[a]]] 表示不超過 [[a]] 的最大整數。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(1,30)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,31)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(2,30)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,31)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(3,30)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\log(2^{100})\\approx30.10]]，所以 [[2^{100}=10^{0.10}\\times10^{30}]]。因 [[1<10^{0.10}<2]]，故 [[[a]=1,n=30]]。",
+      "distractorMap": {
+        "B": "explog.KP3.APPLICATION.001",
+        "C": "explog.KP3.APPLICATION.002",
+        "D": "explog.KP3.APPLICATION.003",
+        "E": "explog.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "正數 [[N]] 的常用對數為 [[m+\\theta]]，其中 [[m]] 為整數且 [[0\\le\\theta<1]]。若 [[N\\ge1]]，則其整數部分位數為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[m]]"
+        },
+        {
+          "id": "B",
+          "text": "[[m+1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\theta]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10^m]]"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[m\\le\\log N<m+1]]，故 [[10^m\\le N<10^{m+1}]]，位數為 [[m+1]]。",
+      "distractorMap": {
+        "A": "explog.KP3.CONCEPT.001",
+        "C": "explog.KP3.CONCEPT.002",
+        "D": "explog.KP3.CONCEPT.003",
+        "E": "explog.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "已知 [[\\log3\\approx0.4771]]，則 [[3^{20}]] 有幾位數？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[9]]"
+        },
+        {
+          "id": "B",
+          "text": "[[10]]"
+        },
+        {
+          "id": "C",
+          "text": "[[11]]"
+        },
+        {
+          "id": "D",
+          "text": "[[20]]"
+        },
+        {
+          "id": "E",
+          "text": "[[21]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\log(3^{20})\\approx20\\times0.4771=9.542]]，所以有 [[9+1=10]] 位。",
+      "distractorMap": {
+        "A": "explog.KP3.RECOGNITION.001",
+        "C": "explog.KP3.RECOGNITION.002",
+        "D": "explog.KP3.RECOGNITION.003",
+        "E": "explog.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "已知 [[\\log2\\approx0.3010]]，則 [[5^{30}]] 有幾位數？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[19]]"
+        },
+        {
+          "id": "B",
+          "text": "[[20]]"
+        },
+        {
+          "id": "C",
+          "text": "[[21]]"
+        },
+        {
+          "id": "D",
+          "text": "[[30]]"
+        },
+        {
+          "id": "E",
+          "text": "[[31]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\log5\\approx0.6990]]，所以 [[\\log(5^{30})\\approx20.970]]，位數為 21。",
+      "distractorMap": {
+        "A": "explog.KP3.APPLICATION.001",
+        "B": "explog.KP3.APPLICATION.002",
+        "D": "explog.KP3.APPLICATION.003",
+        "E": "explog.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 [[0<N<1]]，則 [[\\log N]] 的正負為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "正"
+        },
+        {
+          "id": "B",
+          "text": "負"
+        },
+        {
+          "id": "C",
+          "text": "零"
+        },
+        {
+          "id": "D",
+          "text": "必為整數"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "因 [[\\log1=0]]，且常用對數遞增，所以 [[0<N<1]] 時 [[\\log N<0]]。",
+      "distractorMap": {
+        "A": "explog.KP3.CONCEPT.001",
+        "C": "explog.KP3.CONCEPT.002",
+        "D": "explog.KP3.CONCEPT.003",
+        "E": "explog.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "[[\\log(4\\times10^7)]] 的整數部分為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[7]]"
+        },
+        {
+          "id": "D",
+          "text": "[[8]]"
+        },
+        {
+          "id": "E",
+          "text": "[[11]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\log(4\\times10^7)=7+\\log4]]，且 [[0<\\log4<1]]，所以整數部分為 7。",
+      "distractorMap": {
+        "A": "explog.KP3.RECOGNITION.001",
+        "B": "explog.KP3.RECOGNITION.002",
+        "D": "explog.KP3.RECOGNITION.003",
+        "E": "explog.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "已知 [[\\log2\\approx0.3010]]，[[2^n]] 首次超過一百萬時，最小的正整數 [[n]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[19]]"
+        },
+        {
+          "id": "B",
+          "text": "[[20]]"
+        },
+        {
+          "id": "C",
+          "text": "[[21]]"
+        },
+        {
+          "id": "D",
+          "text": "[[22]]"
+        },
+        {
+          "id": "E",
+          "text": "[[30]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "需 [[n\\log2>6]]，即 [[n>6/0.3010\\approx19.93]]，所以最小正整數為 20。",
+      "distractorMap": {
+        "A": "explog.KP3.APPLICATION.001",
+        "C": "explog.KP3.APPLICATION.002",
+        "D": "explog.KP3.APPLICATION.003",
+        "E": "explog.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "函數 [[y=\\log_a x]] 與 [[y=a^x]] 的圖形關係為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "關於 x 軸對稱"
+        },
+        {
+          "id": "B",
+          "text": "關於 y 軸對稱"
+        },
+        {
+          "id": "C",
+          "text": "關於直線 [[y=x]] 對稱"
+        },
+        {
+          "id": "D",
+          "text": "完全重合"
+        },
+        {
+          "id": "E",
+          "text": "相差一個單位"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩函數互為反函數，因此圖形關於直線 [[y=x]] 對稱。",
+      "distractorMap": {
+        "A": "explog.KP4.CONCEPT.001",
+        "B": "explog.KP4.CONCEPT.002",
+        "D": "explog.KP4.CONCEPT.003",
+        "E": "explog.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "下列哪一個關係式所表示的圖形，與 [[y=\\log_2x]] 的圖形完全相同？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2y=\\log_2(x^2)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[y=\\log_2(2x)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x=2^y]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x=2^{-y}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[y=\\log_2|x|]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[y=\\log_2x]] 與 [[x=2^y]] 等價，且都要求 [[x>0]]。其餘選項有平移、反射或多出負半軸。",
+      "distractorMap": {
+        "A": "explog.KP4.RECOGNITION.001",
+        "B": "explog.KP4.RECOGNITION.002",
+        "D": "explog.KP4.RECOGNITION.003",
+        "E": "explog.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "函數 [[y=2^{x-1}+3]] 的水平漸近線為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x=1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x=3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[y=1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[y=2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[y=3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "E"
+        ]
+      },
+      "explanation": "[[2^{x-1}]] 的水平漸近線為 [[y=0]]，向上平移 3 後為 [[y=3]]。",
+      "distractorMap": {
+        "A": "explog.KP4.APPLICATION.001",
+        "B": "explog.KP4.APPLICATION.002",
+        "C": "explog.KP4.APPLICATION.003",
+        "D": "explog.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "[[y=\\log_2(x-4)]] 可由 [[y=\\log_2x]] 如何平移得到？",
+      "options": [
+        {
+          "id": "A",
+          "text": "向左 4"
+        },
+        {
+          "id": "B",
+          "text": "向右 4"
+        },
+        {
+          "id": "C",
+          "text": "向上 4"
+        },
+        {
+          "id": "D",
+          "text": "向下 4"
+        },
+        {
+          "id": "E",
+          "text": "關於 y 軸對稱"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "以 [[x-4]] 取代 [[x]]，圖形向右平移 4。",
+      "distractorMap": {
+        "A": "explog.KP4.CONCEPT.001",
+        "C": "explog.KP4.CONCEPT.002",
+        "D": "explog.KP4.CONCEPT.003",
+        "E": "explog.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "函數 [[y=(1/3)^x]] 的圖形必通過哪一點？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(0,0)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(0,1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(1,0)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(3,1)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "當 [[x=0]] 時，[[(1/3)^0=1]]，故通過 [[(0,1)]]。",
+      "distractorMap": {
+        "A": "explog.KP4.RECOGNITION.001",
+        "C": "explog.KP4.RECOGNITION.002",
+        "D": "explog.KP4.RECOGNITION.003",
+        "E": "explog.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "[[y=-\\log_2x+1]] 可由 [[y=\\log_2x]] 依序做何種變換？",
+      "options": [
+        {
+          "id": "A",
+          "text": "關於 x 軸對稱，再向上 1"
+        },
+        {
+          "id": "B",
+          "text": "關於 y 軸對稱，再向上 1"
+        },
+        {
+          "id": "C",
+          "text": "向右 1"
+        },
+        {
+          "id": "D",
+          "text": "向左 1"
+        },
+        {
+          "id": "E",
+          "text": "關於 [[y=x]] 對稱"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "函數外乘 [[-1]] 是關於 x 軸對稱，再加 1 是向上平移 1。",
+      "distractorMap": {
+        "B": "explog.KP4.APPLICATION.001",
+        "C": "explog.KP4.APPLICATION.002",
+        "D": "explog.KP4.APPLICATION.003",
+        "E": "explog.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 [[a>1]]，則 [[y=\\log_a x]] 的單調性為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "嚴格遞增"
+        },
+        {
+          "id": "B",
+          "text": "嚴格遞減"
+        },
+        {
+          "id": "C",
+          "text": "常數函數"
+        },
+        {
+          "id": "D",
+          "text": "先減後增"
+        },
+        {
+          "id": "E",
+          "text": "週期函數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "底數大於 1 時，對數函數在 [[x>0]] 上嚴格遞增。",
+      "distractorMap": {
+        "B": "explog.KP4.CONCEPT.001",
+        "C": "explog.KP4.CONCEPT.002",
+        "D": "explog.KP4.CONCEPT.003",
+        "E": "explog.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "函數 [[y=\\log_3(x+2)]] 的鉛直漸近線為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x=-2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x=0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x=2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[y=-2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[y=2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "令 [[x+2=0]]，得鉛直漸近線 [[x=-2]]。",
+      "distractorMap": {
+        "B": "explog.KP4.RECOGNITION.001",
+        "C": "explog.KP4.RECOGNITION.002",
+        "D": "explog.KP4.RECOGNITION.003",
+        "E": "explog.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "方程式 [[2^x=5-x]] 的實根個數為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3]]"
+        },
+        {
+          "id": "E",
+          "text": "無限多"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[y=2^x]] 嚴格遞增，[[y=5-x]] 嚴格遞減；且兩圖有交點，因此恰有一個實根。",
+      "distractorMap": {
+        "A": "explog.KP4.APPLICATION.001",
+        "C": "explog.KP4.APPLICATION.002",
+        "D": "explog.KP4.APPLICATION.003",
+        "E": "explog.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "若正項等比數列 [[a_n=a_1r^{n-1}]]，則 [[\\log a_n]] 組成何種數列？",
+      "options": [
+        {
+          "id": "A",
+          "text": "等差數列"
+        },
+        {
+          "id": "B",
+          "text": "等比數列"
+        },
+        {
+          "id": "C",
+          "text": "調和數列"
+        },
+        {
+          "id": "D",
+          "text": "常數數列"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\log a_n=\\log a_1+(n-1)\\log r]]，故為等差數列。",
+      "distractorMap": {
+        "B": "explog.KP5.CONCEPT.001",
+        "C": "explog.KP5.CONCEPT.002",
+        "D": "explog.KP5.CONCEPT.003",
+        "E": "explog.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 65,
+      "stem": "若 [[a_n=3\\cdot2^{n-1}]]，則 [[\\log_2a_n]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3+n-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\log_23+n-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3(n-1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[n\\log_23]]"
+        },
+        {
+          "id": "E",
+          "text": "[[2n+1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\log_2a_n=\\log_23+(n-1)\\log_22=\\log_23+n-1]]。",
+      "distractorMap": {
+        "A": "explog.KP5.RECOGNITION.001",
+        "C": "explog.KP5.RECOGNITION.002",
+        "D": "explog.KP5.RECOGNITION.003",
+        "E": "explog.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 80,
+      "stem": "正項等比數列 [[\\langle a_n\\rangle]] 滿足 [[\\log_2a_3=5]]、[[\\log_2a_7=13]]，則公比為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8]]"
+        },
+        {
+          "id": "D",
+          "text": "[[16]]"
+        },
+        {
+          "id": "E",
+          "text": "[[32]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "令 [[b_n=\\log_2a_n]]，則公差為 [[\\log_2r]]。由 [[4\\log_2r=8]]，得 [[r=4]]。",
+      "distractorMap": {
+        "A": "explog.KP5.APPLICATION.001",
+        "C": "explog.KP5.APPLICATION.002",
+        "D": "explog.KP5.APPLICATION.003",
+        "E": "explog.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若數量每經一固定時間乘上相同正數，可用何種模型描述？",
+      "options": [
+        {
+          "id": "A",
+          "text": "一次函數"
+        },
+        {
+          "id": "B",
+          "text": "二次函數"
+        },
+        {
+          "id": "C",
+          "text": "指數函數"
+        },
+        {
+          "id": "D",
+          "text": "對數函數"
+        },
+        {
+          "id": "E",
+          "text": "常數函數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "相同時間間隔乘固定倍率，符合指數函數模型。",
+      "distractorMap": {
+        "A": "explog.KP5.CONCEPT.001",
+        "B": "explog.KP5.CONCEPT.002",
+        "D": "explog.KP5.CONCEPT.003",
+        "E": "explog.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 65,
+      "stem": "某細菌數量每 3 小時加倍。經過 12 小時後，數量是原來的幾倍？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[8]]"
+        },
+        {
+          "id": "C",
+          "text": "[[12]]"
+        },
+        {
+          "id": "D",
+          "text": "[[16]]"
+        },
+        {
+          "id": "E",
+          "text": "[[24]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "12 小時含 [[12/3=4]] 個週期，倍率為 [[2^4=16]]。",
+      "distractorMap": {
+        "A": "explog.KP5.RECOGNITION.001",
+        "B": "explog.KP5.RECOGNITION.002",
+        "C": "explog.KP5.RECOGNITION.003",
+        "E": "explog.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 80,
+      "stem": "某物質每 5 年剩原量的 [[80\\%]]。若初始為 100 克，15 年後約剩多少克？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[40.96]]"
+        },
+        {
+          "id": "B",
+          "text": "[[51.2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[64]]"
+        },
+        {
+          "id": "D",
+          "text": "[[80]]"
+        },
+        {
+          "id": "E",
+          "text": "[[85]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "15 年為 3 個週期，剩量 [[100(0.8)^3=51.2]] 克。",
+      "distractorMap": {
+        "A": "explog.KP5.APPLICATION.001",
+        "C": "explog.KP5.APPLICATION.002",
+        "D": "explog.KP5.APPLICATION.003",
+        "E": "explog.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "在指數成長模型 [[P(t)=P_0a^t]] 中，若 [[a>1]]，則下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "每期增加固定數量"
+        },
+        {
+          "id": "B",
+          "text": "每期乘固定倍率 [[a]]"
+        },
+        {
+          "id": "C",
+          "text": "成長率逐期為 0"
+        },
+        {
+          "id": "D",
+          "text": "數量一定小於 [[P_0]]"
+        },
+        {
+          "id": "E",
+          "text": "圖形為直線"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由 [[P(t+1)/P(t)=a]]，每期皆乘固定倍率 [[a]]。",
+      "distractorMap": {
+        "A": "explog.KP5.CONCEPT.001",
+        "C": "explog.KP5.CONCEPT.002",
+        "D": "explog.KP5.CONCEPT.003",
+        "E": "explog.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "某投資每年成長 [[5\\%]]，本金為 [[A]]。3 年後本利和的表示式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[A(1.05)^3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[A+0.05^3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1.15A]]"
+        },
+        {
+          "id": "D",
+          "text": "[[A(0.95)^3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3.05A]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "每年乘 [[1+0.05=1.05]]，3 年後為 [[A(1.05)^3]]。",
+      "distractorMap": {
+        "B": "explog.KP5.RECOGNITION.001",
+        "C": "explog.KP5.RECOGNITION.002",
+        "D": "explog.KP5.RECOGNITION.003",
+        "E": "explog.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "explog-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "explog:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "某族群數量依 [[P(t)=500\\cdot3^{t/4}]] 成長。數量達到 4500 時，[[t]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8]]"
+        },
+        {
+          "id": "D",
+          "text": "[[12]]"
+        },
+        {
+          "id": "E",
+          "text": "[[16]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[4500/500=9=3^2]]，所以 [[t/4=2]]，得 [[t=8]]。",
+      "distractorMap": {
+        "A": "explog.KP5.APPLICATION.001",
+        "B": "explog.KP5.APPLICATION.002",
+        "D": "explog.KP5.APPLICATION.003",
+        "E": "explog.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "指數與對數45題教師核准（2026-08-13）"
+      }
+    }
+  ]
+}

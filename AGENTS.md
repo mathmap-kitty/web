@@ -14,15 +14,20 @@
 - 網址：`https://mathmap-kitty.github.io/web/`（根目錄是**總入口 portal**）
 - 一切工作以「**可發布、可累積的作品**」為終點；教學內容的最終判斷權在老師。
 
-## 1. 三個子站（各自獨立、來源不同）
+## 1. 子站（各自獨立、來源不同）
 
 | 子站 | 網址 | 內容 | 來源與更新方式 |
 |---|---|---|---|
-| `concept-map/` | `/web/concept-map/` | **學測數學重點整理**：11 單元 × 58 考點，含互動練習、三張地圖 | **本 repo 內**：`content/*.py` → `python build/build.py` → `dist/` → 覆蓋正式 `.html` |
+| `concept-map/` | `/web/concept-map/` | **學測數學重點整理**：11 單元 × 58 核心概念，含互動練習、三張地圖 | **本 repo 內**：`content/*.py` → `python build/build.py` → `dist/` → 覆蓋正式 `.html` |
 | `exam/` | `/web/exam/` | 111–115 學測數A・數B 逐題互動詳解（200 題） | **本機外部**：`D:\大考複習\歷屆試題詳解\互動網頁版\` → 整包覆蓋 `exam/` |
 | `guide/` | `/web/guide/` | 《學測數學A 複習講義》網頁版（13 章＋附錄） | `content/guide_data.json` ＋ `build/build_guide.py`（另一 session 建置，本 agent 未親自驗證） |
+| `diagnostic/` | ⚠ **未公開** | 複習後診斷系統：11 單元 486 題五階段診斷（2026-08 移入） | **本機外部**：`D:\gmail\ChatGPT_複習\診斷系統\` → 整包覆蓋 `app/ content/ engine/` |
 
-> **本 repo 的 build 只管 `concept-map/` 與 `guide/`；`exam/` 不要在這裡改。**
+> **本 repo 的 build 只管 `concept-map/` 與 `guide/`；`exam/`、`diagnostic/` 不要在這裡改。**
+
+> **`diagnostic/` 是刻意不公開的**：檔案隨 Pages 發布，但 `index.html` 沒入口卡、
+> `sitemap.xml` 不收錄、四張頁面掛 `noindex,nofollow`。老師先自用試跑，等 Gate 5
+> 真實學生實證補齊才決定上線。**不要**主動幫它加入口卡或加進 sitemap。細節見 `README.md`。
 
 ## 2. 資料夾結構
 
@@ -39,7 +44,7 @@ D:\gmail\Mathmap_workspace\
 ├── concept-map/            # ① 重點整理子站
 │   ├── 115學測數學_<單元>.html      # 11 個單元頁（正式檔，由 build 產生後覆蓋）
 │   ├── 115學測數學_概念地圖.html      # 三視圖地圖（依賴鏈／熱度／概念網）
-│   ├── 115學測數學_解題線索地圖.html   # 關鍵字 → 知識點
+│   ├── 115學測數學_解題線索地圖.html   # 關鍵字 → 核心概念
 │   ├── 115學測數學_跨單元整合_脈絡地圖.html  # 25 題跨單元題卡
 │   ├── 115學測數學_待複習與錯題.html   # 全站彙整頁
 │   ├── index.html                  # 子站目錄首頁（手寫維護）
@@ -49,11 +54,11 @@ D:\gmail\Mathmap_workspace\
 │   │   ├── <slug>.py × 11          # 各單元（trig/prob/space/poly/linecir/
 │   │   │                           #   explog/pvec/data/seq/matrix/numexpr）
 │   │   ├── units.py                # 單元註冊表＋四大主題分組 SECTIONS
-│   │   ├── checks.py               # 「確認理解」題庫（每考點 2 題微集）
-│   │   ├── part2_kp.py             # Part2 各題對應考點（★位置制，見雷區）
-│   │   ├── cues.py                 # 解題線索（線索地圖＋考點🔑標籤）
-│   │   ├── exam_rates.py           # 考點×官方答對率（gen_examrates.py 產生，勿手改）
-│   │   ├── exam_qs.py              # 考點×歷屆題清單（gen_exam_index.py 產生，勿手改）
+│   │   ├── checks.py               # 「確認理解」題庫（每核心概念 2 題微集）
+│   │   ├── part2_kp.py             # Part2 各題對應核心概念（★位置制，見雷區）
+│   │   ├── cues.py                 # 解題線索（線索地圖＋核心概念🔑標籤）
+│   │   ├── exam_rates.py           # 核心概念×官方答對率（gen_examrates.py 產生，勿手改）
+│   │   ├── exam_qs.py              # 核心概念×歷屆題清單（gen_exam_index.py 產生，勿手改）
 │   │   ├── soil_maps.py            # 各單元知識地圖 SVG（含「帶走一句話」）
 │   │   ├── openers.py / corr_figs.py     # Part0 開場圖／相關係數教學圖
 │   │   └── guide_data.json         # guide/ 子站內容來源
@@ -71,7 +76,12 @@ D:\gmail\Mathmap_workspace\
 │   └── 參考文件/                    # 官方試卷 PDF 等（gitignore，超大檔）
 │
 ├── exam/                   # ② 歷屆試題子站（源頭在本機外部，勿在此改）
-└── guide/                  # ③ 複習講義子站（13 章＋附錄＋katex/＋img/）
+├── guide/                  # ③ 複習講義子站（13 章＋附錄＋katex/＋img/）
+└── diagnostic/             # ④ 複習後診斷系統（⚠ 未公開；源頭在本機外部，勿在此改）
+    ├── app/                #    靜態前端：index.html/main.mjs/repository.mjs/styles.css/vendor/katex
+    ├── content/            #    題庫與知識結構 JSON（questions/<unit>/questions.json 等）
+    ├── engine/             #    diagnose.mjs 判讀引擎（無外部相依）
+    └── review/             #    驗收報告（內部文件，非學生教材）
 ```
 
 ## 3. 建置與發布流程
@@ -97,11 +107,18 @@ PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才�
 - 數學式轉義：矩陣欄分隔 `&` 寫 `&amp;`；不等號用 `\lt \gt \le \ge \neq`。
 
 ### 4.2 資料耦合
-- `content/part2_kp.py` 是**位置制**：Part2 第 n 題對應第 n 個考點。**改題序必須同步改這張表**，否則「解題核心回考點」全部錯位。`build/validate.py` 會擋長度不符，但擋不了「順序錯但長度對」——改動後務必逐題驗證 tag→kp 配對。
+- `content/part2_kp.py` 是**位置制**：Part2 第 n 題對應第 n 個核心概念。**改題序必須同步改這張表**，否則「解題核心回核心概念」全部錯位。`build/validate.py` 會擋長度不符，但擋不了「順序錯但長度對」——改動後務必逐題驗證 tag→kp 配對。
 - `checks.py` 的 `answer` 是 **1-based list**；Part0 直覺挑戰 `challenge.answer` 是 **0-based index**。兩者別搞混。
 
 ### 4.3 建置與環境
 - `cp dist/115學測數學_*.html .` 會把 dist 裡的**舊地圖頁**一起蓋掉 → **逐檔列名複製**。
+- ⚠️ **`dist/index.html` 是舊版殘留**（2026-08 實測比正式檔少 52KB：沒有 GA、沒有站內搜尋、
+  沒有「繼續上次進度」，連結還指向已廢除的 `_互動學習.html` 檔名）。`concept-map/index.html`
+  是**手寫維護**的，**永遠不要**用 dist 的版本覆蓋它。同理，`build.py` 只重產 11 個單元頁，
+  四張地圖頁（概念地圖／解題線索／跨單元／待複習）在 dist 裡也是舊的。
+- **`kp` 是內部識別字，不隨用語改**：顯示文字 2026-08 已全站改為「核心概念」，但
+  `#kp1` 錨點、`data-kp`、`kpId`、`.kpchk`、`part2_kp.py` 一律維持 `kp`。已發布的 PPT
+  超連結靠的就是 `#kp1`，改了會全部失效。新增程式碼沿用 `kp` 命名即可。
 - `build_conceptmap.py` 裡 JS 是寫在 Python 字串內：**註解要用 Python 的 `#`，不是 `//`**。
 - dist 子資料夾內的樣張要預覽，KaTeX 路徑得改成 `../katex/` 才會渲染。
 - `requestIdleCallback`／`rAF` 在**離屏 iframe 與背景分頁會被餓死** → 排程一律加 `setTimeout` 後備。
@@ -122,18 +139,18 @@ PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才�
 ## 6. 路線圖 checklist
 
 ### 已完成
-- [x] 11 單元 × 58 考點內容建置、全部上線
+- [x] 11 單元 × 58 核心概念內容建置、全部上線
 - [x] 三張地圖（概念地圖三視圖／解題線索／跨單元脈絡）
-- [x] **考點卡 → exam 反向連結**（319 條，57/58 考點；`gen_exam_index.py` → `exam_qs.py`）
-      補上 9 個考點原本「沒有 111–115 真題可看」的盲區；預設收合，數A／數B 分列
+- [x] **核心概念卡 → exam 反向連結**（319 條，57/58 核心概念；`gen_exam_index.py` → `exam_qs.py`）
+      補上 9 個核心概念原本「沒有 111–115 真題可看」的盲區；預設收合，數A／數B 分列
 - [x] 互動系統：填空、顯示解答、練習即時批改、錯題記錄、進度追蹤、匯出學習紀錄、站內搜尋、待複習彙整
-- [x] 考點×考題對應體檢 **A/B/C 包全修**（164 題反向檢核；去課綱外工具、補教學缺口、詳解補推導、跨單元先備標註）
+- [x] 核心概念×考題對應體檢 **A/B/C 包全修**（164 題反向檢核；去課綱外工具、補教學缺口、詳解補推導、跨單元先備標註）
 - [x] **全站選項對卷複查 91 題**（修 4 處與官方原卷不符）
 - [x] SOIL 認知優化 **A1**（解題核心預設收合，先判斷再對照）
 - [x] SOIL **A2**（Part3「帶走一句話」回想，與知識地圖同源）
 - [x] SOIL **B1**（Part0 直覺挑戰元件＋機率／三角／直線與圓 3 單元）
 - [x] SOIL **B2**（header 捲動收合 ≤60px、錨點不遮字、概念地圖觸控與遮擋修正）
-- [x] SOIL **C1**（確認理解升級 2 題微集：**11 單元 58 考點 116 題**，全數老師審核）
+- [x] SOIL **C1**（確認理解升級 2 題微集：**11 單元 58 核心概念 116 題**，全數老師審核）
 - [x] SOIL **D2**（強調色統一：琥珀橘 `--accent:#b45309` 只給判斷關鍵）
 - [x] SOIL **D3**（概念地圖加「建議看法」一句）
 - [x] SOIL **D4**（Part2 題序打散、交錯練習）
@@ -145,13 +162,18 @@ PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才�
 - [x] `guide/` 複習講義子站 13 章（**其他 session**，在 `feat/guide-web-version` 分支）
 
 ### 待辦
-- [ ] **`guide/` 掛上 58 考點錨點**：三個子站裡只有 guide 沒接骨架
+- [ ] **`diagnostic/` 上線與否**：技術驗收全過，但 Gate 5「真實學生實證」未補。
+      老師先自用試跑（`/web/diagnostic/app/`）。要上線＝拿掉 4 張頁面的 `noindex`
+      ＋首頁「🚧 更多教材籌備中」換成入口卡＋`gen_sitemap.py` 加 `diagnostic/`。
+      核心概念編碼已對得上：診斷系統 kpId 用 `{unitSlug}:kp<N>`，54 個錨點在 `concept-map/`
+      對應頁全部找得到（2026-08-14 逐一驗過，0 缺）。
+- [ ] **`guide/` 掛上 58 核心概念錨點**：三個子站裡只有 guide 沒接骨架
       （`concept-map → guide` 目前 0 條）。章層級可直接做；kp → 小節層級要老師定。
 - [ ] **`feat/guide-web-version` 合併回 `main`**，並決定 guide 是否連進總入口導覽
 - [ ] SOIL **D1**：知識地圖上方加一行使用指引（老師說「先不做」，隨時可撿）
 - [ ] **B1 直覺挑戰擴充**到其餘 8 單元（現只有 3 個高頻單元有）
-- [ ] **借鏡 ChatGPT 試作版 docx 的 B 方案**（老師尚未定案）：①「式／根／圖」表示選擇框架 ②錯誤代碼 → 回補考點閉環，接上現有待複習頁
-- [ ] `exam/` 數B 空間向量考點待補（該子站源頭在本機外部）
+- [ ] **借鏡 ChatGPT 試作版 docx 的 B 方案**（老師尚未定案）：①「式／根／圖」表示選擇框架 ②錯誤代碼 → 回補核心概念閉環，接上現有待複習頁
+- [ ] `exam/` 數B 空間向量核心概念待補（該子站源頭在本機外部）
 - [ ] 好好學《焦點》精修 Word：單元 3~15（另一條產線，與本 repo 無關）
 
 ### 已知不修

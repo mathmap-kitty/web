@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "proposalStatus": "BLUEPRINT_IN_REVIEW_EXISTING_REGISTRY_NOT_PUBLISHED",
+  "unit": {
+    "id": "pvec",
+    "name": "平面向量",
+    "reuseExistingRegistry": true,
+    "points": [
+      {"id":"pvec:kp1","title":"向量的表示與運算","registryStatus":"EXISTING"},
+      {"id":"pvec:kp2","title":"線性組合、分點與面積比","registryStatus":"EXISTING"},
+      {"id":"pvec:kp3","title":"內積：夾角、垂直、正射影","registryStatus":"EXISTING"},
+      {"id":"pvec:kp4","title":"行列式與平行四邊形面積","registryStatus":"EXISTING"},
+      {"id":"pvec:kp5","title":"向量的旋轉與坐標應用","registryStatus":"EXISTING"}
+    ]
+  },
+  "evidence":{"verifiedAnchors":8,"coreAnchors":7,"bridgeAnchors":1,"recent111To115MainChapter":10,"decadeWeightedApprox":15.6},
+  "coreRepresentations":[
+    {"id":"point","label":"點","meaning":"端點、分點、中點、重心與坐標"},
+    {"id":"vector","label":"向","meaning":"方向、大小、平行、共線與旋轉"},
+    {"id":"expression","label":"式","meaning":"線性組合、內積、行列式與參數關係"},
+    {"id":"graph","label":"圖","meaning":"幾何位置、垂直、投影、面積與多邊形結構"}
+  ],
+  "prerequisitePolicy":"REUSE_GATE1_APPROVED_EDGES_NO_GRAPH_CHANGE",
+  "relatedEdges":{"total":11,"weightedPrerequisite":11,"nonWeightedLinks":0},
+  "questionPlan":{"knowledgePoints":5,"stages":3,"abilities":3,"total":45,"perStage":15,"perAbility":15,"perKnowledgePoint":9},
+  "activationCondition":"教師核准藍圖後才製作5題代表題；完整45題另行核准後才出版、整合及更新完整題庫總覽。"
+}

@@ -3,7 +3,7 @@
 var DATA = window.EXAM_DATA || [];
 var YEARS = ['115','114','113','112','111'];
 var UNIT_ORDER = ['數與式','多項式函數','指數與對數','數列與級數','排列組合與機率','數據分析','三角','直線與圓','平面向量','空間向量','矩陣'];
-/* 58 考點總目錄（mathmap 短標題）：供「按考點」補列未出題考點 */
+/* 58 核心概念總目錄（mathmap 短標題）：供「按核心概念」補列未出題核心概念 */
 var KP_ALL = {
  '數與式':[['kp1','實數系與有理／無理'],['kp2','絕對值'],['kp3','數線、距離與根號估算'],['kp4','乘法公式與算幾不等式'],['kp5','比例、百分率與加權平均'],['kp6','高斯（最大整數）函數']],
  '多項式函數':[['kp1','除法、餘式與因式定理'],['kp2','二次函數：判別式與配方'],['kp3','多項式方程式與不等式'],['kp4','高次方程式（有理根、勘根）'],['kp5','三次函數圖形與對稱中心']],
@@ -17,7 +17,7 @@ var KP_ALL = {
  '空間向量':[['kp1','空間坐標與距離'],['kp2','內積與垂直'],['kp3','外積與體積'],['kp4','平面方程式與距離'],['kp5','空間直線與歪斜線'],['kp6','二面角與立體']],
  '矩陣':[['kp1','意義、相等與乘法'],['kp2','矩陣的高次方'],['kp3','反方陣與解矩陣方程式'],['kp4','一次聯立與高斯消去'],['kp5','平面線性變換']]
 };
-/* 108 課綱「數B 不含」的考點（對照領綱：行列式/空間向量運算僅 11A、線性規劃在 12乙、三元消去法僅 11A） */
+/* 108 課綱「數B 不含」的核心概念（對照領綱：行列式/空間向量運算僅 11A、線性規劃在 12乙、三元消去法僅 11A） */
 var B_EXCLUDED = {'直線與圓':{'kp5':1},'平面向量':{'kp4':1},'空間向量':{'kp2':1,'kp3':1,'kp4':1,'kp5':1,'kp6':1},'矩陣':{'kp4':1}};
 var LS_SUBJ = 'exama_subject_v1';
 var state = { view:'home', subject:(localStorage.getItem(LS_SUBJ)||'A'), year:'115', unit:'', diff:'', tUnit:'', tKp:'', hardBand:'hard' };
@@ -37,7 +37,7 @@ function rateNum(r){ var m = String(r).match(/(\d+)\s*%/); return m ? +m[1] : nu
 function diffOf(q){ var n=rateNum(q.rate); if(n===null) return 'none'; if(n<20) return 'hard'; if(n<=50) return 'mid'; return 'easy'; }
 function el(tag,cls,html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
 
-/* ---------- 考點 index（依目前科目重建） ---------- */
+/* ---------- 核心概念 index（依目前科目重建） ---------- */
 var byUnit = {};
 function buildIndex(){
   SUBJ = DATA.filter(function(q){ return (q.subject||'A')===state.subject; });
@@ -47,7 +47,7 @@ function buildIndex(){
     q.kaodian.forEach(function(k){
       var u=byUnit[k.unit] || (byUnit[k.unit]={name:k.unit,qs:[],kps:{},korder:[]});
       if(!seenU[k.unit]){ u.qs.push(q); seenU[k.unit]=1; }
-      var a=String(k.url).split('#')[1]||k.title;   // 以 anchor（kp1…）為考點身分，避免變體標題重複
+      var a=String(k.url).split('#')[1]||k.title;   // 以 anchor（kp1…）為核心概念身分，避免變體標題重複
       var kp=u.kps[a];
       if(!kp){ kp=u.kps[a]={title:k.title,url:k.url,qs:[]}; u.korder.push(a); }
       else if(String(k.title).length>String(kp.title).length){ kp.title=k.title; kp.url=k.url; } // 取較完整的標題
@@ -152,11 +152,11 @@ function makeCard(q){
   var bar=document.createElement('div'); bar.className='reveal-bar'; R.appendChild(bar);
 
   var secKey=sec('key','💡 解題關鍵'); var kp=document.createElement('div'); renderRich(kp, q.key); secKey.appendChild(kp);
-  var secKd=sec('kd','📍 對應 mathmap 考點'); var chips=document.createElement('div'); chips.className='kchips';
+  var secKd=sec('kd','📍 對應 mathmap 核心概念'); var chips=document.createElement('div'); chips.className='kchips';
   q.kaodian.forEach(function(k){ var a=document.createElement('a'); a.className='kchip'; a.href=k.url; a.target='_blank'; a.rel='noopener';
     a.innerHTML='<span class="u">〔'+k.unit+'〕</span>'+k.title; chips.appendChild(a); });
   if(!q.kaodian.length){ var kn=document.createElement('div'); kn.className='kdnote';
-    kn.textContent='此題為數學 B 專屬範圍（圓錐截痕／球面經緯度／空間坐標），mathmap 考點待補。'; chips.appendChild(kn); }
+    kn.textContent='此題為數學 B 專屬範圍（圓錐截痕／球面經緯度／空間坐標），mathmap 核心概念待補。'; chips.appendChild(kn); }
   secKd.appendChild(chips);
 
   var order=[secKey, secKd];
@@ -194,7 +194,7 @@ function makeCard(q){
     if(card._ri>=card._order.length){ next.disabled=true; next.textContent='已全部顯示 ✓'; }
     else if(card._ri>=2){ next.textContent='下一步 ▸（'+(card._ri-1)+'/'+(card._order.length-2)+'）'; } };
   bar.appendChild(next);
-  bar.appendChild(tog('💡 關鍵',secKey)); bar.appendChild(tog('📍 考點',secKd));
+  bar.appendChild(tog('💡 關鍵',secKey)); bar.appendChild(tog('📍 核心概念',secKd));
   var all=mk('📝 展開全部詳解','all-btn');
   function setAllOpen(open){
     if(open){ all.textContent='🔼 收合詳解'; all.dataset.open='1'; }
@@ -232,7 +232,7 @@ function renderModeNav(){
   });
   nav.appendChild(subjWrap);
   var sc=starCount();
-  [['home','📋 總覽'],['year','📅 按年度'],['topic','🎯 按考點'],['hard','🔥 難題集'],['list','📌 複習清單'+(sc?'（'+sc+'）':'')]].forEach(function(m){
+  [['home','📋 總覽'],['year','📅 按年度'],['topic','🎯 按核心概念'],['hard','🔥 難題集'],['list','📌 複習清單'+(sc?'（'+sc+'）':'')]].forEach(function(m){
     var b=document.createElement('button'); b.textContent=m[1]; if(state.view===m[0]) b.className='active';
     b.onclick=function(){ state.view=m[0]; render(); window.scrollTo(0,0); };
     nav.appendChild(b);
@@ -281,13 +281,13 @@ function bigBtn(t,d,fn){ var b=el('button','bigbtn'); b.innerHTML='<div class="t
 function renderHome(app){
   var dash=el('div','dash');
   dash.appendChild(el('h2',null,'學測數學 '+state.subject+' · 111–115 互動詳解'));
-  dash.appendChild(el('p','lead','5 個學年度、'+SUBJ.length+' 題完整詳解，附大考中心答對率與 mathmap 考點對應。選擇下面的方式開始複習。'));
+  dash.appendChild(el('p','lead','5 個學年度、'+SUBJ.length+' 題完整詳解，附大考中心答對率與 mathmap 核心概念對應。選擇下面的方式開始複習。'));
 
   var doneCount=SUBJ.filter(function(q){ return done[qid(q)]; }).length;
   var stats=el('div','statgrid');
   stats.appendChild(statCard(SUBJ.length,'總題數（111–115）'));
   stats.appendChild(statCard(YEARS.length+' 年','涵蓋學年度'));
-  stats.appendChild(statCard(coveredKp()+' / 58','已觸及考點'));
+  stats.appendChild(statCard(coveredKp()+' / 58','已觸及核心概念'));
   stats.appendChild(statCard(doneCount,'已複習題數','progress'));
   dash.appendChild(stats);
 
@@ -315,7 +315,7 @@ function renderHome(app){
   dash.appendChild(el('div','sub-h','選擇複習方式'));
   var bb=el('div','bigbtns');
   bb.appendChild(bigBtn('📅 按年度瀏覽','逐年 20 題，像做整份考卷一樣依序複習與檢討。',function(){ state.view='year'; render(); window.scrollTo(0,0); }));
-  bb.appendChild(bigBtn('🎯 按考點複習','選單元／考點，跨 5 年集中攻略同一類題目，並可連到 mathmap 考點地圖。',function(){ state.view='topic'; render(); window.scrollTo(0,0); }));
+  bb.appendChild(bigBtn('🎯 按核心概念複習','選單元／核心概念，跨 5 年集中攻略同一類題目，並可連到 mathmap 核心概念地圖。',function(){ state.view='topic'; render(); window.scrollTo(0,0); }));
   bb.appendChild(bigBtn('🔥 挑戰難題集','歷屆答對率最低（<20%）的題目，由難到易排序，適合考前衝刺。',function(){ state.view='hard'; state.hardBand='hard'; render(); window.scrollTo(0,0); }));
   bb.appendChild(bigBtn('📌 我的複習清單','收藏想再看的題目與錯題，集中複習'+(starCount()?'（目前 '+starCount()+' 題）':'。'),function(){ state.view='list'; render(); window.scrollTo(0,0); }));
   dash.appendChild(bb);
@@ -341,7 +341,7 @@ function renderYear(app){
 }
 
 function renderTopic(app){
-  if(!state.tUnit){ app.appendChild(el('div','empty','請從上方選擇一個單元，開始跨年度的考點複習。')); return; }
+  if(!state.tUnit){ app.appendChild(el('div','empty','請從上方選擇一個單元，開始跨年度的核心概念複習。')); return; }
   var u=byUnit[state.tUnit]||{qs:[],kps:{},korder:[]};
   var kwrap=el('div','kpchips2'); kwrap.style.margin='16px 0 4px';
   var allc=el('button','kpc'+(state.tKp===''?' active':'')); allc.innerHTML='全部<span class="c">'+u.qs.length+'</span>';
@@ -350,7 +350,7 @@ function renderTopic(app){
     var kp=u.kps[t]; var c=el('button','kpc'+(state.tKp===t?' active':'')); c.innerHTML=kp.title+'<span class="c">'+kp.qs.length+'</span>';
     c.onclick=function(){ state.tKp=t; render(); }; kwrap.appendChild(c);
   });
-  /* 未出題／課綱不含的考點：灰色籌碼，點了連到重點整理對應段落 */
+  /* 未出題／課綱不含的核心概念：灰色籌碼，點了連到重點整理對應段落 */
   (KP_ALL[state.tUnit]||[]).forEach(function(pair){
     var a=pair[0], t=pair[1];
     if(u.kps[a]) return;
@@ -358,7 +358,7 @@ function renderTopic(app){
     var lab = ex ? '數B課綱不含' : '近五年未出題';
     var c=el('a','kpc off'); c.href='../concept-map/115學測數學_'+state.tUnit+'.html#'+a;
     c.target='_blank'; c.rel='noopener';
-    c.title = ex ? '108 課綱數B不含此考點，可安心跳過' : '課綱範圍內，111–115 未出過題——不代表不會考；點我到重點整理複習';
+    c.title = ex ? '108 課綱數B不含此核心概念，可安心跳過' : '課綱範圍內，111–115 未出過題——不代表不會考；點我到重點整理複習';
     c.innerHTML=t+'<span class="c">'+lab+'</span>';
     kwrap.appendChild(c);
   });
@@ -366,9 +366,9 @@ function renderTopic(app){
 
   var head=el('div','topichead'); var list;
   if(state.tKp){ var kpo=u.kps[state.tKp]; list=kpo.qs.slice();
-    head.innerHTML='<span class="th">'+state.tUnit+'　'+kpo.title+'</span> <a class="maplink" href="'+kpo.url+'" target="_blank" rel="noopener">🔗 到 mathmap 考點地圖</a><div class="ts">共 '+list.length+' 題（跨 111–115）</div>';
+    head.innerHTML='<span class="th">'+state.tUnit+'　'+kpo.title+'</span> <a class="maplink" href="'+kpo.url+'" target="_blank" rel="noopener">🔗 到 mathmap 核心概念地圖</a><div class="ts">共 '+list.length+' 題（跨 111–115）</div>';
   } else { list=u.qs.slice();
-    head.innerHTML='<span class="th">'+state.tUnit+'</span><div class="ts">此單元共 '+list.length+' 題　·　'+u.korder.length+' 個考點</div>';
+    head.innerHTML='<span class="th">'+state.tUnit+'</span><div class="ts">此單元共 '+list.length+' 題　·　'+u.korder.length+' 個核心概念</div>';
   }
   var rb=el('button','ghost-btn','全部收合'); rb.style.marginLeft='10px'; rb.onclick=resetAllReveal; head.appendChild(rb);
   app.appendChild(head);

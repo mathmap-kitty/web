@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "comb",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "items": [
+    {
+      "id": "comb-rep-kp1",
+      "kpId": "comb:kp1",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "列",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "某門禁密碼由一個英文字母與一個數字組成。英文字母可選 A、B、C，數字可選 1、2、3、4，但 A1 不允許使用。共有多少組可用密碼？",
+      "options": ["7", "8", "11", "12", "15"],
+      "answerIndex": 2,
+      "answer": "11",
+      "firstBarrier": "能否先用乘法原理得到全部配對，再排除唯一禁用情形。",
+      "solution": "若沒有禁用條件，共有 3×4=12 組；排除 A1 後為 12−1=11 組。",
+      "diagnosticDistractors": {
+        "0": "把兩個階段直接相加，且未正確處理禁用條件。",
+        "1": "把禁用 A1 誤解為 A 與 1 都不能使用。",
+        "3": "只用乘法原理，未排除 A1。",
+        "4": "把無關的額外情形納入。"
+      }
+    },
+    {
+      "id": "comb-rep-kp2",
+      "kpId": "comb:kp2",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "將數學甲、數學乙、國文、英文、物理、化學六本不同的書排成一列。若兩本數學書不得相鄰，且國文必須排在英文左邊，共有多少種排法？",
+      "options": ["120", "240", "360", "480", "720"],
+      "answerIndex": 1,
+      "answer": "240",
+      "firstBarrier": "能否先用補集處理不相鄰，再用對稱性處理國文與英文的先後。",
+      "solution": "六本書共有 6!=720 種。兩本數學書相鄰時，視為一個區塊，共有 2×5!=240 種，所以不相鄰有 720−240=480 種。交換國文與英文會把每一種排法配成另一種，恰有一半符合國文在英文左邊，因此為 480÷2=240 種。",
+      "diagnosticDistractors": {
+        "0": "重複除以 2，或同時漏算數學書內部次序。",
+        "2": "只處理部分限制，或把兩個限制錯當成固定比例。",
+        "3": "只處理數學書不相鄰，未處理國文與英文先後。",
+        "4": "完全忽略兩項限制。"
+      }
+    },
+    {
+      "id": "comb-rep-kp3",
+      "kpId": "comb:kp3",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "從 8 位學生中選出 3 位組成紅隊，再從剩下的學生中選出 3 位組成藍隊，其餘 2 位不分隊。紅隊與藍隊視為不同隊伍，共有多少種分法？",
+      "options": ["56", "280", "560", "1120", "3360"],
+      "answerIndex": 2,
+      "answer": "560",
+      "firstBarrier": "能否辨識隊內順序不重要，但紅隊與藍隊有名稱，不能再除以 2。",
+      "solution": "先選紅隊有 C(8,3) 種，再從剩下 5 人選藍隊有 C(5,3) 種，所以共有 C(8,3)×C(5,3)=56×10=560 種。",
+      "diagnosticDistractors": {
+        "0": "只選出其中一隊。",
+        "1": "把紅、藍兩隊誤當成沒有名稱，因此多除以 2。",
+        "3": "把同一分隊結果重複計數兩次。",
+        "4": "把隊內排列也計入。"
+      }
+    },
+    {
+      "id": "comb-rep-kp4",
+      "kpId": "comb:kp4",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "甲盒中有標示 1、2、3、4 的卡片各一張，乙盒中有標示 2、4、6 的卡片各一張。從兩盒各取一張，以兩張卡片的數字和作為得分。可能出現多少種不同得分？",
+      "options": ["7", "8", "9", "10", "12"],
+      "answerIndex": 1,
+      "answer": "8",
+      "firstBarrier": "能否區分 12 種取法與不同得分的種類數。",
+      "solution": "乙盒取 2 時可得 3、4、5、6；取 4 時可得 5、6、7、8；取 6 時可得 7、8、9、10。合併重複結果後，得分為 3 到 10，共 8 種。",
+      "diagnosticDistractors": {
+        "0": "列舉時遺漏端點或中間得分。",
+        "2": "只消去部分重複得分。",
+        "3": "把連續整數範圍的個數算錯。",
+        "4": "把 4×3=12 種取法直接當成 12 種不同得分。"
+      }
+    }
+  ]
+}

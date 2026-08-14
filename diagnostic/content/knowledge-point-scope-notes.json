@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "policy": "不拆分既有 58 個永久核心概念；以 canonicalName、aliases 與 subskillTags 表達節點內部範圍。未列者暫以 knowledge-points.json title 為 canonicalName。",
+  "points": [
+    {"id":"numexpr:kp1","canonicalName":"實數系、數的分類與循環小數","aliases":["實數系與有理／無理"],"subskillTags":["實數分類","有理數","無理數","循環小數"]},
+    {"id":"numexpr:kp2","canonicalName":"絕對值的意義、方程式與不等式","aliases":["絕對值"],"subskillTags":["距離","絕對值方程式","絕對值不等式"]},
+    {"id":"numexpr:kp3","canonicalName":"數線上的點、距離、分點與根號估算","aliases":["數線、距離與根號估算"],"subskillTags":["數線","距離","分點","根號估算"]},
+    {"id":"numexpr:kp4","canonicalName":"乘法公式、對稱式求值與算幾不等式","aliases":["乘法公式與算幾不等式"],"subskillTags":["乘法公式","對稱式","算術幾何平均不等式"]},
+    {"id":"poly:kp2","canonicalName":"二次函數：判別式、頂點與配方","aliases":["二次函數：判別式與配方"],"subskillTags":["判別式","配方法","頂點","圖形平移"]},
+    {"id":"poly:kp4","canonicalName":"高次方程式：有理根、勘根定理與奇偶函數","aliases":["高次方程式（有理根、勘根）"],"subskillTags":["有理根","勘根定理","奇函數","偶函數"]},
+    {"id":"data:kp1","canonicalName":"平均、中位數、變異數與標準差","aliases":["一維數據與標準差"],"subskillTags":["平均數","中位數","變異數","標準差"]},
+    {"id":"data:kp4","canonicalName":"加權平均、中位數與資料判讀","aliases":["加權平均與資料判讀"],"subskillTags":["加權平均","中位數","圖表判讀"]},
+    {"id":"trig:kp7","canonicalName":"圓周角與二面角中的三角","aliases":["圓周角與二面角中的三角"],"subskillTags":["圓周角","二面角","立體摺疊"]},
+    {"id":"linecir:kp1","canonicalName":"直線方程式、斜率與角平分線","aliases":["直線方程式與斜率"],"subskillTags":["斜率","直線方程式","平行垂直","角平分線"]},
+    {"id":"linecir:kp2","canonicalName":"兩點距離、中點與三角形","aliases":["兩點距離與三角形"],"subskillTags":["兩點距離","中點","分點","三角形坐標"]},
+    {"id":"linecir:kp3","canonicalName":"圓方程式與點的位置","aliases":["圓方程式"],"subskillTags":["圓心半徑式","一般式","點與圓的位置"]},
+    {"id":"pvec:kp1","canonicalName":"向量的表示、運算與平行","aliases":["向量的表示與運算"],"subskillTags":["向量表示","向量運算","平行"]},
+    {"id":"space:kp1","canonicalName":"空間坐標、距離與正立方體","aliases":["空間坐標與距離"],"subskillTags":["空間坐標","距離","正立方體"]},
+    {"id":"space:kp4","canonicalName":"平面方程式、投影與點到平面距離","aliases":["平面方程式與距離"],"subskillTags":["平面方程式","法向量","投影","點到平面距離"]},
+    {"id":"space:kp5","canonicalName":"空間中的直線、軌跡與歪斜線","aliases":["空間直線與歪斜線"],"subskillTags":["空間直線","軌跡","歪斜線"]}
+  ]
+}

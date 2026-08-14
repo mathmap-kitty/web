@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""網站內容總覽頁（獨立頁，非單元頁）：章節 → 各考點 → 各考點列的歷屆考題。
+"""網站內容總覽頁（獨立頁，非單元頁）：章節 → 各核心概念 → 各核心概念列的歷屆考題。
 資料直接讀 content/*.py 單一來源（數字不手抄）。輸出 dist/content-overview.html。
 與「考題變化趨勢」頁互相連結，成一組獨立分析頁；先不接進 mathmap 導覽。
 """
@@ -35,7 +35,7 @@ def is_exam(tag):
 
 
 def collect():
-    """回傳每個單元的結構資料：考點、歷屆題、範例、混合題、Part2 題數。"""
+    """回傳每個單元的結構資料：核心概念、歷屆題、範例、混合題、Part2 題數。"""
     data = []
     tot_kp = tot_exam = tot_ex = tot_mixed = tot_p2 = 0
     for u in UNITS:
@@ -94,7 +94,7 @@ def _unit_card(d):
         qs = "".join(_qtag(d["file"], kp["id"], t, True) for t in kp["exam"])
         qs += "".join(_qtag(d["file"], kp["id"], t, False) for t in kp["ex"])
         if not qs:
-            qs = '<span class="ov-none">（此考點目前無歷屆題）</span>'
+            qs = '<span class="ov-none">（此核心概念目前無歷屆題）</span>'
         badge = f'<span class="ov-kpn">歷屆 {len(kp["exam"])}</span>' if kp["exam"] else \
                 '<span class="ov-kpn zero">歷屆 0</span>'
         kprows += (f'<div class="ov-kp"><div class="ov-kp-h">'
@@ -110,7 +110,7 @@ def _unit_card(d):
     exam_n = sum(len(k["exam"]) for k in d["kps"])
     return (f'<div class="ov-unit" id="ov-{d["slug"]}">'
             f'<div class="ov-unit-h"><a href="{d["file"]}">{d["emoji"]} {html_rich(d["title"])}</a>'
-            f'<small>近十年 {d["trend"]} 題 ｜ {len(d["kps"])} 考點 ｜ 歷屆 {exam_n} 題 ｜ 模擬 {d["p2n"]} 題</small></div>'
+            f'<small>近十年 {d["trend"]} 題 ｜ {len(d["kps"])} 核心概念 ｜ 歷屆 {exam_n} 題 ｜ 模擬 {d["p2n"]} 題</small></div>'
             f'{kprows}{mixed}</div>')
 
 
@@ -128,18 +128,18 @@ def build():
 
     cards = "".join(_unit_card(d) for d in data)
 
-    # 無歷屆題的考點（動態列出）
+    # 無歷屆題的核心概念（動態列出）
     zero = []
     for d in data:
         for kp in d["kps"]:
             if not kp["exam"]:
                 zero.append(f'{d["emoji"]} {d["title"]}「{kp["num"]} · {html_rich(kp["nav"])}」')
     if zero:
-        zero_note = (f'<b>無歷屆題的考點（共 {len(zero)} 個）：</b>' + "、".join(zero) +
+        zero_note = (f'<b>無歷屆題的核心概念（共 {len(zero)} 個）：</b>' + "、".join(zero) +
                      '。多因 111–115 沒有以該主題為主的數A題，故以教學範例呈現；其餘 '
-                     f'{st["kp"] - len(zero)} 個考點都有歷屆題支撐。')
+                     f'{st["kp"] - len(zero)} 個核心概念都有歷屆題支撐。')
     else:
-        zero_note = f'{st["kp"]} 個考點都有歷屆題支撐。'
+        zero_note = f'{st["kp"]} 個核心概念都有歷屆題支撐。'
 
     css = """
 :root{--maroon:#8c2740;--maroon-d:#6f1f33;--page:#f7f2ee;--card:#fff;--line:#e7dcd6;
@@ -203,7 +203,7 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <div class="wrap">
 <div class="hero">
 <h1>這個網站有哪些內容？</h1>
-<p>一頁看完全站結構：<b>{st['units']} 個單元 · {st['kp']} 個考點</b>，以及每個考點列了哪些歷屆大考題。點任一項可直達該考點。</p>
+<p>一頁看完全站結構：<b>{st['units']} 個單元 · {st['kp']} 個核心概念</b>，以及每個核心概念列了哪些歷屆大考題。點任一項可直達該核心概念。</p>
 <div class="src">資料由 content/*.py 單一來源自動彙整（數字非手抄）· 搭配「考題變化趨勢」頁一起看</div>
 </div>
 
@@ -212,7 +212,7 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 
 <div class="cards">
 <div class="mc"><div class="lbl">單元</div><div class="val">{st['units']}</div></div>
-<div class="mc"><div class="lbl">考點</div><div class="val">{st['kp']}</div></div>
+<div class="mc"><div class="lbl">核心概念</div><div class="val">{st['kp']}</div></div>
 <div class="mc"><div class="lbl">歷屆考題</div><div class="val">{st['exam']}</div></div>
 <div class="mc"><div class="lbl">混合題（非選）</div><div class="val">{st['mixed']}</div></div>
 <div class="mc"><div class="lbl">模擬實戰</div><div class="val">{st['p2']}</div></div>
@@ -227,12 +227,12 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <a href="115學測數學_跨單元整合_脈絡地圖.html">🧩 跨單元脈絡地圖</a>　·
 <a href="115學測數學_解題線索地圖.html">🧭 解題線索地圖</a>　·
 <a href="{TREND_FILE}">📊 考題變化趨勢</a>
-<br><b>單元頁結構：</b>Part 0 出題趨勢 → Part 1 各考點（先備・重點公式・常見誤解・示範例・<b>歷屆試題</b>・確認理解） → 混合題實戰 → Part 2 模擬實戰 → Part 3 考前速查。</div><div style="text-align:center;font-size:12.5px;color:#9a857c;padding:0 14px 30px">mathmap 數學地圖 © Kitty</div>
+<br><b>單元頁結構：</b>Part 0 出題趨勢 → Part 1 各核心概念（先備・重點公式・常見誤解・示範例・<b>歷屆試題</b>・確認理解） → 混合題實戰 → Part 2 模擬實戰 → Part 3 考前速查。</div><div style="text-align:center;font-size:12.5px;color:#9a857c;padding:0 14px 30px">mathmap 數學地圖 © Kitty</div>
 
 <h2>四大主題分組</h2>
 <div class="secbox">{sec_html}</div>
 
-<h2>各單元 × 考點 × 歷屆考題</h2>
+<h2>各單元 × 核心概念 × 歷屆考題</h2>
 <p style="color:#6b5249;font-size:14px;margin:.2em 0 12px">
 <span class="ov-q exam" style="cursor:default">紅底＝歷屆大考題（可點連結）</span>
 <span class="ov-q ex" style="cursor:default">灰底＝教學範例</span>
@@ -249,7 +249,7 @@ h2{color:var(--maroon-d);font-size:19px;border-left:5px solid var(--maroon);padd
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>學測數A · 內容總覽（章節・考點・歷屆考題）</title>
+<title>學測數A · 內容總覽（章節・核心概念・歷屆考題）</title>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="stylesheet" href="katex/katex.min.css">
@@ -273,7 +273,7 @@ renderMathInElement(document.body,{{delimiters:[{{left:'\\\\(',right:'\\\\)',dis
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     io.open(OUT, "w", encoding="utf-8").write(html)
     print(f"[overview] -> {os.path.basename(OUT)}  "
-          f"({st['units']} 單元 / {st['kp']} 考點 / 歷屆 {st['exam']} / 混合 {st['mixed']})")
+          f"({st['units']} 單元 / {st['kp']} 核心概念 / 歷屆 {st['exam']} / 混合 {st['mixed']})")
 
 
 if __name__ == "__main__":

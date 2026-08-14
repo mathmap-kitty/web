@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""解題線索地圖：看到題目線索／關鍵字 → 想到該用的知識點（跨單元、觸類旁通）。
-資料單一來源 content/cues.py（同時餵各考點的「🔑 解題線索」標籤）。
+"""解題線索地圖：看到題目線索／關鍵字 → 想到該用的核心概念（跨單元、觸類旁通）。
+資料單一來源 content/cues.py（同時餵各核心概念的「🔑 解題線索」標籤）。
 """
 import os
 import io
@@ -62,7 +62,7 @@ def _cue_row(c):
 
 
 def _group_section():
-    """「同一招、跨單元」總覽（觸類旁通）：每個群組串起它出現的各考點。"""
+    """「同一招、跨單元」總覽（觸類旁通）：每個群組串起它出現的各核心概念。"""
     rows = ""
     for gid, label in GROUPS.items():
         seen, chips = set(), ""
@@ -147,8 +147,8 @@ def build():
     body = f"""<div class="cl-topbar"><span class="t-title">學測數A · 解題線索地圖</span>{nav}</div>
 <div class="clue-wrap">
 <div class="clue-hero"><h1>🧭 解題線索地圖</h1>
-<p>考試時不知道怎麼下手？別急著找公式——先想「<b>我要求什麼</b>」「<b>題目給了什麼線索</b>」，順著線索就能想到該用的知識點。</p></div>
-<div class="clue-note"><b>怎麼用：</b>卡住不知怎麼下手時，先想「<b>我要求什麼</b>」——在下面搜尋框<b>輸入你在題目看到的字</b>（如「垂直」「極值」「位數」），或往下找分類。點連結直達該考點複習。同一招常串起<b>好幾個單元</b>，多看幾次就「觸類旁通」。</div>
+<p>考試時不知道怎麼下手？別急著找公式——先想「<b>我要求什麼</b>」「<b>題目給了什麼線索</b>」，順著線索就能想到該用的核心概念。</p></div>
+<div class="clue-note"><b>怎麼用：</b>卡住不知怎麼下手時，先想「<b>我要求什麼</b>」——在下面搜尋框<b>輸入你在題目看到的字</b>（如「垂直」「極值」「位數」），或往下找分類。點連結直達該核心概念複習。同一招常串起<b>好幾個單元</b>，多看幾次就「觸類旁通」。</div>
 <div class="cl-search"><input id="clue-q" type="search" autocomplete="off"
   placeholder="🔍 輸入題目看到的關鍵字，例：垂直、夾角、極值、位數、面積…" oninput="clueFilter()">
 <span id="clue-count"></span></div>
@@ -157,11 +157,11 @@ def build():
 <div class="cm-cols">
 {cards}
 </div>
-<div class="clue-foot">解題線索為教學整理，幫助「把題目線索連到知識點」；實際題目仍以大考中心原卷為準。</div>
+<div class="clue-foot">解題線索為教學整理，幫助「把題目線索連到核心概念」；實際題目仍以大考中心原卷為準。</div>
 </div>"""
 
-    og = og_meta("解題線索地圖 · 看到關鍵字就想到知識點",
-                 "考試不知如何下手？從『你要求什麼』出發，順著線索找到該用的知識點——跨單元、觸類旁通。",
+    og = og_meta("解題線索地圖 · 看到關鍵字就想到核心概念",
+                 "考試不知如何下手？從『你要求什麼』出發，順著線索找到該用的核心概念——跨單元、觸類旁通。",
                  "115學測數學_解題線索地圖.html")
     report_btn = _report_btn({"title": "解題線索地圖"})
     html = f"""<!DOCTYPE html>

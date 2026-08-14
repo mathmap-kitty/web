@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """全站「待複習與錯題」彙整頁（獨立頁，純 localStorage）。
-一頁看完 11 單元裡所有標記『待複習』的考點＋答錯過的題目，可一鍵去複習／重測。
+一頁看完 11 單元裡所有標記『待複習』的核心概念＋答錯過的題目，可一鍵去複習／重測。
 資料在瀏覽器本機（mm-kp-mastery 的 review／mm-wrong），本頁只是把它們讀出來彙整。
 """
 import os
@@ -67,10 +67,10 @@ def build():
     body = f"""<div class="rv-topbar"><span class="t-title">學測數A · 待複習與錯題</span>{nav}</div>
 <div class="rv-wrap">
 <div class="rv-hero"><h1>📌 待複習與錯題（考前衝刺）</h1>
-<p>一頁看完 <b>11 單元裡所有標記「待複習」的考點</b> 與 <b>你答錯過的題目</b>。點「去複習／重測」直達；重測答對後會自動從清單消失。</p></div>
+<p>一頁看完 <b>11 單元裡所有標記「待複習」的核心概念</b> 與 <b>你答錯過的題目</b>。點「去複習／重測」直達；重測答對後會自動從清單消失。</p></div>
 <div class="rv-note"><b>資料來源：</b>你在各單元按的「⚠ 待複習」與答錯的練習題，全部存在<b>這台裝置的瀏覽器</b>裡（換裝置或清除瀏覽資料會歸零）。本頁只是把它們彙整出來。</div>
 
-<div class="rv-sec"><div class="rv-sec-h">⚠ 待複習考點 <span class="cnt" id="rev-cnt">0</span></div>
+<div class="rv-sec"><div class="rv-sec-h">⚠ 待複習核心概念 <span class="cnt" id="rev-cnt">0</span></div>
 <div id="sec-review"></div></div>
 
 <div class="rv-sec"><div class="rv-sec-h">✗ 答錯過的題目 <span class="cnt" id="wrong-cnt">0</span></div>
@@ -86,7 +86,7 @@ def build():
           "function render(){"
           "var mast,wrong;try{mast=JSON.parse(localStorage.getItem('mm-kp-mastery')||'{}')}catch(e){mast={}}"
           "try{wrong=JSON.parse(localStorage.getItem('mm-wrong')||'{}')}catch(e){wrong={}}"
-          # 待複習考點：依單元分組
+          # 待複習核心概念：依單元分組
           "var rev={},rc=0;for(var k in mast){if(mast[k]==='review'){var p=k.split(':');"
           "(rev[p[0]]=rev[p[0]]||[]).push(p[1]);rc++;}}"
           "var rh='';UM.forEach(function(m){var ks=rev[m.slug];if(!ks||!ks.length)return;"
@@ -96,7 +96,7 @@ def build():
           "<a class=\"rv-go\" href=\"'+m.f+'#'+kp+'\">去複習 →</a>"
           "<button class=\"rv-x\" onclick=\"unrev(\\''+m.slug+'\\',\\''+kp+'\\')\">✓ 已複習</button></div>';});});"
           "document.getElementById('rev-cnt').textContent=rc;"
-          "document.getElementById('sec-review').innerHTML=rc?rh:'<div class=\"rv-empty\">🎉 目前沒有待複習的考點！在各單元按「⚠ 待複習」或答錯概念小測時，會出現在這裡。</div>';"
+          "document.getElementById('sec-review').innerHTML=rc?rh:'<div class=\"rv-empty\">🎉 目前沒有待複習的核心概念！在各單元按「⚠ 待複習」或答錯概念小測時，會出現在這裡。</div>';"
           # 錯題：依單元分組
           "var wg={},wc=0;for(var wk in wrong){var w=wrong[wk];(wg[w.s]=wg[w.s]||[]).push({key:wk,t:w.t,f:w.f,a:w.a});wc++;}"
           "var wh='';UM.forEach(function(m){var arr=wg[m.slug];if(!arr||!arr.length)return;"
@@ -115,7 +115,7 @@ def build():
           "render();")
 
     og = og_meta("待複習與錯題 · 考前衝刺一頁看完",
-                 "一頁彙整 11 單元裡所有待複習考點與答錯過的題目，可一鍵去複習／重測。純本機紀錄。",
+                 "一頁彙整 11 單元裡所有待複習核心概念與答錯過的題目，可一鍵去複習／重測。純本機紀錄。",
                  "115學測數學_待複習與錯題.html")
     report_btn = _report_btn({"title": "待複習與錯題"})
     html = f"""<!DOCTYPE html>

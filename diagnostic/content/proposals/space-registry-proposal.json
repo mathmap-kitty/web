@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "unitId": "space",
+  "unitName": "空間向量",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "generatedAt": "2026-08-13",
+  "reuseExistingRegistry": true,
+  "knowledgePoints": [
+    {"id":"space:kp1","title":"空間坐標、距離與正立方體","representations":["點","體"]},
+    {"id":"space:kp2","title":"內積、夾角與垂直","representations":["向"]},
+    {"id":"space:kp3","title":"外積、面積與體積","representations":["向","體"]},
+    {"id":"space:kp4","title":"平面方程式、投影與點到平面距離","representations":["向","面"]},
+    {"id":"space:kp5","title":"空間直線、軌跡與歪斜線","representations":["向","面"]},
+    {"id":"space:kp6","title":"二面角與立體","representations":["點","體"]}
+  ],
+  "representations": ["點","向","面","體"],
+  "approvedRelationshipCount": 12,
+  "dependencyWeightEligibleCount": 9,
+  "questionPlan": {"initial":18,"immediateVariant":18,"delayedRetest":18,"total":54},
+  "publicationAuthorized": false,
+  "deploymentAuthorized": false
+}

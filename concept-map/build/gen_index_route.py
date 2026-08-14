@@ -2,9 +2,9 @@
 r"""把「今天走哪條路」路線列注入子站首頁 concept-map/index.html。
 
 為什麼要一支腳本：`index.html` 是**手寫維護**的（AGENTS.md），不由 build 產生。
-但路線篩選需要 58 個考點的星等，手改 58 個連結太容易出錯。
+但路線篩選需要 58 個核心概念的星等，手改 58 個連結太容易出錯。
 折衷做法：內容仍手寫，只有 `<!-- ROUTE-START -->` 與 `<!-- ROUTE-END -->`
-之間這一段由本腳本維護——星等資料從 content/*.py 讀，改考點後重跑即可。
+之間這一段由本腳本維護——星等資料從 content/*.py 讀，改核心概念後重跑即可。
 
 用法：
     cd D:/gmail/Mathmap_workspace/concept-map
@@ -67,7 +67,7 @@ BAR = """<div class="idx-route" id="idx-route">
 </div>"""
 
 # 與單元頁共用 localStorage 的 mm-route / mm-kp-mastery，選一次全站通用。
-# 找不到星等資料的連結一律「顯示」——資料萬一過期，寧可多顯示也不要把考點藏起來。
+# 找不到星等資料的連結一律「顯示」——資料萬一過期，寧可多顯示也不要把核心概念藏起來。
 JS = """<script>
 (function(){
   var D=window.MMROUTE||{f:{},s:{}};
@@ -101,8 +101,8 @@ JS = """<script>
     document.querySelectorAll('.idx-route .rb-btn').forEach(function(b){ b.classList.toggle('on', b.dataset.r===r); });
     var n=document.getElementById('idx-rb-note');
     if(n){
-      if(r==='basic') n.textContent='只列 '+shown+' 個必考核心考點（共 '+total+' 個），涵蓋 '+units+' 個單元。點進單元後也是同一條路線。';
-      else if(r==='review') n.textContent = shown ? ('只列你標記待複習的 '+shown+' 個考點。') : '目前沒有標記待複習的考點——先到各考點末「確認理解」作答，答錯會自動標記。';
+      if(r==='basic') n.textContent='只列 '+shown+' 個必考核心核心概念（共 '+total+' 個），涵蓋 '+units+' 個單元。點進單元後也是同一條路線。';
+      else if(r==='review') n.textContent = shown ? ('只列你標記待複習的 '+shown+' 個核心概念。') : '目前沒有標記待複習的核心概念——先到各核心概念末「確認理解」作答，答錯會自動標記。';
       else n.textContent='';
     }
     if(!quiet){ try{ localStorage.setItem('mm-route', r); }catch(e){} }
@@ -138,7 +138,7 @@ def main():
 
     n_kp = sum(len(d["kp"]) for d in data.values())
     n3 = sum(1 for d in data.values() for v in d["kp"].values() if v >= 3)
-    print(f"  單元 {len(data)} 個、考點 {n_kp} 個，其中 3★ {n3} 個（＝「先拿基本分」會顯示的數量）")
+    print(f"  單元 {len(data)} 個、核心概念 {n_kp} 個，其中 3★ {n3} 個（＝「先拿基本分」會顯示的數量）")
 
 
 if __name__ == "__main__":

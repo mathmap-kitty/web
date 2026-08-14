@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.1.0",
+  "evidencePolicy": {
+    "validAttemptRequiredFields": ["sessionId", "learningCycleId", "itemId", "itemVersion", "attemptOrdinal", "primaryConceptId", "ability", "correct", "hintUsed", "submittedAt"],
+    "deduplicationKey": ["sessionId", "itemId", "itemVersion", "attemptOrdinal"],
+    "independentItemKey": "itemId",
+    "decisionEvidence": {
+      "currentLearningCycleOnly": true,
+      "publishedItemsOnly": true,
+      "unhintedOnly": true,
+      "distinctItemIds": true,
+      "attemptSelectionPerItem": "FIRST_GRADED_IN_CYCLE",
+      "excludedSources": ["LEGACY_SUMMARY", "HINTED_ATTEMPT", "DUPLICATE_SUBMISSION"]
+    },
+    "legacyOnlyStatus": "UNTESTED",
+    "legacyOnlyFlag": "LEGACY_AUXILIARY_ONLY"
+  },
+  "minimumEvidence": {
+    "initialDecision": {"decisionAttempts": 3, "distinctItemIds": 3, "requiredAbilities": ["CONCEPT", "RECOGNITION", "APPLICATION"], "minimumUnhintedPerAbility": 1},
+    "needsReview": {"minimumOverallAccuracy": 0.6666666667, "minimumPerAbilityAccuracy": 0.6666666667, "comparison": "BELOW_THRESHOLD_IS_NEEDS_REVIEW"},
+    "stableMastery": {"currentRemediationCycleOnly": true, "delayedDecisionAttempts": 2, "distinctItemIds": 2, "minimumDay": 3, "minimumDistinctAbilities": 2, "requiredDelayedAccuracy": 1.0, "allowedRiskStates": ["RESOLVED"]}
+  },
+  "learningCycles": {
+    "learningCycleId": "Groups diagnosis, remediation and retest for one current learning cycle.",
+    "remediationCycleId": "Groups one remediation round and its retests; a failed delayed retest closes the round as FAILED and a new round receives a new id.",
+    "currentStateWindow": "LATEST_ACTIVE_LEARNING_CYCLE",
+    "retentionWindow": "LATEST_NON_CANCELLED_REMEDIATION_CYCLE",
+    "historicalFailures": "RETAIN_FOR_REPORT_ONLY"
+  },
+  "scorePopulations": {
+    "A": "Accuracy of non-delayed decision evidence in the current learning cycle.",
+    "T": "Accuracy of APPLICATION evidence within A.",
+    "S": "Among A with valid time data, proportion correct within 1.5 times expected time; missing time is excluded from the denominator.",
+    "R": "Accuracy of delayed decision evidence in the current remediation cycle.",
+    "missingDimensionPolicy": "DROP_WEIGHT_AND_RENORMALIZE",
+    "confidenceIncluded": false
+  },
+  "blueprints": [
+    {
+      "id": "QUICK",
+      "name": "快速診斷",
+      "targetMinutes": [10, 15],
+      "selection": "依單元、考頻與先備影響抽樣；每個被判讀核心概念涵蓋三核心能力。",
+      "untestedPolicy": "未抽到的核心概念保持 UNTESTED。"
+    },
+    {
+      "id": "FULL",
+      "name": "完整診斷",
+      "targetMinutes": [35, 60],
+      "selection": "單元內每核心概念至少 CONCEPT、RECOGNITION、APPLICATION 各一題；高頻或樞紐核心概念增加第二證據。",
+      "untestedPolicy": "缺少任一核心能力時為 INSUFFICIENT_EVIDENCE。"
+    },
+    {
+      "id": "POST_MOCK",
+      "name": "模考後診斷",
+      "targetMinutes": [10, 30],
+      "selection": "吸收歷屆或模考紀錄，再補齊缺少的核心能力。",
+      "untestedPolicy": "不得由模考總分推定未作答核心概念。"
+    },
+    {
+      "id": "DELAYED_RETEST",
+      "name": "延後重測",
+      "targetMinutes": [5, 15],
+      "selection": "只抽未作答過的題目，涵蓋至少兩種核心能力，排程為立即、1、3、7 日。",
+      "untestedPolicy": "未完成延後證據不得標示 STABLE。"
+    }
+  ]
+}

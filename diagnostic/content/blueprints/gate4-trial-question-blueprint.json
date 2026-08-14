@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "TEACHER_REVIEW",
+  "gate": "Gate 4",
+  "scope": {
+    "units": ["linecir", "seq"],
+    "knowledgePointCount": 9,
+    "plannedItemCount": 45,
+    "itemsPerKnowledgePoint": 5,
+    "pattern": [
+      "CONCEPT_INITIAL",
+      "RECOGNITION_INITIAL",
+      "APPLICATION_INITIAL",
+      "RECOGNITION_DELAYED_RETEST",
+      "APPLICATION_DELAYED_RETEST"
+    ]
+  },
+  "policy": [
+    "沿用 Gate 3 多項式每核心概念三題初診加兩題延後重測的最小可用結構。",
+    "立即補強確認題由補強流程另建，不與初診或延後重測共用 itemId。",
+    "藍圖核准後才撰寫完整題幹、選項、答案、解析與干擾選項對應。",
+    "正式題目須通過 AI-5 獨立重做與教師終審。"
+  ],
+  "units": [
+    {
+      "unitId": "linecir",
+      "unitName": "直線與圓",
+      "points": [
+        {
+          "conceptId": "linecir:kp1",
+          "title": "直線方程式、斜率與角平分線",
+          "moduleBridge": "L1 直線的方向與方程",
+          "formulaKey": "line-point-slope",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解斜率、方向向量與法向量各自描述的幾何意義。","plannedTask":"由直線表示判讀方向資訊，不做繁複計算。","difficulty":"基礎","expectedSeconds":45,"misconception":"把方向向量與法向量當成同方向。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"看到一點與斜率時，辨識點斜式是最直接入口。","plannedTask":"在多種直線表示中選擇最少步驟的方法。","difficulty":"基礎","expectedSeconds":50,"misconception":"只會先求截距，忽略已知點。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"依通過點及平行或垂直條件建立直線方程式。","plannedTask":"包含垂直線特例，避免只背兩斜率乘積。","difficulty":"中等","expectedSeconds":90,"misconception":"垂直線斜率不存在時仍硬套斜率乘積。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"改以法向量辨識一般式直線的方向。","plannedTask":"題面與初診不同，不只換數字。","difficulty":"中等","expectedSeconds":65,"misconception":"把一般式係數直接當成方向向量。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"由對稱方向或角平分條件重建直線。","plannedTask":"需先選方向表示，再寫方程式並檢查。","difficulty":"進階","expectedSeconds":120,"misconception":"只取其中一條可能方向，漏掉另一情形。"}
+          ]
+        },
+        {
+          "conceptId": "linecir:kp2",
+          "title": "兩點距離、中點與三角形",
+          "moduleBridge": "L2 兩直線關係與距離中的坐標基礎",
+          "formulaKey": "coordinate-distance",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解兩點距離來自水平差與鉛直差組成的直角三角形。","plannedTask":"判讀公式中差值與平方的意義。","difficulty":"基礎","expectedSeconds":45,"misconception":"只將兩個坐標差直接相加。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"辨識中點、距離或分點應使用的坐標關係。","plannedTask":"從題目關鍵詞選擇正確工具。","difficulty":"基礎","expectedSeconds":50,"misconception":"中點坐標只平均其中一個分量。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"利用坐標距離或面積判斷三角形性質。","plannedTask":"至少包含一次退化或共線檢查。","difficulty":"中等","expectedSeconds":100,"misconception":"算出三邊後未檢查是否能構成三角形。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"由等距條件辨識中垂線或圓的軌跡。","plannedTask":"從代數條件轉譯成幾何位置。","difficulty":"中等","expectedSeconds":75,"misconception":"把等距誤判成中點。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"整合中點、距離與面積求未知坐標。","plannedTask":"改變表示與問法，不複製初診步驟。","difficulty":"中等","expectedSeconds":110,"misconception":"平方後漏掉正負兩種可能位置。"}
+          ]
+        },
+        {
+          "conceptId": "linecir:kp3",
+          "title": "圓方程式與點的位置",
+          "moduleBridge": "C1 圓方程式與位置",
+          "formulaKey": "circle-standard",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"由圓標準式正確讀出圓心與半徑。","plannedTask":"刻意放入括號內符號干擾。","difficulty":"基礎","expectedSeconds":45,"misconception":"把圓心坐標符號讀反或把半徑平方當半徑。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"辨識一般式需先配方才能讀圓心與半徑。","plannedTask":"選擇正確的配方骨架。","difficulty":"基礎","expectedSeconds":65,"misconception":"一次項係數直接當圓心坐標。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"比較點到圓心距離與半徑，判斷點在圓內、圓上或圓外。","plannedTask":"要求先寫比較關係再作答。","difficulty":"中等","expectedSeconds":85,"misconception":"只代入方程後看正負，卻未理解比較方向。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"從不同外觀的二次方程辨識圓並完成配方。","plannedTask":"使用等價變形，不只更換係數。","difficulty":"中等","expectedSeconds":85,"misconception":"把含平方項的方程一律視為圓。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"由直徑端點或圓心與圓上一點建立圓方程式。","plannedTask":"先求幾何量，再寫標準式。","difficulty":"中等","expectedSeconds":105,"misconception":"將直徑長直接當半徑。"}
+          ]
+        },
+        {
+          "conceptId": "linecir:kp4",
+          "title": "直線與圓的位置",
+          "moduleBridge": "C2 直線與圓",
+          "formulaKey": "line-circle-position",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解圓心到直線距離與半徑的三種比較結果。","plannedTask":"直接判讀相離、相切、相交。","difficulty":"基礎","expectedSeconds":50,"misconception":"把距離較大誤認為交點較多。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"看到相切或交點個數時，辨識先比較距離與半徑。","plannedTask":"比較聯立硬算與距離法的入口。","difficulty":"基礎","expectedSeconds":60,"misconception":"所有直線與圓題都直接聯立解二次方程。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"由圓心距離與半徑計算弦長。","plannedTask":"使用半弦、距離、半徑的直角三角形。","difficulty":"中等","expectedSeconds":110,"misconception":"把半弦長當成整條弦長。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"由切線垂直半徑辨識切線方向。","plannedTask":"從幾何條件轉為直線方程式。","difficulty":"中等","expectedSeconds":80,"misconception":"切線方向與半徑方向設為平行。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"處理含參數的直線與圓位置條件並檢查退化情形。","plannedTask":"需建立參數不等式或方程，再驗證邊界。","difficulty":"進階","expectedSeconds":135,"misconception":"只解出判別式條件，未檢查原幾何限制。"}
+          ]
+        },
+        {
+          "conceptId": "linecir:kp5",
+          "title": "平面區域與線性規劃",
+          "moduleBridge": "L3 二元一次不等式與區域",
+          "formulaKey": "half-plane",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解等式是邊界，不等式決定邊界的一側。","plannedTask":"判斷實線、虛線與是否包含邊界。","difficulty":"基礎","expectedSeconds":45,"misconception":"只看不等號方向決定塗色側。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"辨識使用測試點判定半平面。","plannedTask":"避免測試點落在邊界上。","difficulty":"基礎","expectedSeconds":55,"misconception":"選到邊界點後仍據此判斷。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"由多個不等式求可行區域並判讀頂點。","plannedTask":"依畫邊界、測試點、取交集、查邊界的流程。","difficulty":"中等","expectedSeconds":120,"misconception":"取聯集而不是交集。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"把文字限制轉成二元一次不等式。","plannedTask":"換成情境或幾何語言，測同一核心能力。","difficulty":"中等","expectedSeconds":90,"misconception":"非負限制或總量限制方向寫反。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"把圓完全落在區域內轉成圓心到各邊的距離限制。","plannedTask":"跨接區域與距離表示，包含邊界檢查。","difficulty":"進階","expectedSeconds":150,"misconception":"只要求圓心在區域內，忽略整個圓的半徑。"}
+          ]
+        }
+      ]
+    },
+    {
+      "unitId": "seq",
+      "unitName": "數列與級數",
+      "points": [
+        {
+          "conceptId": "seq:kp1",
+          "title": "等差數列",
+          "moduleBridge": "N1 項、索引與規律＋N2 等差數列與級數",
+          "formulaKey": "arithmetic-sequence",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解等差數列的固定公差與三項中項關係。","plannedTask":"由相鄰差與三項關係判斷是否等差。","difficulty":"基礎","expectedSeconds":45,"misconception":"只看數值遞增就判定等差。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"由首項、公差與索引辨識一般項。","plannedTask":"特別檢查索引從第一項起算。","difficulty":"基礎","expectedSeconds":55,"misconception":"把第 n 項寫成首項加 n 個公差。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"使用等差中項或一般項解跨表示問題。","plannedTask":"可結合坐標中點或幾何量，但主要核心概念仍為等差。","difficulty":"中等","expectedSeconds":105,"misconception":"只套公式，未確認三個量的順序。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"從函數值或幾何量形成的新序列辨識等差結構。","plannedTask":"改變表面情境，不只更換數字。","difficulty":"中等","expectedSeconds":80,"misconception":"原輸入等差便直接假設輸出也等差。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"整合等差中項與對數或坐標條件求比值。","plannedTask":"需完成數列到另一表示的翻譯鏈。","difficulty":"進階","expectedSeconds":135,"misconception":"只使用其中一組中項條件。"}
+          ]
+        },
+        {
+          "conceptId": "seq:kp2",
+          "title": "等比數列",
+          "moduleBridge": "N3 等比數列與有限等比級數",
+          "formulaKey": "geometric-sequence",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解固定公比、一般項與三項中項關係。","plannedTask":"包含零項或負項時的條件辨識。","difficulty":"基礎","expectedSeconds":50,"misconception":"只要三項滿足中項平方關係就忽略順序或公比條件。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"辨識題目問單項、有限和或成長倍率。","plannedTask":"先選對量，再決定是否使用求和公式。","difficulty":"基礎","expectedSeconds":60,"misconception":"看到等比便直接套有限和公式。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"把等差輸入經指數函數轉為等比輸出。","plannedTask":"由輸入公差決定輸出公比。","difficulty":"中等","expectedSeconds":105,"misconception":"把輸入公差直接當成輸出公比。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"辨識倒序後公比取倒數。","plannedTask":"使用順序改變而非純粹換數字。","difficulty":"中等","expectedSeconds":70,"misconception":"認為倒序不影響公比。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"由百分比、半衰期或利潤差額建立等比模型。","plannedTask":"先分離固定量與等比變動量。","difficulty":"中等","expectedSeconds":120,"misconception":"把每次減半的差額誤認為總量減半。"}
+          ]
+        },
+        {
+          "conceptId": "seq:kp3",
+          "title": "遞迴數列",
+          "moduleBridge": "N5 一階遞迴與轉換＋N6 歸納法與模型驗證",
+          "formulaKey": "recurrence",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解遞迴式必須搭配足夠的初始條件。","plannedTask":"比較相同遞迴式在不同初始值下的數列。","difficulty":"基礎","expectedSeconds":45,"misconception":"有遞迴式就能唯一決定數列。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"看到逐次或前一項敘述時辨識遞迴模型。","plannedTask":"由文字選出正確遞迴式與初始值。","difficulty":"基礎","expectedSeconds":65,"misconception":"遞迴式索引錯位或漏掉初始值。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"由遞迴式生成前幾項並驗證候選規律。","plannedTask":"先算前幾項，再判斷一般結構。","difficulty":"中等","expectedSeconds":100,"misconception":"只驗一項便宣告規律成立。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"辨識平移或縮放可將一階遞迴轉成等比數列。","plannedTask":"要求選擇合適的新變數。","difficulty":"進階","expectedSeconds":110,"misconception":"平移常數只移單邊，未保持等價。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"完成遞迴轉換並用遞推或歸納驗證一般式。","plannedTask":"同時檢查起始步與遞推步。","difficulty":"進階","expectedSeconds":150,"misconception":"只驗證前幾項，沒有一般性的遞推證明。"}
+          ]
+        },
+        {
+          "conceptId": "seq:kp4",
+          "title": "級數求和與規律週期",
+          "moduleBridge": "N4 求和與配對＋N1 規律週期",
+          "formulaKey": "summation",
+          "slots": [
+            {"slot":"c1","ability":"CONCEPT","purpose":"INITIAL","target":"理解求和符號的索引、上下限與線性拆和。","plannedTask":"由展開式對應正確的求和表示。","difficulty":"基礎","expectedSeconds":50,"misconception":"把上限當成項數而忽略起始索引。"},
+            {"slot":"r1","ability":"RECOGNITION","purpose":"INITIAL","target":"看到交錯正負或奇偶項時辨識配對與分組策略。","plannedTask":"在直接套公式、配對、分奇偶中選擇入口。","difficulty":"基礎","expectedSeconds":65,"misconception":"忽略最後一個未配對項。"},
+            {"slot":"a1","ability":"APPLICATION","purpose":"INITIAL","target":"計算等差或等比結構的交錯和。","plannedTask":"依索引奇偶處理符號與項數。","difficulty":"中等","expectedSeconds":120,"misconception":"交錯符號起點或配對方向錯誤。"},
+            {"slot":"r2","ability":"RECOGNITION","purpose":"DELAYED_RETEST","target":"辨識週期累積需分完整週期與餘數。","plannedTask":"從情境辨認週期長度與剩餘步數。","difficulty":"中等","expectedSeconds":80,"misconception":"只算完整週期，漏掉不足一週期部分。"},
+            {"slot":"a2","ability":"APPLICATION","purpose":"DELAYED_RETEST","target":"整合常用和、分組或週期求出累積量。","plannedTask":"更換表示與分組方式，不只替換數值。","difficulty":"進階","expectedSeconds":140,"misconception":"拆和後的上下限或係數未同步調整。"}
+          ]
+        }
+      ]
+    }
+  ]
+}

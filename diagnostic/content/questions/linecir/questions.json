@@ -1,0 +1,1814 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "linecir",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "直線 [[2x-3y+1=0]] 的一組方向向量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(2,-3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(3,2)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(2,3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(-3,2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "一般式 [[ax+by+c=0]] 的法向量可取 [[(a,b)]]，方向向量可取 [[(b,-a)]]。因此本題可取 [[(-3,-2)]] 或其倍數，選項中的 [[(3,2)]] 與它方向相反但平行，仍是方向向量。",
+      "distractorMap": {
+        "A": "linecir.REPRESENTATION.001",
+        "C": "linecir.REPRESENTATION.001",
+        "D": "linecir.REPRESENTATION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp1-r1",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "已知直線通過 [[(2,-1)]]，斜率為 [[3]]。下列何式最適合作為第一步？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[y+1=3(x-2)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[y-1=3(x+2)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[y+1=2(x-3)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3y=x-7]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "已知一點與斜率時，直接使用點斜式 [[y-y_0=m(x-x_0)]]，代入 [[(x_0,y_0)=(2,-1)]] 得 [[y+1=3(x-2)]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp1-a1",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "通過點 [[(1,2)]] 且垂直於直線 [[x=4]] 的直線方程式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x=1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[y=2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[y=4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x+y=3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[x=4]] 是鉛直線，與它垂直的直線為水平線。通過 [[(1,2)]] 的水平線是 [[y=2]]。這個特例不適合硬套兩斜率乘積。",
+      "distractorMap": {
+        "A": "linecir.CONDITION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp1-r2",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 65,
+      "stem": "直線通過 [[A(1,2)]] 與 [[B(4,6)]]，下列何者是這條直線的一組方向向量？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(3,4)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(4,3)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(1,2)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(5,8)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "由 [[A]] 指向 [[B]] 的向量為 [[(4-1,6-2)=(3,4)]]，可作為直線的方向向量。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp1-a2",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 85,
+      "stem": "坐標平面上，到 [[x]] 軸與 [[y]] 軸距離相等的所有點所形成的圖形為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "只有 [[y=x]]"
+        },
+        {
+          "id": "B",
+          "text": "只有 [[y=-x]]"
+        },
+        {
+          "id": "C",
+          "text": "[[y=x]] 或 [[y=-x]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x^2+y^2=1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "點 [[(x,y)]] 到兩坐標軸的距離分別為 [[|y|]] 與 [[|x|]]。由 [[|x|=|y|]] 得 [[y=x]] 或 [[y=-x]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "兩點 [[A(1,2)]]、[[B(4,6)]] 的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[7]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "水平差為 [[3]]、鉛直差為 [[4]]，因此 [[AB=\\sqrt{3^2+4^2}=5]]。",
+      "distractorMap": {
+        "A": "linecir.CALCULATION.001",
+        "B": "linecir.CALCULATION.001",
+        "D": "linecir.CALCULATION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "線段端點為 [[A(-2,3)]]、[[B(4,-1)]]，其中點坐標為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(1,1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(2,1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(1,2)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(-1,1)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "中點的兩個坐標分別取平均：[[\\left(\\frac{-2+4}{2},\\frac{3+(-1)}{2}\\right)=(1,1)]]。",
+      "distractorMap": {
+        "B": "linecir.PROCEDURE.001",
+        "C": "linecir.PROCEDURE.001",
+        "D": "linecir.PROCEDURE.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "三角形三頂點為 [[A(0,0)]]、[[B(6,0)]]、[[C(2,4)]]，其面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[8]]"
+        },
+        {
+          "id": "B",
+          "text": "[[10]]"
+        },
+        {
+          "id": "C",
+          "text": "[[12]]"
+        },
+        {
+          "id": "D",
+          "text": "[[24]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "以 [[AB]] 為底，底長為 [[6]]，點 [[C]] 到 [[x]] 軸的高為 [[4]]，所以面積為 [[\\frac12\\cdot6\\cdot4=12]]。",
+      "distractorMap": {
+        "A": "linecir.CALCULATION.001",
+        "B": "linecir.CALCULATION.001",
+        "D": "linecir.CALCULATION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp2-r2",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "點 [[P(x,y)]] 到 [[A(-2,0)]] 與 [[B(4,0)]] 的距離相等，則 [[P]] 所在的軌跡為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x=-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x=1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[y=1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[y=0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "等距軌跡是線段 [[AB]] 的中垂線。[[AB]] 中點的 [[x]] 坐標為 [[\\frac{-2+4}{2}=1]]，故軌跡為 [[x=1]]。",
+      "distractorMap": {
+        "A": "linecir.PROCEDURE.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "點 [[P(t,2)]] 到點 [[A(1,0)]] 的距離為 [[\\sqrt5]]，則 [[t]] 的所有可能值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "只有 [[0]]"
+        },
+        {
+          "id": "B",
+          "text": "只有 [[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[0]] 或 [[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[-1]] 或 [[3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "由距離公式，[[(t-1)^2+2^2=5]]，所以 [[(t-1)^2=1]]，得到 [[t=0]] 或 [[t=2]]。平方後要保留正負兩種可能。",
+      "distractorMap": {
+        "A": "linecir.CALCULATION.001",
+        "B": "linecir.CALCULATION.001",
+        "D": "linecir.CALCULATION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 45,
+      "stem": "圓 [[(x+2)^2+(y-3)^2=25]] 的圓心與半徑為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "圓心 [[(2,-3)]]，半徑 [[25]]"
+        },
+        {
+          "id": "B",
+          "text": "圓心 [[(-2,3)]]，半徑 [[5]]"
+        },
+        {
+          "id": "C",
+          "text": "圓心 [[(2,-3)]]，半徑 [[5]]"
+        },
+        {
+          "id": "D",
+          "text": "圓心 [[(-2,3)]]，半徑 [[25]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "標準式是 [[(x-h)^2+(y-k)^2=r^2]]。因此圓心為 [[(-2,3)]]，半徑為 [[\\sqrt{25}=5]]。",
+      "distractorMap": {
+        "A": "linecir.CONCEPT.001",
+        "C": "linecir.CONCEPT.001",
+        "D": "linecir.CONCEPT.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp3-r1",
+      "itemVersion": "3",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "要由圓 [[x^2+y^2-6x+4y-12=0]] 找出圓心與半徑，最適合先做哪一步？",
+      "options": [
+        {
+          "id": "A",
+          "text": "分別將 [[x^2-6x]] 與 [[y^2+4y]] 配方"
+        },
+        {
+          "id": "B",
+          "text": "直接把 [[-6]] 與 [[4]] 當成圓心坐標"
+        },
+        {
+          "id": "C",
+          "text": "先令 [[x=0]] 求 [[y]]"
+        },
+        {
+          "id": "D",
+          "text": "先計算 [[x+y]] 的最大值"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "一般式要轉成圓心半徑式，應先把 [[x]] 與 [[y]] 的二次式分組配方；本題應處理 [[x^2-6x]] 與 [[y^2+4y]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp3-a1",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "對圓 [[(x-1)^2+(y-1)^2=9]]，點 [[P(4,1)]] 位於何處？",
+      "options": [
+        {
+          "id": "A",
+          "text": "圓內"
+        },
+        {
+          "id": "B",
+          "text": "圓上"
+        },
+        {
+          "id": "C",
+          "text": "圓外"
+        },
+        {
+          "id": "D",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "圓心為 [[(1,1)]]、半徑為 [[3]]。[[P]] 到圓心的距離為 [[3]]，等於半徑，所以 [[P]] 在圓上。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp3-r2",
+      "itemVersion": "3",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 80,
+      "stem": "已知圓的一條直徑端點為 [[A]]、[[B]]。要寫出圓方程式，最適合先使用哪一組工具？",
+      "options": [
+        {
+          "id": "A",
+          "text": "用 [[AB]] 中點找圓心，再用 [[AB]] 長度的一半找半徑"
+        },
+        {
+          "id": "B",
+          "text": "把 [[A]] 的坐標直接當圓心，把 [[AB]] 長度當半徑"
+        },
+        {
+          "id": "C",
+          "text": "只求 [[AB]] 的斜率，不需要圓心"
+        },
+        {
+          "id": "D",
+          "text": "只求 [[AB]] 中點，不需要半徑"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "直徑的中點就是圓心，而直徑長度的一半就是半徑；這兩個量齊備後才能寫標準式。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp3-a2",
+      "itemVersion": "3",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 95,
+      "stem": "圓的一條直徑端點為 [[A(-1,2)]]、[[B(5,2)]]，此圓的方程式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(x-2)^2+(y-2)^2=9]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(x+2)^2+(y-2)^2=9]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(x-2)^2+(y+2)^2=36]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(x-2)^2+(y-2)^2=36]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "直徑中點為圓心 [[(2,2)]]，直徑長為 [[6]]，半徑為 [[3]]，故方程式是 [[(x-2)^2+(y-2)^2=9]]。",
+      "distractorMap": {},
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "圓 [[x^2+y^2=9]] 與直線 [[y=4]] 的位置關係為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "相離"
+        },
+        {
+          "id": "B",
+          "text": "相切"
+        },
+        {
+          "id": "C",
+          "text": "相交於兩點"
+        },
+        {
+          "id": "D",
+          "text": "直線通過圓心"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "圓心到直線 [[y=4]] 的距離為 [[4]]，半徑為 [[3]]。因 [[4>3]]，所以相離。",
+      "distractorMap": {
+        "B": "linecir.STRATEGY.001",
+        "C": "linecir.STRATEGY.001",
+        "D": "linecir.STRATEGY.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "圓 [[(x-1)^2+(y+2)^2=9]] 與直線 [[x=4]] 的位置關係為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "相離"
+        },
+        {
+          "id": "B",
+          "text": "相切"
+        },
+        {
+          "id": "C",
+          "text": "相交於兩點"
+        },
+        {
+          "id": "D",
+          "text": "直線通過圓心"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "圓心為 [[(1,-2)]]，到直線 [[x=4]] 的距離為 [[3]]，等於半徑 [[3]]，所以相切。",
+      "distractorMap": {
+        "A": "linecir.STRATEGY.001",
+        "C": "linecir.STRATEGY.001",
+        "D": "linecir.STRATEGY.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp4-a1",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "圓 [[x^2+y^2=25]] 被直線 [[y=3]] 截得的弦長為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "圓心到直線的距離為 [[3]]。半弦長為 [[\\sqrt{5^2-3^2}=4]]，整條弦長為 [[2\\cdot4=8]]。",
+      "distractorMap": {
+        "A": "linecir.PROCEDURE.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp4-r2",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 85,
+      "stem": "圓心為 [[O]]，[[P]] 為圓上一點。要作圓在 [[P]] 點的切線，首先應使用哪一個關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "切線平行 [[OP]]"
+        },
+        {
+          "id": "B",
+          "text": "切線垂直 [[OP]]"
+        },
+        {
+          "id": "C",
+          "text": "切線必通過 [[O]]"
+        },
+        {
+          "id": "D",
+          "text": "[[O]] 到切線的距離為 [[0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "圓在 [[P]] 點的切線與半徑 [[OP]] 垂直。先確定這個方向關係，再利用通過 [[P]] 寫直線方程式。",
+      "distractorMap": {
+        "A": "linecir.REPRESENTATION.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp4-a2",
+      "itemVersion": "2",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 100,
+      "stem": "直線 [[y=k]] 與圓 [[x^2+y^2=4]] 恰有一個交點，則 [[k]] 的所有可能值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "只有 [[2]]"
+        },
+        {
+          "id": "B",
+          "text": "只有 [[-2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]] 或 [[-2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[-4]] 或 [[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "圓心到直線 [[y=k]] 的距離為 [[|k|]]。恰有一個交點表示相切，所以 [[|k|=2]]，即 [[k=2]] 或 [[k=-2]]。",
+      "distractorMap": {
+        "D": "linecir.CONCEPT.001"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "關於不等式 [[x+2y\\le4]] 所表示的區域，下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "包含原點，且包含邊界直線"
+        },
+        {
+          "id": "B",
+          "text": "包含原點，但不包含邊界直線"
+        },
+        {
+          "id": "C",
+          "text": "不包含原點，但包含邊界直線"
+        },
+        {
+          "id": "D",
+          "text": "不包含原點，也不包含邊界直線"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "代入原點得 [[0\\le4]]，所以包含原點；符號含等號，因此邊界直線也包含在區域內。",
+      "distractorMap": {
+        "B": "linecir.REPRESENTATION.002",
+        "C": "linecir.REPRESENTATION.002",
+        "D": "linecir.REPRESENTATION.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "不等式 [[y>2x+1]] 所表示的區域具有哪一項特徵？",
+      "options": [
+        {
+          "id": "A",
+          "text": "包含原點，邊界為實線"
+        },
+        {
+          "id": "B",
+          "text": "包含原點，邊界為虛線"
+        },
+        {
+          "id": "C",
+          "text": "不包含原點，邊界為實線"
+        },
+        {
+          "id": "D",
+          "text": "不包含原點，邊界為虛線"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "代入原點得到 [[0>1]]，不成立，所以不包含原點；嚴格不等式不含邊界，因此畫虛線。",
+      "distractorMap": {
+        "A": "linecir.REPRESENTATION.002",
+        "B": "linecir.REPRESENTATION.002",
+        "C": "linecir.REPRESENTATION.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 95,
+      "stem": "區域 [[x\\ge0]]、[[y\\ge0]]、[[x+y\\le6]] 的三個頂點為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(0,0),(6,0),(0,6)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(0,0),(3,0),(0,3)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(6,0),(0,6),(6,6)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(0,0),(6,6),(3,3)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "前兩式限制在第一象限，第三式的邊界與兩軸交於 [[(6,0)]]、[[(0,6)]]，再加上原點，共三個頂點。",
+      "distractorMap": {
+        "B": "linecir.REPRESENTATION.002",
+        "C": "linecir.REPRESENTATION.002",
+        "D": "linecir.REPRESENTATION.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "某物品甲、乙的數量分別為 [[x]]、[[y]]，每件分別耗用 [[2]] 與 [[3]] 單位材料，總材料至多 [[12]] 單位。正確限制式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2x+3y\\ge12]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2x+3y\\le12]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3x+2y\\le12]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2x+3y=12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "「至多」表示不超過，因此是 [[2x+3y\\le12]]；數量題通常還需搭配 [[x\\ge0]]、[[y\\ge0]]。",
+      "distractorMap": {
+        "A": "linecir.REPRESENTATION.002",
+        "C": "linecir.REPRESENTATION.002",
+        "D": "linecir.REPRESENTATION.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "linecir-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 120,
+      "stem": "半徑為 [[1]] 的圓要完全落在正方形 [[0\\le x\\le6]]、[[0\\le y\\le4]] 內。若圓心為 [[(h,k)]]，其可行範圍為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0\\le h\\le6, 0\\le k\\le4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1\\le h\\le5, 1\\le k\\le3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-1\\le h\\le7, -1\\le k\\le5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[1\\le h\\le6, 1\\le k\\le4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "整個圓都在正方形內，圓心到四邊的距離都至少為半徑 [[1]]，故 [[1\\le h\\le5]] 且 [[1\\le k\\le3]]。",
+      "distractorMap": {
+        "A": "linecir.CONDITION.002",
+        "C": "linecir.CONDITION.002",
+        "D": "linecir.CONDITION.002"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "Gate 4 教師核准題庫藍圖（2026-08-09）"
+      }
+    },
+    {
+      "itemId": "linecir-kp1-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "直線 [[Ax+By+C=0]] 的一組法向量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(A,B)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(B,A)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-B,A)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,C)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "直線方程式中 [[x,y]] 的係數組成法向量 [[(A,B)]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp1-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "下列哪一條直線與 [[2x-3y+5=0]] 平行？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2x+3y-1=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4x-6y+1=0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3x+2y-1=0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6x+4y+1=0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "平行直線的法向量成比例；[[ (4,-6)=2(2,-3) ]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp1-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "通過 [[(1,-1)]] 且垂直於 [[2x+y=5]] 的直線方程式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x-2y-3=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2x+y-1=0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x+2y+1=0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2x-y-3=0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "原直線斜率為 [[-2]]，垂線斜率為 [[\\frac12]]；代入點斜式得 [[x-2y-3=0]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "直線的方向向量與法向量之間必定滿足哪一個關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "互相平行"
+        },
+        {
+          "id": "B",
+          "text": "內積為 [[0]]"
+        },
+        {
+          "id": "C",
+          "text": "長度相等"
+        },
+        {
+          "id": "D",
+          "text": "兩者都唯一"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "方向向量沿著直線，法向量垂直直線，因此兩者內積為 [[0]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp2-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "線段端點為 [[A(x_1,y_1)]]、[[B(x_2,y_2)]]，其中點坐標為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(x_1+x_2,y_1+y_2)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2})]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(x_2-x_1,y_2-y_1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(\\frac{x_2-x_1}{2},\\frac{y_2-y_1}{2})]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "中點的兩個坐標分別是端點對應坐標的平均。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp2-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "已知三角形三個頂點坐標，要直接求面積，最適合使用哪一種工具？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩點距離公式一次"
+        },
+        {
+          "id": "B",
+          "text": "向量行列式的絕對值除以 [[2]]"
+        },
+        {
+          "id": "C",
+          "text": "只求三邊斜率"
+        },
+        {
+          "id": "D",
+          "text": "只求三邊中點"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "兩邊向量的行列式絕對值等於平行四邊形面積，除以 [[2]] 即得三角形面積。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp2-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "點 [[P(t,0)]] 到 [[A(0,2)]] 與 [[B(4,0)]] 的距離相等，則 [[t]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac32]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac52]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由 [[t^2+4=(t-4)^2]]，化簡得 [[8t=12]]，所以 [[t=\\frac32]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "到兩個相異定點距離相等的所有點，形成什麼圖形？",
+      "options": [
+        {
+          "id": "A",
+          "text": "通過兩定點的直線"
+        },
+        {
+          "id": "B",
+          "text": "兩定點連線的垂直平分線"
+        },
+        {
+          "id": "C",
+          "text": "以任一定點為圓心的圓"
+        },
+        {
+          "id": "D",
+          "text": "兩定點連線本身"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "等距點的軌跡是兩定點連線的垂直平分線。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp3-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "方程式 [[x^2+y^2+Dx+Ey+F=0]] 表示非退化圓，須滿足哪一個條件？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[D^2+E^2-4F>0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[D^2+E^2-4F=0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[D^2+E^2-4F<0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[D+E+F=0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "配方後半徑平方為 [[\\frac{D^2+E^2-4F}{4}]]，非退化圓須使其大於 [[0]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp3-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "圓 [[x^2+y^2+4x-6y-12=0]] 的圓心與半徑為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-2,3),5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(2,-3),5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(-2,3),25]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,-3),25]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "配方得 [[(x+2)^2+(y-3)^2=25]]，故圓心 [[(-2,3)]]、半徑 [[5]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp3-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "圓心為 [[(2,-1)]] 且與直線 [[y=3]] 相切的圓方程式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(x-2)^2+(y+1)^2=4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(x-2)^2+(y+1)^2=16]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(x+2)^2+(y-1)^2=4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(x+2)^2+(y-1)^2=16]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "圓心到 [[y=3]] 的距離為 [[4]]，故半徑平方為 [[16]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "對圓 [[(x-h)^2+(y-k)^2=r^2]]，若點 [[P]] 代入左式所得值小於 [[r^2]]，則 [[P]] 在哪裡？",
+      "options": [
+        {
+          "id": "A",
+          "text": "圓內"
+        },
+        {
+          "id": "B",
+          "text": "圓上"
+        },
+        {
+          "id": "C",
+          "text": "圓外"
+        },
+        {
+          "id": "D",
+          "text": "無法判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "左式是點到圓心距離的平方；小於 [[r^2]] 表示距離小於半徑，故在圓內。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp4-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "圓心到直線的距離為 [[d]]、半徑為 [[r]]。直線與圓相交於兩點的條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[d<r]]"
+        },
+        {
+          "id": "B",
+          "text": "[[d=r]]"
+        },
+        {
+          "id": "C",
+          "text": "[[d>r]]"
+        },
+        {
+          "id": "D",
+          "text": "[[d=2r]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "圓心到直線的距離小於半徑時，直線穿過圓並形成兩個交點。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp4-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "將直線方程式代入圓方程式後得到一元二次方程式。若直線與圓相切，判別式應為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "小於 [[0]]"
+        },
+        {
+          "id": "B",
+          "text": "等於 [[0]]"
+        },
+        {
+          "id": "C",
+          "text": "大於 [[0]]"
+        },
+        {
+          "id": "D",
+          "text": "不一定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "相切只有一個交點，代入後的一元二次方程式有重根，故判別式為 [[0]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp4-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "直線 [[3x+4y+k=0]] 與圓 [[(x-1)^2+(y-2)^2=25]] 相切，則 [[k]] 的所有可能值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[14]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-36]]"
+        },
+        {
+          "id": "C",
+          "text": "[[14]] 或 [[-36]]"
+        },
+        {
+          "id": "D",
+          "text": "[[11]] 或 [[-11]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "圓心到直線距離等於 [[5]]：[[\\frac{|3+8+k|}{5}=5]]，故 [[|k+11|=25]]，得 [[k=14]] 或 [[k=-36]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "圓在圓上點 [[P]] 的切線，與下列哪一條線互相垂直？",
+      "options": [
+        {
+          "id": "A",
+          "text": "通過圓心與 [[P]] 的半徑"
+        },
+        {
+          "id": "B",
+          "text": "任一弦"
+        },
+        {
+          "id": "C",
+          "text": "通過圓心的水平線"
+        },
+        {
+          "id": "D",
+          "text": "圓的任一直徑"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "切線性質：切線垂直於通過切點的半徑。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp5-iv-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "不等式 [[2x-y\\le3]] 的邊界是否包含在可行區域內？",
+      "options": [
+        {
+          "id": "A",
+          "text": "包含，邊界畫實線"
+        },
+        {
+          "id": "B",
+          "text": "不包含，邊界畫虛線"
+        },
+        {
+          "id": "C",
+          "text": "只包含 [[x>0]] 的部分"
+        },
+        {
+          "id": "D",
+          "text": "無法判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "符號含等號，邊界 [[2x-y=3]] 屬於可行區域，應畫實線。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp5-iv-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "判斷 [[2x-y\\ge3]] 的半平面時，以原點測試。因 [[0\\ge3]] 不成立，應選哪一側？",
+      "options": [
+        {
+          "id": "A",
+          "text": "包含原點的一側"
+        },
+        {
+          "id": "B",
+          "text": "不包含原點的一側"
+        },
+        {
+          "id": "C",
+          "text": "只選邊界線"
+        },
+        {
+          "id": "D",
+          "text": "兩側都選"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "原點不符合不等式，因此解區域是邊界另一側，即不包含原點的一側。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp5-iv-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 105,
+      "stem": "在 [[x\\ge0]]、[[y\\ge0]]、[[x+y\\le4]]、[[x+2y\\le6]] 下，[[3x+2y]] 的最大值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[10]]"
+        },
+        {
+          "id": "B",
+          "text": "[[11]]"
+        },
+        {
+          "id": "C",
+          "text": "[[12]]"
+        },
+        {
+          "id": "D",
+          "text": "[[14]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "可行頂點為 [[(0,0),(4,0),(2,2),(0,3)]]；代入目標式，最大值 [[12]] 出現在 [[(4,0)]]。",
+      "distractorMap": {}
+    },
+    {
+      "itemId": "linecir-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "linecir:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "若可行區域由若干個一次不等式的半平面交集形成，則此區域必具有哪一項性質？",
+      "options": [
+        {
+          "id": "A",
+          "text": "一定是圓形"
+        },
+        {
+          "id": "B",
+          "text": "一定是凸集合"
+        },
+        {
+          "id": "C",
+          "text": "一定有有限面積"
+        },
+        {
+          "id": "D",
+          "text": "一定不含邊界"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "每個半平面都是凸集合，凸集合的交集仍為凸集合。",
+      "distractorMap": {}
+    }
+  ]
+}

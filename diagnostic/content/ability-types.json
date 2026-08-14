@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "coreAbilities": [
+    {"id": "CONCEPT", "name": "概念理解", "definition": "理解定義、性質、條件與反例。", "requiredForInitialDecision": true},
+    {"id": "RECOGNITION", "name": "線索辨識", "definition": "由題目語言、圖形或表示辨識應使用的核心概念。", "requiredForInitialDecision": true},
+    {"id": "APPLICATION", "name": "應用遷移", "definition": "將核心概念用於不同表示、近遷移或跨情境問題。", "requiredForInitialDecision": true}
+  ],
+  "evidenceDimensions": [
+    {"id": "SPEED", "name": "速度", "definition": "合理時間內且未靠提示完成；與正確性分開。"},
+    {"id": "RETENTION", "name": "延後保留", "definition": "補強後第 1／3／7 日不同題目的保留表現。"},
+    {"id": "CONFIDENCE", "name": "信心", "definition": "LOW／MEDIUM／HIGH；只作風險訊號，不直接加分。"},
+    {"id": "HINT_USE", "name": "提示使用", "definition": "記錄是否在作答前取得線索；有提示答對不能單獨證明獨立掌握。"}
+  ]
+}

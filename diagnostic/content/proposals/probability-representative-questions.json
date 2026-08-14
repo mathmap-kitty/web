@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "probability",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "items": [
+    {
+      "id": "probability-rep-kp1",
+      "kpId": "probability:kp1",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "空",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "同時擲兩顆公平的四面骰，每顆骰子的點數皆為 1、2、3、4。兩顆骰子的點數和至少為 6 的機率為何？",
+      "options": ["3/16", "3/8", "3/7", "2/5", "5/8"],
+      "answerIndex": 1,
+      "answer": "3/8",
+      "firstBarrier": "能否把兩顆骰子視為可區分，建立 16 個等可能的有序點數對。",
+      "solution": "共有 4×4=16 個等可能結果。點數和為 6、7、8 時，分別有 3、2、1 個結果，因此所求機率為 (3+2+1)/16=3/8。",
+      "diagnosticDistractors": {
+        "0": "只計入點數和大於 6，漏掉等於 6 的情形。",
+        "2": "把可能的點數和 2 至 8 誤當成 7 個等可能結果。",
+        "3": "把兩顆骰子視為不可區分，以 10 個無序點數對作分母。",
+        "4": "計算補事件時把點數和等於 6 放在錯誤的一側。"
+      }
+    },
+    {
+      "id": "probability-rep-kp2",
+      "kpId": "probability:kp2",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "事",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "從標有 1 至 12 的十二張卡片中等可能抽出一張。令事件 A 表示抽到偶數，事件 B 表示抽到 3 的倍數。抽到偶數或 3 的倍數的機率為何？",
+      "options": ["1/6", "1/2", "2/3", "5/6", "1"],
+      "answerIndex": 2,
+      "answer": "2/3",
+      "firstBarrier": "能否辨識『或』是聯集，並把同時為偶數且為 3 的倍數者只計算一次。",
+      "solution": "A 有 6 個結果，B 有 4 個結果，A∩B={6,12} 有 2 個結果，所以 A∪B 有 6+4−2=8 個結果，機率為 8/12=2/3。",
+      "diagnosticDistractors": {
+        "0": "只計算交集事件，也就是 6 的倍數。",
+        "1": "只計算事件 A，忽略事件 B 額外帶來的結果。",
+        "3": "直接把 6 與 4 相加，未扣除重複的交集。",
+        "4": "認為每個數不是偶數就是 3 的倍數。"
+      }
+    },
+    {
+      "id": "probability-rep-kp3",
+      "kpId": "probability:kp3",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "路",
+      "secondaryRepresentation": "事",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "甲盒有 2 顆紅球、1 顆藍球；乙盒有 1 顆紅球、3 顆藍球。先等可能選一個盒子，再從該盒隨機取出一球。已知取出的是紅球，所選盒子為甲盒的機率為何？",
+      "options": ["1/2", "2/3", "8/11", "3/4", "11/12"],
+      "answerIndex": 2,
+      "answer": "8/11",
+      "firstBarrier": "能否把『已知紅球』當成更新後的條件，而不是直接回答甲盒取到紅球的機率。",
+      "solution": "經甲盒取到紅球的路徑機率為 (1/2)(2/3)=1/3；經乙盒取到紅球的路徑機率為 (1/2)(1/4)=1/8。因此已知取到紅球時，來自甲盒的機率為 (1/3)/(1/3+1/8)=8/11。",
+      "diagnosticDistractors": {
+        "0": "忽略觀察到紅球後應更新盒子的機率。",
+        "1": "把甲盒內紅球比例直接當成反向條件機率。",
+        "3": "只比較兩盒的紅球顆數，忽略各盒總球數。",
+        "4": "直接把兩盒各自取到紅球的機率相加，未乘上選盒機率，也未正規化。"
+      }
+    },
+    {
+      "id": "probability-rep-kp4",
+      "kpId": "probability:kp4",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "值",
+      "secondaryRepresentation": "空",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "某遊戲先付 20 元，再擲一顆公平的六面骰。若出現 1、2、3 點，獎金為 0 元；出現 4、5 點，獎金為 30 元；出現 6 點，獎金為 90 元。玩家每玩一次的淨收益期望值為多少元？",
+      "options": ["−20", "0", "5", "20", "25"],
+      "answerIndex": 2,
+      "answer": "5",
+      "firstBarrier": "能否先建立獎金的機率分配，再將固定費用 20 元扣除一次。",
+      "solution": "獎金期望值為 0×(3/6)+30×(2/6)+90×(1/6)=25 元，因此淨收益期望值為 25−20=5 元。",
+      "diagnosticDistractors": {
+        "0": "只看到入場費，完全忽略可能獲得的獎金。",
+        "1": "把遊戲誤判為公平，或在加權時抵銷錯誤。",
+        "3": "把入場費或某一獎金直接當成期望值。",
+        "4": "只算獎金期望值，忘記扣除固定費用。"
+      }
+    }
+  ]
+}

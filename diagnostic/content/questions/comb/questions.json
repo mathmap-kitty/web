@@ -1,0 +1,1807 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "comb",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "成果展當天，小安只能選擇一項活動參加。室內活動有 4 項，戶外活動有 3 項，共有多少種選擇？",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        },
+        {
+          "id": "E",
+          "text": "64"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "只能在兩類中擇一，因此共有 [[4+3=7]] 種。",
+      "distractorMap": {
+        "A": "comb.KP1.CONCEPT.001",
+        "C": "comb.KP1.CONCEPT.002",
+        "D": "comb.KP1.CONCEPT.003",
+        "E": "comb.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "早餐必須選 1 種主餐與 1 種飲料。主餐有 3 種，飲料有 2 種。下列哪一個算式能表示早餐搭配數？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3+2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3\\times2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3!]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2^3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\binom{3}{2}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "每一種主餐都可搭配 2 種飲料，因此搭配數為 [[3\\times2=6]]。",
+      "distractorMap": {
+        "A": "comb.KP1.RECOGNITION.001",
+        "C": "comb.KP1.RECOGNITION.002",
+        "D": "comb.KP1.RECOGNITION.003",
+        "E": "comb.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "某門禁密碼由一個英文字母與一個數字組成。英文字母可選 A、B、C，數字可選 1、2、3、4，但 A1 不允許使用。共有多少組可用密碼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        },
+        {
+          "id": "E",
+          "text": "15"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "沒有禁用條件時有 [[3\\times4=12]] 組，排除 A1 後為 [[12-1=11]] 組。",
+      "distractorMap": {
+        "A": "comb.KP1.APPLICATION.001",
+        "B": "comb.KP1.APPLICATION.002",
+        "D": "comb.KP1.APPLICATION.003",
+        "E": "comb.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "設計個人頁面時，必須選 1 個頭像與 1 種背景。頭像有 5 個，背景有 4 種，共有多少種版面？",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        },
+        {
+          "id": "E",
+          "text": "40"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "每個頭像可搭配 4 種背景，所以共有 [[5\\times4=20]] 種。",
+      "distractorMap": {
+        "A": "comb.KP1.CONCEPT.001",
+        "B": "comb.KP1.CONCEPT.002",
+        "D": "comb.KP1.CONCEPT.003",
+        "E": "comb.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "有 4 件上衣與 3 件長褲，每套穿搭各選一件，但紅上衣不能搭白長褲。下列哪一個算式正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4+3-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4\\times3-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(4-1)(3-1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4\\times(3-1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[4\\times3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "全部有 [[4\\times3]] 套，紅上衣配白長褲只有 1 套不能用，所以為 [[4\\times3-1]]。",
+      "distractorMap": {
+        "A": "comb.KP1.RECOGNITION.001",
+        "C": "comb.KP1.RECOGNITION.002",
+        "D": "comb.KP1.RECOGNITION.003",
+        "E": "comb.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 75,
+      "stem": "識別碼由兩個英文字母與一個數字組成。兩個字母都可從 A、B、C 中選取且可以重複，數字可選 1、2，但 BB2 不使用。共有多少個可用識別碼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        },
+        {
+          "id": "E",
+          "text": "18"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "全部有 [[3\\times3\\times2=18]] 個，排除 BB2 後為 [[18-1=17]] 個。",
+      "distractorMap": {
+        "A": "comb.KP1.APPLICATION.001",
+        "B": "comb.KP1.APPLICATION.002",
+        "C": "comb.KP1.APPLICATION.003",
+        "E": "comb.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "下列關於加法原理與乘法原理的敘述，哪一項正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "不同交通方式擇一時相乘；連續完成兩階段時相加。"
+        },
+        {
+          "id": "B",
+          "text": "不同交通方式擇一時相加；連續完成兩階段時相乘。"
+        },
+        {
+          "id": "C",
+          "text": "只要題目出現「且」就一定相加。"
+        },
+        {
+          "id": "D",
+          "text": "只要題目出現「或」就一定相乘。"
+        },
+        {
+          "id": "E",
+          "text": "加法原理與乘法原理可以任意交換。"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "互斥方案擇一時把各類數量相加；一個結果要依序完成多個階段時，把每階段選擇數相乘。",
+      "distractorMap": {
+        "A": "comb.KP1.CONCEPT.001",
+        "C": "comb.KP1.CONCEPT.002",
+        "D": "comb.KP1.CONCEPT.003",
+        "E": "comb.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 60,
+      "stem": "從集合 [[\\{1,2,3\\}]] 選一個數 [[x]]，從集合 [[\\{1,2,3,4\\}]] 選一個數 [[y]]。若 [[x+y]] 必須是偶數，共有多少組 [[(x,y)]]？",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        },
+        {
+          "id": "E",
+          "text": "12"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "奇加奇或偶加偶才是偶數。奇奇有 [[2\\times2=4]] 組，偶偶有 [[1\\times2=2]] 組，共 [[4+2=6]] 組。",
+      "distractorMap": {
+        "A": "comb.KP1.RECOGNITION.001",
+        "B": "comb.KP1.RECOGNITION.002",
+        "D": "comb.KP1.RECOGNITION.003",
+        "E": "comb.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "校外教學可選 3 條車行路線與 4 個出發時段。若路線甲不能選最早時段，路線丙不能選最晚時段，共有多少種可行安排？",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        },
+        {
+          "id": "E",
+          "text": "12"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "全部有 [[3\\times4=12]] 種，兩個禁用配對不同，因此共有 [[12-2=10]] 種。",
+      "distractorMap": {
+        "A": "comb.KP1.APPLICATION.001",
+        "B": "comb.KP1.APPLICATION.002",
+        "C": "comb.KP1.APPLICATION.003",
+        "E": "comb.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "將 5 面互不相同的旗子排成一列，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        },
+        {
+          "id": "E",
+          "text": "120"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "E"
+        ]
+      },
+      "explanation": "第一個位置有 5 種選擇，接著依序有 4、3、2、1 種，所以共有 [[5!=120]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.CONCEPT.001",
+        "B": "comb.KP2.CONCEPT.002",
+        "C": "comb.KP2.CONCEPT.003",
+        "D": "comb.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "甲、乙、丙、丁、戊五人排成一列，若甲、乙必須相鄰，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        },
+        {
+          "id": "E",
+          "text": "120"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "把甲乙視為一個區塊後共有 4 個單位，區塊內有 2 種次序，因此為 [[2\\times4!=48]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.RECOGNITION.001",
+        "B": "comb.KP2.RECOGNITION.002",
+        "D": "comb.KP2.RECOGNITION.003",
+        "E": "comb.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "將數學甲、數學乙、國文、英文、物理、化學六本不同的書排成一列。若兩本數學書不得相鄰，且國文必須排在英文左邊，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "120"
+        },
+        {
+          "id": "B",
+          "text": "240"
+        },
+        {
+          "id": "C",
+          "text": "360"
+        },
+        {
+          "id": "D",
+          "text": "480"
+        },
+        {
+          "id": "E",
+          "text": "720"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "不相鄰共有 [[6!-2\\times5!=480]] 種；其中恰有一半符合國文在英文左邊，所以為 [[480\\div2=240]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.APPLICATION.001",
+        "C": "comb.KP2.APPLICATION.002",
+        "D": "comb.KP2.APPLICATION.003",
+        "E": "comb.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "4 位男生與 3 位女生排成一列，若任兩位女生都不得相鄰，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "144"
+        },
+        {
+          "id": "B",
+          "text": "480"
+        },
+        {
+          "id": "C",
+          "text": "720"
+        },
+        {
+          "id": "D",
+          "text": "1440"
+        },
+        {
+          "id": "E",
+          "text": "2880"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "先排 4 位男生有 [[4!]] 種，在 5 個空隙中選 3 個並排列女生，因此共有 [[4!\\binom{5}{3}3!=1440]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.CONCEPT.001",
+        "B": "comb.KP2.CONCEPT.002",
+        "C": "comb.KP2.CONCEPT.003",
+        "E": "comb.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "甲、乙、丙、丁、戊、己六人排成一列。甲固定在第一位，且乙、丙必須相鄰，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        },
+        {
+          "id": "E",
+          "text": "120"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "甲固定後，把乙丙視為一個區塊，連同丁、戊、己共有 4 個單位；區塊內有 2 種次序，所以為 [[2\\times4!=48]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.RECOGNITION.001",
+        "B": "comb.KP2.RECOGNITION.002",
+        "D": "comb.KP2.RECOGNITION.003",
+        "E": "comb.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 75,
+      "stem": "甲、乙、丙、丁、戊、己、庚七人排成一列。丙固定在第一位，且甲、乙不得相鄰，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "240"
+        },
+        {
+          "id": "B",
+          "text": "360"
+        },
+        {
+          "id": "C",
+          "text": "480"
+        },
+        {
+          "id": "D",
+          "text": "600"
+        },
+        {
+          "id": "E",
+          "text": "720"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "丙固定後，其餘六人共有 [[6!]] 種；甲乙相鄰有 [[2\\times5!]] 種，因此為 [[6!-2\\times5!=480]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.APPLICATION.001",
+        "B": "comb.KP2.APPLICATION.002",
+        "D": "comb.KP2.APPLICATION.003",
+        "E": "comb.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "將紅、藍、黃、綠四面不同的旗子排成一列，若紅旗必須在藍旗左邊，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        },
+        {
+          "id": "E",
+          "text": "24"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "四面旗子共有 [[4!=24]] 種；交換紅、藍會成對出現，恰有一半符合紅在藍左邊，所以有 [[24\\div2=12]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.CONCEPT.001",
+        "B": "comb.KP2.CONCEPT.002",
+        "D": "comb.KP2.CONCEPT.003",
+        "E": "comb.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 60,
+      "stem": "一排有 6 個座位，安排甲、乙、丙三人入座，任兩人不得相鄰，共有多少種坐法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        },
+        {
+          "id": "E",
+          "text": "48"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "6 個位置中選 3 個互不相鄰的位置有 [[\\binom{4}{3}=4]] 種，再排列三人有 [[3!]] 種，共 [[4\\times3!=24]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.RECOGNITION.001",
+        "B": "comb.KP2.RECOGNITION.002",
+        "C": "comb.KP2.RECOGNITION.003",
+        "E": "comb.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "將數字 1、2、3、4、5、6、7 排成一列。若 1 與 2 中間恰有一個數字，共有多少種排法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "240"
+        },
+        {
+          "id": "B",
+          "text": "480"
+        },
+        {
+          "id": "C",
+          "text": "720"
+        },
+        {
+          "id": "D",
+          "text": "1200"
+        },
+        {
+          "id": "E",
+          "text": "1440"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "相距兩格的位置對有 5 組；1、2 可交換有 2 種，其餘 5 個數字有 [[5!]] 種，因此共有 [[5\\times2\\times5!=1200]] 種。",
+      "distractorMap": {
+        "A": "comb.KP2.APPLICATION.001",
+        "B": "comb.KP2.APPLICATION.002",
+        "C": "comb.KP2.APPLICATION.003",
+        "E": "comb.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "從 8 位學生中選出 3 位擔任班級代表，不區分職務，共有多少種選法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "112"
+        },
+        {
+          "id": "D",
+          "text": "336"
+        },
+        {
+          "id": "E",
+          "text": "512"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "不區分職務，所以使用組合：[[\\binom{8}{3}=56]]。",
+      "distractorMap": {
+        "A": "comb.KP3.CONCEPT.001",
+        "C": "comb.KP3.CONCEPT.002",
+        "D": "comb.KP3.CONCEPT.003",
+        "E": "comb.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "冰淇淋有 4 種口味，選 3 球；同一口味可以重複，且不計球的先後。共有多少種選法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        },
+        {
+          "id": "E",
+          "text": "64"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "重複組合數為 [[\\binom{4+3-1}{3}=\\binom{6}{3}=20]]。",
+      "distractorMap": {
+        "A": "comb.KP3.RECOGNITION.001",
+        "B": "comb.KP3.RECOGNITION.002",
+        "D": "comb.KP3.RECOGNITION.003",
+        "E": "comb.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "從 8 位學生中選出 3 位組成紅隊，再從剩下的學生中選出 3 位組成藍隊，其餘 2 位不分隊。紅隊與藍隊視為不同隊伍，共有多少種分法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "280"
+        },
+        {
+          "id": "C",
+          "text": "560"
+        },
+        {
+          "id": "D",
+          "text": "1120"
+        },
+        {
+          "id": "E",
+          "text": "3360"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "先選紅隊，再選藍隊：[[\\binom{8}{3}\\binom{5}{3}=56\\times10=560]]。",
+      "distractorMap": {
+        "A": "comb.KP3.APPLICATION.001",
+        "B": "comb.KP3.APPLICATION.002",
+        "D": "comb.KP3.APPLICATION.003",
+        "E": "comb.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "將 6 位學生分成兩組，每組 3 人，兩組沒有名稱。共有多少種分法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        },
+        {
+          "id": "E",
+          "text": "120"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "先選一組有 [[\\binom{6}{3}=20]] 種，但交換兩組會重複一次，所以共有 [[20\\div2=10]] 種。",
+      "distractorMap": {
+        "A": "comb.KP3.CONCEPT.001",
+        "C": "comb.KP3.CONCEPT.002",
+        "D": "comb.KP3.CONCEPT.003",
+        "E": "comb.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "從 5 本不同的數學書中選 2 本，並從 7 本不同的科普書中選 3 本，共有多少種選法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "210"
+        },
+        {
+          "id": "C",
+          "text": "350"
+        },
+        {
+          "id": "D",
+          "text": "420"
+        },
+        {
+          "id": "E",
+          "text": "1260"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩類選書同時完成，因此共有 [[\\binom{5}{2}\\binom{7}{3}=10\\times35=350]] 種。",
+      "distractorMap": {
+        "A": "comb.KP3.RECOGNITION.001",
+        "B": "comb.KP3.RECOGNITION.002",
+        "D": "comb.KP3.RECOGNITION.003",
+        "E": "comb.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 75,
+      "stem": "從 10 位學生中選 1 位隊長，再選 3 位隊員；同一人不能兼任。共有多少種選法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "210"
+        },
+        {
+          "id": "B",
+          "text": "720"
+        },
+        {
+          "id": "C",
+          "text": "840"
+        },
+        {
+          "id": "D",
+          "text": "1260"
+        },
+        {
+          "id": "E",
+          "text": "5040"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "先選隊長有 10 種，再從剩下 9 人選 3 位隊員，所以共有 [[10\\binom{9}{3}=840]] 種。",
+      "distractorMap": {
+        "A": "comb.KP3.APPLICATION.001",
+        "B": "comb.KP3.APPLICATION.002",
+        "D": "comb.KP3.APPLICATION.003",
+        "E": "comb.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "非負整數 [[x,y,z]] 滿足 [[x+y+z=5]]。共有多少組解？",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        },
+        {
+          "id": "E",
+          "text": "35"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "使用隔板法，在 7 個位置選 2 個隔板，所以有 [[\\binom{7}{2}=21]] 組。",
+      "distractorMap": {
+        "A": "comb.KP3.CONCEPT.001",
+        "B": "comb.KP3.CONCEPT.002",
+        "D": "comb.KP3.CONCEPT.003",
+        "E": "comb.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 60,
+      "stem": "將 8 位學生分成一組 3 人與一組 5 人，兩組不另取名稱。共有多少種分法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "112"
+        },
+        {
+          "id": "D",
+          "text": "280"
+        },
+        {
+          "id": "E",
+          "text": "560"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "選出 3 人組即可決定 5 人組，因此共有 [[\\binom{8}{3}=56]] 種。",
+      "distractorMap": {
+        "A": "comb.KP3.RECOGNITION.001",
+        "C": "comb.KP3.RECOGNITION.002",
+        "D": "comb.KP3.RECOGNITION.003",
+        "E": "comb.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "由 6 位男生與 5 位女生中選出 5 人，且恰有 3 位女生，共有多少種選法？",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "100"
+        },
+        {
+          "id": "C",
+          "text": "120"
+        },
+        {
+          "id": "D",
+          "text": "150"
+        },
+        {
+          "id": "E",
+          "text": "300"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "選 3 位女生與 2 位男生，因此共有 [[\\binom{5}{3}\\binom{6}{2}=10\\times15=150]] 種。",
+      "distractorMap": {
+        "A": "comb.KP3.APPLICATION.001",
+        "B": "comb.KP3.APPLICATION.002",
+        "C": "comb.KP3.APPLICATION.003",
+        "E": "comb.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 50,
+      "stem": "關於「選法數」與「不同結果數」，下列哪一項正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "每一種選法一定產生不同結果。"
+        },
+        {
+          "id": "B",
+          "text": "不同選法若得到同一結果，計算結果種類時必須合併。"
+        },
+        {
+          "id": "C",
+          "text": "只要使用乘法原理，就不會重複計數。"
+        },
+        {
+          "id": "D",
+          "text": "結果種類數一定大於選法數。"
+        },
+        {
+          "id": "E",
+          "text": "選法數與結果種類數永遠相等。"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "若多種選法得到相同的最終結果，計算結果種類時只能算一次。",
+      "distractorMap": {
+        "A": "comb.KP4.CONCEPT.001",
+        "C": "comb.KP4.CONCEPT.002",
+        "D": "comb.KP4.CONCEPT.003",
+        "E": "comb.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 60,
+      "stem": "甲盒中有標示 1、2、3、4 的卡片各一張，乙盒中有標示 2、4、6 的卡片各一張。從兩盒各取一張，以兩張卡片的數字和作為得分。可能出現多少種不同得分？",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        },
+        {
+          "id": "E",
+          "text": "12"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "可能得分為 3 到 10，共 [[10-3+1=8]] 種。",
+      "distractorMap": {
+        "A": "comb.KP4.RECOGNITION.001",
+        "C": "comb.KP4.RECOGNITION.002",
+        "D": "comb.KP4.RECOGNITION.003",
+        "E": "comb.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 75,
+      "stem": "從數字 1、2、3、4、5 中任選兩個相異數字，以兩數和作為得分。可能出現多少種不同得分？",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        },
+        {
+          "id": "E",
+          "text": "10"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "最小和為 3，最大和為 9，而且 3 到 9 都能得到，所以共有 [[9-3+1=7]] 種。",
+      "distractorMap": {
+        "A": "comb.KP4.APPLICATION.001",
+        "B": "comb.KP4.APPLICATION.002",
+        "D": "comb.KP4.APPLICATION.003",
+        "E": "comb.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 50,
+      "stem": "某班會游泳的有 12 人，會騎自行車的有 9 人，兩者都會的有 3 人。至少會其中一項的有多少人？",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        },
+        {
+          "id": "E",
+          "text": "108"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "至少會一項的人數為 [[12+9-3=18]]。",
+      "distractorMap": {
+        "A": "comb.KP4.CONCEPT.001",
+        "C": "comb.KP4.CONCEPT.002",
+        "D": "comb.KP4.CONCEPT.003",
+        "E": "comb.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 60,
+      "stem": "甲轉盤可能出現 1、2、3，乙轉盤可能出現 1、3、5。各轉一次，以兩數乘積作為結果。可能出現多少種不同結果？",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        },
+        {
+          "id": "E",
+          "text": "12"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "所有不同乘積為 [[\\{1,2,3,5,6,9,10,15\\}]]，共 8 種。",
+      "distractorMap": {
+        "A": "comb.KP4.RECOGNITION.001",
+        "B": "comb.KP4.RECOGNITION.002",
+        "D": "comb.KP4.RECOGNITION.003",
+        "E": "comb.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 75,
+      "stem": "在 1 到 30 的正整數中，能被 2 或 3 整除的共有多少個？",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        },
+        {
+          "id": "E",
+          "text": "25"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "2 的倍數有 15 個，3 的倍數有 10 個，6 的倍數有 5 個，因此共有 [[15+10-5=20]] 個。",
+      "distractorMap": {
+        "A": "comb.KP4.APPLICATION.001",
+        "B": "comb.KP4.APPLICATION.002",
+        "C": "comb.KP4.APPLICATION.003",
+        "E": "comb.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 50,
+      "stem": "將複雜情況分類計數時，分類最重要的條件是什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "各類可以重疊，且不必包含全部情況。"
+        },
+        {
+          "id": "B",
+          "text": "各類互斥，但可以遺漏少數情況。"
+        },
+        {
+          "id": "C",
+          "text": "各類必須互斥且合起來涵蓋全部情況。"
+        },
+        {
+          "id": "D",
+          "text": "分類越多越好，不必檢查重複。"
+        },
+        {
+          "id": "E",
+          "text": "只要每類數量相同即可。"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "各類互斥可避免重複，合起來涵蓋全部情況可避免遺漏。",
+      "distractorMap": {
+        "A": "comb.KP4.CONCEPT.001",
+        "B": "comb.KP4.CONCEPT.002",
+        "D": "comb.KP4.CONCEPT.003",
+        "E": "comb.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 60,
+      "stem": "一枚硬幣連續擲 3 次，只記錄出現正面的次數。可能有多少種不同記錄結果？",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        },
+        {
+          "id": "E",
+          "text": "9"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "正面次數可能是 0、1、2、3，共 4 種。",
+      "distractorMap": {
+        "A": "comb.KP4.RECOGNITION.001",
+        "C": "comb.KP4.RECOGNITION.002",
+        "D": "comb.KP4.RECOGNITION.003",
+        "E": "comb.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "comb-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "comb:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 75,
+      "stem": "正整數 [[x,y]] 滿足 [[x+y=8]]。以 [[xy]] 作為結果，可能出現多少種不同結果？",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        },
+        {
+          "id": "E",
+          "text": "7"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "依序得到乘積 7、12、15、16、15、12、7，所以不同結果為 [[\\{7,12,15,16\\}]]，共 4 種。",
+      "distractorMap": {
+        "A": "comb.KP4.APPLICATION.001",
+        "C": "comb.KP4.APPLICATION.002",
+        "D": "comb.KP4.APPLICATION.003",
+        "E": "comb.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "排列組合 36 題教師核准（2026-08-12）"
+      }
+    }
+  ]
+}

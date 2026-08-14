@@ -1,0 +1,3157 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "trig",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "若 [[\\theta]] 與 [[\\theta+2\\pi]] 的終邊相同，兩角稱為何種關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "互補角"
+        },
+        {
+          "id": "B",
+          "text": "互餘角"
+        },
+        {
+          "id": "C",
+          "text": "同界角"
+        },
+        {
+          "id": "D",
+          "text": "對頂角"
+        },
+        {
+          "id": "E",
+          "text": "半角"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "相差 [[2\\pi]] 的整數倍時終邊相同，故為同界角。",
+      "distractorMap": {
+        "A": "trig.KP1.CONCEPT.001",
+        "B": "trig.KP1.CONCEPT.002",
+        "D": "trig.KP1.CONCEPT.003",
+        "E": "trig.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "已知角 [[\\theta]] 的終邊在第二象限，且 [[\\sin\\theta=\\dfrac35]]，則 [[\\cos\\left(\\theta+\\dfrac{\\pi}{2}\\right)]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-\\dfrac45]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-\\dfrac35]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac35]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac45]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac53]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\cos(\\theta+\\frac{\\pi}{2})=-\\sin\\theta=-\\frac35]]。",
+      "distractorMap": {
+        "A": "trig.KP1.RECOGNITION.001",
+        "C": "trig.KP1.RECOGNITION.002",
+        "D": "trig.KP1.RECOGNITION.003",
+        "E": "trig.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "[[150^\\circ]] 等於多少弧度？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\dfrac{2\\pi}{3}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac{3\\pi}{4}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac{5\\pi}{6}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac{7\\pi}{6}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac{5\\pi}{3}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[150^\\circ\\times\\dfrac{\\pi}{180^\\circ}=\\dfrac{5\\pi}{6}]]。",
+      "distractorMap": {
+        "A": "trig.KP1.APPLICATION.001",
+        "B": "trig.KP1.APPLICATION.002",
+        "D": "trig.KP1.APPLICATION.003",
+        "E": "trig.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若 [[\\theta]] 在第三象限，則下列何者必為正？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sin\\theta]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\cos\\theta]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\tan\\theta]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sin\\theta\\tan\\theta]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sin\\theta+\\cos\\theta]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "第三象限的正弦、餘弦皆負，因此正切為正；[[\\sin\\theta\\tan\\theta<0]]。",
+      "distractorMap": {
+        "A": "trig.KP1.CONCEPT.001",
+        "B": "trig.KP1.CONCEPT.002",
+        "D": "trig.KP1.CONCEPT.003",
+        "E": "trig.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "[[-\\dfrac{7\\pi}{6}]] 的終邊位於第幾象限？",
+      "options": [
+        {
+          "id": "A",
+          "text": "第一象限"
+        },
+        {
+          "id": "B",
+          "text": "第二象限"
+        },
+        {
+          "id": "C",
+          "text": "第三象限"
+        },
+        {
+          "id": "D",
+          "text": "第四象限"
+        },
+        {
+          "id": "E",
+          "text": "坐標軸上"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[-\\frac{7\\pi}{6}+2\\pi=\\frac{5\\pi}{6}]]，位於第二象限。",
+      "distractorMap": {
+        "A": "trig.KP1.RECOGNITION.001",
+        "C": "trig.KP1.RECOGNITION.002",
+        "D": "trig.KP1.RECOGNITION.003",
+        "E": "trig.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "若 [[\\cos\\theta=-\\dfrac{12}{13}]]，且 [[\\theta]] 在第二象限，則 [[\\tan\\theta]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-\\dfrac5{12}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac5{12}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-\\dfrac{12}{5}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac{12}{5}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac{13}{5}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "第二象限 [[\\sin\\theta=\\frac5{13}]]，故 [[\\tan\\theta=-\\frac5{12}]]。",
+      "distractorMap": {
+        "B": "trig.KP1.APPLICATION.001",
+        "C": "trig.KP1.APPLICATION.002",
+        "D": "trig.KP1.APPLICATION.003",
+        "E": "trig.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "下列何者對所有有定義的 [[\\theta]] 都成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sin\\theta+\\cos\\theta=1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sin^2\\theta+\\cos^2\\theta=1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\tan\\theta=\\sin\\theta\\cos\\theta]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sin2\\theta=2\\sin\\theta]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\cos2\\theta=2\\cos\\theta]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "基本恆等式為 [[\\sin^2\\theta+\\cos^2\\theta=1]]。",
+      "distractorMap": {
+        "A": "trig.KP1.CONCEPT.001",
+        "C": "trig.KP1.CONCEPT.002",
+        "D": "trig.KP1.CONCEPT.003",
+        "E": "trig.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "與 [[\\dfrac{13\\pi}{6}]] 同界且介於 [[0]] 與 [[2\\pi]] 的角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\dfrac{\\pi}{6}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac{5\\pi}{6}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac{7\\pi}{6}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac{11\\pi}{6}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac{13\\pi}{6}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\frac{13\\pi}{6}-2\\pi=\\frac{\\pi}{6}]]。",
+      "distractorMap": {
+        "B": "trig.KP1.RECOGNITION.001",
+        "C": "trig.KP1.RECOGNITION.002",
+        "D": "trig.KP1.RECOGNITION.003",
+        "E": "trig.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "若 [[\\sin\\theta=-\\dfrac45]]、[[\\cos\\theta=\\dfrac35]]，則 [[\\theta]] 的終邊在哪一象限？",
+      "options": [
+        {
+          "id": "A",
+          "text": "第一象限"
+        },
+        {
+          "id": "B",
+          "text": "第二象限"
+        },
+        {
+          "id": "C",
+          "text": "第三象限"
+        },
+        {
+          "id": "D",
+          "text": "第四象限"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "正弦負、餘弦正，故終邊在第四象限。",
+      "distractorMap": {
+        "A": "trig.KP1.APPLICATION.001",
+        "B": "trig.KP1.APPLICATION.002",
+        "C": "trig.KP1.APPLICATION.003",
+        "E": "trig.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "已知三角形的兩邊及其夾角，通常應優先使用哪一定理求第三邊？",
+      "options": [
+        {
+          "id": "A",
+          "text": "正弦定理"
+        },
+        {
+          "id": "B",
+          "text": "餘弦定理"
+        },
+        {
+          "id": "C",
+          "text": "畢氏定理"
+        },
+        {
+          "id": "D",
+          "text": "角平分線定理"
+        },
+        {
+          "id": "E",
+          "text": "海龍公式"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "兩邊及夾角對應餘弦定理。",
+      "distractorMap": {
+        "A": "trig.KP2.CONCEPT.001",
+        "C": "trig.KP2.CONCEPT.002",
+        "D": "trig.KP2.CONCEPT.003",
+        "E": "trig.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "在三角形 [[ABC]] 中，若 [[a:b=\\sin A:\\sin B]]，此關係源自何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "正弦定理"
+        },
+        {
+          "id": "B",
+          "text": "餘弦定理"
+        },
+        {
+          "id": "C",
+          "text": "畢氏定理"
+        },
+        {
+          "id": "D",
+          "text": "面積公式"
+        },
+        {
+          "id": "E",
+          "text": "中線定理"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "由 [[\\frac a{\\sin A}=\\frac b{\\sin B}]] 可得。",
+      "distractorMap": {
+        "B": "trig.KP2.RECOGNITION.001",
+        "C": "trig.KP2.RECOGNITION.002",
+        "D": "trig.KP2.RECOGNITION.003",
+        "E": "trig.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "在三角形 [[ABC]] 中，[[A=60^\\circ]]、[[a=\\sqrt3]]、[[b=2]]，則 [[c]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3]]"
+        },
+        {
+          "id": "E",
+          "text": "有兩個可能值"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\sin B=1]]，故 [[B=90^\\circ,C=30^\\circ]]，再由正弦定理得 [[c=1]]。",
+      "distractorMap": {
+        "B": "trig.KP2.APPLICATION.001",
+        "C": "trig.KP2.APPLICATION.002",
+        "D": "trig.KP2.APPLICATION.003",
+        "E": "trig.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若三邊 [[a,b,c]] 對應角 [[A,B,C]]，則 [[c^2]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a^2+b^2+2ab\\cos C]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a^2+b^2-2ab\\cos C]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a^2-b^2+2ab\\cos C]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(a+b)^2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[2ab\\sin C]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[c^2=a^2+b^2-2ab\\cos C]]。",
+      "distractorMap": {
+        "A": "trig.KP2.CONCEPT.001",
+        "C": "trig.KP2.CONCEPT.002",
+        "D": "trig.KP2.CONCEPT.003",
+        "E": "trig.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "三邊為 [[3,4,5]] 的三角形，其最大角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[45^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[120^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[3^2+4^2=5^2]]，故最大角為直角。",
+      "distractorMap": {
+        "A": "trig.KP2.RECOGNITION.001",
+        "B": "trig.KP2.RECOGNITION.002",
+        "C": "trig.KP2.RECOGNITION.003",
+        "E": "trig.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "三角形兩邊長為 [[5,7]]，夾角為 [[60^\\circ]]，第三邊長為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt{19}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt{39}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[8]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[c^2=25+49-70\\cdot\\frac12=39]]，故 [[c=\\sqrt{39}]]。",
+      "distractorMap": {
+        "A": "trig.KP2.APPLICATION.001",
+        "C": "trig.KP2.APPLICATION.002",
+        "D": "trig.KP2.APPLICATION.003",
+        "E": "trig.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若固定兩邊 [[a,b]]，則夾角 [[C]] 增大時，對邊 [[c]] 如何變化？",
+      "options": [
+        {
+          "id": "A",
+          "text": "嚴格減小"
+        },
+        {
+          "id": "B",
+          "text": "保持不變"
+        },
+        {
+          "id": "C",
+          "text": "嚴格增大"
+        },
+        {
+          "id": "D",
+          "text": "先增後減"
+        },
+        {
+          "id": "E",
+          "text": "無法判定"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[C]] 增大時 [[\\cos C]] 減小，使 [[c^2=a^2+b^2-2ab\\cos C]] 增大。",
+      "distractorMap": {
+        "A": "trig.KP2.CONCEPT.001",
+        "B": "trig.KP2.CONCEPT.002",
+        "D": "trig.KP2.CONCEPT.003",
+        "E": "trig.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "三角形中 [[A=30^\\circ,B=45^\\circ,a=2]]，則 [[b]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2\\sqrt2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\frac b{\\sin45^\\circ}=\\frac2{\\sin30^\\circ}=4]]，故 [[b=2\\sqrt2]]。",
+      "distractorMap": {
+        "A": "trig.KP2.RECOGNITION.001",
+        "B": "trig.KP2.RECOGNITION.002",
+        "D": "trig.KP2.RECOGNITION.003",
+        "E": "trig.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "三邊為 [[2,3,4]] 的三角形，最大角 [[C]] 的餘弦值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-\\dfrac14]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac14]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac12]]"
+        },
+        {
+          "id": "D",
+          "text": "[[-\\dfrac12]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac34]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\cos C=\\frac{2^2+3^2-4^2}{2\\cdot2\\cdot3}=-\\frac14]]。",
+      "distractorMap": {
+        "B": "trig.KP2.APPLICATION.001",
+        "C": "trig.KP2.APPLICATION.002",
+        "D": "trig.KP2.APPLICATION.003",
+        "E": "trig.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "仰角是從哪一條基準線向上量到視線的角？",
+      "options": [
+        {
+          "id": "A",
+          "text": "鉛直線"
+        },
+        {
+          "id": "B",
+          "text": "水平線"
+        },
+        {
+          "id": "C",
+          "text": "塔身"
+        },
+        {
+          "id": "D",
+          "text": "地面法線"
+        },
+        {
+          "id": "E",
+          "text": "任意斜線"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "仰角由觀測者的水平線向上量至視線。",
+      "distractorMap": {
+        "A": "trig.KP3.CONCEPT.001",
+        "C": "trig.KP3.CONCEPT.002",
+        "D": "trig.KP3.CONCEPT.003",
+        "E": "trig.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "觀測點到塔底距離為 [[d]]，仰角為 [[\\alpha]]，忽略眼高，塔高應表示為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[d\\sin\\alpha]]"
+        },
+        {
+          "id": "B",
+          "text": "[[d\\cos\\alpha]]"
+        },
+        {
+          "id": "C",
+          "text": "[[d\\tan\\alpha]]"
+        },
+        {
+          "id": "D",
+          "text": "[[d/\\tan\\alpha]]"
+        },
+        {
+          "id": "E",
+          "text": "[[d\\cot^2\\alpha]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\tan\\alpha=\\frac{h}{d}]]，故 [[h=d\\tan\\alpha]]。",
+      "distractorMap": {
+        "A": "trig.KP3.RECOGNITION.001",
+        "B": "trig.KP3.RECOGNITION.002",
+        "D": "trig.KP3.RECOGNITION.003",
+        "E": "trig.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "朝塔底前進 [[20]] 公尺後，塔頂仰角由 [[30^\\circ]] 變為 [[45^\\circ]]。忽略眼高，塔高為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[10(\\sqrt3-1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[10\\sqrt3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[10(\\sqrt3+1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[20]]"
+        },
+        {
+          "id": "E",
+          "text": "[[20\\sqrt3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "設近處距離與塔高皆為 [[h]]，則 [[\\frac h{h+20}=\\tan30^\\circ]]，得 [[h=10(\\sqrt3+1)]]。",
+      "distractorMap": {
+        "A": "trig.KP3.APPLICATION.001",
+        "B": "trig.KP3.APPLICATION.002",
+        "D": "trig.KP3.APPLICATION.003",
+        "E": "trig.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "同一物體在距離較近處觀測時，其他條件不變，仰角通常如何變化？",
+      "options": [
+        {
+          "id": "A",
+          "text": "變小"
+        },
+        {
+          "id": "B",
+          "text": "變大"
+        },
+        {
+          "id": "C",
+          "text": "不變"
+        },
+        {
+          "id": "D",
+          "text": "必為 [[45^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "無法比較"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "固定高度時水平距離減少，正切值與仰角均增加。",
+      "distractorMap": {
+        "A": "trig.KP3.CONCEPT.001",
+        "C": "trig.KP3.CONCEPT.002",
+        "D": "trig.KP3.CONCEPT.003",
+        "E": "trig.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "某斜坡水平前進 [[12]] 公尺、上升 [[5]] 公尺，坡角 [[\\alpha]] 滿足何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sin\\alpha=\\dfrac5{12}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\tan\\alpha=\\dfrac5{12}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\cos\\alpha=\\dfrac5{12}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\tan\\alpha=\\dfrac{12}{5}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sin\\alpha=\\dfrac{12}{13}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\tan\\alpha=\\frac{上升}{水平}=\\frac5{12}]]。",
+      "distractorMap": {
+        "A": "trig.KP3.RECOGNITION.001",
+        "C": "trig.KP3.RECOGNITION.002",
+        "D": "trig.KP3.RECOGNITION.003",
+        "E": "trig.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "兩地 [[A,B]] 相距 [[100]] 公尺，從兩地觀測同一點 [[C]]，得 [[\\angle A=30^\\circ,\\angle B=45^\\circ]]。則 [[AC]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[50\\sqrt2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[50(\\sqrt3-1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[100(\\sqrt3-1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[100\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[200]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[C=105^\\circ]]，[[AC=100\\frac{\\sin45^\\circ}{\\sin105^\\circ}=100(\\sqrt3-1)]]。",
+      "distractorMap": {
+        "A": "trig.KP3.APPLICATION.001",
+        "B": "trig.KP3.APPLICATION.002",
+        "D": "trig.KP3.APPLICATION.003",
+        "E": "trig.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "使用三角測量建立模型時，下列何者最應先確認？",
+      "options": [
+        {
+          "id": "A",
+          "text": "計算機顏色"
+        },
+        {
+          "id": "B",
+          "text": "角度單位與幾何位置"
+        },
+        {
+          "id": "C",
+          "text": "答案是否整數"
+        },
+        {
+          "id": "D",
+          "text": "是否使用正弦"
+        },
+        {
+          "id": "E",
+          "text": "圖形是否等腰"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "角度單位、觀測位置與所對邊關係決定方程是否正確。",
+      "distractorMap": {
+        "A": "trig.KP3.CONCEPT.001",
+        "C": "trig.KP3.CONCEPT.002",
+        "D": "trig.KP3.CONCEPT.003",
+        "E": "trig.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "一條拉線長 [[10]] 公尺，與水平地面夾角 [[30^\\circ]]，其鉛直高度為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[5\\sqrt3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[10]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[20]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "高度為 [[10\\sin30^\\circ=5]]。",
+      "distractorMap": {
+        "B": "trig.KP3.RECOGNITION.001",
+        "C": "trig.KP3.RECOGNITION.002",
+        "D": "trig.KP3.RECOGNITION.003",
+        "E": "trig.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "甲地看塔頂仰角為 [[30^\\circ]]，向塔前進 [[30]] 公尺後仰角為 [[60^\\circ]]。塔高為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[10\\sqrt3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[15\\sqrt3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[20\\sqrt3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[30]]"
+        },
+        {
+          "id": "E",
+          "text": "[[30\\sqrt3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "設近處距離 [[x]]，則 [[h=\\sqrt3x=(x+30)/\\sqrt3]]，得 [[x=15,h=15\\sqrt3]]。",
+      "distractorMap": {
+        "A": "trig.KP3.APPLICATION.001",
+        "C": "trig.KP3.APPLICATION.002",
+        "D": "trig.KP3.APPLICATION.003",
+        "E": "trig.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "函數 [[y=a\\sin x+d]] 的中線為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x=a]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x=d]]"
+        },
+        {
+          "id": "C",
+          "text": "[[y=a]]"
+        },
+        {
+          "id": "D",
+          "text": "[[y=d]]"
+        },
+        {
+          "id": "E",
+          "text": "[[y=a+d]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "函數上下平移 [[d]]，中線為 [[y=d]]。",
+      "distractorMap": {
+        "A": "trig.KP4.CONCEPT.001",
+        "B": "trig.KP4.CONCEPT.002",
+        "C": "trig.KP4.CONCEPT.003",
+        "E": "trig.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "函數 [[f(x)=2\\sin(3x-\\frac\\pi2)+1]]，下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "振幅為 [[1]]"
+        },
+        {
+          "id": "B",
+          "text": "週期為 [[3\\pi]]"
+        },
+        {
+          "id": "C",
+          "text": "最大值為 [[2]]"
+        },
+        {
+          "id": "D",
+          "text": "最小值為 [[-1]]"
+        },
+        {
+          "id": "E",
+          "text": "向右平移 [[\\frac\\pi2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "振幅 [[2]]、週期 [[\\frac{2\\pi}{3}]]、中線 [[y=1]]，故值域為 [[[-1,3]]]。",
+      "distractorMap": {
+        "A": "trig.KP4.RECOGNITION.001",
+        "B": "trig.KP4.RECOGNITION.002",
+        "C": "trig.KP4.RECOGNITION.003",
+        "E": "trig.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "函數 [[y=3\\cos2x]] 的振幅與週期依序為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3,\\pi]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2,3\\pi]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3,2\\pi]]"
+        },
+        {
+          "id": "D",
+          "text": "[[1,\\pi]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6,\\pi]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "振幅為 [[3]]，週期為 [[\\frac{2\\pi}{2}=\\pi]]。",
+      "distractorMap": {
+        "B": "trig.KP4.APPLICATION.001",
+        "C": "trig.KP4.APPLICATION.002",
+        "D": "trig.KP4.APPLICATION.003",
+        "E": "trig.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "將 [[y=\\sin x]] 向上平移 [[2]] 單位後，值域為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[[-1,1]]]"
+        },
+        {
+          "id": "B",
+          "text": "[[[0,2]]]"
+        },
+        {
+          "id": "C",
+          "text": "[[[1,3]]]"
+        },
+        {
+          "id": "D",
+          "text": "[[[2,3]]]"
+        },
+        {
+          "id": "E",
+          "text": "[[[-3,-1]]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "原值域 [[[-1,1]]] 向上平移 2 得 [[[1,3]]]。",
+      "distractorMap": {
+        "A": "trig.KP4.CONCEPT.001",
+        "B": "trig.KP4.CONCEPT.002",
+        "D": "trig.KP4.CONCEPT.003",
+        "E": "trig.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "[[y=\\sin(x-\\frac\\pi3)]] 由 [[y=\\sin x]] 如何平移？",
+      "options": [
+        {
+          "id": "A",
+          "text": "向左 [[\\frac\\pi3]]"
+        },
+        {
+          "id": "B",
+          "text": "向右 [[\\frac\\pi3]]"
+        },
+        {
+          "id": "C",
+          "text": "向上 [[\\frac\\pi3]]"
+        },
+        {
+          "id": "D",
+          "text": "向下 [[\\frac\\pi3]]"
+        },
+        {
+          "id": "E",
+          "text": "不平移"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "以 [[x-\\frac\\pi3]] 取代 [[x]]，故向右平移 [[\\frac\\pi3]]。",
+      "distractorMap": {
+        "A": "trig.KP4.RECOGNITION.001",
+        "C": "trig.KP4.RECOGNITION.002",
+        "D": "trig.KP4.RECOGNITION.003",
+        "E": "trig.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "[[0\\le x\\le2\\pi]] 時，方程 [[\\sin x=\\frac12]] 有幾個解？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "解為 [[x=\\frac\\pi6,\\frac{5\\pi}{6}]]，共 2 個。",
+      "distractorMap": {
+        "A": "trig.KP4.APPLICATION.001",
+        "B": "trig.KP4.APPLICATION.002",
+        "D": "trig.KP4.APPLICATION.003",
+        "E": "trig.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "函數 [[y=\\cos x]] 關於哪一條直線對稱？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[y=x]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x=\\frac\\pi2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[y=0]]"
+        },
+        {
+          "id": "E",
+          "text": "沒有對稱軸"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\cos(-x)=\\cos x]]，故圖形關於 [[y]] 軸，即 [[x=0]] 對稱。",
+      "distractorMap": {
+        "B": "trig.KP4.CONCEPT.001",
+        "C": "trig.KP4.CONCEPT.002",
+        "D": "trig.KP4.CONCEPT.003",
+        "E": "trig.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "函數 [[y=-2\\sin x+3]] 的最大值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "中線為 3、振幅為 2，最大值為 [[3+2=5]]。",
+      "distractorMap": {
+        "A": "trig.KP4.RECOGNITION.001",
+        "B": "trig.KP4.RECOGNITION.002",
+        "C": "trig.KP4.RECOGNITION.003",
+        "E": "trig.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "[[0\\le x\\le2\\pi]] 時，[[\\cos2x=0]] 有幾個解？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[2x=\\frac\\pi2+k\\pi]]，故 [[x=\\frac\\pi4+\\frac{k\\pi}{2}]]，區間內共 4 解。",
+      "distractorMap": {
+        "A": "trig.KP4.APPLICATION.001",
+        "B": "trig.KP4.APPLICATION.002",
+        "C": "trig.KP4.APPLICATION.003",
+        "E": "trig.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "[[\\sin(\\alpha+\\beta)]] 的展開式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sin\\alpha+\\sin\\beta]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sin\\alpha\\sin\\beta+\\cos\\alpha\\cos\\beta]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2\\sin\\alpha\\sin\\beta]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\cos\\alpha\\cos\\beta-\\sin\\alpha\\sin\\beta]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta]]。",
+      "distractorMap": {
+        "A": "trig.KP5.CONCEPT.001",
+        "C": "trig.KP5.CONCEPT.002",
+        "D": "trig.KP5.CONCEPT.003",
+        "E": "trig.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "[[\\cos75^\\circ]] 可寫成下列何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\cos45^\\circ\\cos30^\\circ-\\sin45^\\circ\\sin30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\cos45^\\circ\\cos30^\\circ+\\sin45^\\circ\\sin30^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sin45^\\circ\\cos30^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2\\cos45^\\circ\\cos30^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\cos45^\\circ+\\cos30^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[75^\\circ=45^\\circ+30^\\circ]]，套用餘弦和角公式。",
+      "distractorMap": {
+        "B": "trig.KP5.RECOGNITION.001",
+        "C": "trig.KP5.RECOGNITION.002",
+        "D": "trig.KP5.RECOGNITION.003",
+        "E": "trig.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "已知 [[0<\\theta<\\frac\\pi2]] 且 [[\\tan\\theta=\\frac12]]，則 [[\\sin2\\theta]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\frac15]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac25]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac35]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac45]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac54]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[\\sin2\\theta=\\frac{2\\tan\\theta}{1+\\tan^2\\theta}=\\frac45]]。",
+      "distractorMap": {
+        "A": "trig.KP5.APPLICATION.001",
+        "B": "trig.KP5.APPLICATION.002",
+        "C": "trig.KP5.APPLICATION.003",
+        "E": "trig.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "[[\\cos2\\theta]] 不等於下列何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\cos^2\\theta-\\sin^2\\theta]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2\\cos^2\\theta-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1-2\\sin^2\\theta]]"
+        },
+        {
+          "id": "D",
+          "text": "[[1-\\sin^2\\theta]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac{1-\\tan^2\\theta}{1+\\tan^2\\theta}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[1-\\sin^2\\theta=\\cos^2\\theta]]，一般不等於 [[\\cos2\\theta]]。",
+      "distractorMap": {
+        "A": "trig.KP5.CONCEPT.001",
+        "B": "trig.KP5.CONCEPT.002",
+        "C": "trig.KP5.CONCEPT.003",
+        "E": "trig.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "[[\\sin15^\\circ]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\frac{\\sqrt6-\\sqrt2}{4}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac{\\sqrt6+\\sqrt2}{4}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac{\\sqrt3-1}{2}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac12]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac{\\sqrt2}{2}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\sin15^\\circ=\\sin(45^\\circ-30^\\circ)=\\frac{\\sqrt6-\\sqrt2}{4}]]。",
+      "distractorMap": {
+        "B": "trig.KP5.RECOGNITION.001",
+        "C": "trig.KP5.RECOGNITION.002",
+        "D": "trig.KP5.RECOGNITION.003",
+        "E": "trig.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "若 [[\\sin\\theta=\\frac35]]、[[\\cos\\theta=\\frac45]]，則 [[\\cos2\\theta]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-\\frac7{25}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac7{25}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac{12}{25}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac{24}{25}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\cos2\\theta=\\cos^2\\theta-\\sin^2\\theta=\\frac{16-9}{25}=\\frac7{25}]]。",
+      "distractorMap": {
+        "A": "trig.KP5.APPLICATION.001",
+        "C": "trig.KP5.APPLICATION.002",
+        "D": "trig.KP5.APPLICATION.003",
+        "E": "trig.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "和差角公式最主要的用途為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "把兩角和差的三角值連結到各角三角值"
+        },
+        {
+          "id": "B",
+          "text": "把所有角變成銳角"
+        },
+        {
+          "id": "C",
+          "text": "消除所有根號"
+        },
+        {
+          "id": "D",
+          "text": "只適用直角三角形"
+        },
+        {
+          "id": "E",
+          "text": "把角度轉成弧度"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "它將 [[\\alpha\\pm\\beta]] 的三角值表示為 [[\\alpha,\\beta]] 的三角值組合。",
+      "distractorMap": {
+        "B": "trig.KP5.CONCEPT.001",
+        "C": "trig.KP5.CONCEPT.002",
+        "D": "trig.KP5.CONCEPT.003",
+        "E": "trig.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "若 [[\\tan\\alpha=2,\\tan\\beta=\\frac13]]，則 [[\\tan(\\alpha+\\beta)]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac53]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[7]]"
+        },
+        {
+          "id": "E",
+          "text": "不存在"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[\\tan(\\alpha+\\beta)=\\frac{2+1/3}{1-2/3}=7]]。",
+      "distractorMap": {
+        "A": "trig.KP5.RECOGNITION.001",
+        "B": "trig.KP5.RECOGNITION.002",
+        "C": "trig.KP5.RECOGNITION.003",
+        "E": "trig.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "若 [[0<\\theta<\\frac\\pi2]] 且 [[\\cos2\\theta=-\\frac35]]，則 [[\\sin\\theta]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\frac15]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac25]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac{\\sqrt5}{5}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac{2\\sqrt5}{5}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac45]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[1-2\\sin^2\\theta=-\\frac35]]，故 [[\\sin^2\\theta=\\frac45]]，取正得 [[\\sin\\theta=\\frac{2\\sqrt5}{5}]]。",
+      "distractorMap": {
+        "A": "trig.KP5.APPLICATION.001",
+        "B": "trig.KP5.APPLICATION.002",
+        "C": "trig.KP5.APPLICATION.003",
+        "E": "trig.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "角平分線定理連結的是哪兩組比？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩個角與兩個面積"
+        },
+        {
+          "id": "B",
+          "text": "對邊兩段與鄰邊"
+        },
+        {
+          "id": "C",
+          "text": "兩條高與兩條中線"
+        },
+        {
+          "id": "D",
+          "text": "周長與面積"
+        },
+        {
+          "id": "E",
+          "text": "外角與內角"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "內角平分線將對邊分成與兩鄰邊成比例的兩段。",
+      "distractorMap": {
+        "A": "trig.KP6.CONCEPT.001",
+        "C": "trig.KP6.CONCEPT.002",
+        "D": "trig.KP6.CONCEPT.003",
+        "E": "trig.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "若 [[AD]] 是 [[\\angle A]] 的內角平分線，則下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[BD=DC]]"
+        },
+        {
+          "id": "B",
+          "text": "[[BD:DC=AB:AC]]"
+        },
+        {
+          "id": "C",
+          "text": "[[AB:BD=AC:BC]]"
+        },
+        {
+          "id": "D",
+          "text": "[[AD:DC=AB:AC]]"
+        },
+        {
+          "id": "E",
+          "text": "[[[ABD]=[ACD]]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "角平分線定理給 [[BD:DC=AB:AC]]。",
+      "distractorMap": {
+        "A": "trig.KP6.RECOGNITION.001",
+        "C": "trig.KP6.RECOGNITION.002",
+        "D": "trig.KP6.RECOGNITION.003",
+        "E": "trig.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "[[AD]] 為 [[\\angle A]] 內角平分線。已知 [[AB=6,AC=9,[ABD]=12]]，則 [[[ACD]]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[8]]"
+        },
+        {
+          "id": "B",
+          "text": "[[12]]"
+        },
+        {
+          "id": "C",
+          "text": "[[15]]"
+        },
+        {
+          "id": "D",
+          "text": "[[18]]"
+        },
+        {
+          "id": "E",
+          "text": "[[27]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[BD:DC=2:3]]，且兩小三角形同高，故 [[[ACD]=12\\times\\frac32=18]]。",
+      "distractorMap": {
+        "A": "trig.KP6.APPLICATION.001",
+        "B": "trig.KP6.APPLICATION.002",
+        "C": "trig.KP6.APPLICATION.003",
+        "E": "trig.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "兩個三角形同高時，面積比等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "周長比"
+        },
+        {
+          "id": "B",
+          "text": "底邊比"
+        },
+        {
+          "id": "C",
+          "text": "底邊比平方"
+        },
+        {
+          "id": "D",
+          "text": "高的平方比"
+        },
+        {
+          "id": "E",
+          "text": "角度比"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[[\\triangle]=\\frac12\\times底\\times高]]，同高時面積比等於底邊比。",
+      "distractorMap": {
+        "A": "trig.KP6.CONCEPT.001",
+        "C": "trig.KP6.CONCEPT.002",
+        "D": "trig.KP6.CONCEPT.003",
+        "E": "trig.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "相似三角形邊長比為 [[2:3]]，面積比為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2:3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4:9]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8:27]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sqrt2:\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[1:1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "面積比為 [[2^2:3^2=4:9]]。",
+      "distractorMap": {
+        "A": "trig.KP6.RECOGNITION.001",
+        "C": "trig.KP6.RECOGNITION.002",
+        "D": "trig.KP6.RECOGNITION.003",
+        "E": "trig.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "在三角形 [[ABC]] 中，[[AD]] 平分 [[\\angle A]]，[[BD=4,DC=6,AB=8]]，則 [[AC]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[10]]"
+        },
+        {
+          "id": "B",
+          "text": "[[12]]"
+        },
+        {
+          "id": "C",
+          "text": "[[14]]"
+        },
+        {
+          "id": "D",
+          "text": "[[16]]"
+        },
+        {
+          "id": "E",
+          "text": "[[18]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[4:6=8:AC]]，解得 [[AC=12]]。",
+      "distractorMap": {
+        "A": "trig.KP6.APPLICATION.001",
+        "C": "trig.KP6.APPLICATION.002",
+        "D": "trig.KP6.APPLICATION.003",
+        "E": "trig.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若兩三角形有兩角分別相等，則兩三角形必如何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "全等"
+        },
+        {
+          "id": "B",
+          "text": "相似"
+        },
+        {
+          "id": "C",
+          "text": "等腰"
+        },
+        {
+          "id": "D",
+          "text": "等面積"
+        },
+        {
+          "id": "E",
+          "text": "互補"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "兩角相等即可由 AA 判定相似。",
+      "distractorMap": {
+        "A": "trig.KP6.CONCEPT.001",
+        "C": "trig.KP6.CONCEPT.002",
+        "D": "trig.KP6.CONCEPT.003",
+        "E": "trig.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "相似三角形面積比為 [[25:9]]，對應邊長比為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[25:9]]"
+        },
+        {
+          "id": "B",
+          "text": "[[5:3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3:5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[625:81]]"
+        },
+        {
+          "id": "E",
+          "text": "[[16:6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "對應邊比為 [[\\sqrt{25:9}=5:3]]。",
+      "distractorMap": {
+        "A": "trig.KP6.RECOGNITION.001",
+        "C": "trig.KP6.RECOGNITION.002",
+        "D": "trig.KP6.RECOGNITION.003",
+        "E": "trig.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp6-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "[[AD]] 平分 [[\\angle A]]，且 [[AB:AC=3:5]]。若 [[[ABC]=64]]，則 [[[ABD]]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[16]]"
+        },
+        {
+          "id": "B",
+          "text": "[[24]]"
+        },
+        {
+          "id": "C",
+          "text": "[[32]]"
+        },
+        {
+          "id": "D",
+          "text": "[[40]]"
+        },
+        {
+          "id": "E",
+          "text": "[[48]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[[ABD]:[ACD]=3:5]]，故 [[[ABD]=64\\times\\frac38=24]]。",
+      "distractorMap": {
+        "A": "trig.KP6.APPLICATION.001",
+        "C": "trig.KP6.APPLICATION.002",
+        "D": "trig.KP6.APPLICATION.003",
+        "E": "trig.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "同弧所對的圓周角彼此有何關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "互補"
+        },
+        {
+          "id": "B",
+          "text": "相等"
+        },
+        {
+          "id": "C",
+          "text": "互餘"
+        },
+        {
+          "id": "D",
+          "text": "相差 [[90^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "沒有固定關係"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "同弧所對的圓周角相等。",
+      "distractorMap": {
+        "A": "trig.KP7.CONCEPT.001",
+        "C": "trig.KP7.CONCEPT.002",
+        "D": "trig.KP7.CONCEPT.003",
+        "E": "trig.KP7.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "若圓心角 [[\\angle AOB=100^\\circ]]，同弧上的圓周角 [[\\angle ACB]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[25^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[50^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[100^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[200^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[80^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\angle ACB=\\frac12\\angle AOB=50^\\circ]]。",
+      "distractorMap": {
+        "A": "trig.KP7.RECOGNITION.001",
+        "C": "trig.KP7.RECOGNITION.002",
+        "D": "trig.KP7.RECOGNITION.003",
+        "E": "trig.KP7.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "半徑為 [[5]] 的圓中，弦 [[AB=8]]，點 [[C]] 位於優弧 [[AB]] 上，則 [[\\sin\\angle ACB]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\frac35]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\frac45]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\frac43]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\frac85]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\frac12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\frac{AB}{\\sin\\angle ACB}=2R=10]]，故 [[\\sin\\angle ACB=\\frac45]]。",
+      "distractorMap": {
+        "A": "trig.KP7.APPLICATION.001",
+        "C": "trig.KP7.APPLICATION.002",
+        "D": "trig.KP7.APPLICATION.003",
+        "E": "trig.KP7.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "直徑所對的圓周角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[45^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[180^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "半圓所對的圓周角為直角。",
+      "distractorMap": {
+        "A": "trig.KP7.CONCEPT.001",
+        "B": "trig.KP7.CONCEPT.002",
+        "C": "trig.KP7.CONCEPT.003",
+        "E": "trig.KP7.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "半徑為 [[6]] 的圓中，圓心角為 [[60^\\circ]] 所對弦長為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6\\sqrt2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "兩半徑與弦形成等邊三角形，弦長為 [[6]]。",
+      "distractorMap": {
+        "A": "trig.KP7.RECOGNITION.001",
+        "C": "trig.KP7.RECOGNITION.002",
+        "D": "trig.KP7.RECOGNITION.003",
+        "E": "trig.KP7.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "外接圓半徑為 [[4]] 的三角形中，角 [[A=30^\\circ]]，則對邊 [[a]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4\\sqrt2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[8]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[a=2\\cdot4\\cdot\\sin30^\\circ=4]]。",
+      "distractorMap": {
+        "A": "trig.KP7.APPLICATION.001",
+        "C": "trig.KP7.APPLICATION.002",
+        "D": "trig.KP7.APPLICATION.003",
+        "E": "trig.KP7.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "二面角通常應在哪一種截面中量測？",
+      "options": [
+        {
+          "id": "A",
+          "text": "任意平面"
+        },
+        {
+          "id": "B",
+          "text": "同時垂直於稜線的截面"
+        },
+        {
+          "id": "C",
+          "text": "平行於稜線的截面"
+        },
+        {
+          "id": "D",
+          "text": "水平面"
+        },
+        {
+          "id": "E",
+          "text": "底面"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "以垂直稜線的截面截出兩半平面的交線，其夾角才代表二面角。",
+      "distractorMap": {
+        "A": "trig.KP7.CONCEPT.001",
+        "C": "trig.KP7.CONCEPT.002",
+        "D": "trig.KP7.CONCEPT.003",
+        "E": "trig.KP7.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "圓半徑為 [[10]]，弦長為 [[10\\sqrt3]]，則較小圓心角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[120^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[150^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[180^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[10\\sqrt3=20\\sin\\frac\\theta2]]，得 [[\\sin\\frac\\theta2=\\frac{\\sqrt3}{2}]]，故較小 [[\\theta=120^\\circ]]。",
+      "distractorMap": {
+        "A": "trig.KP7.RECOGNITION.001",
+        "B": "trig.KP7.RECOGNITION.002",
+        "D": "trig.KP7.RECOGNITION.003",
+        "E": "trig.KP7.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "trig-kp7-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "trig:kp7",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "三角形一邊 [[a=6]]，其對角 [[A=45^\\circ]]，則外接圓半徑 [[R]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3\\sqrt2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6\\sqrt2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[R=\\frac{a}{2\\sin A}=\\frac6{\\sqrt2}=3\\sqrt2]]。",
+      "distractorMap": {
+        "A": "trig.KP7.APPLICATION.001",
+        "C": "trig.KP7.APPLICATION.002",
+        "D": "trig.KP7.APPLICATION.003",
+        "E": "trig.KP7.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "三角比與三角函數63題教師核准（2026-08-13）"
+      }
+    }
+  ]
+}

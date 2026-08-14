@@ -119,7 +119,7 @@ def build():
  aria-label="數B逐年難題與混合題長條圖：111到115年難題4到6題、混合題固定3題。"></canvas></div>
 </div>
 <p>數B 自 108 課綱才出現；難題每年 4–6 題、混合題固定 3 題，逐年平穩，且<b>每年都比數A略低</b>（同期數A難題為 7、5、6、6、8）。</p>
-<p style="margin:16px 0 2px"><b>③ 考點重心分兩派</b></p>
+<p style="margin:16px 0 2px"><b>③ 核心概念重心分兩派</b></p>
 <div class="chartbox">
 <div class="legend">
 <span><i style="background:#2a78d6"></i>數A 較重（→ 右）</span>
@@ -237,7 +237,7 @@ new Chart(document.getElementById('trend'),{type:'bar',
 <div class="wrap">
 <div class="hero">
 <h1>108 課綱把學測數A考成什麼樣子？</h1>
-<p>以 <b>舊課綱數學（106–110，單一卷）</b> 對照 <b>新課綱數A（111–115）</b>，各 5 年、各 100 題，看題型、難度與考點怎麼變。</p>
+<p>以 <b>舊課綱數學（106–110，單一卷）</b> 對照 <b>新課綱數A（111–115）</b>，各 5 年、各 100 題，看題型、難度與核心概念怎麼變。</p>
 <div class="src">資料：《學測數學考題分析 106–115》逐題分析（300 題）· 分界＝111 學測（108 課綱第一屆）</div>
 </div>
 
@@ -267,7 +267,7 @@ new Chart(document.getElementById('trend'),{type:'bar',
 <table><tr><th>難易</th><th>舊課綱</th><th>新數A</th></tr>{dif_tbl}</table>
 <p>難題比例<b>翻倍</b>、易題<b>砍半</b>；新課綱五年內難題數還在爬（115 年 8 題）。</p>
 
-<h2>③ 考點權重大洗牌（每年平均題數）</h2>
+<h2>③ 核心概念權重大洗牌（每年平均題數）</h2>
 <table><tr><th>單元</th><th>舊／年</th><th>新A／年</th><th>變化</th></tr>{unit_tbl}</table>
 <p>贏家是<b>矩陣（翻倍）、多項式、三角函數</b>；<b>數與式、二次曲線</b>在數A幾乎不再單獨命題（數與式變「基礎但不單獨考」、二次曲線移往數B／選修）。</p>
 

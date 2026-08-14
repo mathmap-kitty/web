@@ -1,0 +1,1316 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "pvec",
+  "unitName": "平面向量",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-13",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "pvec-p0-kp1-concept",
+      "kpId": "pvec:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\vec{u}+\\vec{v}=\\vec{0}\\)，則下列何者必定成立？",
+      "options": [
+        "\\(\\vec{u}=\\vec{v}\\)",
+        "\\(\\vec{u}=-\\vec{v}\\)",
+        "\\(\\left|\\vec{u}\\right|=0\\)",
+        "\\(\\vec{u}\\cdot\\vec{v}=0\\)",
+        "\\(\\vec{u}\\) 與 \\(\\vec{v}\\) 同方向"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\vec{u}=-\\vec{v}\\)",
+      "firstBarrier": "能否把向量和為零翻成互為相反向量。",
+      "solution": "移項可得 \\(\\vec{u}=-\\vec{v}\\)。",
+      "distractorNotes": [
+        "忽略相反方向。",
+        null,
+        "兩向量不必為零向量。",
+        "相反向量的內積通常不為零。",
+        "相反向量方向相反。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp1-recognition",
+      "kpId": "pvec:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知向量 \\(\\vec{u}=(2,-1)\\)、\\(\\vec{v}=(-1,3)\\)，若 \\(\\vec{w}=2\\vec{u}-\\vec{v}\\)，則 \\(\\left|\\vec{w}\\right|\\) 為何？",
+      "options": [
+        "\\(\\sqrt5\\)",
+        "\\(\\sqrt{10}\\)",
+        "\\(5\\)",
+        "\\(5\\sqrt2\\)",
+        "\\(10\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(5\\sqrt2\\)",
+      "firstBarrier": "能否先逐分量完成向量的倍數與相減，再使用長度公式。",
+      "solution": "\\(\\vec{w}=(5,-5)\\)，故 \\(\\left|\\vec{w}\\right|=\\sqrt{25+25}=5\\sqrt2\\)。",
+      "distractorNotes": [
+        "把題式誤看成向量相加。",
+        "分量或平方和計算錯誤。",
+        "只取單一分量的絕對值。",
+        null,
+        "把兩分量絕對值直接相加。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp1-application",
+      "kpId": "pvec:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(A=(1,2)\\)、\\(B=(4,-2)\\)，則 \\(\\overrightarrow{AB}\\) 為何？",
+      "options": [
+        "\\((3,-4)\\)",
+        "\\((-3,4)\\)",
+        "\\((5,0)\\)",
+        "\\((3,4)\\)",
+        "\\((-5,0)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((3,-4)\\)",
+      "firstBarrier": "能否遵守終點減起點。",
+      "solution": "\\(\\overrightarrow{AB}=B-A=(4-1,-2-2)=(3,-4)\\)。",
+      "distractorNotes": [
+        null,
+        "把起點減終點。",
+        "把坐標直接相加。",
+        "第二分量符號錯誤。",
+        "相加且符號錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp1-concept",
+      "kpId": "pvec:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(c\\) 為實數，則 \\(\\left|c\\vec{u}\\right|\\) 等於何者？",
+      "options": [
+        "\\(c\\left|\\vec{u}\\right|\\)",
+        "\\(\\left|c\\right|\\left|\\vec{u}\\right|\\)",
+        "\\(c^2\\left|\\vec{u}\\right|\\)",
+        "\\(\\left|\\vec{u}\\right|+c\\)",
+        "\\(\\left|\\vec{u}\\right|/c\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\left|c\\right|\\left|\\vec{u}\\right|\\)",
+      "firstBarrier": "能否注意長度非負，因此純量必須取絕對值。",
+      "solution": "向量縮放 \\(c\\) 倍後，長度縮放 \\(\\left|c\\right|\\) 倍。",
+      "distractorNotes": [
+        "當 c 為負時長度不可能為負。",
+        null,
+        "誤把長度縮放當平方。",
+        "把倍數關係誤作相加。",
+        "縮放方向顛倒。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp1-recognition",
+      "kpId": "pvec:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\vec{u}=(1,-2)\\)、\\(\\vec{v}=(3,1)\\)，則 \\(2\\vec{u}+\\vec{v}\\) 為何？",
+      "options": [
+        "\\((5,-3)\\)",
+        "\\((4,-1)\\)",
+        "\\((5,3)\\)",
+        "\\((-1,-5)\\)",
+        "\\((2,-4)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((5,-3)\\)",
+      "firstBarrier": "能否逐分量完成純量乘法後再相加。",
+      "solution": "\\(2\\vec{u}+\\vec{v}=(2,-4)+(3,1)=(5,-3)\\)。",
+      "distractorNotes": [
+        null,
+        "只將一個分量乘 2。",
+        "第二分量符號錯誤。",
+        "誤作向量相減。",
+        "漏加向量 v。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp1-application",
+      "kpId": "pvec:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(A=(2,-1)\\) 沿向量 \\((-3,4)\\) 平移後到達 \\(B\\)，則 \\(B\\) 為何？",
+      "options": [
+        "\\((-1,3)\\)",
+        "\\((5,-5)\\)",
+        "\\((-5,3)\\)",
+        "\\((1,3)\\)",
+        "\\((-1,5)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((-1,3)\\)",
+      "firstBarrier": "能否把平移向量加到原點坐標。",
+      "solution": "\\(B=(2,-1)+(-3,4)=(-1,3)\\)。",
+      "distractorNotes": [
+        null,
+        "把平移向量改作相減。",
+        "第一分量重複相減。",
+        "第一分量計算錯誤。",
+        "第二分量計算錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp1-concept",
+      "kpId": "pvec:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\((a,b)=(3,-2)\\)，則下列何者正確？",
+      "options": [
+        "\\(a=3,b=2\\)",
+        "\\(a=-3,b=-2\\)",
+        "\\(a=3,b=-2\\)",
+        "\\(a+b=5\\)",
+        "\\(ab=6\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(a=3,b=-2\\)",
+      "firstBarrier": "能否由向量相等逐分量比較。",
+      "solution": "向量相等表示對應分量相等，所以 \\(a=3,b=-2\\)。",
+      "distractorNotes": [
+        "忽略第二分量負號。",
+        "兩分量都誤取負。",
+        null,
+        "分量和計算錯誤。",
+        "分量乘積符號錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp1-recognition",
+      "kpId": "pvec:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "與向量 \\((-3,4)\\) 同方向的單位向量為何？",
+      "options": [
+        "\\((-3/5,4/5)\\)",
+        "\\((3/5,-4/5)\\)",
+        "\\((-4/5,3/5)\\)",
+        "\\((-3,4)\\)",
+        "\\((3/5,4/5)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((-3/5,4/5)\\)",
+      "firstBarrier": "能否除以向量長度且保留方向。",
+      "solution": "原向量長度為 \\(5\\)，故同方向單位向量為 \\((-3/5,4/5)\\)。",
+      "distractorNotes": [
+        null,
+        "得到反方向單位向量。",
+        "交換兩分量。",
+        "未單位化。",
+        "第一分量符號錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp1-application",
+      "kpId": "pvec:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "平行四邊形 \\(ABCD\\) 的頂點依序為 \\(A=(1,0)\\)、\\(B=(3,2)\\)、\\(C=(6,1)\\)，則 \\(D\\) 為何？",
+      "options": [
+        "\\((4,-1)\\)",
+        "\\((2,-1)\\)",
+        "\\((8,3)\\)",
+        "\\((4,1)\\)",
+        "\\((2,3)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((4,-1)\\)",
+      "firstBarrier": "能否使用對角線中點相同或 D=A+C−B。",
+      "solution": "\\(D=A+C-B=(1,0)+(6,1)-(3,2)=(4,-1)\\)。",
+      "distractorNotes": [
+        null,
+        "坐標相減錯誤。",
+        "把三點直接組合為 A+B+C。",
+        "第二分量符號錯誤。",
+        "使用錯誤頂點順序。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp2-concept",
+      "kpId": "pvec:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(P=(1-t)A+tB\\)，其中 \\(t\\) 為實數，則點 \\(P\\) 必位於何處？",
+      "options": [
+        "直線 AB 上",
+        "線段 AB 內部",
+        "AB 的中垂線上",
+        "通過 A 且垂直 AB 的直線上",
+        "無法判定"
+      ],
+      "answerIndex": 0,
+      "answer": "直線 AB 上",
+      "firstBarrier": "能否辨識係數和為 1 的仿射組合描述整條直線。",
+      "solution": "因兩係數和為 \\(1\\)，且 t 可為任意實數，P 位於直線 AB 上；不一定在線段內。",
+      "distractorNotes": [
+        null,
+        "只有 \\(0<t<1\\) 才保證在線段內。",
+        "與中垂線無關。",
+        "未產生垂直條件。",
+        "條件足以判定。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp2-recognition",
+      "kpId": "pvec:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P\\) 將線段 \\(AB\\) 內分，且 \\(AP:PB=2:1\\)。則 \\(\\overrightarrow{OP}\\) 為何？",
+      "options": [
+        "\\(\\frac23\\overrightarrow{OA}+\\frac13\\overrightarrow{OB}\\)",
+        "\\(\\frac13\\overrightarrow{OA}+\\frac23\\overrightarrow{OB}\\)",
+        "\\(2\\overrightarrow{OA}+\\overrightarrow{OB}\\)",
+        "\\(\\overrightarrow{OA}+2\\overrightarrow{OB}\\)",
+        "\\(\\frac12(\\overrightarrow{OA}+\\overrightarrow{OB})\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\frac13\\overrightarrow{OA}+\\frac23\\overrightarrow{OB}\\)",
+      "firstBarrier": "能否判斷 P 靠近 B，因此 OB 的係數應較大。",
+      "solution": "\\(\\overrightarrow{OP}=\\overrightarrow{OA}+\\frac23\\overrightarrow{AB}=\\frac13\\overrightarrow{OA}+\\frac23\\overrightarrow{OB}\\)。",
+      "distractorNotes": [
+        "內分權重方向顛倒。",
+        null,
+        "係數未除以總和。",
+        "係數未正規化。",
+        "把 P 誤認為中點。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp2-application",
+      "kpId": "pvec:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三角形頂點為 \\(A=(0,0)\\)、\\(B=(6,0)\\)、\\(C=(0,3)\\)，其重心坐標為何？",
+      "options": [
+        "\\((2,1)\\)",
+        "\\((3,3/2)\\)",
+        "\\((2,3)\\)",
+        "\\((6,3)\\)",
+        "\\((1,2)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((2,1)\\)",
+      "firstBarrier": "能否將三個頂點的位置向量取平均。",
+      "solution": "重心為 \\(((0+6+0)/3,(0+0+3)/3)=(2,1)\\)。",
+      "distractorNotes": [
+        null,
+        "誤取邊 BC 的中點。",
+        "第二分量未除以 3。",
+        "直接相加未平均。",
+        "兩分量顛倒。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp2-concept",
+      "kpId": "pvec:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\vec{a},\\vec{b}\\) 不平行，且 \\(x\\vec{a}+y\\vec{b}=x_1\\vec{a}+y_1\\vec{b}\\)，則何者必定成立？",
+      "options": [
+        "\\(x+y=x_1+y_1\\)",
+        "\\(x=x_1,y=y_1\\)",
+        "\\(x=y\\)",
+        "\\(x_1=-x,y_1=-y\\)",
+        "無法比較係數"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(x=x_1,y=y_1\\)",
+      "firstBarrier": "能否掌握不平行向量作為基底時表示唯一。",
+      "solution": "移項得 \\((x-x_1)\\vec{a}+(y-y_1)\\vec{b}=\\vec0\\)。因兩向量不平行，故 \\(x=x_1,y=y_1\\)。",
+      "distractorNotes": [
+        "係數和相同不足以保證表示相同。",
+        null,
+        "兩係數不必相等。",
+        "無相反數關係。",
+        "不平行條件正保證唯一。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp2-recognition",
+      "kpId": "pvec:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\overrightarrow{OP}=\\frac34\\overrightarrow{OA}+\\frac14\\overrightarrow{OB}\\)，且 \\(P\\) 在線段 \\(AB\\) 上，則 \\(AP:PB\\) 為何？",
+      "options": [
+        "\\(1:3\\)",
+        "\\(3:1\\)",
+        "\\(1:4\\)",
+        "\\(4:1\\)",
+        "\\(1:1\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(1:3\\)",
+      "firstBarrier": "能否由 B 的係數讀出從 A 出發的比例。",
+      "solution": "P 從 A 朝 B 前進全程的 \\(1/4\\)，故 \\(AP:PB=1:3\\)。",
+      "distractorNotes": [
+        null,
+        "將比例方向顛倒。",
+        "把 B 的係數直接當完整比。",
+        "把係數分母當比例。",
+        "誤認為中點。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp2-application",
+      "kpId": "pvec:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(A=(1,2)\\)、\\(B=(-1,3)\\)，且 \\(\\overrightarrow{OP}=2\\overrightarrow{OA}-\\overrightarrow{OB}\\)，則 \\(P\\) 為何？",
+      "options": [
+        "\\((3,1)\\)",
+        "\\((1,5)\\)",
+        "\\((-3,-1)\\)",
+        "\\((3,7)\\)",
+        "\\((1,-1)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((3,1)\\)",
+      "firstBarrier": "能否把位置向量的線性組合逐分量計算。",
+      "solution": "\\(\\overrightarrow{OP}=2(1,2)-(-1,3)=(3,1)\\)。",
+      "distractorNotes": [
+        null,
+        "把向量相減誤作相加。",
+        "整體符號顛倒。",
+        "第二分量相減錯誤。",
+        "第一分量漏算。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp2-concept",
+      "kpId": "pvec:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "線段 \\(AB\\) 的中點 \\(M\\) 滿足何種關係？",
+      "options": [
+        "\\(\\overrightarrow{OM}=\\overrightarrow{OA}+\\overrightarrow{OB}\\)",
+        "\\(\\overrightarrow{OM}=\\frac12(\\overrightarrow{OA}+\\overrightarrow{OB})\\)",
+        "\\(\\overrightarrow{AM}=\\overrightarrow{AB}\\)",
+        "\\(\\overrightarrow{OM}=\\overrightarrow{OB}-\\overrightarrow{OA}\\)",
+        "\\(\\overrightarrow{AM}=2\\overrightarrow{AB}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\overrightarrow{OM}=\\frac12(\\overrightarrow{OA}+\\overrightarrow{OB})\\)",
+      "firstBarrier": "能否把中點理解為兩端位置向量的平均。",
+      "solution": "中點的位置向量為兩端點位置向量的平均。",
+      "distractorNotes": [
+        "忘記除以 2。",
+        null,
+        "中點只走全程的一半。",
+        "這是 AB，不是 OM。",
+        "倍數方向顛倒。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp2-recognition",
+      "kpId": "pvec:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三角形 \\(ABC\\) 的重心為 \\(G\\)，則 \\(\\overrightarrow{OG}\\) 為何？",
+      "options": [
+        "\\(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC}\\)",
+        "\\(\\frac12(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})\\)",
+        "\\(\\frac13(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})\\)",
+        "\\(\\overrightarrow{OA}-\\overrightarrow{OB}+\\overrightarrow{OC}\\)",
+        "\\(\\frac23(\\overrightarrow{OA}+\\overrightarrow{OB})\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\frac13(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})\\)",
+      "firstBarrier": "能否辨識重心為三個頂點位置向量的平均。",
+      "solution": "\\(\\overrightarrow{OG}=\\frac13(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})\\)。",
+      "distractorNotes": [
+        "忘記平均。",
+        "誤用兩點中點係數。",
+        null,
+        "無故改變 B 的符號。",
+        "漏掉頂點 C。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp2-application",
+      "kpId": "pvec:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在三角形 \\(ABC\\) 中，\\(M\\) 為 \\(BC\\) 中點，則 \\(\\overrightarrow{AM}\\) 如何用 \\(\\overrightarrow{AB},\\overrightarrow{AC}\\) 表示？",
+      "options": [
+        "\\(\\overrightarrow{AB}+\\overrightarrow{AC}\\)",
+        "\\(\\frac12\\overrightarrow{AB}+\\frac12\\overrightarrow{AC}\\)",
+        "\\(\\frac12\\overrightarrow{AB}-\\frac12\\overrightarrow{AC}\\)",
+        "\\(2\\overrightarrow{AB}+2\\overrightarrow{AC}\\)",
+        "\\(\\overrightarrow{AC}-\\overrightarrow{AB}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\frac12\\overrightarrow{AB}+\\frac12\\overrightarrow{AC}\\)",
+      "firstBarrier": "能否以 A 為共同起點，把中點位置寫成兩向量平均。",
+      "solution": "由 M 為 BC 中點，\\(\\overrightarrow{AM}=\\frac12(\\overrightarrow{AB}+\\overrightarrow{AC})\\)。",
+      "distractorNotes": [
+        "忘記除以 2。",
+        null,
+        "把平均誤作相減。",
+        "倍率顛倒。",
+        "得到的是 BC 方向。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp3-concept",
+      "kpId": "pvec:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "非零向量 \\(\\vec{u},\\vec{v}\\) 垂直的充分必要條件為何？",
+      "options": [
+        "\\(\\vec{u}+\\vec{v}=\\vec0\\)",
+        "\\(\\vec{u}\\cdot\\vec{v}=0\\)",
+        "\\(\\left|\\vec{u}\\right|=\\left|\\vec{v}\\right|\\)",
+        "\\(\\vec{u}=2\\vec{v}\\)",
+        "\\(\\det(\\vec{u},\\vec{v})=0\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\vec{u}\\cdot\\vec{v}=0\\)",
+      "firstBarrier": "能否把垂直直接翻成內積為零。",
+      "solution": "由內積定義，非零向量垂直恰等價於內積為零。",
+      "distractorNotes": [
+        "這表示互為相反向量。",
+        null,
+        "等長不代表垂直。",
+        "倍數關係表示平行。",
+        "行列式為零表示平行。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp3-recognition",
+      "kpId": "pvec:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\vec{u}=(3,4)\\)、\\(\\vec{v}=(1,2)\\)，則 \\(\\vec{u}\\) 在 \\(\\vec{v}\\) 方向上的正射影長為何？",
+      "options": [
+        "\\(\\sqrt5\\)",
+        "\\(\\frac{11}{5}\\)",
+        "\\(\\frac{11\\sqrt5}{5}\\)",
+        "\\(11\\)",
+        "\\(\\frac{5\\sqrt5}{11}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\frac{11\\sqrt5}{5}\\)",
+      "firstBarrier": "能否分清正射影長應除以 v 的長度，而不是長度平方。",
+      "solution": "\\(\\vec{u}\\cdot\\vec{v}=11\\)、\\(\\left|\\vec{v}\\right|=\\sqrt5\\)，故正射影長為 \\(11/\\sqrt5=11\\sqrt5/5\\)。",
+      "distractorNotes": [
+        "只算出 v 的長度。",
+        "算成投影向量係數。",
+        null,
+        "只算內積。",
+        "把正確比值倒置。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp3-application",
+      "kpId": "pvec:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\((1,2)\\) 與 \\((2,k)\\) 垂直，則 \\(k\\) 為何？",
+      "options": [
+        "\\(-2\\)",
+        "\\(-1\\)",
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(-1\\)",
+      "firstBarrier": "能否用內積為零建立一次方程式。",
+      "solution": "\\(1\\cdot2+2k=0\\)，故 \\(k=-1\\)。",
+      "distractorNotes": [
+        "移項後漏除以 2。",
+        null,
+        "只看到垂直就令參數為零。",
+        "符號錯誤。",
+        "把內積誤作分量相加。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp3-concept",
+      "kpId": "pvec:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩個非零向量的內積為正，則其夾角必為何種角？",
+      "options": [
+        "銳角",
+        "直角",
+        "鈍角",
+        "平角",
+        "無法判定"
+      ],
+      "answerIndex": 0,
+      "answer": "銳角",
+      "firstBarrier": "能否由內積符號判斷餘弦與夾角。",
+      "solution": "內積為正表示夾角餘弦為正，因此夾角為銳角。",
+      "distractorNotes": [
+        null,
+        "直角的內積為零。",
+        "鈍角的內積為負。",
+        "平角的內積為負。",
+        "非零條件下符號足以判斷。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp3-recognition",
+      "kpId": "pvec:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "向量 \\((1,-2)\\) 與 \\((3,1)\\) 的夾角為何種角？",
+      "options": [
+        "銳角",
+        "直角",
+        "鈍角",
+        "平角",
+        "無法判定"
+      ],
+      "answerIndex": 0,
+      "answer": "銳角",
+      "firstBarrier": "能否先算內積符號，不必求出角度。",
+      "solution": "內積為 \\(1\\cdot3+(-2)\\cdot1=1>0\\)，所以夾角為銳角。",
+      "distractorNotes": [
+        null,
+        "誤算內積為零。",
+        "負分量不代表鈍角。",
+        "兩向量不是反向。",
+        "內積符號足以判定。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp3-application",
+      "kpId": "pvec:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "向量 \\((2,3)\\) 在 \\((1,0)\\) 方向上的正射影向量為何？",
+      "options": [
+        "\\((2,0)\\)",
+        "\\((0,3)\\)",
+        "\\((2,3)\\)",
+        "\\((1,0)\\)",
+        "\\((0,2)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((2,0)\\)",
+      "firstBarrier": "能否分辨投影向量只保留指定方向的分量。",
+      "solution": "投影到 x 軸方向只保留第一分量，故為 \\((2,0)\\)。",
+      "distractorNotes": [
+        null,
+        "誤投影到 y 軸。",
+        "未做投影。",
+        "只寫方向單位向量。",
+        "交換分量。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp3-concept",
+      "kpId": "pvec:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "柯西不等式 \\(\\left|\\vec{u}\\cdot\\vec{v}\\right|\\le\\left|\\vec{u}\\right|\\left|\\vec{v}\\right|\\) 取等號時，兩非零向量必須如何？",
+      "options": [
+        "互相垂直",
+        "互相平行",
+        "長度相等",
+        "內積為零",
+        "皆為單位向量"
+      ],
+      "answerIndex": 1,
+      "answer": "互相平行",
+      "firstBarrier": "能否辨識柯西等號對應共線方向。",
+      "solution": "取等號表示夾角餘弦絕對值為 \\(1\\)，故兩向量平行或反平行。",
+      "distractorNotes": [
+        "垂直時左側為零。",
+        null,
+        "等長不是必要條件。",
+        "內積為零通常不取等號。",
+        "不必為單位向量。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp3-recognition",
+      "kpId": "pvec:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\left|\\vec{u}\\right|=2\\)、\\(\\left|\\vec{v}\\right|=3\\)、\\(\\vec{u}\\cdot\\vec{v}=-3\\)，則兩向量夾角為何？",
+      "options": [
+        "\\(30^\\circ\\)",
+        "\\(60^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(120^\\circ\\)",
+        "\\(150^\\circ\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(120^\\circ\\)",
+      "firstBarrier": "能否由內積公式先求餘弦並判斷鈍角。",
+      "solution": "\\(\\cos\\theta=-3/(2\\cdot3)=-1/2\\)，故 \\(\\theta=120^\\circ\\)。",
+      "distractorNotes": [
+        "忽略內積負號。",
+        "取到餘弦為正的角。",
+        "把負內積誤認為零。",
+        null,
+        "特殊角對應錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp3-application",
+      "kpId": "pvec:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\left|\\vec{u}\\right|=3\\)、\\(\\left|\\vec{v}\\right|=4\\)，且 \\(\\vec{u}\\perp\\vec{v}\\)，則 \\(\\left|\\vec{u}+\\vec{v}\\right|\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(5\\)",
+        "\\(7\\)",
+        "\\(12\\)",
+        "\\(25\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否把垂直向量的長度關係轉為畢氏定理。",
+      "solution": "\\(\\left|\\vec{u}+\\vec{v}\\right|^2=3^2+4^2=25\\)，故長度為 \\(5\\)。",
+      "distractorNotes": [
+        "用兩長度相減。",
+        null,
+        "用兩長度相加。",
+        "用兩長度相乘。",
+        "忘記最後開根號。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp4-concept",
+      "kpId": "pvec:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "交換行列式中的兩個向量後，行列式值如何改變？",
+      "options": [
+        "不變",
+        "變為相反數",
+        "變為平方",
+        "變為絕對值",
+        "必變為零"
+      ],
+      "answerIndex": 1,
+      "answer": "變為相反數",
+      "firstBarrier": "能否掌握行列式交換兩列或兩欄會變號。",
+      "solution": "\\(\\det(\\vec{v},\\vec{u})=-\\det(\\vec{u},\\vec{v})\\)。",
+      "distractorNotes": [
+        "忽略方向性。",
+        null,
+        "行列式不會自動平方。",
+        "只有面積才取絕對值。",
+        "只有平行時才為零。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp4-recognition",
+      "kpId": "pvec:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "平面上 \\(A=(1,1)\\)、\\(B=(5,2)\\)、\\(C=(3,6)\\)，則三角形 \\(ABC\\) 面積為何？",
+      "options": [
+        "\\(8\\)",
+        "\\(9\\)",
+        "\\(10\\)",
+        "\\(18\\)",
+        "\\(36\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(9\\)",
+      "firstBarrier": "能否先以同一起點建立 AB、AC，再將行列式絕對值除以 2。",
+      "solution": "\\(\\overrightarrow{AB}=(4,1)\\)、\\(\\overrightarrow{AC}=(2,5)\\)，面積為 \\(\\frac12|20-2|=9\\)。",
+      "distractorNotes": [
+        "坐標差或乘減錯誤。",
+        null,
+        "誤作底乘高。",
+        "忘記除以 2。",
+        "把行列式再乘以 2。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp4-application",
+      "kpId": "pvec:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "以 \\((2,1)\\)、\\((-1,3)\\) 為鄰邊的平行四邊形面積為何？",
+      "options": [
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(9\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(7\\)",
+      "firstBarrier": "能否用行列式絕對值計算平行四邊形面積。",
+      "solution": "面積為 \\(|2\\cdot3-1\\cdot(-1)|=7\\)。",
+      "distractorNotes": [
+        "行列式相減符號錯誤。",
+        "漏加負數乘積。",
+        null,
+        "多加一單位。",
+        "把分量平方相加。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp4-concept",
+      "kpId": "pvec:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩平面向量的行列式為零，且兩者皆非零，則何者必定成立？",
+      "options": [
+        "互相垂直",
+        "互相平行",
+        "長度相等",
+        "夾角為 \\(60^\\circ\\)",
+        "內積為零"
+      ],
+      "answerIndex": 1,
+      "answer": "互相平行",
+      "firstBarrier": "能否把行列式為零翻成平行或反平行。",
+      "solution": "行列式為零表示張成的平行四邊形面積為零，因此兩向量平行。",
+      "distractorNotes": [
+        "垂直通常面積不為零。",
+        null,
+        "平行向量不必等長。",
+        "沒有固定為 60 度。",
+        "內積為零表示垂直。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp4-recognition",
+      "kpId": "pvec:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "三角形頂點為 \\((0,0)\\)、\\((4,0)\\)、\\((1,3)\\)，其面積為何？",
+      "options": [
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否由坐標看出底與高，或等價使用行列式。",
+      "solution": "底長為 \\(4\\)，高為 \\(3\\)，面積為 \\(\\frac12\\cdot4\\cdot3=6\\)。",
+      "distractorNotes": [
+        "底或高取半。",
+        "只取底長。",
+        null,
+        "乘除處理錯誤。",
+        "忘記除以 2。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp4-application",
+      "kpId": "pvec:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "以 \\((a,1)\\)、\\((2,3)\\) 為鄰邊的平行四邊形面積為 \\(7\\)，且 \\(a>1\\)，則 \\(a\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否建立含絕對值的行列式方程，並用條件篩選。",
+      "solution": "\\(|3a-2|=7\\)，得 \\(a=3\\) 或 \\(a=-5/3\\)；由 \\(a>1\\)，所以 \\(a=3\\)。",
+      "distractorNotes": [
+        "只看條件下界。",
+        "漏處理常數 2。",
+        null,
+        "移項錯誤。",
+        "絕對值方程計算錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp4-concept",
+      "kpId": "pvec:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "同一起點的兩向量所張成三角形面積，是其所張成平行四邊形面積的多少倍？",
+      "options": [
+        "\\(1/4\\)",
+        "\\(1/2\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(4\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(1/2\\)",
+      "firstBarrier": "能否辨識同底同高下三角形為平行四邊形的一半。",
+      "solution": "三角形面積為行列式絕對值的 \\(1/2\\)。",
+      "distractorNotes": [
+        "多除一次 2。",
+        null,
+        "忘記三角形係數。",
+        "比例方向顛倒。",
+        "重複加倍。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp4-recognition",
+      "kpId": "pvec:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(\\det(\\vec{u},\\vec{v})=-6\\)，則由 \\(\\vec{u},\\vec{v}\\) 張成的三角形面積為何？",
+      "options": [
+        "\\(-6\\)",
+        "\\(-3\\)",
+        "\\(3\\)",
+        "\\(6\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否先取絕對值，再除以 2。",
+      "solution": "三角形面積為 \\(\\frac12|-6|=3\\)。",
+      "distractorNotes": [
+        "面積不可為負且漏除 2。",
+        "面積不可為負。",
+        null,
+        "忘記除以 2。",
+        "錯誤乘以 2。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp4-application",
+      "kpId": "pvec:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(P=(1,2)\\)、\\(Q=(5,4)\\)、\\(R=(k,6)\\) 所成三角形面積為 \\(8\\)，且 \\(k<5\\)，則 \\(k\\) 為何？",
+      "options": [
+        "\\(-1\\)",
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否建立行列式絕對值方程並用範圍排除另一解。",
+      "solution": "\\(\\overrightarrow{PQ}=(4,2)\\)、\\(\\overrightarrow{PR}=(k-1,4)\\)，故 \\(\\frac12|18-2k|=8\\)。得 \\(k=1\\) 或 \\(17\\)，由 \\(k<5\\) 取 \\(k=1\\)。",
+      "distractorNotes": [
+        "行列式展開錯誤。",
+        "絕對值方程移項錯誤。",
+        null,
+        "面積倍率處理錯誤。",
+        "代數整理錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp5-concept",
+      "kpId": "pvec:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "平面向量 \\((x,y)\\) 以原點為中心逆時針旋轉 \\(90^\\circ\\) 後變為何者？",
+      "options": [
+        "\\((y,-x)\\)",
+        "\\((-y,x)\\)",
+        "\\((-x,-y)\\)",
+        "\\((y,x)\\)",
+        "\\((-x,y)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((-y,x)\\)",
+      "firstBarrier": "能否辨識逆時針四分之一圈的坐標規則。",
+      "solution": "逆時針旋轉 \\(90^\\circ\\) 的規則為 \\((x,y)\\mapsto(-y,x)\\)。",
+      "distractorNotes": [
+        "這是順時針旋轉。",
+        null,
+        "這是旋轉 180 度。",
+        "只交換坐標未處理符號。",
+        "只改第一分量符號。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp5-recognition",
+      "kpId": "pvec:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將 \\(P=(2,-1)\\) 以原點為中心逆時針旋轉 \\(90^\\circ\\)，所得 \\(P_1\\) 為何？",
+      "options": [
+        "\\((-1,-2)\\)",
+        "\\((-1,2)\\)",
+        "\\((1,2)\\)",
+        "\\((2,1)\\)",
+        "\\((1,-2)\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\((1,2)\\)",
+      "firstBarrier": "能否套用 (x,y) 變成 (−y,x)。",
+      "solution": "\\((2,-1)\\mapsto(1,2)\\)。",
+      "distractorNotes": [
+        "誤作旋轉 180 度。",
+        "只交換坐標。",
+        null,
+        "未交換坐標。",
+        "套用順時針規則。"
+      ]
+    },
+    {
+      "id": "pvec-p0-kp5-application",
+      "kpId": "pvec:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "點",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "向量 \\((3,4)\\) 順時針旋轉 \\(90^\\circ\\) 後為何？",
+      "options": [
+        "\\((-4,3)\\)",
+        "\\((4,-3)\\)",
+        "\\((-3,-4)\\)",
+        "\\((4,3)\\)",
+        "\\((-4,-3)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((4,-3)\\)",
+      "firstBarrier": "能否分清順時針與逆時針旋轉規則。",
+      "solution": "順時針旋轉 \\(90^\\circ\\) 為 \\((x,y)\\mapsto(y,-x)\\)，故得 \\((4,-3)\\)。",
+      "distractorNotes": [
+        "套用逆時針規則。",
+        null,
+        "誤作旋轉 180 度。",
+        "漏掉第二分量負號。",
+        "兩符號處理錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp5-concept",
+      "kpId": "pvec:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "平面旋轉必定保留下列哪一項？",
+      "options": [
+        "每一點的 x 坐標",
+        "每一點的 y 坐標",
+        "向量長度與夾角",
+        "向量的兩個分量",
+        "所有點的位置"
+      ],
+      "answerIndex": 2,
+      "answer": "向量長度與夾角",
+      "firstBarrier": "能否辨識旋轉是保距且保角的剛性變換。",
+      "solution": "旋轉保留長度與夾角，但通常改變坐標分量與位置。",
+      "distractorNotes": [
+        "x 坐標通常改變。",
+        "y 坐標通常改變。",
+        null,
+        "分量通常改變。",
+        "非旋轉中心的點會移動。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp5-recognition",
+      "kpId": "pvec:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\((-2,5)\\) 以原點為中心旋轉 \\(180^\\circ\\) 後為何？",
+      "options": [
+        "\\((2,-5)\\)",
+        "\\((-5,2)\\)",
+        "\\((5,-2)\\)",
+        "\\((2,5)\\)",
+        "\\((-2,-5)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((2,-5)\\)",
+      "firstBarrier": "能否辨識旋轉 180 度使兩坐標同時變號。",
+      "solution": "\\((x,y)\\mapsto(-x,-y)\\)，故 \\((-2,5)\\mapsto(2,-5)\\)。",
+      "distractorNotes": [
+        null,
+        "只交換坐標。",
+        "交換後再變號錯誤。",
+        "只改第一分量。",
+        "只改第二分量。"
+      ]
+    },
+    {
+      "id": "pvec-p1-kp5-application",
+      "kpId": "pvec:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "點 \\(A=(1,1)\\) 以 \\(C=(1,-1)\\) 為中心逆時針旋轉 \\(90^\\circ\\) 後為何？",
+      "options": [
+        "\\((-1,-1)\\)",
+        "\\((1,1)\\)",
+        "\\((3,-1)\\)",
+        "\\((1,-3)\\)",
+        "\\((-1,1)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((-1,-1)\\)",
+      "firstBarrier": "能否先平移到旋轉中心，再旋轉並平移回去。",
+      "solution": "\\(\\overrightarrow{CA}=(0,2)\\)，旋轉後為 \\((-2,0)\\)，加回 C 得 \\((-1,-1)\\)。",
+      "distractorNotes": [
+        null,
+        "未執行旋轉。",
+        "套用順時針方向。",
+        "繞原點計算且方向錯誤。",
+        "加回中心時第二分量錯誤。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp5-concept",
+      "kpId": "pvec:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "向",
+      "secondaryRepresentation": "圖",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "連續做兩次逆時針 \\(90^\\circ\\) 旋轉，等同於一次多少度旋轉？",
+      "options": [
+        "\\(0^\\circ\\)",
+        "\\(90^\\circ\\)",
+        "\\(180^\\circ\\)",
+        "\\(270^\\circ\\)",
+        "\\(360^\\circ\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(180^\\circ\\)",
+      "firstBarrier": "能否把旋轉角度相加並理解合成。",
+      "solution": "兩次 \\(90^\\circ\\) 合成 \\(180^\\circ\\)。",
+      "distractorNotes": [
+        "誤認互相抵消。",
+        "只計一次。",
+        null,
+        "方向或角度相加錯誤。",
+        "誤認兩次即一整圈。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp5-recognition",
+      "kpId": "pvec:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "向",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列哪個矩陣表示順時針旋轉 \\(90^\\circ\\)？",
+      "options": [
+        "\\(\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}-1&0\\\\0&-1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}\\)",
+        "\\(\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}\\)",
+      "firstBarrier": "能否由基底向量的像辨識旋轉矩陣。",
+      "solution": "順時針 \\(90^\\circ\\) 使 \\((x,y)\\mapsto(y,-x)\\)，矩陣為 \\(\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}\\)。",
+      "distractorNotes": [
+        "這是逆時針 90 度。",
+        null,
+        "這是旋轉 180 度。",
+        "這是不旋轉。",
+        "這是關於直線 y=x 的鏡射。"
+      ]
+    },
+    {
+      "id": "pvec-p2-kp5-application",
+      "kpId": "pvec:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "點",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將點 \\((2,0)\\) 以原點為中心逆時針旋轉 \\(120^\\circ\\)，所得坐標為何？",
+      "options": [
+        "\\((-1,\\sqrt3)\\)",
+        "\\((1,\\sqrt3)\\)",
+        "\\((-\\sqrt3,1)\\)",
+        "\\((-1,-\\sqrt3)\\)",
+        "\\((0,2)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((-1,\\sqrt3)\\)",
+      "firstBarrier": "能否使用旋轉角的餘弦與正弦求新坐標。",
+      "solution": "新坐標為 \\((2\\cos120^\\circ,2\\sin120^\\circ)=(-1,\\sqrt3)\\)。",
+      "distractorNotes": [
+        null,
+        "餘弦符號錯誤。",
+        "正弦與餘弦位置顛倒。",
+        "正弦符號錯誤。",
+        "誤作旋轉 90 度。"
+      ]
+    }
+  ]
+}

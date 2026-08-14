@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "proposalStatus": "APPROVED_ACTIVATED",
+  "unit": {
+    "id": "comb",
+    "name": "排列組合",
+    "points": [
+      {"id": "comb:kp1", "title": "計數原理與系統列舉", "teacherStatus": "APPROVED"},
+      {"id": "comb:kp2", "title": "排列與位置限制", "teacherStatus": "APPROVED"},
+      {"id": "comb:kp3", "title": "組合、重複組合與分組", "teacherStatus": "APPROVED"},
+      {"id": "comb:kp4", "title": "分類計數與結果等價", "teacherStatus": "APPROVED"}
+    ]
+  },
+  "prerequisiteEdges": [
+    {"from": "comb:kp1", "to": "comb:kp2", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED"},
+    {"from": "comb:kp1", "to": "comb:kp3", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED"},
+    {"from": "comb:kp2", "to": "comb:kp4", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED"},
+    {"from": "comb:kp3", "to": "comb:kp4", "relationType": "PREREQUISITE", "teacherStatus": "APPROVED"}
+  ],
+  "legacyCompatibility": {
+    "policy": "KEEP_LEGACY_IDS_AND_MAP_PER_ITEM",
+    "legacyUnit": "prob",
+    "rules": [
+      {
+        "legacyId": "prob:kp1",
+        "candidateTargets": ["comb:kp1", "comb:kp2"],
+        "automaticAlias": false,
+        "reason": "舊核心概念同時涵蓋計數原理與排列，不能安全地一對一改號。"
+      },
+      {
+        "legacyId": "prob:kp2",
+        "candidateTargets": ["comb:kp3", "comb:kp4"],
+        "automaticAlias": false,
+        "reason": "舊核心概念同時涵蓋組合、分組與部分分類計數，必須逐題判定。"
+      }
+    ],
+    "existingEvidence": "UNCHANGED",
+    "existingDeployedSystem": "UNCHANGED"
+  },
+  "activationCondition": "已於 2026-08-12 完成：教師核准 36 題後，正式 registry、4 條先備關係與本機五階段流程同步啟用。"
+}

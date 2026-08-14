@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "unitId": "matrix",
+  "unitName": "矩陣",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "generatedAt": "2026-08-13",
+  "reuseExistingRegistry": true,
+  "knowledgePoints": [
+    {"id":"matrix:kp1","title":"矩陣的意義、相等與乘法","representations":["陣","乘"]},
+    {"id":"matrix:kp2","title":"矩陣的高次方","representations":["乘"]},
+    {"id":"matrix:kp3","title":"反方陣與解矩陣方程式","representations":["乘","解"]},
+    {"id":"matrix:kp4","title":"一次聯立與高斯消去","representations":["解"]},
+    {"id":"matrix:kp5","title":"平面線性變換","representations":["陣","變"]}
+  ],
+  "representations": ["陣","乘","解","變"],
+  "indexedEvidenceCount": 17,
+  "recentCoreEvidenceCount": 10,
+  "approvedRelationshipCount": 6,
+  "dependencyWeightEligibleCount": 5,
+  "questionPlan": {"initial":15,"immediateVariant":15,"delayedRetest":15,"total":45},
+  "publicationAuthorized": false,
+  "deploymentAuthorized": false
+}

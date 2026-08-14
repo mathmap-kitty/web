@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""資料鏈結守門：build 前檢查考點／題目相關的耦合是否一致，避免「默默錯位」。
+"""資料鏈結守門：build 前檢查核心概念／題目相關的耦合是否一致，避免「默默錯位」。
 檢查項：
   ① part2_kp 清單長度 == 各單元 Part2 題數（位置對應，最易錯）→ 錯誤
-  ② part2_kp／checks／cues 參照的考點 kp 是否存在 → 錯誤
-  ③ 有 Part2 卻無 part2_kp、考點無概念小測、cue 群組未定義 → 提醒
+  ② part2_kp／checks／cues 參照的核心概念 kp 是否存在 → 錯誤
+  ③ 有 Part2 卻無 part2_kp、核心概念無概念小測、cue 群組未定義 → 提醒
 可獨立跑：python build/validate.py（回傳碼 1＝有錯誤）。build.py 也會在建置前呼叫。
 """
 import os
@@ -60,21 +60,21 @@ def validate():
                           f"（增刪/搬動 Part2 題目後，要同步 content/part2_kp.py）")
         for i, kp in enumerate(lst):
             if kp not in unit_kps[slug]:
-                errors.append(f"[part2_kp] {slug} 第 {i+1} 筆指向不存在的考點「{kp}」")
+                errors.append(f"[part2_kp] {slug} 第 {i+1} 筆指向不存在的核心概念「{kp}」")
     for slug, n in part2_n.items():
         if n > 0 and slug not in PART2_KP:
-            warns.append(f"[part2_kp] {slug} 有 {n} 題 Part2，但無對應清單（那些題的『解題核心』不會連回考點）")
+            warns.append(f"[part2_kp] {slug} 有 {n} 題 Part2，但無對應清單（那些題的『解題核心』不會連回核心概念）")
 
     # ② checks：kp 存在
     for (slug, kp) in CHECKS:
         if slug not in unit_kps:
             warns.append(f"[checks] 未知單元「{slug}」")
         elif kp not in unit_kps[slug]:
-            errors.append(f"[checks] {slug}:{kp} 指向不存在的考點")
+            errors.append(f"[checks] {slug}:{kp} 指向不存在的核心概念")
     # ③ checks 覆蓋率（缺＝退回自我檢查，提醒即可）
     miss = [f"{s}:{k}" for s, kps in unit_kps.items() for k in kps if (s, k) not in CHECKS]
     if miss:
-        warns.append(f"[checks] {len(miss)} 個考點無概念小測（會退回『看答案』自我檢查）："
+        warns.append(f"[checks] {len(miss)} 個核心概念無概念小測（會退回『看答案』自我檢查）："
                      f"{'、'.join(miss[:8])}{'…' if len(miss) > 8 else ''}")
 
     # ② cues：unit/kp 存在 ＋ 群組已定義
@@ -84,7 +84,7 @@ def validate():
         if slug not in unit_kps:
             errors.append(f"[cues] 未知單元「{slug}」（線索：{kw}）")
         elif kp not in unit_kps[slug]:
-            errors.append(f"[cues] {slug}:{kp} 指向不存在的考點（線索：{kw}）")
+            errors.append(f"[cues] {slug}:{kp} 指向不存在的核心概念（線索：{kw}）")
         g = c.get("g")
         if g and g not in GROUPS:
             warns.append(f"[cues] 群組「{g}」未定義於 GROUPS（線索：{kw}）")

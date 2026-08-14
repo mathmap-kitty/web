@@ -1,0 +1,2707 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "space",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "點 [[P=(2,-3,5)]] 到 [[xy]] 平面的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sqrt{38}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[10]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "到 [[xy]] 平面的距離為 [[|z|=5]]。",
+      "distractorMap": {
+        "A": "space.KP1.CONCEPT.001",
+        "B": "space.KP1.CONCEPT.002",
+        "D": "space.KP1.CONCEPT.003",
+        "E": "space.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "坐標空間中，[[A=(1,-2,3)]]、[[B=(4,2,6)]]，則 [[\\overline{AB}]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt{18}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt{34}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[34]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sqrt{50}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\overline{AB}=\\sqrt{3^2+4^2+3^2}=\\sqrt{34}]]。",
+      "distractorMap": {
+        "A": "space.KP1.RECOGNITION.001",
+        "B": "space.KP1.RECOGNITION.002",
+        "D": "space.KP1.RECOGNITION.003",
+        "E": "space.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "邊長為 [[2]] 的正立方體，其體對角線長為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2\\sqrt2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2\\sqrt3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "體對角線為 [[\\sqrt{2^2+2^2+2^2}=2\\sqrt3]]。",
+      "distractorMap": {
+        "A": "space.KP1.APPLICATION.001",
+        "B": "space.KP1.APPLICATION.002",
+        "D": "space.KP1.APPLICATION.003",
+        "E": "space.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "[[A=(1,2,3)]]、[[B=(5,0,-1)]] 的中點為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(2,1,1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(3,1,1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(3,2,1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(6,2,2)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(4,-2,-4)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "中點為 [[\\left(\\dfrac{1+5}{2},\\dfrac{2+0}{2},\\dfrac{3-1}{2}\\right)=(3,1,1)]]。",
+      "distractorMap": {
+        "A": "space.KP1.CONCEPT.001",
+        "C": "space.KP1.CONCEPT.002",
+        "D": "space.KP1.CONCEPT.003",
+        "E": "space.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "點 [[P=(-4,2,0)]] 位於哪一個坐標平面？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[xy]] 平面"
+        },
+        {
+          "id": "B",
+          "text": "[[yz]] 平面"
+        },
+        {
+          "id": "C",
+          "text": "[[zx]] 平面"
+        },
+        {
+          "id": "D",
+          "text": "三個坐標平面"
+        },
+        {
+          "id": "E",
+          "text": "不在任何坐標平面"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "因 [[z=0]]，所以 [[P]] 位於 [[xy]] 平面。",
+      "distractorMap": {
+        "B": "space.KP1.RECOGNITION.001",
+        "C": "space.KP1.RECOGNITION.002",
+        "D": "space.KP1.RECOGNITION.003",
+        "E": "space.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "正立方體的體對角線長為 [[6\\sqrt3]]，其邊長為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[9]]"
+        },
+        {
+          "id": "E",
+          "text": "[[18]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "若邊長為 [[a]]，則 [[a\\sqrt3=6\\sqrt3]]，故 [[a=6]]。",
+      "distractorMap": {
+        "A": "space.KP1.APPLICATION.001",
+        "B": "space.KP1.APPLICATION.002",
+        "D": "space.KP1.APPLICATION.003",
+        "E": "space.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "兩點 [[A(x_1,y_1,z_1)]]、[[B(x_2,y_2,z_2)]] 的距離公式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt{(x_2+x_1)^2+(y_2+y_1)^2+(z_2+z_1)^2}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[|x_2-x_1|+|y_2-y_1|+|z_2-z_1|]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "空間距離是三個坐標差的平方和再開根號。",
+      "distractorMap": {
+        "A": "space.KP1.CONCEPT.001",
+        "B": "space.KP1.CONCEPT.002",
+        "D": "space.KP1.CONCEPT.003",
+        "E": "space.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "點 [[Q=(-3,4,2)]] 到 [[yz]] 平面的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sqrt{29}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "距離為 [[|x|=|-3|=3]]。",
+      "distractorMap": {
+        "A": "space.KP1.RECOGNITION.001",
+        "C": "space.KP1.RECOGNITION.002",
+        "D": "space.KP1.RECOGNITION.003",
+        "E": "space.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "[[A=(-1,2,0)]]、[[B=(2,-2,4)]]，則 [[\\overline{AB}]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt{33}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt{41}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[7]]"
+        },
+        {
+          "id": "E",
+          "text": "[[41]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\overline{AB}=\\sqrt{3^2+(-4)^2+4^2}=\\sqrt{41}]]。",
+      "distractorMap": {
+        "A": "space.KP1.APPLICATION.001",
+        "B": "space.KP1.APPLICATION.002",
+        "D": "space.KP1.APPLICATION.003",
+        "E": "space.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "兩個非零向量 [[\\vec u,\\vec v]] 垂直的充要條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\vec u=\\vec v]]"
+        },
+        {
+          "id": "B",
+          "text": "[[|\\vec u|=|\\vec v|]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\vec u\\cdot\\vec v=0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\vec u\\times\\vec v=\\vec0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\vec u\\cdot\\vec v=1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "非零向量垂直當且僅當 [[\\vec u\\cdot\\vec v=0]]。",
+      "distractorMap": {
+        "A": "space.KP2.CONCEPT.001",
+        "B": "space.KP2.CONCEPT.002",
+        "D": "space.KP2.CONCEPT.003",
+        "E": "space.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "[[\\vec u=(1,-2,2)]]、[[\\vec v=(2,1,0)]]，兩向量夾角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[45^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[120^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[\\vec u\\cdot\\vec v=2-2+0=0]]，故夾角為 [[90^\\circ]]。",
+      "distractorMap": {
+        "A": "space.KP2.RECOGNITION.001",
+        "B": "space.KP2.RECOGNITION.002",
+        "C": "space.KP2.RECOGNITION.003",
+        "E": "space.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "已知 [[\\vec u=(1,1,0)]]、[[\\vec v=(1,0,1)]]，兩向量夾角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[45^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[120^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\vec u\\cdot\\vec v=1]]，[[|\\vec u|=|\\vec v|=\\sqrt2]]，故 [[\\cos\\theta=\\dfrac12]]，所以 [[\\theta=60^\\circ]]。",
+      "distractorMap": {
+        "A": "space.KP2.APPLICATION.001",
+        "B": "space.KP2.APPLICATION.002",
+        "D": "space.KP2.APPLICATION.003",
+        "E": "space.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若 [[\\vec u\\cdot\\vec v<0]]，則兩個非零向量的夾角必為何種角？",
+      "options": [
+        {
+          "id": "A",
+          "text": "銳角"
+        },
+        {
+          "id": "B",
+          "text": "直角"
+        },
+        {
+          "id": "C",
+          "text": "鈍角"
+        },
+        {
+          "id": "D",
+          "text": "零角"
+        },
+        {
+          "id": "E",
+          "text": "無法判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "內積為負表示 [[\\cos\\theta<0]]，故夾角為鈍角。",
+      "distractorMap": {
+        "A": "space.KP2.CONCEPT.001",
+        "B": "space.KP2.CONCEPT.002",
+        "D": "space.KP2.CONCEPT.003",
+        "E": "space.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "[[\\vec u=(2,1,2)]] 在 [[\\vec v=(1,0,0)]] 方向上的正射影長為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sqrt5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sqrt6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "投影長為 [[\\dfrac{|2|}{1}=2]]。",
+      "distractorMap": {
+        "A": "space.KP2.RECOGNITION.001",
+        "C": "space.KP2.RECOGNITION.002",
+        "D": "space.KP2.RECOGNITION.003",
+        "E": "space.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "[[|\\vec u|=2]]、[[|\\vec v|=3]]，夾角為 [[60^\\circ]]，則 [[\\vec u\\cdot\\vec v]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\vec u\\cdot\\vec v=2\\cdot3\\cdot\\cos60^\\circ=3]]。",
+      "distractorMap": {
+        "A": "space.KP2.APPLICATION.001",
+        "B": "space.KP2.APPLICATION.002",
+        "D": "space.KP2.APPLICATION.003",
+        "E": "space.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若非零向量滿足 [[\\vec u\\cdot\\vec v=|\\vec u||\\vec v|]]，則兩向量的方向關係為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "同方向"
+        },
+        {
+          "id": "B",
+          "text": "反方向"
+        },
+        {
+          "id": "C",
+          "text": "互相垂直"
+        },
+        {
+          "id": "D",
+          "text": "夾角為 [[60^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "無法判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "此時 [[\\cos\\theta=1]]，故 [[\\theta=0^\\circ]]，兩向量同方向。",
+      "distractorMap": {
+        "B": "space.KP2.CONCEPT.001",
+        "C": "space.KP2.CONCEPT.002",
+        "D": "space.KP2.CONCEPT.003",
+        "E": "space.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "[[\\vec a=(1,2,-1)]]、[[\\vec b=(2,-1,k)]] 且 [[\\vec a\\perp\\vec b]]，則 [[k]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[1]]"
+        },
+        {
+          "id": "E",
+          "text": "[[2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[2-2-k=0]]，故 [[k=0]]。",
+      "distractorMap": {
+        "A": "space.KP2.RECOGNITION.001",
+        "B": "space.KP2.RECOGNITION.002",
+        "D": "space.KP2.RECOGNITION.003",
+        "E": "space.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "[[\\vec u=(3,4,0)]] 在 [[\\vec v=(1,0,0)]] 上的正射影向量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(3,0,0)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(0,4,0)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(3,4,0)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,0,0)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(5,0,0)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "投影向量為 [[\\dfrac{\\vec u\\cdot\\vec v}{|\\vec v|^2}\\vec v=3(1,0,0)=(3,0,0)]]。",
+      "distractorMap": {
+        "B": "space.KP2.APPLICATION.001",
+        "C": "space.KP2.APPLICATION.002",
+        "D": "space.KP2.APPLICATION.003",
+        "E": "space.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "下列何者必定同時垂直 [[\\vec u]] 與 [[\\vec v]]？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\vec u+\\vec v]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\vec u-\\vec v]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\vec u\\cdot\\vec v]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\vec u\\times\\vec v]]"
+        },
+        {
+          "id": "E",
+          "text": "[[|\\vec u|+|\\vec v|]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[\\vec u\\times\\vec v]] 同時垂直兩個原向量。",
+      "distractorMap": {
+        "A": "space.KP3.CONCEPT.001",
+        "B": "space.KP3.CONCEPT.002",
+        "C": "space.KP3.CONCEPT.003",
+        "E": "space.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "[[\\vec u=(1,0,0)]]、[[\\vec v=(0,1,0)]]，則 [[\\vec u\\times\\vec v]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(0,0,1)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(0,0,-1)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(1,1,0)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(1,-1,0)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[(1,0,0)\\times(0,1,0)=(0,0,1)]]。",
+      "distractorMap": {
+        "B": "space.KP3.RECOGNITION.001",
+        "C": "space.KP3.RECOGNITION.002",
+        "D": "space.KP3.RECOGNITION.003",
+        "E": "space.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "坐標空間中，[[O]] 為原點，[[B=(1,2,0)]]、[[C=(0,1,2)]]，則三角形 [[OBC]] 的面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\dfrac{\\sqrt{21}}4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac{\\sqrt{21}}2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt{21}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac{21}2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac72]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{OB}\\times\\overrightarrow{OC}=(4,-2,1)]]，長度 [[\\sqrt{21}]]，故面積為 [[\\dfrac{\\sqrt{21}}2]]。",
+      "distractorMap": {
+        "A": "space.KP3.APPLICATION.001",
+        "C": "space.KP3.APPLICATION.002",
+        "D": "space.KP3.APPLICATION.003",
+        "E": "space.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "交換外積順序後，下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\vec v\\times\\vec u=\\vec u\\times\\vec v]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\vec v\\times\\vec u=-\\vec u\\times\\vec v]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\vec v\\times\\vec u=0]]"
+        },
+        {
+          "id": "D",
+          "text": "長度必加倍"
+        },
+        {
+          "id": "E",
+          "text": "方向與長度都無法比較"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "外積交換順序會反向：[[\\vec v\\times\\vec u=-\\vec u\\times\\vec v]]。",
+      "distractorMap": {
+        "A": "space.KP3.CONCEPT.001",
+        "C": "space.KP3.CONCEPT.002",
+        "D": "space.KP3.CONCEPT.003",
+        "E": "space.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "行列式 [[\\begin{vmatrix}1&0&0\\\\0&2&0\\\\0&0&3\\end{vmatrix}]] 的值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "行列式為 [[1\\cdot2\\cdot3=6]]。",
+      "distractorMap": {
+        "A": "space.KP3.RECOGNITION.001",
+        "B": "space.KP3.RECOGNITION.002",
+        "C": "space.KP3.RECOGNITION.003",
+        "E": "space.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "三個互相垂直的向量長度分別為 [[2,3,4]]，所張平行六面體體積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[9]]"
+        },
+        {
+          "id": "B",
+          "text": "[[12]]"
+        },
+        {
+          "id": "C",
+          "text": "[[18]]"
+        },
+        {
+          "id": "D",
+          "text": "[[24]]"
+        },
+        {
+          "id": "E",
+          "text": "[[48]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "體積為 [[2\\cdot3\\cdot4=24]]。",
+      "distractorMap": {
+        "A": "space.KP3.APPLICATION.001",
+        "B": "space.KP3.APPLICATION.002",
+        "C": "space.KP3.APPLICATION.003",
+        "E": "space.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "三角形由同一起點的兩向量 [[\\vec u,\\vec v]] 張成，其面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[|\\vec u\\times\\vec v|]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac12|\\vec u\\times\\vec v|]]"
+        },
+        {
+          "id": "C",
+          "text": "[[|\\vec u\\cdot\\vec v|]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac16|\\vec u\\cdot\\vec v|]]"
+        },
+        {
+          "id": "E",
+          "text": "[[|\\vec u||\\vec v|]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "三角形面積為平行四邊形的一半，即 [[\\dfrac12|\\vec u\\times\\vec v|]]。",
+      "distractorMap": {
+        "A": "space.KP3.CONCEPT.001",
+        "C": "space.KP3.CONCEPT.002",
+        "D": "space.KP3.CONCEPT.003",
+        "E": "space.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "[[\\vec u=(1,1,0)]]、[[\\vec v=(0,1,1)]]，以兩向量為鄰邊的平行四邊形面積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\vec u\\times\\vec v=(1,-1,1)]]，故面積為 [[\\sqrt3]]。",
+      "distractorMap": {
+        "A": "space.KP3.RECOGNITION.001",
+        "B": "space.KP3.RECOGNITION.002",
+        "D": "space.KP3.RECOGNITION.003",
+        "E": "space.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "三條互相垂直的棱長為 [[3,4,5]]，以其為三條棱的四面體體積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[10]]"
+        },
+        {
+          "id": "C",
+          "text": "[[20]]"
+        },
+        {
+          "id": "D",
+          "text": "[[30]]"
+        },
+        {
+          "id": "E",
+          "text": "[[60]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "四面體體積為 [[\\dfrac16(3\\cdot4\\cdot5)=10]]。",
+      "distractorMap": {
+        "A": "space.KP3.APPLICATION.001",
+        "C": "space.KP3.APPLICATION.002",
+        "D": "space.KP3.APPLICATION.003",
+        "E": "space.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "平面 [[2x-y+3z=7]] 的一個法向量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(2,-1,3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(2,1,3)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(7,0,0)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,1,1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-2,-1,-3)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "法向量可取 [[(2,-1,3)]]。",
+      "distractorMap": {
+        "B": "space.KP4.CONCEPT.001",
+        "C": "space.KP4.CONCEPT.002",
+        "D": "space.KP4.CONCEPT.003",
+        "E": "space.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "點 [[P=(1,2,3)]] 是否在平面 [[x+y+z=6]] 上？",
+      "options": [
+        {
+          "id": "A",
+          "text": "是"
+        },
+        {
+          "id": "B",
+          "text": "否，距離為 [[1]]"
+        },
+        {
+          "id": "C",
+          "text": "否，距離為 [[\\sqrt3]]"
+        },
+        {
+          "id": "D",
+          "text": "只有投影點在平面上"
+        },
+        {
+          "id": "E",
+          "text": "資料不足"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[1+2+3=6]]，所以點在平面上。",
+      "distractorMap": {
+        "B": "space.KP4.RECOGNITION.001",
+        "C": "space.KP4.RECOGNITION.002",
+        "D": "space.KP4.RECOGNITION.003",
+        "E": "space.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "點 [[P=(3,-1,2)]] 到平面 [[2x-y+2z=5]] 的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\dfrac13]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "距離為 [[\\dfrac{|6+1+4-5|}{\\sqrt{4+1+4}}=\\dfrac63=2]]。",
+      "distractorMap": {
+        "A": "space.KP4.APPLICATION.001",
+        "B": "space.KP4.APPLICATION.002",
+        "D": "space.KP4.APPLICATION.003",
+        "E": "space.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "兩個相異平面平行時，其法向量必須符合何種關係？",
+      "options": [
+        {
+          "id": "A",
+          "text": "互相垂直"
+        },
+        {
+          "id": "B",
+          "text": "方向平行"
+        },
+        {
+          "id": "C",
+          "text": "長度相等"
+        },
+        {
+          "id": "D",
+          "text": "內積為一"
+        },
+        {
+          "id": "E",
+          "text": "外積長度為一"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "兩個相異平面平行時，法向量方向平行。",
+      "distractorMap": {
+        "A": "space.KP4.CONCEPT.001",
+        "C": "space.KP4.CONCEPT.002",
+        "D": "space.KP4.CONCEPT.003",
+        "E": "space.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "點 [[P=(3,0,0)]] 在平面 [[x=1]] 上的投影點為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(0,0,0)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,0,0)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(2,0,0)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(3,1,0)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(3,0,1)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "平面法向量沿 [[x]] 軸，投影只把 [[x]] 坐標改為 [[1]]，得 [[(1,0,0)]]。",
+      "distractorMap": {
+        "A": "space.KP4.RECOGNITION.001",
+        "C": "space.KP4.RECOGNITION.002",
+        "D": "space.KP4.RECOGNITION.003",
+        "E": "space.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "原點到平面 [[2x-y+2z=9]] 的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6]]"
+        },
+        {
+          "id": "E",
+          "text": "[[9]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "距離為 [[\\dfrac9{\\sqrt{4+1+4}}=3]]。",
+      "distractorMap": {
+        "A": "space.KP4.APPLICATION.001",
+        "B": "space.KP4.APPLICATION.002",
+        "D": "space.KP4.APPLICATION.003",
+        "E": "space.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "兩平面垂直時，下列哪一個法向量條件正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩法向量平行"
+        },
+        {
+          "id": "B",
+          "text": "兩法向量相等"
+        },
+        {
+          "id": "C",
+          "text": "兩法向量內積為零"
+        },
+        {
+          "id": "D",
+          "text": "兩法向量長度相等"
+        },
+        {
+          "id": "E",
+          "text": "兩法向量外積為零"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩平面垂直時，兩法向量內積為零。",
+      "distractorMap": {
+        "A": "space.KP4.CONCEPT.001",
+        "B": "space.KP4.CONCEPT.002",
+        "D": "space.KP4.CONCEPT.003",
+        "E": "space.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "法向量 [[(1,2,-1)]] 且通過 [[P=(1,0,2)]] 的平面方程式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x+2y-z=-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x+2y-z=1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x-2y+z=-1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x+2y+z=3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[x+y+z=3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "代入 [[P]]：[[1+0-2=-1]]，故平面為 [[x+2y-z=-1]]。",
+      "distractorMap": {
+        "B": "space.KP4.RECOGNITION.001",
+        "C": "space.KP4.RECOGNITION.002",
+        "D": "space.KP4.RECOGNITION.003",
+        "E": "space.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "通過 [[O=(0,0,0)]]、[[A=(1,0,1)]]、[[B=(0,1,1)]] 的平面方程式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x+y-z=0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x-y+z=0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x+y+z=0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x-y-z=0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[x+y-z=1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[\\overrightarrow{OA}\\times\\overrightarrow{OB}=(-1,-1,1)]]，故可寫成 [[x+y-z=0]]。",
+      "distractorMap": {
+        "B": "space.KP4.APPLICATION.001",
+        "C": "space.KP4.APPLICATION.002",
+        "D": "space.KP4.APPLICATION.003",
+        "E": "space.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "空間中兩直線方向向量不平行時，兩直線可能為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "只可能相交"
+        },
+        {
+          "id": "B",
+          "text": "只可能歪斜"
+        },
+        {
+          "id": "C",
+          "text": "相交或歪斜"
+        },
+        {
+          "id": "D",
+          "text": "平行或重合"
+        },
+        {
+          "id": "E",
+          "text": "必定垂直"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "方向不平行時，兩直線可能相交，也可能歪斜。",
+      "distractorMap": {
+        "A": "space.KP5.CONCEPT.001",
+        "B": "space.KP5.CONCEPT.002",
+        "D": "space.KP5.CONCEPT.003",
+        "E": "space.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "直線 [[L_1:(x,y,z)=(t,t,0)]]，[[L_2:(x,y,z)=(1+s,-s,1)]]。兩直線關係為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "平行"
+        },
+        {
+          "id": "B",
+          "text": "重合"
+        },
+        {
+          "id": "C",
+          "text": "相交但不垂直"
+        },
+        {
+          "id": "D",
+          "text": "相交且垂直"
+        },
+        {
+          "id": "E",
+          "text": "歪斜"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "E"
+        ]
+      },
+      "explanation": "方向不平行，但 [[L_1]] 的 [[z=0]]、[[L_2]] 的 [[z=1]]，無交點，故歪斜。",
+      "distractorMap": {
+        "A": "space.KP5.RECOGNITION.001",
+        "B": "space.KP5.RECOGNITION.002",
+        "C": "space.KP5.RECOGNITION.003",
+        "D": "space.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "直線方向向量為 [[(1,2,-1)]]，平面法向量為 [[(2,-1,0)]]。此直線的方向與平面的關係為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "平行"
+        },
+        {
+          "id": "B",
+          "text": "垂直"
+        },
+        {
+          "id": "C",
+          "text": "必定在平面上"
+        },
+        {
+          "id": "D",
+          "text": "必定相交且垂直"
+        },
+        {
+          "id": "E",
+          "text": "無法判斷"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "內積 [[2-2+0=0]]，故直線方向平行於平面。",
+      "distractorMap": {
+        "B": "space.KP5.APPLICATION.001",
+        "C": "space.KP5.APPLICATION.002",
+        "D": "space.KP5.APPLICATION.003",
+        "E": "space.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "直線垂直於平面的充分必要方向條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "方向向量垂直法向量"
+        },
+        {
+          "id": "B",
+          "text": "方向向量平行法向量"
+        },
+        {
+          "id": "C",
+          "text": "方向向量長度等於法向量"
+        },
+        {
+          "id": "D",
+          "text": "兩向量內積為零"
+        },
+        {
+          "id": "E",
+          "text": "兩向量外積長度為一"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "直線垂直平面時，方向向量平行於平面法向量。",
+      "distractorMap": {
+        "A": "space.KP5.CONCEPT.001",
+        "C": "space.KP5.CONCEPT.002",
+        "D": "space.KP5.CONCEPT.003",
+        "E": "space.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "[[L_1:(x,y,z)=(t,0,0)]]、[[L_2:(x,y,z)=(0,1+s,0)]]，兩直線關係為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "平行"
+        },
+        {
+          "id": "B",
+          "text": "重合"
+        },
+        {
+          "id": "C",
+          "text": "相交且垂直"
+        },
+        {
+          "id": "D",
+          "text": "相交但不垂直"
+        },
+        {
+          "id": "E",
+          "text": "歪斜"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "取 [[t=0,s=-1]] 時交於原點，且方向 [[(1,0,0)]]、[[(0,1,0)]] 垂直。",
+      "distractorMap": {
+        "A": "space.KP5.RECOGNITION.001",
+        "B": "space.KP5.RECOGNITION.002",
+        "D": "space.KP5.RECOGNITION.003",
+        "E": "space.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "點 [[P=(1,3,4)]] 到 [[x]] 軸的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sqrt{26}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "到 [[x]] 軸距離為 [[\\sqrt{3^2+4^2}=5]]。",
+      "distractorMap": {
+        "A": "space.KP5.APPLICATION.001",
+        "B": "space.KP5.APPLICATION.002",
+        "C": "space.KP5.APPLICATION.003",
+        "E": "space.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "兩歪斜線之間的距離應沿何種方向量取？",
+      "options": [
+        {
+          "id": "A",
+          "text": "任一連線"
+        },
+        {
+          "id": "B",
+          "text": "其中一線方向"
+        },
+        {
+          "id": "C",
+          "text": "兩線的公垂線"
+        },
+        {
+          "id": "D",
+          "text": "坐標軸方向"
+        },
+        {
+          "id": "E",
+          "text": "兩方向向量的和"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩歪斜線的最短距離沿公垂線量取。",
+      "distractorMap": {
+        "A": "space.KP5.CONCEPT.001",
+        "B": "space.KP5.CONCEPT.002",
+        "D": "space.KP5.CONCEPT.003",
+        "E": "space.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "直線 [[L:(x,y,z)=(1+t,2-t,3+2t)]] 的方向向量為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(1,2,3)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,-1,2)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(t,-t,2t)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(1,1,2)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(-1,1,-2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "方向向量由 [[t]] 的係數讀得 [[(1,-1,2)]]。",
+      "distractorMap": {
+        "A": "space.KP5.RECOGNITION.001",
+        "C": "space.KP5.RECOGNITION.002",
+        "D": "space.KP5.RECOGNITION.003",
+        "E": "space.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "平行直線 [[L_1:(x,y,z)=(t,0,0)]]、[[L_2:(x,y,z)=(s,3,4)]] 的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[7]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sqrt{26}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩線皆沿 [[x]] 軸方向，垂直距離為 [[\\sqrt{3^2+4^2}=5]]。",
+      "distractorMap": {
+        "A": "space.KP5.APPLICATION.001",
+        "B": "space.KP5.APPLICATION.002",
+        "D": "space.KP5.APPLICATION.003",
+        "E": "space.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "兩平面沿 [[AB]] 相交且二面角為 [[90^\\circ]]。[[CM,DM]] 分別在兩平面內且皆垂直 [[AB]] 於同一點 [[M]]，若 [[CM=DM=3]]，則 [[CD]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3\\sqrt2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sqrt{13}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[6\\sqrt2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\angle CMD=90^\\circ]]，故 [[CD=\\sqrt{3^2+3^2}=3\\sqrt2]]。",
+      "distractorMap": {
+        "A": "space.KP6.CONCEPT.001",
+        "C": "space.KP6.CONCEPT.002",
+        "D": "space.KP6.CONCEPT.003",
+        "E": "space.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "要量沿公共稜 [[l]] 的二面角，應選哪一對射線？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩面內任意射線"
+        },
+        {
+          "id": "B",
+          "text": "兩條都平行 [[l]] 的射線"
+        },
+        {
+          "id": "C",
+          "text": "兩面內且都垂直 [[l]] 的射線"
+        },
+        {
+          "id": "D",
+          "text": "一條垂直 [[l]]、一條平行 [[l]]"
+        },
+        {
+          "id": "E",
+          "text": "兩條空間歪斜射線"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "二面角由兩半平面內各作一條垂直公共稜的射線來量。",
+      "distractorMap": {
+        "A": "space.KP6.RECOGNITION.001",
+        "B": "space.KP6.RECOGNITION.002",
+        "D": "space.KP6.RECOGNITION.003",
+        "E": "space.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "兩平面法向量為 [[(1,0,0)]]、[[(1,1,0)]]，兩平面的銳二面角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[45^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[135^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\cos\\theta=\\dfrac1{\\sqrt2}]]，故銳二面角為 [[45^\\circ]]。",
+      "distractorMap": {
+        "A": "space.KP6.APPLICATION.001",
+        "C": "space.KP6.APPLICATION.002",
+        "D": "space.KP6.APPLICATION.003",
+        "E": "space.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "把平面圖形沿一條線摺疊時，下列何者保持不變？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩半平面的二面角"
+        },
+        {
+          "id": "B",
+          "text": "跨越摺線兩點的空間距離"
+        },
+        {
+          "id": "C",
+          "text": "每個半平面內原有的邊長與角度"
+        },
+        {
+          "id": "D",
+          "text": "所有點的坐標"
+        },
+        {
+          "id": "E",
+          "text": "兩平面的法向量"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "摺疊不改變各半平面內原有的邊長與角度。",
+      "distractorMap": {
+        "A": "space.KP6.CONCEPT.001",
+        "B": "space.KP6.CONCEPT.002",
+        "D": "space.KP6.CONCEPT.003",
+        "E": "space.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "兩平面法向量 [[\\vec n_1,\\vec n_2]] 滿足何條件時，兩平面垂直？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\vec n_1=\\vec n_2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\vec n_1\\parallel\\vec n_2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\vec n_1\\cdot\\vec n_2=0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[|\\vec n_1|=|\\vec n_2|]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\vec n_1\\times\\vec n_2=\\vec0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩平面垂直時，法向量互相垂直，故內積為零。",
+      "distractorMap": {
+        "A": "space.KP6.RECOGNITION.001",
+        "B": "space.KP6.RECOGNITION.002",
+        "D": "space.KP6.RECOGNITION.003",
+        "E": "space.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "兩半平面的二面角為 [[60^\\circ]]。從公共稜同一點向兩面內各作長 [[2]] 的垂線，兩垂線端點距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2\\sqrt2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "距離平方為 [[2^2+2^2-2\\cdot2\\cdot2\\cos60^\\circ=4]]，故距離為 [[2]]。",
+      "distractorMap": {
+        "A": "space.KP6.APPLICATION.001",
+        "C": "space.KP6.APPLICATION.002",
+        "D": "space.KP6.APPLICATION.003",
+        "E": "space.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "下列何者最能說明二面角不是兩平面內任意兩線的夾角？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩線必須等長"
+        },
+        {
+          "id": "B",
+          "text": "兩線必須都垂直公共稜"
+        },
+        {
+          "id": "C",
+          "text": "兩線必須平行"
+        },
+        {
+          "id": "D",
+          "text": "兩線必須通過原點"
+        },
+        {
+          "id": "E",
+          "text": "兩線必須在同一平面"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "量二面角的兩條射線必須分別位於兩面內，且都垂直公共稜。",
+      "distractorMap": {
+        "A": "space.KP6.CONCEPT.001",
+        "C": "space.KP6.CONCEPT.002",
+        "D": "space.KP6.CONCEPT.003",
+        "E": "space.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "坐標平面 [[x=0]] 與 [[y=0]] 的公共稜及二面角分別為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x]] 軸，[[90^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[y]] 軸，[[90^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[z]] 軸，[[90^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[z]] 軸，[[45^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "原點，[[90^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "同時滿足 [[x=0,y=0]] 得 [[z]] 軸；法向量 [[(1,0,0)]]、[[(0,1,0)]] 垂直，故二面角 [[90^\\circ]]。",
+      "distractorMap": {
+        "A": "space.KP6.RECOGNITION.001",
+        "B": "space.KP6.RECOGNITION.002",
+        "D": "space.KP6.RECOGNITION.003",
+        "E": "space.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "space-kp6-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "space:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "兩平面法向量分別為 [[(1,1,1)]]、[[(1,-1,0)]]，兩平面的夾角為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[30^\\circ]]"
+        },
+        {
+          "id": "B",
+          "text": "[[45^\\circ]]"
+        },
+        {
+          "id": "C",
+          "text": "[[60^\\circ]]"
+        },
+        {
+          "id": "D",
+          "text": "[[90^\\circ]]"
+        },
+        {
+          "id": "E",
+          "text": "[[120^\\circ]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "法向量內積為 [[1-1+0=0]]，故兩平面夾角為 [[90^\\circ]]。",
+      "distractorMap": {
+        "A": "space.KP6.APPLICATION.001",
+        "B": "space.KP6.APPLICATION.002",
+        "C": "space.KP6.APPLICATION.003",
+        "E": "space.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "空間向量 54 題教師核准（2026-08-13）"
+      }
+    }
+  ]
+}

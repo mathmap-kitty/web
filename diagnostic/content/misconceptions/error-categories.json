@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "insufficientEvidenceCode": "INSUFFICIENT_EVIDENCE",
+  "categories": [
+    {"id":"CONCEPT","name":"概念或定義錯誤","studentCopy":"核心概念還需要再釐清"},
+    {"id":"CONDITION","name":"忽略適用條件","studentCopy":"可能漏看公式或方法的使用條件"},
+    {"id":"RECOGNITION","name":"核心概念辨識困難","studentCopy":"可能還不確定這題要從哪個核心概念開始"},
+    {"id":"REPRESENTATION","name":"表示轉換困難","studentCopy":"式、圖、表或文字之間的轉換需要練習"},
+    {"id":"MODELING","name":"建模困難","studentCopy":"從情境建立數學關係時可能卡住"},
+    {"id":"STRATEGY","name":"策略選擇不當","studentCopy":"可以比較不同解題入口"},
+    {"id":"PROCEDURE","name":"程序不完整","studentCopy":"步驟中可能漏了一個必要環節"},
+    {"id":"CALCULATION","name":"代數或數值運算錯誤","studentCopy":"觀念可能正確，但運算需要更穩定"},
+    {"id":"READING","name":"閱讀或條件擷取錯誤","studentCopy":"可能漏看或看錯題目條件"},
+    {"id":"TIME","name":"速度不足","studentCopy":"方法可行，可再練習更有效率的步驟"},
+    {"id":"EXPRESSION","name":"非選題表達不完整","studentCopy":"想法可能正確，但需要補齊書寫與理由"},
+    {"id":"GUESS","name":"低信心猜對","studentCopy":"目前答對但證據仍不足，建議再用另一題確認"}
+  ],
+  "evidenceSources": ["SYSTEM_INFERENCE", "STUDENT_SELF_REPORT", "TEACHER_CONFIRMED"],
+  "rule": "三種來源分欄保存；無法判定時使用 INSUFFICIENT_EVIDENCE，不強行貼標。"
+}

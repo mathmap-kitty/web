@@ -1,0 +1,864 @@
+{
+  "schemaVersion": "1.1.0",
+  "nodeSource": "knowledge-points.json",
+  "nodeCount": 66,
+  "edgeMeaning": "from 是學習 to 的關聯來源；只有 relationType=PREREQUISITE 且 teacherStatus=APPROVED 的邊可進入依賴加權。",
+  "edges": [
+    {
+      "from": "numexpr:kp1",
+      "to": "numexpr:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "實數與大小關係支撐絕對值"
+    },
+    {
+      "from": "numexpr:kp1",
+      "to": "numexpr:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "實數與數線表示"
+    },
+    {
+      "from": "numexpr:kp1",
+      "to": "numexpr:kp6",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "實數區間與整數界線"
+    },
+    {
+      "from": "numexpr:kp3",
+      "to": "numexpr:kp6",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "數線定位與區間"
+    },
+    {
+      "from": "numexpr:kp4",
+      "to": "poly:kp1",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "代數恆等式與因式分解"
+    },
+    {
+      "from": "numexpr:kp4",
+      "to": "poly:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "乘法公式與配方"
+    },
+    {
+      "from": "numexpr:kp2",
+      "to": "poly:kp3",
+      "relationType": "RECOMMENDED_SEQUENCE",
+      "strength": "recommended",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "不等式與距離觀念",
+      "scopeNote": "只支撐部分含絕對值的不等式子技能"
+    },
+    {
+      "from": "poly:kp1",
+      "to": "poly:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "因式與根的結構"
+    },
+    {
+      "from": "poly:kp1",
+      "to": "poly:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "因式定理與有理根"
+    },
+    {
+      "from": "poly:kp2",
+      "to": "poly:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "判別式、配方與正負號"
+    },
+    {
+      "from": "poly:kp2",
+      "to": "poly:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "函數圖形、頂點與平移"
+    },
+    {
+      "from": "poly:kp3",
+      "to": "poly:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "方程式與不等式基礎"
+    },
+    {
+      "from": "poly:kp3",
+      "to": "poly:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "根、交點與正負號"
+    },
+    {
+      "from": "numexpr:kp1",
+      "to": "explog:kp1",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "實數指數與運算基礎"
+    },
+    {
+      "from": "explog:kp1",
+      "to": "explog:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "對數是指數的反向表示"
+    },
+    {
+      "from": "explog:kp1",
+      "to": "explog:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "指數函數圖形"
+    },
+    {
+      "from": "explog:kp2",
+      "to": "explog:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "常用對數運算"
+    },
+    {
+      "from": "explog:kp2",
+      "to": "explog:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "對數函數圖形"
+    },
+    {
+      "from": "explog:kp1",
+      "to": "explog:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "成長衰退模型"
+    },
+    {
+      "from": "explog:kp2",
+      "to": "explog:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "模型反解"
+    },
+    {
+      "from": "numexpr:kp4",
+      "to": "seq:kp1",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "代數式與通項運算"
+    },
+    {
+      "from": "explog:kp1",
+      "to": "seq:kp2",
+      "relationType": "RECOMMENDED_SEQUENCE",
+      "strength": "recommended",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "等比數列的指數結構",
+      "scopeNote": "只需冪的基本表示，不要求完整指數方程能力"
+    },
+    {
+      "from": "seq:kp1",
+      "to": "seq:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "由差分辨識遞迴"
+    },
+    {
+      "from": "seq:kp2",
+      "to": "seq:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "由比值構造遞迴"
+    },
+    {
+      "from": "seq:kp1",
+      "to": "seq:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "等差級數求和"
+    },
+    {
+      "from": "seq:kp2",
+      "to": "seq:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "等比級數求和"
+    },
+    {
+      "from": "seq:kp3",
+      "to": "seq:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "由遞迴找規律與週期"
+    },
+    {
+      "from": "seq:kp2",
+      "to": "explog:kp5",
+      "relationType": "APPLICATION_LINK",
+      "strength": "contextual",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "離散成長模型",
+      "scopeNote": "離散成長模型的跨單元應用"
+    },
+    {
+      "from": "prob:kp1",
+      "to": "prob:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "計數原理先於組合分組"
+    },
+    {
+      "from": "prob:kp1",
+      "to": "prob:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "樣本空間計數"
+    },
+    {
+      "from": "prob:kp2",
+      "to": "prob:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "組合計數機率"
+    },
+    {
+      "from": "prob:kp3",
+      "to": "prob:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "條件機率建立於事件機率"
+    },
+    {
+      "from": "prob:kp3",
+      "to": "prob:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "事件運算與餘事件"
+    },
+    {
+      "from": "prob:kp2",
+      "to": "prob:kp6",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "離散結果與權重"
+    },
+    {
+      "from": "prob:kp3",
+      "to": "prob:kp6",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "機率分配"
+    },
+    {
+      "from": "prob:kp4",
+      "to": "prob:kp6",
+      "relationType": "APPLICATION_LINK",
+      "strength": "contextual",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "條件期望情境",
+      "scopeNote": "只支撐條件期望情境"
+    },
+    {
+      "from": "prob:kp5",
+      "to": "prob:kp6",
+      "relationType": "APPLICATION_LINK",
+      "strength": "contextual",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "獨立重複試驗",
+      "scopeNote": "只支撐獨立重複試驗情境"
+    },
+    {
+      "from": "numexpr:kp5",
+      "to": "data:kp1",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "平均與權重"
+    },
+    {
+      "from": "numexpr:kp5",
+      "to": "data:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "加權平均"
+    },
+    {
+      "from": "data:kp1",
+      "to": "data:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "平均、標準差與標準化"
+    },
+    {
+      "from": "data:kp2",
+      "to": "data:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "相關與線性關係"
+    },
+    {
+      "from": "data:kp1",
+      "to": "data:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "統計量與資料判讀"
+    },
+    {
+      "from": "trig:kp1",
+      "to": "trig:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "三角比基礎"
+    },
+    {
+      "from": "trig:kp1",
+      "to": "trig:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "角度、弧度與函數圖形"
+    },
+    {
+      "from": "trig:kp1",
+      "to": "trig:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "基本三角函數值"
+    },
+    {
+      "from": "trig:kp2",
+      "to": "trig:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "解三角形與測量"
+    },
+    {
+      "from": "trig:kp2",
+      "to": "trig:kp6",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "邊角關係與面積"
+    },
+    {
+      "from": "trig:kp2",
+      "to": "trig:kp7",
+      "relationType": "RECOMMENDED_SEQUENCE",
+      "strength": "recommended",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "圓周角與立體角度計算",
+      "scopeNote": "主要支撐二面角子技能"
+    },
+    {
+      "from": "trig:kp5",
+      "to": "trig:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "圖形疊合與相位"
+    },
+    {
+      "from": "trig:kp6",
+      "to": "trig:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "相似與面積比"
+    },
+    {
+      "from": "trig:kp6",
+      "to": "trig:kp7",
+      "relationType": "RECOMMENDED_SEQUENCE",
+      "strength": "recommended",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "圓幾何與角度",
+      "scopeNote": "主要支撐圓周角子技能"
+    },
+    {
+      "from": "numexpr:kp3",
+      "to": "linecir:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "坐標距離與中點"
+    },
+    {
+      "from": "linecir:kp1",
+      "to": "linecir:kp3",
+      "relationType": "RECOMMENDED_SEQUENCE",
+      "strength": "recommended",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "坐標方程式表示",
+      "scopeNote": "同屬坐標幾何的建議順序，非必要先備"
+    },
+    {
+      "from": "linecir:kp2",
+      "to": "linecir:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "圓心距離與半徑"
+    },
+    {
+      "from": "linecir:kp1",
+      "to": "linecir:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "直線一般式與距離"
+    },
+    {
+      "from": "linecir:kp2",
+      "to": "linecir:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "點線距離與弦長"
+    },
+    {
+      "from": "linecir:kp3",
+      "to": "linecir:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "圓方程式與位置關係"
+    },
+    {
+      "from": "linecir:kp1",
+      "to": "linecir:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "邊界直線與半平面"
+    },
+    {
+      "from": "poly:kp2",
+      "to": "linecir:kp4",
+      "relationType": "METHOD_LINK",
+      "strength": "optional",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "聯立後判別式判斷交點",
+      "scopeNote": "判別式是判斷交點的可選方法之一"
+    },
+    {
+      "from": "linecir:kp2",
+      "to": "pvec:kp1",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "坐標差建立向量"
+    },
+    {
+      "from": "pvec:kp1",
+      "to": "pvec:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "向量運算與線性組合"
+    },
+    {
+      "from": "pvec:kp1",
+      "to": "pvec:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "向量長度與內積"
+    },
+    {
+      "from": "pvec:kp1",
+      "to": "pvec:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "坐標向量與行列式"
+    },
+    {
+      "from": "pvec:kp1",
+      "to": "pvec:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "坐標向量變換"
+    },
+    {
+      "from": "pvec:kp2",
+      "to": "pvec:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "線性組合與面積比"
+    },
+    {
+      "from": "pvec:kp3",
+      "to": "pvec:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "角度、垂直與旋轉"
+    },
+    {
+      "from": "pvec:kp1",
+      "to": "space:kp1",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "平面向量推廣至三維"
+    },
+    {
+      "from": "pvec:kp3",
+      "to": "space:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "內積與夾角推廣"
+    },
+    {
+      "from": "pvec:kp4",
+      "to": "space:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "面積方向與外積概念"
+    },
+    {
+      "from": "space:kp1",
+      "to": "space:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "空間坐標與平面表示"
+    },
+    {
+      "from": "space:kp1",
+      "to": "space:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "方向向量與參數表示"
+    },
+    {
+      "from": "space:kp2",
+      "to": "space:kp3",
+      "relationType": "RECOMMENDED_SEQUENCE",
+      "strength": "recommended",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "垂直、面積與體積",
+      "scopeNote": "內積有助於空間向量語言，但非外積定義的必要先備"
+    },
+    {
+      "from": "space:kp2",
+      "to": "space:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "法向量與投影"
+    },
+    {
+      "from": "space:kp2",
+      "to": "space:kp6",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "夾角與垂直"
+    },
+    {
+      "from": "space:kp3",
+      "to": "space:kp6",
+      "relationType": "METHOD_LINK",
+      "strength": "optional",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "法向量與二面角",
+      "scopeNote": "外積法向量是二面角的可選方法"
+    },
+    {
+      "from": "space:kp4",
+      "to": "space:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "平面與直線位置"
+    },
+    {
+      "from": "trig:kp2",
+      "to": "space:kp6",
+      "relationType": "APPLICATION_LINK",
+      "strength": "contextual",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "角度計算",
+      "scopeNote": "解三角形方法可支援部分立體角度題"
+    },
+    {
+      "from": "matrix:kp1",
+      "to": "matrix:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "矩陣乘法"
+    },
+    {
+      "from": "matrix:kp1",
+      "to": "matrix:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "單位矩陣與乘法"
+    },
+    {
+      "from": "matrix:kp1",
+      "to": "matrix:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "矩陣表示聯立系統"
+    },
+    {
+      "from": "matrix:kp1",
+      "to": "matrix:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "矩陣作用於坐標"
+    },
+    {
+      "from": "pvec:kp1",
+      "to": "matrix:kp5",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "坐標向量與線性變換"
+    },
+    {
+      "from": "seq:kp2",
+      "to": "matrix:kp2",
+      "relationType": "APPLICATION_LINK",
+      "strength": "contextual",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": false,
+      "reason": "重複作用與數列規律",
+      "scopeNote": "等比規律只出現在部分矩陣冪題"
+    },
+    {
+      "from": "trig:kp1",
+      "to": "trig:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "三角比是三角測量的直接基礎"
+    },
+    {
+      "from": "space:kp1",
+      "to": "space:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "空間坐標與向量表示先於三維內積"
+    },
+    {
+      "from": "comb:kp1",
+      "to": "comb:kp2",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "計數原理與系統列舉支撐排列限制的完整分類"
+    },
+    {
+      "from": "comb:kp1",
+      "to": "comb:kp3",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "計數原理與系統列舉支撐組合與分組的計數結構"
+    },
+    {
+      "from": "comb:kp2",
+      "to": "comb:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "排列限制的分類能力支撐複合結果的等價判讀"
+    },
+    {
+      "from": "comb:kp3",
+      "to": "comb:kp4",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true,
+      "reason": "組合與分組結構支撐分類計數與結果等價"
+    },
+    {
+      "from": "comb:kp1",
+      "to": "probability:kp1",
+      "reason": "古典機率需要先正確計數樣本點",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true
+    },
+    {
+      "from": "probability:kp1",
+      "to": "probability:kp2",
+      "reason": "事件運算建立在樣本空間與事件表示上",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true
+    },
+    {
+      "from": "probability:kp2",
+      "to": "probability:kp3",
+      "reason": "條件機率需要交集、聯集與事件關係",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true
+    },
+    {
+      "from": "probability:kp1",
+      "to": "probability:kp4",
+      "reason": "期望值需要先建立結果的機率分配",
+      "relationType": "PREREQUISITE",
+      "strength": "required",
+      "teacherStatus": "APPROVED",
+      "dependencyWeightEligible": true
+    }
+  ],
+  "relationTypes": {
+    "PREREQUISITE": "一般學習此核心概念前必要的直接基礎。",
+    "RECOMMENDED_SEQUENCE": "建議先學，有幫助但不是必要條件。",
+    "METHOD_LINK": "其中一種可選解法或表示連結。",
+    "APPLICATION_LINK": "跨單元或特定情境中的應用連結。"
+  }
+}

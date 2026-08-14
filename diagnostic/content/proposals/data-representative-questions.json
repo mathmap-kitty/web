@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "data",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "items": [
+    {
+      "id": "data-rep-kp1",
+      "kpId": "data:kp1",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "量",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "一組資料 x 的平均數為 12，標準差為 3。將每筆資料依 y=−2x+5 轉換後，新資料 y 的平均數與標準差依序為何？",
+      "options": ["−19，1", "−19，6", "−19，−6", "29，6", "29，11"],
+      "answerIndex": 1,
+      "answer": "−19，6",
+      "firstBarrier": "能否區分平移與縮放對平均數、標準差的不同影響，並知道標準差不會是負數。",
+      "solution": "平均數隨同一線性式轉換，所以 μy=−2×12+5=−19；標準差只受倍率絕對值影響，所以 σy=|−2|×3=6。",
+      "diagnosticDistractors": {
+        "0": "把常數 5 錯誤加入標準差的轉換。",
+        "2": "直接以負倍率乘標準差，得到不可能的負標準差。",
+        "3": "計算平均數時忽略倍率的負號。",
+        "4": "把平均數與標準差都直接套用完整線性式。"
+      }
+    },
+    {
+      "id": "data-rep-kp2",
+      "kpId": "data:kp2",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "二維資料 (x,y) 的相關係數為 −0.6。若將每一點轉換為 (u,v)，其中 u=3x+1，v=−2y+4，則 u 與 v 的相關係數為何？",
+      "options": ["−1.2", "−0.6", "0", "0.6", "1.2"],
+      "answerIndex": 3,
+      "answer": "0.6",
+      "firstBarrier": "能否判斷平移不改變相關係數，而只有一個變數乘負數會反轉相關方向。",
+      "solution": "正倍率 3 不改變 x 軸方向，負倍率 −2 反轉 y 軸方向；平移量 1、4 均不影響相關係數。因此新相關係數為 −(−0.6)=0.6。",
+      "diagnosticDistractors": {
+        "0": "把相關係數直接乘上倍率 3 與 −2，且未檢查相關係數範圍。",
+        "1": "認為所有線性轉換都不改變相關係數，忽略負倍率反轉方向。",
+        "2": "誤認為兩軸的平移會消除相關。",
+        "4": "只計算倍率大小，得到超出相關係數範圍的值。"
+      }
+    },
+    {
+      "id": "data-rep-kp3",
+      "kpId": "data:kp3",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "一組二維資料中，x 的平均數與標準差分別為 10、2，y 的平均數與標準差分別為 20、3，相關係數為 0.8。以 y 對 x 的迴歸直線估計，當 x=15 時，y 的預測值為何？",
+      "options": ["23", "24", "25", "26", "32"],
+      "answerIndex": 3,
+      "answer": "26",
+      "firstBarrier": "能否先用相關係數與兩軸標準差求迴歸斜率，再使用迴歸線通過平均點。",
+      "solution": "迴歸斜率 b=0.8×(3/2)=1.2，且迴歸線通過 (10,20)，故 y−20=1.2(x−10)。代入 x=15，得 y=26。",
+      "diagnosticDistractors": {
+        "0": "只用相關係數乘 x 與平均數之差，漏掉標準差比。",
+        "1": "把標準差比寫反，使斜率變成 0.8×(2/3)。",
+        "2": "只把 x 增加量 5 加到 y 平均數，誤認斜率為 1。",
+        "4": "把迴歸式錯寫成通過原點，直接以斜率乘 x。"
+      }
+    },
+    {
+      "id": "data-rep-kp4",
+      "kpId": "data:kp4",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "表",
+      "secondaryRepresentation": "量",
+      "publicationStatus": "APPROVED_REFERENCE_NOT_PUBLISHED",
+      "stem": "甲、乙兩班合計 60 人。甲班某次測驗平均為 72 分，乙班平均為 84 分，兩班合併平均為 80 分。乙班有多少人？",
+      "options": ["20", "24", "30", "36", "40"],
+      "answerIndex": 4,
+      "answer": "40",
+      "firstBarrier": "能否把班級人數視為權重，將合併平均還原成總分關係。",
+      "solution": "設乙班有 n 人，則甲班有 60−n 人。由 72(60−n)+84n=80×60，得 12n=480，所以 n=40。",
+      "diagnosticDistractors": {
+        "0": "求得甲班人數後，未依題意改答乙班人數。",
+        "1": "依平均分差作錯誤的線性分配。",
+        "2": "直接認為兩班人數相同，將兩班平均直接平均。",
+        "3": "權重方向雖有概念，但比例或總人數換算錯誤。"
+      }
+    }
+  ]
+}

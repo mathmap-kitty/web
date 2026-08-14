@@ -76,7 +76,7 @@ SEQ = "115學測數學_數列與級數.html"
 NUMEXPR = "115學測數學_數與式.html"
 DATA = "115學測數學_數據分析.html"
 
-# 互動題目（完整題幹＋簡答＋解題關鍵＋直達考點）。題幹取自官方原卷、答案對官方答案頁校正。
+# 互動題目（完整題幹＋簡答＋解題關鍵＋直達核心概念）。題幹取自官方原卷、答案對官方答案頁校正。
 # key = "學年度|卷別|題號"。目前先完成「向量」脈絡的數A題作為範本。
 DETAIL = {
     "107|數A|10": {
@@ -87,7 +87,7 @@ DETAIL = {
         "key": [r"\(\overrightarrow{BC}=\overrightarrow{AC}-\overrightarrow{AB}=\left(\tfrac{22}{5},-\tfrac{11}{5}\right)\)，\(|\overrightarrow{BC}|=\tfrac{11\sqrt5}{5}\neq5\)（(1) 錯）；",
                 r"面積 \(=\tfrac12\left|(-4)\cdot\tfrac45-3\cdot\tfrac25\right|=\dfrac{11}{5}\)（(3) 對）；",
                 r"\(\overrightarrow{CA}\cdot\overrightarrow{CB}=0\Rightarrow\angle C=90^\circ\)（(2) 對）；由直角 \(C\) 推得 (4)(5) 皆錯。"],
-        "links": [(r"平面向量 ▸ 考點1 向量運算", PVEC, "kp1"), (r"三角 ▸ 考點2 正餘弦定理", TRIG, "kp2")],
+        "links": [(r"平面向量 ▸ 核心概念1 向量運算", PVEC, "kp1"), (r"三角 ▸ 核心概念2 正餘弦定理", TRIG, "kp2")],
     },
     "107|數A|G": {
         "body": r"設 \(D\) 為 \(\triangle ABC\) 中 \(\overline{BC}\) 邊上的一點，已知 \(\angle ABC=75^\circ\)、\(\angle ACB=45^\circ\)、\(\angle ADB=60^\circ\)。若 \(\overrightarrow{AD}=s\,\overrightarrow{AB}+t\,\overrightarrow{AC}\)，求 \(s,t\)。",
@@ -95,7 +95,7 @@ DETAIL = {
         "key": [r"\(D\) 在 \(\overline{BC}\) 上 \(\Rightarrow\overrightarrow{AD}=(1-k)\overrightarrow{AB}+k\overrightarrow{AC}\)，所以 \(s+t=1\)；",
                 r"正弦定理算分點比：\(\dfrac{BD}{DC}=\dfrac{\sin^2 45^\circ}{\sin75^\circ\sin15^\circ}=2\Rightarrow k=\tfrac23\)；",
                 r"故 \(\overrightarrow{AD}=\tfrac13\overrightarrow{AB}+\tfrac23\overrightarrow{AC}\)，即 \(s=\tfrac13,\ t=\tfrac23\)。"],
-        "links": [(r"三角 ▸ 考點2 正弦定理", TRIG, "kp2"), (r"平面向量 ▸ 考點2 線性組合·分點", PVEC, "kp2")],
+        "links": [(r"三角 ▸ 核心概念2 正弦定理", TRIG, "kp2"), (r"平面向量 ▸ 核心概念2 線性組合·分點", PVEC, "kp2")],
     },
     "108|數A|G": {
         "body": r"如圖，\(A,B,C,D\) 為平面上四點。已知 \(\overrightarrow{BC}=\overrightarrow{AB}+\overrightarrow{AD}\)，且 \(\overrightarrow{AC}\)、\(\overrightarrow{BD}\) 兩向量 **等長且互相垂直**，求 \(\tan\angle BAD\)。",
@@ -114,7 +114,7 @@ DETAIL = {
         "key": [r"令 \(\overrightarrow{AB}=\vec u,\ \overrightarrow{AD}=\vec v\)：\(\overrightarrow{AC}=2\vec u+\vec v\)、\(\overrightarrow{BD}=\vec v-\vec u\)；",
                 r"垂直 \((2\vec u+\vec v)\cdot(\vec v-\vec u)=0\)、等長 \(|2\vec u+\vec v|=|\vec v-\vec u|\)；",
                 r"解得 \(\vec u\cdot\vec v=-\tfrac12|\vec u|^2,\ |\vec v|^2=\tfrac52|\vec u|^2\)，故 \(\cos\angle BAD=-\tfrac{1}{\sqrt{10}},\ \tan\angle BAD=-3\)。"],
-        "links": [(r"平面向量 ▸ 考點3 內積", PVEC, "kp3"), (r"三角 ▸ 考點1 三角比定義", TRIG, "kp1")],
+        "links": [(r"平面向量 ▸ 核心概念3 內積", PVEC, "kp3"), (r"三角 ▸ 核心概念1 三角比定義", TRIG, "kp1")],
     },
     "115|數A|14": {
         "body": r"坐標平面上，向量 \((a,b)\) 與直線 \(y=bx-1\) 垂直，則 \(a+b\) 的最大可能值為何？（最簡分數）",
@@ -122,7 +122,7 @@ DETAIL = {
         "key": [r"直線 \(y=bx-1\) 方向向量 \((1,b)\)，垂直 \(\Rightarrow(a,b)\cdot(1,b)=a+b^2=0\Rightarrow a=-b^2\)；",
                 r"\(a+b=-b^2+b=-\left(b-\tfrac12\right)^2+\tfrac14\)（配方）；",
                 r"當 \(b=\tfrac12\) 取最大值 \(\dfrac14\)。"],
-        "links": [(r"平面向量 ▸ 考點3 內積·垂直", PVEC, "kp3"), (r"多項式 ▸ 考點2 二次配方求極值", POLY, "kp2")],
+        "links": [(r"平面向量 ▸ 核心概念3 內積·垂直", PVEC, "kp3"), (r"多項式 ▸ 核心概念2 二次配方求極值", POLY, "kp2")],
     },
     "109|數A|7": {
         "body": r"坐標平面上，函數圖形 \(y=-\sqrt3\,x^3\) 上有兩點 \(P,Q\) 到原點距離皆為 \(1\)。已知點 \(P\) 坐標為 \((\cos\theta,\sin\theta)\)，試問點 \(Q\) 坐標為何？",
@@ -132,7 +132,7 @@ DETAIL = {
         "key": [r"\(y=-\sqrt3\,x^3\) 是 **奇函數**，圖形對 **原點對稱**；",
                 r"單位圓與此曲線交於兩點 \(P,Q\)，必為原點對稱 \(\Rightarrow Q=-P=(-\cos\theta,-\sin\theta)\)；",
                 r"\(-\sin\theta=\sin(-\theta)\)，故 \(Q=(-\cos\theta,\sin(-\theta))\)，選 (4)。"],
-        "links": [(r"多項式 ▸ 考點5 三次函數對稱", POLY, "kp5"), (r"三角 ▸ 考點1 廣義角", TRIG, "kp1")],
+        "links": [(r"多項式 ▸ 核心概念5 三次函數對稱", POLY, "kp5"), (r"三角 ▸ 核心概念1 廣義角", TRIG, "kp1")],
     },
     "109|數A|6": {
         "body": r"連續投擲一公正骰子兩次，設出現的點數依序為 \(a,b\)。試問發生 \(\log(a^2)+\log b>1\) 的機率為多少？",
@@ -141,7 +141,7 @@ DETAIL = {
         "key": [r"\(\log(a^2)+\log b=\log(a^2b)>1\Leftrightarrow a^2b>10\)；",
                 r"逐一數 \(a^2b>10\)：\(a=1\) 有 \(0\)、\(a=2\) 有 \(4\)、\(a=3\) 有 \(5\)、\(a\ge4\) 各 \(6\) 個，共 \(27\)；",
                 r"機率 \(=\dfrac{27}{36}=\dfrac34\)。"],
-        "links": [(r"指數對數 ▸ 考點2 對數運算", EXPLOG, "kp2"), (r"排列機率 ▸ 考點3 古典機率", PROB, "kp3")],
+        "links": [(r"指數對數 ▸ 核心概念2 對數運算", EXPLOG, "kp2"), (r"排列機率 ▸ 核心概念3 古典機率", PROB, "kp3")],
     },
     "113|數A|11": {
         "body": r"考慮二元一次方程組 \(\begin{cases}ax+6y=6\\x+by=1\end{cases}\)，係數 \(a,b\) 由投擲一顆公正骰子與一枚均勻硬幣決定：\(a\) 為骰子點數；硬幣正面 \(b=1\)、反面 \(b=2\)。試選出正確的選項。",
@@ -152,7 +152,7 @@ DETAIL = {
         "key": [r"樣本空間 \(n(S)=6\times2=12\)；當係數比 \(\tfrac{a}{1}=\tfrac{6}{b}\)（即 \(ab=6\)）時兩直線平行或重合；",
                 r"無解（平行）只在 \((a,b)=(3,2)\)，機率 \(\tfrac1{12}\)（(2) 對）；重合 \((6,1)\) 也 \(\tfrac1{12}\)；恰一解 \(=1-\tfrac1{12}-\tfrac1{12}=\tfrac56\)（(3) 對）；",
                 r"(5)：反面且有解 \(\Rightarrow a\in\{1,2,4,5,6\}\)，解出 \(x=\tfrac{3}{a-3}\)，\(x>0\Leftrightarrow a>3\) 共 \(3\) 種 → \(\tfrac35\neq\tfrac25\)，錯。"],
-        "links": [(r"矩陣 ▸ 考點4 一次聯立解的判別", MATRIX, "kp4"), (r"排列機率 ▸ 考點4 條件機率", PROB, "kp4")],
+        "links": [(r"矩陣 ▸ 核心概念4 一次聯立解的判別", MATRIX, "kp4"), (r"排列機率 ▸ 核心概念4 條件機率", PROB, "kp4")],
     },
     "107|數A|H": {
         "body": r"將一塊邊長 \(\overline{AB}=15\) 公分、\(\overline{BC}=20\) 公分的長方形鐵片 \(ABCD\) 沿對角線 \(\overline{BD}\) 對摺後豎立，使得平面 \(ABD\) 與平面 \(CBD\) **互相垂直**。試求 \(A,C\) 兩點（在空間中）的距離 \(\overline{AC}\)。（最簡根式）",
@@ -160,7 +160,7 @@ DETAIL = {
         "key": [r"對角線 \(BD=\sqrt{15^2+20^2}=25\)；點 \(A\) 到 \(BD\) 的垂足距 \(=\tfrac{15\times20}{25}=12\)、垂足離 \(B\) 為 \(\tfrac{15^2}{25}=9\)；同理 \(C\) 的垂足距 \(=12\)、離 \(B\) 為 \(16\)；",
                 r"沿 \(BD\) 摺成 **直二面角**，以 \(B\) 為原點、\(BD\) 為 \(x\) 軸建坐標：\(A=(9,12,0)\)、\(C=(16,0,12)\)（兩垂直方向分屬兩平面）；",
                 r"\(\overline{AC}=\sqrt{(16-9)^2+12^2+12^2}=\sqrt{49+144+144}=\sqrt{337}\)。"],
-        "links": [(r"空間向量 ▸ 考點1 坐標與距離", SPACE, "kp1"), (r"空間向量 ▸ 考點6 二面角與立體", SPACE, "kp6")],
+        "links": [(r"空間向量 ▸ 核心概念1 坐標與距離", SPACE, "kp1"), (r"空間向量 ▸ 核心概念6 二面角與立體", SPACE, "kp6")],
     },
     "114|數B|4": {
         "body": r"某商店推出抽獎活動，提供香蕉、鳳梨、蘋果、橘子 **四種** 不同款式的水果公仔當獎品。每次抽獎可得 \(1\) 個公仔，每種款式被抽中的機率皆相等。某甲決定抽獎 **四次**，試問他恰抽到 **三種不同款式** 公仔的機率為何？",
@@ -169,7 +169,7 @@ DETAIL = {
         "key": [r"四次抽獎、每次 \(4\) 種等機率 → 樣本空間 \(4^4=256\)；",
                 r"恰三款 → 款式分布為 \((2,1,1)\)：選 \(3\) 款 \(C^4_3=4\)、選誰重複 \(3\) 種、排列 \(\tfrac{4!}{2!}=12\)，共 \(4\times3\times12=144\)；",
                 r"機率 \(=\dfrac{144}{256}=\dfrac{9}{16}\)，選 (4)。"],
-        "links": [(r"排列機率 ▸ 考點3 古典機率", PROB, "kp3"), (r"排列機率 ▸ 考點2 組合與分組", PROB, "kp2")],
+        "links": [(r"排列機率 ▸ 核心概念3 古典機率", PROB, "kp3"), (r"排列機率 ▸ 核心概念2 組合與分組", PROB, "kp2")],
     },
     "115|數A|3": {
         "body": r"設 \(f(x)=a^x\)（\(a>0\)）。已知 \(c_1,c_2,c_3\) 是公差為 \(\tfrac{10}{3}\) 的等差數列，且 \(f(c_1),f(c_2),f(c_3)\) 是公比為 \(4\) 的等比數列。則等比數列 \(f(10),f(8),f(6)\) 的公比為何？",
@@ -177,7 +177,7 @@ DETAIL = {
         "ans": r"**(1)** \(2^{-6/5}\)",
         "key": [r"等差 \(\to\) 等比：公比 \(=a^{\,c_2-c_1}=a^{10/3}=4=2^2\Rightarrow a=2^{3/5}\)；",
                 r"\(f(10),f(8),f(6)\) 指數每次差 \(-2\)，公比 \(=a^{-2}=(2^{3/5})^{-2}=2^{-6/5}\)，選 (1)。"],
-        "links": [(r"指數對數 ▸ 考點1 指數律", EXPLOG, "kp1"), (r"數列 ▸ 考點2 等比數列", SEQ, "kp2")],
+        "links": [(r"指數對數 ▸ 核心概念1 指數律", EXPLOG, "kp1"), (r"數列 ▸ 核心概念2 等比數列", SEQ, "kp2")],
     },
     "110|數A|2": {
         "body": r"五項實數數列 \(a_1,a_2,a_3,a_4,a_5\) 的每一項都大於 \(1\)，且每相鄰兩項中都有一數是另一數的 **兩倍**。若 \(a_1=\log_{10}36\)，則 \(a_5\) 有多少種可能的值？",
@@ -186,7 +186,7 @@ DETAIL = {
         "key": [r"\(a_1=\log 36\approx1.56\)（介於 \(1,2\) 之間）；設各項 \(a_n=a_1\cdot2^{\,e_n}\)，\(e_1=0\)、相鄰 \(e\) 差 \(1\)；",
                 r"各項 \(>1\Rightarrow2^{e_n}>\tfrac{1}{\log36}\approx0.64\Rightarrow e_n\ge0\)（不能再減半到 \(<1\)）；",
                 r"\(e\) 走 \(4\) 步且不低於 \(0\)，故 \(e_5\in\{0,2,4\}\) → \(a_5\) 有 \(3\) 種，選 (1)。"],
-        "links": [(r"數列 ▸ 考點2 等比·倍增", SEQ, "kp2"), (r"指數對數 ▸ 考點2 對數運算", EXPLOG, "kp2")],
+        "links": [(r"數列 ▸ 核心概念2 等比·倍增", SEQ, "kp2"), (r"指數對數 ▸ 核心概念2 對數運算", EXPLOG, "kp2")],
     },
     "107|數A|5": {
         "body": r"試問共有幾個角度 \(\theta\) 滿足 \(0^\circ<\theta<180^\circ\)，且 \(\cos(3\theta-60^\circ),\ \cos3\theta,\ \cos(3\theta+60^\circ)\) 依序成 **等差數列**？",
@@ -195,7 +195,7 @@ DETAIL = {
         "key": [r"等差 \(\Rightarrow2\cos3\theta=\cos(3\theta-60^\circ)+\cos(3\theta+60^\circ)\)；",
                 r"和差化積：右式 \(=2\cos3\theta\cos60^\circ=\cos3\theta\)，故 \(2\cos3\theta=\cos3\theta\Rightarrow\cos3\theta=0\)；",
                 r"\(3\theta=90^\circ,270^\circ,450^\circ\Rightarrow\theta=30^\circ,90^\circ,150^\circ\)，共 \(3\) 個，選 (3)。"],
-        "links": [(r"三角 ▸ 考點5 和差倍角", TRIG, "kp5"), (r"數列 ▸ 考點1 等差數列", SEQ, "kp1")],
+        "links": [(r"三角 ▸ 核心概念5 和差倍角", TRIG, "kp5"), (r"數列 ▸ 核心概念1 等差數列", SEQ, "kp1")],
     },
     "106|數A|A": {
         "body": r"遞迴數列 \(\langle a_n\rangle\) 滿足 \(a_n=a_{n-1}+f(n-2)\)（\(n\ge2\)），其中 \(f(x)\) 為 **二次多項式**。若 \(a_1=1,\ a_2=2,\ a_3=5,\ a_4=12\)，則 \(a_5=\) ？",
@@ -203,7 +203,7 @@ DETAIL = {
         "key": [r"由相鄰差求 \(f\)：\(f(0)=a_2-a_1=1\)、\(f(1)=a_3-a_2=3\)、\(f(2)=a_4-a_3=7\)；",
                 r"設 \(f(x)=ax^2+bx+c\)：\(c=1\)、\(a+b=2\)、\(2a+b=3\Rightarrow a=1,b=1\)，故 \(f(x)=x^2+x+1\)；",
                 r"\(a_5=a_4+f(3)=12+(9+3+1)=25\)。"],
-        "links": [(r"數列 ▸ 考點3 遞迴數列", SEQ, "kp3"), (r"多項式 ▸ 考點2 二次函數", POLY, "kp2")],
+        "links": [(r"數列 ▸ 核心概念3 遞迴數列", SEQ, "kp3"), (r"多項式 ▸ 核心概念2 二次函數", POLY, "kp2")],
     },
     "113|數A|6": {
         "body": r"在同一平面上，相距 \(7\) 公里的 \(A,B\) 兩砲台，\(A\) 在 \(B\) 的正東方。某次演習 \(A\) 向西偏北 \(\theta\)、\(B\) 向東偏北 \(\theta\)（\(\theta\) 為銳角）發射砲彈，皆命中 \(9\) 公里外同一目標 \(P\)。接著 \(A\) 改向西偏北 \(\tfrac{\theta}{2}\) 發射，彈著點為 \(9\) 公里外的 \(Q\)。試問 \(\overline{BQ}\) 為何？",
@@ -224,7 +224,7 @@ DETAIL = {
         "key": [r"\(P\) 距 \(A,B\) 皆 \(9\)、\(AB=7\) → \(P\) 在 \(AB\) 中垂線上，\(A\) 到中點 \(3.5\)，故 \(\cos\theta=\dfrac{3.5}{9}=\dfrac{7}{18}\)；",
                 r"半角：\(\cos\dfrac\theta2=\sqrt{\dfrac{1+\cos\theta}{2}}=\dfrac56\)、\(\sin\dfrac\theta2=\dfrac{\sqrt{11}}6\)；",
                 r"設 \(B=(0,0),A=(7,0)\)：\(Q=A+9(-\cos\tfrac\theta2,\sin\tfrac\theta2)=(-\tfrac12,\tfrac{3\sqrt{11}}2)\)，\(\overline{BQ}=\sqrt{\tfrac14+\tfrac{99}4}=\sqrt{25}=5\)，選 (3)。"],
-        "links": [(r"三角 ▸ 考點3 三角測量", TRIG, "kp3"), (r"三角 ▸ 考點5 和差·半角", TRIG, "kp5")],
+        "links": [(r"三角 ▸ 核心概念3 三角測量", TRIG, "kp3"), (r"三角 ▸ 核心概念5 和差·半角", TRIG, "kp5")],
     },
     "115|數A|17": {
         "body": r"直角三角形 \(ABC\) 中 \(\angle CAB=90^\circ\)，\(\overline{AB}\) 上一點 \(D\) 滿足 \(\angle BCD=2\angle ACD\)，且 \(\overline{BC}=2\,\overline{DB}\)。若 \(\overrightarrow{AD}=k\,\overrightarrow{AB}\)，則 \(k=\) ？（最簡分數）",
@@ -240,7 +240,7 @@ DETAIL = {
         "key": [r"令 \(\angle ACD=\varphi\)，則 \(\angle ACB=3\varphi\)。直角 \(\triangle\) 中 \(AD=AC\tan\varphi,\ AB=AC\tan3\varphi,\ BC=\dfrac{AC}{\cos3\varphi}\)；",
                 r"條件 \(BC=2DB=2(AB-AD)\)：\(\dfrac1{\cos3\varphi}=2(\tan3\varphi-\tan\varphi)=\dfrac{2\sin2\varphi}{\cos3\varphi\cos\varphi}\Rightarrow1=4\sin\varphi\Rightarrow\sin\varphi=\dfrac14\)；",
                 r"\(k=\dfrac{AD}{AB}=\dfrac{\tan\varphi}{\tan3\varphi}\)；由 \(\sin\varphi=\tfrac14\) 得 \(\sin3\varphi=\tfrac{11}{16},\cos3\varphi=\tfrac{3\sqrt{15}}{16}\)，算得 \(k=\dfrac{3}{11}\)。"],
-        "links": [(r"三角 ▸ 考點5 倍角·和差", TRIG, "kp5"), (r"三角 ▸ 考點2 正餘弦定理", TRIG, "kp2")],
+        "links": [(r"三角 ▸ 核心概念5 倍角·和差", TRIG, "kp5"), (r"三角 ▸ 核心概念2 正餘弦定理", TRIG, "kp2")],
     },
     "109|數A|G": {
         "body": r"設計師以不銹鋼片製成月形：圓弧 \(QRT\) 是以 \(O\) 為圓心、\(QT\) 為直徑的半圓，\(\overline{QT}=2\sqrt3\)；圓弧 \(QST\) 的圓心為 \(P\)，\(\overline{PQ}=\overline{PT}=2\)。兩弧所圍灰色區域 \(QRTSQ\) 的面積為 \(a\pi+\sqrt{b}\)（\(a\) 為有理數、\(b\) 為整數），求 \(a,b\)。",
@@ -256,7 +256,7 @@ DETAIL = {
         "key": [r"\(\triangle PQT\)：\(PQ=PT=2,\ QT=2\sqrt3\)，餘弦定理 \(\cos\angle QPT=\dfrac{4+4-12}{8}=-\dfrac12\Rightarrow\angle QPT=120^\circ\)；\(OP=\sqrt{2^2-(\sqrt3)^2}=1\)；",
                 r"半圓 \(QRT=\dfrac12\pi(\sqrt3)^2=\dfrac{3\pi}2\)；扇形 \(PQST=\dfrac13\pi\cdot2^2=\dfrac{4\pi}3\)；\(\triangle PQT=\dfrac12\cdot2\sqrt3\cdot1=\sqrt3\)；",
                 r"灰色 \(=\) 半圓 \(+\triangle PQT-\) 扇形 \(=\dfrac{3\pi}2+\sqrt3-\dfrac{4\pi}3=\dfrac\pi6+\sqrt3\)，故 \(a=\tfrac16,\ b=3\)。"],
-        "links": [(r"三角 ▸ 考點1 弧度·扇形面積", TRIG, "kp1"), (r"三角 ▸ 考點2 餘弦定理", TRIG, "kp2")],
+        "links": [(r"三角 ▸ 核心概念1 弧度·扇形面積", TRIG, "kp1"), (r"三角 ▸ 核心概念2 餘弦定理", TRIG, "kp2")],
     },
     "111|數A|17": {
         "body": r"坐標空間中一平行六面體，某底面的三頂點為 \((-1,2,1),(-4,3,1),(2,0,-3)\)；另一面有一頂點落在 \(xy\) 平面上且與原點距離為 \(1\)。試求此平行六面體的 **最大體積**。",
@@ -272,7 +272,7 @@ DETAIL = {
         "key": [r"底面平行四邊形面積 \(=|\overrightarrow{AB}\times\overrightarrow{AC}|=\sqrt{181}\)（\(A,B,C\) 為已知三頂點）；",
                 r"落在 \(xy\) 平面的頂點設為 \((\sin\theta,\cos\theta,0)\)（距原點 \(1\)）；體積 \(=\) 底面積 \(\times\) 點到底面距離（點到平面距離公式，\(\sqrt{181}\) 約掉）\(=|\,8\sin\theta-6\cos\theta-11\,|\)；",
                 r"由正餘弦疊合，\(|8\sin\theta-6\cos\theta-11|\) 最大 \(=11+\sqrt{8^2+6^2}=11+10=21\)，故最大體積 \(=21\)。"],
-        "links": [(r"空間向量 ▸ 考點3 外積·體積", SPACE, "kp3"), (r"空間向量 ▸ 考點4 點到平面距離", SPACE, "kp4")],
+        "links": [(r"空間向量 ▸ 核心概念3 外積·體積", SPACE, "kp3"), (r"空間向量 ▸ 核心概念4 點到平面距離", SPACE, "kp4")],
     },
     "113|數A|8": {
         "body": r"對任一正整數 \(n\ge2\)，令 \(T_n\) 表示三邊長為 \(n,\ n+1,\ n+2\) 的三角形。試選出正確的選項。（海龍公式：\(s=\tfrac{a+b+c}2\)，面積 \(=\sqrt{s(s-a)(s-b)(s-c)}\)）",
@@ -283,7 +283,7 @@ DETAIL = {
         "key": [r"最大角對最長邊 \(n+2\)：\(\cos=\dfrac{n^2+(n+1)^2-(n+2)^2}{2n(n+1)}=\dfrac{n-3}{2n}\)——\(T_2\) 為 \(-\tfrac14\)（**鈍角** \(\approx104.5^\circ\)）、\(T_3\) 為 \(0\)（**直角**）、\(n>3\) 才全銳 → (1) 錯；也因此 \(T_3\) 的最大角（\(90^\circ\)）反而 **小於** \(T_2\) 的 → (5) 錯；",
                 r"(2) 周長 \(=3n+3=3(n+1)\)、公差 \(3\) → 等差 ✓；(3) 海龍面積 \(=\tfrac14(n+1)\sqrt{3(n^2+2n-3)}\) 隨 \(n\) 遞增 ✓；",
                 r"(4) \(T_5=(5,6,7)\) 的三高 \(=\dfrac{2\,[T_5]}{邊}\propto\tfrac15,\tfrac16,\tfrac17\)（調和數列、差不相等）→ 錯。答 **(2)(3)**。"],
-        "links": [(r"數列 ▸ 考點1 等差數列", SEQ, "kp1"), (r"三角 ▸ 考點2 餘弦定理·海龍", TRIG, "kp2")],
+        "links": [(r"數列 ▸ 核心概念1 等差數列", SEQ, "kp1"), (r"三角 ▸ 核心概念2 餘弦定理·海龍", TRIG, "kp2")],
     },
     "113|數B|17": {
         "body": r"在一圓的圓周上取 \(12\) 個等分點，依順時針標 \(1\) 至 \(12\) 號。由這 \(12\) 個點任取 \(3\) 點為頂點所成的三角形中，**三個內角由小到大成等差數列** 的三角形有幾個？",
@@ -291,7 +291,7 @@ DETAIL = {
         "key": [r"圓內接三角形三內角 \(=15a^\circ,15b^\circ,15c^\circ\)（\(a,b,c\) 為三段弧的等分數，\(a+b+c=12\)）；成等差 \(\Leftrightarrow a,b,c\) 成等差 \(\Leftrightarrow\) 中項 \(=4\)；",
                 r"弧組只有 \(\{4,4,4\},\{3,4,5\},\{2,4,6\},\{1,4,7\}\)；",
                 r"\(\{4,4,4\}\)（正三角形）有 \(\tfrac{12}{3}=4\) 個；其餘三組各 \(12\times2=24\) 個 → 共 \(4+3\times24=76\)。"],
-        "links": [(r"數列 ▸ 考點1 等差數列", SEQ, "kp1"), (r"排列機率 ▸ 考點1 計數原理", PROB, "kp1")],
+        "links": [(r"數列 ▸ 核心概念1 等差數列", SEQ, "kp1"), (r"排列機率 ▸ 核心概念1 計數原理", PROB, "kp1")],
     },
     "113|數B|4": {
         "body": r"坐標平面上有向量 \(\vec v=(-2,3)\) 及兩點 \(A,B\)，其中 \(A,B\) 的 \(x\)、\(y\) 坐標皆介於 \(0\) 與 \(1\) 之間（\(0\le x,y\le1\)）。試問 \(|\vec v+\overrightarrow{AB}|\) 的 **最大值**為何？",
@@ -300,7 +300,7 @@ DETAIL = {
         "key": [r"設 \(A=(x_1,y_1),B=(x_2,y_2)\)，\(\overrightarrow{AB}=(x_2-x_1,\ y_2-y_1)\)，兩分量皆在 \([-1,1]\)；",
                 r"\(\vec v+\overrightarrow{AB}=(-2+(x_2-x_1),\ 3+(y_2-y_1))\)；",
                 r"取 \(x_2-x_1=-1,\ y_2-y_1=1\) → \((-3,4)\)，\(|\vec v+\overrightarrow{AB}|=\sqrt{9+16}=5\)（最大），選 (4)。"],
-        "links": [(r"平面向量 ▸ 考點1 向量運算·長度", PVEC, "kp1"), (r"數與式 ▸ 考點2 絕對值·範圍", NUMEXPR, "kp2")],
+        "links": [(r"平面向量 ▸ 核心概念1 向量運算·長度", PVEC, "kp1"), (r"數與式 ▸ 核心概念2 絕對值·範圍", NUMEXPR, "kp2")],
     },
     "115|數B|15": {
         "body": r"某校健檢，全體學生有近視者占 \(\tfrac12\)、有駝背者占 \(\tfrac14\)，設 \(p\) 為「同時近視且駝背」的比率。已知「**有駝背的學生中有近視的比率**」介於 \(\tfrac23\) 與 \(\tfrac56\) 之間。試求 \(p\) 的範圍 \(\square<p<\square\)。",
@@ -308,7 +308,7 @@ DETAIL = {
         "key": [r"列聯表：近視且駝背 \(=p\)，駝背且不近視 \(=\tfrac14-p\)（需 \(\ge0\)）；",
                 r"「駝背中有近視」\(=\dfrac{p}{1/4}=4p\)；",
                 r"由條件 \(\dfrac23<4p<\dfrac56\Rightarrow\dfrac16<p<\dfrac{5}{24}\)。"],
-        "links": [(r"數據分析 ▸ 考點4 列聯表·判讀", DATA, "kp4"), (r"排列機率 ▸ 考點4 條件機率", PROB, "kp4")],
+        "links": [(r"數據分析 ▸ 核心概念4 列聯表·判讀", DATA, "kp4"), (r"排列機率 ▸ 核心概念4 條件機率", PROB, "kp4")],
     },
     "111|數B|14": {
         "body": r"坐標平面上有一圓，圓心為 \(O\)、半徑為 \(7\)。\(A,B\) 為圓上相異兩點且 \(\overline{AB}=8\)。試求 \(\overrightarrow{OA}\cdot\overrightarrow{OB}\)。",
@@ -325,7 +325,7 @@ DETAIL = {
         "key": [r"\(\overline{AB}^2=|\overrightarrow{OB}-\overrightarrow{OA}|^2=|\overrightarrow{OA}|^2+|\overrightarrow{OB}|^2-2\,\overrightarrow{OA}\cdot\overrightarrow{OB}\)；",
                 r"\(8^2=7^2+7^2-2\,\overrightarrow{OA}\cdot\overrightarrow{OB}\Rightarrow64=98-2\,\overrightarrow{OA}\cdot\overrightarrow{OB}\)；",
                 r"\(\overrightarrow{OA}\cdot\overrightarrow{OB}=\dfrac{98-64}{2}=17\)。"],
-        "links": [(r"平面向量 ▸ 考點3 內積", PVEC, "kp3"), (r"三角 ▸ 考點2 餘弦定理", TRIG, "kp2")],
+        "links": [(r"平面向量 ▸ 核心概念3 內積", PVEC, "kp3"), (r"三角 ▸ 核心概念2 餘弦定理", TRIG, "kp2")],
     },
     "111|數B|6": {
         "body": r"假設地球為半徑 \(R\) 的球體、經線皆為通過兩極的大圓。某地 \(P\) 在 **北緯 \(75^\circ\)**，沿其所在經線往南移動弧長 \(\dfrac{7\pi}{12}R\) 到達 \(Q\)。試問 \(Q\) 的緯度為何？",
@@ -343,7 +343,7 @@ DETAIL = {
         "key": [r"弧長 \(=R\theta\Rightarrow\theta=\dfrac{7\pi}{12}=105^\circ\)（大圓圓心角）；",
                 r"從 \(P\)（北緯 \(75^\circ\)）沿經線往南：先 \(75^\circ\) 到赤道，再 \(105^\circ-75^\circ=30^\circ\) 進入南半球；",
                 r"故 \(Q\) 在 **南緯 \(30^\circ\)**，選 (3)。"],
-        "links": [(r"三角 ▸ 考點1 弧度·弧長", TRIG, "kp1"), (r"空間向量 ▸ 考點1 空間坐標·球面", SPACE, "kp1")],
+        "links": [(r"三角 ▸ 核心概念1 弧度·弧長", TRIG, "kp1"), (r"空間向量 ▸ 核心概念1 空間坐標·球面", SPACE, "kp1")],
     },
     "111|數B|4": {
         "body": r"在坐標平面上，已知向量 \(\overrightarrow{PQ}=\left(\log\tfrac15,\ -10^{-5}\right)\)，其中點 \(P\) 的坐標為 \(\left(\log\tfrac12,\ 2^{-5}\right)\)。試問點 \(Q\) 在第幾象限？",
@@ -352,7 +352,7 @@ DETAIL = {
         "key": [r"設 \(Q=(x,y)\)，由 \(\overrightarrow{PQ}=Q-P\)：\(x-\log\tfrac12=\log\tfrac15\)、\(y-2^{-5}=-10^{-5}\)；",
                 r"\(x=\log\tfrac12+\log\tfrac15=\log\tfrac1{10}=-1<0\)（對數律相加）；",
                 r"\(y=2^{-5}-10^{-5}=\dfrac1{32}-\dfrac1{100000}>0\)；故 \(x<0,\ y>0\Rightarrow\) **第二象限**，選 (2)。"],
-        "links": [(r"平面向量 ▸ 考點1 向量坐標運算", PVEC, "kp1"), (r"指數對數 ▸ 考點2 對數運算", EXPLOG, "kp2")],
+        "links": [(r"平面向量 ▸ 核心概念1 向量坐標運算", PVEC, "kp1"), (r"指數對數 ▸ 核心概念2 對數運算", EXPLOG, "kp2")],
     },
     "114|數B|13": {
         "body": r"某景點旁有兩個停車場。假設某日 **任一停車場沒有空位** 的機率為 \(0.7\)，且兩停車場是否有空位 **互不影響**。若一輛車當天來到這兩個停車場外圍，則 **至少有一個停車場內有空位** 的機率為何？（最簡分數）",
@@ -360,7 +360,7 @@ DETAIL = {
         "key": [r"「至少一個有空位」的 **餘事件** ＝「兩個都客滿」；",
                 r"兩場 **獨立**、各客滿機率 \(0.7\)：兩個都客滿 \(=0.7\times0.7=0.49\)；",
                 r"故 \(P=1-0.49=0.51=\dfrac{51}{100}\)。"],
-        "links": [(r"排列機率 ▸ 考點5 獨立事件·餘事件", PROB, "kp5"), (r"排列機率 ▸ 考點3 古典機率", PROB, "kp3")],
+        "links": [(r"排列機率 ▸ 核心概念5 獨立事件·餘事件", PROB, "kp5"), (r"排列機率 ▸ 核心概念3 古典機率", PROB, "kp3")],
     },
 }
 
@@ -431,7 +431,7 @@ def _rich_card(row, dt):
         f'<div class="sol">{html_rich(dt["ans"])}</div>'
         f'<button class="sol-btn mini" data-s="解題關鍵" data-h="收合解題關鍵" onclick="ts(this)">解題關鍵</button>'
         f'<div class="sol">{keyhtml}</div>'
-        f'<div class="xq-klink">🔗 直達考點：{links}</div>'
+        f'<div class="xq-klink">🔗 直達核心概念：{links}</div>'
         f'</div></div>'
     )
 
@@ -510,7 +510,7 @@ def build():
 <p>學測數學 106–115　共 {len(rows)} 道「跨單元」考題，依<b>結合的概念主軸</b>分成五大脈絡</p></div>
 <div class="x-intro">
 <b>為什麼要看跨單元題？</b>　近年學測越來越愛把兩個單元縫在一起——會單一公式不夠，要看出「這題其實是 A × B」。
-這頁把 106–115 的跨單元題依<b>「誰跟誰結合、為什麼結合」</b>排成五條脈絡。標有 <span style="color:#fff;background:#1f6f78;border-radius:50%;padding:0 6px;font-weight:800">＋</span> 的數A題卡<b>點一下可展開</b>完整題目，並有<b>簡答、解題關鍵</b>按鈕與<b>直達考點</b>連結。（向量脈絡已完成，其餘陸續補上。）
+這頁把 106–115 的跨單元題依<b>「誰跟誰結合、為什麼結合」</b>排成五條脈絡。標有 <span style="color:#fff;background:#1f6f78;border-radius:50%;padding:0 6px;font-weight:800">＋</span> 的數A題卡<b>點一下可展開</b>完整題目，並有<b>簡答、解題關鍵</b>按鈕與<b>直達核心概念</b>連結。（向量脈絡已完成，其餘陸續補上。）
 <div class="xstat"><span>總題數 <b>{len(rows)}</b></span><span>數A <b>{nA}</b></span><span>數B <b>{nB}</b></span><span>五大脈絡主軸</span></div>
 </div>
 <div class="filterbar"><span class="fb-label">篩選卷別：</span>

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "matrix",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "generatedAt": "2026-08-14",
+  "blueprintDecision": "APPROVED",
+  "items": [
+    {
+      "id": "matrix-rep-kp1",
+      "kpId": "matrix:kp1",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "設 A=[[1,2],[-1,3]]、B=[[2,0],[1,-1]]，則乘積 AB 的第 1 列第 2 行元素為何？",
+      "options": ["-4", "-2", "-1", "0", "2"],
+      "answerIndex": 1,
+      "answer": "-2",
+      "firstBarrier": "能否依左列右行取 A 的第 1 列與 B 的第 2 行做內積。",
+      "solution": "(AB)₁₂=1·0+2·(-1)=-2。",
+      "diagnosticDistractors": {
+        "0": "把同一列的兩個元素直接相乘。",
+        "2": "只取第二項的乘積，漏掉矩陣乘法的加總結構。",
+        "3": "只算第一組乘積 1·0。",
+        "4": "忽略 B 第 2 行中的負號。"
+      }
+    },
+    {
+      "id": "matrix-rep-kp2",
+      "kpId": "matrix:kp2",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "乘",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "設 I 為二階單位方陣，且二階方陣 A 滿足 A²=3A-2I，則 A⁵ 等於下列何者？",
+      "options": ["5A-4I", "8A-7I", "16A-15I", "31A-30I", "32A-31I"],
+      "answerIndex": 3,
+      "answer": "31A-30I",
+      "firstBarrier": "能否利用已知二次關係逐次降冪，而不是把矩陣元素各自做五次方。",
+      "solution": "由 A²=3A-2I，依序得 A³=7A-6I、A⁴=15A-14I，因此 A⁵=31A-30I。",
+      "diagnosticDistractors": {
+        "0": "只做一次不完整遞推便停止。",
+        "1": "把係數誤當成單純倍增，未保留常數項遞推。",
+        "2": "遞推少做一次，所得其實是 A⁴。",
+        "4": "把 A⁵ 的係數 31 誤寫成 32，忽略遞推中的減項。"
+      }
+    },
+    {
+      "id": "matrix-rep-kp3",
+      "kpId": "matrix:kp3",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "乘",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "若 [[2,1],[1,1]]X=I，則 X 為何？",
+      "options": ["[[2,-1],[-1,1]]", "[[1,1],[1,2]]", "[[1,-1],[-1,2]]", "[[1,-1],[1,2]]", "[[2,1],[1,1]]"],
+      "answerIndex": 2,
+      "answer": "[[1,-1],[-1,2]]",
+      "firstBarrier": "能否辨認 AX=I 的解是 A 的反方陣，並正確使用二階反方陣公式。",
+      "solution": "det(A)=2·1-1·1=1，因此 X=A⁻¹=[[1,-1],[-1,2]]。",
+      "diagnosticDistractors": {
+        "0": "只交換主對角元素，未完整處理反方陣公式。",
+        "1": "忽略副對角元素必須變號。",
+        "3": "只改一個副對角元素的符號。",
+        "4": "誤以為矩陣本身就是自己的反方陣。"
+      }
+    },
+    {
+      "id": "matrix-rep-kp4",
+      "kpId": "matrix:kp4",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "解",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "某三元一次方程組經高斯消去後，增廣矩陣為 [[1,2,-1,3],[0,a,1,2],[0,0,a-1,b]]。無論實數 b 為何，原方程組恰有唯一解的 a 條件為何？",
+      "options": ["a=0", "a=1", "a≠0", "a≠1", "a≠0 且 a≠1"],
+      "answerIndex": 4,
+      "answer": "a≠0 且 a≠1",
+      "firstBarrier": "能否從列梯形矩陣的三個樞紐判斷唯一解，而不是只檢查最後一列。",
+      "solution": "唯一解需要三個未知數欄都有樞紐，因此對角元素 1、a、a-1 均不可為 0，故 a≠0 且 a≠1。",
+      "diagnosticDistractors": {
+        "0": "把樞紐為 0 誤認成唯一解條件。",
+        "1": "忽略 a-1=0 會失去第三個樞紐。",
+        "2": "只檢查第二列的樞紐 a。",
+        "3": "只檢查第三列的樞紐 a-1。"
+      }
+    },
+    {
+      "id": "matrix-rep-kp5",
+      "kpId": "matrix:kp5",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "變",
+      "secondaryRepresentation": "陣",
+      "publicationStatus": "IN_REVIEW_NOT_PUBLISHED",
+      "stem": "平面線性變換 T 滿足 T(1,0)=(2,1)、T(0,1)=(-1,1)。由 O=(0,0)、P=(1,0)、Q=(0,1) 所成三角形經 T 變換後，面積為何？",
+      "options": ["1/2", "1", "3/2", "2", "3"],
+      "answerIndex": 2,
+      "answer": "3/2",
+      "firstBarrier": "能否把兩個基底向量的像排成變換矩陣的兩行，再用行列式絕對值判斷面積倍率。",
+      "solution": "T 的矩陣為 [[2,-1],[1,1]]，行列式為 3；原三角形面積為 1/2，所以像的面積為 3·(1/2)=3/2。",
+      "diagnosticDistractors": {
+        "0": "只保留原三角形面積，未套用面積倍率。",
+        "1": "矩陣排列或行列式計算錯誤，得到倍率 2。",
+        "3": "把某一邊的伸縮量誤當作整體面積倍率。",
+        "4": "算出行列式絕對值 3 後，忘記乘原面積 1/2。"
+      }
+    }
+  ]
+}

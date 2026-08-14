@@ -150,7 +150,7 @@ def _misconceptions(doc, mis, mode):
 
 def _kp(doc, kp, mode):
     _heading(doc, f'{kp["num"]}　{kp["title"]}', level=2)
-    _rich(doc, "這個考點在學什麼：" + kp["intro"], mode, size=11, after=4)
+    _rich(doc, "這個核心概念在學什麼：" + kp["intro"], mode, size=11, after=4)
     _label(doc, "【必背重點與公式】")
     for p in kp["points"]:
         if isinstance(p, dict) and "svg" in p:
@@ -253,7 +253,7 @@ def build_docx(unit, mode, out_path):
         for n in p0.get("notes", []):
             _rich(doc, "• " + n, mode, indent=0.4, before=1, after=1)
         if p0.get("map"):
-            _label(doc, "考點地圖")
+            _label(doc, "核心概念地圖")
             _rich(doc, p0["map"], mode, indent=0.4, fill="FDF3EE")
         if p0.get("fig"):
             f0 = p0["fig"]
@@ -261,7 +261,7 @@ def build_docx(unit, mode, out_path):
             _add_svg_figure(doc, f0["svg"], f0.get("caption"), _w0)
 
     # Part 1
-    _heading(doc, f'Part 1　建構概念：{unit.get("part1_label","五大考點")}', level=1)
+    _heading(doc, f'Part 1　建構概念：{unit.get("part1_label","五大核心概念")}', level=1)
     for kp in unit["kps"]:
         _kp(doc, kp, mode)
 

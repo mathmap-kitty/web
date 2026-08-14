@@ -1,0 +1,1316 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "explog",
+  "unitName": "指數與對數",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-13",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "explog-p0-kp1-concept",
+      "kpId": "explog:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(a>0\\)、\\(a\\ne1\\)，且 \\(a^u=a^v\\)，則下列何者必定成立？",
+      "options": [
+        "\\(u+v=0\\)",
+        "\\(u=v\\)",
+        "\\(uv=1\\)",
+        "\\(u=-v\\)",
+        "無法判定"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(u=v\\)",
+      "firstBarrier": "能否掌握同底指數函數的一對一性。",
+      "solution": "因底數合法且不為 1，指數函數為一對一函數，所以 \\(u=v\\)。",
+      "distractorNotes": [
+        "把相等誤認為互為相反數。",
+        null,
+        "把指數相等誤作乘積為 1。",
+        "符號關係判斷錯誤。",
+        "忽略指數函數的一對一性。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp1-recognition",
+      "kpId": "explog:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將 \\(\\sqrt[3]{x^2}\\) 寫成有理指數形式，何者正確？",
+      "options": [
+        "\\(x^{2/3}\\)",
+        "\\(x^{3/2}\\)",
+        "\\(x^{-2/3}\\)",
+        "\\(2x^{1/3}\\)",
+        "\\(3x^{1/2}\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(x^{2/3}\\)",
+      "firstBarrier": "能否分辨根指數是分母、冪次是分子。",
+      "solution": "\\(\\sqrt[3]{x^2}=(x^2)^{1/3}=x^{2/3}\\)。",
+      "distractorNotes": [
+        null,
+        "把分子、分母顛倒。",
+        "無故加入負號。",
+        "把平方誤作係數。",
+        "根號次數與冪次均誤讀。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp1-application",
+      "kpId": "explog:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解方程式 \\((1/8)^{x-1}=4^{2-x}\\)。",
+      "options": [
+        "\\(-2\\)",
+        "\\(-1\\)",
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(-1\\)",
+      "firstBarrier": "能否把分數底數與整數底數都化為同一底數，且正確處理負指數。",
+      "solution": "將兩邊化為底數 2：\\(2^{-3x+3}=2^{4-2x}\\)，故 \\(-3x+3=4-2x\\)，得到 \\(x=-1\\)。",
+      "distractorNotes": [
+        "化同底後移項符號錯誤。",
+        null,
+        "忽略 \\(1/8\\) 的負指數。",
+        "把次方再次方的指數誤作相加。",
+        "只比較外層指數，未先統一底數。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp1-concept",
+      "kpId": "explog:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列何者與 \\(a^{-3}\\) 相等？",
+      "options": [
+        "\\(-a^3\\)",
+        "\\(1/a^3\\)",
+        "\\(1/(3a)\\)",
+        "\\(a/3\\)",
+        "\\(3/a\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(1/a^3\\)",
+      "firstBarrier": "能否把負指數解讀為倒數。",
+      "solution": "依負指數定義，\\(a^{-3}=1/a^3\\)。",
+      "distractorNotes": [
+        "把負指數誤作負號。",
+        null,
+        "把三次方誤作乘 3。",
+        "把指數誤作除數。",
+        "倒數與次方均處理錯誤。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp1-recognition",
+      "kpId": "explog:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "化簡 \\((27x^6)^{1/3}\\)，其中 \\(x>0\\)。",
+      "options": [
+        "\\(3x^2\\)",
+        "\\(9x^2\\)",
+        "\\(3x^3\\)",
+        "\\(27x^2\\)",
+        "\\(3x^6\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(3x^2\\)",
+      "firstBarrier": "能否把分數指數分配到常數與變數。",
+      "solution": "\\(27^{1/3}=3\\)，且 \\((x^6)^{1/3}=x^2\\)，故為 \\(3x^2\\)。",
+      "distractorNotes": [
+        null,
+        "把立方根 27 誤算為 9。",
+        "指數相除錯誤。",
+        "常數未開立方根。",
+        "變數冪次未除以 3。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp1-application",
+      "kpId": "explog:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解方程式 \\(9^{x+1}=27^{2x-1}\\)。",
+      "options": [
+        "\\(1\\)",
+        "\\(3/4\\)",
+        "\\(5/4\\)",
+        "\\(2\\)",
+        "\\(5/2\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(5/4\\)",
+      "firstBarrier": "能否化為底數 3 並正確展開指數。",
+      "solution": "化為 \\(3^{2x+2}=3^{6x-3}\\)，所以 \\(2x+2=6x-3\\)，得 \\(x=5/4\\)。",
+      "distractorNotes": [
+        "常數移項錯誤。",
+        "係數整理錯誤。",
+        null,
+        "把底數指數直接相等。",
+        "漏除以指數係數差。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp1-concept",
+      "kpId": "explog:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(0<a<1\\)，則 \\(a^x\\) 隨 \\(x\\) 增加如何變化？",
+      "options": [
+        "嚴格遞增",
+        "嚴格遞減",
+        "保持不變",
+        "先增後減",
+        "沒有固定趨勢"
+      ],
+      "answerIndex": 1,
+      "answer": "嚴格遞減",
+      "firstBarrier": "能否由底數範圍判斷指數函數單調性。",
+      "solution": "底數介於 0 與 1 時，指數函數嚴格遞減。",
+      "distractorNotes": [
+        "套用底數大於 1 的結論。",
+        null,
+        "誤認指數不影響函數值。",
+        "誤認有轉折點。",
+        "忽略其固定單調性。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp1-recognition",
+      "kpId": "explog:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(16^{3/4}\\) 的值為何？",
+      "options": [
+        "\\(4\\)",
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(12\\)",
+        "\\(64\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否先開四次方根再立三次方。",
+      "solution": "\\(16^{3/4}=(16^{1/4})^3=2^3=8\\)。",
+      "distractorNotes": [
+        "只開四次方根。",
+        "把指數當乘數。",
+        null,
+        "根與冪的運算錯誤。",
+        "只算立方未開根。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp1-application",
+      "kpId": "explog:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "次",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解方程式 \\(2^{2x}-5\\cdot2^x+4=0\\)。",
+      "options": [
+        "\\(x=0\\)",
+        "\\(x=2\\)",
+        "\\(x=0\\) 或 \\(2\\)",
+        "\\(x=1\\) 或 \\(4\\)",
+        "無解"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(x=0\\) 或 \\(2\\)",
+      "firstBarrier": "能否以 \\(t=2^x>0\\) 降次並回代。",
+      "solution": "令 \\(t=2^x\\)，則 \\(t^2-5t+4=0\\)，得 \\(t=1\\) 或 \\(4\\)，故 \\(x=0\\) 或 \\(2\\)。",
+      "distractorNotes": [
+        "漏掉 \\(t=4\\)。",
+        "漏掉 \\(t=1\\)。",
+        null,
+        "把 \\(t\\) 直接當作 \\(x\\)。",
+        "忽略兩個正根皆可回代。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp2-concept",
+      "kpId": "explog:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\log_a b\\) 有意義的必要條件為何？",
+      "options": [
+        "\\(a>0,b>0\\)",
+        "\\(a>0,a\\ne1,b>0\\)",
+        "\\(a\\ne0,b\\ge0\\)",
+        "\\(a>1,b>0\\)",
+        "\\(a<0,b>0\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(a>0,a\\ne1,b>0\\)",
+      "firstBarrier": "能否同時檢查底數與真數條件。",
+      "solution": "實數對數要求底數 \\(a>0\\)、\\(a\\ne1\\)，真數 \\(b>0\\)。",
+      "distractorNotes": [
+        "漏掉底數不能為 1。",
+        null,
+        "真數不能為 0。",
+        "漏掉 \\(0<a<1\\) 也合法。",
+        "底數不能為負。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp2-recognition",
+      "kpId": "explog:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\log_3 81\\) 的值為何？",
+      "options": [
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(9\\)",
+        "\\(27\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(4\\)",
+      "firstBarrier": "能否把對數轉為指數式。",
+      "solution": "因 \\(3^4=81\\)，所以 \\(\\log_3 81=4\\)。",
+      "distractorNotes": [
+        "誤認 \\(3^2=81\\)。",
+        "少算一次乘方。",
+        null,
+        "把底數平方當答案。",
+        "把 \\(81/3\\) 當對數。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp2-application",
+      "kpId": "explog:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解方程式 \\(\\log_2(x-1)+\\log_2(x+1)=3\\)。",
+      "options": [
+        "\\(-3\\)",
+        "\\(-1\\)",
+        "\\(1\\)",
+        "\\(3\\)",
+        "\\(-3\\) 或 \\(3\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(3\\)",
+      "firstBarrier": "能否先由真數條件得到 \\(x>1\\)，合併對數後保留符合定義域的解。",
+      "solution": "真數條件給 \\(x>1\\)。合併得 \\(\\log_2[(x-1)(x+1)]=3\\)，所以 \\(x^2-1=8\\)，只有 \\(x=3\\) 合法。",
+      "distractorNotes": [
+        "未檢查真數條件。",
+        "把對數和誤作真數相加。",
+        "誤將 \\(\\log_2 1\\) 視為 1。",
+        null,
+        "未排除不在定義域的解。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp2-concept",
+      "kpId": "explog:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列對數性質何者正確？",
+      "options": [
+        "\\(\\log_a(M+N)=\\log_aM+\\log_aN\\)",
+        "\\(\\log_a(MN)=\\log_aM+\\log_aN\\)",
+        "\\(\\log_a(M/N)=\\log_aM\\,/\\,\\log_aN\\)",
+        "\\(\\log_a(M^r)=(\\log_aM)^r\\)",
+        "\\(\\log_a1=1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\log_a(MN)=\\log_aM+\\log_aN\\)",
+      "firstBarrier": "能否辨識乘法轉為對數加法。",
+      "solution": "對數的乘法公式為 \\(\\log_a(MN)=\\log_aM+\\log_aN\\)。",
+      "distractorNotes": [
+        "對數沒有加法拆解公式。",
+        null,
+        "商應轉為對數相減。",
+        "冪次應移到對數前。",
+        "\\(\\log_a1=0\\)。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp2-recognition",
+      "kpId": "explog:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "化簡 \\(2\\log_3x-\\log_3y\\)，其中 \\(x,y>0\\)。",
+      "options": [
+        "\\(\\log_3(2x-y)\\)",
+        "\\(\\log_3(x^2/y)\\)",
+        "\\(\\log_3(x^2-y)\\)",
+        "\\(\\log_3(2x/y)\\)",
+        "\\(\\log_3(x/y^2)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\log_3(x^2/y)\\)",
+      "firstBarrier": "能否先用冪次公式，再用商公式。",
+      "solution": "\\(2\\log_3x=\\log_3x^2\\)，再相減得 \\(\\log_3(x^2/y)\\)。",
+      "distractorNotes": [
+        "錯誤拆解加減。",
+        null,
+        "把對數相減誤作真數相減。",
+        "把係數 2 誤作真數乘 2。",
+        "冪次放錯真數。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp2-application",
+      "kpId": "explog:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解方程式 \\(\\log_5(x+4)-\\log_5x=1\\)。",
+      "options": [
+        "\\(1\\)",
+        "\\(4/5\\)",
+        "\\(5\\)",
+        "\\(-1\\)",
+        "無解"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否先確認 \\(x>0\\)，再以商公式解方程。",
+      "solution": "由 \\(x>0\\)，合併得 \\(\\log_5[(x+4)/x]=1\\)，故 \\((x+4)/x=5\\)，得 \\(x=1\\)。",
+      "distractorNotes": [
+        null,
+        "移項比例錯誤。",
+        "把對數值直接當 \\(x\\)。",
+        "未檢查定義域。",
+        "忽略存在合法正解。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp2-concept",
+      "kpId": "explog:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(M>0\\)，則 \\(\\log_a(M^2)\\) 等於何者？",
+      "options": [
+        "\\((\\log_aM)^2\\)",
+        "\\(2\\log_aM\\)",
+        "\\(\\log_aM+2\\)",
+        "\\(\\log_a(2M)\\)",
+        "\\(\\frac12\\log_aM\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\log_aM\\)",
+      "firstBarrier": "能否使用對數冪次公式。",
+      "solution": "依冪次公式，\\(\\log_a(M^2)=2\\log_aM\\)。",
+      "distractorNotes": [
+        "把冪次錯留在對數值上。",
+        null,
+        "把冪次誤作加數。",
+        "把平方誤作乘 2。",
+        "係數取倒數。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp2-recognition",
+      "kpId": "explog:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "方程式 \\(\\log_2(x-3)=0\\) 的解為何？",
+      "options": [
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(4\\)",
+      "firstBarrier": "能否由對數值 0 回譯真數為 1。",
+      "solution": "\\(\\log_2(x-3)=0\\) 表示 \\(x-3=2^0=1\\)，所以 \\(x=4\\)。",
+      "distractorNotes": [
+        "把對數值直接當 \\(x\\)。",
+        "只得到真數未還原 \\(x\\)。",
+        "把真數誤設為 0。",
+        null,
+        "常數移項錯誤。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp2-application",
+      "kpId": "explog:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "解不等式 \\(\\log_{1/2}(x-1)>-2\\)。",
+      "options": [
+        "\\(x>5\\)",
+        "\\(1<x<5\\)",
+        "\\(x<5\\)",
+        "\\(0<x<5\\)",
+        "\\(x>1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(1<x<5\\)",
+      "firstBarrier": "能否結合定義域並在底數小於 1 時反向。",
+      "solution": "先得 \\(x>1\\)。因底數 \\(1/2<1\\)，故 \\(x-1<(1/2)^{-2}=4\\)，所以 \\(1<x<5\\)。",
+      "distractorNotes": [
+        "未將不等號反向。",
+        null,
+        "漏掉真數為正。",
+        "定義域下界錯誤。",
+        "只檢查定義域未解不等式。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp3-concept",
+      "kpId": "explog:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(N\\) 是正整數，且 \\(10^{k-1}\\le N<10^k\\)，則 \\(N\\) 有幾位數？",
+      "options": [
+        "\\(k-1\\)",
+        "\\(k\\)",
+        "\\(k+1\\)",
+        "\\(10k\\)",
+        "無法判定"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(k\\)",
+      "firstBarrier": "能否連結十的冪次區間與位數。",
+      "solution": "位於 \\(10^{k-1}\\) 至 \\(10^k\\) 之前的正整數恰有 \\(k\\) 位。",
+      "distractorNotes": [
+        "把最低冪次誤當位數。",
+        null,
+        "多加一位。",
+        "把指數誤作倍率。",
+        "條件已足以判定。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp3-recognition",
+      "kpId": "explog:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\log2\\approx0.3010\\)，則 \\(\\log8\\) 約為何？",
+      "options": [
+        "\\(0.3010\\)",
+        "\\(0.6020\\)",
+        "\\(0.9030\\)",
+        "\\(2.4080\\)",
+        "\\(3.0100\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(0.9030\\)",
+      "firstBarrier": "能否辨識 \\(8=2^3\\) 並使用冪次公式。",
+      "solution": "\\(\\log8=\\log(2^3)=3\\log2\\approx0.9030\\)。",
+      "distractorNotes": [
+        "未乘冪次 3。",
+        "只乘 2。",
+        null,
+        "把 8 與對數值相乘。",
+        "小數點位置錯誤。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp3-application",
+      "kpId": "explog:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\log2\\approx0.3010\\)。將 \\(2^{100}\\) 寫成 \\(a\\times10^n\\)，其中 \\(1\\le a<10\\)，則 \\(([a],n)\\) 為何？\\([a]\\) 表示不超過 \\(a\\) 的最大整數。",
+      "options": [
+        "\\((1,30)\\)",
+        "\\((1,31)\\)",
+        "\\((2,30)\\)",
+        "\\((2,31)\\)",
+        "\\((3,30)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((1,30)\\)",
+      "firstBarrier": "能否把常用對數的整數部分解讀為科學記號指數，並以小數部分判斷有效數字的整數部分。",
+      "solution": "\\(\\log(2^{100})\\approx30.10\\)，所以 \\(2^{100}=10^{0.10}\\times10^{30}\\)。因 \\(1<10^{0.10}<2\\)，故 \\([a]=1,n=30\\)。",
+      "distractorNotes": [
+        null,
+        "把位數 31 誤當成指數。",
+        "誤判有效數字的整數部分。",
+        "同時混淆位數與有效數字。",
+        "錯估 \\(10^{0.10}\\)。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp3-concept",
+      "kpId": "explog:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "正數 \\(N\\) 的常用對數為 \\(m+\\theta\\)，其中 \\(m\\) 為整數且 \\(0\\le\\theta<1\\)。若 \\(N\\ge1\\)，則其整數部分位數為何？",
+      "options": [
+        "\\(m\\)",
+        "\\(m+1\\)",
+        "\\(\\theta\\)",
+        "\\(10^m\\)",
+        "無法判定"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(m+1\\)",
+      "firstBarrier": "能否由常用對數整數部分判斷位數。",
+      "solution": "\\(m\\le\\log N<m+1\\)，故 \\(10^m\\le N<10^{m+1}\\)，位數為 \\(m+1\\)。",
+      "distractorNotes": [
+        "少加一位。",
+        null,
+        "把小數部分當位數。",
+        "把數值下界當位數。",
+        "條件足以判定。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp3-recognition",
+      "kpId": "explog:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\log3\\approx0.4771\\)，則 \\(3^{20}\\) 有幾位數？",
+      "options": [
+        "\\(9\\)",
+        "\\(10\\)",
+        "\\(11\\)",
+        "\\(20\\)",
+        "\\(21\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(10\\)",
+      "firstBarrier": "能否取對數後以整數部分加 1 判斷位數。",
+      "solution": "\\(\\log(3^{20})\\approx20\\times0.4771=9.542\\)，所以有 \\(9+1=10\\) 位。",
+      "distractorNotes": [
+        "忘記位數需加 1。",
+        null,
+        "多加一位。",
+        "把指數直接當位數。",
+        "把指數加 1。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp3-application",
+      "kpId": "explog:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\log2\\approx0.3010\\)，則 \\(5^{30}\\) 有幾位數？",
+      "options": [
+        "\\(19\\)",
+        "\\(20\\)",
+        "\\(21\\)",
+        "\\(30\\)",
+        "\\(31\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(21\\)",
+      "firstBarrier": "能否先以 \\(\\log5=1-\\log2\\) 求值。",
+      "solution": "\\(\\log5\\approx0.6990\\)，所以 \\(\\log(5^{30})\\approx20.970\\)，位數為 21。",
+      "distractorNotes": [
+        "對數或位數公式算錯。",
+        "忘記整數部分加 1。",
+        null,
+        "把指數直接當位數。",
+        "把指數加 1。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp3-concept",
+      "kpId": "explog:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(0<N<1\\)，則 \\(\\log N\\) 的正負為何？",
+      "options": [
+        "正",
+        "負",
+        "零",
+        "必為整數",
+        "無法判定"
+      ],
+      "answerIndex": 1,
+      "answer": "負",
+      "firstBarrier": "能否由常用對數函數的單調性判斷符號。",
+      "solution": "因 \\(\\log1=0\\)，且常用對數遞增，所以 \\(0<N<1\\) 時 \\(\\log N<0\\)。",
+      "distractorNotes": [
+        "忽略 N 小於 1。",
+        null,
+        "只有 N=1 時為 0。",
+        "對數不必為整數。",
+        "範圍已足以判定。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp3-recognition",
+      "kpId": "explog:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\log(4\\times10^7)\\) 的整數部分為何？",
+      "options": [
+        "\\(4\\)",
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(11\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(7\\)",
+      "firstBarrier": "能否區分科學記號指數與位數。",
+      "solution": "\\(\\log(4\\times10^7)=7+\\log4\\)，且 \\(0<\\log4<1\\)，所以整數部分為 7。",
+      "distractorNotes": [
+        "把有效數字 4 當整數部分。",
+        "少算一個十次方。",
+        null,
+        "把位數 8 當整數部分。",
+        "把 4 與 7 相加。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp3-application",
+      "kpId": "explog:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": "次",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "已知 \\(\\log2\\approx0.3010\\)，\\(2^n\\) 首次超過一百萬時，最小的正整數 \\(n\\) 為何？",
+      "options": [
+        "\\(19\\)",
+        "\\(20\\)",
+        "\\(21\\)",
+        "\\(22\\)",
+        "\\(30\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(20\\)",
+      "firstBarrier": "能否把數量級條件轉為對數不等式並取最小整數。",
+      "solution": "需 \\(n\\log2>6\\)，即 \\(n>6/0.3010\\approx19.93\\)，所以最小正整數為 20。",
+      "distractorNotes": [
+        "向下取整。",
+        null,
+        "多加 1。",
+        "估算過大。",
+        "把小數點後位數當答案。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp4-concept",
+      "kpId": "explog:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=\\log_a x\\) 與 \\(y=a^x\\) 的圖形關係為何？",
+      "options": [
+        "關於 x 軸對稱",
+        "關於 y 軸對稱",
+        "關於直線 \\(y=x\\) 對稱",
+        "完全重合",
+        "相差一個單位"
+      ],
+      "answerIndex": 2,
+      "answer": "關於直線 \\(y=x\\) 對稱",
+      "firstBarrier": "能否辨識互為反函數的圖形對稱關係。",
+      "solution": "兩函數互為反函數，因此圖形關於直線 \\(y=x\\) 對稱。",
+      "distractorNotes": [
+        "把反函數誤作相反數。",
+        "把交換 x、y 誤作 y 軸對稱。",
+        null,
+        "兩圖通常不重合。",
+        "不是平移關係。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp4-recognition",
+      "kpId": "explog:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列哪一個關係式所表示的圖形，與 \\(y=\\log_2x\\) 的圖形完全相同？",
+      "options": [
+        "\\(2y=\\log_2(x^2)\\)",
+        "\\(y=\\log_2(2x)\\)",
+        "\\(x=2^y\\)",
+        "\\(x=2^{-y}\\)",
+        "\\(y=\\log_2|x|\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(x=2^y\\)",
+      "firstBarrier": "能否在代數互譯後繼續檢查原式定義域，而不是只看化簡後的形式。",
+      "solution": "\\(y=\\log_2x\\) 與 \\(x=2^y\\) 等價，且都要求 \\(x>0\\)。其餘選項有平移、反射或多出負半軸。",
+      "distractorNotes": [
+        "忽略多出的負半軸。",
+        "忽略真數乘 2 造成上移。",
+        null,
+        "把反函數與指數負號混淆。",
+        "忽略絕對值擴張定義域。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp4-application",
+      "kpId": "explog:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=2^{x-1}+3\\) 的水平漸近線為何？",
+      "options": [
+        "\\(x=1\\)",
+        "\\(x=3\\)",
+        "\\(y=1\\)",
+        "\\(y=2\\)",
+        "\\(y=3\\)"
+      ],
+      "answerIndex": 4,
+      "answer": "\\(y=3\\)",
+      "firstBarrier": "能否分辨水平平移與鉛直平移對漸近線的影響。",
+      "solution": "\\(2^{x-1}\\) 的水平漸近線為 \\(y=0\\)，向上平移 3 後為 \\(y=3\\)。",
+      "distractorNotes": [
+        "把水平平移量當漸近線。",
+        "混淆直線方向。",
+        "把 x 位移誤作 y 值。",
+        "把底數當漸近線。",
+        null
+      ]
+    },
+    {
+      "id": "explog-p1-kp4-concept",
+      "kpId": "explog:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(y=\\log_2(x-4)\\) 可由 \\(y=\\log_2x\\) 如何平移得到？",
+      "options": [
+        "向左 4",
+        "向右 4",
+        "向上 4",
+        "向下 4",
+        "關於 y 軸對稱"
+      ],
+      "answerIndex": 1,
+      "answer": "向右 4",
+      "firstBarrier": "能否判斷真數內減常數造成向右平移。",
+      "solution": "以 \\(x-4\\) 取代 \\(x\\)，圖形向右平移 4。",
+      "distractorNotes": [
+        "水平平移方向判反。",
+        null,
+        "把內部位移誤作向上。",
+        "把內部位移誤作向下。",
+        "不是鏡射。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp4-recognition",
+      "kpId": "explog:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=(1/3)^x\\) 的圖形必通過哪一點？",
+      "options": [
+        "\\((0,0)\\)",
+        "\\((0,1)\\)",
+        "\\((1,0)\\)",
+        "\\((1,1)\\)",
+        "\\((3,1)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((0,1)\\)",
+      "firstBarrier": "能否利用任何合法底數的零次方皆為 1。",
+      "solution": "當 \\(x=0\\) 時，\\((1/3)^0=1\\)，故通過 \\((0,1)\\)。",
+      "distractorNotes": [
+        "誤認通過原點。",
+        null,
+        "把截距座標顛倒。",
+        "誤認一次方為 1。",
+        "座標代入不符。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp4-application",
+      "kpId": "explog:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(y=-\\log_2x+1\\) 可由 \\(y=\\log_2x\\) 依序做何種變換？",
+      "options": [
+        "關於 x 軸對稱，再向上 1",
+        "關於 y 軸對稱，再向上 1",
+        "向右 1",
+        "向左 1",
+        "關於 \\(y=x\\) 對稱"
+      ],
+      "answerIndex": 0,
+      "answer": "關於 x 軸對稱，再向上 1",
+      "firstBarrier": "能否區分函數外負號與外加常數。",
+      "solution": "函數外乘 \\(-1\\) 是關於 x 軸對稱，再加 1 是向上平移 1。",
+      "distractorNotes": [
+        null,
+        "把外負號誤作 y 軸對稱。",
+        "把外加常數誤作水平位移。",
+        "水平位移方向與類型皆錯。",
+        "誤作反函數變換。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp4-concept",
+      "kpId": "explog:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(a>1\\)，則 \\(y=\\log_a x\\) 的單調性為何？",
+      "options": [
+        "嚴格遞增",
+        "嚴格遞減",
+        "常數函數",
+        "先減後增",
+        "週期函數"
+      ],
+      "answerIndex": 0,
+      "answer": "嚴格遞增",
+      "firstBarrier": "能否由底數範圍判斷對數函數單調性。",
+      "solution": "底數大於 1 時，對數函數在 \\(x>0\\) 上嚴格遞增。",
+      "distractorNotes": [
+        null,
+        "套用 \\(0<a<1\\) 的結論。",
+        "忽略 x 改變。",
+        "誤認有極值。",
+        "對數函數不具週期性。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp4-recognition",
+      "kpId": "explog:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=\\log_3(x+2)\\) 的鉛直漸近線為何？",
+      "options": [
+        "\\(x=-2\\)",
+        "\\(x=0\\)",
+        "\\(x=2\\)",
+        "\\(y=-2\\)",
+        "\\(y=2\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(x=-2\\)",
+      "firstBarrier": "能否由真數趨近 0 判定鉛直漸近線。",
+      "solution": "令 \\(x+2=0\\)，得鉛直漸近線 \\(x=-2\\)。",
+      "distractorNotes": [
+        null,
+        "未考慮水平平移。",
+        "平移方向判反。",
+        "混淆直線方向。",
+        "符號與方向均錯。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp4-application",
+      "kpId": "explog:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "圖",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "方程式 \\(2^x=5-x\\) 的實根個數為何？",
+      "options": [
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "無限多"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否以一遞增、一遞減圖形判斷交點唯一。",
+      "solution": "\\(y=2^x\\) 嚴格遞增，\\(y=5-x\\) 嚴格遞減；且兩圖有交點，因此恰有一個實根。",
+      "distractorNotes": [
+        "忽略兩圖確有交點。",
+        null,
+        "未利用相反單調性。",
+        "高估可能交點數。",
+        "兩個不同型函數不會重合。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp5-concept",
+      "kpId": "explog:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若正項等比數列 \\(a_n=a_1r^{n-1}\\)，則 \\(\\log a_n\\) 組成何種數列？",
+      "options": [
+        "等差數列",
+        "等比數列",
+        "調和數列",
+        "常數數列",
+        "無法判定"
+      ],
+      "answerIndex": 0,
+      "answer": "等差數列",
+      "firstBarrier": "能否將乘法結構經對數轉為加法結構。",
+      "solution": "\\(\\log a_n=\\log a_1+(n-1)\\log r\\)，故為等差數列。",
+      "distractorNotes": [
+        null,
+        "以為原數列型態不變。",
+        "與倒數數列混淆。",
+        "只有 \\(r=1\\) 時才為常數。",
+        "條件已足以判定。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp5-recognition",
+      "kpId": "explog:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(a_n=3\\cdot2^{n-1}\\)，則 \\(\\log_2a_n\\) 為何？",
+      "options": [
+        "\\(3+n-1\\)",
+        "\\(\\log_23+n-1\\)",
+        "\\(3(n-1)\\)",
+        "\\(n\\log_23\\)",
+        "\\(2n+1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\log_23+n-1\\)",
+      "firstBarrier": "能否把乘積轉為對數和並把冪次移到前方。",
+      "solution": "\\(\\log_2a_n=\\log_23+(n-1)\\log_22=\\log_23+n-1\\)。",
+      "distractorNotes": [
+        "把 \\(\\log_23\\) 誤作 3。",
+        null,
+        "把乘積對數誤作相乘。",
+        "漏掉 \\(2^{n-1}\\) 部分。",
+        "無依據地線性化。"
+      ]
+    },
+    {
+      "id": "explog-p0-kp5-application",
+      "kpId": "explog:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "正項等比數列 \\(\\langle a_n\\rangle\\) 滿足 \\(\\log_2a_3=5\\)、\\(\\log_2a_7=13\\)，則公比為何？",
+      "options": [
+        "\\(2\\)",
+        "\\(4\\)",
+        "\\(8\\)",
+        "\\(16\\)",
+        "\\(32\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(4\\)",
+      "firstBarrier": "能否看出正項等比數列取對數後成為等差數列，且索引差 4 對應四個公差。",
+      "solution": "令 \\(b_n=\\log_2a_n\\)，則公差為 \\(\\log_2r\\)。由 \\(4\\log_2r=8\\)，得 \\(r=4\\)。",
+      "distractorNotes": [
+        "項數差處理錯誤。",
+        null,
+        "把對數差直接當公比。",
+        "誤以為公比為 \\(2^4\\)。",
+        "把四步倍率當單步公比。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp5-concept",
+      "kpId": "explog:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若數量每經一固定時間乘上相同正數，可用何種模型描述？",
+      "options": [
+        "一次函數",
+        "二次函數",
+        "指數函數",
+        "對數函數",
+        "常數函數"
+      ],
+      "answerIndex": 2,
+      "answer": "指數函數",
+      "firstBarrier": "能否辨識固定倍數成長是指數模型。",
+      "solution": "相同時間間隔乘固定倍率，符合指數函數模型。",
+      "distractorNotes": [
+        "一次模型是固定增加量。",
+        "二次模型非固定倍數。",
+        null,
+        "對數模型非固定倍數。",
+        "數量會改變。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp5-recognition",
+      "kpId": "explog:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某細菌數量每 3 小時加倍。經過 12 小時後，數量是原來的幾倍？",
+      "options": [
+        "\\(4\\)",
+        "\\(8\\)",
+        "\\(12\\)",
+        "\\(16\\)",
+        "\\(24\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(16\\)",
+      "firstBarrier": "能否先判定經歷幾個倍增週期。",
+      "solution": "12 小時含 \\(12/3=4\\) 個週期，倍率為 \\(2^4=16\\)。",
+      "distractorNotes": [
+        "把週期數直接當倍率。",
+        "少算一個倍增週期。",
+        "把小時數當倍率。",
+        null,
+        "倍增運算錯誤。"
+      ]
+    },
+    {
+      "id": "explog-p1-kp5-application",
+      "kpId": "explog:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某物質每 5 年剩原量的 \\(80\\%\\)。若初始為 100 克，15 年後約剩多少克？",
+      "options": [
+        "\\(40.96\\)",
+        "\\(51.2\\)",
+        "\\(64\\)",
+        "\\(80\\)",
+        "\\(85\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(51.2\\)",
+      "firstBarrier": "能否把 15 年換成 3 個衰減週期。",
+      "solution": "15 年為 3 個週期，剩量 \\(100(0.8)^3=51.2\\) 克。",
+      "distractorNotes": [
+        "多乘一個週期。",
+        null,
+        "只經兩個週期。",
+        "只經一個週期。",
+        "把每次減 20 克作線性處理。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp5-concept",
+      "kpId": "explog:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在指數成長模型 \\(P(t)=P_0a^t\\) 中，若 \\(a>1\\)，則下列何者正確？",
+      "options": [
+        "每期增加固定數量",
+        "每期乘固定倍率 \\(a\\)",
+        "成長率逐期為 0",
+        "數量一定小於 \\(P_0\\)",
+        "圖形為直線"
+      ],
+      "answerIndex": 1,
+      "answer": "每期乘固定倍率 \\(a\\)",
+      "firstBarrier": "能否區分固定增加量與固定成長倍率。",
+      "solution": "由 \\(P(t+1)/P(t)=a\\)，每期皆乘固定倍率 \\(a\\)。",
+      "distractorNotes": [
+        "混淆等差與等比。",
+        null,
+        "成長率不是 0。",
+        "底數大於 1 時會成長。",
+        "指數圖形不是直線。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp5-recognition",
+      "kpId": "explog:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某投資每年成長 \\(5\\%\\)，本金為 \\(A\\)。3 年後本利和的表示式為何？",
+      "options": [
+        "\\(A(1.05)^3\\)",
+        "\\(A+0.05^3\\)",
+        "\\(1.15A\\)",
+        "\\(A(0.95)^3\\)",
+        "\\(3.05A\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(A(1.05)^3\\)",
+      "firstBarrier": "能否把百分率轉成每年乘數並連乘。",
+      "solution": "每年乘 \\(1+0.05=1.05\\)，3 年後為 \\(A(1.05)^3\\)。",
+      "distractorNotes": [
+        null,
+        "百分率與本金未相乘。",
+        "把複利誤作單利。",
+        "把成長誤作衰減。",
+        "倍率計算錯誤。"
+      ]
+    },
+    {
+      "id": "explog-p2-kp5-application",
+      "kpId": "explog:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "序",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某族群數量依 \\(P(t)=500\\cdot3^{t/4}\\) 成長。數量達到 4500 時，\\(t\\) 為何？",
+      "options": [
+        "\\(4\\)",
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(12\\)",
+        "\\(16\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否先除以初值，再將倍率寫成相同底數。",
+      "solution": "\\(4500/500=9=3^2\\)，所以 \\(t/4=2\\)，得 \\(t=8\\)。",
+      "distractorNotes": [
+        "只解得一個週期。",
+        "指數或比例處理錯誤。",
+        null,
+        "把倍率 9 當指數。",
+        "多乘一次 2。"
+      ]
+    }
+  ]
+}

@@ -52,7 +52,7 @@ EDGES_NET = [("pvec", "trig", 4), ("trig", "seq", 2), ("seq", "explog", 2),
              ("pvec", "numexpr", 1), ("seq", "prob", 1), ("pvec", "poly", 1), ("prob", "data", 1)]
 ORDER_NET = ["numexpr", "poly", "explog", "seq", "prob", "data", "matrix", "space", "linecir", "trig", "pvec"]
 
-# 各單元考點 (id, nav 名稱)，由 content 單一來源取得（供「考點層」下鑽）
+# 各單元核心概念 (id, nav 名稱)，由 content 單一來源取得（供「核心概念層」下鑽）
 import sys as _sys
 _sys.path.insert(0, os.path.join(ROOT, "content"))
 from units import UNITS as _UNITS
@@ -242,7 +242,7 @@ def _svg_heat():
                          f'font-weight="800" fill="{txt}">{w:g}</text>')
             if uh > 82:
                 parts.append(f'<text x="{cx:.0f}" y="{y+uh-10:.0f}" text-anchor="middle" font-size="11" '
-                             f'fill="{txt}" opacity="0.85">{KP_COUNT[s]} 考點</text>')
+                             f'fill="{txt}" opacity="0.85">{KP_COUNT[s]} 核心概念</text>')
             parts.append('</a>')
             parts.append(_rdmark(x + cw - 18, y + 18, 9))
             parts.append('</g>')
@@ -253,7 +253,7 @@ def _svg_heat():
 
 
 def _svg_kpgrid():
-    """① 考點層下鑽：每單元一列、其考點為小格；讀過的格變綠＋✓，份量用顏色。"""
+    """① 核心概念層下鑽：每單元一列、其核心概念為小格；讀過的格變綠＋✓，份量用顏色。"""
     CW = 120
     body, y = [], 18
     for tlabel, slugs in THEMES_CM:
@@ -403,7 +403,7 @@ def build():
 {EXPORT_BUTTON_HTML}
 <div class="cm-prog">
 <button class="markbtn" id="markbtn" onclick="toggleMark()">✏️ 標記已讀</button>
-<span class="ptxt" id="ptxt">已讀 0 / 58 考點</span>
+<span class="ptxt" id="ptxt">已讀 0 / 58 核心概念</span>
 <div class="bar"><i id="pbar"></i></div>
 <button class="resetbtn" onclick="resetRead()">清除</button></div>
 <div class="cm-tabs">
@@ -417,10 +417,10 @@ def build():
 <div class="cm-board">{_svg_dep()}</div>
 </div>
 <div class="cm-view" id="v-heat">
-<div class="cm-legend"><b>面積／顏色 ＝ 該單元近十年大考份量</b>，依四大主題分欄。{_legend_chips()}<span class="cm-note">「單元層」面積越大＝考越重；「考點層」下鑽到每個考點，讀過的格變綠 ✓（標記模式中可直接點格標記）。</span></div>
+<div class="cm-legend"><b>面積／顏色 ＝ 該單元近十年大考份量</b>，依四大主題分欄。{_legend_chips()}<span class="cm-note">「單元層」面積越大＝考越重；「核心概念層」下鑽到每個核心概念，讀過的格變綠 ✓（標記模式中可直接點格標記）。</span></div>
 <div class="cm-subtabs">
 <button class="on" onclick="heatSub(this,'tree')">▦ 單元層（面積＝份量）</button>
-<button onclick="heatSub(this,'kp')">▤ 考點層（讀過進度）</button></div>
+<button onclick="heatSub(this,'kp')">▤ 核心概念層（讀過進度）</button></div>
 <div class="cm-board" id="heat-tree">{_svg_heat()}</div>
 <div class="cm-board" id="heat-kp" style="display:none">{_svg_kpgrid()}</div>
 </div>
@@ -458,7 +458,7 @@ def build():
           "function aR(){var s=gR();document.querySelectorAll('.mnode').forEach(n=>n.classList.toggle('read',uf(n.dataset.u,s)));"
           "document.querySelectorAll('.kpcell').forEach(c=>c.classList.toggle('kpread',s.has(c.dataset.kk)));uP(s);}"
           "function uP(s){s=s||gR();var t=0;for(var u in KPN)t+=KPN[u];var d=s.size;"
-          "document.getElementById('ptxt').textContent='已讀 '+d+' / '+t+' 考點';"
+          "document.getElementById('ptxt').textContent='已讀 '+d+' / '+t+' 核心概念';"
           "document.getElementById('pbar').style.width=(t?d/t*100:0)+'%';}"
           "function toggleRead(u){var s=gR();var ks=kk(u);var f=ks.every(k=>s.has(k));"
           "ks.forEach(k=>f?s.delete(k):s.add(k));localStorage.setItem(RK,JSON.stringify([...s]));aR();}"

@@ -15,23 +15,23 @@ if _CONTENT_DIR not in sys.path:
     sys.path.insert(0, _CONTENT_DIR)
 from render import html_rich
 try:
-    from cues import CUES, GROUPS  # 解題線索＋「同一招」群組（單一來源；同餵地圖頁與各考點標籤）
+    from cues import CUES, GROUPS  # 解題線索＋「同一招」群組（單一來源；同餵地圖頁與各核心概念標籤）
 except Exception:
     CUES, GROUPS = [], {}
 try:
-    from checks import CHECKS  # 考點「確認理解」概念小測（單一來源）
+    from checks import CHECKS  # 核心概念「確認理解」概念小測（單一來源）
 except Exception:
     CHECKS = {}
 try:
-    from part2_kp import PART2_KP  # Part2 各題→對應考點（錯題導回考點複習）
+    from part2_kp import PART2_KP  # Part2 各題→對應核心概念（錯題導回核心概念複習）
 except Exception:
     PART2_KP = {}
 try:
-    from exam_rates import RATES as EXAM_RATES  # 考點×大考中心答對率（build/gen_examrates.py 產生）
+    from exam_rates import RATES as EXAM_RATES  # 核心概念×大考中心答對率（build/gen_examrates.py 產生）
 except Exception:
     EXAM_RATES = {}
 try:
-    from exam_qs import EXAM_QS  # 考點×歷屆題清單（build/gen_exam_index.py 產生）
+    from exam_qs import EXAM_QS  # 核心概念×歷屆題清單（build/gen_exam_index.py 產生）
 except Exception:
     EXAM_QS = {}
 try:
@@ -48,7 +48,7 @@ _KP_NAV_CACHE = {}
 
 
 def _kp_nav(slug, kpid):
-    """惰性查某單元某考點的 nav 名稱（供觸類旁通跨單元連結顯示）。"""
+    """惰性查某單元某核心概念的 nav 名稱（供觸類旁通跨單元連結顯示）。"""
     if slug not in _KP_NAV_CACHE:
         try:
             _u = __import__(slug).UNIT
@@ -60,8 +60,8 @@ def _kp_nav(slug, kpid):
 HERE = os.path.dirname(os.path.abspath(__file__))
 KATEX = "katex"  # 本地離線包（0.16.11，與 exam 同源；含 contrib/auto-render），不再走 CDN
 
-# 已讀進度（考點層，localStorage 鍵 mm-read-kps，格式 "slug:kpN"，與概念地圖共用）
-# 掌握度（理解確認，localStorage 鍵 mm-kp-mastery，值 "ok"／"review"）：每考點的「確認理解」互動。
+# 已讀進度（核心概念層，localStorage 鍵 mm-read-kps，格式 "slug:kpN"，與概念地圖共用）
+# 掌握度（理解確認，localStorage 鍵 mm-kp-mastery，值 "ok"／"review"）：每核心概念的「確認理解」互動。
 PROGRESS_JS = (
     "var RK='mm-read-kps',MK='mm-kp-mastery';"
     "function gR(){try{return new Set(JSON.parse(localStorage.getItem(RK)||'[]'))}catch(e){return new Set()}}"
@@ -80,7 +80,7 @@ PROGRESS_JS = (
     "function markAllKp(){var s=gR();var all=MMKPS.every(k=>s.has(MMSLUG+':'+k));"
     "MMKPS.forEach(k=>{var key=MMSLUG+':'+k;all?s.delete(key):s.add(key);});"
     "localStorage.setItem(RK,JSON.stringify([...s]));upUnit();}"
-    # 設定某考點掌握度：'ok'＝我懂了（同步標已讀）、'review'＝待複習；再點同一鈕可取消。
+    # 設定某核心概念掌握度：'ok'＝我懂了（同步標已讀）、'review'＝待複習；再點同一鈕可取消。
     "function kpMastery(kp,st,force){var o=gM(),key=MMSLUG+':'+kp;"
     "if(o[key]===st&&!force){delete o[key];}else{o[key]=st;}"
     "localStorage.setItem(MK,JSON.stringify(o));"
@@ -100,13 +100,13 @@ PROGRESS_JS = (
     "var jp=document.getElementById('mst-jump');if(jp)jp.style.display=rv?'':'none';}"
     "function jumpReview(){var o=gM();for(var i=0;i<MMKPS.length;i++){"
     "if(o[MMSLUG+':'+MMKPS[i]]==='review'){location.hash=MMKPS[i];return;}}}"
-    # 一進單元頁就記錄為「上次位置」（若網址帶 #kpN 則連考點一起記）
+    # 一進單元頁就記錄為「上次位置」（若網址帶 #kpN 則連核心概念一起記）
     "setLast((location.hash||'').replace('#',''));"
     "upUnit();upMastery();")
 
 
 # 入口診斷（方案 B）：只判斷「第一步從哪個抽屜切入」，不要求算答案。
-# 互動慣例與 B1 直覺挑戰一致：點選 → 即時對錯 → 展開一句話說明 → 錨點回考點。
+# 互動慣例與 B1 直覺挑戰一致：點選 → 即時對錯 → 展開一句話說明 → 錨點回核心概念。
 # 作答後鎖定該題（避免亂點湊對），答對數即時累計。
 ENTRYDIAG_JS = (
     "function edPick(b){var c=b.closest('.edcard');if(!c||c.classList.contains('done'))return;"
@@ -121,12 +121,12 @@ ENTRYDIAG_JS = (
     "if(fb&&typeof ensureMath==='function')ensureMath(fb);}")
 
 
-# 路線選擇器（方案 A）：把 Part 1 的考點卡依路線篩選／重排。
+# 路線選擇器（方案 A）：把 Part 1 的核心概念卡依路線篩選／重排。
 #   完整複習  ＝ 全部顯示、恢復原順序
-#   先拿基本分＝ 只留 3★ 高頻考點，並依官方答對率由高到低排（難的排後面）
-#   錯題回補  ＝ 只留自評／小測判定為「待複習」的考點
+#   先拿基本分＝ 只留 3★ 高頻核心概念，並依官方答對率由高到低排（難的排後面）
+#   錯題回補  ＝ 只留自評／小測判定為「待複習」的核心概念
 # 選擇存 localStorage（鍵 mm-route），跨單元沿用——學生選一次就好。
-# 不另外包容器：考點卡是 .wrap 的連續兄弟節點，直接在原位重排，
+# 不另外包容器：核心概念卡是 .wrap 的連續兄弟節點，直接在原位重排，
 # 避免動到 app.js 依 DOM 層級做的分塊渲染。
 ROUTE_JS = (
     "var RTK='mm-route',_rtCards=null,_rtAnchor=null,_rtParent=null;"
@@ -153,19 +153,19 @@ ROUTE_JS = (
     "_rtParent.insertBefore(e,_rtAnchor);});"
     "document.querySelectorAll('.rb-btn').forEach(function(b){b.classList.toggle('on',b.dataset.r===r);});"
     "var n0=document.getElementById('rb-note');"
-    "if(n0)n0.textContent=(r==='basic')?'這個單元沒有 ★★★ 考點，已顯示全部'"
-    ":'這個單元目前沒有待複習的考點，已顯示全部——在各考點末「確認理解」作答，答錯會自動標記';"
+    "if(n0)n0.textContent=(r==='basic')?'這個單元沒有 ★★★ 核心概念，已顯示全部'"
+    ":'這個單元目前沒有待複習的核心概念，已顯示全部——在各核心概念末「確認理解」作答，答錯會自動標記';"
     "if(!quiet){try{localStorage.setItem(RTK,r);}catch(e){}}return;}"
     "var n=document.getElementById('rb-note');"
     "if(n){if(r==='basic'){n.textContent='只顯示 '+show.length+' 個必考核心，答對率高的排前面（其餘 '+hidden+' 個先收起來）';}"
-    "else if(r==='review'){n.textContent='只顯示你標記待複習的 '+show.length+' 個考點';}"
+    "else if(r==='review'){n.textContent='只顯示你標記待複習的 '+show.length+' 個核心概念';}"
     "else{n.textContent='';}}"
     "if(!quiet){try{localStorage.setItem(RTK,r);}catch(e){}}"
     # 篩選後版面位移，帶錨點進來的要重新對位；數學式也可能還沒渲染到
     "if(typeof ensureMath==='function')show.forEach(function(e){ensureMath(e);});"
     "}"
     "(function(){if(!_rtInit())return;var r='all';try{r=localStorage.getItem(RTK)||'all';}catch(e){}"
-    # 帶 #kpN 進頁時一律走完整模式，否則目標考點可能剛好被篩掉、跳過去是空的
+    # 帶 #kpN 進頁時一律走完整模式，否則目標核心概念可能剛好被篩掉、跳過去是空的
     "if(location.hash&&document.querySelector(location.hash+'.card'))r='all';"
     "setRoute(r,1);})();")
 
@@ -199,7 +199,7 @@ CONTINUE_JS = (
     "var kp=last.kp&&/^kp\\d+$/.test(last.kp);"
     "bar.setAttribute('href',last.file+(kp?'#'+last.kp:''));"
     "var s=document.getElementById('cont-sub');"
-    "if(s)s.textContent=(last.title||'')+(kp?' · 考點 '+last.kp.slice(2):'');"
+    "if(s)s.textContent=(last.title||'')+(kp?' · 核心概念 '+last.kp.slice(2):'');"
     "bar.style.display='';})();")
 
 
@@ -222,7 +222,7 @@ def _plain_txt(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-# 站內搜尋索引：各單元「考點 nav」＋「Part3 速查表」→ 可查考點／公式關鍵字。
+# 站內搜尋索引：各單元「核心概念 nav」＋「Part3 速查表」→ 可查核心概念／公式關鍵字。
 _SEARCH = []
 for _u in _BY_SLUG.values():
     try:
@@ -232,7 +232,7 @@ for _u in _BY_SLUG.values():
     _e, _t, _f = _u.get("emoji", ""), _u["title"], _u["file"]
     for _k in _U.get("kps", []):
         _lab = _plain_txt(_k.get("nav", _k.get("title", "")))
-        _SEARCH.append({"l": _lab, "u": _t, "e": _e, "f": _f, "a": _k["id"], "k": "考點",
+        _SEARCH.append({"l": _lab, "u": _t, "e": _e, "f": _f, "a": _k["id"], "k": "核心概念",
                         "s": (_lab + " " + _t).lower()})
     for _r in (_U.get("part3") or {}).get("ref_table", []):
         _lab = _plain_txt(_r.get("k", ""))
@@ -251,7 +251,7 @@ EXPORT_MODAL_HTML = (
     '<div class="ex-meta"><label>姓名／班級：<input id="ex-name" placeholder="繳交必填"></label>'
     '<span class="ex-namehint" id="ex-namehint">← 先填寫再截圖</span>'
     '<span class="ex-date" id="ex-date"></span></div>'
-    '<div class="ex-sec-t">單元完成度（已讀考點）</div>'
+    '<div class="ex-sec-t">單元完成度（已讀核心概念）</div>'
     '<div class="ex-rows" id="ex-rows"></div>'
     '<div class="ex-total" id="ex-total"></div>'
     '<div class="ex-stats">'
@@ -315,8 +315,8 @@ EXPORT_JS = (
     "var qa=0,qc=0;for(var s in quiz){qa+=quiz[s].a||0;qc+=quiz[s].c||0;}"
     "document.getElementById('ex-date').textContent=new Date().toLocaleDateString('zh-TW');"
     "document.getElementById('ex-rows').innerHTML=rows;"
-    "document.getElementById('ex-total').textContent='總計 已讀 '+dn+' / '+tot+' 考點（'+(tot?Math.round(dn/tot*100):0)+'%）';"
-    "document.getElementById('ex-mastery').textContent='已理解 '+ok+' 考點 · 待複習 '+rv+' 考點';"
+    "document.getElementById('ex-total').textContent='總計 已讀 '+dn+' / '+tot+' 核心概念（'+(tot?Math.round(dn/tot*100):0)+'%）';"
+    "document.getElementById('ex-mastery').textContent='已理解 '+ok+' 核心概念 · 待複習 '+rv+' 核心概念';"
     "document.getElementById('ex-quiz').textContent=qa?('作答 '+qa+' 題 · 答對 '+qc+' 題（正確率 '+Math.round(qc/qa*100)+'%）'):'尚未作答';"
     "document.getElementById('export-modal').style.display='flex';"
     # 防呆：姓名沒填就提示＋聚焦，填了就把提示藏起來（避免匿名繳交）
@@ -327,11 +327,11 @@ EXPORT_JS = (
     "function closeExport(){document.getElementById('export-modal').style.display='none';}")
 
 
-# === 站內搜尋框（首頁）：輸入考點名或公式關鍵字 → 即時列出結果、直達考點／速查表 ===
+# === 站內搜尋框（首頁）：輸入核心概念名或公式關鍵字 → 即時列出結果、直達核心概念／速查表 ===
 SEARCH_BOX_HTML = (
     '<div class="site-search">'
     '<input id="ss-q" type="search" autocomplete="off" oninput="ssSearch()" '
-    'placeholder="🔍 搜尋考點或公式，例：分點公式、內積、位數、餘弦定理…">'
+    'placeholder="🔍 搜尋核心概念或公式，例：分點公式、內積、位數、餘弦定理…">'
     '<div id="ss-results" class="ss-results"></div></div>')
 
 SEARCH_CSS = (
@@ -518,9 +518,9 @@ def _core_block(q, kp=""):
     沿用 sol-btn/ts() 機制（按鈕後緊接其 .sol），revealAll/hideAll 自動連動。"""
     if not q.get("core"):
         return ""
-    if kp:  # 解題核心＝超連結，回上方對應考點複習
-        core = (f'<a class="core corelink" href="#{kp}" title="回上方複習這個考點">'
-                f'解題核心：{html_rich(q["core"])} <span class="core-go">↑ 複習考點</span></a>')
+    if kp:  # 解題核心＝超連結，回上方對應核心概念複習
+        core = (f'<a class="core corelink" href="#{kp}" title="回上方複習這個核心概念">'
+                f'解題核心：{html_rich(q["core"])} <span class="core-go">↑ 複習核心概念</span></a>')
     else:
         core = f'<span class="core">解題核心：{html_rich(q["core"])}</span>'
     return ('<button class="sol-btn core-btn" data-s="🔍 先判斷：這題是哪一類？（點我對照）" '
@@ -538,7 +538,7 @@ def _question_html(q, first=False, qid="", kp=""):
            'onclick="ts(this)">顯示解答</button>')
     sol = f'<div class="sol">{_solution_html(q.get("solution"))}</div>'
     inner = meta + body + _core_block(q, kp) + btn + sol
-    # 每題包一層有 id 的外框（供錯題「重測」直達原題）＋ data-kp（對應考點）
+    # 每題包一層有 id 的外框（供錯題「重測」直達原題）＋ data-kp（對應核心概念）
     return f'<div class="qwrap" id="{qid}" data-kp="{kp}">{inner}</div>' if qid else inner
 
 
@@ -658,7 +658,7 @@ def _geo_table_html(tb):
 
 
 def _kpcheck_html(kp, slug=""):
-    """考點「確認理解」互動區塊：概念小測（check，即時批改）或退回自我檢查（selfcheck，看答案），
+    """核心概念「確認理解」互動區塊：概念小測（check，即時批改）或退回自我檢查（selfcheck，看答案），
     末尾加『我懂了／待複習』自評（掌握度進度追蹤，PROGRESS_JS 的 kpMastery）。
     concept 小測來源：kp 內嵌 "check" 優先，否則查 checks.py 的 CHECKS[(slug,kpid)]。"""
     sc = kp.get("selfcheck")
@@ -751,12 +751,12 @@ def _kp_html(kp, slug=""):
     _data = f' data-freq="{_fr}"' + (f' data-rate="{_rt[0]:.0f}"' if _rt else "")
     return (f'<div class="card" id="{kp["id"]}"{_data}>'
             f'<p class="kp"><button class="kpchk" data-kp="{kp["id"]}" onclick="kpToggle(this)" '
-            f'title="標記此考點已讀" aria-label="標記已讀"></button>'
+            f'title="標記此核心概念已讀" aria-label="標記已讀"></button>'
             f'<span class="num">{kp["num"]}</span>{html_rich(kp["title"])}{_freq_badge(kp.get("freq"))}'
             f'{_axis_badge(kp)}{_rate_badge(slug, kp["id"])}'
             f'<span class="kp-mastery" data-kp="{kp["id"]}"></span></p>'
             f'{prereq}'
-            f'<div class="callout"><b>◆ 這個考點在學什麼：</b>{html_rich(kp["intro"])}</div>'
+            f'<div class="callout"><b>◆ 這個核心概念在學什麼：</b>{html_rich(kp["intro"])}</div>'
             f'{_cues_html(slug, kp["id"])}'
             f'<span class="label">重點與公式</span><ul class="points">{points}</ul>'
             f'{tables}'
@@ -768,12 +768,12 @@ def _kp_html(kp, slug=""):
 
 
 def _freq_badge(freq):
-    """考點旁的考頻徽章（★ 越多越常考）。"""
+    """核心概念旁的考頻徽章（★ 越多越常考）。"""
     return f'<span class="kp-freq" title="近十年考頻">{html_rich(freq)}</span>' if freq else ""
 
 
 def _axis_badge(kp):
-    """考點標題旁的入口組合。
+    """核心概念標題旁的入口組合。
 
     老師的觀察（2026-08-05）：**實際考題多半是「主＋次」兩格的組合，不是單一格**。
     所以標成有方向的組合「式 ▸ 根」＝從式切入、接著處理根，而不是主／次分列——
@@ -793,17 +793,17 @@ def _axis_badge(kp):
 
 
 def _rate_badge(slug, kpid):
-    """考點旁的官方答對率徽章：這個考點對應的歷屆數 A 題目，全國平均多少人答對。
+    """核心概念旁的官方答對率徽章：這個核心概念對應的歷屆數 A 題目，全國平均多少人答對。
 
     來源 content/exam_rates.py（由 build/gen_examrates.py 從 exam/ 題庫導出）。
-    只有樣本 >= 3 題的考點才有資料——樣本再少就只是「那一題難」，不是「這個考點難」。
+    只有樣本 >= 3 題的核心概念才有資料——樣本再少就只是「那一題難」，不是「這個核心概念難」。
     多選題採全對率，與單選答對率同構念（完全答對的比例）才能一起平均。
     """
     hit = EXAM_RATES.get((slug, kpid))
     if not hit:
         return ""
     rate, n, n_multi = hit
-    tip = f"111–115 學測數 A 對應此考點 {n} 題的平均"
+    tip = f"111–115 學測數 A 對應此核心概念 {n} 題的平均"
     if n_multi:
         tip += f"（其中 {n_multi} 題多選，採全對率）"
     return (f'<span class="kp-rate" title="{_esc_attr(tip)}">'
@@ -816,15 +816,15 @@ def _hard_badge(level):
 
 
 def _exam_links_html(slug, kpid):
-    """考點卡末尾「📝 這個考點的歷屆全題」——連回 exam/ 子站的逐題詳解。
+    """核心概念卡末尾「📝 這個核心概念的歷屆全題」——連回 exam/ 子站的逐題詳解。
 
-    為什麼要有這塊：考點卡本身只精選幾題（含解題核心），但 exam/ 那 200 題早就
-    標好了 kaodian 考點對應——**方向卻是單向的**（exam → 考點 319 條，考點 → exam 0 條）。
-    這裡把同一份對應表反轉回來，學生在考點卡就能看到「這個考點近五年考過哪些題」，
-    點過去有逐步詳解、官方答對率、該題的其他考點與收藏／自我測驗。
+    為什麼要有這塊：核心概念卡本身只精選幾題（含解題核心），但 exam/ 那 200 題早就
+    標好了 kaodian 核心概念對應——**方向卻是單向的**（exam → 核心概念 319 條，核心概念 → exam 0 條）。
+    這裡把同一份對應表反轉回來，學生在核心概念卡就能看到「這個核心概念近五年考過哪些題」，
+    點過去有逐步詳解、官方答對率、該題的其他核心概念與收藏／自我測驗。
 
     版型決定（老師 2026-08-08 定案「方案 a」）：
-      - 預設**收合**（<details>），不干擾現有由上而下的閱讀動線；考點卡不會變胖。
+      - 預設**收合**（<details>），不干擾現有由上而下的閱讀動線；核心概念卡不會變胖。
       - 數 A 與數 B **分列**：數 B 對數 A 考生是額外練習，不該跟正課題材混在一起。
       - 一律 target=_blank：與講義題號直達 exam 同一個理由（老師要求「另開分頁避免迷路」）。
 
@@ -856,14 +856,14 @@ def _exam_links_html(slug, kpid):
     n_b = len(items) - n_a
     parts = ([f"數A {n_a} 題"] if n_a else []) + ([f"數B {n_b} 題"] if n_b else [])
     return ('<details class="exqs"><summary>'
-            f'<b>📝 這個考點的歷屆全題</b><span class="exq-cnt">{"　·　".join(parts)}</span>'
+            f'<b>📝 這個核心概念的歷屆全題</b><span class="exq-cnt">{"　·　".join(parts)}</span>'
             '<span class="exq-hint">111–115 · 點題號看逐步詳解（另開分頁）</span>'
             f'</summary><div class="exq-body">{rows}</div></details>')
 
 
 def _touch_html(cs, cur_slug, cur_kp):
-    """觸類旁通：這個考點的線索若屬於某「同一招」群組（cues 的 g），
-    就列出同群、其他單元／考點的連結，串成小型聯想圖。"""
+    """觸類旁通：這個核心概念的線索若屬於某「同一招」群組（cues 的 g），
+    就列出同群、其他單元／核心概念的連結，串成小型聯想圖。"""
     groups = []
     for c in cs:
         g = c.get("g")
@@ -893,14 +893,14 @@ def _touch_html(cs, cur_slug, cur_kp):
 
 
 def _cues_html(slug, kpid):
-    """考點旁「🔑 解題線索」：看到哪些關鍵字就想到這個考點（反查 cues.py），
+    """核心概念旁「🔑 解題線索」：看到哪些關鍵字就想到這個核心概念（反查 cues.py），
     並附「觸類旁通」跨單元同招串連。"""
     cs = _CUES_BY_KP.get((slug, kpid))
     if not cs:
         return ""
     kws = "、".join(f'<b class="cue-kw">{html_rich(c["kw"])}</b>' for c in cs)
     return (f'<div class="cues"><span class="cue-lbl">🔑 解題線索</span>'
-            f'看到 {kws} → 想到這個考點。'
+            f'看到 {kws} → 想到這個核心概念。'
             f'<a class="cue-more" href="{CLUEMAP_FILE}">全部線索地圖 →</a>'
             f'{_touch_html(cs, slug, kpid)}</div>')
 
@@ -945,7 +945,7 @@ def _question_intro_html(q):
 
 def _challenge_html(ch):
     """B1 直覺挑戰（SOIL：製造認知落差）。content 的 part0 提供 challenge 資料才渲染。
-    三步固定：點直覺答案 → 揭示正解 → 一句話說明＋錨點連到考點。"""
+    三步固定：點直覺答案 → 揭示正解 → 一句話說明＋錨點連到核心概念。"""
     if not ch:
         return ""
     kpid = ch.get("kp", "")
@@ -954,7 +954,7 @@ def _challenge_html(ch):
         f'<button class="chal-opt" data-ok="{1 if i == ch["answer"] else 0}" '
         f'onclick="chal(this)">{html_rich(o)}</button>'
         for i, o in enumerate(ch["options"]))
-    link = (f'<a class="chal-go" href="#{kpid}">→ 前往考點 {kpnum} 看懂為什麼</a>'
+    link = (f'<a class="chal-go" href="#{kpid}">→ 前往核心概念 {kpnum} 看懂為什麼</a>'
             if kpid else "")
     return ('<div class="card chal">'
             '<span class="label">🎯 直覺挑戰：先猜猜看</span>'
@@ -992,7 +992,7 @@ def _axes_html(ax):
 def _entrydiag_html(ed, axes):
     """入口診斷：只判斷「第一步從哪個抽屜切入」，不要求算出答案。
 
-    與 B1 直覺挑戰同一套互動慣例（點選 → 即時對錯 → 一句話說明 → 錨點回考點），
+    與 B1 直覺挑戰同一套互動慣例（點選 → 即時對錯 → 一句話說明 → 錨點回核心概念），
     但選項固定是那幾個入口表示，練的是「辨識」而不是「計算」。
     """
     if not ed or not axes:
@@ -1004,7 +1004,7 @@ def _entrydiag_html(ed, axes):
             f'<button class="ed-opt" data-ok="{1 if k == c["a"] else 0}" '
             f'onclick="edPick(this)">{html_rich(k)}</button>' for k in keys)
         kpid = c.get("kp", "")
-        link = (f'<a class="ed-go" href="#{kpid}">→ 考點 {re.sub(r"[^0-9]", "", kpid)}</a>'
+        link = (f'<a class="ed-go" href="#{kpid}">→ 核心概念 {re.sub(r"[^0-9]", "", kpid)}</a>'
                 if kpid else "")
         cards += (f'<div class="edcard" data-i="{i}">'
                   f'<div class="ed-q"><span class="ed-n">{i + 1}</span>{html_rich(c["q"])}</div>'
@@ -1029,7 +1029,7 @@ def _part0_html(p0):
              f'<tr><td>題數(加權)</td>{cnts}<td><b>{p0["trend_table"]["total"]}</b></td></tr>'
              "</table></div>")
     notes = "".join(f"<li>{html_rich(n)}</li>" for n in p0.get("notes", []))
-    mp = (f'<span class="label">考點地圖</span><div class="callout">{html_rich(p0["map"])}</div>'
+    mp = (f'<span class="label">核心概念地圖</span><div class="callout">{html_rich(p0["map"])}</div>'
           if p0.get("map") else "")
     heading = p0.get("heading", "出題趨勢與落點")
     sub = p0.get("sub", "先抓近十年趨勢與落點，再進入觀念")
@@ -1057,7 +1057,7 @@ def _part2_html(p2, slug=""):
     for g in p2["groups"]:
         items = ""
         for j, q in enumerate(g["questions"]):
-            kp = q.get("kp") or (kps[gi] if gi < len(kps) else "")  # 對應考點（解題核心連回、複習用）
+            kp = q.get("kp") or (kps[gi] if gi < len(kps) else "")  # 對應核心概念（解題核心連回、複習用）
             items += _question_html(q, first=(j == 0), qid=f'p2q{gi}', kp=kp)
             gi += 1
         groups += f'<span class="label">{g["title"]}</span>{items}'
@@ -1136,7 +1136,7 @@ def _toolbar(unit, units):
             if u.get("draft") and u["slug"] != unit["slug"]:
                 continue
             unit_opts.append(_unit_option(u))
-    kp_opts = ['<option value="">跳至考點 ▾</option>']
+    kp_opts = ['<option value="">跳至核心概念 ▾</option>']
     if unit.get("part0"):
         kp_opts.append('<option value="part0">Part 0 · 出題趨勢</option>')
     for kp in unit["kps"]:
@@ -1157,9 +1157,9 @@ def _toolbar(unit, units):
 
 
 def _routebar_html():
-    """Part 1 上方的「今天走哪條路」：一次把 58 個考點縮成看得完的份量。
+    """Part 1 上方的「今天走哪條路」：一次把 58 個核心概念縮成看得完的份量。
 
-    只篩 Part 1 的考點卡；Part 0 趨勢、Part 2 實戰、Part 3 速查一律保留。
+    只篩 Part 1 的核心概念卡；Part 0 趨勢、Part 2 實戰、Part 3 速查一律保留。
     """
     return (
         '<div class="routebar" id="routebar">'
@@ -1183,19 +1183,19 @@ def build_html(unit, units):
             '<span class="blank on" style="cursor:default"><span class="a">空格</span></span> '
             '可顯示／隱藏填空答案；點 <b>「顯示正解 / 顯示解答」</b> 按鈕可展開答案。'
             '也可用上方 <b>「全部顯示解答」</b> 一次切換整頁。</div>'
-            f'<div class="unit-prog">📖 本單元讀過 <b id="up-txt">0 / {len(unit["kps"])}</b> 考點'
+            f'<div class="unit-prog">📖 本單元讀過 <b id="up-txt">0 / {len(unit["kps"])}</b> 核心概念'
             '<span class="upbar"><i id="up-bar"></i></span>'
             '<button class="up-all" onclick="markAllKp()">全部標記／取消</button>'
-            '<span class="up-hint">（點各考點前的 ○ 標記；會同步到概念地圖）</span></div>'
-            f'<div class="unit-prog mastery-prog">✅ 已確認理解 <b id="mst-txt">0</b> / {len(unit["kps"])} 考點'
+            '<span class="up-hint">（點各核心概念前的 ○ 標記；會同步到概念地圖）</span></div>'
+            f'<div class="unit-prog mastery-prog">✅ 已確認理解 <b id="mst-txt">0</b> / {len(unit["kps"])} 核心概念'
             '<span class="upbar mst"><i id="mst-bar"></i></span>'
             '<span class="mst-rvline">⚠ 待複習 <b id="mst-rv">0</b>'
             '<button class="up-all" id="mst-jump" onclick="jumpReview()" style="display:none">跳到待複習 →</button></span>'
             '<a class="up-all mst-all" href="115學測數學_待複習與錯題.html">📌 全站待複習與錯題</a>'
-            '<span class="up-hint">（在各考點末「確認理解」作答或自評）</span></div>'
+            '<span class="up-hint">（在各核心概念末「確認理解」作答或自評）</span></div>'
             f'{_part0_html(unit.get("part0"))}'
             '<div class="part">Part 1　建構概念：'
-            f'{unit.get("part1_label","五大考點")} <small>先把觀念與公式打穩，再上戰場</small></div>'
+            f'{unit.get("part1_label","五大核心概念")} <small>先把觀念與公式打穩，再上戰場</small></div>'
             f'{_routebar_html()}'
             f'{kps_html}'
             f'{_mixed_html(unit.get("mixed"))}'
@@ -1204,7 +1204,7 @@ def build_html(unit, units):
             f'<div class="foot">{unit.get("foot","")}</div>')
     report_btn = _report_btn(unit)
     og_title = unit.get("page_title", unit["title"])
-    og_desc = f'學測數A「{unit["title"]}」重點整理：考點地圖、先備、示範例與即時練習，中等程度也能自學看得懂。'
+    og_desc = f'學測數A「{unit["title"]}」重點整理：核心概念地圖、先備、示範例與即時練習，中等程度也能自學看得懂。'
     og = og_meta(og_title, og_desc, unit["file"])
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">

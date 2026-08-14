@@ -1,0 +1,1055 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "comb",
+  "unitName": "排列組合",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-12",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "comb-p0-kp1-concept",
+      "kpId": "comb:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "成果展當天，小安只能選擇一項活動參加。室內活動有 4 項，戶外活動有 3 項，共有多少種選擇？",
+      "options": [
+        "1",
+        "7",
+        "12",
+        "24",
+        "64"
+      ],
+      "answerIndex": 1,
+      "answer": "7",
+      "firstBarrier": "能否辨識室內與戶外是互斥選擇，應使用加法原理。",
+      "solution": "只能在兩類中擇一，因此共有 \\(4+3=7\\) 種。",
+      "distractorNotes": [
+        "把「只能選一項」誤當成只有一種。",
+        null,
+        "把兩類選擇相乘。",
+        "把不相關的排列計入。",
+        "把選擇數誤作次方。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp1-recognition",
+      "kpId": "comb:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "列",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "早餐必須選 1 種主餐與 1 種飲料。主餐有 3 種，飲料有 2 種。下列哪一個算式能表示早餐搭配數？",
+      "options": [
+        "\\(3+2\\)",
+        "\\(3\\times2\\)",
+        "\\(3!\\)",
+        "\\(2^3\\)",
+        "\\(\\binom{3}{2}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(3\\times2\\)",
+      "firstBarrier": "能否辨識連續完成兩個選擇階段，應使用乘法原理。",
+      "solution": "每一種主餐都可搭配 2 種飲料，因此搭配數為 \\(3\\times2=6\\)。",
+      "distractorNotes": [
+        "把兩個連續階段誤作互斥分類。",
+        null,
+        "把搭配誤作全排列。",
+        "把題目誤作重複選取三次。",
+        "把搭配誤作只選其中兩種。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp1-application",
+      "kpId": "comb:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "列",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某門禁密碼由一個英文字母與一個數字組成。英文字母可選 A、B、C，數字可選 1、2、3、4，但 A1 不允許使用。共有多少組可用密碼？",
+      "options": [
+        "7",
+        "8",
+        "11",
+        "12",
+        "15"
+      ],
+      "answerIndex": 2,
+      "answer": "11",
+      "firstBarrier": "能否先用乘法原理得到全部配對，再排除唯一禁用情形。",
+      "solution": "沒有禁用條件時有 \\(3\\times4=12\\) 組，排除 A1 後為 \\(12-1=11\\) 組。",
+      "distractorNotes": [
+        "把兩個階段直接相加。",
+        "把 A1 禁用誤解成 A 與 1 都不能使用。",
+        null,
+        "未排除 A1。",
+        "加入題目不存在的選擇。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp1-concept",
+      "kpId": "comb:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "列",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "設計個人頁面時，必須選 1 個頭像與 1 種背景。頭像有 5 個，背景有 4 種，共有多少種版面？",
+      "options": [
+        "9",
+        "16",
+        "20",
+        "25",
+        "40"
+      ],
+      "answerIndex": 2,
+      "answer": "20",
+      "firstBarrier": "能否把「頭像」與「背景」看成連續兩階段。",
+      "solution": "每個頭像可搭配 4 種背景，所以共有 \\(5\\times4=20\\) 種。",
+      "distractorNotes": [
+        "把兩階段相加。",
+        "誤用背景數的平方。",
+        null,
+        "誤用頭像數的平方。",
+        "多乘一次 2。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp1-recognition",
+      "kpId": "comb:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "列",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "有 4 件上衣與 3 件長褲，每套穿搭各選一件，但紅上衣不能搭白長褲。下列哪一個算式正確？",
+      "options": [
+        "\\(4+3-1\\)",
+        "\\(4\\times3-1\\)",
+        "\\((4-1)(3-1)\\)",
+        "\\(4\\times(3-1)\\)",
+        "\\(4\\times3\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(4\\times3-1\\)",
+      "firstBarrier": "能否先數全部搭配，再只排除一個禁用配對。",
+      "solution": "全部有 \\(4\\times3\\) 套，紅上衣配白長褲只有 1 套不能用，所以為 \\(4\\times3-1\\)。",
+      "distractorNotes": [
+        "把連續選擇誤用加法。",
+        null,
+        "把紅上衣與白長褲各自整類刪除。",
+        "誤刪所有搭配白長褲的穿搭。",
+        "忘記排除禁用配對。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp1-application",
+      "kpId": "comb:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "列",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "識別碼由兩個英文字母與一個數字組成。兩個字母都可從 A、B、C 中選取且可以重複，數字可選 1、2，但 BB2 不使用。共有多少個可用識別碼？",
+      "options": [
+        "11",
+        "12",
+        "16",
+        "17",
+        "18"
+      ],
+      "answerIndex": 3,
+      "answer": "17",
+      "firstBarrier": "能否處理可重複的連續選擇，再排除一個特例。",
+      "solution": "全部有 \\(3\\times3\\times2=18\\) 個，排除 BB2 後為 \\(18-1=17\\) 個。",
+      "distractorNotes": [
+        "漏掉一個字母位置。",
+        "錯把字母視為不能重複。",
+        "多排除一個情形。",
+        null,
+        "忘記排除 BB2。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp1-concept",
+      "kpId": "comb:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列關於加法原理與乘法原理的敘述，哪一項正確？",
+      "options": [
+        "不同交通方式擇一時相乘；連續完成兩階段時相加。",
+        "不同交通方式擇一時相加；連續完成兩階段時相乘。",
+        "只要題目出現「且」就一定相加。",
+        "只要題目出現「或」就一定相乘。",
+        "加法原理與乘法原理可以任意交換。"
+      ],
+      "answerIndex": 1,
+      "answer": "不同交通方式擇一時相加；連續完成兩階段時相乘。",
+      "firstBarrier": "能否以互斥分類與連續階段理解兩個原理，而非只看關鍵字。",
+      "solution": "互斥方案擇一時把各類數量相加；一個結果要依序完成多個階段時，把每階段選擇數相乘。",
+      "distractorNotes": [
+        "把兩個原理完全顛倒。",
+        null,
+        "忽略語意，只依單一關鍵字。",
+        "忽略語意，只依單一關鍵字。",
+        "未理解兩原理的使用條件。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp1-recognition",
+      "kpId": "comb:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從集合 \\(\\{1,2,3\\}\\) 選一個數 \\(x\\)，從集合 \\(\\{1,2,3,4\\}\\) 選一個數 \\(y\\)。若 \\(x+y\\) 必須是偶數，共有多少組 \\((x,y)\\)？",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "12"
+      ],
+      "answerIndex": 2,
+      "answer": "6",
+      "firstBarrier": "能否依奇偶性分成互斥情形後使用乘法與加法原理。",
+      "solution": "奇加奇或偶加偶才是偶數。奇奇有 \\(2\\times2=4\\) 組，偶偶有 \\(1\\times2=2\\) 組，共 \\(4+2=6\\) 組。",
+      "distractorNotes": [
+        "只數到奇奇配對。",
+        "遺漏一個偶偶配對。",
+        null,
+        "重複計入邊界情形。",
+        "未使用偶數限制。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp1-application",
+      "kpId": "comb:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "列",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "校外教學可選 3 條車行路線與 4 個出發時段。若路線甲不能選最早時段，路線丙不能選最晚時段，共有多少種可行安排？",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "12"
+      ],
+      "answerIndex": 3,
+      "answer": "10",
+      "firstBarrier": "能否從全部安排中排除兩個互不重疊的禁用配對。",
+      "solution": "全部有 \\(3\\times4=12\\) 種，兩個禁用配對不同，因此共有 \\(12-2=10\\) 種。",
+      "distractorNotes": [
+        "把兩類選擇相加。",
+        "錯把兩條路線全部刪除。",
+        "多排除一個安排。",
+        null,
+        "沒有排除禁用安排。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp2-concept",
+      "kpId": "comb:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將 5 面互不相同的旗子排成一列，共有多少種排法？",
+      "options": [
+        "5",
+        "10",
+        "25",
+        "60",
+        "120"
+      ],
+      "answerIndex": 4,
+      "answer": "120",
+      "firstBarrier": "能否辨識 5 個相異物件的全排列。",
+      "solution": "第一個位置有 5 種選擇，接著依序有 4、3、2、1 種，所以共有 \\(5!=120\\) 種。",
+      "distractorNotes": [
+        "只看物件個數。",
+        "只選兩面旗子。",
+        "把每個位置誤當有固定 5 種。",
+        "漏乘最後兩個位置。",
+        null
+      ]
+    },
+    {
+      "id": "comb-p0-kp2-recognition",
+      "kpId": "comb:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲、乙、丙、丁、戊五人排成一列，若甲、乙必須相鄰，共有多少種排法？",
+      "options": [
+        "24",
+        "36",
+        "48",
+        "60",
+        "120"
+      ],
+      "answerIndex": 2,
+      "answer": "48",
+      "firstBarrier": "能否把甲、乙視為一個區塊，並保留區塊內兩種次序。",
+      "solution": "把甲乙視為一個區塊後共有 4 個單位，區塊內有 2 種次序，因此為 \\(2\\times4!=48\\) 種。",
+      "distractorNotes": [
+        "漏算區塊內次序。",
+        "區塊法的單位數判斷錯誤。",
+        null,
+        "錯把相鄰限制當成除以 2。",
+        "完全忽略相鄰限制。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp2-application",
+      "kpId": "comb:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將數學甲、數學乙、國文、英文、物理、化學六本不同的書排成一列。若兩本數學書不得相鄰，且國文必須排在英文左邊，共有多少種排法？",
+      "options": [
+        "120",
+        "240",
+        "360",
+        "480",
+        "720"
+      ],
+      "answerIndex": 1,
+      "answer": "240",
+      "firstBarrier": "能否先用補集處理不相鄰，再用對稱性處理國文與英文的先後。",
+      "solution": "不相鄰共有 \\(6!-2\\times5!=480\\) 種；其中恰有一半符合國文在英文左邊，所以為 \\(480\\div2=240\\) 種。",
+      "distractorNotes": [
+        "重複除以 2，或漏算數學書區塊內次序。",
+        null,
+        "只處理部分限制。",
+        "只處理不相鄰限制。",
+        "忽略全部限制。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp2-concept",
+      "kpId": "comb:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "選",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "4 位男生與 3 位女生排成一列，若任兩位女生都不得相鄰，共有多少種排法？",
+      "options": [
+        "144",
+        "480",
+        "720",
+        "1440",
+        "2880"
+      ],
+      "answerIndex": 3,
+      "answer": "1440",
+      "firstBarrier": "能否先排男生形成空隙，再選空隙安排女生。",
+      "solution": "先排 4 位男生有 \\(4!\\) 種，在 5 個空隙中選 3 個並排列女生，因此共有 \\(4!\\binom{5}{3}3!=1440\\) 種。",
+      "distractorNotes": [
+        "漏算女生的排列。",
+        "空隙數或選法判斷錯誤。",
+        "只排 7 人的一部分。",
+        null,
+        "重複計數兩次。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp2-recognition",
+      "kpId": "comb:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲、乙、丙、丁、戊、己六人排成一列。甲固定在第一位，且乙、丙必須相鄰，共有多少種排法？",
+      "options": [
+        "24",
+        "36",
+        "48",
+        "60",
+        "120"
+      ],
+      "answerIndex": 2,
+      "answer": "48",
+      "firstBarrier": "能否在固定一個位置後，對剩餘物件使用區塊法。",
+      "solution": "甲固定後，把乙丙視為一個區塊，連同丁、戊、己共有 4 個單位；區塊內有 2 種次序，所以為 \\(2\\times4!=48\\) 種。",
+      "distractorNotes": [
+        "漏算區塊內次序。",
+        "單位數判斷錯誤。",
+        null,
+        "把固定甲誤當成除以 2。",
+        "忽略甲固定或乙丙相鄰的一項限制。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp2-application",
+      "kpId": "comb:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲、乙、丙、丁、戊、己、庚七人排成一列。丙固定在第一位，且甲、乙不得相鄰，共有多少種排法？",
+      "options": [
+        "240",
+        "360",
+        "480",
+        "600",
+        "720"
+      ],
+      "answerIndex": 2,
+      "answer": "480",
+      "firstBarrier": "能否先固定位置，再用補集排除相鄰情形。",
+      "solution": "丙固定後，其餘六人共有 \\(6!\\) 種；甲乙相鄰有 \\(2\\times5!\\) 種，因此為 \\(6!-2\\times5!=480\\) 種。",
+      "distractorNotes": [
+        "只數甲乙相鄰。",
+        "補集計算漏掉區塊內次序。",
+        null,
+        "錯把不得相鄰視為固定比例。",
+        "只固定丙，未處理不相鄰。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp2-concept",
+      "kpId": "comb:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將紅、藍、黃、綠四面不同的旗子排成一列，若紅旗必須在藍旗左邊，共有多少種排法？",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "16",
+        "24"
+      ],
+      "answerIndex": 2,
+      "answer": "12",
+      "firstBarrier": "能否用交換紅、藍位置的對稱性判斷恰占全部的一半。",
+      "solution": "四面旗子共有 \\(4!=24\\) 種；交換紅、藍會成對出現，恰有一半符合紅在藍左邊，所以有 \\(24\\div2=12\\) 種。",
+      "distractorNotes": [
+        "多除一次 2。",
+        "錯把條件當成固定位置。",
+        null,
+        "誤用每面旗子有 2 種狀態。",
+        "忽略先後條件。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp2-recognition",
+      "kpId": "comb:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "排",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一排有 6 個座位，安排甲、乙、丙三人入座，任兩人不得相鄰，共有多少種坐法？",
+      "options": [
+        "4",
+        "12",
+        "18",
+        "24",
+        "48"
+      ],
+      "answerIndex": 3,
+      "answer": "24",
+      "firstBarrier": "能否先選出三個互不相鄰的座位，再排列三人。",
+      "solution": "6 個位置中選 3 個互不相鄰的位置有 \\(\\binom{4}{3}=4\\) 種，再排列三人有 \\(3!\\) 種，共 \\(4\\times3!=24\\) 種。",
+      "distractorNotes": [
+        "只數座位組合。",
+        "漏乘部分人員次序。",
+        "互不相鄰座位組合數判斷錯誤。",
+        null,
+        "把座位組合重複計數。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp2-application",
+      "kpId": "comb:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "排",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將數字 1、2、3、4、5、6、7 排成一列。若 1 與 2 中間恰有一個數字，共有多少種排法？",
+      "options": [
+        "240",
+        "480",
+        "720",
+        "1200",
+        "1440"
+      ],
+      "answerIndex": 3,
+      "answer": "1200",
+      "firstBarrier": "能否數出相距兩格的位置對，再處理 1、2 的次序與其餘數字排列。",
+      "solution": "相距兩格的位置對有 5 組；1、2 可交換有 2 種，其餘 5 個數字有 \\(5!\\) 種，因此共有 \\(5\\times2\\times5!=1200\\) 種。",
+      "distractorNotes": [
+        "漏算 1、2 的交換。",
+        "少算可放置的位置對。",
+        "位置對或其餘排列漏算。",
+        null,
+        "把位置對多算一組。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp3-concept",
+      "kpId": "comb:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從 8 位學生中選出 3 位擔任班級代表，不區分職務，共有多少種選法？",
+      "options": [
+        "24",
+        "56",
+        "112",
+        "336",
+        "512"
+      ],
+      "answerIndex": 1,
+      "answer": "56",
+      "firstBarrier": "能否辨識只看選到哪些人，順序不重要。",
+      "solution": "不區分職務，所以使用組合：\\(\\binom{8}{3}=56\\)。",
+      "distractorNotes": [
+        "把人數直接相乘。",
+        null,
+        "把每組重複計數兩次。",
+        "把三人的排列也計入。",
+        "誤用二選一模型。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp3-recognition",
+      "kpId": "comb:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "冰淇淋有 4 種口味，選 3 球；同一口味可以重複，且不計球的先後。共有多少種選法？",
+      "options": [
+        "12",
+        "16",
+        "20",
+        "24",
+        "64"
+      ],
+      "answerIndex": 2,
+      "answer": "20",
+      "firstBarrier": "能否辨識可重複且不計順序，使用重複組合。",
+      "solution": "重複組合數為 \\(\\binom{4+3-1}{3}=\\binom{6}{3}=20\\)。",
+      "distractorNotes": [
+        "把口味數與球數相乘。",
+        "只考慮每球是否同口味。",
+        null,
+        "誤把三球排列計入。",
+        "把每球獨立選口味且保留順序。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp3-application",
+      "kpId": "comb:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從 8 位學生中選出 3 位組成紅隊，再從剩下的學生中選出 3 位組成藍隊，其餘 2 位不分隊。紅隊與藍隊視為不同隊伍，共有多少種分法？",
+      "options": [
+        "56",
+        "280",
+        "560",
+        "1120",
+        "3360"
+      ],
+      "answerIndex": 2,
+      "answer": "560",
+      "firstBarrier": "能否辨識隊內順序不重要，但紅隊與藍隊有名稱，不能再除以 2。",
+      "solution": "先選紅隊，再選藍隊：\\(\\binom{8}{3}\\binom{5}{3}=56\\times10=560\\)。",
+      "distractorNotes": [
+        "只選出其中一隊。",
+        "把紅、藍兩隊誤當成沒有名稱。",
+        null,
+        "把同一分隊結果重複計數。",
+        "把隊內排列也計入。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp3-concept",
+      "kpId": "comb:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將 6 位學生分成兩組，每組 3 人，兩組沒有名稱。共有多少種分法？",
+      "options": [
+        "5",
+        "10",
+        "20",
+        "40",
+        "120"
+      ],
+      "answerIndex": 1,
+      "answer": "10",
+      "firstBarrier": "能否辨識兩組大小相同且沒有名稱，交換兩組不產生新分法。",
+      "solution": "先選一組有 \\(\\binom{6}{3}=20\\) 種，但交換兩組會重複一次，所以共有 \\(20\\div2=10\\) 種。",
+      "distractorNotes": [
+        "多除一次 2。",
+        null,
+        "沒有除去兩組交換的重複。",
+        "把每組都重複計數。",
+        "把隊內排列計入。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp3-recognition",
+      "kpId": "comb:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從 5 本不同的數學書中選 2 本，並從 7 本不同的科普書中選 3 本，共有多少種選法？",
+      "options": [
+        "70",
+        "210",
+        "350",
+        "420",
+        "1260"
+      ],
+      "answerIndex": 2,
+      "answer": "350",
+      "firstBarrier": "能否分別在兩類中使用組合，再以乘法原理合併。",
+      "solution": "兩類選書同時完成，因此共有 \\(\\binom{5}{2}\\binom{7}{3}=10\\times35=350\\) 種。",
+      "distractorNotes": [
+        "只選其中一類。",
+        "漏乘一類的選法。",
+        null,
+        "把兩類數量直接相加或錯選本數。",
+        "把選書順序計入。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp3-application",
+      "kpId": "comb:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "排",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從 10 位學生中選 1 位隊長，再選 3 位隊員；同一人不能兼任。共有多少種選法？",
+      "options": [
+        "210",
+        "720",
+        "840",
+        "1260",
+        "5040"
+      ],
+      "answerIndex": 2,
+      "answer": "840",
+      "firstBarrier": "能否辨識隊長有職務差異，隊員之間沒有次序。",
+      "solution": "先選隊長有 10 種，再從剩下 9 人選 3 位隊員，所以共有 \\(10\\binom{9}{3}=840\\) 種。",
+      "distractorNotes": [
+        "忽略隊長職務。",
+        "把剩餘人數或隊員選法算錯。",
+        null,
+        "重複計入隊長。",
+        "把三位隊員排列計入。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp3-concept",
+      "kpId": "comb:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "非負整數 \\(x,y,z\\) 滿足 \\(x+y+z=5\\)。共有多少組解？",
+      "options": [
+        "15",
+        "18",
+        "21",
+        "25",
+        "35"
+      ],
+      "answerIndex": 2,
+      "answer": "21",
+      "firstBarrier": "能否把非負整數解轉成 5 個相同物與 2 個隔板的重複組合。",
+      "solution": "使用隔板法，在 7 個位置選 2 個隔板，所以有 \\(\\binom{7}{2}=21\\) 組。",
+      "distractorNotes": [
+        "只計正整數的一部分。",
+        "隔板位置少算。",
+        null,
+        "把三個變數各自獨立選值。",
+        "誤用 \\(\\binom{7}{3}\\)。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp3-recognition",
+      "kpId": "comb:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將 8 位學生分成一組 3 人與一組 5 人，兩組不另取名稱。共有多少種分法？",
+      "options": [
+        "28",
+        "56",
+        "112",
+        "280",
+        "560"
+      ],
+      "answerIndex": 1,
+      "answer": "56",
+      "firstBarrier": "能否辨識兩組大小不同，選出 3 人後另一組已確定，不必除以 2。",
+      "solution": "選出 3 人組即可決定 5 人組，因此共有 \\(\\binom{8}{3}=56\\) 種。",
+      "distractorNotes": [
+        "不必要地除以 2。",
+        null,
+        "把同一結果重複計數兩次。",
+        "誤把兩組都獨立選取。",
+        "把兩組視為有名稱並重複選取。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp3-application",
+      "kpId": "comb:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "選",
+      "secondaryRepresentation": "分",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "由 6 位男生與 5 位女生中選出 5 人，且恰有 3 位女生，共有多少種選法？",
+      "options": [
+        "60",
+        "100",
+        "120",
+        "150",
+        "300"
+      ],
+      "answerIndex": 3,
+      "answer": "150",
+      "firstBarrier": "能否把性別人數限制拆成同時完成的兩個組合。",
+      "solution": "選 3 位女生與 2 位男生，因此共有 \\(\\binom{5}{3}\\binom{6}{2}=10\\times15=150\\) 種。",
+      "distractorNotes": [
+        "只選女生或男生其中一類。",
+        "錯把兩類選法相加。",
+        "其中一類的組合數算錯。",
+        null,
+        "重複計數兩次。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp4-concept",
+      "kpId": "comb:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "關於「選法數」與「不同結果數」，下列哪一項正確？",
+      "options": [
+        "每一種選法一定產生不同結果。",
+        "不同選法若得到同一結果，計算結果種類時必須合併。",
+        "只要使用乘法原理，就不會重複計數。",
+        "結果種類數一定大於選法數。",
+        "選法數與結果種類數永遠相等。"
+      ],
+      "answerIndex": 1,
+      "answer": "不同選法若得到同一結果，計算結果種類時必須合併。",
+      "firstBarrier": "能否先確認題目在數選法還是數不同結果。",
+      "solution": "若多種選法得到相同的最終結果，計算結果種類時只能算一次。",
+      "distractorNotes": [
+        "忽略結果等價。",
+        null,
+        "乘法原理本身不能保證結果互異。",
+        "結果種類數不可能超過選法數。",
+        "混淆選法與結果。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp4-recognition",
+      "kpId": "comb:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲盒中有標示 1、2、3、4 的卡片各一張，乙盒中有標示 2、4、6 的卡片各一張。從兩盒各取一張，以兩張卡片的數字和作為得分。可能出現多少種不同得分？",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "12"
+      ],
+      "answerIndex": 1,
+      "answer": "8",
+      "firstBarrier": "能否區分 12 種取法與不同得分的種類數。",
+      "solution": "可能得分為 3 到 10，共 \\(10-3+1=8\\) 種。",
+      "distractorNotes": [
+        "列舉時遺漏得分。",
+        null,
+        "只消去部分重複得分。",
+        "把最大得分當種類數。",
+        "把 12 種取法直接當結果數。"
+      ]
+    },
+    {
+      "id": "comb-p0-kp4-application",
+      "kpId": "comb:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "從數字 1、2、3、4、5 中任選兩個相異數字，以兩數和作為得分。可能出現多少種不同得分？",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "10"
+      ],
+      "answerIndex": 2,
+      "answer": "7",
+      "firstBarrier": "能否把多個選法得到的相同和合併。",
+      "solution": "最小和為 3，最大和為 9，而且 3 到 9 都能得到，所以共有 \\(9-3+1=7\\) 種。",
+      "distractorNotes": [
+        "只看其中一個數字的可能值。",
+        "遺漏一個中間得分。",
+        null,
+        "端點個數計算錯誤。",
+        "把 \\(\\binom{5}{2}=10\\) 種選法當成不同得分。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp4-concept",
+      "kpId": "comb:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某班會游泳的有 12 人，會騎自行車的有 9 人，兩者都會的有 3 人。至少會其中一項的有多少人？",
+      "options": [
+        "15",
+        "18",
+        "21",
+        "24",
+        "108"
+      ],
+      "answerIndex": 1,
+      "answer": "18",
+      "firstBarrier": "能否辨識兩類有重疊，必須扣除交集一次。",
+      "solution": "至少會一項的人數為 \\(12+9-3=18\\)。",
+      "distractorNotes": [
+        "重複扣除交集。",
+        null,
+        "沒有扣除交集。",
+        "把交集再加一次。",
+        "把兩類人數相乘。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp4-recognition",
+      "kpId": "comb:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲轉盤可能出現 1、2、3，乙轉盤可能出現 1、3、5。各轉一次，以兩數乘積作為結果。可能出現多少種不同結果？",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "12"
+      ],
+      "answerIndex": 2,
+      "answer": "8",
+      "firstBarrier": "能否列出乘積並合併重複的 3。",
+      "solution": "所有不同乘積為 \\(\\{1,2,3,5,6,9,10,15\\}\\)，共 8 種。",
+      "distractorNotes": [
+        "遺漏兩個結果。",
+        "遺漏一個結果。",
+        null,
+        "把 9 種配對當成不同結果。",
+        "加入不存在的結果。"
+      ]
+    },
+    {
+      "id": "comb-p1-kp4-application",
+      "kpId": "comb:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在 1 到 30 的正整數中，能被 2 或 3 整除的共有多少個？",
+      "options": [
+        "10",
+        "15",
+        "18",
+        "20",
+        "25"
+      ],
+      "answerIndex": 3,
+      "answer": "20",
+      "firstBarrier": "能否使用容斥，避免把 6 的倍數重複計數。",
+      "solution": "2 的倍數有 15 個，3 的倍數有 10 個，6 的倍數有 5 個，因此共有 \\(15+10-5=20\\) 個。",
+      "distractorNotes": [
+        "只數 3 的倍數。",
+        "只數 2 的倍數。",
+        "扣除交集過多。",
+        null,
+        "沒有扣除重複的 6 的倍數。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp4-concept",
+      "kpId": "comb:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將複雜情況分類計數時，分類最重要的條件是什麼？",
+      "options": [
+        "各類可以重疊，且不必包含全部情況。",
+        "各類互斥，但可以遺漏少數情況。",
+        "各類必須互斥且合起來涵蓋全部情況。",
+        "分類越多越好，不必檢查重複。",
+        "只要每類數量相同即可。"
+      ],
+      "answerIndex": 2,
+      "answer": "各類必須互斥且合起來涵蓋全部情況。",
+      "firstBarrier": "能否理解分類計數必須同時避免重複與遺漏。",
+      "solution": "各類互斥可避免重複，合起來涵蓋全部情況可避免遺漏。",
+      "distractorNotes": [
+        "同時造成重複與遺漏。",
+        "雖避免重複但可能遺漏。",
+        null,
+        "分類數量多不代表正確。",
+        "各類大小不必相同。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp4-recognition",
+      "kpId": "comb:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一枚硬幣連續擲 3 次，只記錄出現正面的次數。可能有多少種不同記錄結果？",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "8",
+        "9"
+      ],
+      "answerIndex": 1,
+      "answer": "4",
+      "firstBarrier": "能否區分 8 種正反序列與 4 種正面次數結果。",
+      "solution": "正面次數可能是 0、1、2、3，共 4 種。",
+      "distractorNotes": [
+        "漏掉全反面或全正面。",
+        null,
+        "混入部分序列數。",
+        "把 \\(2^3=8\\) 種序列當成記錄結果。",
+        "加入不可能的次數。"
+      ]
+    },
+    {
+      "id": "comb-p2-kp4-application",
+      "kpId": "comb:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "分",
+      "secondaryRepresentation": "列",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "正整數 \\(x,y\\) 滿足 \\(x+y=8\\)。以 \\(xy\\) 作為結果，可能出現多少種不同結果？",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answerIndex": 1,
+      "answer": "4",
+      "firstBarrier": "能否合併交換 \\(x,y\\) 所得到的相同乘積。",
+      "solution": "依序得到乘積 7、12、15、16、15、12、7，所以不同結果為 \\(\\{7,12,15,16\\}\\)，共 4 種。",
+      "distractorNotes": [
+        "遺漏中間乘積。",
+        null,
+        "只合併部分對稱結果。",
+        "把對稱配對合併錯誤。",
+        "把 7 組正整數解直接當結果數。"
+      ]
+    }
+  ]
+}
