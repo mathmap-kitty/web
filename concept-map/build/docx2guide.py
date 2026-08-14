@@ -1129,7 +1129,7 @@ def build(docx_path):
           + (f"（缺 {miss}）" if miss else "") + f"；補圖插入 {vfigs} 處")
 
     data = {"title": "學測數學A 複習講義",
-            "subtitle": "13 章脈絡複習 · 條列重點 × 跨章連結",
+            "subtitle": "11 章脈絡複習 · 條列重點 × 跨章連結",
             "source": os.path.basename(docx_path),
             "howto": howto,
             "chapters": chapters}

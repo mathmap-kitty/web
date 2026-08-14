@@ -8,20 +8,20 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
-<title>第七章　數據分析｜學測數學A 複習講義</title>
-<meta name="description" content="學測數A「數據分析」脈絡複習：條列重點填空自測、易錯提醒、判斷流程（看到 X 用 Y）、跨章鏈結與歷屆題號。">
+<title>第十一章　矩陣｜學測數學A 複習講義</title>
+<meta name="description" content="學測數A「矩陣」脈絡複習：條列重點填空自測、易錯提醒、判斷流程（看到 X 用 Y）、跨章鏈結與歷屆題號。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="115 學測數學重點整理">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="第七章　數據分析｜學測數學A 複習講義">
-<meta property="og:description" content="學測數A「數據分析」脈絡複習：條列重點填空自測、易錯提醒、判斷流程（看到 X 用 Y）、跨章鏈結與歷屆題號。">
-<meta property="og:url" content="https://mathmap-kitty.github.io/web/guide/%E7%AC%AC07%E7%AB%A0_%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90.html">
+<meta property="og:title" content="第十一章　矩陣｜學測數學A 複習講義">
+<meta property="og:description" content="學測數A「矩陣」脈絡複習：條列重點填空自測、易錯提醒、判斷流程（看到 X 用 Y）、跨章鏈結與歷屆題號。">
+<meta property="og:url" content="https://mathmap-kitty.github.io/web/guide/%E7%AC%AC11%E7%AB%A0_%E7%9F%A9%E9%99%A3.html">
 <meta property="og:image" content="https://mathmap-kitty.github.io/web/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="第七章　數據分析｜學測數學A 複習講義">
-<meta name="twitter:description" content="學測數A「數據分析」脈絡複習：條列重點填空自測、易錯提醒、判斷流程（看到 X 用 Y）、跨章鏈結與歷屆題號。">
+<meta name="twitter:title" content="第十一章　矩陣｜學測數學A 複習講義">
+<meta name="twitter:description" content="學測數A「矩陣」脈絡複習：條列重點填空自測、易錯提醒、判斷流程（看到 X 用 Y）、跨章鏈結與歷屆題號。">
 <meta name="twitter:image" content="https://mathmap-kitty.github.io/web/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -300,10 +300,108 @@
   /* 考頻徽章 / 學測難題徽章 */
   .kp-freq{display:inline-block; margin-left:9px; font-size:12.5px; color:#c98a00; font-weight:800; vertical-align:2px; letter-spacing:1px}
   .hard-badge{display:inline-block; background:#fbe4e4; color:#b5384e; border-radius:6px; padding:0 7px; font-size:12px; font-weight:700; margin-left:2px}
+  /* ── 方案 B：入口三格 ＋ 入口診斷（先把題目分抽屜，再挑公式） ── */
+  .axgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin:10px 0 2px}
+  .axcell{background:#fbfaf8; border:1px solid var(--line); border-top:3px solid var(--btn);
+    border-radius:10px; padding:11px 13px}
+  .ax-k{display:flex; align-items:center; gap:7px; font-size:17px; font-weight:800; color:var(--btn)}
+  .ax-k i{font-style:normal; font-size:15px; width:24px; height:24px; line-height:24px; text-align:center;
+    background:#e9f5f4; border-radius:7px}
+  .ax-d{display:block; margin-top:5px; font-size:14px; color:#4a3a34; font-weight:600}
+  .ax-h{display:block; margin-top:4px; font-size:13px; color:#6f7f7e; line-height:1.7}
+  /* 核心概念標題旁的入口組合（式 ▸ 根＝從式切入、接著處理根，兩格是一組不是主次） */
+  .ax-tags{display:inline-flex; align-items:center; gap:2px; margin-left:8px; vertical-align:2px; cursor:help}
+  .ax-tag{display:inline-block; padding:0 8px; border-radius:20px; font-size:12px; font-weight:700;
+    background:#eef5f5; color:#4a7b7f; border:1px solid #cfe3e3; white-space:nowrap}
+  .ax-tag.main{background:var(--btn); color:#fff; border-color:var(--btn)}
+  .ax-arrow{color:#8fb0b2; font-size:11px; font-weight:800; padding:0 1px}
+  /* 入口診斷卡 */
+  .entrydiag .ed-prog{font-size:14px; font-weight:700; color:var(--maroon-d); margin:10px 0 2px}
+  .entrydiag .ed-prog b{font-size:16px}
+  .ed-hint{font-weight:500; color:#9a857c; font-size:13px; margin-left:8px}
+  .edcard{border:1px solid var(--line); border-left:4px solid #cfd6dd; border-radius:0 10px 10px 0;
+    padding:11px 14px; margin:10px 0; background:#fff; transition:.15s}
+  .edcard.is-ok{border-left-color:#1f7a45; background:#f6fbf8}
+  .edcard.is-no{border-left-color:#c0663a; background:#fdf8f5}
+  .ed-q{font-size:15px; color:var(--ink); line-height:1.9}
+  .ed-n{display:inline-block; width:21px; height:21px; line-height:21px; text-align:center; margin-right:8px;
+    background:#f0dde3; color:var(--maroon-d); border-radius:50%; font-size:12.5px; font-weight:700}
+  .ed-opts{display:flex; gap:7px; flex-wrap:wrap; margin:9px 0 0}
+  .ed-opt{display:inline-flex; align-items:center; min-height:40px; padding:5px 20px; cursor:pointer;
+    background:var(--btn-bg); color:var(--btn); border:1.5px solid var(--btn-bd); border-radius:20px;
+    font-size:15px; font-weight:800; font-family:inherit; transition:.15s}
+  .ed-opt:hover:not(:disabled){background:var(--btn); color:#fff}
+  .ed-opt:disabled{cursor:default; opacity:.55}
+  .ed-opt.right{background:#1f7a45; border-color:#1f7a45; color:#fff; opacity:1}
+  .ed-opt.wrong{background:#fdecea; border-color:#c0663a; color:#a8452a; opacity:1}
+  .ed-fb{display:none; margin-top:9px; padding-top:9px; border-top:1px dashed var(--line)}
+  .edcard.done .ed-fb{display:block}
+  .ed-ans{color:var(--btn); font-size:14.5px}
+  .ed-why{display:block; margin-top:3px; font-size:14px; color:#5a4a44; line-height:1.85}
+  .ed-go{display:inline-block; margin-top:6px; font-size:13.5px; font-weight:700; color:var(--maroon);
+    text-decoration:none; border-bottom:1.5px solid #e3c6d0}
+  .ed-go:hover{border-bottom-color:var(--maroon)}
+  @media(max-width:560px){
+    .ed-opt{flex:1 1 auto; justify-content:center; padding:5px 12px}
+    .ax-tags{display:flex; margin:5px 0 0}
+  }
+  /* 路線選擇器：把 58 個核心概念縮成看得完的份量（只影響 Part 1 的核心概念卡） */
+  .routebar{display:flex; align-items:center; flex-wrap:wrap; gap:8px 10px;
+    background:#fbf7f4; border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:14px 0 4px}
+  .rb-lbl{font-weight:800; color:var(--maroon-d); font-size:14.5px; white-space:nowrap}
+  .rb-btns{display:flex; gap:6px; flex-wrap:wrap}
+  .rb-btn{display:inline-flex; align-items:center; min-height:34px;
+    background:#fff; color:#6b5249; border:1.5px solid var(--line); border-radius:20px;
+    padding:5px 14px; font-size:13.5px; font-weight:700; font-family:inherit; cursor:pointer; transition:.15s}
+  .rb-btn:hover{border-color:var(--maroon); color:var(--maroon)}
+  .rb-btn.on{background:var(--maroon); border-color:var(--maroon); color:#fff}
+  .rb-note{flex:1 1 100%; font-size:13px; color:#7a6a63; line-height:1.6}
+  .rb-note:empty{display:none}
+  @media(max-width:560px){
+    .rb-lbl{flex:1 1 100%}
+    /* 手機是學生主力裝置：觸控目標留 40px，別讓按鈕小到按不準 */
+    .rb-btn{min-height:40px; padding:4px 12px; font-size:13px}
+  }
   /* 官方答對率徽章：中性灰藍，純資訊、不做紅綠判斷（強調色只留給判斷關鍵） */
   .kp-rate{display:inline-block; margin-left:9px; padding:0 8px; border:1px solid #d3d9e0; border-radius:20px;
            background:#f4f6f8; color:#5c6b7a; font-size:12px; font-weight:700; vertical-align:2px; white-space:nowrap; cursor:help}
   .kp-rate i{font-style:normal; font-weight:600; color:#8b98a5; margin-left:5px; font-size:11.5px}
+  /* 「這個核心概念的歷屆全題」：反向連回 exam/ 子站。預設收合，不打斷核心概念卡的閱讀動線。
+     用與答對率徽章同一套中性灰藍——這是導覽資訊，不是判斷關鍵（強調色留給後者）。
+     ⚠ 一律用 class 或子選擇器，不要寫 .exq-chip span：KaTeX 會在含數學的容器塞大量 span。 */
+  .exqs{margin:14px 0 4px; border:1px solid #d3d9e0; border-radius:10px; background:#f8fafb}
+  .exqs > summary{list-style:none; cursor:pointer; padding:9px 14px; min-height:40px; display:flex;
+    flex-wrap:wrap; align-items:center; gap:2px 10px; font-size:14px; color:#4a5b6b; border-radius:10px}
+  .exqs > summary::-webkit-details-marker{display:none}
+  .exqs > summary::before{content:"▸"; color:#8b98a5; font-size:12px; margin-right:2px; transition:transform .15s}
+  .exqs[open] > summary::before{transform:rotate(90deg)}
+  .exqs > summary:hover{background:#eef2f5}
+  .exqs > summary > b{color:#3d5063; font-weight:800}
+  .exq-cnt{background:#e6ebf0; color:#5c6b7a; border-radius:20px; padding:0 9px; font-size:12px; font-weight:700; white-space:nowrap}
+  .exq-hint{color:#93a1ae; font-size:12px}
+  .exq-body{padding:2px 14px 12px}
+  .exq-row{display:flex; align-items:flex-start; gap:9px; margin:8px 0}
+  .exq-sub{flex:0 0 auto; background:#e7eef6; color:#3a5a9a; border:1px solid #cfe0f2; border-radius:6px;
+    padding:2px 8px; font-size:12px; font-weight:800; white-space:nowrap; min-width:58px; text-align:center}
+  .exq-sub.b{background:#f2eef6; color:#6b4a86; border-color:#ddd0ea}
+  .exq-sub > i{font-style:normal; font-weight:600; opacity:.7; margin-left:4px}
+  .exq-chips{display:flex; flex-wrap:wrap; gap:6px}
+  /* gap:0——年份與題號要黏成同一個 token（「115-5」），中間有縫會讀成「115 -5」。
+     題型與答對率各自用 margin 拉開。 */
+  .exq-chip{display:inline-flex; align-items:baseline; gap:0; background:#fff; border:1px solid #d3d9e0;
+    border-radius:20px; padding:2px 10px; font-size:12.5px; font-weight:700; color:#3d5063;
+    text-decoration:none; white-space:nowrap; line-height:1.9}
+  .exq-chip:hover{background:#eef4fb; border-color:#9fc0e8; color:#22406e}
+  .exq-n{font-weight:800}
+  .exq-t{color:#8b98a5; font-weight:600; font-size:11.5px; margin-left:6px}
+  .exq-r{font-style:normal; color:#5c6b7a; font-weight:600; font-size:11.5px;
+    border-left:1px solid #e0e5ea; padding-left:5px; margin-left:5px}
+  @media(max-width:640px){
+    .exqs > summary{font-size:13.5px; padding:9px 11px}
+    .exq-hint{flex-basis:100%; margin-left:14px}
+    .exq-body{padding:2px 11px 11px}
+    .exq-row{flex-direction:column; gap:5px}
+  }
   /* 解題線索（看到關鍵字 → 想到這個核心概念）；藍色＝引導/線索 */
   .cues{background:#eef4fb; border:1px solid #cfe0f2; border-left:4px solid #3a5a9a; border-radius:0 8px 8px 0; padding:8px 14px; margin:9px 0 4px; font-size:14px; color:#3a4a63; line-height:1.95}
   .cue-lbl{display:inline-block; background:#3a5a9a; color:#fff; border-radius:6px; padding:1px 9px; font-size:12.5px; font-weight:800; margin-right:8px}
@@ -549,9 +647,138 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><span class="t-title">複習講義</span><span class="tb-caret">▾ 展開選單</span><a class="tb-home" href="../" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🏠 網站首頁</a><a class="tb-home" href="../concept-map/" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">📘 重點整理</a><select class="nav-select" onchange="if(this.value){location.href=this.value;}"><option value="">— 跳到章 —</option><option value="index.html">📖 講義目錄</option><option value="第01章_數與式.html">第一章　數與式</option><option value="第02章_多項式函數.html">第二章　多項式函數</option><option value="第03章_直線與圓.html">第三章　直線與圓</option><option value="第04章_數列與級數.html">第四章　數列與級數</option><option value="第05章_排列組合.html">第五章　排列組合</option><option value="第06章_機率與期望值.html">第六章　機率與期望值</option><option value="第07章_數據分析.html" selected>第七章　數據分析</option><option value="第08章_指數與對數函數.html">第八章　指數與對數函數</option><option value="第09章_三角.html">第九章　三角</option><option value="第10章_平面向量.html">第十章　平面向量</option><option value="第11章_空間向量.html">第十一章　空間向量</option><option value="第12章_空間中的平面與直線.html">第十二章　空間中的平面與直線</option><option value="第13章_矩陣.html">第十三章　矩陣</option><option value="附錄_解二元一次聯立方程組.html">附錄　解二元一次聯立方程組</option></select><select class="nav-select" onchange="if(this.value){location.hash=this.value;this.selectedIndex=0;}"><option value="">— 跳到節 —</option><option value="#s1">一、一維數據：集中與分散</option><option value="#s2">二、伸縮平移：資料被 y=ax+b 動過</option><option value="#s3">三、二維數據：相關係數</option><option value="#s4">四、迴歸直線（最適直線）</option><option value="#s5">🧭判斷流程：看到 X → 用 Y</option><option value="#s6">🔗跨章鏈結：遇到沒看過的題，從這裡接</option><option value="#s7">📝練習指引：歷屆題號（106–115）</option></select><button onclick="revealAll()">全部顯示答案</button><button onclick="hideAll()">全部隱藏</button></div>
+<div class="toolbar"><span class="t-title">複習講義</span><span class="tb-caret">▾ 展開選單</span><a class="tb-home" href="../" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🏠 網站首頁</a><a class="tb-home" href="../concept-map/" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">📘 重點整理</a><select class="nav-select" onchange="if(this.value){location.href=this.value;}"><option value="">— 跳到章 —</option><option value="index.html">📖 講義目錄</option><option value="第01章_數與式.html">第一章　數與式</option><option value="第02章_多項式函數.html">第二章　多項式函數</option><option value="第03章_直線與圓.html">第三章　直線與圓</option><option value="第04章_數列與級數.html">第四章　數列與級數</option><option value="第05章_排列組合與機率.html">第五章　排列組合與機率</option><option value="第06章_數據分析.html">第六章　數據分析</option><option value="第07章_指數與對數.html">第七章　指數與對數</option><option value="第08章_三角.html">第八章　三角</option><option value="第09章_平面向量.html">第九章　平面向量</option><option value="第10章_空間向量.html">第十章　空間向量</option><option value="第11章_矩陣.html" selected>第十一章　矩陣</option><option value="附錄_解二元一次聯立方程組.html">附錄　解二元一次聯立方程組</option></select><select class="nav-select" onchange="if(this.value){location.hash=this.value;this.selectedIndex=0;}"><option value="">— 跳到節 —</option><option value="#s1">一、矩陣的運算與乘冪</option><option value="#s2">二、反矩陣與行列式</option><option value="#s3">三、解線性方程組</option><option value="#s4">四、馬可夫鏈與轉移矩陣</option><option value="#s5">五、線性變換</option><option value="#s6">🧭判斷流程：看到 X → 用 Y</option><option value="#s7">🔗跨章鏈結：把整套講義的線收尾</option><option value="#s8">📝練習指引：歷屆題號（106–115）</option></select><button onclick="revealAll()">全部顯示答案</button><button onclick="hideAll()">全部隱藏</button></div>
 <div class="wrap">
-<div class="hero"><h1>第七章　數據分析</h1><p>學測數學A 複習講義　·　4 節</p></div><div class="legend">使用方式：內容中的 <span class="blank" style="cursor:default"><span class="q">？</span></span> 就是講義的填空——<b>點一下顯示答案</b>，再點一下收回；也可用上方 <b>「全部顯示答案」</b> 一次切換整章（＝教師版）。圖可點擊放大。</div><div class="g-lead"><span class="nlab">脈絡導讀</span><p>數據分析是把一堆數字濃縮成幾個量、再找變數間的關係（★★中頻）。</p><p>學習脈絡：一維數據（集中、分散）→ 標準差的伸縮平移 → 二維數據（相關係數）→ 迴歸直線。</p><p>一句心法貫穿全章：<b>資料被</b> \(y = ax + b\) <b>動過時，先想統計量怎麼變，不要從頭算；判斷兩變數關聯看</b> \(r\)<b>，但</b> \(r\) <b>不是因果</b>。</p></div><section class="card sec-card"><h2 class="sec-h" id="s1"><span class="num">一</span><span>一維數據：集中與分散</span></h2><h3 class="sub-h">核心概念</h3><ul class="glist"><li>算術平均：\(\mu =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a"> \(\frac{1}{n}({x}_{1} + {x}_{2} + \cdots + {x}_{n})\)</span></span>；</li><li>加權平均： \(w = \)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{{w}_{1}{x}_{1} + {w}_{2}{x}_{2} + \cdots + {w}_{n}{x}_{n}}{{w}_{1} + {w}_{2} + \cdots + {w}_{n}}\)</span></span>；</li><li>幾何平均（平均成長率）：\(G = \)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\sqrt[{\, n\, }]{{x}_{1}{x}_{2}\cdots {x}_{n}}\)</span></span></li></ul><p class="gp ind">成長率的幾何平均數：假設 \(n\) 年的成長率分別為 \(r_{1},r_{2},\cdots,r_{n}\)，則這 \(n\) 年的平均成長率為 \(r = \)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\sqrt[{n}]{(1 + {r}_{1})(1 + {r}_{2})(1 + {r}_{3})\cdots(1 + {r}_{n})} - 1\)</span></span></p><ul class="glist"><li>中位數（排序取中）～若 \(n\) 為偶數，則 \(Me = \frac{1}{2}\left( a_{\frac{n}{2}} + a_{\frac{n}{2} + 1} \right)\)</li><li><b>百分位數</b>：\(P_{k}\) 代表至少有 \(k\%\) 的數據小於或等於 \(P_{k}\)</li></ul><p class="gp ind">當 \(m = n \times \frac{k}{100}\) 為整數時，\(P_{k} = \frac{a_{m} + a_{m + 1}}{2}\)</p><p class="gp ind">\(當m = n \times \frac{k}{100}\) 不為整數，\(P_{k} = a_{\lbrack m\rbrack + 1}\)</p><p class="gp ind">眾數（最常出現者）：一組數據中出現次數最多的數值，眾數可能不唯一。</p><ul class="glist"><li>全距 \(=\) 最大 \(-\) 最小；</li><li>變異數：\(\sigma^{2} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{1}{n}\sum \left( {x}_{i} - \mu  \right)^{2}\)</span></span>；</li></ul><p class="gp ind">標準差：\(\sigma =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\sqrt{\frac{({x}_{1} - \mu {)}^{2} + ({x}_{2} - \mu {)}^{2} + \cdots + ({x}_{n} - \mu {)}^{2}}{n}} \)\(= \sqrt{\frac{{x}_{1}^{2} + {x}_{2}^{2} + \cdots + {x}_{n}^{2}}{n} - {\mu }^{2}}\)</span></span></p><p class="gp">平均怕極端值（會被拉走），中位數抗極端值。</p><p class="gp">標準差衡量「離平均的平均距離」，越大代表越分散；\(\sigma = 0 \Rightarrow\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( {x}_{1} = {x}_{2} = \cdots = {x}_{n} = \mu\)</span></span>。</p></section><section class="card sec-card"><h2 class="sec-h" id="s2"><span class="num">二</span><span>伸縮平移：資料被 \(\mathbf{y}\mathbf{=}\mathbf{ax}\mathbf{+}\mathbf{b}\) 動過</span></h2><h3 class="sub-h">核心概念（整批資料做 \(\mathbf{y}\mathbf{=}\mathbf{ax}\mathbf{+}\mathbf{b}\) 伸縮平移）</h3><div class="tw"><table class="gt"><thead><tr><th>伸縮平移</th><th>\[\mathbf{y} = \mathbf{ax} + \mathbf{b}\]</th></tr></thead><tbody><tr><td class="mid">\(\mu_{y}\)、中位數、眾數</td><td><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\({\mu }_{y} = \) \(a{\mu }_{x} + b\)</span></span></td></tr><tr><td class="mid">標準差\(\sigma_{y}\)、全距、四分位距</td><td>\(\displaystyle \sigma_{y} =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\displaystyle  |a|\, {\sigma }_{x}\)</span></span></td></tr></tbody></table></div><ul class="glist"><li>標準化\(z\)：\(X =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{x - \mu }{\sigma }\)</span></span> → 變換後平均為 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(0\)</span></span>、標準差為 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(1\)</span></span></li></ul><p class="gp">標準化就是「先平移（減 \(\mu\)）再縮放（除 \(\sigma\)）」，把任何資料拉到同一把尺上比較——它是伸縮平移的特例。記住：<b>平移不動分散度，只有伸縮會。</b></p></section><section class="card sec-card"><h2 class="sec-h" id="s3"><span class="num">三</span><span>二維數據：相關係數</span></h2><figure class="gfig" style="max-width:min(100%,300px)"><img src="img/image14.png" alt="相關係數 r：線性關聯的強弱與方向" loading="lazy"></figure><figure class="gfig" style="max-width:min(100%,180px)"><img src="img/image15.png" alt="" loading="lazy"></figure><p class="gp"><br>相關係數 r：線性關聯的強弱與方向</p><h3 class="sub-h">核心概念</h3><ul class="glist"><li>相關係數：\(r = \frac{x_{1}'y_{1}' + x_{2}'y_{2}' + \cdots + x_{n}'y_{n}'}{n}\) (已標準化) = \(\frac{S_{xy}}{\sqrt{S_{xx}}\,\sqrt{S_{yy}}}\) (未標準化)，範圍 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( - 1 \leq r \leq 1\)</span></span></li></ul><div class="dm">\[S_{xy} = (x_{1} - \mu_{x})(y_{1} - \mu_{y}) + \cdots + (x_{n} - \mu_{x})(y_{n} - \mu_{y})\]</div><p class="gp ind">\(S_{xx} = (x_{1} - \mu_{x})^{2} + \cdots + (x_{n} - \mu_{x})^{2}\) 、 \(S_{yy} = (y_{1} - \mu_{y})^{2} + \cdots + (y_{n} - \mu_{y})^{2}\)</p><ul class="glist"><li>性質：\(r\) 不因單位（伸縮平移）改變；且 \(r_{xy} =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( {r}_{yx}\)</span></span>（對稱）</li></ul><p class="gp ind">即 \(x' = ax + b\)、\(y' = cy + d\)</p><ul class="glist"><li>若 \(ac &gt; 0\)（\(a\)、\(c\) 同號），則 \(r_{x'y'} =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( {r}_{xy}\)</span></span>。</li><li>若 \(ac &lt; 0\)（\(a\)、\(c\) 異號），則 \(r_{x'y'} =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(  - {r}_{xy}\)</span></span>。</li></ul><ul class="glist"><li><b>標準化</b>後的相關係數：X=\(\frac{x - \mu_{x}}{\sigma_{x}}\) 、Y=\(\frac{y - \mu_{y}}{\sigma_{y}}\)，則\(r_{XY} =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( {r}_{xy}\)</span></span></li><li>\(r\) 接近 \(\pm 1\) → 強線性相關；接近 \(0\) → 幾乎無線性關聯</li></ul><div class="nbox n-trap"><span class="nlab">易錯</span><p>相關不等於因果；而且 \(r\) 只衡量「線性」關聯，非線性關係（如拋物線）的 \(r\) 可能接近 \(0\)。</p></div></section><section class="card sec-card"><h2 class="sec-h" id="s4"><span class="num">四</span><span>迴歸直線（最適直線）</span></h2><figure class="gfig" style="max-width:min(100%,300px)"><img src="img/image16.png" alt="散布圖與迴歸直線（必過資料中心）" loading="lazy"></figure><p class="gp">散布圖與迴歸直線（必過資料中心）</p><h3 class="sub-h">核心概念</h3><ul class="glist"><li>迴歸直線用最小平方法，使各點到線的「鉛直距離平方和」最小。</li></ul><p class="gp ind">使\({(y_{1} - (mx_{1} + k))}^{2} + {(y_{2} - (mx_{2} + k))}^{2} + \cdots + {(y_{n} - (mx_{n} + k))}^{2}\)產生最小值的直線。</p><ul class="glist"><li>迴歸直線</li></ul><div class="tw"><table class="gt"><thead><tr><th>&nbsp;</th><th>已標準化</th><th>未標準化</th></tr></thead><tbody><tr><td class="mid">必過點 (資料中心)</td><td class="mid"><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\[(0,0)\]</span></span></td><td class="mid"><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\[({\mu }_{x},{\mu }_{y})\]</span></span></td></tr><tr><td class="mid">斜率</td><td class="mid"><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a"><em>r</em></span></span></td><td><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(r \cdot \frac{{\sigma }_{y}}{{\sigma }_{x}}\) = \(\frac{{S}_{xy}}{{S}_{xx}}\)</span></span></td></tr><tr><td class="mid">迴歸直線</td><td class="mid"><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">Y\( = rX\)</span></span></td><td><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\[y - {\mu }_{y} = m(x - {\mu }_{x})\]</span></span></td></tr></tbody></table></div><p class="gp">迴歸線是「最能代表趨勢的直線」，一定通過 \(\left( \bar{x},\bar{y} \right)\) ，斜率<em>m</em>與相關係數<em>r</em>同號；<br>用它由 \(x\) 預測 \(y\)。</p></section><section class="card sec-card c-flow"><h2 class="sec-h" id="s5"><span class="num">🧭</span><span>判斷流程：看到 X → 用 Y</span></h2><div class="tw"><table class="gt"><thead><tr><th>看到…（題目特徵）</th><th>→ 就用…（工具 / 方法）</th></tr></thead><tbody><tr><td class="mid">整批資料加 \(b\)、乘 \(a\)</td><td>伸縮平移規則（平移不改 \(\sigma\)，伸縮 \(\times |a|\)），別重算</td></tr><tr><td class="mid">比較不同單位的資料</td><td class="mid">標準化 \(z = \frac{x - \mu}{\sigma}\)</td></tr><tr><td class="mid">判斷兩變數關聯強度</td><td>相關係數 \(r\) 的大小（非因果）</td></tr><tr><td class="mid">求最適預測線</td><td class="mid">迴歸直線，記得必過 \(\left( \bar{x},\bar{y} \right)\)</td></tr><tr><td class="mid">平均易受極端值、要抗極端</td><td class="mid">改用中位數</td></tr></tbody></table></div></section><section class="card sec-card c-link"><h2 class="sec-h" id="s6"><span class="num">🔗</span><span>跨章鏈結：遇到沒看過的題，從這裡接</span></h2><ul class="glist"><li><b>平均 ＝ 期望值的資料版</b>：資料平均 \(\mu = \sum x_{i} \cdot \left( \text{相對次數} \right)\) 與第 6 章期望值 \(E = \sum x_{i}P_{i}\) 是同一個「值 × 權重再相加」——把機率換成相對次數，就從期望值變成加權平均。兩種題本質同源（如 <a class="qlink" href="../exam/?q=113-13" target="_blank" rel="noopener" title="到歷屆試題互動練習看 113 學測數A 第 13 題（選填）· 另開分頁"><code>113</code><code>選</code><code>13</code><span class="qx">↗</span></a>、<code>108</code><code>多</code><code>11</code>）。</li><li><b>伸縮平移 ＝ 幾何變換的統計版</b>：整批資料做 \(y = ax + b\)，平移 \(b\) 不改分散度、伸縮 \(a\) 把尺度 \(\times |a|\)——這正是第 3 章圖形平移、第 13 章矩陣伸縮的同一套規則。標準化就是「先平移再縮放」的特例（如 <a class="qlink" href="../exam/?q=115-9" target="_blank" rel="noopener" title="到歷屆試題互動練習看 115 學測數A 第 9 題（多選）· 另開分頁"><code>115</code><code>多</code><code>9</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=114-12" target="_blank" rel="noopener" title="到歷屆試題互動練習看 114 學測數A 第 12 題（多選）· 另開分頁"><code>114</code><code>多</code><code>12</code><span class="qx">↗</span></a>）。</li><li><b>取對數讓曲線變直線</b>：資料若呈指數關係，先取 \(\log\) 再做迴歸（第 8 章），彎曲的趨勢就被拉直成線性，才能套迴歸直線（如 <a class="qlink" href="../exam/?q=112-3" target="_blank" rel="noopener" title="到歷屆試題互動練習看 112 學測數A 第 3 題（單選）· 另開分頁"><code>112</code><code>單</code><code>3</code><span class="qx">↗</span></a>）。</li><li><b>求和符號</b> \(\sum\) <b>與數列共用</b>：本章的 \(\sum\left( x_{i} - \mu \right)^{2}\) 和第 4 章級數的 \(\sum\) 是同一個運算，「拆 \(\sum\)、把常數抽出」的技巧兩章通用。</li></ul></section><section class="card sec-card c-drill"><h2 class="sec-h" id="s7"><span class="num">📝</span><span>練習指引：歷屆題號（106–115）</span></h2><ul class="glist"><li>一維數據與標準差的線性變換（★★★）：<a class="qlink" href="../exam/?q=111-3" target="_blank" rel="noopener" title="到歷屆試題互動練習看 111 學測數A 第 3 題（單選）· 另開分頁"><code>111</code><code>單</code><code>3</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=114-12" target="_blank" rel="noopener" title="到歷屆試題互動練習看 114 學測數A 第 12 題（多選）· 另開分頁"><code>114</code><code>多</code><code>12</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=115-9" target="_blank" rel="noopener" title="到歷屆試題互動練習看 115 學測數A 第 9 題（多選）· 另開分頁"><code>115</code><code>多</code><code>9</code><span class="qx">↗</span></a></li><li>相關係數（★★☆）：<code>106</code><code>單</code><code>5</code>、<a class="qlink" href="../exam/?q=113-9" target="_blank" rel="noopener" title="到歷屆試題互動練習看 113 學測數A 第 9 題（多選）· 另開分頁"><code>113</code><code>多</code><code>9</code><span class="qx">↗</span></a></li><li>迴歸直線・最適直線（★★★）：<code>108</code><code>單</code><code>6</code>、<a class="qlink" href="../exam/?q=112-3" target="_blank" rel="noopener" title="到歷屆試題互動練習看 112 學測數A 第 3 題（單選）· 另開分頁"><code>112</code><code>單</code><code>3</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=114-12" target="_blank" rel="noopener" title="到歷屆試題互動練習看 114 學測數A 第 12 題（多選）· 另開分頁"><code>114</code><code>多</code><code>12</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=115-9" target="_blank" rel="noopener" title="到歷屆試題互動練習看 115 學測數A 第 9 題（多選）· 另開分頁"><code>115</code><code>多</code><code>9</code><span class="qx">↗</span></a></li><li>加權平均、中位數與資料判讀（★★☆）：<code>107</code><code>多</code><code>8</code>、<code>108</code><code>多</code><code>11</code>、<code>109</code><code>多</code><code>12</code>、<a class="qlink" href="../exam/?q=113-13" target="_blank" rel="noopener" title="到歷屆試題互動練習看 113 學測數A 第 13 題（選填）· 另開分頁"><code>113</code><code>選</code><code>13</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=113-5" target="_blank" rel="noopener" title="到歷屆試題互動練習看 113 學測數A 第 5 題（單選）· 另開分頁"><code>113</code><code>單</code><code>5</code><span class="qx">↗</span></a></li></ul><div class="nbox n-mind"><span class="nlab">考場心法</span><p>數據記兩句：資料被 \(ax + b\) 動過，先想統計量怎麼變（平移不改分散、伸縮 \(\times |a|\)），別從頭算；判斷關聯看 \(r\)，但 \(r\) 不代表因果。</p></div></section><div class="chnav"><a href="第06章_機率與期望值.html"><small>← 上一章</small>第六章　機率與期望值</a><a href="index.html" style="flex:0 1 150px;text-align:center;border-left-color:#1f6f78;color:#17595f"><small>目錄</small>📖 全部章節</a><a class="next" href="第08章_指數與對數函數.html"><small>下一章 →</small>第八章　指數與對數函數</a></div>
+<div class="hero"><h1>第十一章　矩陣</h1><p>學測數學A 複習講義　·　5 節</p></div><div class="legend">使用方式：內容中的 <span class="blank" style="cursor:default"><span class="q">？</span></span> 就是講義的填空——<b>點一下顯示答案</b>，再點一下收回；也可用上方 <b>「全部顯示答案」</b> 一次切換整章（＝教師版）。圖可點擊放大。</div><div class="g-lead"><span class="nlab">脈絡導讀</span><p>矩陣把「一組數」打包成可運算的物件，也是好幾條線的總收尾（★★中頻）。</p><p>學習脈絡：矩陣運算與乘冪 → 反矩陣與行列式 → 線性方程組（高斯消去／克拉瑪）→ 線性變換（旋轉／鏡射、面積、可逆）。</p><p>一句心法貫穿全章：<b>矩陣乘法是「列 × 行」且不可交換；解聯立用反矩陣或克拉瑪；線性變換看「行列式」定面積伸縮、看「旋轉矩陣」定轉角</b>。</p></div><section class="card sec-card"><h2 class="sec-h" id="s1"><span class="num">一</span><span>矩陣的運算與乘冪</span></h2><h3 class="sub-h">核心概念</h3><ul class="glist"><li>橫的稱 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">列 </span></span>、直的稱 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">行</span></span> 、\(a_{ij}\)表示第 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a"><em> i </em></span></span> 行 第 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a"><em> j </em></span></span> 列</li><li>列數=行數(<em>m</em>=<em>n</em>)，稱<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a"> 方陣  </span></span>.</li><li>加、減、純量積：對應位置各算各的</li><ul class="glist"><li>\(A = \lbrack a_{ij}\rbrack_{m \times n}\)、\(B = \lbrack b_{ij}\rbrack_{m \times n}\)</li></ul></ul><p class="gp ind">\(A \pm B = \lbrack a_{ij} \pm b_{ij}\rbrack\)</p><p class="gp ind">\(kA = \lbrack k\, a_{ij}\rbrack\) (若 \(A\) 為 \(n\) 階方陣，則 \(det(kA) =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( {k}^{n}det(A)\)</span></span>)</p><ul class="glist"><li>矩陣乘法：「左列 × 右行」對應相乘再相加\(A_{m \times n}B_{n \times p} = C_{m \times p}\)；</li></ul><p class="gp ind">一般而言 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(AB \neq BA\)</span></span>（不可交換）</p><p class="gp ind">\(\begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix}\begin{bmatrix}
+p &amp; q \\
+r &amp; s
+\end{bmatrix} = \begin{bmatrix}
+ap + br &amp; aq + bs \\
+cp + dr &amp; cq + ds
+\end{bmatrix}\)</p><ul class="glist"><li>單位矩陣 \(I_{n}\)：\(AI_{n} = I_{n}A =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(A\)</span></span></li><li>矩陣的冪 \(A^{n}\)：連乘 \(n\) 次，與遞迴數列相關</li></ul><p class="gp">矩陣冪 \(A^{n}\) 可以表示遞迴數列——</p><p class="gp">第 4 章「遞迴 ↔ 矩陣冪」在這兒落地：像 \(c_{n + 2} = 2c_{n + 1} + c_{n}\) 的遞迴，寫成矩陣後求 \(A^{n}\) 就能算出通項。</p><div class="nbox n-trap"><span class="nlab">易錯</span><p>\((A + B)^{2} = A^{2} + AB + BA + B^{2}\) <span class="ublank"></span> \(A^{2} + 2AB + B^{2}\) ( 等號成立，則<em>AB</em>=<em>BA</em> )</p><p>\((A + I)^{2} = A^{2} + AI + IA + I^{2}\)= \(A^{2} + 2I + I^{2}\)<br>\(AB\)=\(\ AC\) <span class="ublank"></span> <em>B</em>=<em>C</em> ( 等號成立，則det(<em>A</em>)\(\neq\)0 )</p></div><div class="nbox n-trap"><span class="nlab">易錯</span><p>矩陣乘法不可交換，\(AB\) 與 \(BA\) 通常不同；而且要「前者的行數 ＝ 後者的列數」才能相乘。<br>\(AB\) = \(BA\) \(\Rightarrow\) 乘法公式皆成立</p></div></section><section class="card sec-card"><h2 class="sec-h" id="s2"><span class="num">二</span><span>反矩陣與行列式</span></h2><h3 class="sub-h">核心概念</h3><ul class="glist"><li>已知 \(A\)、\(B\) 同為 \(n\) 階方陣，若 \(AB = BA = I_{n}\)，則稱 \(B\) 為 \(A\) 的反方陣、\(A\) 為 \(B\) 的反方陣，記為 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(B = {A}^{ - 1}\) 或 \(A = {B}^{ - 1}\)</span></span>。</li><li>矩陣列運算</li></ul><p class="gp ind">\(\left\lbrack \ A\ |\ I\  \right\rbrack\overset{列運算}{\Rightarrow}\left\lbrack \ I\ |\ A^{- 1}\  \right\rbrack\ \)</p><ul class="glist"><li>行列式（\(2 \times 2\)）：\(\det\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(ad - bc\)</span></span></li><li>反矩陣存在條件：<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(ad - bc \neq 0\)</span></span> （行列式不為 \(0\) 才可逆）</li><li>\(2 \times 2\) 反矩陣：\(A^{- 1} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{1}{ad - bc}\)\(\begin{pmatrix}
+d &amp;  - b \\
+ - c &amp; a
+\end{pmatrix}\) </span></span></li><li>\({(AB)}^{- 1} =\) \(B^{- 1}\) \(A^{- 1}\).</li></ul><p class="gp">反矩陣公式的記法：主對角線對調、副對角線變號，再除以行列式。</p></section><section class="card sec-card"><h2 class="sec-h" id="s3"><span class="num">三</span><span>解線性方程組</span></h2><h3 class="sub-h">核心概念</h3><p class="gp ind">\(\left\{ \begin{matrix}
+a_{1}x + b_{1}y = c_{1} \\
+a_{2}x + b_{2}y = c_{2}
+\end{matrix} \right.\ \ \)</p><ul class="glist"><li>反矩陣法：方程組 \(AX = B\) → \(X =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\({A}^{ - 1}B\)</span></span>（\(A\) 可逆時）</li></ul><p class="gp ind">\(\begin{bmatrix}
+a_{1} &amp; b_{1} \\
+a_{2} &amp; b_{2}
+\end{bmatrix}\) \(\begin{bmatrix}
+x \\
+y
+\end{bmatrix} = \begin{bmatrix}
+c_{1} \\
+c_{2}
+\end{bmatrix}\) \(\Rightarrow \begin{bmatrix}
+x \\
+y
+\end{bmatrix} =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( \ \frac{1}{{a}_{1}{b}_{2} - {a}_{2}{b}_{1}}\)\(\begin{bmatrix}
+{b}_{2} &amp; { - b}_{1} \\
+{ - a}_{2} &amp; {a}_{1}
+\end{bmatrix}\begin{bmatrix}
+{c}_{1} \\
+{c}_{2}
+\end{bmatrix}\)</span></span></p><ul class="glist"><li>克拉瑪公式：用行列式的比值求各未知數</li></ul><p class="gp ind"><em>x</em> = \(\frac{\mathrm{\Delta}_{x}}{\mathrm{\Delta}}\) = \(\frac{\left| \begin{matrix}
+c_{1} &amp; b_{1} \\
+c_{2} &amp; b_{2}
+\end{matrix} \right|}{\left| \begin{matrix}
+a_{1} &amp; b_{1} \\
+a_{2} &amp; b_{2}
+\end{matrix} \right|}\) , <em>y</em> = \(\frac{\mathrm{\Delta}_{y}}{\mathrm{\Delta}}\) =\(\frac{\left| \begin{matrix}
+a_{1} &amp; c_{1} \\
+a_{2} &amp; c_{2}
+\end{matrix} \right|}{\left| \begin{matrix}
+a_{1} &amp; b_{1} \\
+a_{2} &amp; b_{2}
+\end{matrix} \right|}\)</p><ul class="glist"><li>高斯消去：把增廣矩陣化成階梯形</li></ul><p class="gp ind">\(\left\lbrack \begin{matrix}
+a_{1} &amp; b_{1} \\
+a_{2} &amp; b_{2}
+\end{matrix}\ \ \ \begin{matrix}
+c_{1} \\
+c_{2}
+\end{matrix} \right\rbrack\) \(\Rightarrow \left\lbrack \begin{matrix}
+a_{1} &amp; b_{1} \\
+0 &amp; B
+\end{matrix}\ \ \ \begin{matrix}
+c_{1} \\
+C
+\end{matrix} \right\rbrack\)</p><ul class="glist"><li>解的個數：行列式 \(\neq 0\) → <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">唯一解</span></span>；\(= 0\) → 無解或無限多解</li></ul><p class="gp">解三元一次聯立，可用反矩陣 \(X = A^{- 1}B\)、克拉瑪公式，或高斯消去。行列式是否為 \(0\)，決定有沒有唯一解。</p></section><section class="card sec-card"><h2 class="sec-h" id="s4"><span class="num">四</span><span>馬可夫鏈與轉移矩陣</span></h2><h3 class="sub-h">核心概念</h3><ul class="glist"><li>二階轉移矩陣：方陣 \(A\) 滿足下列二條件者稱為轉移矩陣。</li><ul class="glist"><li>(1) \(A\) 的每一個元都是<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">非負實數</span></span>。</li><li>(2) \(A\) 的每一行各元之和都等於<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a"> \(1\)</span></span>。</li><li>轉移矩陣性質：若 \(A\)、\(B\) 為 \(n\) 階轉移矩陣，則 (1) \(AB\)、\(BA\)、\(A^{2}\)、\(B^{2}\) 也是轉移矩陣。 \(\frac{1}{2}(A + B)\)、\(\frac{1}{2}(A^{2} + B^{2})\) 也是轉移矩陣；但 \(\frac{1}{2}(3A - B)\)、\(\frac{1}{2}(4A^{2} - 2B^{2})\) 不一定是（相減可能產生負元）。</li></ul><li><b>馬可夫鏈</b>：觀察某現象有狀態 \(S_{1}\)、\(S_{2}\)，</li></ul><p class="gp ind">將狀態轉移的機率寫成轉移矩陣 \(M = \begin{bmatrix}
+p_{11} &amp; p_{12} \\
+p_{21} &amp; p_{22}
+\end{bmatrix}\)；</p><p class="gp ind">令初始狀態機率矩陣為 \(P_{0} = \begin{bmatrix}
+x_{0} \\
+y_{0}
+\end{bmatrix}\)，則經 \(n\) 次轉移後的機率矩陣 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\({P}_{n} = M\, {P}_{n - 1}\)</span></span>。</p><p class="gp ind">若機率矩陣 \(P = \begin{bmatrix}
+x_{1} \\
+x_{2}
+\end{bmatrix}\) 經過轉移矩陣 \(M\) 轉移後機率分布不變，即 \(MP = P\)</p><p class="gp ind">\(\begin{bmatrix}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{bmatrix}\begin{bmatrix}
+x_{1} \\
+x_{2}
+\end{bmatrix} = \begin{bmatrix}
+x_{1} \\
+x_{2}
+\end{bmatrix}\)，此時稱 \(P = \begin{bmatrix}
+x_{1} \\
+x_{2}
+\end{bmatrix}\) 為穩定狀態。</p></section><section class="card sec-card"><h2 class="sec-h" id="s5"><span class="num">五</span><span>線性變換</span></h2><h3 class="sub-h">核心概念</h3><ul class="glist"><li><b>線性變換</b>：設 \(A = \begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix}\) 是一個二階方陣，</li></ul><p class="gp ind">則對坐標平面上任一點 \(P(x,y)\)，依 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+{x}^{'} \\
+{y}^{'}
+\end{bmatrix} = \)\(\begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix}\begin{bmatrix}
+x \\
+y
+\end{bmatrix}\)</span></span>對應到點 \(P'(x',y')\)，</p><p class="gp ind">則稱二階方陣 \(A\) 為坐標平面上的一個線性變換。</p><ul class="glist"><li><b>性質</b>（\(det(A) \neq 0\)）</li><ul class="glist"><li>坐標平面上的直線(點、向量)經 \(A\) 變換後仍為直線(點、向量)。</li><li>圖形經 \(A\) 變換後，新圖形面積 \(=\) 原圖形面積 \(\times\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\( |det(A)|\)</span></span>。</li></ul></ul><p class="gp ind">行列式的幾何意義：\(\left| \det A \right| =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">面積（或體積）的伸縮倍率</span></span>；<br>\(\det A &lt; 0\) 代表含鏡射（翻面）</p><ul class="glist"><li>矩陣把點／向量做線性變換：伸縮、旋轉、鏡射、推移</li><li><b>旋轉矩陣</b>（逆時針轉 \(\theta\)）：將 \(P\) 點以原點為中心逆時針旋轉 \(\theta\) 角</li></ul><p class="gp ind">\(R =\)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">  \(\begin{bmatrix}
+cos\theta  &amp;  - sin\theta  \\
+sin\theta  &amp; cos\theta 
+\end{bmatrix}\)</span></span></p><ul class="glist"><li>旋轉矩陣的反方陣為<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+cos( - \theta) &amp;  - sin( - \theta) \\
+sin( - \theta) &amp; cos( - \theta)
+\end{bmatrix}\)</span></span></li><li><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+\cos\theta &amp; - sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{bmatrix}^{\, n} = \begin{bmatrix}
+cosn\theta  &amp;  - sinn\theta  \\
+sinn\theta  &amp; cosn\theta 
+\end{bmatrix}\) </span></span>每次旋轉 \(\theta\)，旋轉 \(n\) 次</li></ul><ul class="glist"><li><b>鏡射矩陣</b>：將 \(P\) 點對直線 \(L:y = (tan\theta)x\) 作對稱</li></ul><p class="gp ind"><em>M</em>=<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+cos2\theta  &amp; sin2\theta  \\
+sin2\theta  &amp;  - cos2\theta 
+\end{bmatrix}\)</span></span> =\(M^{- 1}\) 鏡射矩陣的反方陣即其本身</p><ul class="glist"><li><b>伸縮矩陣</b>：以原點為中心，將 \(P(x,y)\) 沿 \(x\) 軸方向伸縮 \(h\) 倍、<br>沿 \(y\) 軸方向伸縮 \(k\) 倍（\(h,k &gt; 0\)）</li></ul><p class="gp ind"><em>M</em>=<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+h &amp; 0 \\
+0 &amp; k
+\end{bmatrix}\) </span></span>反方陣為<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+\frac{1}{h} &amp; 0 \\
+0 &amp; \frac{1}{k}
+\end{bmatrix}\)</span></span></p><ul class="glist"><li><b>推移矩陣：</b>水平推移<em>M</em>=<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+1 &amp; h \\
+0 &amp; 1
+\end{bmatrix}\)</span></span> .、鉛直推移<em>M</em>=<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\begin{bmatrix}
+1 &amp; 0 \\
+k &amp; 1
+\end{bmatrix}\)</span></span>.</li></ul><div class="tw"><table class="gt"><thead><tr><th><img class="cfig" src="img/image32.png" alt="矩陣把單位方格變成平行四邊形，行列式＝面積伸縮倍率" loading="lazy" style="max-width:min(100%,193px)"></th><th><img class="cfig" src="img/image33.png" alt="" loading="lazy" style="max-width:min(100%,149px)"></th><th><img class="cfig" src="img/image34.png" alt="" loading="lazy" style="max-width:min(100%,148px)"></th></tr></thead><tbody><tr><td>矩陣把單位方格變成平行四邊形，行列式＝面積伸縮倍率</td><td class="mid">旋轉矩陣</td><td class="mid">鏡射矩陣</td></tr></tbody></table></div><p class="gp">矩陣就是「線性變換」——它把單位方格變成平行四邊形，變形後的面積倍率正是行列式 \(\left| \det A \right|\)。這正是第 7 章「伸縮平移 ＝ 幾何變換的統計版」的源頭：資料的伸縮 \(\times a\)，在這裡就是矩陣對整個平面的伸縮。旋轉矩陣則兌現第 10 章預告的「旋轉交給矩陣」。</p></section><section class="card sec-card c-flow"><h2 class="sec-h" id="s6"><span class="num">🧭</span><span>判斷流程：看到 X → 用 Y</span></h2><div class="tw"><table class="gt"><thead><tr><th>看到…（題目特徵）</th><th>→ 就用…（工具 / 方法）</th></tr></thead><tbody><tr><td class="mid">矩陣相乘</td><td>「左列 × 右行」，注意不可交換、行列數要相符</td></tr><tr><td class="mid">求反矩陣（\(2 \times 2\)）</td><td>\(\frac{1}{ad - bc}\begin{pmatrix}
+d &amp; - b \\
+ - c &amp; a
+\end{pmatrix}\)，先確認 \(ad - bc \neq 0\)</td></tr><tr><td class="mid">解 \(AX = B\) 聯立</td><td>\(X = A^{- 1}B\) ／ 克拉瑪 ／ 高斯消去</td></tr><tr><td class="mid">判斷解的個數</td><td class="mid">看行列式（\(\neq 0\) 唯一解）</td></tr><tr><td class="mid">求變換後的面積</td><td>乘上 \(\left| \det A \right|\)（面積伸縮倍率）</td></tr><tr><td class="mid">旋轉、求旋轉後坐標</td><td>旋轉矩陣 \(\begin{pmatrix}
+\cos\theta &amp; - sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{pmatrix}\)</td></tr><tr><td class="mid">數列遞迴求通項</td><td class="mid">化成矩陣冪 \(A^{n}\)</td></tr></tbody></table></div></section><section class="card sec-card c-link"><h2 class="sec-h" id="s7"><span class="num">🔗</span><span>跨章鏈結：把整套講義的線收尾</span></h2><ul class="glist"><li><b>線性變換 ＝ 伸縮平移的源頭</b>：矩陣把單位方格變形，面積倍率就是行列式——第 7 章「整批資料 \(\times a\) 把分散度 \(\times |a|\)」正是這個「伸縮」作用在資料上的版本；標準化的縮放、迴歸的尺度，背後都是線性變換（如 <a class="qlink" href="../exam/?q=113-12" target="_blank" rel="noopener" title="到歷屆試題互動練習看 113 學測數A 第 12 題（多選）· 另開分頁"><code>113</code><code>多</code><code>12</code><span class="qx">↗</span></a>）。</li><li><b>旋轉矩陣 ＝ 第 10 章的兌現</b>：\(\begin{pmatrix}
+\cos\theta &amp; - sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{pmatrix}\) 把向量繞原點轉 \(\theta\)，正是第 10 章「向量旋轉交給矩陣」的登場；它又用到第 9 章的 \(\cos\theta\)、\(\sin\theta\)（如 <code>110</code><code>多</code><code>8</code>、<a class="qlink" href="../exam/?q=112-11" target="_blank" rel="noopener" title="到歷屆試題互動練習看 112 學測數A 第 11 題（多選）· 另開分頁"><code>112</code><code>多</code><code>11</code><span class="qx">↗</span></a>、<code>114</code><code>混</code><code>18</code><code>–</code><code>20</code>）。</li><li><b>矩陣冪 ↔ 遞迴數列</b>：第 4 章的遞迴 \(c_{n + 2} = 2c_{n + 1} + c_{n}\)，寫成矩陣後求 \(A^{n}\) 就能得通項——第 4 章預告的「遞迴 ↔ 矩陣冪」在此實現（如 <a class="qlink" href="../exam/?q=115-8" target="_blank" rel="noopener" title="到歷屆試題互動練習看 115 學測數A 第 8 題（多選）· 另開分頁"><code>115</code><code>多</code><code>8</code><span class="qx">↗</span></a>）。</li><li><b>線性方程組 ↔ 空間的平面交點</b>：解三元一次聯立，幾何上就是求「三個平面的交點」——第 12 章空間平面與本章線性方程組，是同一件事的代數面與幾何面（如 <a class="qlink" href="../exam/?q=114-14" target="_blank" rel="noopener" title="到歷屆試題互動練習看 114 學測數A 第 14 題（選填）· 另開分頁"><code>114</code><code>選</code><code>14</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=115-5" target="_blank" rel="noopener" title="到歷屆試題互動練習看 115 學測數A 第 5 題（單選）· 另開分頁"><code>115</code><code>單</code><code>5</code><span class="qx">↗</span></a>、<code>106</code><code>選</code><code>D</code>）。</li></ul></section><section class="card sec-card c-drill"><h2 class="sec-h" id="s8"><span class="num">📝</span><span>練習指引：歷屆題號（106–115）</span></h2><ul class="glist"><li>矩陣運算與乘冪（★★☆）：<code>110</code><code>單</code><code>1</code>、<a class="qlink" href="../exam/?q=115-8" target="_blank" rel="noopener" title="到歷屆試題互動練習看 115 學測數A 第 8 題（多選）· 另開分頁"><code>115</code><code>多</code><code>8</code><span class="qx">↗</span></a></li><li>反矩陣（★☆☆）：<code>109</code><code>單</code><code>4</code></li><li>線性方程組・高斯消去／克拉瑪（★★★）：<code>106</code><code>選</code><code>D</code>、<code>107</code><code>選</code><code>F</code>、<code>108</code><code>選</code><code>A</code>、<a class="qlink" href="../exam/?q=111-14" target="_blank" rel="noopener" title="到歷屆試題互動練習看 111 學測數A 第 14 題（選填）· 另開分頁"><code>111</code><code>選</code><code>14</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=112-13" target="_blank" rel="noopener" title="到歷屆試題互動練習看 112 學測數A 第 13 題（選填）· 另開分頁"><code>112</code><code>選</code><code>13</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=113-11" target="_blank" rel="noopener" title="到歷屆試題互動練習看 113 學測數A 第 11 題（多選）· 另開分頁"><code>113</code><code>多</code><code>11</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=114-14" target="_blank" rel="noopener" title="到歷屆試題互動練習看 114 學測數A 第 14 題（選填）· 另開分頁"><code>114</code><code>選</code><code>14</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=115-5" target="_blank" rel="noopener" title="到歷屆試題互動練習看 115 學測數A 第 5 題（單選）· 另開分頁"><code>115</code><code>單</code><code>5</code><span class="qx">↗</span></a></li><li>線性變換・旋轉／鏡射／面積／可逆（★★★）：<code>110</code><code>多</code><code>8</code>、<a class="qlink" href="../exam/?q=112-11" target="_blank" rel="noopener" title="到歷屆試題互動練習看 112 學測數A 第 11 題（多選）· 另開分頁"><code>112</code><code>多</code><code>11</code><span class="qx">↗</span></a>、<a class="qlink" href="../exam/?q=113-12" target="_blank" rel="noopener" title="到歷屆試題互動練習看 113 學測數A 第 12 題（多選）· 另開分頁"><code>113</code><code>多</code><code>12</code><span class="qx">↗</span></a>、<code>114</code><code>混</code><code>18</code><code>–</code><code>20</code></li></ul><div class="nbox n-mind"><span class="nlab">考場心法</span><p>矩陣三件事：乘法「列 × 行」且不可交換；解聯立看行列式（\(\neq 0\) 唯一解），用反矩陣或克拉瑪；線性變換看 \(\left| \det A \right|\)（面積倍率）與旋轉矩陣。矩陣冪能解遞迴、線性方程組就是空間平面的交點——整套講義的線，在這裡收束。</p></div></section><div class="chnav"><a href="第10章_空間向量.html"><small>← 上一章</small>第十章　空間向量</a><a href="index.html" style="flex:0 1 150px;text-align:center;border-left-color:#1f6f78;color:#17595f"><small>目錄</small>📖 全部章節</a><a class="next" href="附錄_解二元一次聯立方程組.html"><small>附錄 →</small>附錄　解二元一次聯立方程組</a></div>
 <div style="text-align:center;font-size:12px;color:#9a857c;padding:16px 14px 8px;line-height:1.7">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div><div style="text-align:center;font-size:12.5px;color:#9a857c;padding:0 14px 30px">mathmap 數學地圖 © Kitty</div>
 </div>
 <div id="lightbox" class="lightbox" role="dialog" aria-modal="true"><button class="lb-close" aria-label="關閉">×</button><div class="lb-scroll" id="lb-scroll"></div><div class="lb-tip">雙指可再放大 · 點背景或 × 關閉</div></div>
@@ -691,13 +918,19 @@
       {left:'\\[', right:'\\]', display:true}], throwOnError:false};
   var _mmPend = [];  // 尚未渲染的分塊（DOM 順序）
   function _mmChunks(){
-    // 分塊單位：各 .card 的直接子元素（教學內容都在卡片裡）＋其餘 body 頂層元素
+    // 分塊單位：各 .card 的直接子元素（教學內容都在卡片裡）＋其餘頂層元素。
+    // 實際 DOM 是 body > .wrap > (.part | .card)*，卡片在版心裡而不在 body 層，
+    // 所以遇到 .wrap／.card 都要往內下探——只掃 body 會讓整個 .wrap 變成單一分塊，
+    // 12ms 時間預算迴圈一輪就渲染完全頁，等於完全沒有分塊。
     var list = [];
-    Array.prototype.forEach.call(document.body.children, function(top){
-      if (top.classList && top.classList.contains('card') && top.children.length)
-        Array.prototype.push.apply(list, top.children);
-      else list.push(top);
-    });
+    (function walk(parent){
+      Array.prototype.forEach.call(parent.children, function(el){
+        if (el.children.length && el.classList &&
+            (el.classList.contains('wrap') || el.classList.contains('card')))
+          walk(el);
+        else list.push(el);
+      });
+    })(document.body);
     return list;
   }
   function ensureMath(root){

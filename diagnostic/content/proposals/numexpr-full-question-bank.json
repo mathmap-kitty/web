@@ -1,0 +1,1580 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "numexpr",
+  "unitName": "數與式",
+  "status": "APPROVED_PUBLISHED",
+  "generatedAt": "2026-08-14",
+  "blueprintDecision": "APPROVED",
+  "representativeQuestionDecision": "APPROVED",
+  "items": [
+    {
+      "id": "numexpr-p0-kp1-concept",
+      "kpId": "numexpr:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "設 \\(r\\) 為非零有理數，\\(q\\) 為無理數。下列何者必為無理數？",
+      "options": [
+        "\\(r+q\\)",
+        "\\(rq\\text{ 為有理數}\\)",
+        "\\(q^2\\)",
+        "\\(q+(-q)\\)",
+        "\\(\\dfrac1q\\text{ 為有理數}\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(r+q\\)",
+      "firstBarrier": "能否用封閉性與反證，而非憑外觀猜測數的類別。",
+      "solution": "若 \\(r+q\\) 為有理數，則 \\(q=(r+q)-r\\) 也為有理數，矛盾，故 \\(r+q\\) 必為無理數。",
+      "distractorNotes": [
+        null,
+        "非零有理數乘無理數仍為無理數。",
+        "無理數平方可能為有理數。",
+        "相反數相加為零。",
+        "無理數倒數仍為無理數。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp1-recognition",
+      "kpId": "numexpr:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列何者為有理數？",
+      "options": [
+        "\\(\\sqrt2\\)",
+        "\\(\\sqrt8-\\sqrt2\\)",
+        "\\(\\sqrt{18}-3\\sqrt2\\)",
+        "\\(\\pi-3\\)",
+        "\\(\\dfrac1{\\sqrt3}\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(\\sqrt{18}-3\\sqrt2\\)",
+      "firstBarrier": "能否先化簡根式再分類。",
+      "solution": "\\(\\sqrt{18}-3\\sqrt2=3\\sqrt2-3\\sqrt2=0\\)，所以是有理數。",
+      "distractorNotes": [
+        "根號 2 是無理數。",
+        "化簡後為根號 2。",
+        null,
+        "圓周率減有理數仍為無理數。",
+        "非零有理數除以無理數仍為無理數。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp1-application",
+      "kpId": "numexpr:kp1",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(a=\\sqrt5+2\\)，則 \\(\\dfrac1a\\) 等於何者？",
+      "options": [
+        "\\(\\sqrt5+2\\)",
+        "\\(\\sqrt5-2\\)",
+        "\\(2-\\sqrt5\\)",
+        "\\(\\dfrac{\\sqrt5+2}{9}\\)",
+        "\\(1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\sqrt5-2\\)",
+      "firstBarrier": "能否以共軛數有理化並處理分母符號。",
+      "solution": "\\(\\dfrac1{\\sqrt5+2}=\\dfrac{\\sqrt5-2}{5-4}=\\sqrt5-2\\)。",
+      "distractorNotes": [
+        "未取倒數。",
+        null,
+        "共軛符號方向錯誤。",
+        "分母平方和計算錯誤。",
+        "把共軛乘積誤認為 1 後丟掉分子。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp1-concept",
+      "kpId": "numexpr:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(x\\) 為無理數、\\(n\\) 為非零整數，下列何者一定正確？",
+      "options": [
+        "\\(x+n\\) 為無理數",
+        "\\(x^2\\) 為無理數",
+        "\\(x-x\\) 為無理數",
+        "\\(nx\\) 為整數",
+        "\\(\\dfrac{x}{x}\\) 為無理數"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(x+n\\) 為無理數",
+      "firstBarrier": "能否辨認無理數加非零整數仍不可能變成有理數。",
+      "solution": "若 \\(x+n\\) 是有理數，則 \\(x=(x+n)-n\\) 也是有理數，矛盾。",
+      "distractorNotes": [
+        null,
+        "例如根號 2 的平方為 2。",
+        "任何數減自己為零。",
+        "整數倍不一定是整數。",
+        "非零 x 除以自己為 1。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp1-recognition",
+      "kpId": "numexpr:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "將 \\(0.1\\overline{6}\\) 化為最簡分數。",
+      "options": [
+        "\\(\\dfrac16\\)",
+        "\\(\\dfrac15\\)",
+        "\\(\\dfrac{16}{99}\\)",
+        "\\(\\dfrac{17}{100}\\)",
+        "\\(\\dfrac23\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(\\dfrac16\\)",
+      "firstBarrier": "能否分辨有限小數與循環小數。",
+      "solution": "令 \\(x=0.1666\\ldots\\)，則 \\(10x=1.666\\ldots\\)，相減得 \\(9x=1.5\\)，故 \\(x=\\dfrac16\\)。",
+      "distractorNotes": [
+        null,
+        "把數值誤認為 0.2。",
+        "把 16 當作兩位循環節。",
+        "把循環小數當有限小數。",
+        "小數點位置錯誤。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp1-application",
+      "kpId": "numexpr:kp1",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(x=\\sqrt3-1\\)，則 \\(x^2+2x\\) 為何？",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(2\\sqrt3\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\)",
+      "firstBarrier": "能否利用配方避免冗長展開。",
+      "solution": "\\(x^2+2x=(x+1)^2-1=(\\sqrt3)^2-1=2\\)。",
+      "distractorNotes": [
+        "漏減 1。",
+        null,
+        "把根號 3 平方後誤算。",
+        "常數整理錯誤。",
+        "只保留含根號的交叉項。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp1-concept",
+      "kpId": "numexpr:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列敘述何者正確？",
+      "options": [
+        "兩個無理數相加必為無理數",
+        "兩個無理數相乘必為無理數",
+        "有理數與無理數相加必為無理數",
+        "無理數平方必為無理數",
+        "無理數的相反數為有理數"
+      ],
+      "answerIndex": 2,
+      "answer": "有理數與無理數相加必為無理數",
+      "firstBarrier": "能否用反例排除過強的必然敘述。",
+      "solution": "有理數加無理數若為有理數，兩有理數相減會使原無理數成為有理數，矛盾。",
+      "distractorNotes": [
+        "相反無理數相加可為零。",
+        "互為倒數的無理數相乘可為 1。",
+        null,
+        "例如根號 2 平方為 2。",
+        "無理數的相反數仍為無理數。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp1-recognition",
+      "kpId": "numexpr:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列哪一個數介於 \\(2\\) 與 \\(3\\) 之間？",
+      "options": [
+        "\\(\\sqrt3\\)",
+        "\\(\\sqrt5\\)",
+        "\\(\\sqrt{10}\\)",
+        "\\(\\dfrac73\\)",
+        "\\(\\pi\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\sqrt5\\)",
+      "firstBarrier": "能否用平方比較根號與整數。",
+      "solution": "因 \\(4<5<9\\)，所以 \\(2<\\sqrt5<3\\)。",
+      "distractorNotes": [
+        "根號 3 小於 2。",
+        null,
+        "根號 10 大於 3。",
+        "七分之三小於 2。",
+        "圓周率大於 3。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp1-application",
+      "kpId": "numexpr:kp1",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "化簡 \\(\\dfrac{2}{\\sqrt3-1}-\\dfrac{2}{\\sqrt3+1}\\)。",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(\\sqrt3\\)",
+        "\\(2\\sqrt3\\)",
+        "\\(4\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\)",
+      "firstBarrier": "能否通分時利用共軛乘積。",
+      "solution": "原式 \\(=\\dfrac{2[(\\sqrt3+1)-(\\sqrt3-1)]}{3-1}=\\dfrac4 2=2\\)。",
+      "distractorNotes": [
+        "漏掉分子外的 2。",
+        null,
+        "把根號項誤留下。",
+        "符號展開錯誤。",
+        "分母未除。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp5-concept",
+      "kpId": "numexpr:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "兩組資料合併平均時，最重要的權重是什麼？",
+      "options": [
+        "各組最高分",
+        "各組最低分",
+        "各組人數",
+        "各組分數範圍",
+        "組別名稱"
+      ],
+      "answerIndex": 2,
+      "answer": "各組人數",
+      "firstBarrier": "能否辨認總量等於平均乘以個數。",
+      "solution": "合併平均應以各組人數為權重，先求各組總量再相加。",
+      "distractorNotes": [
+        "最高分不代表總量。",
+        "最低分不代表總量。",
+        null,
+        "分數範圍不是權重。",
+        "名稱與平均無關。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp5-recognition",
+      "kpId": "numexpr:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一件商品原價 \\(800\\) 元，打八五折後售價為何？",
+      "options": [
+        "\\(120\\) 元",
+        "\\(680\\) 元",
+        "\\(720\\) 元",
+        "\\(850\\) 元",
+        "\\(920\\) 元"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(680\\) 元",
+      "firstBarrier": "能否把八五折解讀為原價的 85%。",
+      "solution": "\\(800\\times0.85=680\\)，故售價為 680 元。",
+      "distractorNotes": [
+        "只算折扣金額。",
+        null,
+        "把折數誤作九折。",
+        "把 85 當元數加上去。",
+        "把折扣金額加回原價。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp5-application",
+      "kpId": "numexpr:kp5",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲班 30 人，平均 70 分；乙班平均 80 分。兩班合併平均為 76 分，則乙班有多少人？",
+      "options": [
+        "\\(20\\)",
+        "\\(30\\)",
+        "\\(40\\)",
+        "\\(45\\)",
+        "\\(50\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(45\\)",
+      "firstBarrier": "能否把人數視為權重，先寫總分相等式。",
+      "solution": "設乙班 n 人，則 \\(\\dfrac{30\\times70+80n}{30+n}=76\\)，解得 \\(n=45\\)。",
+      "distractorNotes": [
+        "把平均差直接換成人數。",
+        "誤認兩班人數相同。",
+        "移項或乘法錯誤。",
+        null,
+        "直接猜整十人數。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp5-concept",
+      "kpId": "numexpr:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "某數增加 \\(20\\%\\) 後，再減少 \\(20\\%\\)，結果與原數相比如何？",
+      "options": [
+        "相同",
+        "增加 \\(4\\%\\)",
+        "減少 \\(4\\%\\)",
+        "增加 \\(40\\%\\)",
+        "減少 \\(40\\%\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "減少 \\(4\\%\\)",
+      "firstBarrier": "能否知道兩次百分率的比較基準不同。",
+      "solution": "倍率為 \\(1.2\\times0.8=0.96\\)，所以結果比原數少 4%。",
+      "distractorNotes": [
+        "把百分率直接相消。",
+        "倍率方向錯誤。",
+        null,
+        "把兩百分率相加。",
+        "把兩百分率相加後判斷減少。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp5-recognition",
+      "kpId": "numexpr:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(a:b=3:5\\) 且 \\(a+b=32\\)，則 a 為何？",
+      "options": [
+        "\\(8\\)",
+        "\\(12\\)",
+        "\\(15\\)",
+        "\\(20\\)",
+        "\\(24\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(12\\)",
+      "firstBarrier": "能否把總量依 3 比 5 分成 8 份。",
+      "solution": "每份為 \\(32\\div8=4\\)，所以 \\(a=3\\times4=12\\)。",
+      "distractorNotes": [
+        "把 32 分成 4 份。",
+        null,
+        "直接用比值中的 5 倍。",
+        "取 b 的值。",
+        "取總量的四分之三。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp5-application",
+      "kpId": "numexpr:kp5",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "濃度 \\(20\\%\\) 的鹽水 \\(300\\) 克，加入多少克純水後濃度成為 \\(15\\%\\)？",
+      "options": [
+        "\\(50\\)",
+        "\\(75\\)",
+        "\\(100\\)",
+        "\\(150\\)",
+        "\\(200\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(100\\)",
+      "firstBarrier": "能否保持鹽的重量不變，只改變總重量。",
+      "solution": "鹽有 \\(300\\times0.2=60\\) 克。設加水 x 克，則 \\(\\dfrac{60}{300+x}=0.15\\)，解得 \\(x=100\\)。",
+      "distractorNotes": [
+        "只比較百分率差。",
+        "總重量移項錯誤。",
+        null,
+        "把新總量當加水量。",
+        "比例倒置。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp5-concept",
+      "kpId": "numexpr:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "合併兩組平均數時，下列何者正確？",
+      "options": [
+        "一定等於兩平均數的算術平均",
+        "一定較接近人數較多組的平均",
+        "一定較接近人數較少組的平均",
+        "一定大於兩組平均",
+        "一定小於兩組平均"
+      ],
+      "answerIndex": 1,
+      "answer": "一定較接近人數較多組的平均",
+      "firstBarrier": "能否用權重大小判斷合併平均的位置。",
+      "solution": "合併平均介於兩組平均之間，且較靠近權重也就是人數較多的一組。",
+      "distractorNotes": [
+        "僅在人數相等時成立。",
+        null,
+        "權重方向判反。",
+        "不可能高於兩者最大值。",
+        "不可能低於兩者最小值。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp5-recognition",
+      "kpId": "numexpr:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "一商品先打九折，再打八折，相當於原價的幾折？",
+      "options": [
+        "七折",
+        "七二折",
+        "八折",
+        "八五折",
+        "十七折"
+      ],
+      "answerIndex": 1,
+      "answer": "七二折",
+      "firstBarrier": "能否將連續折扣換成倍率相乘。",
+      "solution": "\\(0.9\\times0.8=0.72\\)，所以相當於七二折。",
+      "distractorNotes": [
+        "把折數近似相減。",
+        null,
+        "只看第二次折扣。",
+        "把兩折數取平均。",
+        "把折數直接相加。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp5-application",
+      "kpId": "numexpr:kp5",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "比",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "甲、乙兩組人數比為 \\(2:3\\)，平均分別為 \\(75\\)、\\(85\\)，則合併平均為何？",
+      "options": [
+        "\\(79\\)",
+        "\\(80\\)",
+        "\\(81\\)",
+        "\\(82\\)",
+        "\\(83\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(81\\)",
+      "firstBarrier": "能否直接以人數比作為權重。",
+      "solution": "合併平均為 \\(\\dfrac{2\\times75+3\\times85}{2+3}=\\dfrac{405}{5}=81\\)。",
+      "distractorNotes": [
+        "權重乘法或除法錯誤。",
+        "直接平均後再偏移。",
+        null,
+        "把權重順序對調。",
+        "過度偏向乙組平均。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp6-concept",
+      "kpId": "numexpr:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "以 \\([x]\\) 表示不超過 x 的最大整數。下列何者正確？",
+      "options": [
+        "\\([2.8]=3\\)",
+        "\\([-1.2]=-1\\)",
+        "\\([-1.2]=-2\\)",
+        "\\([3]=2\\)",
+        "\\([0.9]=1\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\([-1.2]=-2\\)",
+      "firstBarrier": "能否理解負數向下取整不是朝零截去。",
+      "solution": "不超過 \\(-1.2\\) 的最大整數是 \\(-2\\)。",
+      "distractorNotes": [
+        "2.8 向下取整為 2。",
+        "負數向下取整不是截去小數。",
+        null,
+        "整數的最大整數仍是自身。",
+        "0.9 向下取整為 0。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp6-application",
+      "kpId": "numexpr:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\([x]=3\\)，則 x 的範圍為何？",
+      "options": [
+        "\\(2<x\\le3\\)",
+        "\\(3\\le x<4\\)",
+        "\\(3<x\\le4\\)",
+        "\\(2\\le x<3\\)",
+        "\\(x=3\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(3\\le x<4\\)",
+      "firstBarrier": "能否把高斯值翻成左閉右開區間。",
+      "solution": "\\([x]=3\\) 等價於 \\(3\\le x<4\\)。",
+      "distractorNotes": [
+        "整體向左平移。",
+        null,
+        "端點開閉顛倒。",
+        "整體向左且端點錯。",
+        "解集不只單一整數。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp6-recognition",
+      "kpId": "numexpr:kp6",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "以 \\([y]\\) 表示不超過 y 的最大整數。若 \\(\\left[\\dfrac{2x-1}{3}\\right]=-2\\)，則 x 的範圍為何？",
+      "options": [
+        "\\(-\\dfrac52<x\\le-1\\)",
+        "\\(-\\dfrac52\\le x<-1\\)",
+        "\\(-2\\le x<-1\\)",
+        "\\(-5\\le x<-2\\)",
+        "\\(-3\\le x<-2\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(-\\dfrac52\\le x<-1\\)",
+      "firstBarrier": "能否把負的高斯值翻成左閉右開區間。",
+      "solution": "由 \\(-2\\le\\dfrac{2x-1}{3}<-1\\)，整理得 \\(-\\dfrac52\\le x<-1\\)。",
+      "distractorNotes": [
+        "端點開閉顛倒。",
+        null,
+        "只在負 2 附近猜區間。",
+        "漏除以 2。",
+        "把向下取整誤作四捨五入。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp6-concept",
+      "kpId": "numexpr:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "對任意實數 x，下列何者一定成立？",
+      "options": [
+        "\\([x]>x\\)",
+        "\\([x]\\le x<[x]+1\\)",
+        "\\([x]=x\\)",
+        "\\([x]\\ge x\\)",
+        "\\([x]<x-1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\([x]\\le x<[x]+1\\)",
+      "firstBarrier": "能否掌握最大整數函數的基本夾擠。",
+      "solution": "依定義，\\([x]\\) 是不超過 x 的最大整數，因此 \\([x]\\le x<[x]+1\\)。",
+      "distractorNotes": [
+        "最大整數不會大於 x。",
+        null,
+        "只在 x 為整數時成立。",
+        "方向相反。",
+        "x 與向下取整的差小於 1。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp6-recognition",
+      "kpId": "numexpr:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\([\\sqrt{40}]\\) 等於何者？",
+      "options": [
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(20\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否先以平方數夾估再向下取整。",
+      "solution": "\\(36<40<49\\)，所以 \\(6<\\sqrt{40}<7\\)，故 \\([\\sqrt{40}]=6\\)。",
+      "distractorNotes": [
+        "低估一個整數。",
+        null,
+        "誤作四捨五入。",
+        "平方數夾估錯誤。",
+        "把開根號誤作除以 2。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp6-application",
+      "kpId": "numexpr:kp6",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "方程式 \\([x]=x\\) 在 \\(-2\\le x\\le3\\) 中有幾個實數解？",
+      "options": [
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)",
+        "無限多個"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否知道等式成立恰在 x 為整數時。",
+      "solution": "區間內整數為 \\(-2,-1,0,1,2,3\\)，共 6 個。",
+      "distractorNotes": [
+        "漏算兩端。",
+        "漏算一個端點。",
+        null,
+        "多算區間外整數。",
+        "誤以為每個實數都等於向下取整。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp6-concept",
+      "kpId": "numexpr:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 n 為整數，則 \\([n+0.7]\\) 等於何者？",
+      "options": [
+        "\\(n-1\\)",
+        "\\(n\\)",
+        "\\(n+1\\)",
+        "\\(0.7n\\)",
+        "\\(n+0.7\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(n\\)",
+      "firstBarrier": "能否利用整數平移性判斷小數部分。",
+      "solution": "\\(n\\le n+0.7<n+1\\)，故 \\([n+0.7]=n\\)。",
+      "distractorNotes": [
+        "向下多取一格。",
+        null,
+        "誤作四捨五入。",
+        "把平移誤作乘法。",
+        "結果必須為整數。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp6-recognition",
+      "kpId": "numexpr:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "滿足 \\([x]= -3\\) 的區間長度為何？",
+      "options": [
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "無限大"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否由左閉右開區間讀出長度。",
+      "solution": "解集為 \\(-3\\le x<-2\\)，區間長度為 \\((-2)-(-3)=1\\)。",
+      "distractorNotes": [
+        "把半開區間誤認沒有長度。",
+        null,
+        "端點相減錯誤。",
+        "把高斯值絕對值當長度。",
+        "每個固定高斯值只對應長度 1。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp6-application",
+      "kpId": "numexpr:kp6",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "在 \\(0\\le x<5\\) 中，滿足 \\([x]=2\\) 的 x 範圍為何？",
+      "options": [
+        "\\(1\\le x<2\\)",
+        "\\(2\\le x<3\\)",
+        "\\(2<x\\le3\\)",
+        "\\(x=2\\)",
+        "\\(3\\le x<4\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(2\\le x<3\\)",
+      "firstBarrier": "能否將高斯值條件與原定義域取交集。",
+      "solution": "\\([x]=2\\) 給出 \\(2\\le x<3\\)，此區間完全位於題設定義域內。",
+      "distractorNotes": [
+        "整體向左一格。",
+        null,
+        "端點開閉顛倒。",
+        "誤認只有整數解。",
+        "整體向右一格。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp2-concept",
+      "kpId": "numexpr:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(|x-3|\\) 在數線上的意義為何？",
+      "options": [
+        "x 到 0 的距離",
+        "x 到 3 的距離",
+        "x 與 3 的和",
+        "x 的相反數",
+        "x 到負 3 的距離"
+      ],
+      "answerIndex": 1,
+      "answer": "x 到 3 的距離",
+      "firstBarrier": "能否把絕對值式翻成兩點距離。",
+      "solution": "\\(|x-3|\\) 表示數線上點 x 與點 3 的距離。",
+      "distractorNotes": [
+        "這是絕對值 x 的意義。",
+        null,
+        "把差看成和。",
+        "絕對值不代表相反數。",
+        "點的位置符號看反。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp2-recognition",
+      "kpId": "numexpr:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "不等式 \\(|x+2|<3\\) 的解集為何？",
+      "options": [
+        "\\(-5<x<1\\)",
+        "\\(-1<x<5\\)",
+        "\\(x<-5\\text{ 或 }x>1\\)",
+        "\\(-5\\le x\\le1\\)",
+        "\\(-3<x<3\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(-5<x<1\\)",
+      "firstBarrier": "能否將距離小於轉成以負 2 為中心的開區間。",
+      "solution": "\\(-3<x+2<3\\)，各減 2 得 \\(-5<x<1\\)。",
+      "distractorNotes": [
+        null,
+        "中心點符號看反。",
+        "把小於誤作區間外。",
+        "忽略嚴格不等號。",
+        "忘記平移中心。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp2-application",
+      "kpId": "numexpr:kp2",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "方程式 \\(|x-2|+|x+1|=5\\) 的所有實數解之和為何？",
+      "options": [
+        "\\(-1\\)",
+        "\\(0\\)",
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(5\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(1\\)",
+      "firstBarrier": "能否先找兩個變號點，再依區間分段。",
+      "solution": "分段可得 \\(x=3\\) 或 \\(x=-2\\)，故兩解之和為 \\(1\\)。",
+      "distractorNotes": [
+        "只保留負區間的解。",
+        "誤以為兩解抵消。",
+        null,
+        "把變號點直接相加。",
+        "只保留正區間的解或把常數當答案。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp2-concept",
+      "kpId": "numexpr:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(|a|=a\\)，則下列何者必成立？",
+      "options": [
+        "\\(a>0\\)",
+        "\\(a\\ge0\\)",
+        "\\(a<0\\)",
+        "\\(a\\le0\\)",
+        "\\(a=1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(a\\ge0\\)",
+      "firstBarrier": "能否記得零也滿足絕對值等於自身。",
+      "solution": "當且僅當 \\(a\\ge0\\) 時，\\(|a|=a\\)。",
+      "distractorNotes": [
+        "漏掉 a 等於零。",
+        null,
+        "符號方向相反。",
+        "只在 a 等於零時重疊，並非所有非正數。",
+        "條件不能限定為單一數。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp2-recognition",
+      "kpId": "numexpr:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "函數 \\(y=|x-1|+2\\) 的頂點為何？",
+      "options": [
+        "\\((-1,2)\\)",
+        "\\((1,2)\\)",
+        "\\((1,-2)\\)",
+        "\\((2,1)\\)",
+        "\\((0,2)\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\((1,2)\\)",
+      "firstBarrier": "能否由平移式讀出 V 形圖的頂點。",
+      "solution": "\\(|x|\\) 向右平移 1、向上平移 2，頂點為 \\((1,2)\\)。",
+      "distractorNotes": [
+        "水平平移方向看反。",
+        null,
+        "垂直平移方向看反。",
+        "交換橫縱坐標。",
+        "漏掉水平平移。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp2-application",
+      "kpId": "numexpr:kp2",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "方程式 \\(|2x-1|=7\\) 的兩解之積為何？",
+      "options": [
+        "\\(-12\\)",
+        "\\(-6\\)",
+        "\\(-3\\)",
+        "\\(3\\)",
+        "\\(12\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(-12\\)",
+      "firstBarrier": "能否完整處理正、負兩個分支。",
+      "solution": "\\(2x-1=7\\) 或 \\(2x-1=-7\\)，得 \\(x=4,-3\\)，乘積為 \\(-12\\)。",
+      "distractorNotes": [
+        null,
+        "漏乘其中一解的絕對值。",
+        "除以 2 錯誤。",
+        "忽略負號。",
+        "只乘右側常數。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp2-concept",
+      "kpId": "numexpr:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(|x-a|\\le r\\) 且 \\(r>0\\)，其解集為何？",
+      "options": [
+        "\\(a-r\\le x\\le a+r\\)",
+        "\\(-r\\le x\\le r\\)",
+        "\\(x\\le a-r\\text{ 或 }x\\ge a+r\\)",
+        "\\(a-r<x<a+r\\)",
+        "\\(a\\le x\\le r\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\(a-r\\le x\\le a+r\\)",
+      "firstBarrier": "能否保留中心 a、半徑 r 與閉端點。",
+      "solution": "距離 x 到 a 不超過 r，所以 x 位於以 a 為中心、半徑 r 的閉區間。",
+      "distractorNotes": [
+        null,
+        "漏掉中心平移。",
+        "把區間內誤作區間外。",
+        "把小於等於誤作嚴格小於。",
+        "混用中心與半徑。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp2-recognition",
+      "kpId": "numexpr:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "不等式 \\(|3-x|\\ge2\\) 的解集為何？",
+      "options": [
+        "\\(1\\le x\\le5\\)",
+        "\\(x\\le1\\text{ 或 }x\\ge5\\)",
+        "\\(-5\\le x\\le-1\\)",
+        "\\(x<1\\text{ 或 }x>5\\)",
+        "\\(x\\le-1\\text{ 或 }x\\ge1\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(x\\le1\\text{ 或 }x\\ge5\\)",
+      "firstBarrier": "能否利用絕對值對稱性並判斷大於等於是區間外。",
+      "solution": "\\(|3-x|=|x-3|\\ge2\\)，故 \\(x\\le1\\) 或 \\(x\\ge5\\)。",
+      "distractorNotes": [
+        "把區間外誤作區間內。",
+        null,
+        "中心符號看反。",
+        "漏掉等號。",
+        "錯把中心當零。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp2-application",
+      "kpId": "numexpr:kp2",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "線",
+      "secondaryRepresentation": "式",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(|x+1|=2x+5\\)，則 x 為何？",
+      "options": [
+        "\\(-4\\)",
+        "\\(-2\\)",
+        "\\(-\\dfrac43\\)",
+        "\\(1\\)",
+        "\\(4\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(-2\\)",
+      "firstBarrier": "能否除分段求解外，也檢查右側必須非負。",
+      "solution": "若 \\(x\\ge-1\\)，得 \\(x+1=2x+5\\)，解 \\(x=-4\\) 不合區間；若 \\(x<-1\\)，得 \\(-x-1=2x+5\\)，所以 \\(x=-2\\)。",
+      "distractorNotes": [
+        "未檢查分段區間而保留負 4。",
+        null,
+        "分段方程移項錯誤。",
+        "把常數移項符號做反。",
+        "忽略絕對值後直接猜正值。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp3-concept",
+      "kpId": "numexpr:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(a<b\\)，則數線上 a、b 的距離為何？",
+      "options": [
+        "\\(a-b\\)",
+        "\\(b-a\\)",
+        "\\(a+b\\)",
+        "\\(|a+b|\\)",
+        "\\(ab\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(b-a\\)",
+      "firstBarrier": "能否用較大數減較小數表示距離。",
+      "solution": "距離為 \\(|a-b|\\)；因 \\(a<b\\)，所以 \\(|a-b|=b-a\\)。",
+      "distractorNotes": [
+        "距離不可為負。",
+        null,
+        "把距離誤作和。",
+        "對錯誤的和取絕對值。",
+        "把距離誤作乘積。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp3-application",
+      "kpId": "numexpr:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "下列何者正確？",
+      "options": [
+        "\\(\\sqrt{15}<3\\)",
+        "\\(3<\\sqrt{15}<4\\)",
+        "\\(4<\\sqrt{15}<5\\)",
+        "\\(\\sqrt{15}=7.5\\)",
+        "\\(\\sqrt{15}>5\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(3<\\sqrt{15}<4\\)",
+      "firstBarrier": "能否以相鄰完全平方數夾估根號。",
+      "solution": "因 \\(9<15<16\\)，所以 \\(3<\\sqrt{15}<4\\)。",
+      "distractorNotes": [
+        "15 大於 9。",
+        null,
+        "15 小於 16。",
+        "把開根號誤作除以 2。",
+        "15 小於 25。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp3-recognition",
+      "kpId": "numexpr:kp3",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "數線上與點 \\(\\sqrt{50}\\) 的距離小於 \\(3\\) 的整數點共有多少個？",
+      "options": [
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(6\\)",
+      "firstBarrier": "能否先把根號定位，再把距離條件改寫成開區間。",
+      "solution": "\\(\\sqrt{50}\\approx7.07\\)，故約有 \\(4.07<n<10.07\\)。整數為 \\(5,6,7,8,9,10\\)，共 6 個。",
+      "distractorNotes": [
+        "估算範圍過窄。",
+        "漏算一個端點附近整數。",
+        null,
+        "把開區間誤作閉區間。",
+        "把區間長度直接當點數。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp3-concept",
+      "kpId": "numexpr:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(x\\) 到 \\(2\\) 的距離小於到 \\(8\\) 的距離，則 x 的範圍為何？",
+      "options": [
+        "\\(x<2\\)",
+        "\\(x<5\\)",
+        "\\(x>5\\)",
+        "\\(2<x<8\\)",
+        "\\(x>8\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(x<5\\)",
+      "firstBarrier": "能否先找兩點中點，再判斷靠近哪一側。",
+      "solution": "2 與 8 的中點是 5；比起 8 更靠近 2 的點位於中點左側，故 \\(x<5\\)。",
+      "distractorNotes": [
+        "只取左端點左側。",
+        null,
+        "方向判反。",
+        "漏掉區間外仍可能較近。",
+        "只取右端點右側。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp3-recognition",
+      "kpId": "numexpr:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\(\\sqrt{70}\\) 最接近下列哪一個整數？",
+      "options": [
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(9\\)",
+        "\\(10\\)",
+        "\\(11\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否用平方數及中點判斷最近整數。",
+      "solution": "\\(\\sqrt{70}\\approx8.37\\)，最接近 8。",
+      "distractorNotes": [
+        "低估根號值。",
+        null,
+        "高估到 9。",
+        "誤以為根號約為 10。",
+        "完全平方數配對錯誤。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp3-application",
+      "kpId": "numexpr:kp3",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "滿足 \\(|n-\\sqrt{20}|\\le2\\) 的整數 n 有幾個？",
+      "options": [
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(4\\)",
+      "firstBarrier": "能否估算根號後列出閉區間內整數。",
+      "solution": "\\(\\sqrt{20}\\approx4.47\\)，所以 \\(2.47\\le n\\le6.47\\)，整數為 \\(3,4,5,6\\)，共 4 個。",
+      "distractorNotes": [
+        "漏算一個整數。",
+        null,
+        "多算一個端點外整數。",
+        "把區間長度直接進位。",
+        "估算中心錯誤。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp3-concept",
+      "kpId": "numexpr:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "數線上兩點 a、b 的中點坐標為何？",
+      "options": [
+        "\\(a+b\\)",
+        "\\(\\dfrac{a+b}{2}\\)",
+        "\\(\\dfrac{a-b}{2}\\)",
+        "\\(|a-b|\\)",
+        "\\(ab\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(\\dfrac{a+b}{2}\\)",
+      "firstBarrier": "能否區分中點與距離公式。",
+      "solution": "一維中點是兩坐標的平均，為 \\(\\dfrac{a+b}{2}\\)。",
+      "distractorNotes": [
+        "漏除以 2。",
+        null,
+        "把和誤作差。",
+        "這是距離。",
+        "把平均誤作乘積。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp3-recognition",
+      "kpId": "numexpr:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(a=\\sqrt{31}\\)，則 a 位於哪兩個相鄰整數之間？",
+      "options": [
+        "\\(3<a<4\\)",
+        "\\(4<a<5\\)",
+        "\\(5<a<6\\)",
+        "\\(6<a<7\\)",
+        "\\(7<a<8\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(5<a<6\\)",
+      "firstBarrier": "能否找出包住 31 的相鄰完全平方數。",
+      "solution": "\\(25<31<36\\)，故 \\(5<\\sqrt{31}<6\\)。",
+      "distractorNotes": [
+        "用 9 與 16 夾估。",
+        "用 16 與 25 夾估。",
+        null,
+        "用 36 與 49 夾估。",
+        "用 49 與 64 夾估。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp3-application",
+      "kpId": "numexpr:kp3",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "數",
+      "secondaryRepresentation": "線",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "數線上距離 \\(-1\\) 不超過 \\(\\sqrt5\\) 的整數點共有幾個？",
+      "options": [
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(7\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(5\\)",
+      "firstBarrier": "能否以負數為中心建立閉區間並列整數。",
+      "solution": "\\(-1-\\sqrt5\\le n\\le-1+\\sqrt5\\)，約為 \\(-3.24\\le n\\le1.24\\)，整數 \\(-3,-2,-1,0,1\\)，共 5 個。",
+      "distractorNotes": [
+        "漏掉兩端附近整數。",
+        "漏算一個整數。",
+        null,
+        "多算一個區間外整數。",
+        "把區間長度直接取整。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp4-concept",
+      "kpId": "numexpr:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "對正數 \\(a,b\\)，算幾不等式的正確形式為何？",
+      "options": [
+        "\\(a+b\\le2\\sqrt{ab}\\)",
+        "\\(a+b\\ge2\\sqrt{ab}\\)",
+        "\\(a+b\\ge ab\\)",
+        "\\(a+b\\le ab\\)",
+        "\\(a-b\\ge2\\sqrt{ab}\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(a+b\\ge2\\sqrt{ab}\\)",
+      "firstBarrier": "能否辨認適用條件與不等號方向。",
+      "solution": "正數 a、b 滿足 \\(\\dfrac{a+b}{2}\\ge\\sqrt{ab}\\)，等價於 \\(a+b\\ge2\\sqrt{ab}\\)。",
+      "distractorNotes": [
+        "方向顛倒。",
+        null,
+        "一般不成立。",
+        "一般不成立且方向錯誤。",
+        "誤用差。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp4-recognition",
+      "kpId": "numexpr:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "\\((x+3)^2\\) 展開為何？",
+      "options": [
+        "\\(x^2+9\\)",
+        "\\(x^2+3x+9\\)",
+        "\\(x^2+6x+9\\)",
+        "\\(x^2-6x+9\\)",
+        "\\(x^2+6\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(x^2+6x+9\\)",
+      "firstBarrier": "能否保留完全平方的兩倍交叉項。",
+      "solution": "\\((x+3)^2=x^2+2\\cdot x\\cdot3+9=x^2+6x+9\\)。",
+      "distractorNotes": [
+        "漏交叉項。",
+        "交叉項少一倍。",
+        null,
+        "符號看反。",
+        "常數平方漏掉。"
+      ]
+    },
+    {
+      "id": "numexpr-p0-kp4-application",
+      "kpId": "numexpr:kp4",
+      "stage": "INITIAL_DIAGNOSIS",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(x>2\\)，則 \\(x+\\dfrac9{x-2}\\) 的最小值為何？",
+      "options": [
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(9\\)",
+        "\\(11\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否先平移成正數並檢查等號可達。",
+      "solution": "令 \\(t=x-2>0\\)，原式為 \\(t+2+\\dfrac9t\\ge2+6=8\\)，且 t=3 可達。",
+      "distractorNotes": [
+        "漏掉平移常數 2。",
+        "根號或加法錯誤。",
+        null,
+        "把分子 9 當最小值。",
+        "把 9 與 2 直接相加。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp4-concept",
+      "kpId": "numexpr:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "算幾不等式 \\(u+\\dfrac{k}{u}\\ge2\\sqrt{k}\\) 可直接使用的條件為何？",
+      "options": [
+        "\\(u<0,k>0\\)",
+        "\\(u>0,k>0\\)",
+        "任意實數 u,k",
+        "\\(u=0\\)",
+        "只需 k<0"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(u>0,k>0\\)",
+      "firstBarrier": "能否檢查兩項皆為正數且分母不為零。",
+      "solution": "需 \\(u>0\\)、\\(k>0\\)，此時 u 與 k/u 都是正數。",
+      "distractorNotes": [
+        "兩項皆為負。",
+        null,
+        "算幾不等式不能對任意實數直接用。",
+        "分母不可為零。",
+        "根號 k 亦要求 k 非負且兩項正。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp4-recognition",
+      "kpId": "numexpr:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "因式分解 \\(x^2-10x+25\\)。",
+      "options": [
+        "\\((x-5)^2\\)",
+        "\\((x+5)^2\\)",
+        "\\((x-25)(x+1)\\)",
+        "\\(x(x-10)+25\\)",
+        "\\((x-5)(x+5)\\)"
+      ],
+      "answerIndex": 0,
+      "answer": "\\((x-5)^2\\)",
+      "firstBarrier": "能否辨認完全平方三項式。",
+      "solution": "\\(x^2-10x+25=x^2-2\\cdot5x+5^2=(x-5)^2\\)。",
+      "distractorNotes": [
+        null,
+        "一次項符號錯誤。",
+        "根未配對。",
+        "雖等值改寫但未因式分解。",
+        "這會得到 x 平方減 25。"
+      ]
+    },
+    {
+      "id": "numexpr-p1-kp4-application",
+      "kpId": "numexpr:kp4",
+      "stage": "IMMEDIATE_VARIANT",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(y>0\\)，則 \\(2y+\\dfrac8y\\) 的最小值為何？",
+      "options": [
+        "\\(4\\)",
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(10\\)",
+        "\\(16\\)"
+      ],
+      "answerIndex": 2,
+      "answer": "\\(8\\)",
+      "firstBarrier": "能否把兩項乘積看成固定的 16。",
+      "solution": "兩正數乘積為 \\(2y\\cdot\\dfrac8y=16\\)，故和至少為 \\(2\\sqrt{16}=8\\)。",
+      "distractorNotes": [
+        "只取根號 16。",
+        "少乘外面的 2。",
+        null,
+        "把兩項係數相加。",
+        "把乘積直接當最小值。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp4-concept",
+      "kpId": "numexpr:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "CONCEPT",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "對正數 a、b，算幾不等式等號成立的條件為何？",
+      "options": [
+        "\\(a+b=1\\)",
+        "\\(a=b\\)",
+        "\\(ab=1\\)",
+        "\\(a=0\\)",
+        "\\(a=-b\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(a=b\\)",
+      "firstBarrier": "能否記得算術平均等於幾何平均時兩數相等。",
+      "solution": "\\(a+b-2\\sqrt{ab}=(\\sqrt a-\\sqrt b)^2\\)，等號成立當且僅當 \\(a=b\\)。",
+      "distractorNotes": [
+        "和固定不是等號條件。",
+        null,
+        "積固定不是等號條件。",
+        "正數不得為零。",
+        "正數不可能互為相反數。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp4-recognition",
+      "kpId": "numexpr:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "RECOGNITION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "化簡 \\((a+b)^2-(a-b)^2\\)。",
+      "options": [
+        "\\(2a^2+2b^2\\)",
+        "\\(4ab\\)",
+        "\\(2ab\\)",
+        "\\(a^2-b^2\\)",
+        "\\(0\\)"
+      ],
+      "answerIndex": 1,
+      "answer": "\\(4ab\\)",
+      "firstBarrier": "能否使用平方差或完整展開後消去。",
+      "solution": "視為平方差：\\([(a+b)-(a-b)][(a+b)+(a-b)]=(2b)(2a)=4ab\\)。",
+      "distractorNotes": [
+        "把兩式相加。",
+        null,
+        "漏掉一個 2。",
+        "誤套一般平方差。",
+        "錯認兩平方相等。"
+      ]
+    },
+    {
+      "id": "numexpr-p2-kp4-application",
+      "kpId": "numexpr:kp4",
+      "stage": "DELAYED_RETEST",
+      "ability": "APPLICATION",
+      "primaryRepresentation": "式",
+      "secondaryRepresentation": null,
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "type": "SINGLE_CHOICE",
+      "stem": "若 \\(x>0\\)，則 \\(3x+\\dfrac{12}{x}+1\\) 的最小值為何？",
+      "options": [
+        "\\(7\\)",
+        "\\(10\\)",
+        "\\(12\\)",
+        "\\(13\\)",
+        "\\(36\\)"
+      ],
+      "answerIndex": 3,
+      "answer": "\\(13\\)",
+      "firstBarrier": "能否先對兩個正項使用算幾，再加回常數。",
+      "solution": "\\(3x+\\dfrac{12}{x}\\ge2\\sqrt{36}=12\\)，再加 1 得最小值 13；當 x=2 時可達。",
+      "distractorNotes": [
+        "根號與常數皆算錯。",
+        "漏掉部分倍率。",
+        "漏加常數 1。",
+        null,
+        "把乘積當最小值。"
+      ]
+    }
+  ],
+  "publicationAuthorized": true,
+  "integrationAuthorized": true,
+  "deploymentAuthorized": false
+}

@@ -7,14 +7,14 @@ const currentPath=decodeURIComponent(location.pathname);
 const localPreviewPath=currentPath.includes('/診斷系統/app/');
 const mathMapRoot=localPreviewPath?'../../tmp/mathmap-source-audit/':currentPath.includes('/diagnostic/app/')?'../../':'../';
 const units={
+  numexpr:{name:'數與式',shortName:'數與式',minutes:'18–24',map:'concept-map/115學測數學_數與式.html',kp:['實數系與有理／無理','絕對值','數線、距離與根號估算','乘法公式與算幾不等式','比例、百分率與加權平均','高斯（最大整數）函數']},
   poly:{name:'多項式函數',shortName:'多項式',minutes:'15–20',map:'concept-map/115學測數學_多項式函數.html',kp:['除法、餘式與因式定理','二次函數：判別式與配方','多項式方程式與不等式','高次方程式','三次函數圖形與對稱中心']},
   linecir:{name:'直線與圓',shortName:'直線與圓',minutes:'15–20',map:'concept-map/115學測數學_直線與圓.html',kp:['直線方程式與斜率','兩點距離與三角形','圓方程式','直線與圓的位置','平面區域與線性規劃']},
   seq:{name:'數列與級數',shortName:'數列與級數',minutes:'12–16',map:'concept-map/115學測數學_數列與級數.html',kp:['等差數列','等比數列','遞迴數列','級數求和與規律週期']},
-  comb:{name:'排列組合',shortName:'排列組合',minutes:'12–16',map:'concept-map/115學測數學_排列組合與機率.html',kp:['計數原理與系統列舉','排列與位置限制','組合、重複組合與分組','分類計數與結果等價']},
-  probability:{name:'機率',shortName:'機率',minutes:'12–16',map:'concept-map/115學測數學_排列組合與機率.html',kp:['樣本空間與古典機率','事件運算、餘事件與獨立','條件機率、全機率與貝氏','隨機變數與期望值']},
+  prob:{name:'排列組合與機率',shortName:'排列組合與機率',minutes:'24–32',map:'concept-map/115學測數學_排列組合與機率.html',kp:['計數原理與排列','組合與分組分配','古典機率','條件機率與貝氏','獨立事件與餘事件','期望值']},
   data:{name:'數據分析',shortName:'數據分析',minutes:'12–16',map:'concept-map/115學測數學_數據分析.html',kp:['一維數據與標準差','相關係數','迴歸直線（最適直線）','加權平均與資料判讀']},
   explog:{name:'指數與對數',shortName:'指數與對數',minutes:'15–20',map:'concept-map/115學測數學_指數與對數.html',kp:['指數律與指數方程','對數的定義與運算','常用對數（科學記號、位數）','指數對數函數圖形','應用模型與數列結合']},
-  trig:{name:'三角比與三角函數',shortName:'三角比與三角函數',minutes:'20–25',map:'concept-map/115學測數學_三角.html',kp:['三角比、弧度與廣義角','正弦定理、餘弦定理','三角測量與幾何應用','三角函數圖形','和差角、倍角','角平分線、面積比與相似','圓周角與二面角中的三角']},
+  trig:{name:'三角',shortName:'三角',minutes:'20–25',map:'concept-map/115學測數學_三角.html',kp:['三角比、弧度與廣義角','正弦定理、餘弦定理','三角測量與幾何應用','三角函數圖形','和差角、倍角','角平分線、面積比與相似','圓周角與二面角中的三角']},
   pvec:{name:'平面向量',shortName:'平面向量',minutes:'15–20',map:'concept-map/115學測數學_平面向量.html',kp:['向量的表示與運算','線性組合、分點與面積比','內積：夾角、垂直、正射影','行列式與平行四邊形面積','向量的旋轉與坐標應用']},
   space:{name:'空間向量',shortName:'空間向量',minutes:'18–24',map:'concept-map/115學測數學_空間向量.html',kp:['空間坐標、距離與正立方體','內積、夾角與垂直','外積、面積與體積','平面方程式、投影與點到平面距離','空間直線、軌跡與歪斜線','二面角與立體']},
   matrix:{name:'矩陣',shortName:'矩陣',minutes:'15–20',map:'concept-map/115學測數學_矩陣.html',kp:['矩陣的意義、相等與乘法','矩陣的高次方','反方陣與解矩陣方程式','一次聯立與高斯消去','平面線性變換']}
@@ -32,14 +32,10 @@ const config=()=>units[state.selectedUnitId];
 const bank=()=>state.banks[state.selectedUnitId];
 const kpIds=unitId=>units[unitId].kp.map((_,index)=>`${unitId}:kp${index+1}`);
 const kpName=kpId=>units[kpId.split(':')[0]]?.kp[Number(kpId.match(/kp(\d+)/)?.[1])-1]||kpId;
-// 概念圖錨點對照。多數單元與概念圖核心概念同序（第 n 個核心概念 → #kpn），
-// 但「排列組合」與「機率」是兩個診斷單元共用同一張概念圖頁（該頁共 6 個核心概念），
-// 同序推導會指到錯的段落，故明列對照。
-const kpAnchors={comb:['kp1','kp1','kp2','kp1'],probability:['kp3','kp5','kp4','kp6']};
-// 次要參照：該核心概念另有一段落值得一併回讀（comb:kp4 的排容原理寫在核心概念 2）。
-const kpAnchorExtra={'comb:kp4':'kp2'};
-const kpAnchor=kpId=>{const[unitId,anchor]=kpId.split(':');return kpAnchors[unitId]?.[Number(anchor.slice(2))-1]??anchor;};
-const kpLinks=kpId=>[kpAnchor(kpId),...(kpAnchorExtra[kpId]?[kpAnchorExtra[kpId]]:[])];
+// 2026-08 收斂成 11 單元後，診斷單元與概念圖是一對一：第 n 個核心概念 → #kpn。
+// 沒有例外、沒有對照表——要維持這個性質，新增題目時 primaryConceptId 必須跟著
+// 概念圖那一頁的核心概念編號走（例如排容原理的題歸 kp2，因為教材寫在 kp2）。
+const kpLinks=kpId=>[kpId.split(':')[1]];
 const priorityRecords=records=>records.filter(record=>['NEEDS_REVIEW','INSUFFICIENT_EVIDENCE'].includes(record.status)).sort((a,b)=>(priorityOrder[a.status]-priorityOrder[b.status])||(a.score??1)-(b.score??1)||(a.accuracy??1)-(b.accuracy??1)).slice(0,3);
 
 function renderTex(tex,legacy=false){let source=String(tex);if(legacy)source=source.replaceAll('⋯','\\cdots ').replaceAll('∣','\\mid ').replace(/([A-Za-z0-9]+)\/\(([A-Za-z0-9]+)\)/g,'\\frac{$1}{$2}').replace(/([A-Za-z0-9]+)\/([A-Za-z0-9]+)/g,'\\frac{$1}{$2}');try{return window.katex.renderToString(source,{throwOnError:true,strict:'ignore',output:'htmlAndMathml'});}catch{return`<span class="math-fallback">${esc(source)}</span>`;}}

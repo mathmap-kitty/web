@@ -300,10 +300,108 @@
   /* 考頻徽章 / 學測難題徽章 */
   .kp-freq{display:inline-block; margin-left:9px; font-size:12.5px; color:#c98a00; font-weight:800; vertical-align:2px; letter-spacing:1px}
   .hard-badge{display:inline-block; background:#fbe4e4; color:#b5384e; border-radius:6px; padding:0 7px; font-size:12px; font-weight:700; margin-left:2px}
+  /* ── 方案 B：入口三格 ＋ 入口診斷（先把題目分抽屜，再挑公式） ── */
+  .axgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin:10px 0 2px}
+  .axcell{background:#fbfaf8; border:1px solid var(--line); border-top:3px solid var(--btn);
+    border-radius:10px; padding:11px 13px}
+  .ax-k{display:flex; align-items:center; gap:7px; font-size:17px; font-weight:800; color:var(--btn)}
+  .ax-k i{font-style:normal; font-size:15px; width:24px; height:24px; line-height:24px; text-align:center;
+    background:#e9f5f4; border-radius:7px}
+  .ax-d{display:block; margin-top:5px; font-size:14px; color:#4a3a34; font-weight:600}
+  .ax-h{display:block; margin-top:4px; font-size:13px; color:#6f7f7e; line-height:1.7}
+  /* 核心概念標題旁的入口組合（式 ▸ 根＝從式切入、接著處理根，兩格是一組不是主次） */
+  .ax-tags{display:inline-flex; align-items:center; gap:2px; margin-left:8px; vertical-align:2px; cursor:help}
+  .ax-tag{display:inline-block; padding:0 8px; border-radius:20px; font-size:12px; font-weight:700;
+    background:#eef5f5; color:#4a7b7f; border:1px solid #cfe3e3; white-space:nowrap}
+  .ax-tag.main{background:var(--btn); color:#fff; border-color:var(--btn)}
+  .ax-arrow{color:#8fb0b2; font-size:11px; font-weight:800; padding:0 1px}
+  /* 入口診斷卡 */
+  .entrydiag .ed-prog{font-size:14px; font-weight:700; color:var(--maroon-d); margin:10px 0 2px}
+  .entrydiag .ed-prog b{font-size:16px}
+  .ed-hint{font-weight:500; color:#9a857c; font-size:13px; margin-left:8px}
+  .edcard{border:1px solid var(--line); border-left:4px solid #cfd6dd; border-radius:0 10px 10px 0;
+    padding:11px 14px; margin:10px 0; background:#fff; transition:.15s}
+  .edcard.is-ok{border-left-color:#1f7a45; background:#f6fbf8}
+  .edcard.is-no{border-left-color:#c0663a; background:#fdf8f5}
+  .ed-q{font-size:15px; color:var(--ink); line-height:1.9}
+  .ed-n{display:inline-block; width:21px; height:21px; line-height:21px; text-align:center; margin-right:8px;
+    background:#f0dde3; color:var(--maroon-d); border-radius:50%; font-size:12.5px; font-weight:700}
+  .ed-opts{display:flex; gap:7px; flex-wrap:wrap; margin:9px 0 0}
+  .ed-opt{display:inline-flex; align-items:center; min-height:40px; padding:5px 20px; cursor:pointer;
+    background:var(--btn-bg); color:var(--btn); border:1.5px solid var(--btn-bd); border-radius:20px;
+    font-size:15px; font-weight:800; font-family:inherit; transition:.15s}
+  .ed-opt:hover:not(:disabled){background:var(--btn); color:#fff}
+  .ed-opt:disabled{cursor:default; opacity:.55}
+  .ed-opt.right{background:#1f7a45; border-color:#1f7a45; color:#fff; opacity:1}
+  .ed-opt.wrong{background:#fdecea; border-color:#c0663a; color:#a8452a; opacity:1}
+  .ed-fb{display:none; margin-top:9px; padding-top:9px; border-top:1px dashed var(--line)}
+  .edcard.done .ed-fb{display:block}
+  .ed-ans{color:var(--btn); font-size:14.5px}
+  .ed-why{display:block; margin-top:3px; font-size:14px; color:#5a4a44; line-height:1.85}
+  .ed-go{display:inline-block; margin-top:6px; font-size:13.5px; font-weight:700; color:var(--maroon);
+    text-decoration:none; border-bottom:1.5px solid #e3c6d0}
+  .ed-go:hover{border-bottom-color:var(--maroon)}
+  @media(max-width:560px){
+    .ed-opt{flex:1 1 auto; justify-content:center; padding:5px 12px}
+    .ax-tags{display:flex; margin:5px 0 0}
+  }
+  /* 路線選擇器：把 58 個核心概念縮成看得完的份量（只影響 Part 1 的核心概念卡） */
+  .routebar{display:flex; align-items:center; flex-wrap:wrap; gap:8px 10px;
+    background:#fbf7f4; border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:14px 0 4px}
+  .rb-lbl{font-weight:800; color:var(--maroon-d); font-size:14.5px; white-space:nowrap}
+  .rb-btns{display:flex; gap:6px; flex-wrap:wrap}
+  .rb-btn{display:inline-flex; align-items:center; min-height:34px;
+    background:#fff; color:#6b5249; border:1.5px solid var(--line); border-radius:20px;
+    padding:5px 14px; font-size:13.5px; font-weight:700; font-family:inherit; cursor:pointer; transition:.15s}
+  .rb-btn:hover{border-color:var(--maroon); color:var(--maroon)}
+  .rb-btn.on{background:var(--maroon); border-color:var(--maroon); color:#fff}
+  .rb-note{flex:1 1 100%; font-size:13px; color:#7a6a63; line-height:1.6}
+  .rb-note:empty{display:none}
+  @media(max-width:560px){
+    .rb-lbl{flex:1 1 100%}
+    /* 手機是學生主力裝置：觸控目標留 40px，別讓按鈕小到按不準 */
+    .rb-btn{min-height:40px; padding:4px 12px; font-size:13px}
+  }
   /* 官方答對率徽章：中性灰藍，純資訊、不做紅綠判斷（強調色只留給判斷關鍵） */
   .kp-rate{display:inline-block; margin-left:9px; padding:0 8px; border:1px solid #d3d9e0; border-radius:20px;
            background:#f4f6f8; color:#5c6b7a; font-size:12px; font-weight:700; vertical-align:2px; white-space:nowrap; cursor:help}
   .kp-rate i{font-style:normal; font-weight:600; color:#8b98a5; margin-left:5px; font-size:11.5px}
+  /* 「這個核心概念的歷屆全題」：反向連回 exam/ 子站。預設收合，不打斷核心概念卡的閱讀動線。
+     用與答對率徽章同一套中性灰藍——這是導覽資訊，不是判斷關鍵（強調色留給後者）。
+     ⚠ 一律用 class 或子選擇器，不要寫 .exq-chip span：KaTeX 會在含數學的容器塞大量 span。 */
+  .exqs{margin:14px 0 4px; border:1px solid #d3d9e0; border-radius:10px; background:#f8fafb}
+  .exqs > summary{list-style:none; cursor:pointer; padding:9px 14px; min-height:40px; display:flex;
+    flex-wrap:wrap; align-items:center; gap:2px 10px; font-size:14px; color:#4a5b6b; border-radius:10px}
+  .exqs > summary::-webkit-details-marker{display:none}
+  .exqs > summary::before{content:"▸"; color:#8b98a5; font-size:12px; margin-right:2px; transition:transform .15s}
+  .exqs[open] > summary::before{transform:rotate(90deg)}
+  .exqs > summary:hover{background:#eef2f5}
+  .exqs > summary > b{color:#3d5063; font-weight:800}
+  .exq-cnt{background:#e6ebf0; color:#5c6b7a; border-radius:20px; padding:0 9px; font-size:12px; font-weight:700; white-space:nowrap}
+  .exq-hint{color:#93a1ae; font-size:12px}
+  .exq-body{padding:2px 14px 12px}
+  .exq-row{display:flex; align-items:flex-start; gap:9px; margin:8px 0}
+  .exq-sub{flex:0 0 auto; background:#e7eef6; color:#3a5a9a; border:1px solid #cfe0f2; border-radius:6px;
+    padding:2px 8px; font-size:12px; font-weight:800; white-space:nowrap; min-width:58px; text-align:center}
+  .exq-sub.b{background:#f2eef6; color:#6b4a86; border-color:#ddd0ea}
+  .exq-sub > i{font-style:normal; font-weight:600; opacity:.7; margin-left:4px}
+  .exq-chips{display:flex; flex-wrap:wrap; gap:6px}
+  /* gap:0——年份與題號要黏成同一個 token（「115-5」），中間有縫會讀成「115 -5」。
+     題型與答對率各自用 margin 拉開。 */
+  .exq-chip{display:inline-flex; align-items:baseline; gap:0; background:#fff; border:1px solid #d3d9e0;
+    border-radius:20px; padding:2px 10px; font-size:12.5px; font-weight:700; color:#3d5063;
+    text-decoration:none; white-space:nowrap; line-height:1.9}
+  .exq-chip:hover{background:#eef4fb; border-color:#9fc0e8; color:#22406e}
+  .exq-n{font-weight:800}
+  .exq-t{color:#8b98a5; font-weight:600; font-size:11.5px; margin-left:6px}
+  .exq-r{font-style:normal; color:#5c6b7a; font-weight:600; font-size:11.5px;
+    border-left:1px solid #e0e5ea; padding-left:5px; margin-left:5px}
+  @media(max-width:640px){
+    .exqs > summary{font-size:13.5px; padding:9px 11px}
+    .exq-hint{flex-basis:100%; margin-left:14px}
+    .exq-body{padding:2px 11px 11px}
+    .exq-row{flex-direction:column; gap:5px}
+  }
   /* 解題線索（看到關鍵字 → 想到這個核心概念）；藍色＝引導/線索 */
   .cues{background:#eef4fb; border:1px solid #cfe0f2; border-left:4px solid #3a5a9a; border-radius:0 8px 8px 0; padding:8px 14px; margin:9px 0 4px; font-size:14px; color:#3a4a63; line-height:1.95}
   .cue-lbl{display:inline-block; background:#3a5a9a; color:#fff; border-radius:6px; padding:1px 9px; font-size:12.5px; font-weight:800; margin-right:8px}
@@ -549,7 +647,7 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><span class="t-title">複習講義</span><span class="tb-caret">▾ 展開選單</span><a class="tb-home" href="../" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🏠 網站首頁</a><a class="tb-home" href="../concept-map/" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">📘 重點整理</a><select class="nav-select" onchange="if(this.value){location.href=this.value;}"><option value="">— 跳到章 —</option><option value="index.html">📖 講義目錄</option><option value="第01章_數與式.html" selected>第一章　數與式</option><option value="第02章_多項式函數.html">第二章　多項式函數</option><option value="第03章_直線與圓.html">第三章　直線與圓</option><option value="第04章_數列與級數.html">第四章　數列與級數</option><option value="第05章_排列組合.html">第五章　排列組合</option><option value="第06章_機率與期望值.html">第六章　機率與期望值</option><option value="第07章_數據分析.html">第七章　數據分析</option><option value="第08章_指數與對數函數.html">第八章　指數與對數函數</option><option value="第09章_三角.html">第九章　三角</option><option value="第10章_平面向量.html">第十章　平面向量</option><option value="第11章_空間向量.html">第十一章　空間向量</option><option value="第12章_空間中的平面與直線.html">第十二章　空間中的平面與直線</option><option value="第13章_矩陣.html">第十三章　矩陣</option><option value="附錄_解二元一次聯立方程組.html">附錄　解二元一次聯立方程組</option></select><select class="nav-select" onchange="if(this.value){location.hash=this.value;this.selectedIndex=0;}"><option value="">— 跳到節 —</option><option value="#s1">一、數系：先把數的地圖建好</option><option value="#s2">二、化簡工具：代數恆等式</option><option value="#s3">三、算幾不等式：求極值的利器</option><option value="#s4">四、分點公式：在數線上定位</option><option value="#s5">五、絕對值：把「距離」變成工具</option><option value="#s6">🧭判斷流程：看到 X → 用 Y</option><option value="#s7">🔗跨章鏈結：遇到沒看過的題，從這裡接</option><option value="#s8">📝練習指引：歷屆題號（106–115）</option></select><button onclick="revealAll()">全部顯示答案</button><button onclick="hideAll()">全部隱藏</button></div>
+<div class="toolbar"><span class="t-title">複習講義</span><span class="tb-caret">▾ 展開選單</span><a class="tb-home" href="../" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🏠 網站首頁</a><a class="tb-home" href="../concept-map/" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:18px;padding:4px 12px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">📘 重點整理</a><select class="nav-select" onchange="if(this.value){location.href=this.value;}"><option value="">— 跳到章 —</option><option value="index.html">📖 講義目錄</option><option value="第01章_數與式.html" selected>第一章　數與式</option><option value="第02章_多項式函數.html">第二章　多項式函數</option><option value="第03章_直線與圓.html">第三章　直線與圓</option><option value="第04章_數列與級數.html">第四章　數列與級數</option><option value="第05章_排列組合與機率.html">第五章　排列組合與機率</option><option value="第06章_數據分析.html">第六章　數據分析</option><option value="第07章_指數與對數.html">第七章　指數與對數</option><option value="第08章_三角.html">第八章　三角</option><option value="第09章_平面向量.html">第九章　平面向量</option><option value="第10章_空間向量.html">第十章　空間向量</option><option value="第11章_矩陣.html">第十一章　矩陣</option><option value="附錄_解二元一次聯立方程組.html">附錄　解二元一次聯立方程組</option></select><select class="nav-select" onchange="if(this.value){location.hash=this.value;this.selectedIndex=0;}"><option value="">— 跳到節 —</option><option value="#s1">一、數系：先把數的地圖建好</option><option value="#s2">二、化簡工具：代數恆等式</option><option value="#s3">三、算幾不等式：求極值的利器</option><option value="#s4">四、分點公式：在數線上定位</option><option value="#s5">五、絕對值：把「距離」變成工具</option><option value="#s6">🧭判斷流程：看到 X → 用 Y</option><option value="#s7">🔗跨章鏈結：遇到沒看過的題，從這裡接</option><option value="#s8">📝練習指引：歷屆題號（106–115）</option></select><button onclick="revealAll()">全部顯示答案</button><button onclick="hideAll()">全部隱藏</button></div>
 <div class="wrap">
 <div class="hero"><h1>第一章　數與式</h1><p>學測數學A 複習講義　·　5 節</p></div><div class="legend">使用方式：內容中的 <span class="blank" style="cursor:default"><span class="q">？</span></span> 就是講義的填空——<b>點一下顯示答案</b>，再點一下收回；也可用上方 <b>「全部顯示答案」</b> 一次切換整章（＝教師版）。圖可點擊放大。</div><div class="g-lead"><span class="nlab">脈絡導讀</span><p>數與式是整張學測卷的「隱形主角」——它很少單獨出一大題，卻藏在指對數、數列、幾何、數據每一步的計算裡。底層工具沒練熟，再難的整合題都會卡在最後一哩。</p><p>本章依「先認識數 → 再學化簡 → 再學比較與定位」的順序：</p><p>先把數系地圖建好，再掌握化簡的代數工具，接著是不等式與絕對值兩把利器，最後用分點公式在數線上定位。</p></div><section class="card sec-card"><h2 class="sec-h" id="s1"><span class="num">一</span><span>數系：先把數的地圖建好</span></h2><p class="gp">實數分成有理數與無理數，下圖是完整分類——記住「有理數＝可寫成分數」「無理數＝不循環的無限小數」這條主線。</p><figure class="gfig" style="max-width:min(100%,619px)"><img src="img/image1.png" alt="" loading="lazy"></figure><h3 class="sub-h">核心概念</h3><ul class="glist"><li>有理數：可寫成 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{m}{n}\)</span></span>（\(m\)、\(n\) 為整數且 \(n \neq 0\)），包含整數、有限小數、循環小數。</li><ul class="glist"><li>封閉性：有理數做加減乘除（除數 \(\neq 0\)），結果<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">仍為有理數</span></span>。</li></ul><li>無理數：不循環的無限小數（如 \(\sqrt{2}\)、\(\pi\)）。</li><ul class="glist"><li><b>相等原則</b>（設 \(a\)、\(b\)、\(c\)、\(d\) 為有理數、\(\sqrt{p}\) 為無理數）：</li><li class="numbered"><span class="n">(1)</span>若 \(a + b\sqrt{p} = 0\)，則 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a = b = 0\)</span></span>。</li><li class="numbered"><span class="n">(2)</span>若 \(a + b\sqrt{p} = c + d\sqrt{p}\)，則<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a"> \(a = c\)、\(b = d\)</span></span>。</li></ul><li>循環小數化分數：\(0.\overline{ab} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{ab}{99}\)</span></span>，\(\, 0.\overline{abc} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{abc}{999}\)</span></span>\(，0.a\overline{bc} = \)<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{abc - a}{990}\) </span></span>，\(0.\overline{9} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">1</span></span> 。</li><li>稠密性：任兩有實數之間，必存在<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">另一個實數</span></span>（實數在數線上處處都是）。</li></ul><div class="nbox n-trap"><span class="nlab">易錯</span><p>封閉性「反過來」不成立——兩數相加為有理數，<b>不代表</b>兩數各自都是有理數。反例：\(\sqrt{2} + \left( - \sqrt{2} \right) = 0\)。這是學測最愛設的陷阱。</p></div></section><section class="card sec-card"><h2 class="sec-h" id="s2"><span class="num">二</span><span>化簡工具：代數恆等式</span></h2><p class="gp">化簡的核心是一組乘法公式，要把展開與因式分解練成反射動作。</p><h3 class="sub-h">核心概念 ─ 乘法公式</h3><ul class="glist"><li>\((a \pm b)^{2} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\({a}^{2} \pm 2ab + {b}^{2}\)</span></span></li><li>\((a + b)(a - b) =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\({a}^{2} - {b}^{2}\)</span></span></li><li>\((a \pm b)^{3} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\({a}^{3} \pm 3{a}^{2}b + 3a{b}^{2} \pm {b}^{3}\)</span></span></li><li>\((a + b + c)^{2} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\({a}^{2} + {b}^{2} + {c}^{2} + 2ab + 2bc + 2ca\)</span></span></li></ul><h3 class="sub-h">核心概念 ─ 和積互化（已知和 \(\mathbf{a}\mathbf{+}\mathbf{b}\) 與積 \(\mathbf{ab}\)，求對稱式）</h3><ul class="glist"><li>\(a^{2} + b^{2} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\left( a + b \right)^{2} - 2ab\)</span></span></li><li>\(a^{3} + b^{3} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\left( a + b \right)^{3} - 3ab\left( a + b \right) = (a + b)(a^{2} - ab + b^{2})\)</span></span></li><li>\((a - b)^{2} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\left( a + b \right)^{2} - 4ab\)</span></span></li></ul><p class="gp">為什麼重要：許多題目只給「兩數的和與積」，要你求 \(a^{2} + b^{2}\)、\(a^{3} + b^{3}\) 這類對稱式。硬解出 \(a\)、\(b\) 往往麻煩，用和積互化直接代入最快。</p><h3 class="sub-h">核心概念 ─ 根式化簡（雙重根號）</h3><p class="gp">看到「根號裡又有一個 \(\sqrt{\phantom{x}}\)」就湊成完全平方——</p><ul class="glist"><li>\(\sqrt{a + b \pm 2\sqrt{ab}} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\sqrt{a} \pm \sqrt{b}\)</span></span>（取 \(a &gt; b\) 使結果非負）</li><li>\(\sqrt{a^{2}} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\left| a \right|\)</span></span></li></ul><div class="exbox"><p class="gp"><b class="bdg bg-ex">範例</b>　設 \(a + b = 5\)、\(ab = 3\)，求 \(a^{2} + b^{2}\) 與 \(a^{3} + b^{3}\)。</p><p class="gp"><b class="bdg bg-ex">解</b>　\(a^{2} + b^{2} = (a + b)^{2} - 2ab = 25 - 6 =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(19\)</span></span>；</p><p class="gp">\(\, a^{3} + b^{3} = (a + b)^{3} - 3ab(a + b) = 125 - 45 =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(80\)</span></span>。</p><p class="gp">全程不需解出 \(a\)、\(b\)——這正是和積互化的價值。</p></div><div class="nbox n-trap"><span class="nlab">易錯</span><p>雙重根號化成「差」的形式時，結果要加絕對值，確保非負。</p></div></section><section class="card sec-card"><h2 class="sec-h" id="s3"><span class="num">三</span><span>算幾不等式：求極值的利器</span></h2><p class="gp">對兩個非負數 \(a\)、\(b\)，算術平均(\(A = \frac{a + b}{2}\))一定大於等於幾何平均(\(G = \sqrt{ab}\))：</p><div class="hl"><span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{a + b}{2}\  \geq \ \sqrt{ab}\)</span></span>　，等號在 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(a = b\)</span></span> 時成立。</div><p class="gp">用途：已知相乘\(\longleftrightarrow\)相加、出現倒數關係，求最大值、最小值。</p><p class="gp">使用前提：各項必須非負；等號要(最大最小時)（\(a = b\) 的情況在題目範圍內存在）。</p><div class="exbox"><p class="gp"><b class="bdg bg-ex">範例</b>　\(x &gt; 0\)，求 \(x + \frac{4}{x}\) 的最小值。</p><p class="gp"><b class="bdg bg-ex">解</b>　\(x &gt; 0\) 且 \(\frac{4}{x} &gt; 0\)，兩項相乘 \(x \cdot \frac{4}{x} = 4\) 為定值。</p><p class="gp">由算幾：\(x + \frac{4}{x} \geq 2\sqrt{\, x \cdot \frac{4}{x}\,} =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(4\)</span></span>，等號在 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(x = \frac{4}{x}\) 即 \(x = 2\)</span></span> 時成立（\(x = 2 &gt; 0\)，可取到）。</p><p class="gp">最小值為 <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(4\)</span></span>。</p></div><div class="nbox n-trap"><span class="nlab">易錯</span><p>沒確認「等號可達」就宣稱最小值，是算幾最常見的失分點。</p></div></section><section class="card sec-card"><h2 class="sec-h" id="s4"><span class="num">四</span><span>分點公式：在數線上定位</span></h2><p class="gp">\(A(a)\)、\(B(b)\) 為數線上相異兩點，\(P\) 在 \(\overline{AB}\) 之間且 \(PA:PB = m:n\)，則</p><figure class="gfig" style="max-width:min(100%,300px)"><img src="img/image2.png" alt="" loading="lazy"></figure><div class="hl">\(P =\) <span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\frac{n\, a + m\, b}{m + n}\)</span></span></div><p class="gp">記憶法：分點座標是「比例交叉配端點」的加權平均——越靠近 \(B\)，\(b\) 的權重越大。這個加權平均的想法，之後會在向量（三點共線）與三角形重心原封不動地重現。</p></section><section class="card sec-card"><h2 class="sec-h" id="s5"><span class="num">五</span><span>絕對值：把「距離」變成工具</span></h2><p class="gp">\(|a|\) =<span class="blank" onclick="tb(this)"><span class="q">？</span><span class="a">\(\left\{ \begin{matrix}
 \ a\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,a \geq 0 \\
@@ -694,13 +792,19 @@
       {left:'\\[', right:'\\]', display:true}], throwOnError:false};
   var _mmPend = [];  // 尚未渲染的分塊（DOM 順序）
   function _mmChunks(){
-    // 分塊單位：各 .card 的直接子元素（教學內容都在卡片裡）＋其餘 body 頂層元素
+    // 分塊單位：各 .card 的直接子元素（教學內容都在卡片裡）＋其餘頂層元素。
+    // 實際 DOM 是 body > .wrap > (.part | .card)*，卡片在版心裡而不在 body 層，
+    // 所以遇到 .wrap／.card 都要往內下探——只掃 body 會讓整個 .wrap 變成單一分塊，
+    // 12ms 時間預算迴圈一輪就渲染完全頁，等於完全沒有分塊。
     var list = [];
-    Array.prototype.forEach.call(document.body.children, function(top){
-      if (top.classList && top.classList.contains('card') && top.children.length)
-        Array.prototype.push.apply(list, top.children);
-      else list.push(top);
-    });
+    (function walk(parent){
+      Array.prototype.forEach.call(parent.children, function(el){
+        if (el.children.length && el.classList &&
+            (el.classList.contains('wrap') || el.classList.contains('card')))
+          walk(el);
+        else list.push(el);
+      });
+    })(document.body);
     return list;
   }
   function ensureMath(root){

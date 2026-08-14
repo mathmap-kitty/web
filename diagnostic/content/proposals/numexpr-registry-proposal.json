@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "unitId": "numexpr",
+  "unitName": "數與式",
+  "status": "APPROVED_REFERENCE_NOT_PUBLISHED",
+  "generatedAt": "2026-08-14",
+  "reuseExistingRegistry": true,
+  "knowledgePoints": [
+    {"id":"numexpr:kp1","title":"實數系與有理／無理","representations":["數"]},
+    {"id":"numexpr:kp2","title":"絕對值","representations":["線","式"]},
+    {"id":"numexpr:kp3","title":"數線、距離與根號估算","representations":["數","線"]},
+    {"id":"numexpr:kp4","title":"乘法公式與算幾不等式","representations":["式"]},
+    {"id":"numexpr:kp5","title":"比例、百分率與加權平均","representations":["比","式"]},
+    {"id":"numexpr:kp6","title":"高斯（最大整數）函數","representations":["數","線"]}
+  ],
+  "representations": ["數","線","式","比"],
+  "indexedEvidenceCount": 9,
+  "coreEvidenceCount": 6,
+  "bridgeEvidenceCount": 3,
+  "recentMathACoreEvidenceCount": 1,
+  "recentMathABridgeEvidenceCount": 2,
+  "approvedRelationshipCount": 12,
+  "dependencyWeightEligibleCount": 11,
+  "questionPlan": {"initial":18,"immediateVariant":18,"delayedRetest":18,"total":54},
+  "publicationAuthorized": false,
+  "deploymentAuthorized": false
+}

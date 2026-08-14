@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""脈絡複習講義 → 網頁版（13 章 + 目錄頁），視覺與 concept-map 站一致。
+"""脈絡複習講義 → 網頁版（11 章 + 目錄頁），視覺與 concept-map 站一致。
 
 單一來源：content/guide_data.json（由 build/docx2guide.py 從教師版 .docx 產生）。
 圖片來源：guide-img/（docx 內嵌圖 + build/pdf_figs.py 從 PDF 裁的手繪圖）。
@@ -685,9 +685,9 @@ def build_index(data):
             f'<span>🧭 每章附「看到 X → 用 Y」判斷流程</span></div>'
             + howto + LEGEND
             + f'<div class="g-toc">{"".join(cards)}</div>')
-    desc = (f"{TITLE}網頁版：13 章條列重點，填空點一下就顯示答案，"
+    desc = (f"{TITLE}網頁版：11 章條列重點，填空點一下就顯示答案，"
             "附易錯提醒、判斷流程、跨章鏈結與 106–115 歷屆題號。")
-    return page(f"{TITLE}｜13 章條列重點 × 挖空自測", desc,
+    return page(f"{TITLE}｜11 章條列重點 × 挖空自測", desc,
                 "index.html", body, data)
 
 

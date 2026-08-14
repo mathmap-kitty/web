@@ -1,0 +1,2707 @@
+{
+  "schemaVersion": "1.1.0",
+  "unitId": "numexpr",
+  "status": "APPROVED_PUBLISHED",
+  "items": [
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "設 [[r]] 為非零有理數，[[q]] 為無理數。下列何者必為無理數？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[r+q]]"
+        },
+        {
+          "id": "B",
+          "text": "[[rq\\text{ 為有理數}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[q^2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[q+(-q)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac1q\\text{ 為有理數}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "若 [[r+q]] 為有理數，則 [[q=(r+q)-r]] 也為有理數，矛盾，故 [[r+q]] 必為無理數。",
+      "distractorMap": {
+        "B": "numexpr.KP1.CONCEPT.001",
+        "C": "numexpr.KP1.CONCEPT.002",
+        "D": "numexpr.KP1.CONCEPT.003",
+        "E": "numexpr.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "下列何者為有理數？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt8-\\sqrt2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt{18}-3\\sqrt2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\pi-3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac1{\\sqrt3}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\sqrt{18}-3\\sqrt2=3\\sqrt2-3\\sqrt2=0]]，所以是有理數。",
+      "distractorMap": {
+        "A": "numexpr.KP1.RECOGNITION.001",
+        "B": "numexpr.KP1.RECOGNITION.002",
+        "D": "numexpr.KP1.RECOGNITION.003",
+        "E": "numexpr.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "若 [[a=\\sqrt5+2]]，則 [[\\dfrac1a]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt5+2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt5-2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2-\\sqrt5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac{\\sqrt5+2}{9}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\dfrac1{\\sqrt5+2}=\\dfrac{\\sqrt5-2}{5-4}=\\sqrt5-2]]。",
+      "distractorMap": {
+        "A": "numexpr.KP1.APPLICATION.001",
+        "C": "numexpr.KP1.APPLICATION.002",
+        "D": "numexpr.KP1.APPLICATION.003",
+        "E": "numexpr.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若 [[x]] 為無理數、[[n]] 為非零整數，下列何者一定正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x+n]] 為無理數"
+        },
+        {
+          "id": "B",
+          "text": "[[x^2]] 為無理數"
+        },
+        {
+          "id": "C",
+          "text": "[[x-x]] 為無理數"
+        },
+        {
+          "id": "D",
+          "text": "[[nx]] 為整數"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac{x}{x}]] 為無理數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "若 [[x+n]] 是有理數，則 [[x=(x+n)-n]] 也是有理數，矛盾。",
+      "distractorMap": {
+        "B": "numexpr.KP1.CONCEPT.001",
+        "C": "numexpr.KP1.CONCEPT.002",
+        "D": "numexpr.KP1.CONCEPT.003",
+        "E": "numexpr.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "將 [[0.1\\overline{6}]] 化為最簡分數。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\dfrac16]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac15]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac{16}{99}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac{17}{100}]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\dfrac23]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "令 [[x=0.1666\\ldots]]，則 [[10x=1.666\\ldots]]，相減得 [[9x=1.5]]，故 [[x=\\dfrac16]]。",
+      "distractorMap": {
+        "B": "numexpr.KP1.RECOGNITION.001",
+        "C": "numexpr.KP1.RECOGNITION.002",
+        "D": "numexpr.KP1.RECOGNITION.003",
+        "E": "numexpr.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "若 [[x=\\sqrt3-1]]，則 [[x^2+2x]] 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[4]]"
+        },
+        {
+          "id": "E",
+          "text": "[[2\\sqrt3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[x^2+2x=(x+1)^2-1=(\\sqrt3)^2-1=2]]。",
+      "distractorMap": {
+        "A": "numexpr.KP1.APPLICATION.001",
+        "C": "numexpr.KP1.APPLICATION.002",
+        "D": "numexpr.KP1.APPLICATION.003",
+        "E": "numexpr.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "下列敘述何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "兩個無理數相加必為無理數"
+        },
+        {
+          "id": "B",
+          "text": "兩個無理數相乘必為無理數"
+        },
+        {
+          "id": "C",
+          "text": "有理數與無理數相加必為無理數"
+        },
+        {
+          "id": "D",
+          "text": "無理數平方必為無理數"
+        },
+        {
+          "id": "E",
+          "text": "無理數的相反數為有理數"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "有理數加無理數若為有理數，兩有理數相減會使原無理數成為有理數，矛盾。",
+      "distractorMap": {
+        "A": "numexpr.KP1.CONCEPT.001",
+        "B": "numexpr.KP1.CONCEPT.002",
+        "D": "numexpr.KP1.CONCEPT.003",
+        "E": "numexpr.KP1.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "下列哪一個數介於 [[2]] 與 [[3]] 之間？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\sqrt5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt{10}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\dfrac73]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\pi]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "因 [[4<5<9]]，所以 [[2<\\sqrt5<3]]。",
+      "distractorMap": {
+        "A": "numexpr.KP1.RECOGNITION.001",
+        "C": "numexpr.KP1.RECOGNITION.002",
+        "D": "numexpr.KP1.RECOGNITION.003",
+        "E": "numexpr.KP1.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp1-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp1",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "化簡 [[\\dfrac{2}{\\sqrt3-1}-\\dfrac{2}{\\sqrt3+1}]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\sqrt3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2\\sqrt3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "原式 [[=\\dfrac{2[(\\sqrt3+1)-(\\sqrt3-1)]}{3-1}=\\dfrac4 2=2]]。",
+      "distractorMap": {
+        "A": "numexpr.KP1.APPLICATION.001",
+        "C": "numexpr.KP1.APPLICATION.002",
+        "D": "numexpr.KP1.APPLICATION.003",
+        "E": "numexpr.KP1.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "兩組資料合併平均時，最重要的權重是什麼？",
+      "options": [
+        {
+          "id": "A",
+          "text": "各組最高分"
+        },
+        {
+          "id": "B",
+          "text": "各組最低分"
+        },
+        {
+          "id": "C",
+          "text": "各組人數"
+        },
+        {
+          "id": "D",
+          "text": "各組分數範圍"
+        },
+        {
+          "id": "E",
+          "text": "組別名稱"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "合併平均應以各組人數為權重，先求各組總量再相加。",
+      "distractorMap": {
+        "A": "numexpr.KP5.CONCEPT.001",
+        "B": "numexpr.KP5.CONCEPT.002",
+        "D": "numexpr.KP5.CONCEPT.003",
+        "E": "numexpr.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "一件商品原價 [[800]] 元，打八五折後售價為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[120]] 元"
+        },
+        {
+          "id": "B",
+          "text": "[[680]] 元"
+        },
+        {
+          "id": "C",
+          "text": "[[720]] 元"
+        },
+        {
+          "id": "D",
+          "text": "[[850]] 元"
+        },
+        {
+          "id": "E",
+          "text": "[[920]] 元"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[800\\times0.85=680]]，故售價為 680 元。",
+      "distractorMap": {
+        "A": "numexpr.KP5.RECOGNITION.001",
+        "C": "numexpr.KP5.RECOGNITION.002",
+        "D": "numexpr.KP5.RECOGNITION.003",
+        "E": "numexpr.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "甲班 30 人，平均 70 分；乙班平均 80 分。兩班合併平均為 76 分，則乙班有多少人？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[20]]"
+        },
+        {
+          "id": "B",
+          "text": "[[30]]"
+        },
+        {
+          "id": "C",
+          "text": "[[40]]"
+        },
+        {
+          "id": "D",
+          "text": "[[45]]"
+        },
+        {
+          "id": "E",
+          "text": "[[50]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "設乙班 n 人，則 [[\\dfrac{30\\times70+80n}{30+n}=76]]，解得 [[n=45]]。",
+      "distractorMap": {
+        "A": "numexpr.KP5.APPLICATION.001",
+        "B": "numexpr.KP5.APPLICATION.002",
+        "C": "numexpr.KP5.APPLICATION.003",
+        "E": "numexpr.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "某數增加 [[20\\%]] 後，再減少 [[20\\%]]，結果與原數相比如何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "相同"
+        },
+        {
+          "id": "B",
+          "text": "增加 [[4\\%]]"
+        },
+        {
+          "id": "C",
+          "text": "減少 [[4\\%]]"
+        },
+        {
+          "id": "D",
+          "text": "增加 [[40\\%]]"
+        },
+        {
+          "id": "E",
+          "text": "減少 [[40\\%]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "倍率為 [[1.2\\times0.8=0.96]]，所以結果比原數少 4%。",
+      "distractorMap": {
+        "A": "numexpr.KP5.CONCEPT.001",
+        "B": "numexpr.KP5.CONCEPT.002",
+        "D": "numexpr.KP5.CONCEPT.003",
+        "E": "numexpr.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "若 [[a:b=3:5]] 且 [[a+b=32]]，則 a 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[8]]"
+        },
+        {
+          "id": "B",
+          "text": "[[12]]"
+        },
+        {
+          "id": "C",
+          "text": "[[15]]"
+        },
+        {
+          "id": "D",
+          "text": "[[20]]"
+        },
+        {
+          "id": "E",
+          "text": "[[24]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "每份為 [[32\\div8=4]]，所以 [[a=3\\times4=12]]。",
+      "distractorMap": {
+        "A": "numexpr.KP5.RECOGNITION.001",
+        "C": "numexpr.KP5.RECOGNITION.002",
+        "D": "numexpr.KP5.RECOGNITION.003",
+        "E": "numexpr.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "濃度 [[20\\%]] 的鹽水 [[300]] 克，加入多少克純水後濃度成為 [[15\\%]]？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[50]]"
+        },
+        {
+          "id": "B",
+          "text": "[[75]]"
+        },
+        {
+          "id": "C",
+          "text": "[[100]]"
+        },
+        {
+          "id": "D",
+          "text": "[[150]]"
+        },
+        {
+          "id": "E",
+          "text": "[[200]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "鹽有 [[300\\times0.2=60]] 克。設加水 x 克，則 [[\\dfrac{60}{300+x}=0.15]]，解得 [[x=100]]。",
+      "distractorMap": {
+        "A": "numexpr.KP5.APPLICATION.001",
+        "B": "numexpr.KP5.APPLICATION.002",
+        "D": "numexpr.KP5.APPLICATION.003",
+        "E": "numexpr.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "合併兩組平均數時，下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "一定等於兩平均數的算術平均"
+        },
+        {
+          "id": "B",
+          "text": "一定較接近人數較多組的平均"
+        },
+        {
+          "id": "C",
+          "text": "一定較接近人數較少組的平均"
+        },
+        {
+          "id": "D",
+          "text": "一定大於兩組平均"
+        },
+        {
+          "id": "E",
+          "text": "一定小於兩組平均"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "合併平均介於兩組平均之間，且較靠近權重也就是人數較多的一組。",
+      "distractorMap": {
+        "A": "numexpr.KP5.CONCEPT.001",
+        "C": "numexpr.KP5.CONCEPT.002",
+        "D": "numexpr.KP5.CONCEPT.003",
+        "E": "numexpr.KP5.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "一商品先打九折，再打八折，相當於原價的幾折？",
+      "options": [
+        {
+          "id": "A",
+          "text": "七折"
+        },
+        {
+          "id": "B",
+          "text": "七二折"
+        },
+        {
+          "id": "C",
+          "text": "八折"
+        },
+        {
+          "id": "D",
+          "text": "八五折"
+        },
+        {
+          "id": "E",
+          "text": "十七折"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[0.9\\times0.8=0.72]]，所以相當於七二折。",
+      "distractorMap": {
+        "A": "numexpr.KP5.RECOGNITION.001",
+        "C": "numexpr.KP5.RECOGNITION.002",
+        "D": "numexpr.KP5.RECOGNITION.003",
+        "E": "numexpr.KP5.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp5-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp5",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "甲、乙兩組人數比為 [[2:3]]，平均分別為 [[75]]、[[85]]，則合併平均為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[79]]"
+        },
+        {
+          "id": "B",
+          "text": "[[80]]"
+        },
+        {
+          "id": "C",
+          "text": "[[81]]"
+        },
+        {
+          "id": "D",
+          "text": "[[82]]"
+        },
+        {
+          "id": "E",
+          "text": "[[83]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "合併平均為 [[\\dfrac{2\\times75+3\\times85}{2+3}=\\dfrac{405}{5}=81]]。",
+      "distractorMap": {
+        "A": "numexpr.KP5.APPLICATION.001",
+        "B": "numexpr.KP5.APPLICATION.002",
+        "D": "numexpr.KP5.APPLICATION.003",
+        "E": "numexpr.KP5.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "以 [[[x]]] 表示不超過 x 的最大整數。下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[[2.8]=3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[[-1.2]=-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[[-1.2]=-2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[[3]=2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[[0.9]=1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "不超過 [[-1.2]] 的最大整數是 [[-2]]。",
+      "distractorMap": {
+        "A": "numexpr.KP6.CONCEPT.001",
+        "B": "numexpr.KP6.CONCEPT.002",
+        "D": "numexpr.KP6.CONCEPT.003",
+        "E": "numexpr.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "若 [[[x]=3]]，則 x 的範圍為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2<x\\le3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3\\le x<4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[3<x\\le4]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2\\le x<3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[x=3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[[x]=3]] 等價於 [[3\\le x<4]]。",
+      "distractorMap": {
+        "A": "numexpr.KP6.APPLICATION.001",
+        "C": "numexpr.KP6.APPLICATION.002",
+        "D": "numexpr.KP6.APPLICATION.003",
+        "E": "numexpr.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "以 [[[y]]] 表示不超過 y 的最大整數。若 [[\\left[\\dfrac{2x-1}{3}\\right]=-2]]，則 x 的範圍為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-\\dfrac52<x\\le-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-\\dfrac52\\le x<-1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-2\\le x<-1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[-5\\le x<-2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[-3\\le x<-2]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "由 [[-2\\le\\dfrac{2x-1}{3}<-1]]，整理得 [[-\\dfrac52\\le x<-1]]。",
+      "distractorMap": {
+        "A": "numexpr.KP6.RECOGNITION.001",
+        "C": "numexpr.KP6.RECOGNITION.002",
+        "D": "numexpr.KP6.RECOGNITION.003",
+        "E": "numexpr.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "對任意實數 x，下列何者一定成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[[x]>x]]"
+        },
+        {
+          "id": "B",
+          "text": "[[[x]\\le x<[x]+1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[[x]=x]]"
+        },
+        {
+          "id": "D",
+          "text": "[[[x]\\ge x]]"
+        },
+        {
+          "id": "E",
+          "text": "[[[x]<x-1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "依定義，[[[x]]] 是不超過 x 的最大整數，因此 [[[x]\\le x<[x]+1]]。",
+      "distractorMap": {
+        "A": "numexpr.KP6.CONCEPT.001",
+        "C": "numexpr.KP6.CONCEPT.002",
+        "D": "numexpr.KP6.CONCEPT.003",
+        "E": "numexpr.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "[[[\\sqrt{40}]]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[7]]"
+        },
+        {
+          "id": "D",
+          "text": "[[8]]"
+        },
+        {
+          "id": "E",
+          "text": "[[20]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[36<40<49]]，所以 [[6<\\sqrt{40}<7]]，故 [[[\\sqrt{40}]=6]]。",
+      "distractorMap": {
+        "A": "numexpr.KP6.RECOGNITION.001",
+        "C": "numexpr.KP6.RECOGNITION.002",
+        "D": "numexpr.KP6.RECOGNITION.003",
+        "E": "numexpr.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "方程式 [[[x]=x]] 在 [[-2\\le x\\le3]] 中有幾個實數解？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[7]]"
+        },
+        {
+          "id": "E",
+          "text": "無限多個"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "區間內整數為 [[-2,-1,0,1,2,3]]，共 6 個。",
+      "distractorMap": {
+        "A": "numexpr.KP6.APPLICATION.001",
+        "B": "numexpr.KP6.APPLICATION.002",
+        "D": "numexpr.KP6.APPLICATION.003",
+        "E": "numexpr.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 n 為整數，則 [[[n+0.7]]] 等於何者？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[n-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[n]]"
+        },
+        {
+          "id": "C",
+          "text": "[[n+1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[0.7n]]"
+        },
+        {
+          "id": "E",
+          "text": "[[n+0.7]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[n\\le n+0.7<n+1]]，故 [[[n+0.7]=n]]。",
+      "distractorMap": {
+        "A": "numexpr.KP6.CONCEPT.001",
+        "C": "numexpr.KP6.CONCEPT.002",
+        "D": "numexpr.KP6.CONCEPT.003",
+        "E": "numexpr.KP6.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "滿足 [[[x]= -3]] 的區間長度為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[1]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3]]"
+        },
+        {
+          "id": "E",
+          "text": "無限大"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "解集為 [[-3\\le x<-2]]，區間長度為 [[(-2)-(-3)=1]]。",
+      "distractorMap": {
+        "A": "numexpr.KP6.RECOGNITION.001",
+        "C": "numexpr.KP6.RECOGNITION.002",
+        "D": "numexpr.KP6.RECOGNITION.003",
+        "E": "numexpr.KP6.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp6-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp6",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "在 [[0\\le x<5]] 中，滿足 [[[x]=2]] 的 x 範圍為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1\\le x<2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[2\\le x<3]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2<x\\le3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x=2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[3\\le x<4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[[x]=2]] 給出 [[2\\le x<3]]，此區間完全位於題設定義域內。",
+      "distractorMap": {
+        "A": "numexpr.KP6.APPLICATION.001",
+        "C": "numexpr.KP6.APPLICATION.002",
+        "D": "numexpr.KP6.APPLICATION.003",
+        "E": "numexpr.KP6.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "[[|x-3|]] 在數線上的意義為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "x 到 0 的距離"
+        },
+        {
+          "id": "B",
+          "text": "x 到 3 的距離"
+        },
+        {
+          "id": "C",
+          "text": "x 與 3 的和"
+        },
+        {
+          "id": "D",
+          "text": "x 的相反數"
+        },
+        {
+          "id": "E",
+          "text": "x 到負 3 的距離"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[|x-3|]] 表示數線上點 x 與點 3 的距離。",
+      "distractorMap": {
+        "A": "numexpr.KP2.CONCEPT.001",
+        "C": "numexpr.KP2.CONCEPT.002",
+        "D": "numexpr.KP2.CONCEPT.003",
+        "E": "numexpr.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "不等式 [[|x+2|<3]] 的解集為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-5<x<1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-1<x<5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x<-5\\text{ 或 }x>1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[-5\\le x\\le1]]"
+        },
+        {
+          "id": "E",
+          "text": "[[-3<x<3]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[-3<x+2<3]]，各減 2 得 [[-5<x<1]]。",
+      "distractorMap": {
+        "B": "numexpr.KP2.RECOGNITION.001",
+        "C": "numexpr.KP2.RECOGNITION.002",
+        "D": "numexpr.KP2.RECOGNITION.003",
+        "E": "numexpr.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "方程式 [[|x-2|+|x+1|=5]] 的所有實數解之和為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "分段可得 [[x=3]] 或 [[x=-2]]，故兩解之和為 [[1]]。",
+      "distractorMap": {
+        "A": "numexpr.KP2.APPLICATION.001",
+        "B": "numexpr.KP2.APPLICATION.002",
+        "D": "numexpr.KP2.APPLICATION.003",
+        "E": "numexpr.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若 [[|a|=a]]，則下列何者必成立？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a>0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a\\ge0]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a<0]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a\\le0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[a=1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "當且僅當 [[a\\ge0]] 時，[[|a|=a]]。",
+      "distractorMap": {
+        "A": "numexpr.KP2.CONCEPT.001",
+        "C": "numexpr.KP2.CONCEPT.002",
+        "D": "numexpr.KP2.CONCEPT.003",
+        "E": "numexpr.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "函數 [[y=|x-1|+2]] 的頂點為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(-1,2)]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(1,2)]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(1,-2)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[(2,1)]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(0,2)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[|x|]] 向右平移 1、向上平移 2，頂點為 [[(1,2)]]。",
+      "distractorMap": {
+        "A": "numexpr.KP2.RECOGNITION.001",
+        "C": "numexpr.KP2.RECOGNITION.002",
+        "D": "numexpr.KP2.RECOGNITION.003",
+        "E": "numexpr.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "方程式 [[|2x-1|=7]] 的兩解之積為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-12]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-3]]"
+        },
+        {
+          "id": "D",
+          "text": "[[3]]"
+        },
+        {
+          "id": "E",
+          "text": "[[12]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[2x-1=7]] 或 [[2x-1=-7]]，得 [[x=4,-3]]，乘積為 [[-12]]。",
+      "distractorMap": {
+        "B": "numexpr.KP2.APPLICATION.001",
+        "C": "numexpr.KP2.APPLICATION.002",
+        "D": "numexpr.KP2.APPLICATION.003",
+        "E": "numexpr.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "若 [[|x-a|\\le r]] 且 [[r>0]]，其解集為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a-r\\le x\\le a+r]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-r\\le x\\le r]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x\\le a-r\\text{ 或 }x\\ge a+r]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a-r<x<a+r]]"
+        },
+        {
+          "id": "E",
+          "text": "[[a\\le x\\le r]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "距離 x 到 a 不超過 r，所以 x 位於以 a 為中心、半徑 r 的閉區間。",
+      "distractorMap": {
+        "B": "numexpr.KP2.CONCEPT.001",
+        "C": "numexpr.KP2.CONCEPT.002",
+        "D": "numexpr.KP2.CONCEPT.003",
+        "E": "numexpr.KP2.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "不等式 [[|3-x|\\ge2]] 的解集為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[1\\le x\\le5]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x\\le1\\text{ 或 }x\\ge5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-5\\le x\\le-1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x<1\\text{ 或 }x>5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[x\\le-1\\text{ 或 }x\\ge1]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[|3-x|=|x-3|\\ge2]]，故 [[x\\le1]] 或 [[x\\ge5]]。",
+      "distractorMap": {
+        "A": "numexpr.KP2.RECOGNITION.001",
+        "C": "numexpr.KP2.RECOGNITION.002",
+        "D": "numexpr.KP2.RECOGNITION.003",
+        "E": "numexpr.KP2.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp2-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp2",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "若 [[|x+1|=2x+5]]，則 x 為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[-4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[-2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[-\\dfrac43]]"
+        },
+        {
+          "id": "D",
+          "text": "[[1]]"
+        },
+        {
+          "id": "E",
+          "text": "[[4]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "若 [[x\\ge-1]]，得 [[x+1=2x+5]]，解 [[x=-4]] 不合區間；若 [[x<-1]]，得 [[-x-1=2x+5]]，所以 [[x=-2]]。",
+      "distractorMap": {
+        "A": "numexpr.KP2.APPLICATION.001",
+        "C": "numexpr.KP2.APPLICATION.002",
+        "D": "numexpr.KP2.APPLICATION.003",
+        "E": "numexpr.KP2.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "若 [[a<b]]，則數線上 a、b 的距離為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a-b]]"
+        },
+        {
+          "id": "B",
+          "text": "[[b-a]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a+b]]"
+        },
+        {
+          "id": "D",
+          "text": "[[|a+b|]]"
+        },
+        {
+          "id": "E",
+          "text": "[[ab]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "距離為 [[|a-b|]]；因 [[a<b]]，所以 [[|a-b|=b-a]]。",
+      "distractorMap": {
+        "A": "numexpr.KP3.CONCEPT.001",
+        "C": "numexpr.KP3.CONCEPT.002",
+        "D": "numexpr.KP3.CONCEPT.003",
+        "E": "numexpr.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "下列何者正確？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[\\sqrt{15}<3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[3<\\sqrt{15}<4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[4<\\sqrt{15}<5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[\\sqrt{15}=7.5]]"
+        },
+        {
+          "id": "E",
+          "text": "[[\\sqrt{15}>5]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "因 [[9<15<16]]，所以 [[3<\\sqrt{15}<4]]。",
+      "distractorMap": {
+        "A": "numexpr.KP3.APPLICATION.001",
+        "C": "numexpr.KP3.APPLICATION.002",
+        "D": "numexpr.KP3.APPLICATION.003",
+        "E": "numexpr.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "數線上與點 [[\\sqrt{50}]] 的距離小於 [[3]] 的整數點共有多少個？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[7]]"
+        },
+        {
+          "id": "E",
+          "text": "[[8]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[\\sqrt{50}\\approx7.07]]，故約有 [[4.07<n<10.07]]。整數為 [[5,6,7,8,9,10]]，共 6 個。",
+      "distractorMap": {
+        "A": "numexpr.KP3.RECOGNITION.001",
+        "B": "numexpr.KP3.RECOGNITION.002",
+        "D": "numexpr.KP3.RECOGNITION.003",
+        "E": "numexpr.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "若 [[x]] 到 [[2]] 的距離小於到 [[8]] 的距離，則 x 的範圍為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x<2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x<5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x>5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[2<x<8]]"
+        },
+        {
+          "id": "E",
+          "text": "[[x>8]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "2 與 8 的中點是 5；比起 8 更靠近 2 的點位於中點左側，故 [[x<5]]。",
+      "distractorMap": {
+        "A": "numexpr.KP3.CONCEPT.001",
+        "C": "numexpr.KP3.CONCEPT.002",
+        "D": "numexpr.KP3.CONCEPT.003",
+        "E": "numexpr.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "[[\\sqrt{70}]] 最接近下列哪一個整數？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[7]]"
+        },
+        {
+          "id": "B",
+          "text": "[[8]]"
+        },
+        {
+          "id": "C",
+          "text": "[[9]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10]]"
+        },
+        {
+          "id": "E",
+          "text": "[[11]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\sqrt{70}\\approx8.37]]，最接近 8。",
+      "distractorMap": {
+        "A": "numexpr.KP3.RECOGNITION.001",
+        "C": "numexpr.KP3.RECOGNITION.002",
+        "D": "numexpr.KP3.RECOGNITION.003",
+        "E": "numexpr.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "滿足 [[|n-\\sqrt{20}|\\le2]] 的整數 n 有幾個？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6]]"
+        },
+        {
+          "id": "E",
+          "text": "[[7]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[\\sqrt{20}\\approx4.47]]，所以 [[2.47\\le n\\le6.47]]，整數為 [[3,4,5,6]]，共 4 個。",
+      "distractorMap": {
+        "A": "numexpr.KP3.APPLICATION.001",
+        "C": "numexpr.KP3.APPLICATION.002",
+        "D": "numexpr.KP3.APPLICATION.003",
+        "E": "numexpr.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "數線上兩點 a、b 的中點坐標為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a+b]]"
+        },
+        {
+          "id": "B",
+          "text": "[[\\dfrac{a+b}{2}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[\\dfrac{a-b}{2}]]"
+        },
+        {
+          "id": "D",
+          "text": "[[|a-b|]]"
+        },
+        {
+          "id": "E",
+          "text": "[[ab]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "一維中點是兩坐標的平均，為 [[\\dfrac{a+b}{2}]]。",
+      "distractorMap": {
+        "A": "numexpr.KP3.CONCEPT.001",
+        "C": "numexpr.KP3.CONCEPT.002",
+        "D": "numexpr.KP3.CONCEPT.003",
+        "E": "numexpr.KP3.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "若 [[a=\\sqrt{31}]]，則 a 位於哪兩個相鄰整數之間？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3<a<4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4<a<5]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5<a<6]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6<a<7]]"
+        },
+        {
+          "id": "E",
+          "text": "[[7<a<8]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[25<31<36]]，故 [[5<\\sqrt{31}<6]]。",
+      "distractorMap": {
+        "A": "numexpr.KP3.RECOGNITION.001",
+        "B": "numexpr.KP3.RECOGNITION.002",
+        "D": "numexpr.KP3.RECOGNITION.003",
+        "E": "numexpr.KP3.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp3-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp3",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "數線上距離 [[-1]] 不超過 [[\\sqrt5]] 的整數點共有幾個？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[3]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4]]"
+        },
+        {
+          "id": "C",
+          "text": "[[5]]"
+        },
+        {
+          "id": "D",
+          "text": "[[6]]"
+        },
+        {
+          "id": "E",
+          "text": "[[7]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[-1-\\sqrt5\\le n\\le-1+\\sqrt5]]，約為 [[-3.24\\le n\\le1.24]]，整數 [[-3,-2,-1,0,1]]，共 5 個。",
+      "distractorMap": {
+        "A": "numexpr.KP3.APPLICATION.001",
+        "B": "numexpr.KP3.APPLICATION.002",
+        "D": "numexpr.KP3.APPLICATION.003",
+        "E": "numexpr.KP3.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-c1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 55,
+      "stem": "對正數 [[a,b]]，算幾不等式的正確形式為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a+b\\le2\\sqrt{ab}]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a+b\\ge2\\sqrt{ab}]]"
+        },
+        {
+          "id": "C",
+          "text": "[[a+b\\ge ab]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a+b\\le ab]]"
+        },
+        {
+          "id": "E",
+          "text": "[[a-b\\ge2\\sqrt{ab}]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "正數 a、b 滿足 [[\\dfrac{a+b}{2}\\ge\\sqrt{ab}]]，等價於 [[a+b\\ge2\\sqrt{ab}]]。",
+      "distractorMap": {
+        "A": "numexpr.KP4.CONCEPT.001",
+        "C": "numexpr.KP4.CONCEPT.002",
+        "D": "numexpr.KP4.CONCEPT.003",
+        "E": "numexpr.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-r1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 70,
+      "stem": "[[(x+3)^2]] 展開為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[x^2+9]]"
+        },
+        {
+          "id": "B",
+          "text": "[[x^2+3x+9]]"
+        },
+        {
+          "id": "C",
+          "text": "[[x^2+6x+9]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x^2-6x+9]]"
+        },
+        {
+          "id": "E",
+          "text": "[[x^2+6]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "[[(x+3)^2=x^2+2\\cdot x\\cdot3+9=x^2+6x+9]]。",
+      "distractorMap": {
+        "A": "numexpr.KP4.RECOGNITION.001",
+        "B": "numexpr.KP4.RECOGNITION.002",
+        "D": "numexpr.KP4.RECOGNITION.003",
+        "E": "numexpr.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-a1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "INITIAL",
+      "expectedSeconds": 90,
+      "stem": "若 [[x>2]]，則 [[x+\\dfrac9{x-2}]] 的最小值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[6]]"
+        },
+        {
+          "id": "B",
+          "text": "[[7]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8]]"
+        },
+        {
+          "id": "D",
+          "text": "[[9]]"
+        },
+        {
+          "id": "E",
+          "text": "[[11]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "令 [[t=x-2>0]]，原式為 [[t+2+\\dfrac9t\\ge2+6=8]]，且 t=3 可達。",
+      "distractorMap": {
+        "A": "numexpr.KP4.APPLICATION.001",
+        "B": "numexpr.KP4.APPLICATION.002",
+        "D": "numexpr.KP4.APPLICATION.003",
+        "E": "numexpr.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-civ1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 55,
+      "stem": "算幾不等式 [[u+\\dfrac{k}{u}\\ge2\\sqrt{k}]] 可直接使用的條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[u<0,k>0]]"
+        },
+        {
+          "id": "B",
+          "text": "[[u>0,k>0]]"
+        },
+        {
+          "id": "C",
+          "text": "任意實數 u,k"
+        },
+        {
+          "id": "D",
+          "text": "[[u=0]]"
+        },
+        {
+          "id": "E",
+          "text": "只需 k<0"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "需 [[u>0]]、[[k>0]]，此時 u 與 k/u 都是正數。",
+      "distractorMap": {
+        "A": "numexpr.KP4.CONCEPT.001",
+        "C": "numexpr.KP4.CONCEPT.002",
+        "D": "numexpr.KP4.CONCEPT.003",
+        "E": "numexpr.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-riv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 70,
+      "stem": "因式分解 [[x^2-10x+25]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[(x-5)^2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[(x+5)^2]]"
+        },
+        {
+          "id": "C",
+          "text": "[[(x-25)(x+1)]]"
+        },
+        {
+          "id": "D",
+          "text": "[[x(x-10)+25]]"
+        },
+        {
+          "id": "E",
+          "text": "[[(x-5)(x+5)]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "A"
+        ]
+      },
+      "explanation": "[[x^2-10x+25=x^2-2\\cdot5x+5^2=(x-5)^2]]。",
+      "distractorMap": {
+        "B": "numexpr.KP4.RECOGNITION.001",
+        "C": "numexpr.KP4.RECOGNITION.002",
+        "D": "numexpr.KP4.RECOGNITION.003",
+        "E": "numexpr.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-aiv1",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "IMMEDIATE_VARIANT",
+      "expectedSeconds": 90,
+      "stem": "若 [[y>0]]，則 [[2y+\\dfrac8y]] 的最小值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[4]]"
+        },
+        {
+          "id": "B",
+          "text": "[[6]]"
+        },
+        {
+          "id": "C",
+          "text": "[[8]]"
+        },
+        {
+          "id": "D",
+          "text": "[[10]]"
+        },
+        {
+          "id": "E",
+          "text": "[[16]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "C"
+        ]
+      },
+      "explanation": "兩正數乘積為 [[2y\\cdot\\dfrac8y=16]]，故和至少為 [[2\\sqrt{16}=8]]。",
+      "distractorMap": {
+        "A": "numexpr.KP4.APPLICATION.001",
+        "B": "numexpr.KP4.APPLICATION.002",
+        "D": "numexpr.KP4.APPLICATION.003",
+        "E": "numexpr.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-c2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "CONCEPT",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 55,
+      "stem": "對正數 a、b，算幾不等式等號成立的條件為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[a+b=1]]"
+        },
+        {
+          "id": "B",
+          "text": "[[a=b]]"
+        },
+        {
+          "id": "C",
+          "text": "[[ab=1]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a=0]]"
+        },
+        {
+          "id": "E",
+          "text": "[[a=-b]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "[[a+b-2\\sqrt{ab}=(\\sqrt a-\\sqrt b)^2]]，等號成立當且僅當 [[a=b]]。",
+      "distractorMap": {
+        "A": "numexpr.KP4.CONCEPT.001",
+        "C": "numexpr.KP4.CONCEPT.002",
+        "D": "numexpr.KP4.CONCEPT.003",
+        "E": "numexpr.KP4.CONCEPT.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-r2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "RECOGNITION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 70,
+      "stem": "化簡 [[(a+b)^2-(a-b)^2]]。",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[2a^2+2b^2]]"
+        },
+        {
+          "id": "B",
+          "text": "[[4ab]]"
+        },
+        {
+          "id": "C",
+          "text": "[[2ab]]"
+        },
+        {
+          "id": "D",
+          "text": "[[a^2-b^2]]"
+        },
+        {
+          "id": "E",
+          "text": "[[0]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "B"
+        ]
+      },
+      "explanation": "視為平方差：[[[(a+b)-(a-b)][(a+b)+(a-b)]=(2b)(2a)=4ab]]。",
+      "distractorMap": {
+        "A": "numexpr.KP4.RECOGNITION.001",
+        "C": "numexpr.KP4.RECOGNITION.002",
+        "D": "numexpr.KP4.RECOGNITION.003",
+        "E": "numexpr.KP4.RECOGNITION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "itemId": "numexpr-kp4-a2",
+      "itemVersion": "1",
+      "primaryConceptId": "numexpr:kp4",
+      "ability": "APPLICATION",
+      "publicationStatus": "APPROVED_PUBLISHED",
+      "purpose": "DELAYED_RETEST",
+      "expectedSeconds": 90,
+      "stem": "若 [[x>0]]，則 [[3x+\\dfrac{12}{x}+1]] 的最小值為何？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[[7]]"
+        },
+        {
+          "id": "B",
+          "text": "[[10]]"
+        },
+        {
+          "id": "C",
+          "text": "[[12]]"
+        },
+        {
+          "id": "D",
+          "text": "[[13]]"
+        },
+        {
+          "id": "E",
+          "text": "[[36]]"
+        }
+      ],
+      "answerSpec": {
+        "kind": "singleChoice",
+        "correctOptionIds": [
+          "D"
+        ]
+      },
+      "explanation": "[[3x+\\dfrac{12}{x}\\ge2\\sqrt{36}=12]]，再加 1 得最小值 13；當 x=2 時可達。",
+      "distractorMap": {
+        "A": "numexpr.KP4.APPLICATION.001",
+        "B": "numexpr.KP4.APPLICATION.002",
+        "C": "numexpr.KP4.APPLICATION.003",
+        "E": "numexpr.KP4.APPLICATION.004"
+      },
+      "source": {
+        "type": "PROJECT_ORIGINAL",
+        "reference": "數與式 54 題教師核准（2026-08-14）"
+      }
+    }
+  ]
+}

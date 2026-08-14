@@ -20,8 +20,8 @@
 |---|---|---|---|
 | `concept-map/` | `/web/concept-map/` | **學測數學重點整理**：11 單元 × 58 核心概念，含互動練習、三張地圖 | **本 repo 內**：`content/*.py` → `python build/build.py` → `dist/` → 覆蓋正式 `.html` |
 | `exam/` | `/web/exam/` | 111–115 學測數A・數B 逐題互動詳解（200 題） | **本機外部**：`D:\大考複習\歷屆試題詳解\互動網頁版\` → 整包覆蓋 `exam/` |
-| `guide/` | `/web/guide/` | 《學測數學A 複習講義》網頁版（13 章＋附錄） | `content/guide_data.json` ＋ `build/build_guide.py`（另一 session 建置，本 agent 未親自驗證） |
-| `diagnostic/` | ⚠ **未公開** | 複習後診斷系統：11 單元 486 題五階段診斷（2026-08 移入） | **本機外部**：`D:\gmail\ChatGPT_複習\診斷系統\` → 整包覆蓋 `app/ content/ engine/` |
+| `guide/` | `/web/guide/` | 《學測數學A 複習講義》網頁版（11 章＋附錄） | `content/guide_data.json` ＋ `build/build_guide.py`（另一 session 建置，本 agent 未親自驗證） |
+| `diagnostic/` | ⚠ **未公開** | 複習後診斷系統：11 單元 540 題五階段診斷（2026-08 移入） | **本機外部**：`D:\gmail\ChatGPT_複習\診斷系統\` → 整包覆蓋 `app/ content/ engine/` |
 
 > **本 repo 的 build 只管 `concept-map/` 與 `guide/`；`exam/`、`diagnostic/` 不要在這裡改。**
 
@@ -76,7 +76,7 @@ D:\gmail\Mathmap_workspace\
 │   └── 參考文件/                    # 官方試卷 PDF 等（gitignore，超大檔）
 │
 ├── exam/                   # ② 歷屆試題子站（源頭在本機外部，勿在此改）
-├── guide/                  # ③ 複習講義子站（13 章＋附錄＋katex/＋img/）
+├── guide/                  # ③ 複習講義子站（11 章＋附錄＋katex/＋img/）
 └── diagnostic/             # ④ 複習後診斷系統（⚠ 未公開；源頭在本機外部，勿在此改）
     ├── app/                #    學生端：index.html/main.mjs/repository.mjs/styles.css/vendor/katex
     ├── teacher/            #    教師端班級彙整（index.html + app.js；★UNITS 表與 app/main.mjs 同源，要同步）
@@ -160,14 +160,20 @@ PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才�
       當時 `_mmChunks()` 只掃 body 層找 `.card`，整個 `.wrap` 是單一分塊，分塊從沒生效。
       已於 `1d96bf5` 修好（下探 `.wrap`／`.card`）：矩陣頁 11→137 塊、最長單次凍結 106ms→21ms。
 - [x] KaTeX 本地化、sitemap、favicon、自訂 404、行動版 sticky 壓縮（**其他 session**）
-- [x] `guide/` 複習講義子站 13 章（**其他 session**，在 `feat/guide-web-version` 分支）
+- [x] `guide/` 複習講義子站 11 章（**其他 session**，在 `feat/guide-web-version` 分支）
 
 ### 待辦
 - [ ] **`diagnostic/` 上線與否**：技術驗收全過，但 Gate 5「真實學生實證」未補。
       老師先自用試跑（`/web/diagnostic/app/`）。要上線＝拿掉 4 張頁面的 `noindex`
       ＋首頁「🚧 更多教材籌備中」換成入口卡＋`gen_sitemap.py` 加 `diagnostic/`。
-      核心概念編碼已對得上：診斷系統 kpId 用 `{unitSlug}:kp<N>`，54 個錨點在 `concept-map/`
+      核心概念編碼已對得上：診斷系統 kpId 用 `{unitSlug}:kp<N>`，**58 個錨點**在 `concept-map/`
       對應頁全部找得到（2026-08-14 逐一驗過，0 缺）。
+- [ ] **`prob:kp1` 題數不均**：收斂成 11 單元時，`comb` 的 kp1／kp2／kp4 都併進
+      「計數原理與排列」，該核心概念 25 題（其他 9–11 題），初診因此是 24 題約 30 分鐘。
+      老師 2026-08-14 選擇「全留」；若試跑發現一節課塞不下，就從 25 題挑 9 題，其餘轉備用池。
+      題目的 `sourceUnitId` 欄位記著原本屬於 comb 還是 probability，篩選時可依據。
+      ⚠️ 挑題時務必保住「每個核心概念 × 3 能力 × 3 階段都有題」——立即變式是依
+      （核心概念, 能力）配對派送的，少了哪一格就派不出題。
 - [ ] **`guide/` 掛上 58 核心概念錨點**：三個子站裡只有 guide 沒接骨架
       （`concept-map → guide` 目前 0 條）。章層級可直接做；kp → 小節層級要老師定。
 - [ ] **`feat/guide-web-version` 合併回 `main`**，並決定 guide 是否連進總入口導覽

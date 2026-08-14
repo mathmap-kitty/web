@@ -1,6 +1,6 @@
 {
  "title": "學測數學A 複習講義",
- "subtitle": "13 章脈絡複習 · 條列重點 × 跨章連結",
+ "subtitle": "11 章脈絡複習 · 條列重點 × 跨章連結",
  "source": "學測數A_脈絡複習講義_全教用.docx",
  "howto": {
   "t": "note",
@@ -2188,7 +2188,7 @@
   {
    "n": 5,
    "cn": "五",
-   "title": "排列組合",
+   "title": "排列組合與機率",
    "blocks": [
     {
      "t": "note",
@@ -2197,7 +2197,10 @@
      "paras": [
       "排列組合是計數的藝術，也是機率的地基（★★★高頻）。",
       "學習脈絡：邏輯與集合 → 計數原理（加法／乘法）→ 排列 → 組合 → 二項式定理。",
-      "一句心法貫穿全章：<b>先問「順序重不重要」——在乎位置用排列、只挑不排用組合，整題就定了調</b>。"
+      "一句心法貫穿全章：<b>先問「順序重不重要」——在乎位置用排列、只挑不排用組合，整題就定了調</b>。",
+      "機率是把計數變成「可能性」（★★★高頻）。",
+      "學習脈絡：古典機率（回去數個數）→ 加法與餘事件 → 條件機率與貝氏（畫樹狀圖）→ 獨立事件 → 期望值。",
+      "一句心法貫穿全章：<b>古典機率先回第五章「數個數」；看到「已知…」就上條件機率；多階段或反推原因，一律畫樹狀圖</b>。"
      ]
     },
     {
@@ -2434,6 +2437,202 @@
     },
     {
      "t": "sec",
+     "html": "六、古典機率與基本性質",
+     "plain": "六、古典機率與基本性質",
+     "kind": "sec"
+    },
+    {
+     "t": "sub",
+     "html": "核心概念"
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
+       "html": "古典機率（每個樣本點等機率）：\\(P(A) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(\\frac{n\\left( A \\right)}{n\\left( S \\right)}\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "範圍與特例：\\(0 \\leq P(A) \\leq 1\\)；\\(P(\\varnothing) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(0\\)</span></span>，\\(P(S) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(1\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "餘事件：\\(P(A') =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(1 - P\\left( A \\right)\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "加法原理：\\(P(A \\cup B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right) + P\\left( B \\right) - P\\left( A \\cap B \\right)\\)</span></span>；"
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "html": "\\(P(A \\cup B \\cup C) = P(A) + P(B) + P(C) - P(A \\cap B) - P(B \\cap C) - P(A \\cap C) + P(A \\cap B \\cap C)\\)。",
+     "indent": 1
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
+       "html": "\\(A,B\\) 互斥時 \\(P(A \\cap B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(0\\) 、</span></span>\\(P(A \\cup B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right) + P\\left( B \\right)\\)</span></span>"
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "html": "古典機率的關鍵在「分子、分母都是數個數」——所以先回第五章。",
+     "indent": 0
+    },
+    {
+     "t": "p",
+     "html": "「至少」型常用餘事件 \\(1 - P\\left( \\text{都沒有} \\right)\\)，反面算最快。",
+     "indent": 0
+    },
+    {
+     "t": "sec",
+     "html": "七、期望值",
+     "plain": "七、期望值",
+     "kind": "sec"
+    },
+    {
+     "t": "sub",
+     "html": "核心概念"
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
+       "html": "期望值（各結果值 × 其機率，全部相加）：\\(E =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( {x}_{1}{P}_{1} + {x}_{2}{P}_{2} + \\cdots + {x}_{n}{P}_{n}\\)</span></span>"
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "html": "機率總和 \\(P_{1} + P_{2} + \\cdots + P_{n} =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( 1\\)</span></span>",
+     "indent": 1
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
+       "html": "公平遊戲：期望報酬 <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(E = 0\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "二項分布期望值：做 \\(n\\) 次、單次成功機率 \\(p\\) → \\(E =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(np\\)</span></span>"
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "html": "期望值是「長期平均」。賭局公不公平，看 \\(E\\) 是否為 \\(0\\)；重複獨立試驗的成功次數，期望值就是 \\(np\\)。",
+     "indent": 0
+    },
+    {
+     "t": "sec",
+     "html": "八、條件機率與貝氏定理",
+     "plain": "八、條件機率與貝氏定理",
+     "kind": "sec"
+    },
+    {
+     "t": "fig",
+     "src": "image13.png",
+     "w": 252,
+     "alt": "樹狀圖：沿樹枝相乘＝聯合機率，反推用貝氏",
+     "cap": ""
+    },
+    {
+     "t": "sub",
+     "html": "核心概念"
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
+       "html": "條件機率（分母是已知事件 \\(A\\)，不是 \\(S\\)）：在假設事件 \\(A\\) 發生之下，事件 \\(B\\) 發生的條件機率。\\(P(B \\mid A) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(\\frac{P\\left( A \\cap B \\right)}{P\\left( A \\right)}\\) </span></span>\\(= \\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(\\frac{n(A \\cap B)}{n(A)}\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "乘法公式：\\(P(A \\cap B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right)\\, P\\left( B \\mid A \\right)\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "全機率與貝氏：多階段、或反推「結果來自哪個原因」，畫樹狀圖——<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">沿樹枝相乘、各路徑相加</span></span>。"
+      },
+      {
+       "lvl": 0,
+       "html": "設 \\(A_{1}\\)、\\(A_{2}\\)、\\(\\cdots\\)、\\(A_{n}\\) 是樣本空間 \\(S\\) 的一個分割，且 \\(P(A_{i}) \\neq 0\\)，若 \\(B\\) 為 \\(S\\) 中的一事件，則"
+      },
+      {
+       "lvl": 1,
+       "html": "全機率公式：\\(P(B) = P\\left( A_{1} \\right)P\\left( B\\mid A_{1} \\right) + P\\left( A_{2} \\right)P\\left( B\\mid A_{2} \\right) + \\cdots + P\\left( A_{n} \\right)P\\left( B\\mid A_{n} \\right)\\)"
+      },
+      {
+       "lvl": 1,
+       "html": "貝氏定理：\\(P(A_{k} \\mid B) = \\frac{P(A_{k})P(B \\mid A_{k})}{P(A_{1})P(B \\mid A_{1}) + P(A_{2})P(B \\mid A_{2}) + \\cdots + P(A_{n})P(B \\mid A_{n})}\\)"
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "html": "「已知…求…」就是條件機率，把分母換成「已知的那個事件」。多階段或要反推原因，畫樹狀圖最清楚。",
+     "indent": 0
+    },
+    {
+     "t": "note",
+     "kind": "trap",
+     "label": "易錯",
+     "paras": [
+      "條件機率的分母是 \\(P(A)\\)，不是 \\(P(S)\\)；而且「互斥」不等於「獨立」（見下一節）。<br>貝氏定理的問題時，可以按照題意畫圖（樹狀圖／表格），先列出每一種分割事件的比例，再列出該分割裡面要討論的特定事件即可。"
+     ]
+    },
+    {
+     "t": "sec",
+     "html": "九、獨立事件",
+     "plain": "九、獨立事件",
+     "kind": "sec"
+    },
+    {
+     "t": "sub",
+     "html": "核心概念"
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
+       "html": "獨立定義：\\(A,B\\) 獨立 \\(\\Leftrightarrow P(A \\cap B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right)\\, P\\left( B \\right)\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "獨立時：\\(P(B \\mid A) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( B \\right)\\)</span></span>（\\(A\\) 發生與否不影響 \\(B\\)）<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">、</span></span>\\(P(A \\mid B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( B \\right)\\)</span></span>"
+      },
+      {
+       "lvl": 0,
+       "html": "\\(A,B\\) 獨立，則\\(P(A' \\cap B) =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( \\ P\\left( A' \\right)\\, P\\left( B \\right)\\)</span></span>、 \\(P(A \\cap B') =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right)\\, P\\left( B' \\right)\\)</span></span>."
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "html": "\\(P(A' \\cap B') =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( \\ \\) \\(P\\left( A' \\right)\\, P\\left( B' \\right)\\)</span></span>",
+     "indent": 1
+    },
+    {
+     "t": "note",
+     "kind": "trap",
+     "label": "易錯",
+     "paras": [
+      "互斥與獨立是兩回事：兩事件互斥（不能同時發生）且機率都非 \\(0\\) 時， \\(\\ P(A \\cap B) = 0\\)，<br>反而「不」獨立——因為一個發生就保證另一個不發生，\\(P(A \\cap B) = P(A) \\times P(B)\\)。"
+     ]
+    },
+    {
+     "t": "sec",
      "html": "判斷流程：看到 X → 用 Y",
      "plain": "判斷流程：看到 X → 用 Y",
      "kind": "flow"
@@ -2493,284 +2692,6 @@
       ]
      ],
      "cols": 2
-    },
-    {
-     "t": "sec",
-     "html": "跨章鏈結：遇到沒看過的題，從這裡接",
-     "plain": "跨章鏈結：遇到沒看過的題，從這裡接",
-     "kind": "link"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "<b>計數是機率的地基</b>：第 6 章古典機率 \\(P(A) = \\frac{n(A)}{n(S)}\\) 的分子、分母，全靠本章「數個數」。機率題算不出來，十之八九是計數沒數對（如 <code>109</code><code>選</code><code>B</code>、<code>108</code><code>多</code><code>9</code>）——先回到排列組合，不要硬猜機率。"
-      },
-      {
-       "lvl": 0,
-       "html": "<b>二項式 ↔ 二項分布</b>：二項式定理裡的 \\(C_{k}^{n}\\, p^{k}q^{\\, n - k}\\)，到第 6 章就是「做 \\(n\\) 次、成功 \\(k\\) 次」的二項分布機率；期望值 \\(E = np\\) 也由此而來（如 <code>111</code><code>選</code><code>13</code>）。同一個 \\(C_{k}^{n}\\)，一個在代數、一個在機率。"
-      },
-      {
-       "lvl": 0,
-       "html": "<b>巴斯卡關係 ↔ 路徑遞迴</b>：\\(C_{k}^{n} = C_{k - 1}^{n - 1} + C_{k}^{n - 1}\\) 的「上方兩數相加」，正是格子路徑「到某點的走法 ＝ 到左鄰的走法 ＋ 到下鄰的走法」這個遞迴——組合與路徑，是同一件事的兩種說法。"
-      },
-      {
-       "lvl": 0,
-       "html": "<b>不盡相異排列 ↔ 多項式展開</b>：\\(\\frac{n!}{p!\\, q!\\cdots}\\) 也是 \\((a + b + \\cdots)^{n}\\) 展開後各項的係數來源，與第 2 章多項式、二項式定理同源。"
-      }
-     ]
-    },
-    {
-     "t": "sec",
-     "html": "練習指引：歷屆題號（106–115）",
-     "plain": "練習指引：歷屆題號（106–115）",
-     "kind": "drill"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "計數原理、排列與組合（★★★）：<code>106</code><code>單</code><code>7</code>、<code>114</code><code>單</code><code>3</code>、<code>106</code><code>多</code><code>12</code>、<code>108</code><code>單</code><code>4</code>、<code>108</code><code>選</code><code>D</code>、<code>109</code><code>多</code><code>8</code>、<code>110</code><code>選</code><code>C</code>、<code>111</code><code>單</code><code>1</code>、<code>112</code><code>單</code><code>4</code>、<code>115</code><code>單</code><code>4</code>"
-      }
-     ]
-    },
-    {
-     "t": "note",
-     "kind": "mind",
-     "label": "考場心法",
-     "paras": [
-      "排列組合先問「順序重不重要」——在乎位置用排列、只挑不排用組合。之後機率題若算不出來，先回頭檢查「個數」有沒有數對。"
-     ]
-    }
-   ],
-   "file": "第05章_排列組合.html",
-   "blanks": 28,
-   "secs": [
-    "一、邏輯與集合",
-    "二、計數原理",
-    "三、排列（在乎順序）",
-    "四、組合（只挑不排）",
-    "五、二項式定理"
-   ]
-  },
-  {
-   "n": 6,
-   "cn": "六",
-   "title": "機率與期望值",
-   "blocks": [
-    {
-     "t": "note",
-     "kind": "lead",
-     "label": "脈絡導讀",
-     "paras": [
-      "機率是把計數變成「可能性」（★★★高頻）。",
-      "學習脈絡：古典機率（回去數個數）→ 加法與餘事件 → 條件機率與貝氏（畫樹狀圖）→ 獨立事件 → 期望值。",
-      "一句心法貫穿全章：<b>古典機率先回第五章「數個數」；看到「已知…」就上條件機率；多階段或反推原因，一律畫樹狀圖</b>。"
-     ]
-    },
-    {
-     "t": "sec",
-     "html": "一、古典機率與基本性質",
-     "plain": "一、古典機率與基本性質",
-     "kind": "sec"
-    },
-    {
-     "t": "sub",
-     "html": "核心概念"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "古典機率（每個樣本點等機率）：\\(P(A) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(\\frac{n\\left( A \\right)}{n\\left( S \\right)}\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "範圍與特例：\\(0 \\leq P(A) \\leq 1\\)；\\(P(\\varnothing) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(0\\)</span></span>，\\(P(S) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(1\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "餘事件：\\(P(A') =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(1 - P\\left( A \\right)\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "加法原理：\\(P(A \\cup B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right) + P\\left( B \\right) - P\\left( A \\cap B \\right)\\)</span></span>；"
-      }
-     ]
-    },
-    {
-     "t": "p",
-     "html": "\\(P(A \\cup B \\cup C) = P(A) + P(B) + P(C) - P(A \\cap B) - P(B \\cap C) - P(A \\cap C) + P(A \\cap B \\cap C)\\)。",
-     "indent": 1
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "\\(A,B\\) 互斥時 \\(P(A \\cap B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(0\\) 、</span></span>\\(P(A \\cup B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right) + P\\left( B \\right)\\)</span></span>"
-      }
-     ]
-    },
-    {
-     "t": "p",
-     "html": "古典機率的關鍵在「分子、分母都是數個數」——所以先回第五章。",
-     "indent": 0
-    },
-    {
-     "t": "p",
-     "html": "「至少」型常用餘事件 \\(1 - P\\left( \\text{都沒有} \\right)\\)，反面算最快。",
-     "indent": 0
-    },
-    {
-     "t": "sec",
-     "html": "二、期望值",
-     "plain": "二、期望值",
-     "kind": "sec"
-    },
-    {
-     "t": "sub",
-     "html": "核心概念"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "期望值（各結果值 × 其機率，全部相加）：\\(E =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( {x}_{1}{P}_{1} + {x}_{2}{P}_{2} + \\cdots + {x}_{n}{P}_{n}\\)</span></span>"
-      }
-     ]
-    },
-    {
-     "t": "p",
-     "html": "機率總和 \\(P_{1} + P_{2} + \\cdots + P_{n} =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( 1\\)</span></span>",
-     "indent": 1
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "公平遊戲：期望報酬 <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(E = 0\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "二項分布期望值：做 \\(n\\) 次、單次成功機率 \\(p\\) → \\(E =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(np\\)</span></span>"
-      }
-     ]
-    },
-    {
-     "t": "p",
-     "html": "期望值是「長期平均」。賭局公不公平，看 \\(E\\) 是否為 \\(0\\)；重複獨立試驗的成功次數，期望值就是 \\(np\\)。",
-     "indent": 0
-    },
-    {
-     "t": "sec",
-     "html": "三、條件機率與貝氏定理",
-     "plain": "三、條件機率與貝氏定理",
-     "kind": "sec"
-    },
-    {
-     "t": "fig",
-     "src": "image13.png",
-     "w": 252,
-     "alt": "樹狀圖：沿樹枝相乘＝聯合機率，反推用貝氏",
-     "cap": ""
-    },
-    {
-     "t": "sub",
-     "html": "核心概念"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "條件機率（分母是已知事件 \\(A\\)，不是 \\(S\\)）：在假設事件 \\(A\\) 發生之下，事件 \\(B\\) 發生的條件機率。\\(P(B \\mid A) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(\\frac{P\\left( A \\cap B \\right)}{P\\left( A \\right)}\\) </span></span>\\(= \\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(\\frac{n(A \\cap B)}{n(A)}\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "乘法公式：\\(P(A \\cap B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right)\\, P\\left( B \\mid A \\right)\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "全機率與貝氏：多階段、或反推「結果來自哪個原因」，畫樹狀圖——<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">沿樹枝相乘、各路徑相加</span></span>。"
-      },
-      {
-       "lvl": 0,
-       "html": "設 \\(A_{1}\\)、\\(A_{2}\\)、\\(\\cdots\\)、\\(A_{n}\\) 是樣本空間 \\(S\\) 的一個分割，且 \\(P(A_{i}) \\neq 0\\)，若 \\(B\\) 為 \\(S\\) 中的一事件，則"
-      },
-      {
-       "lvl": 1,
-       "html": "全機率公式：\\(P(B) = P\\left( A_{1} \\right)P\\left( B\\mid A_{1} \\right) + P\\left( A_{2} \\right)P\\left( B\\mid A_{2} \\right) + \\cdots + P\\left( A_{n} \\right)P\\left( B\\mid A_{n} \\right)\\)"
-      },
-      {
-       "lvl": 1,
-       "html": "貝氏定理：\\(P(A_{k} \\mid B) = \\frac{P(A_{k})P(B \\mid A_{k})}{P(A_{1})P(B \\mid A_{1}) + P(A_{2})P(B \\mid A_{2}) + \\cdots + P(A_{n})P(B \\mid A_{n})}\\)"
-      }
-     ]
-    },
-    {
-     "t": "p",
-     "html": "「已知…求…」就是條件機率，把分母換成「已知的那個事件」。多階段或要反推原因，畫樹狀圖最清楚。",
-     "indent": 0
-    },
-    {
-     "t": "note",
-     "kind": "trap",
-     "label": "易錯",
-     "paras": [
-      "條件機率的分母是 \\(P(A)\\)，不是 \\(P(S)\\)；而且「互斥」不等於「獨立」（見下一節）。<br>貝氏定理的問題時，可以按照題意畫圖（樹狀圖／表格），先列出每一種分割事件的比例，再列出該分割裡面要討論的特定事件即可。"
-     ]
-    },
-    {
-     "t": "sec",
-     "html": "四、獨立事件",
-     "plain": "四、獨立事件",
-     "kind": "sec"
-    },
-    {
-     "t": "sub",
-     "html": "核心概念"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "獨立定義：\\(A,B\\) 獨立 \\(\\Leftrightarrow P(A \\cap B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right)\\, P\\left( B \\right)\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "獨立時：\\(P(B \\mid A) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( B \\right)\\)</span></span>（\\(A\\) 發生與否不影響 \\(B\\)）<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">、</span></span>\\(P(A \\mid B) =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( B \\right)\\)</span></span>"
-      },
-      {
-       "lvl": 0,
-       "html": "\\(A,B\\) 獨立，則\\(P(A' \\cap B) =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( \\ P\\left( A' \\right)\\, P\\left( B \\right)\\)</span></span>、 \\(P(A \\cap B') =\\) <span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\(P\\left( A \\right)\\, P\\left( B' \\right)\\)</span></span>."
-      }
-     ]
-    },
-    {
-     "t": "p",
-     "html": "\\(P(A' \\cap B') =\\)<span class=\"blank\" onclick=\"tb(this)\"><span class=\"q\">？</span><span class=\"a\">\\( \\ \\) \\(P\\left( A' \\right)\\, P\\left( B' \\right)\\)</span></span>",
-     "indent": 1
-    },
-    {
-     "t": "note",
-     "kind": "trap",
-     "label": "易錯",
-     "paras": [
-      "互斥與獨立是兩回事：兩事件互斥（不能同時發生）且機率都非 \\(0\\) 時， \\(\\ P(A \\cap B) = 0\\)，<br>反而「不」獨立——因為一個發生就保證另一個不發生，\\(P(A \\cap B) = P(A) \\times P(B)\\)。"
-     ]
-    },
-    {
-     "t": "sec",
-     "html": "判斷流程：看到 X → 用 Y",
-     "plain": "判斷流程：看到 X → 用 Y",
-     "kind": "flow"
     },
     {
      "t": "table",
@@ -2847,6 +2768,27 @@
      "items": [
       {
        "lvl": 0,
+       "html": "<b>計數是機率的地基</b>：第 6 章古典機率 \\(P(A) = \\frac{n(A)}{n(S)}\\) 的分子、分母，全靠本章「數個數」。機率題算不出來，十之八九是計數沒數對（如 <code>109</code><code>選</code><code>B</code>、<code>108</code><code>多</code><code>9</code>）——先回到排列組合，不要硬猜機率。"
+      },
+      {
+       "lvl": 0,
+       "html": "<b>二項式 ↔ 二項分布</b>：二項式定理裡的 \\(C_{k}^{n}\\, p^{k}q^{\\, n - k}\\)，到第 6 章就是「做 \\(n\\) 次、成功 \\(k\\) 次」的二項分布機率；期望值 \\(E = np\\) 也由此而來（如 <code>111</code><code>選</code><code>13</code>）。同一個 \\(C_{k}^{n}\\)，一個在代數、一個在機率。"
+      },
+      {
+       "lvl": 0,
+       "html": "<b>巴斯卡關係 ↔ 路徑遞迴</b>：\\(C_{k}^{n} = C_{k - 1}^{n - 1} + C_{k}^{n - 1}\\) 的「上方兩數相加」，正是格子路徑「到某點的走法 ＝ 到左鄰的走法 ＋ 到下鄰的走法」這個遞迴——組合與路徑，是同一件事的兩種說法。"
+      },
+      {
+       "lvl": 0,
+       "html": "<b>不盡相異排列 ↔ 多項式展開</b>：\\(\\frac{n!}{p!\\, q!\\cdots}\\) 也是 \\((a + b + \\cdots)^{n}\\) 展開後各項的係數來源，與第 2 章多項式、二項式定理同源。"
+      }
+     ]
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
        "html": "<b>機率的地基是計數</b>：古典機率 \\(P(A) = \\frac{n(A)}{n(S)}\\) 的分子、分母，全是第 5 章排列組合在數——機率算不出來，先回去檢查「個數」對不對（如 <code>109</code><code>選</code><code>B</code>、<code>108</code><code>多</code><code>9</code>）。"
       },
       {
@@ -2868,6 +2810,15 @@
      "html": "練習指引：歷屆題號（106–115）",
      "plain": "練習指引：歷屆題號（106–115）",
      "kind": "drill"
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
+       "html": "計數原理、排列與組合（★★★）：<code>106</code><code>單</code><code>7</code>、<code>114</code><code>單</code><code>3</code>、<code>106</code><code>多</code><code>12</code>、<code>108</code><code>單</code><code>4</code>、<code>108</code><code>選</code><code>D</code>、<code>109</code><code>多</code><code>8</code>、<code>110</code><code>選</code><code>C</code>、<code>111</code><code>單</code><code>1</code>、<code>112</code><code>單</code><code>4</code>、<code>115</code><code>單</code><code>4</code>"
+      }
+     ]
     },
     {
      "t": "ul",
@@ -2899,22 +2850,28 @@
      "kind": "mind",
      "label": "考場心法",
      "paras": [
+      "排列組合先問「順序重不重要」——在乎位置用排列、只挑不排用組合。之後機率題若算不出來，先回頭檢查「個數」有沒有數對。",
       "機率三問：古典機率先「數個數」（回第 5 章）；看到「已知」就上條件機率（分母換成已知事件）；多階段或反推原因，畫樹狀圖最穩。"
      ]
     }
    ],
-   "file": "第06章_機率與期望值.html",
-   "blanks": 22,
+   "file": "第05章_排列組合與機率.html",
+   "blanks": 50,
    "secs": [
-    "一、古典機率與基本性質",
-    "二、期望值",
-    "三、條件機率與貝氏定理",
-    "四、獨立事件"
+    "一、邏輯與集合",
+    "二、計數原理",
+    "三、排列（在乎順序）",
+    "四、組合（只挑不排）",
+    "五、二項式定理",
+    "六、古典機率與基本性質",
+    "七、期望值",
+    "八、條件機率與貝氏定理",
+    "九、獨立事件"
    ]
   },
   {
-   "n": 7,
-   "cn": "七",
+   "n": 6,
+   "cn": "六",
    "title": "數據分析",
    "blocks": [
     {
@@ -3393,7 +3350,7 @@
      ]
     }
    ],
-   "file": "第07章_數據分析.html",
+   "file": "第06章_數據分析.html",
    "blanks": 23,
    "secs": [
     "一、一維數據：集中與分散",
@@ -3403,9 +3360,9 @@
    ]
   },
   {
-   "n": 8,
-   "cn": "八",
-   "title": "指數與對數函數",
+   "n": 7,
+   "cn": "七",
+   "title": "指數與對數",
    "blocks": [
     {
      "t": "note",
@@ -3982,7 +3939,7 @@
      ]
     }
    ],
-   "file": "第08章_指數與對數函數.html",
+   "file": "第07章_指數與對數.html",
    "blanks": 53,
    "secs": [
     "一、定義",
@@ -3993,8 +3950,8 @@
    ]
   },
   {
-   "n": 9,
-   "cn": "九",
+   "n": 8,
+   "cn": "八",
    "title": "三角",
    "blocks": [
     {
@@ -4633,7 +4590,7 @@
      ]
     }
    ],
-   "file": "第09章_三角.html",
+   "file": "第08章_三角.html",
    "blanks": 45,
    "secs": [
     "一、三角比與特殊角",
@@ -4643,8 +4600,8 @@
    ]
   },
   {
-   "n": 10,
-   "cn": "十",
+   "n": 9,
+   "cn": "九",
    "title": "平面向量",
    "blocks": [
     {
@@ -5107,7 +5064,7 @@
      ]
     }
    ],
-   "file": "第10章_平面向量.html",
+   "file": "第09章_平面向量.html",
    "blanks": 49,
    "secs": [
     "一、向量的表示與運算",
@@ -5118,8 +5075,8 @@
    ]
   },
   {
-   "n": 11,
-   "cn": "十一",
+   "n": 10,
+   "cn": "十",
    "title": "空間向量",
    "blocks": [
     {
@@ -5129,7 +5086,10 @@
      "paras": [
       "空間向量是平面向量「升一維」（★★中頻）。",
       "學習脈絡：空間坐標與距離 → 空間向量內積與垂直 → 外積與行列式（面積、體積）→ 通往平面與直線（第 12 章）。",
-      "一句心法貫穿全章：<b>平面向量會的——內積、夾角、垂直——全部「多一項</b> \\(z\\)<b>」照搬；空間多了「外積」這個新工具，要法向量、要面積／體積，就靠它</b>。"
+      "一句心法貫穿全章：<b>平面向量會的——內積、夾角、垂直——全部「多一項</b> \\(z\\)<b>」照搬；空間多了「外積」這個新工具，要法向量、要面積／體積，就靠它</b>。",
+      "這一章把第 11 章的向量工具用到立體幾何（★★中頻），也是兩條長線的終點站。",
+      "學習脈絡：平面方程式與法向量 → 點到平面距離 → 兩面位置與二面角 → 空間直線、投影與歪斜線。",
+      "一句心法貫穿全章：<b>平面的靈魂是「法向量」（求平面、求距離、求夾角全靠它），直線的靈魂是「方向向量」</b>。"
      ]
     },
     {
@@ -5481,154 +5441,8 @@
     },
     {
      "t": "sec",
-     "html": "判斷流程：看到 X → 用 Y",
-     "plain": "判斷流程：看到 X → 用 Y",
-     "kind": "flow"
-    },
-    {
-     "t": "table",
-     "head": [
-      [
-       {
-        "html": "看到…（題目特徵）"
-       },
-       {
-        "html": "→ 就用…（工具 / 方法）"
-       }
-      ]
-     ],
-     "rows": [
-      [
-       {
-        "html": "求空間兩點距離"
-       },
-       {
-        "html": "\\(\\sqrt{\\Delta x^{2} + \\Delta y^{2} + \\Delta z^{2}}\\)（平面距離多一項 \\(z\\)）"
-       }
-      ],
-      [
-       {
-        "html": "求長度／夾角／垂直"
-       },
-       {
-        "html": "內積 \\(u_{1}v_{1} + u_{2}v_{2} + u_{3}v_{3}\\)（垂直 \\(\\Leftrightarrow = 0\\)）"
-       }
-      ],
-      [
-       {
-        "html": "求「同時垂直兩向量」的向量（法向量）"
-       },
-       {
-        "html": "外積 \\(\\overrightarrow{u} \\times \\overrightarrow{v}\\)"
-       }
-      ],
-      [
-       {
-        "html": "求平行四邊形面積"
-       },
-       {
-        "html": "\\(\\left| \\overrightarrow{u} \\times \\overrightarrow{v} \\right|\\)"
-       }
-      ],
-      [
-       {
-        "html": "求平行六面體／四面體體積"
-       },
-       {
-        "html": "純量三重積 \\(\\left| \\left( \\overrightarrow{u} \\times \\overrightarrow{v} \\right) \\cdot \\overrightarrow{w} \\right|\\)（四面體再 \\(\\times \\frac{1}{6}\\)）"
-       }
-      ]
-     ],
-     "cols": 2
-    },
-    {
-     "t": "sec",
-     "html": "跨章鏈結：遇到沒看過的題，從這裡接",
-     "plain": "跨章鏈結：遇到沒看過的題，從這裡接",
-     "kind": "link"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "<b>內積、距離 ＝ 平面向量多一項</b> \\(z\\)：空間內積 \\(u_{1}v_{1} + u_{2}v_{2} + u_{3}v_{3}\\) 就是第 10 章平面內積多一項；空間距離 \\(\\sqrt{\\Delta x^{2} + \\Delta y^{2} + \\Delta z^{2}}\\) 就是第 3 章平面距離多一項——「距離逐維升級」這條線的第三維（如 <code>106</code><code>單</code><code>4</code>、<code>108</code><code>選</code><code>F</code>、<code>112</code><code>單</code><code>6</code>）。"
-      },
-      {
-       "lvl": 0,
-       "html": "<b>外積 ＝ 行列式面積的升維</b>：外積的分量是行列式展開，它的長度給平行四邊形面積、純量三重積給平行六面體體積——第 10 章「行列式給面積」在空間長成「行列式給體積」（如 <code>113</code><code>單</code><code>2</code>、<code>114</code><code>單</code><code>6</code>、<code>111</code><code>選</code><code>17</code>）。"
-      },
-      {
-       "lvl": 0,
-       "html": "<b>外積直通平面方程式</b>：外積求出的「同時垂直兩向量」的向量，就是第 12 章平面的法向量——這是本章接下一章最關鍵的橋（如 <code>108</code><code>多</code><code>13</code>、<code>110</code><code>選</code><code>B</code>）。先把外積練熟，平面方程式就水到渠成。"
-      },
-      {
-       "lvl": 0,
-       "html": "<b>內積與三角、矩陣相連</b>：夾角公式裡的 \\(\\cos\\theta\\) 仍是第 9 章三角；而空間的垂直條件、旋轉常用三階矩陣（第 13 章，如 <code>115</code><code>單</code><code>5</code>）。"
-      }
-     ]
-    },
-    {
-     "t": "sec",
-     "html": "練習指引：歷屆題號（106–115）",
-     "plain": "練習指引：歷屆題號（106–115）",
-     "kind": "drill"
-    },
-    {
-     "t": "ul",
-     "items": [
-      {
-       "lvl": 0,
-       "html": "空間坐標與距離（★★☆）：<code>106</code><code>單</code><code>4</code>、<code>108</code><code>選</code><code>F</code>"
-      },
-      {
-       "lvl": 0,
-       "html": "空間向量內積與垂直（★★☆）：<code>106</code><code>多</code><code>13</code>、<code>112</code><code>單</code><code>6</code>、<code>115</code><code>單</code><code>5</code>"
-      },
-      {
-       "lvl": 0,
-       "html": "外積、行列式・面積／體積（★★★）：<code>113</code><code>單</code><code>2</code>、<code>112</code><code>單</code><code>5</code>、<code>114</code><code>單</code><code>6</code>、<code>111</code><code>選</code><code>17</code>、<code>115</code><code>混</code><code>18</code><code>–</code><code>20</code>"
-      }
-     ]
-    },
-    {
-     "t": "note",
-     "kind": "mind",
-     "label": "考場心法",
-     "paras": [
-      "空間向量 ＝ 平面向量 ＋ 一項 \\(z\\)（內積、距離、夾角照搬）；唯一的新工具是「外積」——要法向量、要面積就用 \\(\\left| \\overrightarrow{u} \\times \\overrightarrow{v} \\right|\\)，要體積就用純量三重積 \\(\\left| \\left( \\overrightarrow{u} \\times \\overrightarrow{v} \\right) \\cdot \\overrightarrow{w} \\right|\\)。"
-     ]
-    }
-   ],
-   "file": "第11章_空間向量.html",
-   "blanks": 36,
-   "secs": [
-    "一、空間概念",
-    "二、空間坐標與距離",
-    "三、空間向量與內積",
-    "四、外積：空間獨有的新工具",
-    "五、體積：純量三重積"
-   ]
-  },
-  {
-   "n": 12,
-   "cn": "十二",
-   "title": "空間中的平面與直線",
-   "blocks": [
-    {
-     "t": "note",
-     "kind": "lead",
-     "label": "脈絡導讀",
-     "paras": [
-      "這一章把第 11 章的向量工具用到立體幾何（★★中頻），也是兩條長線的終點站。",
-      "學習脈絡：平面方程式與法向量 → 點到平面距離 → 兩面位置與二面角 → 空間直線、投影與歪斜線。",
-      "一句心法貫穿全章：<b>平面的靈魂是「法向量」（求平面、求距離、求夾角全靠它），直線的靈魂是「方向向量」</b>。"
-     ]
-    },
-    {
-     "t": "sec",
-     "html": "一、平面方程式與法向量",
-     "plain": "一、平面方程式與法向量",
+     "html": "六、平面方程式與法向量",
+     "plain": "六、平面方程式與法向量",
      "kind": "sec"
     },
     {
@@ -5703,8 +5517,8 @@
     },
     {
      "t": "sec",
-     "html": "二、直線方程式與方向向量",
-     "plain": "二、直線方程式與方向向量",
+     "html": "七、直線方程式與方向向量",
+     "plain": "七、直線方程式與方向向量",
      "kind": "sec"
     },
     {
@@ -5752,8 +5566,8 @@
     },
     {
      "t": "sec",
-     "html": "三、空間中各元素的關係",
-     "plain": "三、空間中各元素的關係",
+     "html": "八、空間中各元素的關係",
+     "plain": "八、空間中各元素的關係",
      "kind": "sec"
     },
     {
@@ -5950,6 +5764,62 @@
      "rows": [
       [
        {
+        "html": "求空間兩點距離"
+       },
+       {
+        "html": "\\(\\sqrt{\\Delta x^{2} + \\Delta y^{2} + \\Delta z^{2}}\\)（平面距離多一項 \\(z\\)）"
+       }
+      ],
+      [
+       {
+        "html": "求長度／夾角／垂直"
+       },
+       {
+        "html": "內積 \\(u_{1}v_{1} + u_{2}v_{2} + u_{3}v_{3}\\)（垂直 \\(\\Leftrightarrow = 0\\)）"
+       }
+      ],
+      [
+       {
+        "html": "求「同時垂直兩向量」的向量（法向量）"
+       },
+       {
+        "html": "外積 \\(\\overrightarrow{u} \\times \\overrightarrow{v}\\)"
+       }
+      ],
+      [
+       {
+        "html": "求平行四邊形面積"
+       },
+       {
+        "html": "\\(\\left| \\overrightarrow{u} \\times \\overrightarrow{v} \\right|\\)"
+       }
+      ],
+      [
+       {
+        "html": "求平行六面體／四面體體積"
+       },
+       {
+        "html": "純量三重積 \\(\\left| \\left( \\overrightarrow{u} \\times \\overrightarrow{v} \\right) \\cdot \\overrightarrow{w} \\right|\\)（四面體再 \\(\\times \\frac{1}{6}\\)）"
+       }
+      ]
+     ],
+     "cols": 2
+    },
+    {
+     "t": "table",
+     "head": [
+      [
+       {
+        "html": "看到…（題目特徵）"
+       },
+       {
+        "html": "→ 就用…（工具 / 方法）"
+       }
+      ]
+     ],
+     "rows": [
+      [
+       {
         "html": "求平面方程式"
        },
        {
@@ -6010,6 +5880,27 @@
      "items": [
       {
        "lvl": 0,
+       "html": "<b>內積、距離 ＝ 平面向量多一項</b> \\(z\\)：空間內積 \\(u_{1}v_{1} + u_{2}v_{2} + u_{3}v_{3}\\) 就是第 10 章平面內積多一項；空間距離 \\(\\sqrt{\\Delta x^{2} + \\Delta y^{2} + \\Delta z^{2}}\\) 就是第 3 章平面距離多一項——「距離逐維升級」這條線的第三維（如 <code>106</code><code>單</code><code>4</code>、<code>108</code><code>選</code><code>F</code>、<code>112</code><code>單</code><code>6</code>）。"
+      },
+      {
+       "lvl": 0,
+       "html": "<b>外積 ＝ 行列式面積的升維</b>：外積的分量是行列式展開，它的長度給平行四邊形面積、純量三重積給平行六面體體積——第 10 章「行列式給面積」在空間長成「行列式給體積」（如 <code>113</code><code>單</code><code>2</code>、<code>114</code><code>單</code><code>6</code>、<code>111</code><code>選</code><code>17</code>）。"
+      },
+      {
+       "lvl": 0,
+       "html": "<b>外積直通平面方程式</b>：外積求出的「同時垂直兩向量」的向量，就是第 12 章平面的法向量——這是本章接下一章最關鍵的橋（如 <code>108</code><code>多</code><code>13</code>、<code>110</code><code>選</code><code>B</code>）。先把外積練熟，平面方程式就水到渠成。"
+      },
+      {
+       "lvl": 0,
+       "html": "<b>內積與三角、矩陣相連</b>：夾角公式裡的 \\(\\cos\\theta\\) 仍是第 9 章三角；而空間的垂直條件、旋轉常用三階矩陣（第 13 章，如 <code>115</code><code>單</code><code>5</code>）。"
+      }
+     ]
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
        "html": "<b>距離逐維升級的終點</b>：點到平面 \\(\\frac{\\left| ax_{0} + by_{0} + cz_{0} + d \\right|}{\\sqrt{a^{2} + b^{2} + c^{2}}}\\) 與第 3 章點到直線 \\(\\frac{\\left| ax_{0} + by_{0} + c \\right|}{\\sqrt{a^{2} + b^{2}}}\\) 只差一項 \\(z\\)——這條「\\(|a - b|\\)（1D）→ 點到線（2D）→ 點到面（3D）」的線，在這裡收尾。同一個公式，記一個會三個（如 <code>108</code><code>多</code><code>13</code>、<code>112</code><code>選</code><code>16</code>、<code>114</code><code>選</code><code>14</code>）。"
       },
       {
@@ -6037,6 +5928,23 @@
      "items": [
       {
        "lvl": 0,
+       "html": "空間坐標與距離（★★☆）：<code>106</code><code>單</code><code>4</code>、<code>108</code><code>選</code><code>F</code>"
+      },
+      {
+       "lvl": 0,
+       "html": "空間向量內積與垂直（★★☆）：<code>106</code><code>多</code><code>13</code>、<code>112</code><code>單</code><code>6</code>、<code>115</code><code>單</code><code>5</code>"
+      },
+      {
+       "lvl": 0,
+       "html": "外積、行列式・面積／體積（★★★）：<code>113</code><code>單</code><code>2</code>、<code>112</code><code>單</code><code>5</code>、<code>114</code><code>單</code><code>6</code>、<code>111</code><code>選</code><code>17</code>、<code>115</code><code>混</code><code>18</code><code>–</code><code>20</code>"
+      }
+     ]
+    },
+    {
+     "t": "ul",
+     "items": [
+      {
+       "lvl": 0,
        "html": "平面方程式、投影與點到平面距離（★★★）：<code>107</code><code>多</code><code>11</code>、<code>108</code><code>多</code><code>13</code>、<code>110</code><code>選</code><code>B</code>、<code>111</code><code>選</code><code>16</code>、<code>112</code><code>選</code><code>16</code>、<code>113</code><code>混</code><code>18</code><code>–</code><code>19</code>、<code>114</code><code>選</code><code>14</code>"
       },
       {
@@ -6054,21 +5962,27 @@
      "kind": "mind",
      "label": "考場心法",
      "paras": [
+      "空間向量 ＝ 平面向量 ＋ 一項 \\(z\\)（內積、距離、夾角照搬）；唯一的新工具是「外積」——要法向量、要面積就用 \\(\\left| \\overrightarrow{u} \\times \\overrightarrow{v} \\right|\\)，要體積就用純量三重積 \\(\\left| \\left( \\overrightarrow{u} \\times \\overrightarrow{v} \\right) \\cdot \\overrightarrow{w} \\right|\\)。",
       "平面記法向量、直線記方向向量。求平面用外積找法向量；點到平面距離就是第 3 章點到直線「多一項 \\(z\\)」；兩面夾角＝法向量夾角。一切回到內積與外積。"
      ]
     }
    ],
-   "file": "第12章_空間中的平面與直線.html",
-   "blanks": 28,
+   "file": "第10章_空間向量.html",
+   "blanks": 64,
    "secs": [
-    "一、平面方程式與法向量",
-    "二、直線方程式與方向向量",
-    "三、空間中各元素的關係"
+    "一、空間概念",
+    "二、空間坐標與距離",
+    "三、空間向量與內積",
+    "四、外積：空間獨有的新工具",
+    "五、體積：純量三重積",
+    "六、平面方程式與法向量",
+    "七、直線方程式與方向向量",
+    "八、空間中各元素的關係"
    ]
   },
   {
-   "n": 13,
-   "cn": "十三",
+   "n": 11,
+   "cn": "十一",
    "title": "矩陣",
    "blocks": [
     {
@@ -6656,7 +6570,7 @@
      ]
     }
    ],
-   "file": "第13章_矩陣.html",
+   "file": "第11章_矩陣.html",
    "blanks": 29,
    "secs": [
     "一、矩陣的運算與乘冪",
