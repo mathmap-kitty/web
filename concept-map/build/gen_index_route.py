@@ -7,7 +7,7 @@ r"""把「今天走哪條路」路線列注入子站首頁 concept-map/index.htm
 之間這一段由本腳本維護——星等資料從 content/*.py 讀，改考點後重跑即可。
 
 用法：
-    cd D:/web/concept-map
+    cd D:/gmail/Mathmap_workspace/concept-map
     PYTHONUTF8=1 python build/gen_index_route.py
 """
 import importlib

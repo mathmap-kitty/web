@@ -1,14 +1,16 @@
 # AGENTS.md — 給接手 AI 的專案指南
 
 > **這份是「怎麼做」的常駐規範**；「現在做到哪」看同層的 `handoff.md`。
-> 兩份都在 repo 根目錄 `D:\web`。開工前兩份都讀。
+> 兩份都在 repo 根目錄 `D:\gmail\Mathmap_workspace`。開工前兩份都讀。
 
 ---
 
 ## 0. 專案是什麼
 
 高中數學教師游心怡（Kitty）的**學測數學 A 自學教材網**，已上線 GitHub Pages。
-- Repo：`D:\web` → `https://github.com/mathmap-kitty/web`
+- Repo：`D:\gmail\Mathmap_workspace` → `https://github.com/mathmap-kitty/web`
+  （⚠ 這是 Google Drive 同步資料夾。若遇到 `index.lock`／`Permission denied`，
+  多半是 Drive 正在上傳同一個檔，暫停同步或稍候重試即可。）
 - 網址：`https://mathmap-kitty.github.io/web/`（根目錄是**總入口 portal**）
 - 一切工作以「**可發布、可累積的作品**」為終點；教學內容的最終判斷權在老師。
 
@@ -25,7 +27,7 @@
 ## 2. 資料夾結構
 
 ```
-D:\web\
+D:\gmail\Mathmap_workspace\
 ├── index.html              # 總入口 portal（手寫維護，非 build 產生）
 ├── AGENTS.md               # 本檔：常駐規範
 ├── handoff.md              # 目前進度與下一步
@@ -75,7 +77,7 @@ D:\web\
 ## 3. 建置與發布流程
 
 ```bash
-cd D:/web/concept-map
+cd D:/gmail/Mathmap_workspace/concept-map
 PYTHONUTF8=1 python build/build.py            # 全部 11 單元（含 validate 守門）
 PYTHONUTF8=1 python build/build.py <slug>     # 單一單元
 PYTHONUTF8=1 python build/build_conceptmap.py # 三視圖地圖（改地圖才要跑）

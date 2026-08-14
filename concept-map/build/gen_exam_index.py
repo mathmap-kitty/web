@@ -24,7 +24,7 @@ AGENTS.md 明令不在本 repo 內改 exam/。所以這裡「只讀不改」，�
 content/exam_qs.py 進版控；exam/ 日後更新時重跑本腳本即可刷新。
 
 用法：
-    cd D:/web/concept-map
+    cd D:/gmail/Mathmap_workspace/concept-map
     PYTHONUTF8=1 python build/gen_exam_index.py
 """
 import json
