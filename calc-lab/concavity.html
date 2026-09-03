@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- mathmap site headers -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<title>增減與凹凸｜選修數學甲（上）互動教具</title>
+<meta name="description" content="f′ 的正負決定 f 的增減，f″ 的正負決定 f 的凹凸。拖動 x，三張圖同步，極值點與反曲點自動標出來。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="lab.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="lab.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-title" href="index.html">mathmap 數學教材網<small>選修數學甲（上）互動教具</small></a>
+  <a class="ghost" href="index.html">← 教具目錄</a>
+  <a class="ghost" href="../">總入口</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>f′ 管增減，<span class="thin">f″ 管凹凸</span></h1>
+      <p>三張圖疊在一起：f′ 在 x 軸上方時 f 上升、下方時 f 下降；f″ 在上方時 f 凹向上、下方時凹向下。f′ 穿過 0 是極值，f″ 穿過 0 是反曲點。</p>
+    </div>
+    <div class="sec"><b>2-2</b> 導函數與函數圖形</div>
+  </div>
+
+  <div class="deck">
+    <section class="card stage">
+      <div class="formula">
+        <span id="fHead"></span>
+      </div>
+      <div class="plotbox" style="aspect-ratio:16/13;min-height:440px"><canvas id="plot"></canvas></div>
+      <div class="stagefoot">
+        <span class="key"><span class="swatch sw-teal"></span>f′ &gt; 0 → f 上升　／　f″ &gt; 0 → 凹向上</span>
+        <span class="key"><span class="swatch sw-ans"></span>f′ &lt; 0 → f 下降　／　f″ &lt; 0 → 凹向下</span>
+        <span class="key"><span class="swatch sw-maroon" style="border-radius:50%;width:11px"></span>極值點</span>
+        <span class="key"><span class="swatch" style="border-radius:50%;width:11px;border:2px solid var(--amber);background:#fff"></span>反曲點</span>
+      </div>
+    </section>
+
+    <div class="rail">
+      <div class="card">
+        <span class="label">函數 f(x)</span>
+        <div class="chips" id="fnChips"></div>
+      </div>
+
+      <div class="card accent-teal">
+        <span class="label teal">自己輸入</span>
+        <div id="fnPanel"></div>
+      </div>
+
+      <div class="card">
+        <span class="label">上圖的底色依據</span>
+        <div class="chips" id="modeChips"></div>
+      </div>
+
+      <div class="card">
+        <div class="nhead">
+          <span class="label">目前位置</span>
+          <div class="nval"><small>x =</small><span id="xOut">—</span></div>
+        </div>
+        <input type="range" id="xSlider" min="0" max="1000" value="0" step="1" aria-label="x">
+        <button class="btn wide" id="playBtn" type="button"></button>
+      </div>
+
+      <div class="card readout">
+        <span class="label">這一點的三個數</span>
+        <div class="rows">
+          <div class="row"><span class="nm"><span data-tex="f(x)"></span></span><span class="vv" id="vf">—</span></div>
+          <div class="row"><span class="nm"><span data-tex="f'(x)"></span>　→</span><span class="vv" id="vd1">—</span></div>
+          <div class="row"><span class="nm"><span data-tex="f''(x)"></span>　→</span><span class="vv" id="vd2">—</span></div>
+          <div class="row big"><span class="nm">特徵點</span><span class="vv" id="vPts">—</span></div>
+        </div>
+      </div>
+
+      <div class="note" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="copyright">mathmap 數學地圖 © Kitty　·　f′ = 0 只是候選人，要看它有沒有變號。</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var PRESETS = [
+    { id: "cube", src: "x^3-3x", lo: -2.5, hi: 2.5,
+      note: "x = −1 極大、x = 1 極小，中間 x = 0 是反曲點——f′ 在那裡最小（最陡的下坡）。" },
+    { id: "quart", src: "x^4-2x^2", lo: -1.8, hi: 1.8,
+      note: "W 形：兩個極小、一個極大、兩個反曲點。f′ 是三次，穿過 0 三次。" },
+    { id: "x3", src: "x^3", lo: -1.5, hi: 1.5,
+      note: "<b>陷阱題</b>：x = 0 處 f′ = 0，但 f′ 沒有變號（兩邊都 ≥ 0），所以<b>不是極值</b>；它是反曲點。" },
+    { id: "sin", src: "sin(x)", lo: -1, hi: 7,
+      note: "f′ = cos、f″ = −sin：反曲點剛好在 f 穿過 x 軸的地方。" }
+  ];
+  PRESETS.forEach(function (p) { var F = Lab.parseFn(p.src); p.f = F.f; p.tex = F.tex; p.html = '<span data-tex="' + F.tex.replace(/"/g, "&quot;") + '"></span>'; });
+  var MODES = [{ id: "d1", btn: "f′ 正負（增減）" }, { id: "d2", btn: "f″ 正負（凹凸）" }];
+  var state = { F: PRESETS[0], x: 0, mode: "d1" };
+  var P = Lab.pal(), N = 600;
+
+  function rangeOf(arr) { var lo = Infinity, hi = -Infinity, i; for (i = 0; i < arr.length; i++) if (isFinite(arr[i])) { if (arr[i] < lo) lo = arr[i]; if (arr[i] > hi) hi = arr[i]; } if (!isFinite(lo)) { lo = -1; hi = 1; } return [Math.min(0, lo), Math.max(0, hi)]; }
+  /* 找零點：變號就二分，貼著 0 沒變號的也抓（x³ 的 f′） */
+  function zeros(vals, xs, g) {
+    var out = [], i, n = vals.length, mx = 0, step = xs[1] - xs[0];
+    for (i = 0; i < n; i++) if (isFinite(vals[i])) mx = Math.max(mx, Math.abs(vals[i]));
+    for (i = 1; i < n - 1; i++) {
+      var a = vals[i], b = vals[i + 1], pr = vals[i - 1];
+      if (!isFinite(a) || !isFinite(b) || !isFinite(pr)) continue;
+      if (a * b < 0) {
+        var lo = xs[i], hi = xs[i + 1], flo = a, k, m, fm;
+        for (k = 0; k < 30; k++) { m = (lo + hi) / 2; fm = g(m); if (!isFinite(fm)) break; if (fm * flo <= 0) hi = m; else { lo = m; flo = fm; } }
+        out.push({ x: (lo + hi) / 2, from: a > 0 ? 1 : -1, to: b > 0 ? 1 : -1 });
+      } else if (Math.abs(a) < 2e-3 * mx && Math.abs(a) < Math.abs(pr) && Math.abs(a) <= Math.abs(b)) {
+        out.push({ x: xs[i], from: pr > 0 ? 1 : -1, to: b > 0 ? 1 : -1, touch: true });
+      }
+    }
+    /* 太近的合併 */
+    var res = [];
+    out.forEach(function (z) { if (!res.length || z.x - res[res.length - 1].x > step * 3) res.push(z); });
+    return res;
+  }
+  function build(F) {
+    var i, x; F._xs = []; F._f = []; F._d1 = []; F._d2 = [];
+    for (i = 0; i <= N; i++) { x = F.lo + (F.hi - F.lo) * i / N; F._xs.push(x); F._f.push(F.f(x)); F._d1.push(Lab.d1(F.f, x)); F._d2.push(Lab.d2(F.f, x)); }
+    F._fr = rangeOf(F._f); F._r1 = rangeOf(F._d1); F._r2 = rangeOf(F._d2);
+    F._crit = zeros(F._d1, F._xs, function (v) { return Lab.d1(F.f, v); }).map(function (z) {
+      z.kind = (z.from > 0 && z.to < 0) ? "極大" : (z.from < 0 && z.to > 0) ? "極小" : "非極值"; return z;
+    });
+    F._infl = zeros(F._d2, F._xs, function (v) { return Lab.d2(F.f, v); }).filter(function (z) { return z.from !== z.to; });
+  }
+
+  var cv = document.getElementById("plot"), ctx = cv.getContext("2d"), W = 0, H = 0;
+  function pane(y, h, yr, F, pad, padT) {
+    return new Lab.Plot(ctx, { x: 0, y: y, w: W, h: h, padL: 58, padR: 18, padT: padT, padB: 8 }, [F.lo - pad, F.hi + pad], yr);
+  }
+  function bands(p, F, arr) {
+    var i, s0 = null, start = 0;
+    for (i = 0; i <= N; i++) {
+      var s = !isFinite(arr[i]) ? 0 : arr[i] > 1e-6 ? 1 : arr[i] < -1e-6 ? -1 : 0;
+      if (s !== s0) { if (s0 !== null && s0 !== 0) p.band(F._xs[start], F._xs[i], s0 > 0 ? P.teal : P.ans, 0.09); s0 = s; start = i; }
+    }
+    if (s0 !== null && s0 !== 0) p.band(F._xs[start], F._xs[N], s0 > 0 ? P.teal : P.ans, 0.09);
+  }
+  function signFill(p, F, arr) {
+    var c = ctx, i; p.clip();
+    [[1, P.teal], [-1, P.ans]].forEach(function (t) {
+      c.fillStyle = Lab.rgba(t[1], 0.18); c.beginPath(); var on = false;
+      for (i = 0; i <= N; i++) {
+        var v = arr[i]; if (!isFinite(v)) v = 0; v = t[0] > 0 ? Math.max(0, v) : Math.min(0, v);
+        if (!on) { c.moveTo(p.X(F._xs[i]), p.Y(0)); on = true; }
+        c.lineTo(p.X(F._xs[i]), p.Y(v));
+      }
+      c.lineTo(p.X(F._xs[N]), p.Y(0)); c.closePath(); c.fill();
+    });
+    p.unclip();
+  }
+  function draw() {
+    var F = state.F, x = state.x, fx = F.f(x), d1 = Lab.d1(F.f, x), d2 = Lab.d2(F.f, x), pad = (F.hi - F.lo) * 0.03;
+    ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+    var h1 = Math.round(H * 0.46), h2 = Math.round(H * 0.27), h3 = H - h1 - h2;
+    var fs = (F._fr[1] - F._fr[0]) || 1, s1 = (F._r1[1] - F._r1[0]) || 1, s2 = (F._r2[1] - F._r2[0]) || 1;
+
+    /* f */
+    var p = pane(0, h1, [F._fr[0] - fs * 0.15, F._fr[1] + fs * 0.2], F, pad, 24);
+    bands(p, F, state.mode === "d1" ? F._d1 : F._d2);
+    p.grid({ xgrid: false, lines: 4 }); p.axes({ ylabel: "f" });
+    p.curve(F.f, [F.lo, F.hi], { color: P.maroon, width: 2.6 });
+    var col = !isFinite(d1) ? P.mut : d1 > 1e-3 ? P.teal : d1 < -1e-3 ? P.ans : P.mut;
+    if (isFinite(d1)) { var L = (F.hi - F.lo) * 0.12; p.line(x - L, fx - d1 * L, x + L, fx + d1 * L, { color: col, width: 2.4 }); }
+    F._crit.forEach(function (z) {
+      var y = F.f(z.x); p.dot(z.x, y, { color: z.kind === "非極值" ? P.mut : P.maroon, r: 5, ring: true });
+      p.text(z.x, y, z.kind === "非極值" ? "f′=0 非極值" : z.kind, { size: 12, weight: 700, color: P.maroonD, align: "center", dy: z.kind === "極小" ? 20 : -10 });
+    });
+    F._infl.forEach(function (z) {
+      var y = F.f(z.x); ctx.fillStyle = "#fff"; ctx.strokeStyle = P.amber; ctx.lineWidth = 2.2;
+      ctx.beginPath(); ctx.arc(p.X(z.x), p.Y(y), 5, 0, 6.2832); ctx.fill(); ctx.stroke();
+      p.text(z.x, y, "反曲", { size: 12, weight: 700, color: P.amber, dx: 9, dy: 14 });
+    });
+    p.line(x, p.yhi, x, p.ylo, { color: P.mut, width: 1, dash: [3, 3] });
+    p.dot(x, fx, { color: P.maroon, r: 5, ring: true });
+    p.textPx(p.x0 + p.w - 8, p.y0 + 4, state.mode === "d1" ? "底色：f′ > 0 上升（綠）、f′ < 0 下降（紅）" : "底色：f″ > 0 凹向上（綠）、f″ < 0 凹向下（紅）", { size: 12.5, color: P.maroonD, weight: 700, align: "right" });
+
+    /* f′ */
+    ctx.strokeStyle = P.line; ctx.beginPath(); ctx.moveTo(12, h1 + 0.5); ctx.lineTo(W - 12, h1 + 0.5); ctx.stroke();
+    var q = pane(h1, h2, [F._r1[0] - s1 * 0.15, F._r1[1] + s1 * 0.25], F, pad, 20);
+    signFill(q, F, F._d1); q.axes({ ylabel: "f′" });
+    q.poly(F._xs, F._d1, { color: P.teal, width: 2.4 });
+    F._crit.forEach(function (z) { q.dot(z.x, 0, { color: P.maroon, r: 4, ring: true }); });
+    q.line(x, q.yhi, x, q.ylo, { color: P.mut, width: 1, dash: [3, 3] });
+    if (isFinite(d1)) q.dot(x, d1, { color: P.teal, r: 4.5, ring: true });
+    q.textPx(q.x0 + q.w - 8, q.y0 + 3, "f′：上方 = f 上升，穿過 0 = 極值", { size: 12, color: P.teal, weight: 700, align: "right" });
+
+    /* f″ */
+    ctx.beginPath(); ctx.moveTo(12, h1 + h2 + 0.5); ctx.lineTo(W - 12, h1 + h2 + 0.5); ctx.stroke();
+    var r = pane(h1 + h2, h3, [F._r2[0] - s2 * 0.15, F._r2[1] + s2 * 0.25], F, pad, 20);
+    signFill(r, F, F._d2); r.axes({ ylabel: "f″" });
+    r.poly(F._xs, F._d2, { color: P.amber, width: 2.4 });
+    F._infl.forEach(function (z) { r.dot(z.x, 0, { color: P.amber, r: 4, ring: true }); });
+    r.line(x, r.yhi, x, r.ylo, { color: P.mut, width: 1, dash: [3, 3] });
+    if (isFinite(d2)) r.dot(x, d2, { color: P.amber, r: 4.5, ring: true });
+    r.textPx(r.x0 + r.w - 8, r.y0 + 3, "f″：上方 = 凹向上，穿過 0 = 反曲點", { size: 12, color: P.amber, weight: 700, align: "right" });
+
+    /* 讀數 */
+    document.getElementById("xOut").textContent = Lab.fmt(x, 2);
+    document.getElementById("vf").textContent = Lab.fmt(fx, 4);
+    var e1 = document.getElementById("vd1"), e2 = document.getElementById("vd2");
+    e1.textContent = !isFinite(d1) ? "不存在" : Lab.fmt(d1, 3) + (d1 > 1e-3 ? "　上升" : d1 < -1e-3 ? "　下降" : "　水平"); e1.style.color = col;
+    e2.textContent = !isFinite(d2) ? "—" : Lab.fmt(d2, 3) + (d2 > 1e-3 ? "　凹向上 ∪" : d2 < -1e-3 ? "　凹向下 ∩" : "　直");
+    e2.style.color = !isFinite(d2) ? P.mut : d2 > 1e-3 ? P.teal : d2 < -1e-3 ? P.ans : P.mut;
+    var pts = F._crit.map(function (z) { return z.kind + " x=" + Lab.short(z.x); }).concat(F._infl.map(function (z) { return "反曲 x=" + Lab.short(z.x); }));
+    document.getElementById("vPts").textContent = pts.length ? pts.join("、") : "沒有";
+    document.getElementById("vPts").style.fontSize = "13px";
+  }
+
+  var xs = document.getElementById("xSlider"), hint = document.getElementById("hint");
+  function setX(v, sync) { state.x = Math.max(state.F.lo, Math.min(state.F.hi, v)); if (sync) xs.value = Math.round((state.x - state.F.lo) / (state.F.hi - state.F.lo) * 1000); draw(); }
+  function setF(F) {
+    state.F = F; build(F);
+    Lab.katex(document.getElementById("fHead"), "f(x)=" + F.tex);
+    hint.innerHTML = F.note; Lab.katexAll(hint);
+    setX(F.lo + (F.hi - F.lo) * 0.3, true);
+  }
+  xs.addEventListener("input", function () { player.stop(); setX(state.F.lo + (state.F.hi - state.F.lo) * (+xs.value) / 1000, false); });
+  var fnChips = Lab.chips(document.getElementById("fnChips"), PRESETS, state.F.id, function (it) { player.stop(); panel.fill({ src: it.src, a: it.lo, b: it.hi }); setF(it); });
+  Lab.katexAll(document.getElementById("fnChips"));
+  Lab.chips(document.getElementById("modeChips"), MODES, state.mode, function (it) { state.mode = it.id; draw(); });
+  var panel = Lab.fnPanel(document.getElementById("fnPanel"), {
+    varName: "x", intLabel: "顯示範圍",
+    hint: '例：<code>x^3-6x^2+9x</code>、<code>x^4-4x^3</code>、<code>x/(x^2+1)</code>',
+    onApply: function (F) { player.stop(); F.lo = F.a; F.hi = F.b; F.note = "<b>自訂函數</b>：先看 f′ 穿過 0 幾次，再數上圖有幾個轉折。"; fnChips.select(null); setF(F); }
+  });
+  panel.fill({ src: PRESETS[0].src, a: PRESETS[0].lo, b: PRESETS[0].hi });
+  var player = Lab.player(document.getElementById("playBtn"), {
+    play: "▶　從左掃到右", pause: "❚❚　暫停", ms: 40,
+    onStart: function () { if (state.x >= state.F.hi - 1e-9) setX(state.F.lo, true); },
+    tick: function () { var s = (state.F.hi - state.F.lo) / 160; if (state.x + s >= state.F.hi) { setX(state.F.hi, true); return false; } setX(state.x + s, true); return true; }
+  });
+  function relayout() { var a = Lab.fit(cv); W = a[0]; H = a[1]; draw(); }
+  window.addEventListener("resize", relayout);
+  Lab.katexAll(document); setF(PRESETS[0]); relayout();
+});
+</script>
+</body>
+</html>

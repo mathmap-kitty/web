@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- mathmap site headers -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<title>祖暅原理｜選修數學甲（上）互動教具</title>
+<meta name="description" content="把一疊硬幣推歪，體積不變；每一層截面相等的兩個立體，體積相等。再用它推出球的體積。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="lab.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="lab.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-title" href="index.html">mathmap 數學教材網<small>選修數學甲（上）互動教具</small></a>
+  <a class="ghost" href="index.html">← 教具目錄</a>
+  <a class="ghost" href="../">總入口</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>推歪了，<span class="thin">體積還是一樣</span></h1>
+      <p>一疊硬幣推歪，每一層還是同一枚硬幣，體積當然不變。祖暅原理說的就是這件事：兩個立體，如果每個高度的截面積都相等，體積就相等。</p>
+    </div>
+    <div class="sec"><b>3-2</b> 積分的應用 · 站 4 祖暅原理</div>
+  </div>
+
+  <div class="deck">
+    <section class="card stage">
+      <div class="formula"><span id="fHead"></span></div>
+      <div class="plotbox" style="aspect-ratio:16/10.5"><canvas id="plot"></canvas></div>
+      <div class="stagefoot">
+        <span class="key"><span class="swatch sw-amber"></span>切面高度 h 那一層</span>
+        <span class="key"><span class="sw-line dash" style="border-top-color:var(--amber)"></span>切面</span>
+        <span class="key">下方兩個圓：切面的俯視圖，面積一樣</span>
+      </div>
+    </section>
+
+    <div class="rail">
+      <div class="card">
+        <span class="label">要看什麼</span>
+        <div class="chips" id="modeChips"></div>
+      </div>
+
+      <div class="card" id="shapeCard">
+        <span class="label">立體的形狀</span>
+        <div class="chips" id="shapeChips"></div>
+        <div class="slider2">
+          <div class="nhead"><span class="label">推歪程度</span><div class="nval"><small>s =</small><span id="sOut">0.6</span></div></div>
+          <input type="range" id="sSlider" min="-100" max="100" value="60" step="1" aria-label="推歪">
+          <div class="nhead" style="margin-top:8px"><span class="label">層數</span><div class="nval"><small>n =</small><span id="nOut">20</span></div></div>
+          <input type="range" id="nSlider" min="4" max="60" value="20" step="1" aria-label="層數">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="nhead">
+          <span class="label">切面高度</span>
+          <div class="nval"><small>h =</small><span id="hOut">0.40</span></div>
+        </div>
+        <input type="range" id="hSlider" min="0" max="1000" value="400" step="1" aria-label="切面高度">
+        <button class="btn wide" id="playBtn" type="button"></button>
+      </div>
+
+      <div class="card readout">
+        <span class="label">這個高度的截面</span>
+        <div class="rows">
+          <div class="row teal"><span class="nm" id="nmA1">左邊截面積</span><span class="vv" id="vA1">—</span></div>
+          <div class="row teal"><span class="nm" id="nmA2">右邊截面積</span><span class="vv" id="vA2">—</span></div>
+          <div class="row ans"><span class="nm">體積（左 ＝ 右）</span><span class="vv" id="vV">—</span></div>
+          <div class="row big"><span class="nm" id="nmBig">每一層都相等</span><span class="vv" id="vBig">⇒ 體積相等</span></div>
+        </div>
+      </div>
+
+      <div class="note" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="copyright">mathmap 數學地圖 © Kitty　·　祖沖之父子在五世紀就用這招算出球的體積。</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var P = Lab.pal();
+  var MODES = [{ id: "shear", btn: "推歪，體積不變" }, { id: "sphere", btn: "球 = 圓柱 − 圓錐" }];
+  var SHAPES = [
+    { id: "cyl",  btn: "圓柱", r: function (y) { return 0.5; }, V: Math.PI * 0.25 },
+    { id: "cone", btn: "圓錐", r: function (y) { return 0.5 * (1 - y); }, V: Math.PI * 0.25 / 3 },
+    { id: "ball", btn: "球",   r: function (y) { return Math.sqrt(Math.max(0, 0.25 - (y - 0.5) * (y - 0.5))); }, V: 4 / 3 * Math.PI * 0.125 }
+  ];
+  var state = { mode: "shear", shape: SHAPES[0], s: 0.6, n: 20, h: 0.4 };
+  var FONT = '"Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif';
+  var E = 0.34;                                  /* 橢圓壓扁比 */
+
+  var cv = document.getElementById("plot"), ctx = cv.getContext("2d"), W = 0, H = 0;
+
+  function ell(cx, cy, rx, ry, fill, stroke, lw) {
+    ctx.beginPath(); ctx.ellipse(cx, cy, Math.max(0.3, rx), Math.max(0.3, ry), 0, 0, Math.PI * 2);
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); } if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw || 1; ctx.stroke(); }
+  }
+  /* 一層薄片：中心 (cx, yTop~yBot)，半徑 rpx */
+  function slab(cx, yTop, yBot, rpx, fill, stroke) {
+    var ry = rpx * E;
+    ctx.beginPath();
+    ctx.moveTo(cx - rpx, yTop); ctx.lineTo(cx - rpx, yBot);
+    ctx.ellipse(cx, yBot, rpx, ry, 0, Math.PI, 0, true);
+    ctx.lineTo(cx + rpx, yTop);
+    ctx.ellipse(cx, yTop, rpx, ry, 0, 0, Math.PI, false);
+    ctx.closePath(); ctx.fillStyle = fill; ctx.fill(); if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1; ctx.stroke(); }
+    ell(cx, yTop, rpx, ry, Lab.rgba("#ffffff", 0.35), stroke, 1);
+  }
+
+  function drawShear() {
+    var sh = state.shape, n = state.n, s = state.s, h = state.h, k;
+    var halfW = W / 2, unit = Math.min((H - 150) / 1.25, halfW * 0.62);   /* 1 單位高 = unit px */
+    var R = unit * 0.5, top = 40, base = top + unit, dh = unit / n;
+    var cxL = halfW * 0.5, cxR = halfW * 1.5;
+    var maxOff = halfW * 0.28;
+    var layerAt = Math.min(n - 1, Math.floor(h * n));
+    ctx.font = "700 12.5px " + FONT; ctx.fillStyle = P.maroonD; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    ctx.fillText("原來的疊法", cxL, 10); ctx.fillText("推歪 s = " + Lab.fmt(s, 2), cxR, 10);
+    ctx.strokeStyle = P.line; ctx.beginPath(); ctx.moveTo(halfW + 0.5, 12); ctx.lineTo(halfW + 0.5, H - 12); ctx.stroke();
+
+    [[cxL, 0], [cxR, s]].forEach(function (t) {
+      var cx0 = t[0], sh0 = t[1];
+      /* 底座 */
+      ell(cx0 + (sh0 * 0) , base, R * 1.15, R * 1.15 * E, "#f1ebe6", null);
+      for (k = 0; k < n; k++) {
+        var yc = (k + 0.5) / n, r = sh.r(yc) * unit, yBot = base - k * dh, yTop = yBot - dh;
+        var cx = cx0 + sh0 * yc * maxOff;
+        var hot = (k === layerAt);
+        slab(cx, yTop, yBot, r, hot ? Lab.rgba(P.amber, 0.75) : Lab.rgba(P.teal, k % 2 ? 0.42 : 0.52), hot ? P.amber : Lab.rgba(P.teal, 0.8));
+      }
+    });
+    /* 切面線 */
+    var yCut = base - h * unit;
+    ctx.strokeStyle = P.amber; ctx.lineWidth = 1.5; ctx.setLineDash([6, 4]);
+    ctx.beginPath(); ctx.moveTo(24, yCut); ctx.lineTo(W - 24, yCut); ctx.stroke(); ctx.setLineDash([]);
+    ctx.font = "700 12px " + FONT; ctx.fillStyle = P.amber; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+    ctx.fillText("h = " + Lab.fmt(h, 2), 26, yCut - 3);
+
+    /* 俯視截面 */
+    var rC = sh.r(h) * unit, cy2 = H - 56, rr = Math.max(rC * 0.55, 0);
+    [[cxL], [cxR]].forEach(function (t) {
+      ell(t[0], cy2, rr, rr * 0.55, Lab.rgba(P.amber, 0.45), P.amber, 1.4);
+    });
+    ctx.font = "12px " + FONT; ctx.fillStyle = P.ink; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    var A = Math.PI * sh.r(h) * sh.r(h);
+    ctx.fillText("截面積 " + Lab.fmt(A, 4), cxL, cy2 + rr * 0.55 + 4); ctx.fillText("截面積 " + Lab.fmt(A, 4), cxR, cy2 + rr * 0.55 + 4);
+
+    var Vsum = 0; for (k = 0; k < n; k++) { var rk = sh.r((k + 0.5) / n); Vsum += Math.PI * rk * rk / n; }
+    document.getElementById("nmA1").textContent = "左邊截面積 π r(h)²";
+    document.getElementById("nmA2").textContent = "右邊截面積（同一層）";
+    document.getElementById("vA1").textContent = Lab.fmt(A, 4); document.getElementById("vA2").textContent = Lab.fmt(A, 4);
+    document.getElementById("vV").textContent = Lab.fmt(Vsum, 4) + "（" + n + " 層）";
+    document.getElementById("nmBig").textContent = "每一層都是同一片";
+    document.getElementById("vBig").textContent = "⇒ 體積相等";
+    Lab.katex(document.getElementById("fHead"), "\\text{每個高度的截面積相等}\\ \\Longrightarrow\\ V_{\\text{左}}=V_{\\text{右}}=\\sum_{k} A(h_k)\\,\\Delta h");
+  }
+
+  function drawSphere() {
+    var h = state.h, halfW = W / 2, unit = Math.min((H - 160) / 1.0, halfW * 0.55);
+    var R = unit, top = 40, base = top + R, cxL = halfW * 0.5, cxR = halfW * 1.5;
+    ctx.font = "700 12.5px " + FONT; ctx.fillStyle = P.maroonD; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    ctx.fillText("半球（半徑 R）", cxL, 10); ctx.fillText("圓柱（半徑 R、高 R）挖掉倒圓錐", cxR, 10);
+    ctx.strokeStyle = P.line; ctx.beginPath(); ctx.moveTo(halfW + 0.5, 12); ctx.lineTo(halfW + 0.5, H - 12); ctx.stroke();
+
+    /* 左：半球 */
+    ctx.fillStyle = Lab.rgba(P.teal, 0.22);
+    ctx.beginPath(); ctx.arc(cxL, base, R, Math.PI, 0, false); ctx.ellipse(cxL, base, R, R * E, 0, 0, Math.PI, false); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = P.teal; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(cxL, base, R, Math.PI, 0, false); ctx.stroke();
+    ell(cxL, base, R, R * E, null, Lab.rgba(P.teal, 0.7), 1);
+    var rL = Math.sqrt(Math.max(0, 1 - h * h)) * R, yCut = base - h * R;
+    ell(cxL, yCut, rL, rL * E, Lab.rgba(P.amber, 0.6), P.amber, 1.4);
+
+    /* 右：圓柱減圓錐 */
+    ctx.fillStyle = Lab.rgba(P.teal, 0.22);
+    ctx.beginPath(); ctx.moveTo(cxR - R, top); ctx.lineTo(cxR - R, base); ctx.ellipse(cxR, base, R, R * E, 0, Math.PI, 0, true); ctx.lineTo(cxR + R, top); ctx.ellipse(cxR, top, R, R * E, 0, 0, Math.PI, false); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = P.teal; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(cxR - R, top); ctx.lineTo(cxR - R, base); ctx.moveTo(cxR + R, top); ctx.lineTo(cxR + R, base); ctx.stroke();
+    ell(cxR, base, R, R * E, null, Lab.rgba(P.teal, 0.7), 1);
+    ell(cxR, top, R, R * E, Lab.rgba("#ffffff", 0.5), P.teal, 1.2);
+    /* 挖掉的倒圓錐 */
+    ctx.setLineDash([5, 4]); ctx.strokeStyle = P.maroon; ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.moveTo(cxR - R, top); ctx.lineTo(cxR, base); ctx.lineTo(cxR + R, top); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = Lab.rgba("#ffffff", 0.55); ctx.beginPath(); ctx.moveTo(cxR - R, top); ctx.lineTo(cxR, base); ctx.lineTo(cxR + R, top); ctx.closePath(); ctx.fill();
+    /* 右邊切面：環 */
+    var rIn = h * R;
+    ell(cxR, yCut, R, R * E, Lab.rgba(P.amber, 0.6), P.amber, 1.4);
+    ell(cxR, yCut, rIn, rIn * E, "#ffffff", P.maroon, 1.2);
+
+    /* 切面線 */
+    ctx.strokeStyle = P.amber; ctx.lineWidth = 1.5; ctx.setLineDash([6, 4]);
+    ctx.beginPath(); ctx.moveTo(24, yCut); ctx.lineTo(W - 24, yCut); ctx.stroke(); ctx.setLineDash([]);
+    ctx.font = "700 12px " + FONT; ctx.fillStyle = P.amber; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+    ctx.fillText("h = " + Lab.fmt(h, 2) + " R", 26, yCut - 3);
+
+    /* 俯視 */
+    var cy2 = H - 58, sc = Math.min(R, 46) * 0.9;
+    ell(cxL, cy2, Math.sqrt(Math.max(0, 1 - h * h)) * sc, Math.sqrt(Math.max(0, 1 - h * h)) * sc * 0.6, Lab.rgba(P.amber, 0.5), P.amber, 1.4);
+    ell(cxR, cy2, sc, sc * 0.6, Lab.rgba(P.amber, 0.5), P.amber, 1.4);
+    ell(cxR, cy2, h * sc, h * sc * 0.6, "#ffffff", P.maroon, 1.2);
+    ctx.font = "12px " + FONT; ctx.fillStyle = P.ink; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    ctx.fillText("π(R² − h²) = " + Lab.fmt(Math.PI * (1 - h * h), 4) + " R²", cxL, cy2 + sc * 0.6 + 4);
+    ctx.fillText("πR² − πh² = " + Lab.fmt(Math.PI * (1 - h * h), 4) + " R²", cxR, cy2 + sc * 0.6 + 4);
+
+    document.getElementById("nmA1").textContent = "半球截面：圓，半徑 √(R²−h²)";
+    document.getElementById("nmA2").textContent = "圓柱減圓錐截面：環，外 R 內 h";
+    document.getElementById("vA1").textContent = Lab.fmt(Math.PI * (1 - h * h), 4) + " R²";
+    document.getElementById("vA2").textContent = Lab.fmt(Math.PI * (1 - h * h), 4) + " R²";
+    document.getElementById("vV").textContent = "πR³ − ⅓πR³ = ⅔πR³";
+    document.getElementById("nmBig").textContent = "所以整顆球";
+    document.getElementById("vBig").textContent = "V = (4/3)πR³";
+    Lab.katex(document.getElementById("fHead"), "\\pi\\left(R^2-h^2\\right)=\\pi R^2-\\pi h^2\\ \\Longrightarrow\\ V_{\\text{半球}}=\\pi R^3-\\tfrac13\\pi R^3=\\tfrac23\\pi R^3");
+  }
+  function draw() {
+    if (W < 200 || H < 200) return;          /* 尚未排版時半徑會算成負的，跳過 */
+    ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+    if (state.mode === "shear") drawShear(); else drawSphere();
+  }
+
+  var hS = document.getElementById("hSlider"), sS = document.getElementById("sSlider"), nS = document.getElementById("nSlider"), hint = document.getElementById("hint");
+  function setH(v, sync) { state.h = Math.max(0, Math.min(0.999, v)); document.getElementById("hOut").textContent = Lab.fmt(state.h, 2); if (sync) hS.value = Math.round(state.h * 1000); draw(); }
+  hS.addEventListener("input", function () { player.stop(); setH((+hS.value) / 1000, false); });
+  sS.addEventListener("input", function () { state.s = (+sS.value) / 100; document.getElementById("sOut").textContent = Lab.fmt(state.s, 2); draw(); });
+  nS.addEventListener("input", function () { state.n = +nS.value; document.getElementById("nOut").textContent = state.n; draw(); });
+  function setMode(m) {
+    state.mode = m; document.getElementById("shapeCard").classList.toggle("hide", m !== "shear");
+    hint.innerHTML = m === "shear"
+      ? "<b>推歪</b>：每一層只是水平滑動，形狀、面積都沒變，所以體積不變。把層數拉到 60，歪掉的那個就是一個真正的「斜」立體——祖暅原理對它一樣成立。"
+      : "<b>球的體積</b>：半球和「圓柱挖掉倒圓錐」在每個高度 h 的截面積都是 π(R² − h²)，祖暅原理說兩者體積相等；圓柱減圓錐算得出來，球就算出來了。這是簡報 P36 的內容，也是課本 P.212 祖沖之父子的做法。";
+    Lab.katexAll(hint); draw();
+  }
+  Lab.chips(document.getElementById("modeChips"), MODES, state.mode, function (it) { player.stop(); setMode(it.id); });
+  Lab.chips(document.getElementById("shapeChips"), SHAPES, state.shape.id, function (it) { state.shape = it; draw(); });
+  var player = Lab.player(document.getElementById("playBtn"), {
+    play: "▶　切面從下掃到上", pause: "❚❚　暫停", ms: 40,
+    onStart: function () { if (state.h >= 0.99) setH(0, true); },
+    tick: function () { if (state.h + 0.008 >= 0.999) { setH(0.999, true); return false; } setH(state.h + 0.008, true); return true; }
+  });
+  function relayout() { var a = Lab.fit(cv); W = a[0]; H = a[1]; draw(); }
+  window.addEventListener("resize", relayout);
+  Lab.katexAll(document); setMode("shear"); setH(0.4, true); relayout();
+});
+</script>
+</body>
+</html>

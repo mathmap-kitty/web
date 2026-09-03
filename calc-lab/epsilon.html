@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- mathmap site headers -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<title>ε 帶子與 N、δ｜選修數學甲（上）互動教具</title>
+<meta name="description" content="拉 ε 讓帶子變窄，自動找出 N（數列）或 δ（函數）：極限的定義不是背的，是看得見的。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="lab.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="lab.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-title" href="index.html">mathmap 數學教材網<small>選修數學甲（上）互動教具</small></a>
+  <a class="ghost" href="index.html">← 教具目錄</a>
+  <a class="ghost" href="../">總入口</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>帶子多窄，<span class="thin">都關得住</span></h1>
+      <p>「極限是 L」的意思：不管你把 L 附近的帶子畫多窄（ε），總能找到一個門檻（數列的 N、函數的 δ），過了門檻之後全部關在帶子裡。拉 ε，看門檻怎麼跟著動。</p>
+    </div>
+    <div class="sec"><b>1-1</b> 數列的極限 · <b>1-4</b> 函數的極限</div>
+  </div>
+
+  <div class="deck">
+    <section class="card stage">
+      <div class="formula"><span id="fHead"></span></div>
+      <div class="plotbox"><canvas id="plot"></canvas></div>
+      <div class="stagefoot">
+        <span class="key"><span class="swatch sw-teal"></span>帶子 L − ε &lt; ⋯ &lt; L + ε</span>
+        <span class="key" id="keyN"><span class="swatch sw-amber"></span>門檻之後（n &gt; N）：全部在帶子裡</span>
+        <span class="key hide" id="keyD"><span class="swatch sw-amber"></span>δ 窗：0 &lt; |x − a| &lt; δ 的 x，f(x) 全部在帶子裡</span>
+      </div>
+    </section>
+
+    <div class="rail">
+      <div class="card">
+        <span class="label">哪一種極限</span>
+        <div class="chips" id="modeChips"></div>
+      </div>
+
+      <div class="card" id="seqCard">
+        <span class="label">數列 aₙ</span>
+        <div class="chips" id="seqChips"></div>
+        <div style="margin-top:10px;border-top:1px dashed var(--line);padding-top:8px">
+          <span class="label teal">自己輸入</span>
+          <div id="seqPanel"></div>
+        </div>
+      </div>
+
+      <div class="card hide" id="fnCard">
+        <span class="label">函數 f(x) 與 x → a</span>
+        <div class="chips" id="fnChips"></div>
+        <div style="margin-top:10px;border-top:1px dashed var(--line);padding-top:8px">
+          <span class="label teal">自己輸入</span>
+          <div id="fnPanel"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="nhead">
+          <span class="label">帶子半寬</span>
+          <div class="nval"><small>ε =</small><span id="eOut">0.100</span></div>
+        </div>
+        <input type="range" id="eSlider" min="0" max="1000" value="333" step="1" aria-label="ε">
+        <div class="presets" id="ePresets"></div>
+        <button class="btn wide" id="playBtn" type="button"></button>
+        <label class="switch" style="margin-top:8px"><input type="checkbox" id="zoom"> 放大到帶子附近</label>
+      </div>
+
+      <div class="card readout">
+        <span class="label">門檻</span>
+        <div class="rows">
+          <div class="row"><span class="nm">極限值 L</span><span class="vv" id="vL">—</span></div>
+          <div class="row teal"><span class="nm">帶子 (L − ε, L + ε)</span><span class="vv" id="vBand">—</span></div>
+          <div class="row big"><span class="nm" id="nmGate">N =</span><span class="vv" id="vGate">—</span></div>
+        </div>
+      </div>
+
+      <div class="note" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="copyright">mathmap 數學地圖 © Kitty　·　先給 ε，再找 N——順序反過來就不是極限的定義了。</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var P = Lab.pal();
+  var SEQ = [
+    { id: "inv",  src: "1/n",       L: 0, note: "ε = 0.1 時 N = 10、ε = 0.01 時 N = 100：N 大約是 1/ε。帶子愈窄，門檻愈遠，但永遠找得到。" },
+    { id: "alt",  src: "(-1)^n/n",  L: 0, note: "正負交錯，但絕對值一直縮小——帶子照樣關得住。極限看的是「距離 L 多遠」，不是「從哪一邊來」。" },
+    { id: "frac", src: "n/(n+1)",   L: 1, note: "從下方靠向 1。aₙ 永遠不等於 1，但帶子多窄都關得住，所以極限是 1。" },
+    { id: "osc",  src: "(-1)^n",    L: 0, note: "<b>沒有極限</b>：ε &lt; 1 時，不管 N 多大，後面永遠有 +1 和 −1 跳出帶子——找不到 N。" }
+  ];
+  var FNS = [
+    { id: "sq",   src: "x^2",           a: 1, L: 1, lo: -1, hi: 3,  note: "ε 縮小，δ 跟著縮小，但永遠找得到。連續函數在每一點都是這樣。" },
+    { id: "hole", src: "(x^2-1)/(x-1)", a: 1, L: 2, lo: -1, hi: 3,  note: "x = 1 處<b>沒有定義</b>（0/0），但極限照樣是 2：δ 窗刻意挖掉 x = a 那一點，所以那個洞不影響。" },
+    { id: "sinc", src: "sin(x)/x",      a: 0, L: 1, lo: -8, hi: 8,  note: "在 0 處沒定義，極限卻是 1（夾擠定理）。把 ε 拉小，看 δ 窗怎麼縮。" },
+    { id: "jump", src: "abs(x)/x",      a: 0, L: 1, lo: -2, hi: 2,  note: "<b>左右不一樣</b>：右邊是 1、左邊是 −1。ε &lt; 2 時左邊永遠在帶子外——找不到 δ，極限不存在。" }
+  ];
+  SEQ.forEach(function (s) { var F = Lab.parseFn(s.src, "n"); s.f = F.f; s.tex = F.tex; s.html = '<span data-tex="a_n=' + F.tex.replace(/"/g, "&quot;") + '"></span>'; });
+  FNS.forEach(function (s) { var F = Lab.parseFn(s.src, "x"); s.f = F.f; s.tex = F.tex; s.html = '<span data-tex="' + F.tex.replace(/"/g, "&quot;") + ',\\ x\\to ' + s.a + '"></span>'; });
+  var MODES = [{ id: "seq", btn: "數列：ε–N" }, { id: "fn", btn: "函數：ε–δ" }];
+  var state = { mode: "seq", S: SEQ[0], F: FNS[0], eps: 0.1, zoom: false };
+
+  /* ---------- 找門檻 ---------- */
+  function findN(S, eps) {
+    var n, last = 0, MAXN = 3000;
+    for (n = 1; n <= MAXN; n++) { var v = S.f(n); if (!isFinite(v) || Math.abs(v - S.L) >= eps) last = n; }
+    return last >= MAXN ? null : last;      /* null = 找不到 */
+  }
+  function findDelta(F, eps) {
+    var step = (F.hi - F.lo) / 2400, i, MAXI = 1200;
+    for (i = 1; i <= MAXI; i++) {
+      var xr = F.a + i * step, xl = F.a - i * step, vr = F.f(xr), vl = F.f(xl);
+      if (!isFinite(vr) || Math.abs(vr - F.L) >= eps || !isFinite(vl) || Math.abs(vl - F.L) >= eps) return i === 1 ? null : (i - 1) * step;
+    }
+    return MAXI * step;
+  }
+
+  var cv = document.getElementById("plot"), ctx = cv.getContext("2d"), W = 0, H = 0;
+  function drawSeq() {
+    var S = state.S, eps = state.eps, N = findN(S, eps), n, i;
+    var nShow = Math.min(300, Math.max(30, N === null ? 40 : Math.ceil(N * 1.4) + 8));
+    var lo = Infinity, hi = -Infinity, vals = [];
+    for (n = 1; n <= nShow; n++) { var v = S.f(n); vals.push(v); if (isFinite(v)) { if (v < lo) lo = v; if (v > hi) hi = v; } }
+    if (state.zoom) { lo = S.L - 3 * eps; hi = S.L + 3 * eps; }
+    else { lo = Math.min(lo, S.L - eps); hi = Math.max(hi, S.L + eps); }
+    var sp = (hi - lo) || 1;
+    var p = new Lab.Plot(ctx, { x: 0, y: 0, w: W, h: H, padL: 56, padR: 18, padT: 24, padB: 38 }, [0, nShow + 1], [lo - sp * 0.1, hi + sp * 0.16]);
+    p.grid({ xgrid: false, lines: 5 });
+    p.rect(0, nShow + 1, S.L - eps, S.L + eps, { fill: P.teal, alpha: 0.16 });
+    p.line(0, S.L, nShow + 1, S.L, { color: P.ink, width: 1, dash: [4, 3] });
+    if (N !== null && N < nShow) { p.band(N + 0.5, nShow + 1, P.amber, 0.10); p.line(N + 0.5, p.yhi, N + 0.5, p.ylo, { color: P.amber, width: 1.6, dash: [6, 4] }); }
+    p.axes({ xlabel: "n", ylabel: "aₙ" });
+    for (i = 0; i < nShow; i++) {
+      var y = vals[i]; if (!isFinite(y)) continue;
+      var inside = Math.abs(y - S.L) < eps, after = N !== null && (i + 1) > N;
+      p.dot(i + 1, y, { color: after ? P.amber : inside ? P.teal : P.ans, r: nShow > 120 ? 2.2 : nShow > 60 ? 3 : 4 });
+    }
+    p.text(nShow + 1, S.L, " L = " + Lab.short(S.L), { size: 12.5, weight: 700, color: P.ink, align: "right", base: "bottom", dx: -4, dy: -3 });
+    if (N !== null && N < nShow) p.text(N + 0.5, p.yhi, "N = " + N, { size: 13, weight: 700, color: P.amber, align: "left", base: "top", dx: 6, dy: 4 });
+    p.textPx(p.x0 + p.w - 8, p.y0 + 4, N === null ? "找不到 N：後面永遠有點跳出帶子" : "n > " + N + " 的每一點都在帶子裡", { size: 12.5, weight: 700, color: N === null ? P.ans : P.maroonD, align: "right" });
+    document.getElementById("vL").textContent = Lab.short(S.L);
+    document.getElementById("vBand").textContent = "(" + Lab.fmt(S.L - eps, 3) + ", " + Lab.fmt(S.L + eps, 3) + ")";
+    document.getElementById("nmGate").textContent = "門檻 N =";
+    var g = document.getElementById("vGate"); g.textContent = N === null ? "找不到（沒有極限）" : N; g.style.color = N === null ? P.ans : P.maroon;
+  }
+  function drawFn() {
+    var F = state.F, eps = state.eps, d = findDelta(F, eps);
+    var xlo = F.lo, xhi = F.hi;
+    if (state.zoom && d !== null) { xlo = F.a - d * 2.2; xhi = F.a + d * 2.2; }
+    var yr = Lab.range(F.f, xlo, xhi), lo = yr[0], hi = yr[1];
+    if (state.zoom) { lo = F.L - 3 * eps; hi = F.L + 3 * eps; }
+    else { lo = Math.min(lo, F.L - eps, 0); hi = Math.max(hi, F.L + eps, 0); }
+    if (!isFinite(lo) || !isFinite(hi)) { lo = F.L - 2; hi = F.L + 2; }
+    var sp = (hi - lo) || 1;
+    var p = new Lab.Plot(ctx, { x: 0, y: 0, w: W, h: H, padL: 56, padR: 18, padT: 24, padB: 38 }, [xlo, xhi], [lo - sp * 0.1, hi + sp * 0.16]);
+    p.grid({ xgrid: false, lines: 5 });
+    p.rect(xlo, xhi, F.L - eps, F.L + eps, { fill: P.teal, alpha: 0.16 });
+    if (d !== null) { p.band(F.a - d, F.a + d, P.amber, 0.14); p.line(F.a - d, p.yhi, F.a - d, p.ylo, { color: P.amber, width: 1.4, dash: [6, 4] }); p.line(F.a + d, p.yhi, F.a + d, p.ylo, { color: P.amber, width: 1.4, dash: [6, 4] }); }
+    p.line(xlo, F.L, xhi, F.L, { color: P.ink, width: 1, dash: [4, 3] });
+    p.axes({ ylabel: "y" });
+    p.curve(F.f, [xlo, xhi], { color: P.maroon, width: 2.2, samples: 900 });
+    if (d !== null) { p.curve(F.f, [F.a - d, F.a + d], { color: P.amber, width: 4, samples: 300 }); }
+    /* (a, L) 空心點：極限不管 f(a) 是多少 */
+    ctx.fillStyle = "#fff"; ctx.strokeStyle = P.maroon; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(p.X(F.a), p.Y(F.L), 5, 0, 6.2832); ctx.fill(); ctx.stroke();
+    p.tick(F.a, "a = " + Lab.short(F.a), { bold: true });
+    p.text(xhi, F.L, "L = " + Lab.short(F.L) + " ", { size: 12.5, weight: 700, color: P.ink, align: "right", base: "bottom", dy: -3 });
+    if (d !== null) p.text(F.a, p.yhi, "δ = " + Lab.fmt(d, 4), { size: 13, weight: 700, color: P.amber, align: "center", base: "top", dy: 4 });
+    p.textPx(p.x0 + p.w - 8, p.y0 + 4, d === null ? "找不到 δ：a 旁邊再近都有點跳出帶子" : "0 < |x − a| < δ 時，f(x) 全在帶子裡", { size: 12.5, weight: 700, color: d === null ? P.ans : P.maroonD, align: "right" });
+    document.getElementById("vL").textContent = Lab.short(F.L);
+    document.getElementById("vBand").textContent = "(" + Lab.fmt(F.L - eps, 3) + ", " + Lab.fmt(F.L + eps, 3) + ")";
+    document.getElementById("nmGate").textContent = "門檻 δ =";
+    var g = document.getElementById("vGate"); g.textContent = d === null ? "找不到（極限不存在）" : Lab.fmt(d, 4); g.style.color = d === null ? P.ans : P.maroon;
+  }
+  function draw() { ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H); if (state.mode === "seq") drawSeq(); else drawFn(); }
+
+  /* ---------- 控制 ---------- */
+  var eS = document.getElementById("eSlider"), hint = document.getElementById("hint");
+  function setEps(e, sync) { state.eps = e; document.getElementById("eOut").textContent = Lab.fmt(e, e >= 0.01 ? 3 : 4); if (sync) eS.value = Math.round(-Math.log10(e) / 3 * 1000); draw(); }
+  eS.addEventListener("input", function () { player.stop(); setEps(Math.pow(10, -3 * (+eS.value) / 1000), false); });
+  [1, 0.5, 0.1, 0.01, 0.001].forEach(function (v) { var b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = v; b.addEventListener("click", function () { player.stop(); setEps(v, true); }); document.getElementById("ePresets").appendChild(b); });
+  document.getElementById("zoom").addEventListener("change", function (ev) { state.zoom = ev.target.checked; draw(); });
+
+  function head() {
+    if (state.mode === "seq") Lab.katex(document.getElementById("fHead"), "\\lim_{n\\to\\infty} a_n = L\\ \\Longleftrightarrow\\ \\forall\\varepsilon>0,\\ \\exists N,\\ n>N \\Rightarrow |a_n-L|<\\varepsilon");
+    else Lab.katex(document.getElementById("fHead"), "\\lim_{x\\to a} f(x) = L\\ \\Longleftrightarrow\\ \\forall\\varepsilon>0,\\ \\exists\\delta>0,\\ 0<|x-a|<\\delta \\Rightarrow |f(x)-L|<\\varepsilon");
+  }
+  function setMode(m) {
+    state.mode = m;
+    document.getElementById("seqCard").classList.toggle("hide", m !== "seq");
+    document.getElementById("fnCard").classList.toggle("hide", m !== "fn");
+    document.getElementById("keyN").classList.toggle("hide", m !== "seq");
+    document.getElementById("keyD").classList.toggle("hide", m !== "fn");
+    head(); hint.innerHTML = (m === "seq" ? state.S : state.F).note; Lab.katexAll(hint); draw();
+  }
+  Lab.chips(document.getElementById("modeChips"), MODES, state.mode, function (it) { player.stop(); setMode(it.id); });
+  var seqChips = Lab.chips(document.getElementById("seqChips"), SEQ, SEQ[0].id, function (it) { player.stop(); state.S = it; seqPanel.fill({ src: it.src }); document.querySelector("#seqPanel .fL").value = it.L; setMode("seq"); });
+  var fnChips = Lab.chips(document.getElementById("fnChips"), FNS, FNS[0].id, function (it) { player.stop(); state.F = it; fnPanel.fill({ src: it.src, a: it.lo, b: it.hi }); document.querySelector("#fnPanel .fa").value = it.a; document.querySelector("#fnPanel .fL").value = it.L; setMode("fn"); });
+  Lab.katexAll(document.getElementById("seqChips")); Lab.katexAll(document.getElementById("fnChips"));
+
+  var seqPanel = Lab.fnPanel(document.getElementById("seqPanel"), {
+    varName: "n", interval: false,
+    extra: '<span class="fnlab">L =</span><input class="fna fL" type="text" value="0" aria-label="極限值">',
+    hint: '用 <code>n</code> 當變數；例：<code>1/n^2</code>、<code>(2n+1)/n</code>、<code>1+(-1)^n/n</code>。L 自己填，看帶子關不關得住。',
+    onApply: function (F) { player.stop(); try { F.L = Lab.parseNum(document.querySelector("#seqPanel .fL").value); } catch (e) { F.L = 0; } F.note = "<b>自訂數列</b>：如果 L 猜錯，帶子一縮就找不到 N。"; state.S = F; seqChips.select(null); setMode("seq"); }
+  });
+  seqPanel.fill({ src: SEQ[0].src });
+  var fnPanel = Lab.fnPanel(document.getElementById("fnPanel"), {
+    varName: "x", intLabel: "顯示範圍",
+    extra: '<span class="fnlab">a =</span><input class="fna fa" type="text" value="1" aria-label="a"><span class="fnlab">L =</span><input class="fna fL" type="text" value="1" aria-label="極限值">',
+    hint: '例：<code>(x^2-4)/(x-2)</code>、<code>sqrt(x)</code>、<code>1/x</code>；a 是趨近的點，L 是你猜的極限。',
+    onApply: function (F) { player.stop(); F.lo = F.a; F.hi = F.b; try { F.a = Lab.parseNum(document.querySelector("#fnPanel .fa").value); F.L = Lab.parseNum(document.querySelector("#fnPanel .fL").value); } catch (e) { F.a = (F.lo + F.hi) / 2; F.L = 0; } F.note = "<b>自訂函數</b>：L 猜錯的話 δ 會找不到——這正是檢驗極限的方法。"; state.F = F; fnChips.select(null); setMode("fn"); }
+  });
+  fnPanel.fill({ src: FNS[0].src, a: FNS[0].lo, b: FNS[0].hi });
+
+  var player = Lab.player(document.getElementById("playBtn"), {
+    play: "▶　讓 ε 慢慢縮小", pause: "❚❚　暫停", ms: 160,
+    onStart: function () { if (state.eps < 0.002) setEps(1, true); },
+    tick: function () { var e = state.eps * 0.9; if (e < 0.001) { setEps(0.001, true); return false; } setEps(e, true); return true; }
+  });
+  function relayout() { var a = Lab.fit(cv); W = a[0]; H = a[1]; draw(); }
+  window.addEventListener("resize", relayout);
+  Lab.katexAll(document); setEps(0.1, true); setMode("seq"); relayout();
+});
+</script>
+</body>
+</html>

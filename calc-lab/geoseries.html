@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- mathmap site headers -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<title>無窮等比級數填正方形｜選修數學甲（上）互動教具</title>
+<meta name="description" content="拉動公比 r，看 a + ar + ar² + … 一塊一塊填滿面積 a/(1−r) 的正方形；|r| ≥ 1 時部分和飛走。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="lab.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="lab.js"></script>
+<style>
+  .rrow{display:flex;align-items:center;gap:8px;margin-top:6px}
+  .rrow .fnlab{white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-title" href="index.html">mathmap 數學教材網<small>選修數學甲（上）互動教具</small></a>
+  <a class="ghost" href="index.html">← 教具目錄</a>
+  <a class="ghost" href="../">總入口</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>一塊一塊，<span class="thin">填得滿嗎</span></h1>
+      <p>a、ar、ar²、… 每一塊都是前一塊的 r 倍。0 &lt; r &lt; 1 時，這些塊剛好填滿一個面積 a/(1−r) 的正方形；|r| ≥ 1 時，部分和跑掉，沒有「和」可言。</p>
+    </div>
+    <div class="sec"><b>1-2</b> 無窮等比級數</div>
+  </div>
+
+  <div class="deck">
+    <section class="card stage">
+      <div class="formula">
+        <span id="fHead"></span>
+        <span class="eq" style="margin:0 6px">，</span>
+        <span id="fLim"></span>
+      </div>
+      <div class="plotbox"><canvas id="plot"></canvas></div>
+      <div class="stagefoot">
+        <span class="key"><span class="swatch sw-teal"></span><span class="swatch sw-amber"></span>第 1、2、3… 塊（交替上色）</span>
+        <span class="key"><span class="sw-line dash" style="border-top-color:var(--ink)"></span>極限 a/(1−r)</span>
+        <span class="key"><span class="swatch sw-maroon" style="border-radius:50%;width:11px"></span>部分和 Sₙ</span>
+      </div>
+    </section>
+
+    <div class="rail">
+      <div class="card">
+        <div class="nhead">
+          <span class="label">公比</span>
+          <div class="nval"><small>r =</small><span id="rOut">0.50</span></div>
+        </div>
+        <input type="range" id="rSlider" min="-150" max="150" value="50" step="1" aria-label="公比 r">
+        <div class="chips" id="rChips"></div>
+        <div class="rrow"><span class="fnlab">首項 a =</span><input class="fna" id="aIn" type="text" value="1" aria-label="首項"><button class="btn secondary" id="aBtn" type="button" style="padding:5px 12px">套用</button><span class="fnerr" id="aErr"></span></div>
+      </div>
+
+      <div class="card">
+        <div class="nhead">
+          <span class="label">加到第幾項</span>
+          <div class="nval"><small>n =</small><span id="nOut">8</span></div>
+        </div>
+        <input type="range" id="nSlider" min="1" max="60" value="8" step="1" aria-label="項數 n">
+        <button class="btn wide" id="playBtn" type="button"></button>
+      </div>
+
+      <div class="card readout">
+        <span class="label">即時數值</span>
+        <div class="rows">
+          <div class="row"><span class="nm">第 n 項 <span data-tex="a_n=ar^{\,n-1}"></span></span><span class="vv" id="vAn">—</span></div>
+          <div class="row"><span class="nm">部分和 <span data-tex="S_n"></span></span><span class="vv" id="vSn">—</span></div>
+          <div class="row ans"><span class="nm" id="nmLim">極限 <span data-tex="\dfrac{a}{1-r}"></span></span><span class="vv" id="vLim">—</span></div>
+          <div class="row big"><span class="nm">還差多少</span><span class="vv" id="vGap">—</span></div>
+        </div>
+      </div>
+
+      <div class="note" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="copyright">mathmap 數學地圖 © Kitty　·　無窮級數的「和」是部分和的極限，不是真的加了無窮多次。</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var state = { a: 1, r: 0.5, n: 8 };
+  var P = Lab.pal(), NMAX = 60;
+  var RCH = [{ id: "0.5", btn: "1/2", r: 0.5 }, { id: "0.333", btn: "1/3", r: 1 / 3 }, { id: "0.9", btn: "0.9", r: 0.9 },
+             { id: "-0.5", btn: "−1/2", r: -0.5 }, { id: "1", btn: "1", r: 1 }, { id: "-1", btn: "−1", r: -1 }, { id: "1.1", btn: "1.1", r: 1.1 }];
+
+  function terms(a, r, n) { var t = [], S = [], s = 0, k; for (k = 0; k < n; k++) { var v = a * Math.pow(r, k); t.push(v); s += v; S.push(s); } return { t: t, S: S }; }
+  function limit(a, r) { return Math.abs(r) < 1 ? a / (1 - r) : NaN; }
+
+  var cv = document.getElementById("plot"), ctx = cv.getContext("2d"), W = 0, H = 0;
+  var F = '"Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif';
+
+  function draw() {
+    var a = state.a, r = state.r, n = state.n, d = terms(a, r, NMAX), L = limit(a, r), k;
+    ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+    var lw = Math.round(W * 0.44);
+    ctx.strokeStyle = P.line; ctx.beginPath(); ctx.moveTo(lw + 0.5, 12); ctx.lineTo(lw + 0.5, H - 12); ctx.stroke();
+
+    /* ── 左：正方形 ── */
+    ctx.font = "700 12.5px " + F; ctx.fillStyle = P.maroonD; ctx.textAlign = "left"; ctx.textBaseline = "top";
+    if (r > 0 && r < 1 && a > 0) {
+      ctx.fillText("面積 a/(1−r) = " + Lab.fmt(L, 3) + " 的正方形，一塊一塊填", 12, 10);
+      var side = Math.min(lw - 40, H - 70), ox = (lw - side) / 2, oy = 40;
+      ctx.fillStyle = "#fbf7f4"; ctx.fillRect(ox, oy, side, side);
+      var rx = ox, ry = oy, rw = side, rh = side;
+      for (k = 0; k < n; k++) {
+        var px, py, pw, ph;
+        if (k % 2 === 0) { pw = rw * (1 - r); ph = rh; px = rx; py = ry; rx += pw; rw -= pw; }
+        else { ph = rh * (1 - r); pw = rw; px = rx; py = ry; ry += ph; rh -= ph; }
+        ctx.fillStyle = Lab.rgba(k % 2 === 0 ? P.teal : P.amber, 0.38); ctx.fillRect(px, py, pw, ph);
+        ctx.strokeStyle = Lab.rgba(P.ink, 0.35); ctx.lineWidth = 1; ctx.strokeRect(px + 0.5, py + 0.5, Math.max(0, pw - 1), Math.max(0, ph - 1));
+        if (Math.min(pw, ph) > 24 && k < 6) {
+          ctx.fillStyle = P.ink; ctx.font = "700 13px " + F; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+          ctx.fillText(k === 0 ? "a" : k === 1 ? "ar" : "ar" + "²³⁴⁵".charAt(k - 2), px + pw / 2, py + ph / 2);
+        }
+      }
+      ctx.strokeStyle = P.ink; ctx.lineWidth = 1.5; ctx.strokeRect(ox + 0.5, oy + 0.5, side - 1, side - 1);
+      ctx.font = "12px " + F; ctx.fillStyle = P.mut; ctx.textAlign = "center"; ctx.textBaseline = "top";
+      ctx.fillText("還沒填到的：" + Lab.fmt(L - d.S[n - 1], 4), ox + side / 2, oy + side + 8);
+    } else {
+      ctx.fillText("正方形只能在 0 < r < 1（且 a > 0）時畫出來", 12, 10);
+      ctx.font = "14px " + F; ctx.fillStyle = P.mut; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      var msg = r >= 1 ? "r ≥ 1：每一塊都不比前一塊小，永遠填不滿" : r <= -1 ? "r ≤ −1：一塊加、一塊減，來回擺盪" : r < 0 ? "r < 0：加一塊、扣一塊，看右邊的數線" : "a ≤ 0：把首項改成正數";
+      ctx.fillText(msg, lw / 2, H / 2);
+    }
+
+    /* ── 右上：數線 ── */
+    var px0 = lw, pw0 = W - lw, th = Math.round(H * 0.38);
+    var vals = d.S.slice(0, n); var mn = Math.min(0, Math.min.apply(null, vals)), mx = Math.max(Math.max.apply(null, vals), isFinite(L) ? L : -Infinity, 1e-9);
+    if (isFinite(L)) { mn = Math.min(mn, L); }
+    var span = (mx - mn) || 1;
+    var p = new Lab.Plot(ctx, { x: px0, y: 0, w: pw0, h: th, padL: 26, padR: 26, padT: 30, padB: 24 }, [mn - span * 0.06, mx + span * 0.10], [0, 1]);
+    var ay = p.y0 + p.h * 0.62;
+    ctx.strokeStyle = P.ink; ctx.lineWidth = 1.3; ctx.beginPath(); ctx.moveTo(p.x0, ay); ctx.lineTo(p.x0 + p.w, ay); ctx.stroke();
+    ctx.font = "12px " + F; ctx.fillStyle = P.ink; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    ctx.fillText("0", p.X(0), ay + 6);
+    ctx.beginPath(); ctx.moveTo(p.X(0), ay - 5); ctx.lineTo(p.X(0), ay + 5); ctx.stroke();
+    if (isFinite(L)) {
+      ctx.strokeStyle = P.ink; ctx.setLineDash([4, 3]); ctx.beginPath(); ctx.moveTo(p.X(L), p.y0 + 4); ctx.lineTo(p.X(L), ay + 4); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = P.ink; ctx.fillText("a/(1−r)", p.X(L), ay + 6);
+    }
+    var prev = 0;
+    for (k = 0; k < n; k++) {
+      var s1 = d.S[k], yy = ay - 10 - (k % 2) * 9, c = k % 2 === 0 ? P.teal : P.amber;
+      ctx.strokeStyle = c; ctx.lineWidth = 4; ctx.lineCap = "butt";
+      ctx.beginPath(); ctx.moveTo(p.X(prev), yy); ctx.lineTo(p.X(s1), yy); ctx.stroke();
+      if (Math.abs(p.X(s1) - p.X(prev)) > 5) { ctx.fillStyle = c; ctx.beginPath(); var dir = s1 >= prev ? 1 : -1; ctx.moveTo(p.X(s1), yy); ctx.lineTo(p.X(s1) - dir * 6, yy - 4); ctx.lineTo(p.X(s1) - dir * 6, yy + 4); ctx.closePath(); ctx.fill(); }
+      prev = s1;
+    }
+    ctx.fillStyle = P.maroon; ctx.beginPath(); ctx.arc(p.X(prev), ay, 5, 0, 6.2832); ctx.fill();
+    ctx.font = "700 12.5px " + F; ctx.fillStyle = P.maroon; ctx.textAlign = "center"; ctx.textBaseline = "bottom";
+    ctx.fillText("Sₙ", p.X(prev), ay - 24);
+    ctx.font = "700 12.5px " + F; ctx.fillStyle = P.maroonD; ctx.textAlign = "right"; ctx.textBaseline = "top";
+    ctx.fillText("數線上一步一步加：每一步是前一步的 r 倍", px0 + pw0 - 12, 8);
+
+    /* ── 右下：Sₙ 對 n ── */
+    ctx.strokeStyle = P.line; ctx.beginPath(); ctx.moveTo(px0 + 12, th + 0.5); ctx.lineTo(W - 12, th + 0.5); ctx.stroke();
+    var all = d.S, lo2 = Math.min.apply(null, all.slice(0, Math.max(n, 12))), hi2 = Math.max.apply(null, all.slice(0, Math.max(n, 12)));
+    if (isFinite(L)) { var dev = Math.max(Math.abs(hi2 - L), Math.abs(lo2 - L), Math.abs(a) * 0.3); lo2 = L - dev; hi2 = L + dev; }
+    lo2 = Math.min(lo2, 0); hi2 = Math.max(hi2, 0); var sp2 = (hi2 - lo2) || 1;
+    var q = new Lab.Plot(ctx, { x: px0, y: th, w: pw0, h: H - th, padL: 54, padR: 18, padT: 26, padB: 30 }, [0, NMAX + 1], [lo2 - sp2 * 0.1, hi2 + sp2 * 0.15]);
+    q.grid({ xgrid: false, lines: 4 }); q.axes({ xlabel: "n", ylabel: "Sₙ" });
+    if (isFinite(L)) q.line(0, L, NMAX + 1, L, { color: P.ink, width: 1, dash: [4, 3] });
+    var xs = [], ys = []; for (k = 0; k < n; k++) { xs.push(k + 1); ys.push(d.S[k]); }
+    q.poly(xs, ys, { color: P.maroon, width: 1.4, alpha: 0.6 });
+    for (k = 0; k < n; k++) q.dot(k + 1, d.S[k], { color: P.maroon, r: k === n - 1 ? 5 : 3, ring: k === n - 1 });
+    q.textPx(q.x0 + q.w - 8, q.y0 + 4, isFinite(L) ? "部分和一路靠向 a/(1−r)" : "部分和沒有靠向任何數：級數發散", { size: 12.5, color: isFinite(L) ? P.maroonD : P.ans, weight: 700, align: "right" });
+
+    /* 讀數 */
+    document.getElementById("vAn").textContent = Lab.fmt(d.t[n - 1], 5);
+    document.getElementById("vSn").textContent = Lab.fmt(d.S[n - 1], 5);
+    document.getElementById("vLim").textContent = isFinite(L) ? Lab.fmt(L, 5) : (r === 1 ? "發散（每項一樣大）" : "發散（|r| ≥ 1）");
+    document.getElementById("vGap").textContent = isFinite(L) ? Lab.fmt(Math.abs(L - d.S[n - 1]), 5) : "—";
+    Lab.katex(document.getElementById("fLim"), isFinite(L) ? "\\frac{a}{1-r}=" + Lab.fmt(L, 3) : "|r|\\ge 1\\ \\Rightarrow\\ \\text{發散}");
+  }
+
+  var rS = document.getElementById("rSlider"), nS = document.getElementById("nSlider"), hint = document.getElementById("hint");
+  function setR(r, sync) {
+    state.r = r; document.getElementById("rOut").textContent = Lab.fmt(r, 2);
+    if (sync) rS.value = Math.round(r * 100);
+    Lab.katex(document.getElementById("fHead"), "S_n=\\sum_{k=1}^{n} a r^{k-1}=" + Lab.short(state.a) + "\\cdot\\frac{1-(" + Lab.short(r) + ")^{n}}{1-(" + Lab.short(r) + ")}");
+    hint.innerHTML = Math.abs(r) < 1
+      ? (r > 0 ? "<b>0 &lt; r &lt; 1</b>：每一塊都比前一塊小，正方形填得滿，但永遠差一點——差的那一點就是 <span data-tex=\"ar^n/(1-r)\"></span>，n 愈大愈接近 0。"
+               : "<b>−1 &lt; r &lt; 0</b>：一步向前、一步退回，步伐愈來愈小，Sₙ 左右夾住 a/(1−r)。")
+      : "<b>|r| ≥ 1</b>：每一步都不會變小，Sₙ 不會靠向任何數。課本說「級數發散」就是這個意思——不是「和是無窮大」，是「沒有和」。";
+    Lab.katexAll(hint); draw();
+  }
+  function setN(n, sync) { state.n = Math.max(1, Math.min(NMAX, n)); document.getElementById("nOut").textContent = state.n; if (sync) nS.value = state.n; draw(); }
+  rS.addEventListener("input", function () { player.stop(); rChips.select(null); setR((+rS.value) / 100, false); });
+  nS.addEventListener("input", function () { player.stop(); setN(+nS.value, false); });
+  var rChips = Lab.chips(document.getElementById("rChips"), RCH, "0.5", function (it) { player.stop(); setR(it.r, true); });
+  function applyA() {
+    var e = document.getElementById("aErr"); e.textContent = "";
+    try { var v = Lab.parseNum(document.getElementById("aIn").value); if (v === 0) throw new Error("a 不能是 0"); state.a = v; setR(state.r, true); }
+    catch (err) { e.textContent = "⚠ " + err.message; }
+  }
+  document.getElementById("aBtn").addEventListener("click", applyA);
+  document.getElementById("aIn").addEventListener("keydown", function (ev) { if (ev.key === "Enter") applyA(); });
+  var player = Lab.player(document.getElementById("playBtn"), {
+    play: "▶　一塊一塊加", pause: "❚❚　暫停", ms: 220,
+    onStart: function () { if (state.n >= NMAX) setN(1, true); },
+    tick: function () { if (state.n + 1 >= NMAX) { setN(NMAX, true); return false; } setN(state.n + 1, true); return true; }
+  });
+  function relayout() { var a = Lab.fit(cv); W = a[0]; H = a[1]; draw(); }
+  window.addEventListener("resize", relayout);
+  Lab.katexAll(document); setR(0.5, true); setN(8, true); relayout();
+});
+</script>
+</body>
+</html>

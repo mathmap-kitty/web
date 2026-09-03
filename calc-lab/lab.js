@@ -45,7 +45,7 @@
             if (rest.indexOf(FN_NAMES[k]) === 0) { hit = { t: "fn", v: FN_NAMES[k] }; break; }
           }
           if (!hit && rest.indexOf("pi") === 0) hit = { t: "const", v: "pi" };
-          if (!hit && (rest[0] === "x" || rest[0] === "t")) hit = { t: "var", v: rest[0] };
+          if (!hit && (rest[0] === "x" || rest[0] === "t" || rest[0] === "n")) hit = { t: "var", v: rest[0] };
           if (!hit && rest[0] === "e") hit = { t: "const", v: "e" };
           if (!hit) throw new Error("不認識的名稱「" + rest + "」");
           toks.push(hit); rest = rest.slice(hit.v.length);
@@ -227,6 +227,17 @@
       if (v < mn) mn = v; if (v > mx) mx = v;
     }
     return [mn, mx];
+  };
+  /** 一階導數；左右差商不一致（尖點、鉛直）回傳 NaN */
+  Lab.d1 = function (f, x) {
+    var h = 1e-5, r = (f(x + h) - f(x)) / h, l = (f(x) - f(x - h)) / h;
+    if (!isFinite(r) || !isFinite(l) || Math.abs(r) > 1e4) return NaN;
+    if (Math.abs(r - l) > 0.02 * (1 + Math.abs(r))) return NaN;
+    return (r + l) / 2;
+  };
+  Lab.d2 = function (f, x) {
+    var h = 1e-3, v = (f(x + h) - 2 * f(x) + f(x - h)) / (h * h);
+    return isFinite(v) && Math.abs(v) < 1e6 ? v : NaN;
   };
   Lab.range = function (f, a, b, k) {
     return Lab.extremes(f, a, b, k || 400);
@@ -415,6 +426,28 @@
       c.fillStyle = opts.color || this.P.ink;
       c.textAlign = opts.align || "left"; c.textBaseline = opts.base || "alphabetic";
       c.fillText(str, this.X(x) + (opts.dx || 0), this.Y(y) + (opts.dy || 0));
+    },
+    /** 取樣折線：xs/ys 陣列，ys 有 NaN 就斷開；upto 只畫到第幾個索引 */
+    poly: function (xs, ys, opts, upto) {
+      opts = opts || {};
+      var c = this.ctx, i, on = false, n = (upto === undefined) ? xs.length : Math.min(xs.length, upto + 1);
+      this.clip();
+      c.strokeStyle = opts.color || this.P.maroon; c.lineWidth = opts.width || 2.2;
+      c.setLineDash(opts.dash || []); c.globalAlpha = opts.alpha === undefined ? 1 : opts.alpha;
+      c.lineJoin = "round"; c.beginPath();
+      for (i = 0; i < n; i++) {
+        if (!isFinite(ys[i]) || Math.abs(ys[i]) > 1e6) { on = false; continue; }
+        if (!on) { c.moveTo(this.X(xs[i]), this.Y(ys[i])); on = true; } else c.lineTo(this.X(xs[i]), this.Y(ys[i]));
+      }
+      c.stroke(); c.setLineDash([]); c.globalAlpha = 1;
+      this.unclip();
+    },
+    /** 整個繪圖區的直向色帶（x0~x1） */
+    band: function (x0, x1, color, alpha) {
+      var c = this.ctx; this.clip();
+      c.fillStyle = Lab.rgba(color, alpha === undefined ? 0.10 : alpha);
+      c.fillRect(this.X(x0), this.y0, this.X(x1) - this.X(x0), this.h);
+      this.unclip();
     },
     textPx: function (px, py, str, opts) {
       opts = opts || {};

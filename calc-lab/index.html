@@ -23,40 +23,35 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <title>選修數學甲（上）互動教具｜mathmap 數學教材網</title>
-<meta name="description" content="微積分入門的四個互動教具：黎曼和逼近、割線變切線、面積函數長出來、旋轉體切圓盤。拉動滑桿就能看見極限。">
+<meta name="description" content="微積分入門的九個互動教具，依學習順序排列：ε 帶子、等比級數、割線變切線、導函數長出來、增減與凹凸、黎曼和、面積函數、旋轉體、祖暅原理。拉動滑桿就能看見極限。">
 <link rel="stylesheet" href="lab.css">
 <style>
   .wrap{max-width:900px}
   .hero{display:block; text-align:center; padding:30px 0 8px}
   .hero h1{font-size:29px}
   .hero p{max-width:640px; margin:8px auto 0; font-size:15px}
-  .entries{display:flex; flex-direction:column; gap:18px; margin-top:24px}
+  .chap{margin:26px 0 10px; padding:6px 16px; border-radius:10px; background:linear-gradient(90deg,var(--maroon),#a8395a); color:#fff; font-weight:800; font-size:16px; letter-spacing:.5px; box-shadow:0 3px 12px rgba(140,39,64,.2)}
+  .chap small{font-weight:500; opacity:.9; margin-left:8px; font-size:13px}
+  .entries{display:flex; flex-direction:column; gap:14px}
   .entry{
     display:block; background:var(--card); border-radius:16px; border-left:6px solid var(--maroon);
-    box-shadow:0 3px 14px rgba(80,40,30,.08); padding:20px 24px; text-decoration:none; color:var(--ink); transition:.15s;
+    box-shadow:0 3px 14px rgba(80,40,30,.08); padding:16px 22px; text-decoration:none; color:var(--ink); transition:.15s;
   }
   .entry:hover{transform:translateY(-2px); box-shadow:var(--shadow-lift)}
   .e-head{display:flex; align-items:center; gap:12px}
-  .e-ico{font-size:28px; line-height:1}
-  .e-t{font-size:21px; font-weight:800; color:var(--maroon)}
+  .e-ico{font-size:26px; line-height:1}
+  .e-t{font-size:20px; font-weight:800; color:var(--maroon)}
   .e-sec{font-size:13px; color:var(--mut); font-weight:700; margin-left:2px; white-space:nowrap}
   .e-go{margin-left:auto; font-weight:800; font-size:14.5px; color:var(--teal); white-space:nowrap}
-  .e-d{margin:8px 0 10px; font-size:14.5px; color:#4a3a34}
+  .e-d{margin:6px 0 8px; font-size:14.5px; color:#4a3a34}
   .e-tags{display:flex; flex-wrap:wrap; gap:8px}
   .e-tags span{font-size:12.5px; font-weight:700; background:var(--rose-tag); color:var(--maroon-d); border-radius:20px; padding:2px 11px}
   .entry.alt{border-left-color:var(--teal)}
   .entry.alt .e-t{color:var(--teal)}
   .entry.alt .e-tags span{background:#e0eef0; color:#155a62}
-  .entry.soon{border:2px dashed #d9c8c0; border-left:6px solid #c9b8b0; background:transparent; box-shadow:none; cursor:default}
-  .entry.soon:hover{transform:none; box-shadow:none}
-  .entry.soon .e-t{color:#9a857c}
-  .entry.soon .e-d{color:#7a6a63}
-  .entry.soon ul{margin:6px 0 0; padding-left:20px; font-size:14px; color:#6b5249}
-  .entry.soon li{margin:3px 0}
-  .entry.soon li b{color:var(--maroon-d)}
   .howto{margin-top:28px; background:#faf6f2; border:1px solid var(--line); border-radius:14px; padding:14px 20px; font-size:14px; color:#5a4a44}
   .howto b{color:var(--maroon-d)}
-  @media(max-width:560px){.hero h1{font-size:23px}.entry{padding:16px 16px}.e-t{font-size:18px}.e-go{display:none}}
+  @media(max-width:560px){.hero h1{font-size:23px}.entry{padding:14px 16px}.e-t{font-size:18px}.e-go{display:none}}
 </style>
 </head>
 <body>
@@ -68,48 +63,67 @@
 <div class="wrap">
   <div class="hero">
     <h1>拉動滑桿，看見極限</h1>
-    <p>微積分的四個核心概念都是「某個東西逼近某個東西」。課本只能印出 n = 4 和 n = 8 兩張圖，這裡可以一路拉到 200，還能輸入自己的函數。</p>
+    <p>微積分的每一個核心概念都是「某個東西逼近某個東西」。課本只能印出兩張圖，這裡可以一路拉到底，還能輸入自己的函數。九個教具依課本順序排列。</p>
   </div>
 
+  <div class="chap">第 1 章　極限<small>數列與函數的極限、無窮等比級數</small></div>
+  <div class="entries">
+    <a class="entry" href="epsilon.html">
+      <div class="e-head"><span class="e-ico">🎯</span><span class="e-t">ε 帶子與 N、δ</span><span class="e-sec">1-1 · 1-4</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">拉 ε 讓帶子變窄，自動找出數列的 N 或函數的 δ；找不到門檻的例子（(−1)ⁿ、|x|/x）就是「極限不存在」。極限定義裡「先給 ε、再找 N」的順序，看一次就懂。</div>
+      <div class="e-tags"><span>ε–N</span><span>ε–δ</span><span>挖洞的函數</span><span>自訂數列與函數</span></div>
+    </a>
+    <a class="entry" href="geoseries.html">
+      <div class="e-head"><span class="e-ico">◱</span><span class="e-t">無窮等比級數填正方形</span><span class="e-sec">1-2</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">a、ar、ar²… 一塊一塊填進面積 a/(1−r) 的正方形；數線上一步一步走、部分和圖一路靠向極限。r 拉到 1 以上或 −1 以下，看什麼叫「發散」。</div>
+      <div class="e-tags"><span>|r| &lt; 1 收斂</span><span>負公比擺盪</span><span>部分和 Sₙ</span><span>自訂 a、r</span></div>
+    </a>
+  </div>
+
+  <div class="chap">第 2 章　微分<small>導數的定義、導函數與函數圖形</small></div>
   <div class="entries">
     <a class="entry" href="secant.html">
-      <div class="e-head"><span class="e-ico">📐</span><span class="e-t">割線變切線</span><span class="e-sec">2-1 微分的定義</span><span class="e-go">打開 →</span></div>
-      <div class="e-d">固定 P，讓 Q 沿曲線滑向 P：割線斜率 (f(a+h)−f(a))/h 一路逼近 f′(a)。附 h = 1、0.1、0.01… 的斜率表，還有「跟著 h 放大」看曲線變直線。尖點與端點示範切線為什麼不存在。</div>
+      <div class="e-head"><span class="e-ico">📐</span><span class="e-t">割線變切線</span><span class="e-sec">2-1</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">固定 P，讓 Q 沿曲線滑向 P：割線斜率 (f(a+h)−f(a))/h 一路逼近 f′(a)。附 h = 1、0.1、0.01… 的斜率表，「跟著 h 放大」看曲線變直線；尖點與端點示範切線為什麼不存在。</div>
       <div class="e-tags"><span>h 左右兩側</span><span>局部線性</span><span>|x| 尖點</span><span>自訂函數</span></div>
     </a>
-
-    <a class="entry" href="riemann.html">
-      <div class="e-head"><span class="e-ico">▥</span><span class="e-t">黎曼和逼近</span><span class="e-sec">3-1 積分的意義</span><span class="e-go">打開 →</span></div>
-      <div class="e-d">把曲線下的區域切成 n 條長條。上和、下和把真值夾在中間，n 從 1 拉到 240，看縫隙收成 0。五種取點方式（含「任取一點」的真正黎曼和），有正有負的函數示範定積分 ≠ 面積。</div>
-      <div class="e-tags"><span>上和・下和</span><span>夾擠軌跡圖</span><span>任取一點</span><span>自訂函數與區間</span></div>
+    <a class="entry" href="derivative.html">
+      <div class="e-head"><span class="e-ico">📈</span><span class="e-t">導函數長出來</span><span class="e-sec">2-1</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">拖動 x，把每一點的切線斜率描到下圖，f′ 的圖形自己浮現。專治「以為 f′ 是一個數」——它是一個函數。|x| 在 0 描不出來，f′ 有個洞。</div>
+      <div class="e-tags"><span>f′ 是函數</span><span>斜率顏色分正負</span><span>先猜再對答案</span><span>自訂函數</span></div>
     </a>
-
-    <a class="entry alt" href="ftc.html">
-      <div class="e-head"><span class="e-ico">📈</span><span class="e-t">面積函數長出來</span><span class="e-sec">3-1 微積分基本定理</span><span class="e-go">打開 →</span></div>
-      <div class="e-d">上圖塗 f 從 a 到 x 的面積，下圖畫出 F(x) = ∫ₐˣ f(t)dt 隨 x 長出來的樣子。F 在 x 處的切線斜率永遠等於 f(x)——量給你看。「再往右一小步」的小條就是證明的核心：ΔF ≈ f(x)·Δx。</div>
-      <div class="e-tags"><span>變上限積分</span><span>F′(x) = f(x)</span><span>f 正負 ↔ F 增減</span><span>自訂函數</span></div>
+    <a class="entry" href="concavity.html">
+      <div class="e-head"><span class="e-ico">〰</span><span class="e-t">增減與凹凸</span><span class="e-sec">2-2</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">f、f′、f″ 三張圖疊在一起：f′ 在軸上方 f 就上升，f″ 在軸上方 f 就凹向上。極值點與反曲點自動標出來；x³ 示範「f′ = 0 但不是極值」。</div>
+      <div class="e-tags"><span>f′ 正負 ↔ 增減</span><span>f″ 正負 ↔ 凹凸</span><span>極值・反曲點</span><span>自訂函數</span></div>
     </a>
-
-    <a class="entry alt" href="solid.html">
-      <div class="e-head"><span class="e-ico">🏺</span><span class="e-t">旋轉體切圓盤</span><span class="e-sec">3-2 積分的應用</span><span class="e-go">打開 →</span></div>
-      <div class="e-d">左邊截面的長條，繞 x 軸轉一圈變成薄圓盤。旋轉角可以從 0° 慢慢轉到 360°，圓盤數從 1 加到 120。球、圓錐、圓錐臺、花瓶——國中背的體積公式在這裡被推導出來。</div>
-      <div class="e-tags"><span>π f(x)² Δx</span><span>內接・外接圓盤</span><span>球・圓錐</span><span>自訂函數與區間</span></div>
-    </a>
-
-    <div class="entry soon">
-      <div class="e-head"><span class="e-ico">🚧</span><span class="e-t">下一批候選</span></div>
-      <div class="e-d">從八節簡報裡挑出來、用滑桿比用嘴講更快的概念：</div>
-      <ul>
-        <li><b>導函數長出來</b>（2-1）：拖動 x，把每一點的切線斜率描到下圖，f′ 的圖形自己浮現。</li>
-        <li><b>f′ 的正負 ↔ f 的增減、f″ ↔ 凹凸</b>（2-2）：切線隨 x 變色，下方同步畫 f′ 與 f″。</li>
-        <li><b>無窮等比級數填滿正方形</b>（1-2）：拉 r，看 |r| &lt; 1 收斂、|r| ≥ 1 發散。</li>
-        <li><b>ε–N 與 ε–δ</b>（1-1、1-4）：拉 ε 帶子變窄，自動找出 N 或 δ。</li>
-        <li><b>祖暅原理</b>（3-2）：把一疊硬幣推歪，體積不變。</li>
-      </ul>
-    </div>
   </div>
 
-  <div class="howto"><b>課堂用法</b>：投影後先按「自動」讓它自己跑一次，學生看完再問「n 要多大才夠？」；接著把預設函數改成學生自己提的函數，讓他們預測結果再拉滑桿驗證。所有頁面都不需要網路，整個資料夾複製到隨身碟就能用。</div>
+  <div class="chap">第 3 章　積分<small>積分的意義、微積分基本定理、積分的應用</small></div>
+  <div class="entries">
+    <a class="entry alt" href="riemann.html">
+      <div class="e-head"><span class="e-ico">▥</span><span class="e-t">黎曼和逼近</span><span class="e-sec">3-1</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">把曲線下的區域切成 n 條長條。上和、下和把真值夾在中間，n 從 1 拉到 240，看縫隙收成 0。五種取點方式，有正有負的函數示範定積分 ≠ 面積。</div>
+      <div class="e-tags"><span>上和・下和</span><span>夾擠軌跡圖</span><span>任取一點</span><span>自訂函數與區間</span></div>
+    </a>
+    <a class="entry alt" href="ftc.html">
+      <div class="e-head"><span class="e-ico">📉</span><span class="e-t">面積函數長出來</span><span class="e-sec">3-1 微積分基本定理</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">上圖塗 f 從 a 到 x 的面積，下圖畫出 F(x) = ∫ₐˣ f(t)dt 隨 x 長出來的樣子。F 在 x 處的切線斜率永遠等於 f(x)——量給你看。</div>
+      <div class="e-tags"><span>變上限積分</span><span>F′(x) = f(x)</span><span>f 正負 ↔ F 增減</span><span>自訂函數</span></div>
+    </a>
+    <a class="entry alt" href="solid.html">
+      <div class="e-head"><span class="e-ico">🏺</span><span class="e-t">旋轉體切圓盤</span><span class="e-sec">3-2</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">左邊截面的長條，繞 x 軸轉一圈變成薄圓盤。旋轉角從 0° 慢慢轉到 360°，圓盤數從 1 加到 120。球、圓錐、圓錐臺、花瓶——國中背的體積公式在這裡被推導出來。</div>
+      <div class="e-tags"><span>π f(x)² Δx</span><span>內接・外接圓盤</span><span>球・圓錐</span><span>自訂函數與區間</span></div>
+    </a>
+    <a class="entry alt" href="cavalieri.html">
+      <div class="e-head"><span class="e-ico">🪙</span><span class="e-t">祖暅原理</span><span class="e-sec">3-2</span><span class="e-go">打開 →</span></div>
+      <div class="e-d">一疊硬幣推歪，每一層還是同一枚，體積不變。再用「半球 vs 圓柱挖掉圓錐」每個高度截面積都是 π(R²−h²)，推出球的體積 (4/3)πR³。</div>
+      <div class="e-tags"><span>截面相等 ⇒ 體積相等</span><span>圓柱・圓錐・球</span><span>球體積推導</span></div>
+    </a>
+  </div>
+
+  <div class="howto"><b>課堂用法</b>：投影後先按「自動」讓它自己跑一次，學生看完再問「n 要多大才夠？」「ε 再小一點還找得到嗎？」；接著把預設函數改成學生自己提的函數，讓他們預測結果再拉滑桿驗證。所有頁面都不需要網路，整個資料夾複製到隨身碟就能用。</div>
 
   <div class="copyright">mathmap 數學地圖 © Kitty</div>
 </div>
