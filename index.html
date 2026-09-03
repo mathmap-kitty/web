@@ -10,19 +10,19 @@
 <!-- Microsoft Clarity -->
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
 <title>mathmap 數學教材網 · 總入口</title>
-<meta name="description" content="學測數學自學資源：11 單元核心概念地圖式重點整理、11 章複習講義挖空自測，＋111–115 數A・數B 歷屆試題共 200 題逐題互動詳解，讀重點、練歷屆、錯題導回核心概念，一站完成。">
+<meta name="description" content="把高中數學畫成看得懂的地圖：學測總複習（核心概念地圖・複習講義・111–115 數A數B 歷屆 200 題詳解）＋微積分互動教具等主題教材，陸續新增中。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="mathmap 數學教材網">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="mathmap 數學教材網 · 學測數學總入口">
-<meta property="og:description" content="學測數學自學資源：11 單元核心概念地圖式重點整理、11 章複習講義挖空自測，＋111–115 數A・數B 歷屆試題共 200 題逐題互動詳解，讀重點、練歷屆、錯題導回核心概念，一站完成。">
+<meta property="og:title" content="mathmap 數學教材網 · 總入口">
+<meta property="og:description" content="把高中數學畫成看得懂的地圖：學測總複習（核心概念地圖・複習講義・111–115 數A數B 歷屆 200 題詳解）＋微積分互動教具等主題教材，陸續新增中。">
 <meta property="og:url" content="https://mathmap-kitty.github.io/web/">
 <meta property="og:image" content="https://mathmap-kitty.github.io/web/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="mathmap 數學教材網 · 學測數學總入口">
-<meta name="twitter:description" content="學測數學自學資源：11 單元核心概念地圖式重點整理、11 章複習講義挖空自測，＋111–115 數A・數B 歷屆試題共 200 題逐題互動詳解，讀重點、練歷屆、錯題導回核心概念，一站完成。">
+<meta name="twitter:title" content="mathmap 數學教材網 · 總入口">
+<meta name="twitter:description" content="把高中數學畫成看得懂的地圖：學測總複習（核心概念地圖・複習講義・111–115 數A數B 歷屆 200 題詳解）＋微積分互動教具等主題教材，陸續新增中。">
 <meta name="twitter:image" content="https://mathmap-kitty.github.io/web/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -39,7 +39,11 @@
   .hero{text-align:center;padding:34px 0 10px}
   .hero h1{color:var(--maroon);font-size:30px;margin:.2em 0;letter-spacing:1.5px}
   .hero p{color:#7a6a63;font-size:15.5px;margin:.4em auto;max-width:660px}
-  .entries{display:flex;flex-direction:column;gap:20px;margin-top:26px}
+  .sec-h{display:flex;align-items:baseline;gap:8px;margin:38px 0 4px;padding-left:12px;border-left:6px solid var(--maroon)}
+  .sec-h .t{font-size:20px;font-weight:800;color:var(--maroon-d);letter-spacing:.5px}
+  .sec-h.lab-h{border-left-color:#b45309}
+  .sec-note{margin:2px 0 6px 18px;font-size:14px;color:#8a766d}
+  .entries{display:flex;flex-direction:column;gap:20px;margin-top:14px}
   .entry{display:block;background:var(--card);border-radius:16px;border-left:6px solid var(--maroon);box-shadow:0 3px 14px rgba(80,40,30,.08);padding:22px 26px;text-decoration:none;color:var(--ink);transition:.15s}
   .entry:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(140,39,64,.18)}
   .entry .e-head{display:flex;align-items:center;gap:12px}
@@ -64,6 +68,10 @@
   .entry.soon:hover{transform:none;box-shadow:none}
   .entry.soon .e-t{color:#9a857c}
   .entry.soon .e-d{color:#9a857c}
+  .entry.soon{padding:12px 20px}
+  .entry.soon .e-t{font-size:16px}
+  .entry.soon .e-ico{font-size:20px}
+  .entry.soon .e-note{color:#9a857c;font-size:13.5px;margin-left:6px}
   .howto{margin-top:30px;background:#faf6f2;border:1px solid var(--line);border-radius:14px;padding:16px 22px;font-size:14.5px;color:#5a4a44}
   .howto b{color:var(--maroon-d)}
   .foot{text-align:center;color:#9a8a82;font-size:12.5px;margin-top:36px}
@@ -76,10 +84,12 @@
 
 <div class="wrap">
   <div class="hero">
-    <h1>學測數學自學資源</h1>
-    <p>三套教材互相連動：用「重點整理」打好觀念，用「複習講義」快速掃過並自我檢測，再用「歷屆試題」實戰檢驗——每一題都標好對應核心概念，錯了就一鍵回去複習。</p>
+    <h1>把高中數學，畫成看得懂的地圖。</h1>
+    <p>從學測總複習到選修主題教材——地圖式重點、互動教具、逐題詳解，一站累積。</p>
   </div>
 
+  <div class="sec-h"><span class="t">🎯 學測總複習</span></div>
+  <p class="sec-note">三套教材互相連動：讀「重點整理」打觀念、拿「歷屆試題」實戰刷題、考前用「複習講義」快掃自測——每一題都標好對應核心概念，錯了一鍵回去複習。</p>
   <div class="entries">
     <a class="entry" href="concept-map/">
       <div class="e-head"><span class="e-ico">📚</span><span class="e-t">學測數學重點整理</span><span class="e-go">進入 →</span></div>
@@ -98,20 +108,23 @@
       <div class="e-d">11 章脈絡式複習：條列重點濃縮成一本，每章附「看到 X → 用 Y」判斷流程與跨章鏈結。內容中的空格點一下就顯示答案，可整章切換<b>學生版／教師版</b>，考前翻這本最快。</div>
       <div class="e-tags"><span>11 章＋附錄</span><span>看到 X → 用 Y</span><span>跨章鏈結</span><span>106–115 練習題號</span></div>
     </a>
-
-    <a class="entry lab" href="calc-lab/">
-      <div class="e-head"><span class="e-ico">📐</span><span class="e-t">微積分互動教具</span><span class="e-go">進入 →</span></div>
-      <div class="e-d">選修數學甲（上）四個「拉滑桿看極限」的教具，依學習順序排列：割線變切線 → 黎曼和逼近 → 面積函數長出來（微積分基本定理）→ 旋轉體切圓盤。每一頁都能<b>自己輸入函數與區間</b>，課堂投影、回家自己拉都行。</div>
-      <div class="e-tags"><span>選修數學甲</span><span>割線 → 切線</span><span>黎曼和</span><span>微積分基本定理</span><span>旋轉體</span><span>自訂函數</span></div>
-    </a>
-
-    <div class="entry soon">
-      <div class="e-head"><span class="e-ico">🚧</span><span class="e-t">更多教材籌備中</span></div>
-      <div class="e-d">未來將在此陸續新增其他數學教材，敬請期待。</div>
-    </div>
   </div>
 
   <div class="howto"><b>建議用法</b>：第一輪系統複習走「重點整理」單元順序；刷題走「歷屆試題」按年度或按核心概念練，答錯的題目會進入複習清單，並可循核心概念連結回到重點整理對應段落；考前最後幾週改用「複習講義」整章挖空自測，卡住的地方再回頭翻重點整理。</div>
+
+  <div class="sec-h lab-h"><span class="t">🔬 主題數學教室</span></div>
+  <p class="sec-note">學測之外的數學——把抽象概念做成能動手玩的互動教材，主題陸續增加。</p>
+  <div class="entries">
+    <a class="entry lab" href="calc-lab/">
+      <div class="e-head"><span class="e-ico">📐</span><span class="e-t">微積分互動教具</span><span class="e-go">進入 →</span></div>
+      <div class="e-d">選修數學甲（上）四個「拉滑桿看極限」的教具，依學習順序排列：割線變切線 → 黎曼和逼近 → 面積函數長出來（微積分基本定理）→ 旋轉體切圓盤。每一頁都能<b>自己輸入函數與區間</b>，課堂投影、回家自己拉都行。</div>
+      <div class="e-tags"><span>選修數學甲</span><span>割線 → 切線</span><span>黎曼和</span><span>微積分基本定理</span><span>旋轉體</span><span>自訂函數</span><span>陸續新增中</span></div>
+    </a>
+
+    <div class="entry soon">
+      <div class="e-head"><span class="e-ico">🚧</span><span class="e-t">更多主題籌備中</span><span class="e-note">下一個數學主題教材，會加入這一區。</span></div>
+    </div>
+  </div>
 
   <div class="foot">mathmap 數學教材網 · 總入口</div>
   <div class="privacy">本站使用 Google Analytics 與 Microsoft Clarity 統計匿名流量，藉以了解使用情況、持續改善內容。</div>
