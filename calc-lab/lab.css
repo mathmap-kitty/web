@@ -1,0 +1,220 @@
+/* ============================================================
+   lab.css — 選修數學甲（上）互動教具
+   色票與版面沿用 mathmap 網頁風格標準 v1（參考文件/mathmap-theme.css）
+   ============================================================ */
+:root{
+  --maroon:#8c2740; --maroon-d:#6f1f33; --page:#f7f2ee; --card:#ffffff;
+  --line:#e7dcd6; --ink:#2b2b2b; --mut:#9a857c;
+  --rose:#c96f88; --rose-bg:#f6e7ec; --rose-tag:#f0dde3;
+  --teal:#1f6f78; --teal-l:#2c8a8a; --teal-bg:#e9f5f4;
+  --amber:#b45309; --amber-bg:#fdf3e7;
+  --ans:#c0392b; --ok:#2e9e5b; --gold:#9a6410;
+  --callout:#fdf3ee; --grid:#f0e8e3;
+  --radius-s:8px; --radius-m:12px; --radius-l:14px; --radius-pill:999px;
+  --shadow-bar:0 2px 10px rgba(0,0,0,.15);
+  --shadow-card:0 2px 10px rgba(80,40,30,.07);
+  --shadow-lift:0 8px 22px rgba(140,39,64,.18);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink); line-height:1.75; font-size:15px;
+  font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+}
+a{color:var(--maroon)}
+code{font-family:Consolas,"Cascadia Mono",Menlo,monospace; font-size:.92em; background:var(--rose-bg); padding:1px 5px; border-radius:4px; color:var(--maroon-d)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---- 頂欄（sticky） ---- */
+.topbar{
+  position:sticky; top:0; z-index:50; background:rgba(140,39,64,.97); color:#fff;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:10px 18px; box-shadow:var(--shadow-bar);
+}
+.topbar .tb-title{font-weight:800; font-size:17px; letter-spacing:.5px; margin-right:auto; color:#fff; text-decoration:none}
+.topbar .tb-title small{font-weight:500; opacity:.85; margin-left:8px; font-size:13px}
+.topbar a.ghost{
+  background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.5);
+  border-radius:var(--radius-pill); padding:4px 12px; font-size:13px; font-weight:700;
+  text-decoration:none; white-space:nowrap;
+}
+.topbar a.ghost:hover{background:rgba(255,255,255,.25)}
+@media(max-width:560px){
+  .topbar{padding:8px 12px; gap:8px}
+  .topbar .tb-title{font-size:14px}
+  .topbar .tb-title small{display:none}
+  .topbar a.ghost{padding:2px 8px; font-size:11.5px}
+}
+
+/* ---- 版面 ---- */
+.wrap{max-width:1180px; margin:0 auto; padding:0 18px 40px}
+.hero{padding:22px 0 8px; display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.hero h1{color:var(--maroon); font-size:26px; letter-spacing:1px; margin:0; line-height:1.3}
+.hero h1 .thin{color:var(--mut); font-weight:500}
+.hero p{margin:4px 0 0; color:#7a6a63; font-size:14.5px}
+.hero .sec{font-size:13px; color:var(--mut); white-space:nowrap}
+.hero .sec b{color:var(--maroon-d)}
+
+.deck{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:16px; align-items:start; margin-top:12px}
+@media(max-width:960px){.deck{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- 卡片 ---- */
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius-l);
+  padding:14px 16px; box-shadow:var(--shadow-card);
+}
+.card.accent{border-left:5px solid var(--maroon)}
+.card.accent-teal{border-left:5px solid var(--teal)}
+.label{
+  display:inline-block; margin:0 0 8px; padding:2px 11px; border-radius:6px;
+  background:var(--rose-tag); color:var(--maroon-d); font-weight:800; font-size:13.5px;
+}
+.label.teal{background:#e0eef0; color:#155a62}
+
+/* 舞台（畫布） */
+.stage{padding:0; overflow:hidden}
+.plotbox{position:relative; width:100%; aspect-ratio:16/10; min-height:300px; background:#fff}
+@media(max-width:640px){.plotbox{aspect-ratio:4/3}}
+.plotbox canvas{display:block; width:100%; height:100%}
+.stagefoot{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:8px 14px; border-top:1px solid var(--line); background:#fbf7f4;
+  font-size:12.5px; color:#6b5249;
+}
+.key{display:inline-flex; align-items:center; gap:6px; white-space:nowrap}
+.key.hide{display:none}
+.swatch{width:16px; height:11px; border-radius:2px; display:inline-block; border:1px solid transparent}
+.sw-teal{background:rgba(31,111,120,.40); border-color:var(--teal)}
+.sw-amber{background:rgba(180,83,9,.25); border-color:var(--amber)}
+.sw-ans{background:rgba(192,57,43,.32); border-color:var(--ans)}
+.sw-maroon{background:var(--maroon)}
+.sw-rose{background:rgba(201,111,136,.45); border-color:var(--rose)}
+.sw-line{width:18px; height:0; border-top:2.5px solid var(--maroon); border-radius:0}
+.sw-line.teal{border-top-color:var(--teal)}
+.sw-line.dash{border-top-style:dashed}
+
+/* 右欄 */
+.rail{display:flex; flex-direction:column; gap:12px}
+
+/* 膠囊選項 */
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{
+  font:inherit; font-size:13.5px; line-height:1.2; font-weight:700;
+  padding:6px 12px; border-radius:var(--radius-pill); cursor:pointer;
+  border:1px solid var(--line); background:#fff; color:var(--maroon-d);
+  transition:.12s;
+}
+.chip:hover{background:var(--rose-bg)}
+.chip[aria-pressed="true"]{background:var(--maroon); border-color:var(--maroon); color:#fff}
+.chip.teal[aria-pressed="true"]{background:var(--teal); border-color:var(--teal)}
+.chip:focus-visible{outline:3px solid #7c3aed; outline-offset:2px}
+.chip .katex{font-size:1.02em}
+
+/* 按鈕 */
+.btn{
+  background:var(--maroon); color:#fff; border:none; border-radius:var(--radius-pill);
+  padding:7px 16px; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer;
+}
+.btn:hover{background:var(--maroon-d)}
+.btn.secondary{background:#fff; color:var(--maroon); border:1px solid var(--line)}
+.btn.secondary:hover{background:var(--rose-bg)}
+.btn.teal{background:var(--teal)}
+.btn.teal:hover{background:#17565d}
+.btn.wide{width:100%; margin-top:8px; padding:9px}
+.btn:focus-visible{outline:3px solid #7c3aed; outline-offset:2px}
+
+/* 滑桿列 */
+.nhead{display:flex; align-items:flex-end; justify-content:space-between; gap:8px; margin-bottom:2px}
+.nhead .label{margin:0}
+.nval{font-size:30px; font-weight:800; line-height:1; color:var(--maroon); font-variant-numeric:tabular-nums}
+.nval small{font-size:13px; color:var(--mut); font-weight:600; margin-right:5px}
+input[type=range]{width:100%; margin:10px 0 10px; accent-color:var(--maroon); height:22px; cursor:pointer}
+input[type=range]:focus-visible{outline:3px solid #7c3aed; outline-offset:4px; border-radius:4px}
+.presets{display:flex; gap:6px}
+.presets .chip{flex:1; text-align:center; padding:5px 2px; font-variant-numeric:tabular-nums}
+.slider2{margin-top:12px; padding-top:10px; border-top:1px dashed var(--line)}
+
+/* 讀數 */
+.readout{background:var(--callout); border:1px solid #efd9cf}
+.readout .label{background:#f3e3e8}
+.rows{display:flex; flex-direction:column}
+.row{
+  display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+  padding:5px 0; border-bottom:1px dashed #e8d5cb; font-size:14px;
+}
+.row:last-child{border-bottom:none}
+.row .nm{color:#6b4a3f}
+.row .nm .katex{font-size:1.02em}
+.row .vv{font-variant-numeric:tabular-nums; font-weight:700; color:var(--ink); font-size:15px; white-space:nowrap}
+.row.teal .vv{color:var(--teal)}
+.row.amber .vv{color:var(--amber)}
+.row.ans .vv{color:var(--ans); font-size:16.5px}
+.row.big{
+  margin:6px -16px -14px; padding:9px 16px 11px; background:#fff; border-top:1px solid #efd9cf;
+  border-radius:0 0 var(--radius-l) var(--radius-l);
+}
+.row.big .nm{font-weight:800; color:var(--maroon-d)}
+.row.big .vv{font-size:18px; color:var(--maroon)}
+.row.hide{display:none}
+
+/* 自訂函數輸入 */
+.fnrow{display:flex; align-items:center; gap:6px; flex-wrap:wrap}
+.fnrow2{margin-top:7px; justify-content:space-between}
+.fnrow2 .fnapply{margin-left:auto}
+.fnlab{font-weight:700; color:var(--maroon-d); font-size:14px; white-space:nowrap}
+.fnin{
+  flex:1 1 150px; min-width:120px; font:inherit; font-size:15px; padding:6px 10px;
+  border:1px solid var(--line); border-radius:var(--radius-s); background:#fff; color:var(--ink);
+  font-family:Consolas,"Cascadia Mono",Menlo,"Microsoft JhengHei",monospace;
+}
+.fnint{white-space:nowrap; font-weight:700; color:var(--maroon-d)}
+.fna,.fnb{
+  width:54px; font:inherit; font-size:14px; padding:5px 6px; text-align:center;
+  border:1px solid var(--line); border-radius:var(--radius-s); background:#fff;
+  font-family:Consolas,"Cascadia Mono",Menlo,monospace;
+}
+.fnin:focus,.fna:focus,.fnb:focus{outline:2px solid var(--teal); outline-offset:1px; border-color:var(--teal)}
+.fnerr{color:var(--ans); font-size:13px; min-height:0; margin-top:4px; font-weight:700}
+.fnerr:empty{display:none}
+.fnhint{font-size:12.5px; color:var(--mut); margin-top:6px; line-height:1.6}
+.fnhint code{font-size:.9em}
+
+/* 說明框 */
+.note{
+  background:#fff7ef; border:1px dashed #e0b9a6; border-radius:var(--radius-m);
+  padding:9px 14px; font-size:13.5px; color:#6b5249; line-height:1.65;
+}
+.note b{color:var(--maroon-d)}
+.note .katex{font-size:1.02em}
+
+/* 小圖（收斂軌跡等） */
+.minibox{position:relative; width:100%; height:96px; background:#fbf7f4; border-radius:8px; overflow:hidden}
+.minibox canvas{display:block; width:100%; height:100%}
+.mininote{font-size:12px; color:var(--mut); margin:6px 0 0; line-height:1.5}
+
+/* 表格（割線斜率表） */
+table{width:100%; border-collapse:collapse; background:#fff; font-size:13.5px}
+th,td{border:1px solid var(--line); padding:5px 8px; text-align:right; vertical-align:middle; font-variant-numeric:tabular-nums}
+th{background:var(--rose-tag); color:var(--maroon-d); text-align:center; font-weight:700}
+td:first-child{text-align:center; color:var(--mut)}
+tr.cur td{background:#fff3f5; color:var(--maroon-d); font-weight:800}
+.tbl-wrap{overflow-x:auto}
+
+/* 開關 */
+.switch{display:flex; align-items:center; gap:8px; font-size:13.5px; cursor:pointer; user-select:none; padding:4px 0}
+.switch input{accent-color:var(--teal); width:16px; height:16px; margin:0}
+
+/* 公式標題列 */
+.formula{
+  display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;
+  padding:8px 14px; background:#fff; border-bottom:1px solid var(--line); font-size:15px; color:var(--maroon-d);
+}
+.formula .katex{font-size:1.15em}
+.formula .eq{font-weight:800}
+
+/* 頁尾 */
+.copyright{text-align:center; color:var(--mut); font-size:12.5px; padding:26px 14px 30px; margin-top:16px}
+.copyright a{color:var(--mut)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}

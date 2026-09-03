@@ -46,6 +46,13 @@ if os.path.isdir(GUIDE):
             continue
         loc = SITE + "guide/" + ("" if f == "index.html" else quote(f))
         entries.append((loc, "guide/" + f))
+LAB = os.path.join(REPO, "calc-lab")    # 微積分互動教具（目錄頁 + 4 個教具）
+if os.path.isdir(LAB):
+    for f in sorted(os.listdir(LAB)):
+        if not f.endswith(".html"):
+            continue
+        loc = SITE + "calc-lab/" + ("" if f == "index.html" else quote(f))
+        entries.append((loc, "calc-lab/" + f))
 entries.append((SITE + "exam/", "exam/index.html"))
 
 rows = []

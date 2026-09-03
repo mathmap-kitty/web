@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- mathmap site headers -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<title>旋轉體切圓盤｜選修數學甲（上）互動教具</title>
+<meta name="description" content="把 y=f(x) 繞 x 軸轉一圈，再切成薄圓盤；圓盤愈多，圓盤體積和愈接近旋轉體體積。可自行輸入函數與區間。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="lab.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="lab.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-title" href="index.html">mathmap 數學教材網<small>選修數學甲（上）互動教具</small></a>
+  <a class="ghost" href="index.html">← 教具目錄</a>
+  <a class="ghost" href="../">總入口</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>長條轉一圈，<span class="thin">變圓盤</span></h1>
+      <p>左邊是截面：每條長條寬 Δx、高 f(x)。繞 x 軸轉一圈，長條變成半徑 f(x) 的薄圓盤，體積 π f(x)² Δx——再把圓盤加起來。</p>
+    </div>
+    <div class="sec"><b>3-2</b> 積分的應用 · 站 4 旋轉體</div>
+  </div>
+
+  <div class="deck">
+    <section class="card stage">
+      <div class="formula">
+        <span id="fHead"></span>
+        <span class="eq">＝</span>
+        <span id="fVal" class="num" style="color:var(--ans);font-weight:800">—</span>
+      </div>
+      <div class="plotbox"><canvas id="plot"></canvas></div>
+      <div class="stagefoot">
+        <span class="key"><span class="swatch sw-teal"></span>薄圓盤（半徑由右欄的取法決定）</span>
+        <span class="key"><span class="sw-line"></span>y = f(x)</span>
+        <span class="key"><span class="swatch sw-rose"></span>曲線掃過的曲面</span>
+      </div>
+    </section>
+
+    <div class="rail">
+      <div class="card">
+        <span class="label">旋轉的曲線</span>
+        <div class="chips" id="fnChips"></div>
+      </div>
+
+      <div class="card accent-teal">
+        <span class="label teal">自己輸入</span>
+        <div id="fnPanel"></div>
+      </div>
+
+      <div class="card">
+        <div class="nhead">
+          <span class="label">圓盤數</span>
+          <div class="nval"><small>n =</small><span id="nOut">6</span></div>
+        </div>
+        <input type="range" id="nSlider" min="0" max="100" value="21" step="1" aria-label="圓盤數 n">
+        <div class="presets" id="presets"></div>
+        <button class="btn wide" id="playBtn" type="button"></button>
+
+        <div class="slider2">
+          <div class="nhead">
+            <span class="label">旋轉角</span>
+            <div class="nval"><small>θ =</small><span id="thOut">360</span><small style="margin-left:3px">°</small></div>
+          </div>
+          <input type="range" id="thSlider" min="0" max="360" value="360" step="2" aria-label="旋轉角 θ">
+          <button class="btn wide teal" id="spinBtn" type="button"></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="label">圓盤半徑怎麼取</span>
+        <div class="chips" id="modeChips"></div>
+        <label class="switch" style="margin-top:8px"><input type="checkbox" id="showDisks" checked> 顯示圓盤（關掉只看曲面）</label>
+      </div>
+
+      <div class="card readout">
+        <span class="label">即時數值</span>
+        <div class="rows">
+          <div class="row teal"><span class="nm">內接圓盤和（每段取最小半徑）</span><span class="vv" id="vIn">—</span></div>
+          <div class="row amber"><span class="nm">外接圓盤和（每段取最大半徑）</span><span class="vv" id="vOut">—</span></div>
+          <div class="row ans"><span class="nm" id="nmT">旋轉體體積</span><span class="vv" id="vT">—</span></div>
+          <div class="row big"><span class="nm" id="nmCur">目前畫的圓盤總體積</span><span class="vv" id="vCur">—</span></div>
+        </div>
+      </div>
+
+      <div class="note" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="copyright">mathmap 數學地圖 © Kitty　·　切片、寫出一片、積起來。</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var NMAX = 120;
+  var PRESETS = [
+    { id: "sq",   src: "x^2",          a: 0,  b: 1, name: "拋物線",
+      note: "簡報例題 6：<span data-tex=\"V=\\pi\\int_0^1 x^4\\,dx=\\tfrac{\\pi}{5}\"></span>。圓盤愈薄，內接與外接兩個數就愈靠近。" },
+    { id: "cone", src: "x/2",          a: 0,  b: 2, name: "圓錐",
+      note: "簡報例題 8：直線繞 x 軸得圓錐，半徑 1、高 2。<span data-tex=\"V=\\pi\\int_0^2 \\tfrac{x^2}{4}\\,dx=\\tfrac{2\\pi}{3}\"></span>，正是 <span data-tex=\"\\tfrac13\\pi r^2h\"></span>。" },
+    { id: "ball", src: "sqrt(1-x^2)",  a: -1, b: 1, name: "球",
+      note: "簡報例題 7：半圓繞直徑得球。<span data-tex=\"V=\\pi\\int_{-1}^{1}(1-x^2)\\,dx=\\tfrac{4\\pi}{3}\"></span>，國中背的公式在這裡被證明。" },
+    { id: "frus", src: "x+1",          a: 0,  b: 2, name: "圓錐臺",
+      note: "隨堂練習：<span data-tex=\"y=x+1\"></span> 繞 x 軸其實是圓錐臺，<span data-tex=\"V=\\pi\\int_0^2 (x+1)^2\\,dx=\\tfrac{26\\pi}{3}\"></span>。" },
+    { id: "vase", src: "1+0.4sin(3x)", a: 0,  b: 3, name: "花瓶",
+      note: "課綱外的函數也一樣：只要能寫出每一片的半徑，積分就能把它們加起來。這一題真值用數值積分。" }
+  ];
+  PRESETS.forEach(function (p) {
+    var F = Lab.parseFn(p.src); p.f = F.f; p.tex = F.tex;
+    p.html = p.name + '　<span data-tex="' + F.tex.replace(/"/g, "&quot;") + '"></span>';
+  });
+  var MODES = [
+    { id: "in",  btn: "內接（最小）" },
+    { id: "out", btn: "外接（最大）" },
+    { id: "mid", btn: "中點" }
+  ];
+  var state = { F: PRESETS[0], n: 6, theta: 360, mode: "in", disks: true };
+  var P = Lab.pal();
+
+  function radii(F, n) {
+    var dx = (F.b - F.a) / n, out = [], i, x0, x1, e, absf = function (x) { return Math.abs(F.f(x)); };
+    for (i = 0; i < n; i++) {
+      x0 = F.a + i * dx; x1 = x0 + dx; e = Lab.extremes(absf, x0, x1, 20);
+      out.push({ x0: x0, x1: x1, rin: e[0], rout: e[1], rmid: absf((x0 + x1) / 2) });
+    }
+    return out;
+  }
+  function volumes(F, n) {
+    var r = radii(F, n), dx = (F.b - F.a) / n, vin = 0, vout = 0, vmid = 0, i;
+    for (i = 0; i < n; i++) { vin += Math.PI * r[i].rin * r[i].rin * dx; vout += Math.PI * r[i].rout * r[i].rout * dx; vmid += Math.PI * r[i].rmid * r[i].rmid * dx; }
+    return { r: r, vin: vin, vout: vout, vmid: vmid, dx: dx };
+  }
+  function exactVol(F) {
+    return Math.PI * Lab.simpson(function (x) { var y = F.f(x); return y * y; }, F.a, F.b, 4000);
+  }
+
+  var cv = document.getElementById("plot"), ctx = cv.getContext("2d"), W = 0, H = 0;
+
+  function draw() {
+    var F = state.F, n = state.n, d = volumes(F, n), i, rk;
+    var R = Lab.range(function (x) { return Math.abs(F.f(x)); }, F.a, F.b)[1] || 1;
+    ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+
+    /* ── 左：截面 ── */
+    var lw = Math.round(W * 0.40), pad = (F.b - F.a) * 0.10;
+    var p = new Lab.Plot(ctx, { x: 0, y: 0, w: lw, h: H, padL: 46, padR: 10, padT: 30, padB: 36 },
+      [F.a - pad, F.b + pad], [-R * 1.18, R * 1.18]);
+    p.grid({ xgrid: false, lines: 4 });
+    for (i = 0; i < n; i++) {
+      rk = d.r[i]; var rr = state.mode === "in" ? rk.rin : state.mode === "out" ? rk.rout : rk.rmid;
+      p.rect(rk.x0, rk.x1, -rr, rr, { fill: P.teal, alpha: n > 60 ? 0.42 : 0.30, stroke: n > 60 ? null : P.teal, strokeAlpha: 0.8 });
+    }
+    p.axes({ ylabel: "y" });
+    p.curve(function (x) { return -F.f(x); }, [F.a, F.b], { color: P.rose, width: 1.4, dash: [4, 4] });
+    p.curve(F.f, [F.a, F.b], { color: P.maroon, width: 2.6 });
+    p.tick(F.a, "a"); p.tick(F.b, "b");
+    p.textPx(lw - 12, 8, "截面：長條 高 f(x)、寬 Δx", { size: 12.5, color: P.maroonD, weight: 700, align: "right" });
+
+    /* ── 右：旋轉體 ── */
+    var px = lw, pw = W - lw, ph = H, e = 0.30, padX = 34, padY = 40;
+    ctx.strokeStyle = P.line; ctx.beginPath(); ctx.moveTo(px + 0.5, 12); ctx.lineTo(px + 0.5, H - 12); ctx.stroke();
+    var S = Math.min((ph - 2 * padY) / (2 * R), (pw - 2 * padX) / ((F.b - F.a) + 2 * R * e));
+    var X0 = px + (pw - ((F.b - F.a) * S + 2 * R * S * e)) / 2 + R * S * e;
+    var cy = ph / 2;
+    function X(x) { return X0 + (x - F.a) * S; }
+    ctx.textAlign = "left"; ctx.textBaseline = "top";
+    ctx.font = "700 12.5px " + p.font; ctx.fillStyle = P.maroonD;
+    ctx.fillText("繞 x 軸旋轉：圓盤 半徑 f(x)、厚 Δx，體積 π f(x)² Δx", px + 10, 8);
+
+    /* 軸 */
+    ctx.strokeStyle = P.ink; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.moveTo(X(F.a) - R * S * e - 14, cy); ctx.lineTo(X(F.b) + R * S * e + 18, cy); ctx.stroke();
+    ctx.font = "italic 13px " + p.font; ctx.fillStyle = P.ink; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+    ctx.fillText("x", X(F.b) + R * S * e + 20, cy - 2);
+
+    /* 掃出的曲面 */
+    var K = 60, steps = Math.max(1, Math.round(state.theta / 6)), th = state.theta * Math.PI / 180, k, j, x, f, ph1, ph2;
+    function pt(x, r, phi) { return [X(x) + r * Math.sin(phi) * S * e, cy - r * Math.cos(phi) * S]; }
+    if (state.theta > 0) {
+      for (k = 0; k < steps; k++) {
+        ph1 = th * k / steps; ph2 = th * (k + 1) / steps;
+        ctx.beginPath();
+        for (j = 0; j <= K; j++) { x = F.a + (F.b - F.a) * j / K; f = F.f(x); var q = pt(x, f, ph1); if (j === 0) ctx.moveTo(q[0], q[1]); else ctx.lineTo(q[0], q[1]); }
+        for (j = K; j >= 0; j--) { x = F.a + (F.b - F.a) * j / K; f = F.f(x); var q2 = pt(x, f, ph2); ctx.lineTo(q2[0], q2[1]); }
+        ctx.closePath();
+        ctx.fillStyle = Lab.rgba(P.rose, state.disks ? 0.05 : 0.09); ctx.fill();
+        ctx.strokeStyle = Lab.rgba(P.rose, state.disks ? 0.22 : 0.40); ctx.lineWidth = 1; ctx.stroke();
+      }
+    }
+
+    /* 圓盤：從右畫到左，左邊的蓋住右邊的 */
+    if (state.disks) {
+      for (i = n - 1; i >= 0; i--) {
+        rk = d.r[i]; var r = state.mode === "in" ? rk.rin : state.mode === "out" ? rk.rout : rk.rmid;
+        var rx = r * S * e, ry = r * S, xa = X(rk.x0), xb = X(rk.x1);
+        if (ry < 0.4) continue;
+        ctx.beginPath();
+        ctx.moveTo(xa, cy - ry); ctx.lineTo(xb, cy - ry);
+        ctx.ellipse(xb, cy, rx, ry, 0, -Math.PI / 2, Math.PI / 2, false);
+        ctx.lineTo(xa, cy + ry);
+        ctx.ellipse(xa, cy, rx, ry, 0, Math.PI / 2, -Math.PI / 2, false);
+        ctx.closePath();
+        ctx.fillStyle = Lab.rgba(P.teal, 0.42); ctx.fill();
+        if (n <= 60) { ctx.strokeStyle = Lab.rgba(P.teal, 0.9); ctx.lineWidth = 1; ctx.stroke(); }
+        ctx.beginPath(); ctx.ellipse(xa, cy, rx, ry, 0, 0, Math.PI * 2);
+        ctx.fillStyle = Lab.rgba("#9fd3d3", 0.75); ctx.fill();
+        if (n <= 60) { ctx.strokeStyle = Lab.rgba(P.teal, 0.9); ctx.stroke(); }
+      }
+    }
+
+    /* 起點曲線與前緣 */
+    function drawCurve(phi, color, width) {
+      ctx.beginPath();
+      for (j = 0; j <= 200; j++) { x = F.a + (F.b - F.a) * j / 200; var q3 = pt(x, F.f(x), phi); if (j === 0) ctx.moveTo(q3[0], q3[1]); else ctx.lineTo(q3[0], q3[1]); }
+      ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineJoin = "round"; ctx.stroke();
+    }
+    drawCurve(0, P.maroon, 2.4);
+    if (state.theta > 0 && state.theta < 360) drawCurve(th, P.maroon, 2.0);
+
+    /* a、b */
+    ctx.font = "12.5px " + p.font; ctx.fillStyle = P.ink; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    ctx.fillText("a", X(F.a), cy + R * S + 8); ctx.fillText("b", X(F.b), cy + R * S + 8);
+
+    /* 讀數 */
+    var cur = state.mode === "in" ? d.vin : state.mode === "out" ? d.vout : d.vmid;
+    document.getElementById("vIn").textContent = Lab.fmt(d.vin, 4);
+    document.getElementById("vOut").textContent = Lab.fmt(d.vout, 4);
+    document.getElementById("vT").textContent = Lab.fmt(F.exact, 4);
+    document.getElementById("vCur").textContent = Lab.fmt(cur, 4);
+    document.getElementById("fVal").textContent = Lab.fmt(F.exact, 4);
+    document.getElementById("nmT").textContent = F.custom ? "旋轉體體積（數值積分）" : "旋轉體體積";
+  }
+
+  /* ---------- 控制 ---------- */
+  var nSl = document.getElementById("nSlider"), nOut = document.getElementById("nOut"), sc = Lab.sqScale(NMAX);
+  var thSl = document.getElementById("thSlider"), thOut = document.getElementById("thOut");
+  var hint = document.getElementById("hint");
+
+  function setN(n, sync) { state.n = Math.max(1, Math.min(NMAX, n)); nOut.textContent = state.n; if (sync) nSl.value = sc.fromN(state.n); draw(); }
+  function setTheta(t, sync) { state.theta = Math.max(0, Math.min(360, t)); thOut.textContent = Math.round(state.theta); if (sync) thSl.value = state.theta; draw(); }
+  function setF(F) {
+    state.F = F; if (F.exact === undefined) F.exact = exactVol(F);
+    Lab.katex(document.getElementById("fHead"), "V=\\pi\\int_{" + Lab.short(F.a) + "}^{" + Lab.short(F.b) + "}\\left(" + F.tex + "\\right)^{2}dx");
+    hint.innerHTML = F.note; Lab.katexAll(hint); draw();
+  }
+
+  nSl.addEventListener("input", function () { player.stop(); setN(sc.toN(+nSl.value), false); });
+  thSl.addEventListener("input", function () { spinner.stop(); setTheta(+thSl.value, false); });
+  document.getElementById("showDisks").addEventListener("change", function (ev) { state.disks = ev.target.checked; draw(); });
+
+  var fnChips = Lab.chips(document.getElementById("fnChips"), PRESETS, state.F.id, function (it) { player.stop(); panel.fill(it); setF(it); });
+  Lab.katexAll(document.getElementById("fnChips"));
+  Lab.chips(document.getElementById("modeChips"), MODES, state.mode, function (it) { state.mode = it.id; draw(); });
+
+  var panel = Lab.fnPanel(document.getElementById("fnPanel"), {
+    varName: "x",
+    onApply: function (F) {
+      player.stop(); F.note = "<b>自訂函數</b>：體積用數值積分算。負的 f(x) 也沒關係——半徑是 |f(x)|，平方之後一樣。";
+      fnChips.select(null); setF(F);
+    }
+  });
+  panel.fill(PRESETS[0]);
+
+  var presets = document.getElementById("presets");
+  [1, 3, 6, 12, 30, 120].forEach(function (v) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = v;
+    b.addEventListener("click", function () { player.stop(); setN(v, true); }); presets.appendChild(b);
+  });
+  var player = Lab.player(document.getElementById("playBtn"), {
+    play: "▶　自動加細", pause: "❚❚　暫停", ms: 300,
+    onStart: function () { if (state.n >= NMAX) setN(1, true); },
+    tick: function () {
+      var n = state.n, next = n < 10 ? n + 1 : n < 30 ? n + 2 : n + 6;
+      if (next >= NMAX) { setN(NMAX, true); return false; } setN(next, true); return true;
+    }
+  });
+  var spinner = Lab.player(document.getElementById("spinBtn"), {
+    play: "↻　從 0° 轉一圈", pause: "❚❚　暫停", ms: 40,
+    onStart: function () { setTheta(0, true); },
+    tick: function () { if (state.theta >= 360) return false; setTheta(state.theta + 6, true); return true; }
+  });
+
+  function relayout() { var a = Lab.fit(cv); W = a[0]; H = a[1]; draw(); }
+  window.addEventListener("resize", relayout);
+  Lab.katexAll(document);
+  setF(PRESETS[0]); setN(6, true); setTheta(360, true);
+  relayout();
+});
+</script>
+</body>
+</html>

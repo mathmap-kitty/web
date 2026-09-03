@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- mathmap site headers -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<title>割線變切線｜選修數學甲（上）互動教具</title>
+<meta name="description" content="固定 P，讓 Q 沿曲線滑向 P：割線斜率 (f(a+h)−f(a))/h 逼近切線斜率 f′(a)。可自行輸入函數。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="lab.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="lab.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-title" href="index.html">mathmap 數學教材網<small>選修數學甲（上）互動教具</small></a>
+  <a class="ghost" href="index.html">← 教具目錄</a>
+  <a class="ghost" href="../">總入口</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>割線 <span class="thin">變</span> 切線</h1>
+      <p>固定 P(a, f(a))，讓 Q(a+h, f(a+h)) 沿著曲線滑向 P。h 愈小，割線 PQ 愈貼近切線；割線斜率的極限，就是 f′(a)。</p>
+    </div>
+    <div class="sec"><b>2-1</b> 微分的定義與運算 · 站 1</div>
+  </div>
+
+  <div class="deck">
+    <section class="card stage">
+      <div class="formula">
+        <span data-tex="f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}"></span>
+      </div>
+      <div class="plotbox"><canvas id="plot"></canvas></div>
+      <div class="stagefoot">
+        <span class="key"><span class="sw-line" style="border-top-color:var(--amber)"></span>割線 PQ</span>
+        <span class="key"><span class="sw-line teal dash"></span>切線（h → 0 的極限）</span>
+        <span class="key"><span class="swatch sw-amber"></span>Δx = h、Δy = f(a+h) − f(a)</span>
+      </div>
+    </section>
+
+    <div class="rail">
+      <div class="card">
+        <span class="label">曲線</span>
+        <div class="chips" id="fnChips"></div>
+      </div>
+
+      <div class="card accent-teal">
+        <span class="label teal">自己輸入</span>
+        <div id="fnPanel"></div>
+      </div>
+
+      <div class="card">
+        <div class="nhead">
+          <span class="label">固定點 P 的橫坐標</span>
+          <div class="nval"><small>a =</small><span id="aOut">1</span></div>
+        </div>
+        <input type="range" id="aSlider" min="0" max="1000" value="500" step="1" aria-label="a">
+        <div class="slider2">
+          <div class="nhead">
+            <span class="label">Q 離 P 多遠</span>
+            <div class="nval"><small>h =</small><span id="hOut">1</span></div>
+          </div>
+          <input type="range" id="hSlider" min="-100" max="100" value="70" step="1" aria-label="h">
+          <div class="presets" id="presets"></div>
+          <button class="btn wide" id="playBtn" type="button"></button>
+          <label class="switch" style="margin-top:8px"><input type="checkbox" id="zoom"> 跟著 h 放大看 P 附近</label>
+        </div>
+      </div>
+
+      <div class="card readout">
+        <span class="label">即時數值</span>
+        <div class="rows">
+          <div class="row"><span class="nm"><span data-tex="\Delta y = f(a+h)-f(a)"></span></span><span class="vv" id="vDy">—</span></div>
+          <div class="row amber"><span class="nm">割線斜率 <span data-tex="\dfrac{\Delta y}{h}"></span></span><span class="vv" id="vSec">—</span></div>
+          <div class="row teal"><span class="nm">切線斜率 <span data-tex="f'(a)"></span></span><span class="vv" id="vTan">—</span></div>
+          <div class="row big"><span class="nm">還差多少</span><span class="vv" id="vGap">—</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="label">h 愈小，斜率愈穩</span>
+        <div class="tbl-wrap">
+          <table id="tbl">
+            <thead><tr><th>h</th><th>Q 在右邊（+h）</th><th>Q 在左邊（−h）</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="mininote" id="tblNote">左右兩邊逼近同一個數，切線才存在。</p>
+      </div>
+
+      <div class="note" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="copyright">mathmap 數學地圖 © Kitty　·　導數是「割線斜率的極限」，不是「切線的斜率」——切線是用它定義出來的。</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var PRESETS = [
+    { id: "sq",   src: "x^2",    a: 1,  lo: -1.5, hi: 3,
+      note: "簡報第 6～8 頁的主角：割線斜率是 <span data-tex=\"2+h\"></span>，h → 0 得 2。表格裡看得到 2.1、2.01、2.001。" },
+    { id: "cube", src: "x^3-3x", a: 1,  lo: -2.5, hi: 2.5,
+      note: "P 在極小值處：割線斜率一邊正一邊負，兩邊都逼近 <b>0</b>，切線是水平的。" },
+    { id: "abs",  src: "abs(x)", a: 0,  lo: -2,   hi: 2,
+      note: "<b>尖點</b>：右邊割線斜率永遠是 1，左邊永遠是 −1，兩邊逼不到同一個數——所以 f′(0) <b>不存在</b>，簡報第 12 頁。" },
+    { id: "sqrt", src: "sqrt(x)", a: 1, lo: -0.3, hi: 3,
+      note: "把 a 拉到 0 試試：割線斜率愈來愈大，沒有極限，切線變成鉛直——在端點也不可微。" }
+  ];
+  PRESETS.forEach(function (p) {
+    var F = Lab.parseFn(p.src); p.f = F.f; p.tex = F.tex;
+    p.html = '<span data-tex="' + F.tex.replace(/"/g, "&quot;") + '"></span>';
+  });
+  var state = { F: PRESETS[0], a: 1, h: 1, zoom: false };
+  var P = Lab.pal();
+  var HTAB = [1, 0.1, 0.01, 0.001, 0.0001];
+
+  function slope(F, a, h) { var v = (F.f(a + h) - F.f(a)) / h; return isFinite(v) ? v : NaN; }
+  /* 切線斜率：左右割線在 h=1e-5 時一致才算存在 */
+  function tangent(F, a) {
+    var r = slope(F, a, 1e-5), l = slope(F, a, -1e-5);
+    if (!isFinite(r) || !isFinite(l)) return null;
+    if (Math.abs(r - l) > 0.01 * (1 + Math.abs(r))) return null;
+    if (Math.abs(r) > 1e4) return null;
+    return (r + l) / 2;
+  }
+  function hMap(v) { var H = (state.F.hi - state.F.lo) / 3; return (v < 0 ? -1 : 1) * H * Math.pow(Math.abs(v) / 100, 2.5); }
+  function hUnmap(h) { var H = (state.F.hi - state.F.lo) / 3; return (h < 0 ? -1 : 1) * Math.round(Math.pow(Math.abs(h) / H, 1 / 2.5) * 100); }
+
+  var cv = document.getElementById("plot"), ctx = cv.getContext("2d"), W = 0, H = 0;
+
+  function draw() {
+    var F = state.F, a = state.a, h = state.h, fa = F.f(a), fb = F.f(a + h);
+    var m = slope(F, a, h), t = tangent(F, a);
+    ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+
+    var xlo, xhi;
+    if (state.zoom) { var r = Math.max(Math.abs(h) * 3, 1e-4); xlo = a - r; xhi = a + r; }
+    else { xlo = F.lo; xhi = F.hi; }
+    var yr = Lab.range(F.f, xlo, xhi), ylo = yr[0], yhi = yr[1], ys = (yhi - ylo) || 1;
+    if (!state.zoom) { ylo = Math.min(0, ylo); yhi = Math.max(0, yhi); ys = (yhi - ylo) || 1; }
+    /* 縮放時保持長寬比例，否則直線斜率看起來會變 */
+    if (state.zoom) {
+      var aspect = (H - 60) / (W - 74), want = (xhi - xlo) * aspect;
+      if (ys < want) { var mid = (ylo + yhi) / 2; ylo = mid - want / 2; yhi = mid + want / 2; ys = want; }
+    }
+    var p = new Lab.Plot(ctx, { x: 0, y: 0, w: W, h: H, padL: 56, padR: 18, padT: 22, padB: 38 },
+      [xlo, xhi], [ylo - ys * 0.12, yhi + ys * 0.16]);
+    p.grid({ xgrid: true, lines: 5 });
+    p.axes({ ylabel: "y" });
+    p.curve(F.f, [xlo, xhi], { color: P.maroon, width: 2.6 });
+
+    /* 三角形 Δx、Δy */
+    if (isFinite(fb)) {
+      p.line(a, fa, a + h, fa, { color: P.amber, width: 1.4 });
+      p.line(a + h, fa, a + h, fb, { color: P.amber, width: 1.4 });
+      p.text((a + (a + h)) / 2, fa, "Δx = h", { size: 12, color: P.amber, weight: 700, align: "center", base: fb >= fa ? "top" : "bottom", dy: fb >= fa ? 4 : -4 });
+      p.text(a + h, (fa + fb) / 2, " Δy", { size: 12, color: P.amber, weight: 700, base: "middle", dx: h >= 0 ? 4 : -4, align: h >= 0 ? "left" : "right" });
+    }
+    /* 切線與割線 */
+    if (t !== null) p.infLine(a, fa, t, { color: P.teal, width: 1.8, dash: [7, 5] });
+    if (isFinite(m)) p.infLine(a, fa, m, { color: P.amber, width: 2.2 });
+    /* P、Q */
+    if (isFinite(fb)) { p.dot(a + h, fb, { color: P.amber, r: 5, ring: true }); p.text(a + h, fb, "Q", { size: 14, weight: 700, color: P.amber, dx: h >= 0 ? 9 : -9, dy: -8, align: h >= 0 ? "left" : "right" }); }
+    p.dot(a, fa, { color: P.maroon, r: 5.5, ring: true });
+    p.text(a, fa, "P", { size: 14, weight: 700, color: P.maroonD, dx: h >= 0 ? -9 : 9, dy: -8, align: h >= 0 ? "right" : "left" });
+    if (!state.zoom) p.tick(a, "a = " + Lab.short(a), { bold: true });
+    p.textPx(p.x0 + p.w - 8, p.y0 + 4, state.zoom ? "放大 " + (Math.round((F.hi - F.lo) / (xhi - xlo) * 10) / 10) + " 倍：曲線愈看愈像直線" : "割線斜率 = " + (isFinite(m) ? Lab.fmt(m, 4) : "—"),
+      { size: 12.5, color: state.zoom ? P.teal : P.amber, weight: 700, align: "right" });
+
+    /* 讀數 */
+    document.getElementById("vDy").textContent = isFinite(fb) ? Lab.fmt(fb - fa, 5) : "—";
+    document.getElementById("vSec").textContent = isFinite(m) ? Lab.fmt(m, 5) : "—";
+    document.getElementById("vTan").textContent = t === null ? "不存在" : Lab.fmt(t, 5);
+    document.getElementById("vGap").textContent = (t === null || !isFinite(m)) ? "—" : Lab.fmt(Math.abs(m - t), 5);
+    document.getElementById("hOut").textContent = Lab.fmt(h, Math.abs(h) >= 0.01 ? 3 : 4);
+    document.getElementById("aOut").textContent = Lab.short(a);
+
+    /* 表格 */
+    var tb = document.querySelector("#tbl tbody"), rows = "", k, cur = -1, best = 1e9;
+    for (k = 0; k < HTAB.length; k++) { var d = Math.abs(Math.log10(Math.abs(h)) - Math.log10(HTAB[k])); if (d < best) { best = d; cur = k; } }
+    for (k = 0; k < HTAB.length; k++) {
+      var sr = slope(F, a, HTAB[k]), sl = slope(F, a, -HTAB[k]);
+      rows += "<tr" + (k === cur ? ' class="cur"' : "") + "><td>" + HTAB[k] + "</td><td>" + (isFinite(sr) ? Lab.fmt(sr, 4) : "—") + "</td><td>" + (isFinite(sl) ? Lab.fmt(sl, 4) : "—") + "</td></tr>";
+    }
+    tb.innerHTML = rows;
+    document.getElementById("tblNote").textContent = t === null ? "⚠ 左右兩邊逼近的數不一樣（或沒有極限）：這一點沒有切線。" : "左右兩邊都逼近 " + Lab.fmt(t, 4) + "，切線存在。";
+  }
+
+  var aS = document.getElementById("aSlider"), hS = document.getElementById("hSlider"), hint = document.getElementById("hint");
+  function setA(v, sync) { state.a = v; if (sync) aS.value = Math.round((v - state.F.lo) / (state.F.hi - state.F.lo) * 1000); draw(); }
+  function setH(v, sync) { if (Math.abs(v) < 1e-4) v = v < 0 ? -1e-4 : 1e-4; state.h = v; if (sync) hS.value = hUnmap(v); draw(); }
+  function setF(F) {
+    state.F = F; hint.innerHTML = F.note; Lab.katexAll(hint);
+    setA(F.a, true); setH(Math.min(1, (F.hi - F.lo) / 4), true);
+  }
+  aS.addEventListener("input", function () { setA(state.F.lo + (state.F.hi - state.F.lo) * (+aS.value) / 1000, false); });
+  hS.addEventListener("input", function () { player.stop(); setH(hMap(+hS.value), false); });
+  document.getElementById("zoom").addEventListener("change", function (ev) { state.zoom = ev.target.checked; draw(); });
+
+  var fnChips = Lab.chips(document.getElementById("fnChips"), PRESETS, state.F.id, function (it) { player.stop(); panel.fill({ src: it.src, a: it.lo, b: it.hi }); setF(it); });
+  Lab.katexAll(document.getElementById("fnChips"));
+  var panel = Lab.fnPanel(document.getElementById("fnPanel"), {
+    varName: "x", intLabel: "顯示範圍",
+    hint: '例：<code>x^2-2x</code>、<code>x^3</code>、<code>abs(x-1)</code>、<code>sin(x)</code>；套用後再拉 a 決定 P 的位置',
+    onApply: function (F) {
+      player.stop(); F.lo = F.a; F.hi = F.b; F.a = (F.lo + F.hi) / 2;
+      F.note = "<b>自訂函數</b>：把 a 拉到轉折、尖點、端點看看，切線在哪裡會消失。";
+      fnChips.select(null); setF(F);
+    }
+  });
+  panel.fill({ src: PRESETS[0].src, a: PRESETS[0].lo, b: PRESETS[0].hi });
+
+  var presets = document.getElementById("presets");
+  [1, 0.5, 0.1, 0.01, 0.001].forEach(function (v) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = v;
+    b.addEventListener("click", function () { player.stop(); setH(v * (state.h < 0 ? -1 : 1), true); }); presets.appendChild(b);
+  });
+  var player = Lab.player(document.getElementById("playBtn"), {
+    play: "▶　讓 Q 滑向 P", pause: "❚❚　暫停", ms: 120,
+    onStart: function () { if (Math.abs(state.h) < 0.002) setH(Math.min(1, (state.F.hi - state.F.lo) / 4) * (state.h < 0 ? -1 : 1), true); },
+    tick: function () { var nh = state.h * 0.85; if (Math.abs(nh) < 0.0005) { setH(0.0005 * (nh < 0 ? -1 : 1), true); return false; } setH(nh, true); return true; }
+  });
+
+  function relayout() { var a = Lab.fit(cv); W = a[0]; H = a[1]; draw(); }
+  window.addEventListener("resize", relayout);
+  Lab.katexAll(document);
+  setF(PRESETS[0]);
+  relayout();
+});
+</script>
+</body>
+</html>

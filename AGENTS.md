@@ -22,6 +22,7 @@
 | `exam/` | `/web/exam/` | 111–115 學測數A・數B 逐題互動詳解（200 題） | **本機外部**：`D:\大考複習\歷屆試題詳解\互動網頁版\` → 整包覆蓋 `exam/` |
 | `guide/` | `/web/guide/` | 《學測數學A 複習講義》網頁版（11 章＋附錄） | `content/guide_data.json` ＋ `build/build_guide.py`（另一 session 建置，本 agent 未親自驗證） |
 | `diagnostic/` | ⚠ **未公開** | 複習後診斷系統：11 單元 540 題五階段診斷（2026-08 移入） | **本機外部**：`D:\gmail\ChatGPT_複習\診斷系統\` → 整包覆蓋 `app/ content/ engine/` |
+| `calc-lab/` | `/web/calc-lab/` | **微積分互動教具**：選修數學甲（上）4 個拉滑桿教具（割線→切線、黎曼和、FTC、旋轉體），可自訂函數（2026-09 新增） | **本機外部**：`D:\gmailM_教學\教材M選修數學甲(上)\9教學簡報\互動教具\` → 整包覆蓋 `calc-lab/`，再跑 `calc-lab/_site_headers.py` 補回 GA/Clarity/favicon 標頭 |
 
 > **本 repo 的 build 只管 `concept-map/` 與 `guide/`；`exam/`、`diagnostic/` 不要在這裡改。**
 

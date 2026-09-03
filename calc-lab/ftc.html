@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- mathmap site headers -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQVPGYJ1FK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQVPGYJ1FK');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xcgidr4emy");</script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<title>面積函數長出來｜選修數學甲（上）互動教具</title>
+<meta name="description" content="拉動 x，看 F(x)=∫ₐˣ f(t)dt 的圖形一點一點長出來，而且 F 的斜率永遠等於 f(x)——這就是微積分基本定理。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="lab.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="lab.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="tb-title" href="index.html">mathmap 數學教材網<small>選修數學甲（上）互動教具</small></a>
+  <a class="ghost" href="index.html">← 教具目錄</a>
+  <a class="ghost" href="../">總入口</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>面積函數 <span class="thin">長出來</span></h1>
+      <p>上圖是 f(t)，從 a 塗到 x 的面積記成 F(x)。拉動 x，下圖的 F 一點一點長出來——注意 F 在 x 處的斜率，永遠等於上圖 f(x) 的高度。</p>
+    </div>
+    <div class="sec"><b>3-1</b> 積分的意義 · 站 4 微積分基本定理</div>
+  </div>
+
+  <div class="deck">
+    <section class="card stage">
+      <div class="formula">
+        <span id="fHead"></span>
+        <span class="eq" style="margin:0 6px">⟹</span>
+        <span data-tex="F'(x)=f(x)"></span>
+      </div>
+      <div class="plotbox"><canvas id="plot"></canvas></div>
+      <div class="stagefoot">
+        <span class="key"><span class="swatch sw-teal"></span>累積面積 F(x)（軸下方算負）</span>
+        <span class="key"><span class="swatch sw-amber"></span>再往右一小步 Δx，多出 ΔF ≈ f(x)·Δx</span>
+        <span class="key"><span class="sw-line teal dash"></span>F 在 x 處的切線，斜率 = f(x)</span>
+      </div>
+    </section>
+
+    <div class="rail">
+      <div class="card">
+        <span class="label">被積函數 f(t)</span>
+        <div class="chips" id="fnChips"></div>
+      </div>
+
+      <div class="card accent-teal">
+        <span class="label teal">自己輸入</span>
+        <div id="fnPanel"></div>
+      </div>
+
+      <div class="card">
+        <div class="nhead">
+          <span class="label">上限 x</span>
+          <div class="nval"><small>x =</small><span id="xOut">—</span></div>
+        </div>
+        <input type="range" id="xSlider" min="0" max="1000" value="400" step="1" aria-label="上限 x">
+        <button class="btn wide" id="playBtn" type="button"></button>
+        <label class="switch" style="margin-top:8px"><input type="checkbox" id="showStrip" checked> 顯示「再往右一小步」的小條</label>
+      </div>
+
+      <div class="card readout">
+        <span class="label">即時數值</span>
+        <div class="rows">
+          <div class="row teal"><span class="nm">累積面積 <span data-tex="F(x)=\int_a^x f(t)\,dt"></span></span><span class="vv" id="vF">—</span></div>
+          <div class="row"><span class="nm">上圖的高度 <span data-tex="f(x)"></span></span><span class="vv" id="vf">—</span></div>
+          <div class="row"><span class="nm">下圖的斜率 <span data-tex="F'(x)"></span>（量出來的）</span><span class="vv" id="vFp">—</span></div>
+          <div class="row big"><span class="nm">兩者相差</span><span class="vv" id="vD">—</span></div>
+        </div>
+      </div>
+
+      <div class="note" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="copyright">mathmap 數學地圖 © Kitty　·　積分是「切碎再加起來」，算法卻是「把微分倒過來」。</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var PRESETS = [
+    { id: "lin",  src: "t",     a: 0,  b: 3, name: "f(t)=t",
+      note: "面積是三角形：<span data-tex=\"F(x)=\\tfrac{x^2}{2}\"></span>。F 是拋物線，斜率 x，正好是 f(x)。" },
+    { id: "sq",   src: "t^2",   a: 0,  b: 2, name: "f(t)=t²",
+      note: "<span data-tex=\"F(x)=\\tfrac{x^3}{3}\"></span>。簡報第 30 頁的變上限積分就是這一個。" },
+    { id: "sign", src: "t^2-1", a: -2, b: 2, name: "f(t)=t²−1",
+      note: "f 先負後正：F 先<b>往下走</b>再<b>往上走</b>，谷底剛好在 f 穿過 0 的地方（x = −1）。F′ 的正負就是 f 的正負。" },
+    { id: "down", src: "3-t",   a: 0,  b: 4, name: "f(t)=3−t",
+      note: "f 遞減：F 愈長愈慢，過了 x = 3 之後 f 變負，F 開始下降——最高點就在 f = 0 處。" }
+  ];
+  PRESETS.forEach(function (p) {
+    var F = Lab.parseFn(p.src, "t"); p.f = F.f; p.tex = F.tex;
+    p.html = '<span data-tex="' + F.tex.replace(/"/g, "&quot;") + '"></span>';
+  });
+  var state = { F: PRESETS[0], x: 0, strip: true };
+  var P = Lab.pal();
+  var N = 800;
+
+  /* 累積面積表：梯形法累加，F(x) 用內插 */
+  function build(F) {
+    var arr = [0], dx = (F.b - F.a) / N, s = 0, prev = F.f(F.a), i, y, lo = 0, hi = 0;
+    for (i = 1; i <= N; i++) { y = F.f(F.a + i * dx); s += (prev + y) / 2 * dx; arr.push(s); prev = y; if (s < lo) lo = s; if (s > hi) hi = s; }
+    F._tab = arr; F._lo = lo; F._hi = hi;
+  }
+  function Fat(F, x) {
+    var u = (x - F.a) / (F.b - F.a) * N, i = Math.floor(u), t = u - i;
+    if (i < 0) return 0; if (i >= N) return F._tab[N];
+    return F._tab[i] * (1 - t) + F._tab[i + 1] * t;
+  }
+
+  var cv = document.getElementById("plot"), ctx = cv.getContext("2d"), W = 0, H = 0;
+
+  function draw() {
+    var F = state.F, x = state.x, pad = (F.b - F.a) * 0.06;
+    ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+    var topH = Math.round(H * 0.50);
+
+    /* ── 上：f(t) 與累積面積 ── */
+    var fr = Lab.range(F.f, F.a, F.b), flo = Math.min(0, fr[0]), fhi = Math.max(0, fr[1]), fs = (fhi - flo) || 1;
+    var p = new Lab.Plot(ctx, { x: 0, y: 0, w: W, h: topH, padL: 56, padR: 18, padT: 24, padB: 24 },
+      [F.a - pad, F.b + pad], [flo - fs * 0.12, fhi + fs * 0.18]);
+    p.grid({ xgrid: false, lines: 4 });
+    var zero = function () { return 0; };
+    if (x > F.a) {
+      p.fillBetween(function (t) { return Math.max(0, F.f(t)); }, zero, F.a, x, P.teal, 0.30);
+      p.fillBetween(function (t) { return Math.min(0, F.f(t)); }, zero, F.a, x, P.ans, 0.28);
+    }
+    var h = (F.b - F.a) * 0.035;
+    if (state.strip && x + h <= F.b) {
+      p.rect(x, x + h, 0, F.f(x), { fill: P.amber, alpha: 0.45, stroke: P.amber });
+      p.text(x + h, F.f(x), " ΔF ≈ f(x)·Δx", { size: 12, color: P.amber, weight: 700, base: "bottom", dy: -3 });
+    }
+    p.axes({ xlabel: "t", ylabel: "f(t)" });
+    p.curve(F.f, [F.a - pad, F.b + pad], { color: P.maroon, width: 2.6 });
+    p.line(x, 0, x, F.f(x), { color: P.teal, width: 1.2, dash: [3, 3] });
+    p.dot(x, F.f(x), { color: P.maroon, r: 4.5, ring: true });
+    p.tick(F.a, "a"); p.tick(x, "x", { color: P.teal, bold: true });
+    if (Math.abs(x - F.b) > (F.b - F.a) * 0.03) p.tick(F.b, "b");
+    p.textPx(p.x0 + p.w - 8, p.y0 + 4, "f(t)：塗色的面積 = F(x)", { size: 12.5, color: P.maroonD, weight: 700, align: "right" });
+
+    /* ── 下：F(x) ── */
+    ctx.strokeStyle = P.line; ctx.beginPath(); ctx.moveTo(12, topH + 0.5); ctx.lineTo(W - 12, topH + 0.5); ctx.stroke();
+    var Flo = Math.min(0, F._lo), Fhi = Math.max(0, F._hi), Fs = (Fhi - Flo) || 1;
+    var q = new Lab.Plot(ctx, { x: 0, y: topH, w: W, h: H - topH, padL: 56, padR: 18, padT: 26, padB: 34 },
+      [F.a - pad, F.b + pad], [Flo - Fs * 0.14, Fhi + Fs * 0.18]);
+    q.grid({ xgrid: false, lines: 4 });
+    q.axes({ xlabel: "x", ylabel: "F(x)" });
+    var Fx = Fat(F, x), fx = F.f(x);
+    if (x > F.a + 1e-9) q.curve(function (u) { return Fat(F, u); }, [F.a, x], { color: P.teal, width: 2.8 });
+    /* 切線：斜率 f(x) */
+    var L = (F.b - F.a) * 0.16;
+    q.line(x - L, Fx - fx * L, x + L, Fx + fx * L, { color: P.teal, width: 1.6, dash: [6, 4] });
+    q.line(x, 0, x, Fx, { color: P.teal, width: 1.2, dash: [3, 3] });
+    q.dot(x, Fx, { color: P.teal, r: 5, ring: true });
+    q.tick(F.a, "a"); q.tick(x, "x", { color: P.teal, bold: true });
+    q.textPx(q.x0 + q.w - 8, q.y0 + 4, "F(x)：面積隨 x 長出來的樣子", { size: 12.5, color: P.teal, weight: 700, align: "right" });
+    /* 斜率標籤放在切線的另一側，才不會壓到線 */
+    q.text(x, Fx, "斜率 = " + Lab.fmt(fx, 3), { size: 12.5, color: P.teal, weight: 700, base: "middle", dx: 10, dy: fx >= 0 ? 16 : -16 });
+
+    /* 讀數 */
+    var hh = (F.b - F.a) / 200, xl = Math.max(F.a, x - hh), xr = Math.min(F.b, x + hh);
+    var Fp = (Fat(F, xr) - Fat(F, xl)) / (xr - xl);
+    document.getElementById("xOut").textContent = Lab.fmt(x, 2);
+    document.getElementById("vF").textContent = Lab.fmt(Fx, 4);
+    document.getElementById("vf").textContent = Lab.fmt(fx, 4);
+    document.getElementById("vFp").textContent = Lab.fmt(Fp, 4);
+    document.getElementById("vD").textContent = Lab.fmt(Math.abs(Fp - fx), 4);
+  }
+
+  var xs = document.getElementById("xSlider"), hint = document.getElementById("hint");
+  function setX(v, sync) {
+    state.x = Math.max(state.F.a, Math.min(state.F.b, v));
+    if (sync) xs.value = Math.round((state.x - state.F.a) / (state.F.b - state.F.a) * 1000);
+    draw();
+  }
+  function setF(F) {
+    state.F = F; build(F);
+    Lab.katex(document.getElementById("fHead"), "F(x)=\\int_{" + Lab.short(F.a) + "}^{x}\\left(" + F.tex + "\\right)dt");
+    hint.innerHTML = F.note; Lab.katexAll(hint);
+    setX(F.a + (F.b - F.a) * 0.4, true);
+  }
+  xs.addEventListener("input", function () { player.stop(); setX(state.F.a + (state.F.b - state.F.a) * (+xs.value) / 1000, false); });
+  document.getElementById("showStrip").addEventListener("change", function (ev) { state.strip = ev.target.checked; draw(); });
+
+  var fnChips = Lab.chips(document.getElementById("fnChips"), PRESETS, state.F.id, function (it) { player.stop(); panel.fill(it); setF(it); });
+  Lab.katexAll(document.getElementById("fnChips"));
+  var panel = Lab.fnPanel(document.getElementById("fnPanel"), {
+    varName: "t",
+    hint: '變數用 <code>t</code>（寫 <code>x</code> 也可以）；例：<code>t^2-2t</code>、<code>2t+1</code>、<code>cos(t)</code>、<code>4-t^2</code>',
+    onApply: function (F) { player.stop(); F.note = "<b>自訂函數</b>：看 f 在哪裡是正的，F 就在哪裡上升；f = 0 的地方，F 有極值。"; fnChips.select(null); setF(F); }
+  });
+  panel.fill(PRESETS[0]);
+
+  var player = Lab.player(document.getElementById("playBtn"), {
+    play: "▶　讓 x 從 a 走到 b", pause: "❚❚　暫停", ms: 40,
+    onStart: function () { if (state.x >= state.F.b - 1e-9) setX(state.F.a, true); },
+    tick: function () {
+      var step = (state.F.b - state.F.a) / 150;
+      if (state.x + step >= state.F.b) { setX(state.F.b, true); return false; }
+      setX(state.x + step, true); return true;
+    }
+  });
+
+  function relayout() { var a = Lab.fit(cv); W = a[0]; H = a[1]; draw(); }
+  window.addEventListener("resize", relayout);
+  Lab.katexAll(document);
+  setF(PRESETS[0]);
+  relayout();
+});
+</script>
+</body>
+</html>

@@ -12,8 +12,13 @@ web/
 │   └── README.md     #    子站說明與建置管線（content/*.py → build/ → dist/）
 ├── exam/             # ② 歷屆試題練習（111–115 學測數學A 逐題互動詳解）
 ├── guide/            # ③ 學測數學A 複習講義（11 章＋附錄）
-└── diagnostic/       # ④ 複習後診斷系統（⚠ 尚未對外公開，見下）
+├── diagnostic/       # ④ 複習後診斷系統（⚠ 尚未對外公開，見下）
+└── calc-lab/         # ⑤ 微積分互動教具（選修數學甲（上）：割線→切線、黎曼和、FTC、旋轉體）
 ```
+
+- **calc-lab/**：源頭在本機 `D:\gmailM_教學\教材M選修數學甲(上)\9教學簡報\互動教具\`，
+  更新＝整包覆蓋 `calc-lab/`，再跑 `python calc-lab/_site_headers.py` 補回 5 個 HTML 的站台標頭
+  （GA、Clarity、favicon、回總入口的連結）。純前端、無外部請求（KaTeX 本地包），自訂函數解析器在 `lab.js`。
 
 - **concept-map/**：正式頁面直接放在該資料夾內；重建流程見 `concept-map/README.md`
   （在 `concept-map/` 下跑 `python build/build.py`，輸出在 `dist/`，確認後覆蓋 `concept-map/` 內正式檔）。
